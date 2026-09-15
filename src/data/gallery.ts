@@ -27,6 +27,13 @@ export const captures: Capture[] = [
       "Island gameplay with the HUD, restored mountains, blue sea and sky, and correct character colors. Cat Quest III is fully playable according to the maintainer's September 8 playtest.",
   },
   {
+    src: "/images/jets-n-guns-2-gameplay.png",
+    alt: "Jets 'n' Guns 2 gameplay with the player ship, HUD and score rendered by PS5PCEM",
+    title: "Jets 'n' Guns 2 — gameplay",
+    caption:
+      "A gameplay frame from the playthrough the maintainer completed on September 15, 2026. The ship, weapon fire, enemies, HP and heat gauges, score and the layered station all come from the title's own draws. Measured frames take 70–92 ms on an RTX 3070 Ti, about 11–14 FPS.",
+  },
+  {
     src: "/images/jets-n-guns-2.png",
     alt: "Jets 'n' Guns 2 tutorial gameplay rendered by PS5PCEM",
     title: "Jets 'n' Guns 2 — tutorial gameplay",

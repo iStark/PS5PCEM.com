@@ -40,7 +40,7 @@ describe("compatibility dataset", () => {
     );
   });
 
-  it("marks exactly the five titles the maintainer completed", () => {
+  it("marks exactly the six titles the maintainer completed", () => {
     const playable = compatibility
       .filter((entry) => entry.tier === "playable")
       .map((entry) => entry.title)
@@ -51,11 +51,12 @@ describe("compatibility dataset", () => {
         "Asterix & Obelix: Slap Them All!",
         "Cat Quest III",
         "Dreaming Sarah",
+        "Jets 'n' Guns 2",
         "Jurassic Park Classic Games Collection",
         "Terminator 2D: No Fate",
       ].sort(),
     );
-    expect(countByTier().playable).toBe(5);
+    expect(countByTier().playable).toBe(6);
   });
 
   it("does not claim playability for Ghost of Yotei", () => {

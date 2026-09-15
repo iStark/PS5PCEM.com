@@ -161,20 +161,21 @@ export const compatibility: CompatibilityEntry[] = [
   {
     slug: "jets-n-guns-2",
     title: "Jets 'n' Guns 2",
-    tier: "ingame",
-    status: "Reaches 3840×2160 tutorial gameplay",
+    tier: "playable",
+    status: "Playable · Completable",
     headline:
-      "START GAME passes the loading screen and reaches recognizable tutorial gameplay.",
+      "Played through by the maintainer on September 15, 2026.",
     milestone:
-      "Resolves title content through /app0, completes AGC resource registration, and sustains the full graphics, compute and VideoOut loop. Targetless final passes survive flip, while dynamic SGPR data and descriptor-sized buffer bounds keep streamed sprite batches on stable Vulkan pipelines. START GAME passes the loading screen and reaches the recognizable 3840×2160 tutorial gameplay; the unattended run stayed live beyond flip 300. Firmware-default mutex compatibility preserves the CRT's recursive trylock guard without leaking recursion into the audio workers' blocking slow path.",
+      "Resolves title content through /app0, completes AGC resource registration, and sustains the full graphics, compute and VideoOut loop. Targetless final passes survive flip, while dynamic SGPR data and descriptor-sized buffer bounds keep streamed sprite batches on stable Vulkan pipelines. Levels, HUD, score, enemies and the parallax scene render correctly through a playthrough. Firmware-default mutex compatibility preserves the CRT's recursive trylock guard without leaking recursion into the audio workers' blocking slow path.",
     notes:
-      "Broad input and in-game audio compatibility still need longer validation before a playability claim.",
+      "Audio routing moved the host device between two simultaneously active output ports several times per frame, closing and reopening it each time, which tore the mix apart. That is fixed but is not yet in a packaged release.",
     performance:
-      "The cold transition into the first dense gameplay scene takes roughly 30–40 seconds. Once loaded, observed 227–256-draw frames take about 0.6–1.6 seconds, dominated by synchronous Vulkan submission, resource staging and first-use work.",
+      "Measured frames take 70–92 ms, about 11–14 FPS. Of a 70 ms frame, 18 ms waits on the GPU across 33 queue submissions, 11 ms prepares resource checkpoints, and 13 ms stages 894 distinct guest buffers totalling 15 MiB. The cold transition into the first dense gameplay scene still takes roughly 30–40 seconds.",
     image: {
-      src: "/images/jets-n-guns-2.png",
-      alt: "Jets 'n' Guns 2 tutorial gameplay rendered by PS5PCEM",
+      src: "/images/jets-n-guns-2-gameplay.png",
+      alt: "Jets 'n' Guns 2 gameplay with the player ship, HUD and score rendered by PS5PCEM",
     },
+    confirmedOn: "2026-09-15",
   },
   {
     slug: "the-precinct",
