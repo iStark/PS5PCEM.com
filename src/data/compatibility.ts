@@ -215,6 +215,23 @@ export const compatibility: CompatibilityEntry[] = [
     },
   },
   {
+    slug: "quake-ii-2023",
+    title: "Quake II (2023)",
+    tier: "intro",
+    status: "Title art and notices render; the picture then freezes",
+    headline:
+      "Mounts its 1.7 GiB pack file and runs the engine into a level, but the presented frame stops updating.",
+    milestone:
+      "Links its complete module graph, mounts pak0.pak with 14,663 files, registers 5 episodes and 232 maps, loads the Tutorial level, writes and reads save data, initialises audio and submits 991 VideoOut flips. Controller presses reach scePadReadState as clean edges. Reaching this needed 26 firmware imports the emulator did not provide, three whole libraries among them, and a fix to directory listings: sceKernelGetdents returned one entry per call, so a title that reads a directory exactly once saw nothing but the current directory and missed the pack file beside it.",
+    notes:
+      "The presented image freezes at the photosensitivity warning while the engine keeps running underneath. Colour writes are honoured only while CB_COLOR_CONTROL.MODE is NORMAL, and from about flip 320 every draw reports DISABLE while still naming a non-zero target mask. Suppressing those draws is what stops Ghost of Yōtei's G-buffer shader exporting zeros over its scene, so the two titles need a signal that separates them. Gameplay is not claimed.",
+    image: {
+      src: "/images/quake-ii-title.png",
+      alt: "Quake II title screen rendered by PS5PCEM",
+    },
+    confirmedOn: "2026-09-16",
+  },
+  {
     slug: "reanimal",
     title: "REANIMAL",
     tier: "intro",

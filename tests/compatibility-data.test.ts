@@ -32,6 +32,7 @@ describe("compatibility dataset", () => {
         "Mighty Morphin Power Rangers: Rita's Rewind",
         "Pistol Whip",
         "Propagation: Paradise Hotel",
+        "Quake II (2023)",
         "REANIMAL",
         "Terminator 2D: No Fate",
         "Tetris Effect: Connected",

@@ -36,7 +36,7 @@ describe("<CompatibilityTable />", () => {
     expect(
       screen.queryByRole("heading", { name: "Pistol Whip" }),
     ).not.toBeInTheDocument();
-    expect(screen.getByText(/Showing 6 of 13 tested titles\./)).toBeInTheDocument();
+    expect(screen.getByText(/Showing 6 of 14 tested titles\./)).toBeInTheDocument();
   });
 
   it("marks the active filter as pressed", async () => {

@@ -27,6 +27,13 @@ export const captures: Capture[] = [
       "Island gameplay with the HUD, restored mountains, blue sea and sky, and correct character colors. Cat Quest III is fully playable according to the maintainer's September 8 playtest.",
   },
   {
+    src: "/images/quake-ii-title.png",
+    alt: "Quake II title screen with the series logo and legal notices rendered by PS5PCEM",
+    title: "Quake II (2023) — title screen",
+    caption:
+      "The title screen drawn by the game's own render graph after the emulator learned to list directories the way a title that reads one exactly once expects. That fix is what lets it find its 1.7 GiB pack file, load a level and reach audio and input. The presented picture still freezes at the photosensitivity notice while the engine runs underneath, so no gameplay is claimed.",
+  },
+  {
     src: "/images/jets-n-guns-2-gameplay.png",
     alt: "Jets 'n' Guns 2 gameplay with the player ship, HUD and score rendered by PS5PCEM",
     title: "Jets 'n' Guns 2 — gameplay",
