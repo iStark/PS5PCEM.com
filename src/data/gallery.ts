@@ -17,7 +17,7 @@ export const captures: Capture[] = [
     alt: "PS5PCEM launcher showing its recent-game library with cover art",
     title: "The launcher",
     caption:
-      "A native Windows library with local cover art, per-title saves, input profiles and direct game launching. It remembers up to eight recent titles and reads artwork from each title's own sce_sys/icon0.png.",
+      "A native Windows library with local cover art, per-title saves, input profiles and direct game launching. It remembers up to eight recent titles and reads artwork from each title's own sce_sys/icon0.png, reports whether the host can run Vulkan before a title is started, and can invoke the package extractor on a debug package.",
   },
   {
     src: "/images/cat-quest-iii-world.png",
