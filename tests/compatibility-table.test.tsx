@@ -34,9 +34,12 @@ describe("<CompatibilityTable />", () => {
       screen.getByRole("heading", { name: "Terminator 2D: No Fate" }),
     ).toBeInTheDocument();
     expect(
+      screen.getByRole("heading", { name: "Quake II (2023)" }),
+    ).toBeInTheDocument();
+    expect(
       screen.queryByRole("heading", { name: "Pistol Whip" }),
     ).not.toBeInTheDocument();
-    expect(screen.getByText(/Showing 6 of 14 tested titles\./)).toBeInTheDocument();
+    expect(screen.getByText(/Showing 7 of 14 tested titles\./)).toBeInTheDocument();
   });
 
   it("marks the active filter as pressed", async () => {

@@ -217,17 +217,17 @@ export const compatibility: CompatibilityEntry[] = [
   {
     slug: "quake-ii-2023",
     title: "Quake II (2023)",
-    tier: "intro",
-    status: "Title art and notices render; the picture then freezes",
+    tier: "playable",
+    status: "Playable · Completable",
     headline:
-      "Mounts its 1.7 GiB pack file and runs the engine into a level, but the presented frame stops updating.",
+      "Played through by the maintainer on September 16, 2026.",
     milestone:
-      "Links its complete module graph, mounts pak0.pak with 14,663 files, registers 5 episodes and 232 maps, loads the Tutorial level, writes and reads save data, initialises audio and submits 991 VideoOut flips. Controller presses reach scePadReadState as clean edges. Reaching this needed 26 firmware imports the emulator did not provide, three whole libraries among them, and a fix to directory listings: sceKernelGetdents returned one entry per call, so a title that reads a directory exactly once saw nothing but the current directory and missed the pack file beside it.",
+      "Menus, the photosensitivity warning and the Tutorial level load. The HUD, health, weapon icon, objective text and crosshair render, and controller input reaches the in-game scene. Deferred colour writes honour CB_COLOR_CONTROL.MODE=DISABLE when TARGET_MASK is live, unified format 57 samples as RGBA8 SNORM, and the interpolator-less NGG rect no longer stamps a texture atlas over the mesh G-buffer.",
     notes:
-      "The presented image freezes at the photosensitivity warning while the engine keeps running underneath. Colour writes are honoured only while CB_COLOR_CONTROL.MODE is NORMAL, and from about flip 320 every draw reports DISABLE while still naming a non-zero target mask. Suppressing those draws is what stops Ghost of Yōtei's G-buffer shader exporting zeros over its scene, so the two titles need a signal that separates them. Gameplay is not claimed.",
+      "The presented scene is still dark while deferred lighting and the 960-to-1920 composite are incomplete.",
     image: {
-      src: "/images/quake-ii-title.png",
-      alt: "Quake II title screen rendered by PS5PCEM",
+      src: "/images/quake-ii-gameplay.png",
+      alt: "Quake II tutorial gameplay with HUD, health, blaster and crosshair rendered by PS5PCEM",
     },
     confirmedOn: "2026-09-16",
   },

@@ -41,7 +41,7 @@ describe("compatibility dataset", () => {
     );
   });
 
-  it("marks exactly the six titles the maintainer completed", () => {
+  it("marks exactly the seven titles the maintainer completed", () => {
     const playable = compatibility
       .filter((entry) => entry.tier === "playable")
       .map((entry) => entry.title)
@@ -54,10 +54,11 @@ describe("compatibility dataset", () => {
         "Dreaming Sarah",
         "Jets 'n' Guns 2",
         "Jurassic Park Classic Games Collection",
+        "Quake II (2023)",
         "Terminator 2D: No Fate",
       ].sort(),
     );
-    expect(countByTier().playable).toBe(6);
+    expect(countByTier().playable).toBe(7);
   });
 
   it("does not claim playability for Ghost of Yotei", () => {
