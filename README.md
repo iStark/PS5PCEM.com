@@ -13,6 +13,7 @@ Every route is statically prerendered.
 |---|---|
 | `/` | Overview, current release, compatibility summary, YouTube channel |
 | `/download` | Latest build, SHA-256 checksums, requirements, quick start, release history |
+| `/extract` | PKG extractor: FIH debug packages, launcher button, what is and is not unpacked |
 | `/compatibility` | Every tested title with its result, known limits and measured timings |
 | `/status` | Subsystem-by-subsystem state of the emulator |
 | `/media` | Development captures, each captioned with what it actually shows |

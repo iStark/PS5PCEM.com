@@ -10,6 +10,7 @@ import DownloadPage from "@/app/download/page";
 import CompatibilityPage from "@/app/compatibility/page";
 import StatusPage from "@/app/status/page";
 import MediaPage from "@/app/media/page";
+import ExtractPage from "@/app/extract/page";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { latestRelease } from "@/data/release";
@@ -170,6 +171,24 @@ describe("status page", () => {
     expect(
       screen.getByText("What is deliberately not claimed"),
     ).toBeInTheDocument();
+  });
+});
+
+describe("extract page", () => {
+  it("describes the debug FPKG tool and its limits", () => {
+    render(<ExtractPage />);
+
+    expect(
+      screen.getByRole("heading", { level: 1, name: "PS5 package extractor" }),
+    ).toBeInTheDocument();
+    expect(screen.getByText("pkgextractor.exe")).toBeInTheDocument();
+    expect(screen.getByText(/Debug packages only/)).toBeInTheDocument();
+    expect(
+      screen.getByText(/Inner PFS that holds eboot.bin/i),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Download the build" }),
+    ).toHaveAttribute("href", "/download");
   });
 });
 

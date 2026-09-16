@@ -171,6 +171,9 @@ export default function DownloadPage() {
           <ButtonLink href={latestRelease.notesUrl} variant="secondary" external>
             Release notes for {latestRelease.version}
           </ButtonLink>
+          <ButtonLink href="/extract" variant="secondary">
+            PKG extractor
+          </ButtonLink>
           <ButtonLink href={site.links.gettingStarted} variant="secondary" external>
             Build from source with Zig
           </ButtonLink>

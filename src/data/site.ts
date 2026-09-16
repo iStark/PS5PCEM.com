@@ -27,6 +27,7 @@ export const site = {
 export const navigation = [
   { href: "/", label: "Home" },
   { href: "/download", label: "Download" },
+  { href: "/extract", label: "PKG extractor" },
   { href: "/compatibility", label: "Compatibility" },
   { href: "/status", label: "Project status" },
   { href: "/media", label: "Media" },
