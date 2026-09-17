@@ -12,7 +12,7 @@ import { ButtonLink, Notice, SectionHeading } from "@/components/ui";
 export const metadata: Metadata = {
   title: "PKG extractor",
   description:
-    "How PS5PCEM's pkgextractor reads a PS5 debug package (FPKG / FIH), what it writes under sce_sys, and what it will not unpack.",
+    "How PS5PCEM's pkgextractor reads a PS5 debug package (FPKG / FIH), writes sce_sys metadata and eboot.bin, and what it will not unpack.",
 };
 
 export default function ExtractPage() {

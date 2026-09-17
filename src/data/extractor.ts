@@ -8,7 +8,7 @@ export const extractor = {
   cli: "pkgextractor <game.pkg> [-o <output-dir>]",
   title: "PS5 package extractor",
   summary:
-    "A separate command-line tool, invoked from the launcher, that reads a PS5 debug package (FPKG / FIH) and writes unencrypted metadata into an sce_sys tree the emulator already understands.",
+    "A separate command-line tool, invoked from the launcher, that reads a PS5 debug package (FPKG / FIH), writes unencrypted metadata into sce_sys, and unpacks uncompressed SELF modules (eboot.bin and sce_module) from the inner PFS.",
 } as const;
 
 export const extractorSteps = [
@@ -22,11 +22,13 @@ export const extractorSteps = [
   },
   {
     title: "Then launch as usual",
-    body: "game-run still needs an extracted dump with eboot.bin. Metadata extraction does not replace that; it prepares sce_sys so the launcher can show param.json and artwork while inner PFS unpacking is unfinished.",
+    body: "The output folder is the game folder. Debug PLAIN-NOAUTH packages now include eboot.bin (and other uncompressed SELF modules under sce_module). Launch from that folder like any other dump.",
   },
 ] as const;
 
 export const extractorWrites = [
+  "eboot.bin (uncompressed SCE_DYNEXEC SELF from the nested pfs_image.dat)",
+  "sce_module/*.prx (other uncompressed SELF modules from the same image)",
   "sce_sys/param.json (title id, content id, localized names)",
   "sce_sys/icon0.png and pic0.png (and their DDS siblings when present)",
   "PlayGo tables (playgo-chunk.dat, playgo-hash-table.dat, playgo-ficm.dat)",
@@ -35,7 +37,7 @@ export const extractorWrites = [
 
 export const extractorLimits = [
   "Retail packages (FIH signed byte 0x80 / CNT-only retail images) are refused. They need console image keys that this project does not ship.",
-  "The inner PFS that holds eboot.bin and the rest of /app0 is AES-XTS encrypted. That unpack is not implemented yet, so a package extract is not enough to boot the title.",
+  "Kraken-compressed inner payloads (level data, textures, most /app0 files) are not unpacked yet. A debug extract can launch eboot.bin but may still miss game assets.",
   "Encrypted CNT entries (licenses, some npbind records) are skipped rather than written as garbage.",
   "The tool is for dumps and debug FPKGs you are legally allowed to access. Game content is not included with the emulator.",
 ] as const;
