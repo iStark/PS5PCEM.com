@@ -12,7 +12,7 @@ import { ButtonLink, Notice, SectionHeading } from "@/components/ui";
 export const metadata: Metadata = {
   title: "PKG extractor",
   description:
-    "How PS5PCEM's pkgextractor reads a PS5 debug package (FPKG / FIH), writes sce_sys metadata and eboot.bin, and what it will not unpack.",
+    "Extract supported PS5 debug packages with PS5PCEM 0.3.2: application files, inner PFS, NAPS mappings and Kraken-compressed payloads. Retail packages are not supported.",
 };
 
 export default function ExtractPage() {
@@ -89,7 +89,7 @@ export default function ExtractPage() {
         <div>
           <SectionHeading
             eyebrow="Limits"
-            title="What this first version does not do"
+            title="Current limits"
           />
           <ul className="mt-8 space-y-3 text-sm leading-relaxed text-ink-300">
             {extractorLimits.map((item) => (

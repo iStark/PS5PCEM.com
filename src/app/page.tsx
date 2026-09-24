@@ -26,7 +26,7 @@ export default function HomePage() {
           <Stat
             value={String(compatibility.length)}
             label="Titles tested"
-            hint={`On release ${compatibilityMeta.testedOnRelease}`}
+            hint={`Documented for ${compatibilityMeta.documentedRelease}`}
           />
           <Stat
             value={String(counts.playable)}
@@ -71,7 +71,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Test results"
             title="Compatibility at a glance"
-            description={`Every result below was observed by the project maintainer on an ${compatibilityMeta.host} test host. Playability and completion reports were confirmed on ${formatDate(compatibilityMeta.confirmedOn)}.`}
+            description={`Maintainer reports and measurements from an ${compatibilityMeta.host} test host, updated ${formatDate(compatibilityMeta.updatedOn)}. Confirmation dates and build-specific limits are listed with each title.`}
           />
           <ButtonLink href="/compatibility" variant="secondary">
             All {compatibility.length} results
@@ -241,7 +241,7 @@ function Hero() {
           </div>
 
           <p className="mt-6 text-sm text-ink-400">
-            Windows 10 2004 or newer · x86-64 · Vulkan 1.2 driver ·{" "}
+            Windows 10 2004 or newer · AVX2 CPU · Vulkan 1.2 driver ·{" "}
             <span className="text-ink-300">GPL-3.0-or-later</span>
           </p>
         </div>

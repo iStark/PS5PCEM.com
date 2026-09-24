@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {
   latestRelease,
   quickStart,
+  releaseHighlights,
   releaseHistory,
   systemRequirements,
 } from "@/data/release";
@@ -79,11 +80,30 @@ export default function DownloadPage() {
       </section>
 
       <section className="mt-10 max-w-3xl">
-        <Notice title="The binaries are unsigned">
-          Windows may show an Unknown Publisher prompt or a Microsoft Defender
-          SmartScreen warning. Verify the SHA-256 hash of what you downloaded
-          against the table below before running it.
+        <Notice tone="info" title="Signed applications and installer">
+          The launcher, game runner, PKG extractor and installer carry SHA-256
+          Authenticode signatures from Artur Strazewicz / PS5PCEM, with DigiCert
+          timestamps. The signing certificate is self-signed, so Windows may
+          still show an Unknown Publisher or SmartScreen warning. The checksums
+          below let you verify the downloaded files.
         </Notice>
+      </section>
+
+      <section className="mt-16 max-w-3xl">
+        <SectionHeading
+          eyebrow="Since 0.3.1-beta.1"
+          title={`What's new in ${latestRelease.version}`}
+        />
+        <ul className="mt-6 space-y-3 text-sm leading-relaxed text-ink-300">
+          {releaseHighlights.map((highlight) => (
+            <li key={highlight} className="border-l-2 border-accent-500/40 pl-4">
+              {highlight}
+            </li>
+          ))}
+        </ul>
+        <ButtonLink href={latestRelease.notesUrl} variant="secondary" external className="mt-6">
+          Read the full changelog
+        </ButtonLink>
       </section>
 
       <section className="mt-16">

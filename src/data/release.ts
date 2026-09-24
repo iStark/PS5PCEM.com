@@ -21,36 +21,36 @@ export type Release = {
   assets: ReleaseAsset[];
 };
 
-const TAG = "v0.3.1-beta.1";
+const TAG = "v0.3.2";
 const DOWNLOAD_BASE = `https://github.com/iStark/PS5PCEM/releases/download/${TAG}`;
 
 export const latestRelease: Release = {
-  version: "0.3.1-beta.1",
+  version: "0.3.2",
   tag: TAG,
-  publishedAt: "2026-09-15T11:41:55Z",
-  prerelease: true,
+  publishedAt: "2026-09-24T14:59:54Z",
+  prerelease: false,
   notesUrl:
-    "https://github.com/iStark/PS5PCEM/blob/main/docs/release-notes/v0.3.1-beta.1.md",
+    "https://github.com/iStark/PS5PCEM/blob/v0.3.2/docs/release-notes/v0.3.2.md",
   releaseUrl: `https://github.com/iStark/PS5PCEM/releases/tag/${TAG}`,
   assets: [
     {
       label: "Portable ZIP",
-      fileName: "PS5PCEM-0.3.1-beta.1-windows-x64-portable.zip",
-      url: `${DOWNLOAD_BASE}/PS5PCEM-0.3.1-beta.1-windows-x64-portable.zip`,
-      size: 20289889,
+      fileName: "PS5PCEM-0.3.2-windows-x64-portable.zip",
+      url: `${DOWNLOAD_BASE}/PS5PCEM-0.3.2-windows-x64-portable.zip`,
+      size: 29220424,
       sha256:
-        "a33d7b9279db9a027728838ac7e3c3baf8d7523b3c54d91d18fe8bcf20bdc093",
+        "384ae82e6ae30f5800953af513f1eb167f95381884ca0add01a636236f5855a8",
       description:
         "Extract anywhere and run ps5pcem.exe. Settings and savedata stay beside the application.",
       primary: true,
     },
     {
       label: "Per-user installer",
-      fileName: "PS5PCEM-0.3.1-beta.1-windows-x64-setup.exe",
-      url: `${DOWNLOAD_BASE}/PS5PCEM-0.3.1-beta.1-windows-x64-setup.exe`,
-      size: 20488760,
+      fileName: "PS5PCEM-0.3.2-windows-x64-setup.exe",
+      url: `${DOWNLOAD_BASE}/PS5PCEM-0.3.2-windows-x64-setup.exe`,
+      size: 29071000,
       sha256:
-        "e1f7a9390a7969d592ae5df2943c73e328543c065936a806b93acaf9c283e96c",
+        "bba5e8d8f3d10c6ce7f6958d36e1f8ee86e26696331a3b389d6b1b5835e8c974",
       description:
         "Installs for the current user only. No administrator rights required.",
     },
@@ -58,12 +58,20 @@ export const latestRelease: Release = {
       label: "SHA-256 checksums",
       fileName: "SHA256SUMS.txt",
       url: `${DOWNLOAD_BASE}/SHA256SUMS.txt`,
-      size: 223,
+      size: 209,
       description:
         "Verify a download before running it. Compare against the hashes listed on this page.",
     },
   ],
 };
+
+export const releaseHighlights = [
+  "Rita's Rewind is confirmed playable and completable. Quake II gains model, lighting-data and shadow-sampling fixes.",
+  "Ghost of Yōtei gains movie audio and reaches later 3D scenes. Its measured tree scene is still only 0.73 FPS; late loading remains unstable.",
+  "Tetris reaches a readable license screen and Journey Mode selection with fewer rendering artifacts and faster frames. Gameplay and stability remain unverified.",
+  "Shader compilation uses two workers by default, with parallel CPU command preparation and fewer unnecessary GPU waits.",
+  "The launcher displays 0.3.2, remembers 32 titles across pages of eight, and includes the debug PKG extractor with Kraken support.",
+] as const;
 
 export const releaseHistory: {
   version: string;
@@ -71,6 +79,12 @@ export const releaseHistory: {
   publishedAt: string;
   url: string;
 }[] = [
+  {
+    version: "0.3.2",
+    tag: TAG,
+    publishedAt: latestRelease.publishedAt,
+    url: latestRelease.releaseUrl,
+  },
   {
     version: "0.3.1-beta.1",
     tag: "v0.3.1-beta.1",
@@ -111,6 +125,10 @@ export const systemRequirements = [
   {
     label: "Graphics",
     value: "A current Vulkan 1.2-capable driver",
+  },
+  {
+    label: "Processor",
+    value: "x86-64-v3 with AVX2, BMI2 and FMA. AVX-512 is not required.",
   },
   {
     label: "Reference test host",

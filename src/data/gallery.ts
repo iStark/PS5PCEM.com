@@ -17,7 +17,28 @@ export const captures: Capture[] = [
     alt: "PS5PCEM launcher showing its recent-game library with cover art",
     title: "The launcher",
     caption:
-      "A native Windows library with local cover art, per-title saves, input profiles and direct game launching. It remembers up to eight recent titles and reads artwork from each title's own sce_sys/icon0.png, reports whether the host can run Vulkan before a title is started, and can invoke the package extractor on a debug package.",
+      "A native Windows library with local cover art, per-title saves, input profiles and direct game launching. Release 0.3.2 remembers up to 32 titles across pages of eight, displays the release version, checks Vulkan support, and includes the debug package extractor.",
+  },
+  {
+    src: "/images/ritas-rewind-gameplay.png",
+    alt: "Rita's Rewind gameplay with the Red Ranger in the Command Center",
+    title: "Rita's Rewind — gameplay",
+    caption:
+      "The Red Ranger in the Command Center training stage, with the HUD, health bar, objectives and controller prompts. The maintainer confirmed the game is playable and completable on September 24, 2026.",
+  },
+  {
+    src: "/images/big-helmet-heroes-menu.png",
+    alt: "Big Helmet Heroes main menu with correctly rendered characters and lighting",
+    title: "Big Helmet Heroes — main menu",
+    caption:
+      "The menu reference confirmed on September 20, 2026: characters, textures, lighting and colors render correctly across two clean launches. Short menu samples measured 3.2–3.3 FPS. Gameplay has not been verified.",
+  },
+  {
+    src: "/images/yotei-tree-scene.png",
+    alt: "Ghost of Yotei tree scene rendered by PS5PCEM",
+    title: "Ghost of Yōtei — tree scene",
+    caption:
+      "A later 3D scene reached during development. The last measured tree scene presented 22 frames in 30 seconds, about 0.73 FPS; subsequent loading encountered device loss. Movie audio now works, but the title remains unplayable and late-scene stability is unverified.",
   },
   {
     src: "/images/cat-quest-iii-world.png",
@@ -115,7 +136,7 @@ export const captures: Capture[] = [
     alt: "The first recognizable Tetris Effect particle frame rendered by PS5PCEM",
     title: "Tetris Effect: Connected — first render",
     caption:
-      "The first recognizable render produced by the title's startup graph: 595 guest draws and 63 compute dispatches complete without a rejected draw. This 1920×1080 R11G11B10_FLOAT intermediate is converted for display because the registered 3840×2160 VideoOut target is still black.",
+      "An earlier startup milestone, before the license and Journey Mode selection reached in 0.3.2. At the time, this 1920×1080 R11G11B10_FLOAT intermediate was converted for display because the registered 3840×2160 target was black. This historical capture does not show the latest UI fixes.",
   },
   {
     src: "/images/live-gameplay.png",

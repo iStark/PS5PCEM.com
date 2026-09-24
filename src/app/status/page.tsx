@@ -53,12 +53,12 @@ export default function StatusPage() {
           <SummaryItem
             label="Current build"
             value={latestRelease.version}
-            hint={latestRelease.prerelease ? "Pre-release" : "Stable"}
+            hint={latestRelease.prerelease ? "Pre-release" : "Release"}
           />
           <SummaryItem
             label="Titles tested"
             value={`${counts.playable} of ${compatibility.length} completable`}
-            hint={`Confirmed ${formatDate(compatibilityMeta.confirmedOn)}`}
+            hint={`Reports updated ${formatDate(compatibilityMeta.updatedOn)}`}
           />
           <SummaryItem
             label="Reference host"

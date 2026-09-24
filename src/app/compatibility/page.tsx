@@ -44,8 +44,9 @@ export default function CompatibilityPage() {
           in the repository.
         </p>
         <p className="mt-4 text-sm leading-relaxed text-ink-400">
-          Playability and completion reports were confirmed by the project
-          maintainer on {formatDate(compatibilityMeta.confirmedOn)}. Every timing
+          Documentation updated {formatDate(compatibilityMeta.updatedOn)} for
+          release {compatibilityMeta.documentedRelease}. Individual confirmation
+          dates are listed with each title; this is not a blanket retest. Every timing
           refers to the current {compatibilityMeta.host} test host and will
           differ on other hardware. Title content is supplied locally and is not
           distributed with the emulator.

@@ -41,6 +41,7 @@ export const subsystems: Subsystem[] = [
       "Stateful AGC command-stream execution drives graphics, compute and VideoOut work.",
     details: [
       "Ordered AGC completion acknowledgement removes intermittent retirement races.",
+      "Two bounded CPU workers prepare graphics and compute commands while one Vulkan backend owner preserves execution and completion order.",
       "Guest image allocations share a range-based alias registry across colour, depth/stencil, storage and sampled use.",
       "Descriptor recovery no longer replays each kernel's prolog once per resource it names.",
     ],
@@ -55,7 +56,9 @@ export const subsystems: Subsystem[] = [
       "Merged NGG vertex programs translate, including fetch-shader continuations ending in S_SETPC_B64.",
       "Runtime shaders can pass through a common typed IR before SPIR-V; PS5_GPU_SHADER_IR=1 selects legalized IR and PS5_GPU_SSA=1 adds phi/def-use state, constant folding and iterative DCE.",
       "Structured control flow restores UI text in titles that previously lost it.",
-      "Fetch-shader continuations, exact layered rendering and some scanout paths are still incomplete.",
+      "Typed buffer accesses retain their resource bindings and per-access formats; comparison samplers follow the instructions that use them.",
+      "Asynchronous pipeline compilation is enabled by default with two workers and a compute shader warmup catalog.",
+      "Shader coverage remains incomplete; ten recorded SPIR-V unit failures and one reported leak remain in the 0.3.2 validation run.",
     ],
   },
   {
@@ -68,7 +71,8 @@ export const subsystems: Subsystem[] = [
       "Persistent render targets, large writable storage buffers, resident storage images, and bounded texture and pipeline caches.",
       "Fifty-six host formats are reachable, spanning BC1–BC7, signed and unsigned integer and normalized channels, R16/RG16, half-float and RGBA32_FLOAT.",
       "Image layout and access state is tracked per aspect, mip and array layer.",
-      "The default profile waits on each submitted batch; the opt-in timeline scheduler keeps several batches in flight.",
+      "Timeline retirement avoids waits for unrelated buffers and retains upload data until its GPU readers complete. Public guest completion remains ordered.",
+      "Correct HTILE/DCC metadata clears and a larger Tetris render-target cache reduce stale UI copies and repeated readbacks.",
       "GPU compute detile covers 4/8/16-byte 2D and 3D standard and PRT surfaces; RB+ and MSAA still fall back to the CPU.",
     ],
   },
@@ -81,6 +85,8 @@ export const subsystems: Subsystem[] = [
     details: [
       "SceAvPlayer returns synchronized NV12 video and stereo PCM through the title's own allocation and file callbacks.",
       "Observed intro movies play at about their native frame rate in ReleaseFast builds.",
+      "The observed PS5 multichannel ATRAC9 layout decodes as interleaved mono streams; Yōtei movie audio now starts at the correct point.",
+      "The unsupported movie haptics track preserves timing through silence, without emulating controller vibration. Competing audio ports no longer repeatedly reopen the host device.",
     ],
   },
   {
@@ -114,7 +120,8 @@ export const subsystems: Subsystem[] = [
     summary:
       "A native library with local cover art, per-title saves, input profiles and direct launching.",
     details: [
-      "Remembers up to eight recent titles.",
+      "Remembers up to 32 titles across pages of eight and displays the release version.",
+      "Ships the debug PKG extractor with NAPS mapping and Kraken payload support.",
       "Reads artwork from each title's local sce_sys/icon0.png.",
       "Detects DualSense and DualShock controllers and persists sound and input profiles.",
     ],

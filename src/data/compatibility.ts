@@ -1,7 +1,7 @@
 /**
- * Title compatibility results, mirroring docs/project-status.md in the PS5PCEM
- * repository. Playability and completion reports were confirmed by the project
- * maintainer on September 8, 2026, except where an entry names its own date.
+ * Title compatibility results from docs/project-status.md and the 0.3.2 release
+ * notes. Confirmation dates belong to individual entries; updating this dataset
+ * does not imply that every title was tested again on the latest binary.
  *
  * Every measurement refers to the current RTX 3070 Ti test host. Title content
  * is supplied locally by the user and is not distributed with the emulator.
@@ -168,7 +168,7 @@ export const compatibility: CompatibilityEntry[] = [
     milestone:
       "Resolves title content through /app0, completes AGC resource registration, and sustains the full graphics, compute and VideoOut loop. Targetless final passes survive flip, while dynamic SGPR data and descriptor-sized buffer bounds keep streamed sprite batches on stable Vulkan pipelines. Levels, HUD, score, enemies and the parallax scene render correctly through a playthrough. Firmware-default mutex compatibility preserves the CRT's recursive trylock guard without leaking recursion into the audio workers' blocking slow path.",
     notes:
-      "Audio routing moved the host device between two simultaneously active output ports several times per frame, closing and reopening it each time, which tore the mix apart. That is fixed but is not yet in a packaged release.",
+      "Audio routing moved the host device between two simultaneously active output ports several times per frame, tearing the mix apart. The fix is included in release 0.3.2.",
     performance:
       "Measured frames take 70–92 ms, about 11–14 FPS. Of a 70 ms frame, 18 ms waits on the GPU across 33 queue submissions, 11 ms prepares resource checkpoints, and 13 ms stages 894 distinct guest buffers totalling 15 MiB. The cold transition into the first dense gameplay scene still takes roughly 30–40 seconds.",
     image: {
@@ -202,16 +202,16 @@ export const compatibility: CompatibilityEntry[] = [
     status:
       "Intro playback · bonus notices · brightness calibration · reaches in-game scenes · not playable",
     headline:
-      "Renders its menus and 3D scenes correctly, at 0.6 FPS. Not playable.",
+      "Movie audio works and later 3D scenes render, at about 0.73 FPS. Not playable.",
     milestone:
-      "The verified reference run reached the animated loading indicator, the Digital Deluxe Bonus, Gift of the Northern Star and Pre-order Bonus notices, and brightness calibration with the wolf image, instructions, slider and confirmation glyph. The maintainer also observed trees and parts of the 3D background, with menu music audible. Intro movies play at about their native 30 FPS in ReleaseFast. Streamed scene loading, material tables and shader execution have advanced substantially.",
+      "Development runs reach the bonus notices, brightness calibration, difficulty selection and later 3D scenes, including the captured tree scene. Intro movies play at about their native 30 FPS in ReleaseFast. Movie audio now starts at the expected 6.3-second point in the verified splash clip; menu audio also works. Loading progress, resource retirement and shader preparation have improved.",
     notes:
-      "Gameplay itself — moving the character through a loaded world — remains unverified, and scene preparation frames are still very slow. Time to reach a scene varies widely between runs on the same build. The latest renderer was checked through the intro into scene loading; the complete bonus and brightness sequence was verified on reference build 796a484, not repeated on the release candidate.",
+      "Gameplay itself remains unverified. Rendering artifacts and very slow streaming remain, and a loading sequence after the measured tree scene encountered Vulkan device loss. These development captures do not establish stable late-scene gameplay or a full playthrough on the release candidate.",
     performance:
-      "Reaching difficulty selection takes several minutes of intro and scene loading, and the frame rate there is 0.6 FPS: sampled frames measure 1504–1554 ms for 321 draws and about 1330 compute dispatches.",
+      "The last measured tree scene presented 22 frames in 30 seconds, about 0.73 FPS. Earlier difficulty-selection frames measured 1504–1554 ms, about 0.6 FPS. Reaching these scenes takes minutes and varies between runs.",
     image: {
-      src: "/images/yotei-difficulty.png",
-      alt: "Ghost of Yotei difficulty selection rendered over a 3D scene by PS5PCEM",
+      src: "/images/yotei-tree-scene.png",
+      alt: "Ghost of Yotei tree scene rendered by PS5PCEM",
     },
   },
   {
@@ -224,7 +224,7 @@ export const compatibility: CompatibilityEntry[] = [
     milestone:
       "Menus, the photosensitivity warning and the Tutorial level load. The HUD, health, weapon icon, objective text and crosshair render, and controller input reaches the in-game scene. Deferred colour writes honour CB_COLOR_CONTROL.MODE=DISABLE when TARGET_MASK is live, unified format 57 samples as RGBA8 SNORM, and the interpolator-less NGG rect no longer stamps a texture atlas over the mesh G-buffer.",
     notes:
-      "The presented scene is still dark while deferred lighting and the 960-to-1920 composite are incomplete.",
+      "Release 0.3.2 restores missing NPC geometry through typed buffer fixes and corrects depth comparison sampling. Lighting issues in some scenes remain under investigation; the tutorial capture records an earlier dark scene.",
     image: {
       src: "/images/quake-ii-gameplay.png",
       alt: "Quake II tutorial gameplay with HUD, health, blaster and crosshair rendered by PS5PCEM",
@@ -250,37 +250,55 @@ export const compatibility: CompatibilityEntry[] = [
   {
     slug: "ritas-rewind",
     title: "Mighty Morphin Power Rangers: Rita's Rewind",
-    tier: "intro",
-    status: "Publisher sequence, title menu and post-menu scene render",
+    tier: "playable",
+    status: "Playable · Completable",
     headline:
-      "Enters a stable 1920×1080 graphics and audio loop through the title menu.",
+      "Playthrough confirmed by the maintainer on September 24, 2026.",
     milestone:
-      "Resolves the observed Fiber, Pad, offline NP, AGC 1.1 and AGC driver imports, enters a stable 1920×1080 graphics and audio loop, and renders the animated publisher sequence, title menu and post-menu scene. Native cooperative fibers retain suspended guest stacks, scePadGetHandle supplies a readable primary controller, and exact V_SAD_U32, V_MUL_HI_I32 and V_CVT_FLR_I32_F32 lowering removes the diagnostic shader fallback. Holding Cross advances through the title prompt.",
+      "The publisher sequence, title menu and gameplay render and respond to controller input. The latest capture shows the Red Ranger in the Command Center training stage with the HUD, health bar, objectives and button prompts. Native cooperative fibers retain suspended guest stacks, and corrected shader lowering removes the diagnostic fallback.",
     notes:
-      "The exact guest CRT composite still produces static on the current host, so a strict shader-signature fallback performs the observed 4× RGBA8 scene scale before downstream post-processing. Broad gameplay and input compatibility are not claimed yet.",
+      "The exact guest CRT composite still produces static on the current host, so a strict shader-signature fallback performs the observed 4× RGBA8 scene scale before downstream post-processing.",
     performance:
-      "The observed intro stays smooth at roughly 13–20 ms per frame. Dense post-menu frames can contain roughly 255 draws and currently take about 470 ms, dominated by repeated guest-buffer staging.",
+      "Earlier intro samples measured 13–20 ms per frame, with dense post-menu frames around 470 ms. The September 24 playthrough confirmation does not include a new gameplay FPS measurement.",
     image: {
-      src: "/images/ritas-rewind-post-menu.png",
-      alt: "Mighty Morphin Power Rangers: Rita's Rewind post-menu scene rendered by PS5PCEM",
+      src: "/images/ritas-rewind-gameplay.png",
+      alt: "Rita's Rewind gameplay with the Red Ranger in the Command Center",
     },
+    confirmedOn: "2026-09-24",
+  },
+  {
+    slug: "big-helmet-heroes",
+    title: "Big Helmet Heroes",
+    tier: "intro",
+    status: "Intro playback · correctly rendered main menu · gameplay unverified",
+    headline: "Main menu characters, lighting, textures and colors render correctly.",
+    milestone:
+      "The maintainer confirmed the captured menu as the visual reference on September 20, 2026. Corrected texture addressing removes the blue tint and glare; two clean menu-only launches reproduced the characters, 3D scenery and lighting.",
+    notes: "Gameplay has not been verified. Menu rendering does not establish playability.",
+    performance: "Short menu measurements are 3.2–3.3 FPS on the reference test host.",
+    image: {
+      src: "/images/big-helmet-heroes-menu.png",
+      alt: "Big Helmet Heroes main menu with correctly rendered characters and lighting",
+    },
+    confirmedOn: "2026-09-20",
   },
   {
     slug: "tetris-effect-connected",
     title: "Tetris Effect: Connected",
     tier: "intro",
-    status: "Unreal bootstrap completes and the first particle frame renders",
+    status: "Developer logos · readable license screen · Journey Mode selection",
     headline:
-      "595 guest draws and 63 compute dispatches complete without a rejected draw.",
+      "Readable license and Journey Mode selection, with faster frames and fewer artifacts.",
     milestone:
-      "Completes the Unreal bootstrap and a measured startup frame with 595 guest draws and 63 compute dispatches, including typed 2D/3D storage images, 64×64×64 RGBA16_FLOAT volumes, layered post-process targets, RGBA32_FLOAT exposure surfaces, a 10_10_10_2_UNORM lookup target, and the mixed image/LDS prepass. Ordered AGC completion acknowledgement removed the intermittent retirement race, and the latest unattended run advanced through 49 VideoOut cycles. The first generated 0xe060-byte material pixel shader is now decoded within its exact AGC allocation instead of the old fixed instruction ceiling.",
+      "Verified on September 24, 2026 with PPSA07923 v2.000.022. The translated composite renders the license and Journey Mode selection. Correct metadata clears remove accumulated UI copies and the vertical scene boundary, while a larger render-target cache reduces repeated readbacks.",
     notes:
-      "The exact registered 3840×2160 VideoOut target remains black, so presentation falls back to a converted R11G11B10_FLOAT intermediate. NGG/fetch-shader continuations, exact layered rendering, final scanout aliasing and tonemapping, one oversized guest-buffer descriptor, and performance all remain incomplete. Neither a menu nor gameplay is claimed.",
-    performance: "Most post-bootstrap cycles measured about 3.3–3.8 seconds.",
+      "Dark interface elements and an unresolved compute texture binding remain under investigation. Later video playback faults in the guest H.264 decoder. Gameplay and longer-run stability remain unverified. The particle screenshot records an earlier milestone.",
+    performance: "License frames improved from 235 to 159 ms (about 4.3 to 6.3 FPS). Sampled Journey frames take 318–396 ms instead of 1127–1276 ms with the smaller cache.",
     image: {
       src: "/images/tetris-effect-first-render.png",
       alt: "The first recognizable Tetris Effect particle frame rendered by PS5PCEM",
     },
+    confirmedOn: "2026-09-24",
   },
   {
     slug: "propagation-paradise-hotel",
@@ -308,9 +326,9 @@ export const compatibility: CompatibilityEntry[] = [
 ];
 
 export const compatibilityMeta = {
-  /** Date the maintainer confirmed the playability and completion reports. */
-  confirmedOn: "2026-09-08",
-  testedOnRelease: "0.3.1-beta.1",
+  /** Documentation update date, not a blanket retest of every title. */
+  updatedOn: "2026-09-24",
+  documentedRelease: "0.3.2",
   host: "NVIDIA GeForce RTX 3070 Ti",
 } as const;
 

@@ -24,6 +24,7 @@ describe("compatibility dataset", () => {
     expect(titles).toEqual(
       [
         "Asterix & Obelix: Slap Them All!",
+        "Big Helmet Heroes",
         "Cat Quest III",
         "Dreaming Sarah",
         "Ghost of Yōtei",
@@ -41,7 +42,7 @@ describe("compatibility dataset", () => {
     );
   });
 
-  it("marks exactly the seven titles the maintainer completed", () => {
+  it("marks exactly the eight titles the maintainer completed", () => {
     const playable = compatibility
       .filter((entry) => entry.tier === "playable")
       .map((entry) => entry.title)
@@ -54,11 +55,12 @@ describe("compatibility dataset", () => {
         "Dreaming Sarah",
         "Jets 'n' Guns 2",
         "Jurassic Park Classic Games Collection",
+        "Mighty Morphin Power Rangers: Rita's Rewind",
         "Quake II (2023)",
         "Terminator 2D: No Fate",
       ].sort(),
     );
-    expect(countByTier().playable).toBe(7);
+    expect(countByTier().playable).toBe(8);
   });
 
   it("does not claim playability for Ghost of Yotei", () => {
@@ -68,16 +70,17 @@ describe("compatibility dataset", () => {
     expect(yotei).toBeDefined();
     expect(yotei!.tier).not.toBe("playable");
     expect(yotei!.status.toLowerCase()).toContain("not playable");
-    expect(yotei!.performance).toContain("0.6 FPS");
+    expect(yotei!.performance).toContain("0.73 FPS");
   });
 
-  it("does not claim a menu or gameplay for Tetris Effect", () => {
+  it("records Tetris menus without claiming verified gameplay", () => {
     const tetris = compatibility.find(
       (entry) => entry.slug === "tetris-effect-connected",
     );
     expect(tetris).toBeDefined();
     expect(tetris!.tier).toBe("intro");
-    expect(tetris!.notes).toContain("Neither a menu nor gameplay is claimed");
+    expect(tetris!.status).toContain("Journey Mode selection");
+    expect(tetris!.notes).toContain("Gameplay and longer-run stability remain unverified");
   });
 
   it("records REANIMAL's incomplete menu labels as a known limit", () => {
@@ -103,14 +106,14 @@ describe("compatibility dataset", () => {
     expect(byslug.get("the-precinct")!.performance).toContain("2.1 s");
     expect(byslug.get("ritas-rewind")!.performance).toContain("13–20 ms");
     expect(byslug.get("tetris-effect-connected")!.performance).toContain(
-      "3.3–3.8 seconds",
+      "318–396 ms",
     );
   });
 
   it("attributes every timing to the documented test host", () => {
     expect(compatibilityMeta.host).toBe("NVIDIA GeForce RTX 3070 Ti");
-    expect(compatibilityMeta.confirmedOn).toBe("2026-09-08");
-    expect(compatibilityMeta.testedOnRelease).toBe("0.3.1-beta.1");
+    expect(compatibilityMeta.updatedOn).toBe("2026-09-24");
+    expect(compatibilityMeta.documentedRelease).toBe("0.3.2");
   });
 
   it("gives every entry a unique slug", () => {

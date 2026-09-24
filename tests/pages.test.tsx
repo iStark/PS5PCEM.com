@@ -56,7 +56,7 @@ describe("home page", () => {
     render(<HomePage />);
 
     expect(
-      screen.getAllByRole("link", { name: /Download 0\.3\.1-beta\.1/ }).length,
+      screen.getAllByRole("link", { name: /Download 0\.3\.2/ }).length,
     ).toBeGreaterThan(0);
     expect(
       screen.getByRole("link", { name: /See the test results/ }),
@@ -105,10 +105,11 @@ describe("download page", () => {
     }
   });
 
-  it("states the unsigned-binary warning and the requirements", () => {
+  it("states the signing identity, trust limitation and requirements", () => {
     render(<DownloadPage />);
 
-    expect(screen.getByText("The binaries are unsigned")).toBeInTheDocument();
+    expect(screen.getByText("Signed applications and installer")).toBeInTheDocument();
+    expect(screen.getByText(/Artur Strazewicz \/ PS5PCEM/)).toHaveTextContent("self-signed");
     expect(screen.getByText(/Windows 10 version 2004/)).toBeInTheDocument();
     expect(screen.getByText(/Vulkan 1\.2/)).toBeInTheDocument();
   });
@@ -184,7 +185,7 @@ describe("extract page", () => {
     expect(screen.getByText("pkgextractor.exe")).toBeInTheDocument();
     expect(screen.getByText(/Debug packages only/)).toBeInTheDocument();
     expect(
-      screen.getByText(/Inner PFS that holds eboot.bin/i),
+      screen.getByText(/Kraken-compressed blocks and NAPS-mapped payloads/i),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: "Download the build" }),

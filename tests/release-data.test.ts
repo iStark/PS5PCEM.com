@@ -10,9 +10,9 @@ import { formatBytes, formatDate, shortHash } from "@/lib/format";
 
 describe("release data", () => {
   it("points at the current published tag", () => {
-    expect(latestRelease.version).toBe("0.3.1-beta.1");
-    expect(latestRelease.tag).toBe("v0.3.1-beta.1");
-    expect(latestRelease.prerelease).toBe(true);
+    expect(latestRelease.version).toBe("0.3.2");
+    expect(latestRelease.tag).toBe("v0.3.2");
+    expect(latestRelease.prerelease).toBe(false);
   });
 
   it("serves every asset from the matching GitHub release", () => {
@@ -28,9 +28,9 @@ describe("release data", () => {
   it("publishes the portable ZIP and the per-user installer", () => {
     const names = latestRelease.assets.map((asset) => asset.fileName);
     expect(names).toContain(
-      "PS5PCEM-0.3.1-beta.1-windows-x64-portable.zip",
+      "PS5PCEM-0.3.2-windows-x64-portable.zip",
     );
-    expect(names).toContain("PS5PCEM-0.3.1-beta.1-windows-x64-setup.exe");
+    expect(names).toContain("PS5PCEM-0.3.2-windows-x64-setup.exe");
     expect(names).toContain("SHA256SUMS.txt");
   });
 
@@ -46,11 +46,11 @@ describe("release data", () => {
     );
 
     expect(
-      byName.get("PS5PCEM-0.3.1-beta.1-windows-x64-portable.zip")!.sha256,
-    ).toBe("a33d7b9279db9a027728838ac7e3c3baf8d7523b3c54d91d18fe8bcf20bdc093");
+      byName.get("PS5PCEM-0.3.2-windows-x64-portable.zip")!.sha256,
+    ).toBe("384ae82e6ae30f5800953af513f1eb167f95381884ca0add01a636236f5855a8");
     expect(
-      byName.get("PS5PCEM-0.3.1-beta.1-windows-x64-setup.exe")!.sha256,
-    ).toBe("e1f7a9390a7969d592ae5df2943c73e328543c065936a806b93acaf9c283e96c");
+      byName.get("PS5PCEM-0.3.2-windows-x64-setup.exe")!.sha256,
+    ).toBe("bba5e8d8f3d10c6ce7f6958d36e1f8ee86e26696331a3b389d6b1b5835e8c974");
 
     for (const asset of latestRelease.assets) {
       if (asset.sha256) {
@@ -121,9 +121,9 @@ describe("formatting helpers", () => {
 
   it("shortens long hashes but leaves short ones alone", () => {
     const hash =
-      "a33d7b9279db9a027728838ac7e3c3baf8d7523b3c54d91d18fe8bcf20bdc093";
+      "384ae82e6ae30f5800953af513f1eb167f95381884ca0add01a636236f5855a8";
     expect(shortHash(hash)).toBe(`${hash.slice(0, 10)}…${hash.slice(-10)}`);
-    expect(shortHash(hash, 4)).toBe("a33d…c093");
+    expect(shortHash(hash, 4)).toBe("384a…55a8");
     expect(shortHash("abc")).toBe("abc");
   });
 });

@@ -27,7 +27,7 @@ repository's own documentation, and the test suite pins them to it:
 |---|---|
 | `src/data/compatibility.ts` | `docs/project-status.md` |
 | `src/data/subsystems.ts` | `docs/implementation-status.md` |
-| `src/data/release.ts` | GitHub release `v0.3.1-beta.1` and `SHA256SUMS.txt` |
+| `src/data/release.ts` | GitHub release `v0.3.2`, its release notes, and `SHA256SUMS.txt` |
 | `src/data/gallery.ts` | `docs/project-status.md` screenshots |
 | `public/images/` | `docs/images/` |
 
@@ -54,10 +54,10 @@ npm run build      # production build
 `npm test` runs four suites:
 
 - **`tests/compatibility-data.test.ts`** — pins the compatibility dataset to
-  `project-status.md`: the exact set of tested titles, which five are confirmed
+  `project-status.md` and the release notes: the exact set of tested titles, which eight are confirmed
   completable, the measured frame timings, and the claims the project
   deliberately does *not* make (Ghost of Yōtei is not playable, Tetris Effect
-  claims neither a menu nor gameplay). Also verifies every referenced
+  reaches menus but gameplay remains unverified). Also verifies every referenced
   screenshot exists in `public/`.
 - **`tests/release-data.test.ts`** — checks that every download URL resolves to
   the matching GitHub release tag, that both binaries carry their published
@@ -66,7 +66,7 @@ npm run build      # production build
 - **`tests/compatibility-table.test.tsx`** — filtering, search, the
   expand/collapse behaviour of each result, and alt text on every screenshot.
 - **`tests/pages.test.tsx`** — each page renders its data: download links open
-  externally with `rel="noopener"`, the legal and unsigned-binary notices are
+  externally with `rel="noopener"`, the legal and signing notices are
   present, and the footer carries the license and non-affiliation notice.
 
 ## Updating for a new release

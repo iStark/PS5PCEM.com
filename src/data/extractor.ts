@@ -8,7 +8,7 @@ export const extractor = {
   cli: "pkgextractor <game.pkg> [-o <output-dir>]",
   title: "PS5 package extractor",
   summary:
-    "A separate command-line tool, invoked from the launcher, that reads a PS5 debug package (FPKG / FIH), writes unencrypted metadata into sce_sys, and unpacks uncompressed SELF modules (eboot.bin and sce_module) from the inner PFS.",
+    "Included with PS5PCEM 0.3.2, pkgextractor reads supported PS5 debug packages (FPKG / FIH), writes sce_sys metadata, and extracts application files from the inner PFS, including observed NAPS layouts and Kraken-compressed payloads.",
 } as const;
 
 export const extractorSteps = [
@@ -22,13 +22,15 @@ export const extractorSteps = [
   },
   {
     title: "Then launch as usual",
-    body: "The output folder is the game folder. Debug PLAIN-NOAUTH packages now include eboot.bin (and other uncompressed SELF modules under sce_module). Launch from that folder like any other dump.",
+    body: "After a successful extraction, select the output folder like any other dump. Supported debug packages include eboot.bin, sce_module files, and the inner application assets. Extraction alone does not guarantee that a title is compatible with the emulator.",
   },
 ] as const;
 
 export const extractorWrites = [
   "eboot.bin (uncompressed SCE_DYNEXEC SELF from the nested pfs_image.dat)",
   "sce_module/*.prx (other uncompressed SELF modules from the same image)",
+  "Inner application files, including supported Kraken-compressed blocks and NAPS-mapped payloads",
+  "SELF dynlib-data tails required by the extracted executables",
   "sce_sys/param.json (title id, content id, localized names)",
   "sce_sys/icon0.png and pic0.png (and their DDS siblings when present)",
   "PlayGo tables (playgo-chunk.dat, playgo-hash-table.dat, playgo-ficm.dat)",
@@ -37,7 +39,7 @@ export const extractorWrites = [
 
 export const extractorLimits = [
   "Retail packages (FIH signed byte 0x80 / CNT-only retail images) are refused. They need console image keys that this project does not ship.",
-  "Kraken-compressed inner payloads (level data, textures, most /app0 files) are not unpacked yet. A debug extract can launch eboot.bin but may still miss game assets.",
+  "Support covers the debug layouts observed in local tests; unfamiliar or damaged packages may still fail to extract.",
   "Encrypted CNT entries (licenses, some npbind records) are skipped rather than written as garbage.",
   "The tool is for dumps and debug FPKGs you are legally allowed to access. Game content is not included with the emulator.",
 ] as const;
