@@ -13,11 +13,11 @@ export type Capture = {
 
 export const captures: Capture[] = [
   {
-    src: "/images/subnautica-below-zero-title.png",
-    alt: "Subnautica Below Zero title scene with ocean, ice and pengwings rendered by PS5PCEM",
-    title: "Subnautica: Below Zero — animated title scene",
+    src: "/images/subnautica-below-zero-menu.png",
+    alt: "Subnautica Below Zero main menu showing Play, Options and Credits in PS5PCEM",
+    title: "Subnautica: Below Zero — main menu",
     caption:
-      "PPSA02457 v1.022.125, September 26, 2026. The guest renderer draws the title logo, ocean, ice and pengwings after a file descriptor reuse fix resolves the startup crash. Menu options are not visible in this capture; menu interaction and gameplay remain unverified.",
+      "PPSA02457 v1.022.125, September 26, 2026. Loading the game's FMOD plugins restores platform initialization after the file descriptor startup fix. Enter opens this menu with Play, Options and Credits. Captured from the running emulator; rendering artifacts remain and gameplay is unverified.",
   },
   {
     src: "/images/launcher-library.png",

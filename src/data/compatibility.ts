@@ -72,15 +72,17 @@ export const compatibility: CompatibilityEntry[] = [
     slug: "subnautica-below-zero",
     title: "Subnautica: Below Zero",
     tier: "intro",
-    status: "Animated title scene · menu interaction and gameplay unverified",
-    headline: "Startup crash resolved; the animated title scene renders.",
+    status: "Main menu renders · gameplay unverified",
+    headline: "FMOD loading restores the main menu after the startup crash fix.",
     milestone:
-      "Verified on September 26, 2026 with PPSA02457 v1.022.125. Distinct guest file descriptor identities prevent Unity's read-ahead cache from confusing two resource files. Two 120-second runs without live firmware tracing passed the original startup fault and rendered the title logo, ocean, ice and pengwings.",
+      "Verified on September 26, 2026 with PPSA02457 v1.022.125. Distinct guest file descriptor identities resolve the startup fault. Loading the game's FMOD plugins allows platform initialization to finish: Enter opens the main menu from Press Options, showing Play, Options and Credits over the animated ocean scene.",
     notes:
-      "Development-build result; the existing 0.3.2 download predates this fix. Menu options are not visible in the capture. Menu interaction, gameplay, visual accuracy and longer-run stability remain unverified; playability is not claimed.",
+      "Development-build result; the existing 0.3.2 download predates these fixes. Rendering artifacts and intermittent label issues remain. Gameplay, audio correctness and longer-run stability are unverified; playability is not claimed.",
+    performance:
+      "A 180-second menu run on the RTX 3070 Ti test host sampled 193–223 ms per frame, median 204 ms (about 4.9 FPS), after device-local compute buffers and batched scalar reads. The game still renders internally at 3840×2160.",
     image: {
-      src: "/images/subnautica-below-zero-title.png",
-      alt: "Subnautica Below Zero title scene with ocean, ice and pengwings rendered by PS5PCEM",
+      src: "/images/subnautica-below-zero-menu.png",
+      alt: "Subnautica Below Zero main menu showing Play, Options and Credits in PS5PCEM",
     },
     confirmedOn: "2026-09-26",
   },
