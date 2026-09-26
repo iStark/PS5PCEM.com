@@ -73,18 +73,18 @@ export const compatibility: CompatibilityEntry[] = [
     title: "Subnautica: Below Zero",
     tier: "intro",
     status: "Main menu renders · gameplay unverified",
-    headline: "FMOD loading restores the main menu after the startup crash fix.",
+    headline: "The main menu now renders at native 1080p with improved buffer reuse.",
     milestone:
-      "Verified on September 26, 2026 with PPSA02457 v1.022.125. Distinct guest file descriptor identities resolve the startup fault. Loading the game's FMOD plugins allows platform initialization to finish: Enter opens the main menu from Press Options, showing Play, Options and Credits over the animated ocean scene.",
+      "Rechecked on September 27, 2026 with PPSA02457 v1.022.125. After the file descriptor and FMOD fixes, Enter opens Play, Options and Credits over the animated ocean scene. The default 1920×1080 setting now reaches Unity's startup configuration through a virtual file, leaving installed game files unchanged. Buffer reuse and memory-access improvements apply across titles.",
     notes:
-      "Development-build result; the existing 0.3.2 download predates these fixes. Rendering artifacts and intermittent label issues remain. Gameplay, audio correctness and longer-run stability are unverified; playability is not claimed.",
+      "Development-build result; the existing 0.3.2 download predates these fixes. The 30 FPS menu target remains unmet. Rendering artifacts and intermittent label issues remain. Gameplay, audio correctness and longer-run stability are unverified; playability is not claimed. Other engines can still choose their own internal render resolution.",
     performance:
-      "A 180-second menu run on the RTX 3070 Ti test host sampled 193–223 ms per frame, median 204 ms (about 4.9 FPS), after device-local compute buffers and batched scalar reads. The game still renders internally at 3840×2160.",
+      "A 180-second ReleaseFast run on the RTX 3070 Ti host sampled 100–121 ms per frame from flip 600 onward, median 105.5 ms (about 9.5 FPS), at native 1920×1080. The earlier 4K run had a median of 204 ms (4.9 FPS). Graphics-command processing and GPU waits remain the main bottlenecks.",
     image: {
       src: "/images/subnautica-below-zero-menu.png",
       alt: "Subnautica Below Zero main menu showing Play, Options and Credits in PS5PCEM",
     },
-    confirmedOn: "2026-09-26",
+    confirmedOn: "2026-09-27",
   },
   {
     slug: "terminator-2d-no-fate",
