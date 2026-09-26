@@ -39,7 +39,7 @@ describe("<CompatibilityTable />", () => {
     expect(
       screen.queryByRole("heading", { name: "Pistol Whip" }),
     ).not.toBeInTheDocument();
-    expect(screen.getByText(/Showing 8 of 15 tested titles\./)).toBeInTheDocument();
+    expect(screen.getByText(/Showing 8 of 16 tested titles\./)).toBeInTheDocument();
   });
 
   it("marks the active filter as pressed", async () => {

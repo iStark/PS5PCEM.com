@@ -35,6 +35,7 @@ describe("compatibility dataset", () => {
         "Propagation: Paradise Hotel",
         "Quake II (2023)",
         "REANIMAL",
+        "Subnautica: Below Zero",
         "Terminator 2D: No Fate",
         "Tetris Effect: Connected",
         "The Precinct",
@@ -112,7 +113,7 @@ describe("compatibility dataset", () => {
 
   it("attributes every timing to the documented test host", () => {
     expect(compatibilityMeta.host).toBe("NVIDIA GeForce RTX 3070 Ti");
-    expect(compatibilityMeta.updatedOn).toBe("2026-09-24");
+    expect(compatibilityMeta.updatedOn).toBe("2026-09-26");
     expect(compatibilityMeta.documentedRelease).toBe("0.3.2");
   });
 

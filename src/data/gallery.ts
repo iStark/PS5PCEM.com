@@ -13,6 +13,13 @@ export type Capture = {
 
 export const captures: Capture[] = [
   {
+    src: "/images/subnautica-below-zero-title.png",
+    alt: "Subnautica Below Zero title scene with ocean, ice and pengwings rendered by PS5PCEM",
+    title: "Subnautica: Below Zero — animated title scene",
+    caption:
+      "PPSA02457 v1.022.125, September 26, 2026. The guest renderer draws the title logo, ocean, ice and pengwings after a file descriptor reuse fix resolves the startup crash. Menu options are not visible in this capture; menu interaction and gameplay remain unverified.",
+  },
+  {
     src: "/images/launcher-library.png",
     alt: "PS5PCEM launcher showing its recent-game library with cover art",
     title: "The launcher",

@@ -69,6 +69,22 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    slug: "subnautica-below-zero",
+    title: "Subnautica: Below Zero",
+    tier: "intro",
+    status: "Animated title scene · menu interaction and gameplay unverified",
+    headline: "Startup crash resolved; the animated title scene renders.",
+    milestone:
+      "Verified on September 26, 2026 with PPSA02457 v1.022.125. Distinct guest file descriptor identities prevent Unity's read-ahead cache from confusing two resource files. Two 120-second runs without live firmware tracing passed the original startup fault and rendered the title logo, ocean, ice and pengwings.",
+    notes:
+      "Development-build result; the existing 0.3.2 download predates this fix. Menu options are not visible in the capture. Menu interaction, gameplay, visual accuracy and longer-run stability remain unverified; playability is not claimed.",
+    image: {
+      src: "/images/subnautica-below-zero-title.png",
+      alt: "Subnautica Below Zero title scene with ocean, ice and pengwings rendered by PS5PCEM",
+    },
+    confirmedOn: "2026-09-26",
+  },
+  {
     slug: "terminator-2d-no-fate",
     title: "Terminator 2D: No Fate",
     tier: "playable",
@@ -327,7 +343,7 @@ export const compatibility: CompatibilityEntry[] = [
 
 export const compatibilityMeta = {
   /** Documentation update date, not a blanket retest of every title. */
-  updatedOn: "2026-09-24",
+  updatedOn: "2026-09-26",
   documentedRelease: "0.3.2",
   host: "NVIDIA GeForce RTX 3070 Ti",
 } as const;
