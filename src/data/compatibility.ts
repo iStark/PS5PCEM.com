@@ -73,13 +73,13 @@ export const compatibility: CompatibilityEntry[] = [
     title: "Subnautica: Below Zero",
     tier: "intro",
     status: "Main menu renders · gameplay unverified",
-    headline: "Shared graphics optimizations improve the native 1080p menu.",
+    headline: "Deferred GPU completion and shader improvements bring the 1080p menu to about 13.7 FPS.",
     milestone:
-      "Rechecked on September 27, 2026 with PPSA02457 v1.022.125. After the file descriptor and FMOD fixes, Enter opens Play, Options and Credits over the animated ocean scene. The default 1920×1080 setting reaches Unity's startup configuration without editing installed game files. Shared improvements now also reduce repeated shader-resource scans, instruction copies and small memory-copy callbacks.",
+      "Rechecked on September 27, 2026 with PPSA02457 v1.022.125. Enter opens Play, Options and Credits over the animated ocean scene. The default 1920×1080 setting reaches Unity's startup configuration without editing installed game files. Shared improvements now defer submission completion until its GPU ticket retires, structure proven short fragment loops and reduce scalar-resource lookup work.",
     notes:
-      "Development-build result; the existing 0.3.2 download predates these fixes. The 30 FPS menu target remains unmet. Rendering artifacts and intermittent missing labels remain. One intermediate launch faulted during startup; the final measured run did not. Gameplay, audio correctness and longer-run stability are unverified. Other engines can still choose their own internal render resolution.",
+      "Development-build result; the existing 0.3.2 download predates these fixes. The 30 FPS menu target remains unmet. Rendering artifacts and intermittent missing labels remain unresolved. No guest fault or device loss was reported in the measured run; an earlier startup fault has not been isolated. Gameplay, audio correctness and longer-run stability are unverified. Other engines can still choose their own internal render resolution.",
     performance:
-      "The final 180-second ReleaseFast run on the RTX 3070 Ti host sampled 87–129 ms across 24 menu frames, median 91.5 ms (about 10.9 FPS), at native 1920×1080. The preceding 1080p build measured 105.5 ms (9.5 FPS), and the earlier 4K build 204 ms (4.9 FPS). Median frame time fell about 13%; longer frames remain. Graphics preparation and GPU waits still dominate.",
+      "The 180-second ReleaseFast run on the RTX 3070 Ti host sampled 68–86 ms across 24 menu frames, median 73 ms (about 13.7 FPS), at native 1920×1080. The preceding development result was 91.5 ms (10.9 FPS). Median measured GPU waits fell to about 2.4 ms. CPU graphics preparation and command handling now dominate; 30 FPS requires a frame time below 33.3 ms.",
     image: {
       src: "/images/subnautica-below-zero-menu.png",
       alt: "Subnautica Below Zero main menu showing Play, Options and Credits in PS5PCEM",
