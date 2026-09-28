@@ -289,16 +289,16 @@ export const compatibility: CompatibilityEntry[] = [
     title: "Big Helmet Heroes",
     tier: "intro",
     status: "Main menu · tutorial scene renders · playability unverified",
-    headline: "Startup fixes restore loading into the menu and tutorial scene.",
+    headline: "A command-queue stall is fixed; performance remains limited.",
     milestone:
-      "Rechecked on September 28, 2026. Fixed resource-loading failures and invalid empty saves on repeat launches. Three consecutive 90-second launches reached the menu or tutorial without reproducing either startup stall. The existing cache and save files were retained. The September 20 maintainer-approved menu remains the visual reference.",
+      "The September 29 development fix permits valid completion writes to labels immediately before a submitted command range. Previously these writes could be rejected and stop rendering while the process remained alive. Earlier fixes addressed resource-loading failures and empty saves on repeat launches. The September 20 maintainer-approved menu remains the visual reference.",
     notes: "The tutorial character, HUD and scenery render, with remaining artifacts. A complete playthrough, general save recovery and long-session stability are unverified. Public release 0.3.2 predates these development fixes.",
-    performance: "September 28 development build: sampled menu medians changed from 176 to 168.5 ms (5.68 to 5.93 FPS). Tutorial samples remained around 284–288 ms (3.5 FPS), without a meaningful demonstrated gain. CPU resource preparation and readbacks remain expensive; new shader pipelines caused 2.1–3.6-second stalls. 30 FPS is not established.",
+    performance: "September 29 development build: menu samples measure 163 ms (6.13 FPS), versus 165.5 ms (6.04 FPS) in the control. Overlapping ranges do not establish a repeatable improvement. Tutorial samples measure 280 ms (3.57 FPS), without a matched control. Resource preparation, GPU-to-memory transfers and loading stalls remain expensive. 30 FPS has not been reached.",
     image: {
-      src: "/images/big-helmet-heroes-performance-tutorial.png",
-      alt: "Big Helmet Heroes tutorial character and Move and Sprint prompts during the performance check",
+      src: "/images/big-helmet-heroes-coherence-tutorial.png",
+      alt: "Big Helmet Heroes tutorial character, HUD and Move and Sprint prompts after the command-queue fix",
     },
-    confirmedOn: "2026-09-28",
+    confirmedOn: "2026-09-29",
   },
   {
     slug: "tetris-effect-connected",
