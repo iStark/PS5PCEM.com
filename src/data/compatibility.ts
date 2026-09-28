@@ -293,10 +293,10 @@ export const compatibility: CompatibilityEntry[] = [
     milestone:
       "Rechecked on September 28, 2026. Fixed resource-loading failures and invalid empty saves on repeat launches. Three consecutive 90-second launches reached the menu or tutorial without reproducing either startup stall. The existing cache and save files were retained. The September 20 maintainer-approved menu remains the visual reference.",
     notes: "The tutorial character, HUD and scenery render, with remaining artifacts. A complete playthrough, general save recovery and long-session stability are unverified. Public release 0.3.2 predates these development fixes.",
-    performance: "These are startup reliability fixes, not a 30 FPS result. Earlier September 20 menu samples measured 3.2–3.3 FPS.",
+    performance: "September 28 development build: sampled menu medians changed from 176 to 168.5 ms (5.68 to 5.93 FPS). Tutorial samples remained around 284–288 ms (3.5 FPS), without a meaningful demonstrated gain. CPU resource preparation and readbacks remain expensive; new shader pipelines caused 2.1–3.6-second stalls. 30 FPS is not established.",
     image: {
-      src: "/images/big-helmet-heroes-startup-tutorial.png",
-      alt: "Big Helmet Heroes tutorial character, HUD and windmills after the startup fixes",
+      src: "/images/big-helmet-heroes-performance-tutorial.png",
+      alt: "Big Helmet Heroes tutorial character and Move and Sprint prompts during the performance check",
     },
     confirmedOn: "2026-09-28",
   },
