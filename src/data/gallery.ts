@@ -17,7 +17,7 @@ export const captures: Capture[] = [
     alt: "Subnautica Below Zero main menu showing Play, Options and Credits in PS5PCEM",
     title: "Subnautica: Below Zero — main menu",
     caption:
-      "PPSA02457 v1.022.125, September 28, 2026. Frame 512 from the final measured development run, captured at native 1920×1080 after index staging and scalar input preparation changes. Enter opens Play, Options and Credits. Median menu performance is about 16.9 FPS; 30 FPS has not been reached. Rendering artifacts and intermittent missing labels remain unresolved. Gameplay is unverified.",
+      "PPSA02457 v1.022.125, September 28, 2026. Frame 512 from the final measured development run, captured at native 1920×1080 after reducing unnecessary queue checks. Enter opens Play, Options and Credits. Median menu performance is about 17.4 FPS; 30 FPS has not been reached. Rendering artifacts and intermittent missing labels remain unresolved. Gameplay is unverified.",
   },
   {
     src: "/images/launcher-library.png",
