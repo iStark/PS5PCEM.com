@@ -220,16 +220,16 @@ export const compatibility: CompatibilityEntry[] = [
     status:
       "Intro playback · bonus notices · brightness calibration · reaches in-game scenes · not playable",
     headline:
-      "September 29 buffer publication fix prevents old GPU readbacks from replacing newer overlapping output; tree streaks and startup stability remain under investigation.",
+      "September 30 development build fixes scalar-buffer descriptor tables and relocation-only pipeline variants; the tree is reached, with artifacts and severe stalls still present.",
     milestone:
       "Development runs reach the bonus notices, brightness calibration, difficulty selection and later 3D scenes, including the captured tree scene. Intro movies play at about their native 30 FPS in ReleaseFast. Movie audio now starts at the expected 6.3-second point in the verified splash clip; menu audio also works. Loading progress, resource retirement and shader preparation have improved.",
     notes:
-      "A hardware watchpoint identifies an old wide GPU readback overwriting a newer 64-byte producer header. The shared renderer now preserves newer overlapping writes and their ordering through eviction, verified by native Vulkan regressions for both read orders and merged-buffer rebinding. Floating buffer min/max resource fixes and bounded static-query caching remain included. The earlier validated snapshot of 624 programs contains no unknown or unsupported decoded instructions, but missing resources still reject draws and dispatches; complete shader execution is not established. Vertical tree streaks, very slow streaming and long-session stability remain unresolved. Gameplay itself remains unverified. A 25-minute diagnostic run reaches the wolf and tree without a logged guest fault; queued background warmups were cancelled during that run. The new capture still shows streaks, excessive brightness and stray elements. Startup repeatability and a steady-state FPS gain are unverified; public release archives are unchanged.",
+      "The shared renderer now resolves compatible dynamic V# descriptors fetched from scalar-buffer tables. Native GPU regressions cover reads/writes, null and out-of-bounds entries, unequal lengths and relocation. Moving small dynamic tables now produces one pipeline miss and one hit instead of two misses. A final-runner diagnostic repeat reaches the wolf and tree after all 920 background warmups finish naturally. The tree retains vertical streaks and excessive brightness, followed by block-shaped corruption. A traced lighting pass first introduces visible streaks; its root cause is not fixed. All opcodes in 789 captured programs are recognized, but sampled-image failures still skip dispatches. An earlier run exits with 0xC0000005; startup repeatability and long-session stability remain unresolved. Gameplay itself remains unverified; public release archives are unchanged.",
     performance:
-      "An earlier tree measurement presented 22 frames in 30 seconds, about 0.73 FPS. The latest diagnostic run does not establish a matched FPS improvement. Earlier difficulty-selection frames measured 1504–1554 ms, about 0.6 FPS. Reaching these scenes takes minutes and varies between runs.",
+      "The tree remains far below 30 FPS. A debugger-assisted capture shows an 826 ms early tree frame and much longer later stalls, but exception-handling overhead prevents treating those timings as normal FPS. A separate run without the debugger also pauses for over a minute on foreground compute compilation after all background warmups finish. The repeat later stops presenting before the tree with an idle compiler queue; that stall remains unresolved. Transfers, resource churn and other waits remain. An earlier tree sample measured about 0.73 FPS; no matched FPS improvement is established.",
     image: {
-      src: "/images/yotei-buffer-publication-tree.png",
-      alt: "Ghost of Yotei tree after the buffer publication fix, with remaining streaks and excessive brightness",
+      src: "/images/yotei-scalar-tables-tree.png",
+      alt: "Ghost of Yotei tree in the September 30 development run, with vertical lighting streaks and excessive brightness",
     },
   },
   {

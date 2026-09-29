@@ -97,6 +97,20 @@ export const captures: Capture[] = [
       "The menu reference confirmed on September 20, 2026: characters, textures, lighting and colors render correctly across two clean launches. Short menu samples measured 3.2–3.3 FPS. Gameplay has not been verified.",
   },
   {
+    src: "/images/yotei-scalar-tables-tree.png",
+    alt: "Ghost of Yotei burning tree with vertical lighting streaks and excessive brightness",
+    title: "Ghost of Yōtei — scalar-buffer table validation",
+    caption:
+      "September 30, 2026 development build. Unedited 1765×993 capture of the real game window. The debugger-assisted final-runner repeat reaches the wolf and tree after all 920 background warmups finish naturally. Dynamic buffer tables and pipeline reuse pass native GPU tests, but the tree retains lighting streaks and excessive brightness. Severe late compilation stalls remain; no matched FPS gain, stable startup or playability is established. Output is configured for 1080p; public release archives are unchanged.",
+  },
+  {
+    src: "/images/yotei-scalar-tables-transition.png",
+    alt: "Ghost of Yotei later tree transition with block-shaped rendering corruption",
+    title: "Ghost of Yōtei — remaining transition artifacts",
+    caption:
+      "A later unedited capture from the same September 30 session shows block-shaped corruption. The debugger-assisted run records very long foreground compilation and resource-transfer stalls. Debugger overhead is unmeasured, so these timings are not representative FPS; a separate run also confirms compilation pauses without the debugger. This image records an unresolved rendering failure, not a correctness or performance milestone.",
+  },
+  {
     src: "/images/yotei-buffer-publication-tree.png",
     alt: "Ghost of Yotei tree after the buffer publication fix, with remaining streaks and excessive brightness",
     title: "Ghost of Yōtei — buffer publication check",
