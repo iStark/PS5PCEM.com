@@ -34,6 +34,13 @@ export const captures: Capture[] = [
       "The Red Ranger in the Command Center training stage, with the HUD, health bar, objectives and controller prompts. The maintainer confirmed the game is playable and completable on September 24, 2026.",
   },
   {
+    src: "/images/big-helmet-heroes-buffer-pool-tutorial.png",
+    alt: "Big Helmet Heroes tutorial with the character, HUD, windmills and movement prompts",
+    title: "Big Helmet Heroes — fewer Vulkan allocations",
+    caption:
+      "September 29, 2026 development build. An unedited capture of the actual game window with the default 32 MiB pool for completed Vulkan buffers. Separate matched samples measure 6.54 FPS in the menu and 3.77 FPS in the tutorial. Tutorial buffer creation and destruction cost falls from 28.8 to 15.8 ms; frame ranges overlap, so a repeatable FPS gain is not established. 30 FPS has not been reached. Output is 1080p, with larger internal targets. Visual artifacts remain; full playability and long-session stability are unverified. Public release 0.3.2 predates these changes.",
+  },
+  {
     src: "/images/big-helmet-heroes-page-watches-tutorial.png",
     alt: "Big Helmet Heroes tutorial after the shared page-watch optimization",
     title: "Big Helmet Heroes — cheaper page watches",
