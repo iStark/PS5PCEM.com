@@ -220,16 +220,16 @@ export const compatibility: CompatibilityEntry[] = [
     status:
       "Intro playback · bonus notices · brightness calibration · reaches in-game scenes · not playable",
     headline:
-      "September 29 shader audit fixes omitted floating buffer atomics; missing resources, vertical tree streaks and intermittent startup crashes remain unresolved.",
+      "September 29 buffer publication fix prevents old GPU readbacks from replacing newer overlapping output; tree streaks and startup stability remain under investigation.",
     milestone:
       "Development runs reach the bonus notices, brightness calibration, difficulty selection and later 3D scenes, including the captured tree scene. Intro movies play at about their native 30 FPS in ReleaseFast. Movie audio now starts at the expected 6.3-second point in the verified splash clip; menu audio also works. Loading progress, resource retirement and shader preparation have improved.",
     notes:
-      "The September 29 audit corrects resource preparation and effect tracking for floating buffer min/max atomics, verified by four native Vulkan cases. Repeated static resource queries now use a bounded cache. A validated snapshot of 624 programs contains no unknown or unsupported decoded instructions, but missing resources still reject draws and dispatches; complete shader execution is not established. Startup controls crash with both executables, and a diagnostic repeat catches an oversized count read from a corrupt or misinterpreted header. Vertical tree streaks, very slow streaming and long-session stability remain unresolved. Gameplay itself remains unverified. No steady-state FPS gain or public-release compatibility improvement is claimed; the image is from the earlier diagnostic run.",
+      "A hardware watchpoint identifies an old wide GPU readback overwriting a newer 64-byte producer header. The shared renderer now preserves newer overlapping writes and their ordering through eviction, verified by native Vulkan regressions for both read orders and merged-buffer rebinding. Floating buffer min/max resource fixes and bounded static-query caching remain included. The earlier validated snapshot of 624 programs contains no unknown or unsupported decoded instructions, but missing resources still reject draws and dispatches; complete shader execution is not established. Vertical tree streaks, very slow streaming and long-session stability remain unresolved. Gameplay itself remains unverified. A 25-minute diagnostic run reaches the wolf and tree without a logged guest fault; queued background warmups were cancelled during that run. The new capture still shows streaks, excessive brightness and stray elements. Startup repeatability and a steady-state FPS gain are unverified; public release archives are unchanged.",
     performance:
-      "The last measured tree scene presented 22 frames in 30 seconds, about 0.73 FPS. Earlier difficulty-selection frames measured 1504–1554 ms, about 0.6 FPS. Reaching these scenes takes minutes and varies between runs.",
+      "An earlier tree measurement presented 22 frames in 30 seconds, about 0.73 FPS. The latest diagnostic run does not establish a matched FPS improvement. Earlier difficulty-selection frames measured 1504–1554 ms, about 0.6 FPS. Reaching these scenes takes minutes and varies between runs.",
     image: {
-      src: "/images/yotei-warmup-priority-tree.png",
-      alt: "Ghost of Yotei burning tree in the September 29 diagnostic repeat with default buffer reuse",
+      src: "/images/yotei-buffer-publication-tree.png",
+      alt: "Ghost of Yotei tree after the buffer publication fix, with remaining streaks and excessive brightness",
     },
   },
   {

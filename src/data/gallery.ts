@@ -97,6 +97,13 @@ export const captures: Capture[] = [
       "The menu reference confirmed on September 20, 2026: characters, textures, lighting and colors render correctly across two clean launches. Short menu samples measured 3.2–3.3 FPS. Gameplay has not been verified.",
   },
   {
+    src: "/images/yotei-buffer-publication-tree.png",
+    alt: "Ghost of Yotei tree after the buffer publication fix, with remaining streaks and excessive brightness",
+    title: "Ghost of Yōtei — buffer publication check",
+    caption:
+      "September 29, 2026 development build. Unedited 1765×993 game-window capture from a 25-minute diagnostic run after the shared overlapping-buffer publication fix. The wolf and tree were reached without a logged guest fault; queued background warmups were cancelled during the run. Vertical streaks, excessive brightness and stray elements remain. No FPS gain, repeatable startup or playability is established. Output is configured for 1080p, with larger internal targets; public release archives are unchanged.",
+  },
+  {
     src: "/images/yotei-warmup-priority-wolf.png",
     alt: "Ghost of Yotei wolf brightness screen with instructions, slider and confirmation glyph",
     title: "Ghost of Yōtei — brightness screen, September 29",
