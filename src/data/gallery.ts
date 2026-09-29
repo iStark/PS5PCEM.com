@@ -34,6 +34,13 @@ export const captures: Capture[] = [
       "The Red Ranger in the Command Center training stage, with the HUD, health bar, objectives and controller prompts. The maintainer confirmed the game is playable and completable on September 24, 2026.",
   },
   {
+    src: "/images/big-helmet-heroes-scalar-history-tutorial.png",
+    alt: "Big Helmet Heroes tutorial with the HUD, windmills, movement prompts and a blue circular effect",
+    title: "Big Helmet Heroes — less scalar bookkeeping",
+    caption:
+      "September 29, 2026 development build. An unedited capture of the actual game window after removing unused scalar-load history from resource checkpoints. Separate matched samples measure 6.37 FPS in the menu and 3.70 FPS in the tutorial. No game FPS improvement is demonstrated. Longer isolated scalar-load fixtures are 9–45% cheaper; short walks are effectively unchanged. 30 FPS has not been reached. Output is 1080p, with larger internal targets. Visual artifacts remain; full playability and long-session stability are unverified. Public release 0.3.2 predates these changes.",
+  },
+  {
     src: "/images/big-helmet-heroes-buffer-pool-tutorial.png",
     alt: "Big Helmet Heroes tutorial with the character, HUD, windmills and movement prompts",
     title: "Big Helmet Heroes — fewer Vulkan allocations",
