@@ -220,16 +220,16 @@ export const compatibility: CompatibilityEntry[] = [
     status:
       "Intro playback · bonus notices · brightness calibration · reaches in-game scenes · not playable",
     headline:
-      "Movie audio works and later 3D scenes render, at about 0.73 FPS. Not playable.",
+      "September 29 repeats reach the wolf brightness screen and burning tree, but an intermittent startup crash remains unresolved; not playable.",
     milestone:
       "Development runs reach the bonus notices, brightness calibration, difficulty selection and later 3D scenes, including the captured tree scene. Intro movies play at about their native 30 FPS in ReleaseFast. Movie audio now starts at the expected 6.3-second point in the verified splash clip; menu audio also works. Loading progress, resource retirement and shader preparation have improved.",
     notes:
-      "Gameplay itself remains unverified. Rendering artifacts and very slow streaming remain, and a loading sequence after the measured tree scene encountered Vulkan device loss. These development captures do not establish stable late-scene gameplay or a full playthrough on the release candidate.",
+      "On September 29, one development launch exited with a guest read fault. Diagnostic repeats reached the wolf and burning tree with buffer reuse both enabled and disabled; disabling reuse is not a proven fix. A separate compiler-queue delay during cache warmup is corrected in development. The startup crash remains unresolved, and no steady-state FPS improvement is established. Rendering artifacts, resource errors and very slow streaming remain. An earlier loading sequence encountered Vulkan device loss. Gameplay itself and long-session stability remain unverified; the new captures do not establish compatibility of the public release archive.",
     performance:
       "The last measured tree scene presented 22 frames in 30 seconds, about 0.73 FPS. Earlier difficulty-selection frames measured 1504–1554 ms, about 0.6 FPS. Reaching these scenes takes minutes and varies between runs.",
     image: {
-      src: "/images/yotei-tree-scene.png",
-      alt: "Ghost of Yotei tree scene rendered by PS5PCEM",
+      src: "/images/yotei-warmup-priority-tree.png",
+      alt: "Ghost of Yotei burning tree in the September 29 diagnostic repeat with default buffer reuse",
     },
   },
   {

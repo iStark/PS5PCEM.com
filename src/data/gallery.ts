@@ -97,6 +97,20 @@ export const captures: Capture[] = [
       "The menu reference confirmed on September 20, 2026: characters, textures, lighting and colors render correctly across two clean launches. Short menu samples measured 3.2–3.3 FPS. Gameplay has not been verified.",
   },
   {
+    src: "/images/yotei-warmup-priority-wolf.png",
+    alt: "Ghost of Yotei wolf brightness screen with instructions, slider and confirmation glyph",
+    title: "Ghost of Yōtei — brightness screen, September 29",
+    caption:
+      "Unedited 1765×993 capture of the real game window in a diagnostic development run with default buffer reuse. Foreground compiler capacity is now reserved during warmup. Another launch of the same executable crashed during startup; the intermittent failure remains unresolved. This capture does not demonstrate a steady-state FPS gain or stable gameplay. Release 0.3.2 predates the change.",
+  },
+  {
+    src: "/images/yotei-warmup-priority-tree.png",
+    alt: "Ghost of Yotei burning tree in the September 29 diagnostic repeat with default buffer reuse",
+    title: "Ghost of Yōtei — burning tree, September 29",
+    caption:
+      "The same diagnostic repeat proceeds beyond brightness calibration into the burning-tree scene with default buffer reuse. A separate run with reuse disabled also reached the tree, so disabling reuse is not a proven crash fix. Resource errors and very slow streaming remain. The unedited game-window capture records a development milestone, not stable gameplay or 30 FPS.",
+  },
+  {
     src: "/images/yotei-tree-scene.png",
     alt: "Ghost of Yotei tree scene rendered by PS5PCEM",
     title: "Ghost of Yōtei — tree scene",
