@@ -220,11 +220,11 @@ export const compatibility: CompatibilityEntry[] = [
     status:
       "Intro playback · bonus notices · brightness calibration · reaches in-game scenes · not playable",
     headline:
-      "September 29 repeats reach the wolf brightness screen and burning tree, but an intermittent startup crash remains unresolved; not playable.",
+      "September 29 shader audit fixes omitted floating buffer atomics; missing resources, vertical tree streaks and intermittent startup crashes remain unresolved.",
     milestone:
       "Development runs reach the bonus notices, brightness calibration, difficulty selection and later 3D scenes, including the captured tree scene. Intro movies play at about their native 30 FPS in ReleaseFast. Movie audio now starts at the expected 6.3-second point in the verified splash clip; menu audio also works. Loading progress, resource retirement and shader preparation have improved.",
     notes:
-      "On September 29, one development launch exited with a guest read fault. Diagnostic repeats reached the wolf and burning tree with buffer reuse both enabled and disabled; disabling reuse is not a proven fix. A separate compiler-queue delay during cache warmup is corrected in development. The startup crash remains unresolved, and no steady-state FPS improvement is established. Rendering artifacts, resource errors and very slow streaming remain. An earlier loading sequence encountered Vulkan device loss. Gameplay itself and long-session stability remain unverified; the new captures do not establish compatibility of the public release archive.",
+      "The September 29 audit corrects resource preparation and effect tracking for floating buffer min/max atomics, verified by four native Vulkan cases. Repeated static resource queries now use a bounded cache. A validated snapshot of 624 programs contains no unknown or unsupported decoded instructions, but missing resources still reject draws and dispatches; complete shader execution is not established. Startup controls crash with both executables, and a diagnostic repeat catches an oversized count read from a corrupt or misinterpreted header. Vertical tree streaks, very slow streaming and long-session stability remain unresolved. Gameplay itself remains unverified. No steady-state FPS gain or public-release compatibility improvement is claimed; the image is from the earlier diagnostic run.",
     performance:
       "The last measured tree scene presented 22 frames in 30 seconds, about 0.73 FPS. Earlier difficulty-selection frames measured 1504–1554 ms, about 0.6 FPS. Reaching these scenes takes minutes and varies between runs.",
     image: {
