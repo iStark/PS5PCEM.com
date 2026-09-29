@@ -97,6 +97,13 @@ export const captures: Capture[] = [
       "The menu reference confirmed on September 20, 2026: characters, textures, lighting and colors render correctly across two clean launches. Short menu samples measured 3.2–3.3 FPS. Gameplay has not been verified.",
   },
   {
+    src: "/images/yotei-catalog-control-tree.png",
+    alt: "Ghost of Yotei difficulty screen and tree in the ordinary control run, with remaining vertical streaks",
+    title: "Ghost of Yōtei — ordinary control capture",
+    caption:
+      "September 30, 2026. Unedited 1765×993 game-window capture from the preceding runner, before bounded warmup catalog replacement. This run reaches the wolf and tree without debugger attachment; lighting streaks and excessive brightness remain. The subsequent patched runner verifies cache retention but later stalls in guest array/reference processing and exits before the tree. This image does not claim a stable tree run or FPS gain for the new runner. Output is configured for 1080p; public release archives are unchanged.",
+  },
+  {
     src: "/images/yotei-scalar-tables-tree.png",
     alt: "Ghost of Yotei burning tree with vertical lighting streaks and excessive brightness",
     title: "Ghost of Yōtei — scalar-buffer table validation",
