@@ -220,16 +220,16 @@ export const compatibility: CompatibilityEntry[] = [
     status:
       "Intro playback · bonus notices · brightness calibration · reaches in-game scenes · not playable",
     headline:
-      "September 30 development build fixes buffer layout reuse and reduces cache searches; severe stalls and rendering defects remain.",
+      "September 30 development build preserves ordered command writes and reaches the tree; lighting defects, missing resources and severe stalls remain.",
     milestone:
       "Development runs reach the bonus notices, brightness calibration, difficulty selection and later 3D scenes, including the captured tree scene. Intro movies play at about their native 30 FPS in ReleaseFast. Movie audio now starts at the expected 6.3-second point in the verified splash clip; menu audio also works. Loading progress, resource retirement and shader preparation have improved.",
     notes:
-      "The shared renderer now preserves changes to a buffer's stride and format when its address and size stay the same. Eight new native GPU cases and the previous 44 publication cases pass. Compute write commits also use the existing address index. The pictured corrected runner reaches the Digital Deluxe Bonus notice, then stalls on black at flip 741 with a corrupt count of 1,060,893,910 records and later crashes. Its 642 captured resident programs contain no unknown decoded opcode, but unresolved resources and two missing-texture warnings remain. The tree's streaks and buffer ownership defect are unresolved. Gameplay itself remains unverified. Public release archives are unchanged.",
+      "Deferred GPU publication now preserves later command-processor writes inside a buffer. Forty new native scenarios and 52 earlier layout/publication scenarios pass. The pictured installed runner reaches the tree without a debugger, but vertical streaks and excessive brightness remain. The 15-minute diagnostic later reaches a black screen at flip 1035 and is stopped by its timer. A snapshot of 756 resident programs contains no unknown decoded opcode; missing sampled resources and explicitly rejected draws/dispatches still confirm incomplete rendering. The earlier command-write runner reproduced the corrupt-count failure, so one successful tree transition does not establish stable startup. Gameplay itself remains unverified. Public release archives are unchanged.",
     performance:
-      "At flip 720, indexed commit lookup checks 4,844 entries instead of the 4,421,655 required by the old linear search for the same matches. That frame still takes 892 ms, uploading about 330 MiB and reading back 232 MiB. One compute-pipeline miss takes 18.27 seconds on the next frame. At the later black-screen stall, GPU work is complete and the compiler is idle while the guest processes an invalid record count. These are diagnostic samples, not matched FPS gains. Large transfers, resource preparation and compilation stalls remain expensive. The tree's historical approximately 0.73 FPS and lighting streaks remain unresolved. No 30 FPS result or stable playability is established.",
+      "The new range index reduces command-write candidate checks from about 1.17 million in an unindexed sample to 2,505–9,538 in indexed samples, with 0.66–1.29 ms spent on those checks. These are different frames, not matched FPS gains. Sampled tree frames take 816–1,212 ms. The 816 ms frame still uploads 331 MiB, reads back 237 MiB and submits 228 command buffers. Pipeline creation causes much longer stalls: one compute pipeline takes 18.3 seconds; a later transition frame takes 72.4 seconds, including 67.4 seconds for ten compute pipeline misses. A subsequent frame takes 117.3 seconds and uploads about 3.9 GiB. The historical tree measurement was approximately 0.73 FPS; these samples are not a controlled comparison with it. Resource preparation, transfers and missing bindings remain major targets. No 30 FPS result or stable playability is established.",
     image: {
-      src: "/images/yotei-buffer-layout-bonus.png",
-      alt: "Ghost of Yotei Digital Deluxe Bonus notice in the corrected buffer-layout runner",
+      src: "/images/yotei-command-writes-tree.png",
+      alt: "Ghost of Yotei tree after the command-write correction, with remaining vertical streaks and excessive brightness",
     },
   },
   {

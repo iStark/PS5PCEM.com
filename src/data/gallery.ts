@@ -97,11 +97,18 @@ export const captures: Capture[] = [
       "The menu reference confirmed on September 20, 2026: characters, textures, lighting and colors render correctly across two clean launches. Short menu samples measured 3.2–3.3 FPS. Gameplay has not been verified.",
   },
   {
+    src: "/images/yotei-command-writes-tree.png",
+    alt: "Ghost of Yotei tree with remaining vertical lighting streaks and excessive brightness",
+    title: "Ghost of Yōtei — ordered command writes",
+    caption:
+      "September 30, 2026. Unedited 1765×993 game-window capture from the installed command-write correction and overlap index, without debugger attachment. Forty new native scenarios plus 52 earlier layout/publication scenarios pass. This run reaches the tree, but streaks, excessive brightness and rejected graphics work remain. Sampled tree frames take 816–1,212 ms; later transition frames take up to 117.3 seconds, and the run ends on black at its 15-minute diagnostic deadline. This is not evidence of a matched FPS gain, stable startup or playability. Output is configured for 1080p; public release archives are unchanged.",
+  },
+  {
     src: "/images/yotei-buffer-layout-bonus.png",
     alt: "Ghost of Yotei Digital Deluxe Bonus notice in the corrected buffer-layout runner",
     title: "Ghost of Yōtei — buffer layout investigation",
     caption:
-      "September 30, 2026. Unedited 1765×993 capture from the installed descriptor-layout correction, which passes eight new native cases plus 44 earlier publication cases. Indexed write commits reduce cache search work, but this run later stalls on black at flip 741 with a corrupt billion-record count and exits with an access violation. This is a bonus notice, not a new tree capture or proof of an FPS improvement. Output is configured for 1080p; public release archives are unchanged.",
+      "September 30, 2026, earlier revision. Unedited 1765×993 capture from the descriptor-layout correction, which passes eight new native cases plus 44 earlier publication cases. Indexed write commits reduce cache search work, but this run later stalls on black at flip 741 with a corrupt billion-record count and exits with an access violation. This is a bonus notice, not a new tree capture or proof of an FPS improvement. Output is configured for 1080p; public release archives are unchanged.",
   },
   {
     src: "/images/yotei-write-spans-bonus.png",
