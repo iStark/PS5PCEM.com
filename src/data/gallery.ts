@@ -97,11 +97,18 @@ export const captures: Capture[] = [
       "The menu reference confirmed on September 20, 2026: characters, textures, lighting and colors render correctly across two clean launches. Short menu samples measured 3.2–3.3 FPS. Gameplay has not been verified.",
   },
   {
+    src: "/images/yotei-write-spans-bonus.png",
+    alt: "Ghost of Yotei bonus notice before the remaining buffer corruption",
+    title: "Ghost of Yōtei — sparse buffer publication",
+    caption:
+      "September 30, 2026. Unedited 1765×993 capture from the installed sparse buffer publication correction. Forty-four native scenarios pass, but this run later stops on black at flip 761 with a corrupt billion-record count in a header still using full-buffer publication. The diagnostic run was deliberately stopped after about 813 seconds. This is a bonus notice, not a new tree capture or an FPS improvement. Output is configured for 1080p; public release archives are unchanged.",
+  },
+  {
     src: "/images/yotei-buffer-rebind-bonus.png",
     alt: "Ghost of Yotei bonus notice before the remaining startup stall",
     title: "Ghost of Yōtei — buffer rebind validation",
     caption:
-      "September 30, 2026. Unedited 1765×993 game-window capture from the installed buffer-rebind correction. Twenty native publication cases pass, but a separate incoming-buffer eviction reproduction still fails. This run reaches the bonus notice, then stalls at flip 801 with a corrupt billion-record count already present in its GPU header. It was deliberately stopped after about 705 seconds. This image does not show the tree, an FPS improvement or stable startup. Output is configured for 1080p; public release archives are unchanged.",
+      "September 30, 2026. Earlier unedited 1765×993 game-window capture from the buffer-rebind correction. At that revision, twenty native publication cases passed while the incoming-buffer eviction reproduction still failed. This run reached the bonus notice, then stalled at flip 801 with a corrupt billion-record count already present in its GPU header. It was deliberately stopped after about 705 seconds. The later sparse-publication change fixes the literal-store reproduction; this older image does not show a tree, an FPS improvement or stable startup. Output is configured for 1080p; public release archives are unchanged.",
   },
   {
     src: "/images/yotei-catalog-control-tree.png",
