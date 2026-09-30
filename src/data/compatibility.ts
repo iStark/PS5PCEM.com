@@ -220,16 +220,16 @@ export const compatibility: CompatibilityEntry[] = [
     status:
       "Intro playback · bonus notices · brightness calibration · reaches in-game scenes · not playable",
     headline:
-      "September 30 development build limits readback to proven buffer writes; the game's header corruption and severe stalls remain.",
+      "September 30 development build fixes buffer layout reuse and reduces cache searches; severe stalls and rendering defects remain.",
     milestone:
       "Development runs reach the bonus notices, brightness calibration, difficulty selection and later 3D scenes, including the captured tree scene. Intro movies play at about their native 30 FPS in ReleaseFast. Movie audio now starts at the expected 6.3-second point in the verified splash clip; menu audio also works. Loading progress, resource retirement and shader preparation have improved.",
     notes:
-      "The shared renderer now copies only the byte ranges proven writable by literal-address buffer stores. This fixes the corresponding incoming-buffer eviction reproduction; 44 native publication cases and neighboring probes pass. Unknown addresses and incomplete resource preparation retain full-buffer coverage. The installed runner reaches the pictured bonus notice, then stops on black at flip 761 before the wolf/tree with a corrupt 1,176,703,636-record count already in its GPU header. Both overlapping writers still use the full-buffer path. The diagnostic run was deliberately stopped after about 813 seconds. A 627-program inventory has no unknown decoded opcode, but unresolved resources and a failed draw remain. Gameplay itself remains unverified. Public release archives are unchanged.",
+      "The shared renderer now preserves changes to a buffer's stride and format when its address and size stay the same. Eight new native GPU cases and the previous 44 publication cases pass. Compute write commits also use the existing address index. The pictured corrected runner reaches the Digital Deluxe Bonus notice, then stalls on black at flip 741 with a corrupt count of 1,060,893,910 records and later crashes. Its 642 captured resident programs contain no unknown decoded opcode, but unresolved resources and two missing-texture warnings remain. The tree's streaks and buffer ownership defect are unresolved. Gameplay itself remains unverified. Public release archives are unchanged.",
     performance:
-      "The narrow correction saves less than 1 KiB per logged frame in this run. A warmed frame still takes 1,034 ms despite zero pipeline misses: 353,344 KiB uploaded, 256,158 KiB read back and 1,758 buffer evictions. Resource preparation and transfers remain expensive. Loading also exposes a 3.17-second Windows memory-mapping batch and a first-use transition spending about 178 seconds creating compute pipelines. The later black screen has idle GPU/compiler queues and a growing guest reference array. The tree is not reached in this run; its historical approximately 0.73 FPS and lighting streaks remain unresolved. No matched FPS gain, 30 FPS result or stable playability is established.",
+      "At flip 720, indexed commit lookup checks 4,844 entries instead of the 4,421,655 required by the old linear search for the same matches. That frame still takes 892 ms, uploading about 330 MiB and reading back 232 MiB. One compute-pipeline miss takes 18.27 seconds on the next frame. At the later black-screen stall, GPU work is complete and the compiler is idle while the guest processes an invalid record count. These are diagnostic samples, not matched FPS gains. Large transfers, resource preparation and compilation stalls remain expensive. The tree's historical approximately 0.73 FPS and lighting streaks remain unresolved. No 30 FPS result or stable playability is established.",
     image: {
-      src: "/images/yotei-write-spans-bonus.png",
-      alt: "Ghost of Yotei bonus notice in the sparse buffer publication validation run",
+      src: "/images/yotei-buffer-layout-bonus.png",
+      alt: "Ghost of Yotei Digital Deluxe Bonus notice in the corrected buffer-layout runner",
     },
   },
   {

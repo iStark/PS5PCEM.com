@@ -97,11 +97,18 @@ export const captures: Capture[] = [
       "The menu reference confirmed on September 20, 2026: characters, textures, lighting and colors render correctly across two clean launches. Short menu samples measured 3.2–3.3 FPS. Gameplay has not been verified.",
   },
   {
+    src: "/images/yotei-buffer-layout-bonus.png",
+    alt: "Ghost of Yotei Digital Deluxe Bonus notice in the corrected buffer-layout runner",
+    title: "Ghost of Yōtei — buffer layout investigation",
+    caption:
+      "September 30, 2026. Unedited 1765×993 capture from the installed descriptor-layout correction, which passes eight new native cases plus 44 earlier publication cases. Indexed write commits reduce cache search work, but this run later stalls on black at flip 741 with a corrupt billion-record count and exits with an access violation. This is a bonus notice, not a new tree capture or proof of an FPS improvement. Output is configured for 1080p; public release archives are unchanged.",
+  },
+  {
     src: "/images/yotei-write-spans-bonus.png",
     alt: "Ghost of Yotei bonus notice before the remaining buffer corruption",
     title: "Ghost of Yōtei — sparse buffer publication",
     caption:
-      "September 30, 2026. Unedited 1765×993 capture from the installed sparse buffer publication correction. Forty-four native scenarios pass, but this run later stops on black at flip 761 with a corrupt billion-record count in a header still using full-buffer publication. The diagnostic run was deliberately stopped after about 813 seconds. This is a bonus notice, not a new tree capture or an FPS improvement. Output is configured for 1080p; public release archives are unchanged.",
+      "September 30, 2026, earlier revision. Unedited 1765×993 capture from the sparse buffer publication correction. Forty-four native scenarios pass, but this run later stops on black at flip 761 with a corrupt billion-record count in a header still using full-buffer publication. The diagnostic run was deliberately stopped after about 813 seconds. This is a bonus notice, not a new tree capture or an FPS improvement. Output is configured for 1080p; public release archives are unchanged.",
   },
   {
     src: "/images/yotei-buffer-rebind-bonus.png",
