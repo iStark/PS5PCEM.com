@@ -220,16 +220,16 @@ export const compatibility: CompatibilityEntry[] = [
     status:
       "Intro playback · bonus notices · brightness calibration · reaches in-game scenes · not playable",
     headline:
-      "September 30 development build adds bounded compute warmup replacement after the scalar-buffer table fixes; tree artifacts and severe stalls remain.",
+      "September 30 development build preserves nested buffer data on rebind; another initialization defect and severe stalls remain.",
     milestone:
       "Development runs reach the bonus notices, brightness calibration, difficulty selection and later 3D scenes, including the captured tree scene. Intro movies play at about their native 30 FPS in ReleaseFast. Movie audio now starts at the expected 6.3-second point in the verified splash clip; menu audio also works. Loading progress, resource retirement and shader preparation have improved.",
     notes:
-      "The shared compute warmup catalog replaces cold completed modules within its existing 512 MiB limit. Reusing a pipeline updates recency without rewriting files, and active warmups remain protected. Seven regression tests and native Vulkan warmup/scalar-buffer probes pass; two newly saved live modules also replay successfully. The installed runner finishes all 920 startup warmups and retains 138 new module files within the bound. It later exits with 0xC0000005 after about 770 seconds, before the tree. The pictured ordinary control run uses the preceding runner and reaches the tree, with vertical streaks and excessive brightness. Recognizing all opcodes in an earlier 789-program inventory does not establish complete shader execution: sampled-image failures still occur. Startup and long-session stability remain unresolved. Gameplay itself remains unverified. Public release archives are unchanged.",
+      "The shared renderer merges newer overlapping data before reusing a buffer for another partial GPU write. Twenty native publication scenarios and neighboring storage/descriptor probes pass; a bounded write history filters unnecessary cache scans. A separate opt-in incoming-buffer eviction probe still reproduces damaged CPU initialization. The installed runner reaches the pictured bonus notice, then stalls at flip 801 before the wolf/tree with a corrupt billion-record count. Its GPU header backing already contains the bad bytes. The diagnostic run was deliberately stopped after about 705 seconds, not observed to crash. The earlier 512 MiB warmup catalog retention fix remains. A 216-program inventory has no unknown decoded opcode, but resource-resolution gaps and a failed draw remain. Gameplay itself remains unverified. Public release archives are unchanged.",
     performance:
-      "The tree remains far below 30 FPS. Foreground compilation pauses occur without a debugger, but they are not the only cause of black screens. In the installed-runner repeat, flip 745 remains unchanged for over six minutes with idle GPU/compiler queues while the guest CPU grows a 64-byte-record array and repeatedly searches its reference lists. The sampled array grows past 786,000 records; the cause and subsequent crash are unresolved. Transfers, resource preparation and cache churn remain expensive. Historical steady-tree performance was about 0.73 FPS. The catalog fix improves retention for later launches; no matched FPS gain or playability is established.",
+      "The latest run does not reach the tree and supplies no new tree-FPS measurement. Before the stall, flip 780 takes 779 ms despite zero graphics/compute pipeline misses: it uploads 327,112 KiB, reads back 243,051 KiB and evicts 1,117 cached buffers. Resource preparation, transfers and cache churn remain expensive. The reference array later grows to 655,360 entries while GPU/compiler queues are idle. Historical steady-tree performance was about 0.73 FPS; its lighting streaks remain unresolved. No matched FPS gain, 30 FPS result or stable playability is established.",
     image: {
-      src: "/images/yotei-catalog-control-tree.png",
-      alt: "Ghost of Yotei tree in the ordinary control run before catalog replacement, with vertical lighting streaks and excessive brightness",
+      src: "/images/yotei-buffer-rebind-bonus.png",
+      alt: "Ghost of Yotei bonus notice in the buffer-rebind validation run before the remaining stall",
     },
   },
   {

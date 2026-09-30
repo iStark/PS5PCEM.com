@@ -97,6 +97,13 @@ export const captures: Capture[] = [
       "The menu reference confirmed on September 20, 2026: characters, textures, lighting and colors render correctly across two clean launches. Short menu samples measured 3.2–3.3 FPS. Gameplay has not been verified.",
   },
   {
+    src: "/images/yotei-buffer-rebind-bonus.png",
+    alt: "Ghost of Yotei bonus notice before the remaining startup stall",
+    title: "Ghost of Yōtei — buffer rebind validation",
+    caption:
+      "September 30, 2026. Unedited 1765×993 game-window capture from the installed buffer-rebind correction. Twenty native publication cases pass, but a separate incoming-buffer eviction reproduction still fails. This run reaches the bonus notice, then stalls at flip 801 with a corrupt billion-record count already present in its GPU header. It was deliberately stopped after about 705 seconds. This image does not show the tree, an FPS improvement or stable startup. Output is configured for 1080p; public release archives are unchanged.",
+  },
+  {
     src: "/images/yotei-catalog-control-tree.png",
     alt: "Ghost of Yotei difficulty screen and tree in the ordinary control run, with remaining vertical streaks",
     title: "Ghost of Yōtei — ordinary control capture",
