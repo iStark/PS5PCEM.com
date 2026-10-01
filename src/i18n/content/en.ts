@@ -381,6 +381,11 @@ const content: Content = {
       "title": "Colour mip sampling corrected on the GPU",
       "summary": "Resident texture lookup now keeps mip levels and array slices distinct. Complete colour pyramids can be assembled on the GPU. A six-level RG32F probe verifies each level, a same-frame rewrite and sampling without extra target readbacks or texture uploads; 128 focused tests pass. The game candidate still faults during loading, including diagnostic synchronous and 8192-entry-cache runs. A world FPS gain and the final lighting result remain unverified."
     },
+    "subnautica-srgb-spans": {
+      "title": "sRGB colour writes corrected; mip checks reuse their ranges",
+      "summary": "The captured G-buffer and final output requested sRGB but used UNORM attachments, darkening colours when read back as sRGB. The renderer now encodes colour writes and preserves encoded bytes during display transfer. A GPU regression verifies sampling, alpha and scanout, including Vulkan validation; 129 focused tests pass. Mip backing checks also retain their calculated byte ranges. See the report for live runs and remaining limits. The new run reaches the snowy world with visibly brighter materials and records 9.49 FPS over 30.05 seconds (baseline: 9.13 FPS). Different weather and effects prevent a controlled speedup claim; 30 FPS, the unresolved scalar binding and intermittent loading failures remain open.",
+      "imageAlt": "Subnautica Below Zero snowy crash site and survival HUD after correcting sRGB colour writes"
+    },
     "subnautica-mip-coherence": {
       "title": "Tracked mip memory: repeated transfers removed",
       "summary": "A real-game trace found ten RG32F mip readbacks per frame (2730 KiB) followed by repeated uploads. Shared-memory validation now distinguishes a verified GPU publication from a CPU replacement. All four Vulkan cases with linear/packed mips and memory tracking pass, alongside 129 focused tests. In the new game run, menu render-target uploads and readbacks fall to zero and the ten-level pyramid stays on the GPU. Dark lighting, intermittent loading failures and the 30 FPS target remain open. The candidate reaches the snowy world; a 30.01-second stationary sample records 260 flips (8.66 FPS), so an overall FPS gain is not established.",

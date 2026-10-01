@@ -40,6 +40,14 @@ export type HistoryEntry = {
 export const history: HistoryEntry[] = [
   // Subnautica: Below Zero — PPSA02457 v1.022.125
   {
+    id: "subnautica-srgb-spans",
+    slug: "subnautica-below-zero",
+    date: "2026-10-01",
+    release: null,
+    image: "/images/subnautica-below-zero-srgb.png",
+    source: devReport("subnautica-backing-spans-2026-10-01.md"),
+  },
+  {
     id: "subnautica-mip-coherence",
     slug: "subnautica-below-zero",
     date: "2026-10-01",
