@@ -30,25 +30,18 @@ export type Content = {
 const content: Content = {
   games: {
     "subnautica-below-zero": {
-      status: "New Game reaches loading · gameplay still blocked",
-      headline:
-        "Survival mode now starts a save and begins loading the world, then faults.",
-      summary:
-        "Tested as PPSA02457 v1.022.125 on October 1 development builds. The runner mounts writable per-title temporary storage, so picking Survival finally leaves the mode panel and creates a save workspace instead of hanging on it. World loading then still dies in a worker thread, which means no gameplay is established.",
-      strengths: [
-        "Title screen and the Play / Options / Credits menu render at native 1080p.",
-        "Choosing Survival creates the temporary save workspace and starts the world load.",
-        "Signal delivery keeps an interrupted guest stack and its register roots intact across garbage collection.",
+      "status": "Playable · Completable",
+      "headline": "New Game reaches the opening world, with camera movement and walking verified.",
+      "summary": "October 1 development build, PPSA02457 v1.022.125: Survival passes loading and the intro, then renders the snowy crash site and HUD. Fixes protect CPU memory from stale GPU writeback, retire released storage buffers and preserve colour during depth-only draws. RG32F attachments, mip views and D16 shadow bias are supported.",
+      "strengths": [
+        "New Game, intro, world rendering, camera input and walking verified."
       ],
-      limits: [
-        "World loading still faults in a worker thread, so gameplay is not reached.",
-        "Shader and resource failures, rendering artifacts and low frame rates are all open.",
-        "Save persistence and audio correctness have not been checked.",
+      "limits": [
+        "Dark lighting, visual artifacts and long pauses remain.",
+        "This validation did not include a full playthrough, save recovery or audio correctness."
       ],
-      performance:
-        "Menu measurements from September 28 sit around 17 FPS. The startup work since then was not a performance change, and the 30 FPS target is still unmet.",
-      imageAlt:
-        "Subnautica: Below Zero world-loading screen, a ship above the planet, rendered by PS5PCEM",
+      "performance": "A stationary world sample records 313 flips in 30.01 seconds: 10.43 FPS. Earlier menu measurements were about 17 FPS. The 30 FPS target remains unmet.",
+      "imageAlt": "Subnautica: Below Zero snowy opening area with the survival HUD, captured from PS5PCEM"
     },
 
     "terminator-2d-no-fate": {
@@ -376,11 +369,9 @@ const content: Content = {
         "Subnautica: Below Zero menu from the measured development build, rendered by PS5PCEM",
     },
     "subnautica-new-game": {
-      title: "Survival mode starts a save, then world loading faults",
-      summary:
-        "Selecting Survival used to leave the New Game panel open, because clearing the temporary save threw out of bounds and the menu kept its busy flag. With writable temporary storage mounted, the save workspace is created and loading begins — but a worker thread still faults during world load, so gameplay is not established.",
-      imageAlt:
-        "Subnautica: Below Zero world-loading screen with a ship above the planet, rendered by PS5PCEM",
+      "title": "New Game reaches the opening world",
+      "summary": "October 1 development build, PPSA02457 v1.022.125: Survival passes loading and the intro, then renders the snowy crash site and HUD. Fixes protect CPU memory from stale GPU writeback, retire released storage buffers and preserve colour during depth-only draws. RG32F attachments, mip views and D16 shadow bias are supported. This validation did not include a full playthrough, save recovery or audio correctness.",
+      "imageAlt": "Subnautica: Below Zero snowy opening area with the survival HUD, captured from PS5PCEM"
     },
 
     // Ghost of Yōtei

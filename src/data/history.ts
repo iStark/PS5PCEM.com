@@ -75,7 +75,7 @@ export const history: HistoryEntry[] = [
     slug: "subnautica-below-zero",
     date: "2026-10-01",
     release: null,
-    image: "/images/subnautica-below-zero-new-game-loading.png",
+    image: "/images/subnautica-below-zero-new-game-world.png",
     source: devReport("subnautica-new-game-2026-10-01.md"),
   },
 

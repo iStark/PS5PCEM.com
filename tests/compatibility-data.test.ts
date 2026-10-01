@@ -44,7 +44,7 @@ describe("compatibility dataset", () => {
     );
   });
 
-  it("marks exactly the eight titles the maintainer completed", () => {
+  it("reflects the nine titles graded playable by the maintainer", () => {
     expect(
       compatibility
         .filter((entry) => entry.tier === "playable")
@@ -60,9 +60,10 @@ describe("compatibility dataset", () => {
         "Mighty Morphin Power Rangers: Rita's Rewind",
         "Quake II (2023)",
         "Terminator 2D: No Fate",
+        "Subnautica: Below Zero",
       ].sort(),
     );
-    expect(countByTier().playable).toBe(8);
+    expect(countByTier().playable).toBe(9);
   });
 
   it("does not grade Ghost of Yotei as playable", () => {
@@ -71,9 +72,8 @@ describe("compatibility dataset", () => {
     expect(yotei!.tier).toBe("ingame");
   });
 
-  it("keeps Subnautica, Big Helmet Heroes and Tetris short of playable", () => {
+  it("keeps Big Helmet Heroes and Tetris short of playable", () => {
     for (const slug of [
-      "subnautica-below-zero",
       "big-helmet-heroes",
       "tetris-effect-connected",
     ]) {
@@ -225,7 +225,7 @@ describe("English source prose", () => {
     expect(games["big-helmet-heroes"].performance).toContain("157 ms");
     expect(games["tetris-effect-connected"].performance).toContain("235 ms");
     expect(games["ghost-of-yotei"].performance).toContain("0.73 FPS");
-    expect(games["subnautica-below-zero"].performance).toContain("17 FPS");
+    expect(games["subnautica-below-zero"].performance).toContain("10.43 FPS");
   });
 
   it("states plainly what is not claimed", () => {
@@ -234,7 +234,7 @@ describe("English source prose", () => {
       /remains unverified/i,
     );
     expect(enContent.games["subnautica-below-zero"].limits.join(" ")).toMatch(
-      /gameplay is not reached/i,
+      /did not include a full playthrough/i,
     );
     expect(enContent.games["reanimal"].limits.join(" ")).toMatch(
       /no gameplay is claimed/i,

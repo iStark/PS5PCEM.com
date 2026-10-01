@@ -3,25 +3,18 @@ import type { Content } from "./en";
 const pt: Content = {
   games: {
     "subnautica-below-zero": {
-      status: "Novo jogo chega ao carregamento · jogabilidade ainda bloqueada",
-      headline:
-        "O modo sobrevivência já cria um save e começa a carregar o mundo, e depois falha.",
-      summary:
-        "Testado como PPSA02457 v1.022.125 em compilações de desenvolvimento de 1 de outubro. O runner monta armazenamento temporário gravável por título, então escolher sobrevivência finalmente sai do painel de modo e cria um espaço de save em vez de travar ali. O carregamento do mundo continua morrendo depois numa thread de trabalho, portanto não há jogabilidade estabelecida.",
-      strengths: [
-        "A tela de título e o menu Play / Options / Credits são desenhados em 1080p nativo.",
-        "Escolher sobrevivência cria o espaço de save temporário e inicia o carregamento do mundo.",
-        "A entrega de sinais mantém intactas a pilha convidada interrompida e suas raízes de registradores durante a coleta de lixo.",
+      "status": "Jogável · Concluível",
+      "headline": "Uma nova partida chega à área inicial; a câmera e a caminhada foram verificadas.",
+      "summary": "Compilação de desenvolvimento de 1 de outubro, PPSA02457 v1.022.125: o modo Sobrevivência carrega o mundo, reproduz a introdução e mostra o local nevado do acidente com o HUD. As correções impedem escritas antigas da GPU sobre a memória da CPU, leituras repetidas de buffers liberados e o apagamento das cores por passes de profundidade.",
+      "strengths": [
+        "Verificados: nova partida, introdução, mundo, câmera e caminhada."
       ],
-      limits: [
-        "O carregamento do mundo continua falhando numa thread de trabalho, então não se chega a jogar.",
-        "Falhas de shaders e recursos, artefatos de renderização e taxas de quadros baixas seguem em aberto.",
-        "A persistência dos saves e a correção do áudio não foram verificadas.",
+      "limits": [
+        "Persistem iluminação escura, defeitos gráficos e pausas longas.",
+        "Este teste não incluiu uma partida completa, recuperação de saves ou verificação da correção do áudio."
       ],
-      performance:
-        "As medições de menu de 28 de setembro ficam em torno de 17 FPS. O trabalho de inicialização posterior não foi uma mudança de desempenho, e a meta de 30 FPS continua não atingida.",
-      imageAlt:
-        "Tela de carregamento do mundo de Subnautica: Below Zero, com uma nave acima do planeta, renderizada pelo PS5PCEM",
+      "performance": "Cena estática: 313 quadros em 30,01 segundos, 10,43 FPS. As medições anteriores do menu eram de cerca de 17 FPS. A meta de 30 FPS ainda não foi alcançada.",
+      "imageAlt": "Área inicial nevada de Subnautica: Below Zero com HUD de sobrevivência, capturada no PS5PCEM"
     },
 
     "terminator-2d-no-fate": {
@@ -350,11 +343,9 @@ const pt: Content = {
         "Menu de Subnautica: Below Zero na compilação de desenvolvimento medida, renderizado pelo PS5PCEM",
     },
     "subnautica-new-game": {
-      title: "O modo sobrevivência cria um save, e então o carregamento do mundo falha",
-      summary:
-        "Escolher sobrevivência antes deixava o painel de novo jogo aberto, porque limpar o save temporário saía dos limites do array e o menu mantinha sua marca de ocupado. Com armazenamento temporário gravável montado, o espaço de save é criado e o carregamento começa — mas uma thread de trabalho continua falhando durante o carregamento do mundo, então não há jogabilidade estabelecida.",
-      imageAlt:
-        "Tela de carregamento do mundo de Subnautica: Below Zero com uma nave acima do planeta, renderizada pelo PS5PCEM",
+      "title": "Uma nova partida chega à área inicial",
+      "summary": "Compilação de desenvolvimento de 1 de outubro, PPSA02457 v1.022.125: o modo Sobrevivência carrega o mundo, reproduz a introdução e mostra o local nevado do acidente com o HUD. As correções impedem escritas antigas da GPU sobre a memória da CPU, leituras repetidas de buffers liberados e o apagamento das cores por passes de profundidade. Este teste não incluiu uma partida completa, recuperação de saves ou verificação da correção do áudio.",
+      "imageAlt": "Área inicial nevada de Subnautica: Below Zero com HUD de sobrevivência, capturada no PS5PCEM"
     },
 
     "yotei-intro-video": {

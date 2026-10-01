@@ -3,25 +3,18 @@ import type { Content } from "./en";
 const fr: Content = {
   games: {
     "subnautica-below-zero": {
-      status: "Nouvelle partie atteint le chargement · jeu encore bloqué",
-      headline:
-        "Le mode survie crée désormais une sauvegarde et lance le chargement du monde, puis plante.",
-      summary:
-        "Testé en PPSA02457 v1.022.125 sur des builds de développement du 1er octobre. Le runner monte un stockage temporaire inscriptible par titre, si bien que choisir la survie quitte enfin le panneau de mode et crée un espace de sauvegarde au lieu de rester bloqué dessus. Le chargement du monde meurt ensuite toujours dans un thread de travail : aucune partie n'est donc établie.",
-      strengths: [
-        "L'écran-titre et le menu Play / Options / Credits s'affichent en 1080p natif.",
-        "Choisir la survie crée l'espace de sauvegarde temporaire et lance le chargement du monde.",
-        "La distribution des signaux préserve la pile invitée interrompue et ses racines de registres pendant le ramasse-miettes.",
+      "status": "Jouable · Terminable",
+      "headline": "Une nouvelle partie atteint la zone de départ ; caméra et déplacement ont été vérifiés.",
+      "summary": "Version de développement du 1er octobre, PPSA02457 v1.022.125 : le mode Survie charge le monde, joue l’introduction et affiche le site enneigé du crash avec son interface. Les corrections empêchent les écritures GPU périmées dans la mémoire CPU, les lectures répétées de tampons libérés et l’effacement des couleurs par les passes de profondeur.",
+      "strengths": [
+        "Nouvelle partie, introduction, monde, caméra et déplacement vérifiés."
       ],
-      limits: [
-        "Le chargement du monde plante toujours dans un thread de travail, la partie n'est donc pas atteinte.",
-        "Les échecs de shaders et de ressources, les artefacts de rendu et les basses fréquences d'images restent ouverts.",
-        "La persistance des sauvegardes et la justesse du son n'ont pas été vérifiées.",
+      "limits": [
+        "Éclairage sombre, défauts graphiques et longues pauses persistent.",
+        "Ce test ne couvre pas une partie complète, la récupération des sauvegardes ni la fidélité audio."
       ],
-      performance:
-        "Les mesures de menu du 28 septembre tournent autour de 17 FPS. Le travail de démarrage qui a suivi n'était pas une optimisation, et l'objectif de 30 FPS reste hors d'atteinte.",
-      imageAlt:
-        "Écran de chargement du monde de Subnautica: Below Zero, un vaisseau au-dessus de la planète, rendu par PS5PCEM",
+      "performance": "Scène fixe : 313 images en 30,01 secondes, soit 10,43 FPS. Les anciens relevés du menu étaient proches de 17 FPS. L’objectif de 30 FPS reste hors d’atteinte.",
+      "imageAlt": "Zone de départ enneigée de Subnautica: Below Zero avec son interface de survie, capturée dans PS5PCEM"
     },
 
     "terminator-2d-no-fate": {
@@ -350,11 +343,9 @@ const fr: Content = {
         "Menu de Subnautica: Below Zero depuis le build de développement mesuré, rendu par PS5PCEM",
     },
     "subnautica-new-game": {
-      title: "Le mode survie crée une sauvegarde, puis le chargement du monde plante",
-      summary:
-        "Choisir la survie laissait auparavant le panneau Nouvelle partie ouvert, parce que l'effacement de la sauvegarde temporaire sortait des limites du tableau et que le menu conservait son indicateur d'occupation. Avec un stockage temporaire inscriptible monté, l'espace de sauvegarde est créé et le chargement démarre — mais un thread de travail plante toujours pendant le chargement du monde, la partie n'est donc pas établie.",
-      imageAlt:
-        "Écran de chargement du monde de Subnautica: Below Zero avec un vaisseau au-dessus de la planète, rendu par PS5PCEM",
+      "title": "Une nouvelle partie atteint la zone de départ",
+      "summary": "Version de développement du 1er octobre, PPSA02457 v1.022.125 : le mode Survie charge le monde, joue l’introduction et affiche le site enneigé du crash avec son interface. Les corrections empêchent les écritures GPU périmées dans la mémoire CPU, les lectures répétées de tampons libérés et l’effacement des couleurs par les passes de profondeur. Ce test ne couvre pas une partie complète, la récupération des sauvegardes ni la fidélité audio.",
+      "imageAlt": "Zone de départ enneigée de Subnautica: Below Zero avec son interface de survie, capturée dans PS5PCEM"
     },
 
     "yotei-intro-video": {

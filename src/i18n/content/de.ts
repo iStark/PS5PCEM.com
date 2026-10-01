@@ -3,25 +3,18 @@ import type { Content } from "./en";
 const de: Content = {
   games: {
     "subnautica-below-zero": {
-      status: "Neues Spiel erreicht das Laden · Spielgeschehen blockiert",
-      headline:
-        "Der Überlebensmodus legt nun einen Spielstand an und beginnt das Laden der Welt, bricht dann ab.",
-      summary:
-        "Getestet als PPSA02457 v1.022.125 auf Entwicklungsbuilds vom 1. Oktober. Der Runner bindet beschreibbaren temporären Speicher je Titel ein, sodass die Wahl des Überlebensmodus endlich die Moduswahl verlässt und einen Arbeitsbereich für den Spielstand erzeugt, anstatt daran hängen zu bleiben. Das Laden der Welt stirbt anschließend weiter in einem Arbeitsthread, also ist kein Spielgeschehen belegt.",
-      strengths: [
-        "Titelbild und das Menü Play / Options / Credits werden in nativem 1080p gezeichnet.",
-        "Die Wahl des Überlebensmodus erzeugt den temporären Spielstand-Arbeitsbereich und startet das Laden der Welt.",
-        "Die Signalzustellung hält einen unterbrochenen Gast-Stack und seine Registerwurzeln über die Speicherbereinigung hinweg intakt.",
+      "status": "Spielbar · Abschließbar",
+      "headline": "Ein neues Spiel erreicht das Startgebiet; Kamerabewegung und Laufen wurden geprüft.",
+      "summary": "Entwicklungsbuild vom 1. Oktober, PPSA02457 v1.022.125: Der Überlebensmodus lädt die Welt, spielt die Einleitung ab und zeigt die verschneite Absturzstelle mit HUD. Die Korrekturen verhindern veraltete GPU-Rückschreibungen in CPU-Speicher, wiederholte Zugriffe auf freigegebene Puffer und das Löschen der Farbe durch Tiefenpässe.",
+      "strengths": [
+        "Neues Spiel, Einleitung, Weltanzeige, Kamera und Laufen geprüft."
       ],
-      limits: [
-        "Das Laden der Welt bricht weiter in einem Arbeitsthread ab, Spielgeschehen wird nicht erreicht.",
-        "Shader- und Ressourcenfehler, Darstellungsfehler und niedrige Bildraten sind alle offen.",
-        "Die Haltbarkeit von Spielständen und die Korrektheit des Tons wurden nicht geprüft.",
+      "limits": [
+        "Dunkle Beleuchtung, Grafikfehler und lange Pausen bleiben bestehen.",
+        "Dieser Test umfasste keinen vollständigen Durchlauf, keine Wiederherstellung von Spielständen und keine Prüfung der Audiokorrektheit."
       ],
-      performance:
-        "Menümessungen vom 28. September liegen um 17 FPS. Die Startarbeit danach war keine Leistungsänderung, und das Ziel von 30 FPS ist weiter unerreicht.",
-      imageAlt:
-        "Ladebildschirm der Welt von Subnautica: Below Zero mit einem Schiff über dem Planeten, gezeichnet von PS5PCEM",
+      "performance": "In einer unbewegten Spielszene: 313 Frames in 30,01 Sekunden, 10,43 FPS. Frühere Menüwerte lagen bei etwa 17 FPS. Das Ziel von 30 FPS bleibt unerreicht.",
+      "imageAlt": "Verschneites Startgebiet von Subnautica: Below Zero mit Überlebens-HUD, aufgenommen in PS5PCEM"
     },
 
     "terminator-2d-no-fate": {
@@ -350,11 +343,9 @@ const de: Content = {
         "Menü von Subnautica: Below Zero aus dem gemessenen Entwicklungsbuild, gezeichnet von PS5PCEM",
     },
     "subnautica-new-game": {
-      title: "Der Überlebensmodus legt einen Spielstand an, dann bricht das Laden ab",
-      summary:
-        "Die Wahl des Überlebensmodus ließ das Neues-Spiel-Fenster früher offen, weil das Löschen des temporären Spielstands über die Feldgrenze hinauslief und das Menü sein Beschäftigt-Flag behielt. Mit eingebundenem beschreibbarem temporären Speicher wird der Arbeitsbereich erzeugt und das Laden beginnt — doch ein Arbeitsthread bricht beim Laden der Welt weiter ab, also ist kein Spielgeschehen belegt.",
-      imageAlt:
-        "Ladebildschirm der Welt von Subnautica: Below Zero mit einem Schiff über dem Planeten, gezeichnet von PS5PCEM",
+      "title": "Neues Spiel erreicht das Startgebiet",
+      "summary": "Entwicklungsbuild vom 1. Oktober, PPSA02457 v1.022.125: Der Überlebensmodus lädt die Welt, spielt die Einleitung ab und zeigt die verschneite Absturzstelle mit HUD. Die Korrekturen verhindern veraltete GPU-Rückschreibungen in CPU-Speicher, wiederholte Zugriffe auf freigegebene Puffer und das Löschen der Farbe durch Tiefenpässe. Dieser Test umfasste keinen vollständigen Durchlauf, keine Wiederherstellung von Spielständen und keine Prüfung der Audiokorrektheit.",
+      "imageAlt": "Verschneites Startgebiet von Subnautica: Below Zero mit Überlebens-HUD, aufgenommen in PS5PCEM"
     },
 
     "yotei-intro-video": {
