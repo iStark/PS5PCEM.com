@@ -1,20 +1,32 @@
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, expect, it } from "vitest";
-import { CompatibilityTable } from "@/components/CompatibilityTable";
-import { sortedCompatibility } from "@/data/compatibility";
+import { describe, expect, it, vi } from "vitest";
 
-function renderTable() {
-  return render(<CompatibilityTable entries={sortedCompatibility()} />);
+vi.mock("next/navigation", () => ({
+  usePathname: () => "/en/compatibility",
+}));
+
+import { CompatibilityTable } from "@/components/CompatibilityTable";
+import { buildRows } from "@/lib/rows";
+import { compatibility, countByTier } from "@/data/compatibility";
+import { getDictionary } from "@/i18n";
+import type { Locale } from "@/i18n/config";
+
+function renderTable(locale: Locale = "en") {
+  return render(
+    <CompatibilityTable locale={locale} rows={buildRows(locale)} />,
+  );
 }
 
+const total = compatibility.length;
+const playable = countByTier().playable;
+
 describe("<CompatibilityTable />", () => {
-  it("lists every tested title by default", () => {
+  it("lists every title on record by default", () => {
     renderTable();
-    const entries = sortedCompatibility();
 
     expect(
-      screen.getByText(`Showing ${entries.length} of ${entries.length} tested titles.`),
+      screen.getByText(`Showing ${total} of ${total} titles.`),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("heading", { name: "Cat Quest III" }),
@@ -31,15 +43,14 @@ describe("<CompatibilityTable />", () => {
     await user.click(screen.getByRole("button", { name: /^Playable/ }));
 
     expect(
-      screen.getByRole("heading", { name: "Terminator 2D: No Fate" }),
-    ).toBeInTheDocument();
-    expect(
       screen.getByRole("heading", { name: "Quake II (2023)" }),
     ).toBeInTheDocument();
     expect(
       screen.queryByRole("heading", { name: "Pistol Whip" }),
     ).not.toBeInTheDocument();
-    expect(screen.getByText(/Showing 8 of 16 tested titles\./)).toBeInTheDocument();
+    expect(
+      screen.getByText(`Showing ${playable} of ${total} titles.`),
+    ).toBeInTheDocument();
   });
 
   it("marks the active filter as pressed", async () => {
@@ -76,7 +87,7 @@ describe("<CompatibilityTable />", () => {
     await user.type(screen.getByLabelText("Search titles"), "bloodborne");
 
     expect(
-      screen.getByText("No tested title matches that search."),
+      screen.getByText("No title on record matches that search."),
     ).toBeInTheDocument();
   });
 
@@ -84,12 +95,12 @@ describe("<CompatibilityTable />", () => {
     const user = userEvent.setup();
     renderTable();
 
-    const yotei = screen
+    const row = screen
       .getByRole("heading", { name: "Ghost of Yōtei" })
       .closest("li");
-    expect(yotei).not.toBeNull();
+    expect(row).not.toBeNull();
 
-    const toggle = within(yotei as HTMLElement).getByRole("button", {
+    const toggle = within(row as HTMLElement).getByRole("button", {
       name: /Full result and known limits/,
     });
     expect(toggle).toHaveAttribute("aria-expanded", "false");
@@ -98,7 +109,7 @@ describe("<CompatibilityTable />", () => {
 
     expect(toggle).toHaveAttribute("aria-expanded", "true");
     expect(
-      within(yotei as HTMLElement).getByText(/Gameplay itself/),
+      within(row as HTMLElement).getByText(/remains unverified/i),
     ).toBeVisible();
   });
 
@@ -118,11 +129,41 @@ describe("<CompatibilityTable />", () => {
     expect(toggles[0]).toHaveAttribute("aria-expanded", "false");
   });
 
-  it("gives every screenshot descriptive alternative text", () => {
+  it("links every row to its own test history", () => {
+    renderTable();
+
+    const link = screen.getByRole("heading", { name: "Cat Quest III" })
+      .querySelector("a");
+    expect(link).toHaveAttribute("href", "/en/games/cat-quest-iii");
+  });
+
+  it("gives every capture descriptive alternative text", () => {
     renderTable();
 
     for (const image of screen.getAllByRole("img")) {
       expect(image.getAttribute("alt")?.length ?? 0).toBeGreaterThan(10);
     }
+  });
+
+  it("renders its own chrome in the requested language", () => {
+    renderTable("ru");
+    const ru = getDictionary("ru");
+
+    expect(
+      screen.getByRole("button", { name: new RegExp(ru.compatibility.filterAll) }),
+    ).toBeInTheDocument();
+    expect(screen.getByLabelText(ru.compatibility.searchLabel)).toBeInTheDocument();
+    // Title names are proper nouns and stay untranslated.
+    expect(
+      screen.getByRole("heading", { name: "Cat Quest III" }),
+    ).toBeInTheDocument();
+  });
+
+  it("points Russian rows at Russian detail pages", () => {
+    renderTable("ru");
+
+    const link = screen.getByRole("heading", { name: "Cat Quest III" })
+      .querySelector("a");
+    expect(link).toHaveAttribute("href", "/ru/games/cat-quest-iii");
   });
 });

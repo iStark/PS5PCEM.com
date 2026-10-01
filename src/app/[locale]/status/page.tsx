@@ -1,21 +1,42 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  subsystemStateLabel,
   subsystems,
   type SubsystemState,
 } from "@/data/subsystems";
 import { compatibility, compatibilityMeta, countByTier } from "@/data/compatibility";
 import { latestRelease } from "@/data/release";
 import { site } from "@/data/site";
+import {
+  alternateLanguages,
+  locales,
+  localePath,
+  toLocale,
+} from "@/i18n/config";
+import { format, getDictionary } from "@/i18n";
 import { formatDate } from "@/lib/format";
 import { ButtonLink, Notice, SectionHeading } from "@/components/ui";
 
-export const metadata: Metadata = {
-  title: "Project status",
-  description:
-    "Where PS5PCEM stands subsystem by subsystem: guest execution, AGC command streams, RDNA2 shader translation, Vulkan rendering, audio, input, savedata and the launcher.",
-};
+type PageProps = { params: Promise<{ locale: string }> };
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export const dynamicParams = false;
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const locale = toLocale((await params).locale);
+  const t = getDictionary(locale);
+  return {
+    title: t.status.heading,
+    description: t.status.subsystemsLead,
+    alternates: {
+      canonical: localePath(locale, "/status"),
+      languages: alternateLanguages("/status"),
+    },
+  };
+}
 
 const stateClasses: Record<SubsystemState, string> = {
   working: "border-playable/40 bg-playable/10 text-playable",
@@ -23,56 +44,75 @@ const stateClasses: Record<SubsystemState, string> = {
   deferred: "border-boots/40 bg-boots/10 text-boots",
 };
 
-export default function StatusPage() {
+export default async function StatusPage({ params }: PageProps) {
+  const locale = toLocale((await params).locale);
+  const t = getDictionary(locale);
   const counts = countByTier();
+  const stateLabel: Record<SubsystemState, string> = {
+    working: t.status.stateWorking,
+    partial: t.status.statePartial,
+    deferred: t.status.stateDeferred,
+  };
+  const [leadBefore, leadAfter] = t.status.lead.split("{link}");
 
   return (
     <div className="container-page py-16">
       <header className="max-w-3xl">
         <p className="text-xs font-semibold uppercase tracking-widest text-accent-400">
-          Release {latestRelease.version} · {formatDate(latestRelease.publishedAt)}
+          {format(t.status.eyebrow, {
+            version: latestRelease.version,
+            date: formatDate(latestRelease.publishedAt, locale),
+          })}
         </p>
         <h1 className="mt-2 text-balance text-4xl font-semibold tracking-tight text-ink-100 sm:text-5xl">
-          Project status
+          {t.status.heading}
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-ink-300">
-          What the emulator can do, subsystem by subsystem. The observed title
-          milestones live on the{" "}
+          {leadBefore}
           <Link
-            href="/compatibility"
+            href={localePath(locale, "/compatibility")}
             className="text-accent-400 underline underline-offset-2 hover:text-accent-300"
           >
-            compatibility page
+            {t.status.leadLink}
           </Link>
-          ; this page is the detail behind them.
+          {leadAfter}
         </p>
       </header>
 
       <section className="mt-12">
         <div className="surface grid gap-6 p-7 sm:grid-cols-3">
           <SummaryItem
-            label="Current build"
+            label={t.status.summaryBuild}
             value={latestRelease.version}
-            hint={latestRelease.prerelease ? "Pre-release" : "Release"}
+            hint={
+              latestRelease.prerelease
+                ? t.download.channelPrerelease
+                : t.download.channelRelease
+            }
           />
           <SummaryItem
-            label="Titles tested"
-            value={`${counts.playable} of ${compatibility.length} completable`}
-            hint={`Reports updated ${formatDate(compatibilityMeta.updatedOn)}`}
+            label={t.status.summaryTitles}
+            value={format(t.status.summaryTitlesValue, {
+              playable: counts.playable,
+              total: compatibility.length,
+            })}
+            hint={format(t.status.summaryTitlesHint, {
+              date: formatDate(compatibilityMeta.confirmedOn, locale),
+            })}
           />
           <SummaryItem
-            label="Reference host"
+            label={t.status.summaryHost}
             value={compatibilityMeta.host}
-            hint="Every timing on this site"
+            hint={t.status.summaryHostHint}
           />
         </div>
       </section>
 
       <section className="mt-16">
         <SectionHeading
-          eyebrow="Subsystems"
-          title="Where each part of the emulator stands"
-          description="Condensed from implementation-status.md in the repository, which carries the complete list."
+          eyebrow={t.status.subsystemsEyebrow}
+          title={t.status.subsystemsHeading}
+          description={t.status.subsystemsLead}
         />
 
         <div className="mt-10 space-y-4">
@@ -85,7 +125,7 @@ export default function StatusPage() {
                 <span
                   className={`inline-flex shrink-0 items-center rounded-full border px-2.5 py-1 text-xs font-medium ${stateClasses[subsystem.state]}`}
                 >
-                  {subsystemStateLabel[subsystem.state]}
+                  {stateLabel[subsystem.state]}
                 </span>
               </div>
               <p className="mt-2.5 text-sm leading-relaxed text-ink-300">
@@ -111,32 +151,33 @@ export default function StatusPage() {
       </section>
 
       <section className="mt-16 max-w-3xl">
-        <Notice title="What is deliberately not claimed">
-          Reaching a menu is not gameplay, and rendering a frame is not
-          playability. Several titles render correctly but far too slowly to
-          play, and those are recorded as such. Nothing on this site claims a
-          milestone that has not been observed on a build.
+        <Notice title={t.status.notClaimedTitle}>
+          {t.status.notClaimedBody}
         </Notice>
       </section>
 
       <section className="mt-16">
         <SectionHeading
-          eyebrow="Go deeper"
-          title="Documentation in the repository"
-          description="Subsystem internals — RDNA2, GPU, Vulkan, memory, loader, HLE, CPU, diagnostics and runtime — are indexed in the architecture documentation."
+          eyebrow={t.status.deeperEyebrow}
+          title={t.status.deeperHeading}
+          description={t.status.deeperLead}
         />
         <div className="mt-8 flex flex-wrap gap-3">
-          <ButtonLink href={site.links.implementationStatus} variant="secondary" external>
-            Implementation status
+          <ButtonLink
+            href={site.links.implementationStatus}
+            variant="secondary"
+            external
+          >
+            {t.status.implementationCta}
           </ButtonLink>
           <ButtonLink href={site.links.projectStatus} variant="secondary" external>
-            Project status and compatibility
+            {t.status.statusDocCta}
           </ButtonLink>
           <ButtonLink href={site.links.docs} variant="secondary" external>
-            Documentation index
+            {t.status.docsCta}
           </ButtonLink>
           <ButtonLink href={site.links.issues} variant="secondary" external>
-            Open issues
+            {t.status.issuesCta}
           </ButtonLink>
         </div>
       </section>
@@ -145,11 +186,10 @@ export default function StatusPage() {
         <div className="surface flex flex-col items-start gap-6 p-8 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h2 className="text-xl font-semibold text-ink-100">
-              Support development
+              {t.status.supportHeading}
             </h2>
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-ink-300">
-              PS5PCEM is GPL-3.0-or-later and developed in the open. Development
-              can be supported through Boosty or Patreon.
+              {t.status.supportBody}
             </p>
           </div>
           <div className="flex flex-wrap gap-3">

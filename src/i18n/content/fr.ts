@@ -1,0 +1,565 @@
+import type { Content } from "./en";
+
+const fr: Content = {
+  games: {
+    "subnautica-below-zero": {
+      status: "Nouvelle partie atteint le chargement · jeu encore bloqué",
+      headline:
+        "Le mode survie crée désormais une sauvegarde et lance le chargement du monde, puis plante.",
+      summary:
+        "Testé en PPSA02457 v1.022.125 sur des builds de développement du 1er octobre. Le runner monte un stockage temporaire inscriptible par titre, si bien que choisir la survie quitte enfin le panneau de mode et crée un espace de sauvegarde au lieu de rester bloqué dessus. Le chargement du monde meurt ensuite toujours dans un thread de travail : aucune partie n'est donc établie.",
+      strengths: [
+        "L'écran-titre et le menu Play / Options / Credits s'affichent en 1080p natif.",
+        "Choisir la survie crée l'espace de sauvegarde temporaire et lance le chargement du monde.",
+        "La distribution des signaux préserve la pile invitée interrompue et ses racines de registres pendant le ramasse-miettes.",
+      ],
+      limits: [
+        "Le chargement du monde plante toujours dans un thread de travail, la partie n'est donc pas atteinte.",
+        "Les échecs de shaders et de ressources, les artefacts de rendu et les basses fréquences d'images restent ouverts.",
+        "La persistance des sauvegardes et la justesse du son n'ont pas été vérifiées.",
+      ],
+      performance:
+        "Les mesures de menu du 28 septembre tournent autour de 17 FPS. Le travail de démarrage qui a suivi n'était pas une optimisation, et l'objectif de 30 FPS reste hors d'atteinte.",
+      imageAlt:
+        "Écran de chargement du monde de Subnautica: Below Zero, un vaisseau au-dessus de la planète, rendu par PS5PCEM",
+    },
+
+    "terminator-2d-no-fate": {
+      status: "Jouable · Terminable",
+      headline: "Terminé sans aucun défaut signalé.",
+      summary:
+        "Le mainteneur a fini ce jeu. Décors, personnages, ATH, textures et couleurs sortent comme prévu, et depuis la confirmation du 8 septembre c'est le titre de référence le plus stable du projet.",
+      strengths: [
+        "Une partie complète sans défaut signalé.",
+        "L'alpha des textures, l'ordre des canaux et l'échantillonnage sRGB préservent l'équilibre des couleurs voulu.",
+        "ATH et graphismes des personnages s'affichent proprement du début à la fin.",
+      ],
+      limits: [
+        "Les temps par image varient encore selon la scène au lieu de se stabiliser.",
+      ],
+      performance:
+        "Une fois chaud, les images de démarrage tiennent entre 22 et 65 ms sur la machine de référence.",
+      imageAlt:
+        "Terminator 2D: No Fate, partie en cours avec le personnage, l'ATH et une scène désertique, rendu par PS5PCEM",
+    },
+
+    "asterix-obelix-slap-them-all": {
+      status: "Jouable · Terminable",
+      headline: "Terminé de bout en bout, intro et interface correctes.",
+      summary:
+        "Partie complète confirmée. Le jeu et l'interface s'affichent dans le bon sens, et l'intro se lance. La composition plein écran finale reste sur le GPU, et l'affichage conserve l'orientation de la fenêtre invitée sans recopier une image par la mémoire de l'hôte.",
+      strengths: [
+        "Partie complète confirmée par le mainteneur.",
+        "La vidéo d'intro se lit, et le jeu comme l'interface sont correctement orientés.",
+        "Une session de développement de 3 000 présentations s'est terminée sans une seule soumission rejetée.",
+      ],
+      limits: [
+        "Le coût par image dépend de la densité de la scène plutôt que d'être fixé.",
+      ],
+      performance: "Le jeu mesure généralement 28–31 ms par image.",
+      imageAlt:
+        "Asterix & Obelix: Slap Them All!, partie en forêt avec l'ATH et un panneau GO, rendu par PS5PCEM",
+    },
+
+    "cat-quest-iii": {
+      status: "Jouable · Terminable",
+      headline:
+        "Terminé, avec menus, dialogues et relief de l'île correctement dessinés.",
+      summary:
+        "Partie complète confirmée. Menus, cartes d'aventure, dialogues, relief de l'île et couleurs sont justes dans les scènes capturées. Il a fallu corriger l'orientation du monde, les passes de pochoir seul, la correspondance des interpolants AGC et l'ordre des canaux à l'affichage.",
+      strengths: [
+        "Partie complète confirmée par le mainteneur.",
+        "La liste des langues conserve son texte et le rogne dans son panneau au lieu d'être recouverte.",
+        "La sélection d'aventure affiche les illustrations des emplacements, les libellés, les boutons d'ajout et les flèches de défilement.",
+      ],
+      limits: [
+        "La limite restante est la fluidité sur l'île de départ, pas la justesse du rendu.",
+      ],
+      performance:
+        "Les échantillons de l'île de départ ont une médiane de 124 ms, environ 8 FPS, contre quelque 148 ms avant le travail d'optimisation.",
+      imageAlt:
+        "Cat Quest III, partie sur l'île avec l'ATH, les montagnes et la mer bleue, rendu par PS5PCEM",
+    },
+
+    "dreaming-sarah": {
+      status: "Jouable · Terminable",
+      headline: "Terminé, et le début tourne à la limite de 60 FPS.",
+      summary:
+        "Confirmé jouable le 15 septembre 2026. Menus, titre animé, scènes du monde, personnages et PNJ s'affichent correctement, et la première scène tient la limite de fréquence sur la machine de référence.",
+      strengths: [
+        "Partie complète confirmée par le mainteneur.",
+        "Menu-titre et première scène tiennent la limite de 60 FPS — 5 280 présentations en 90 secondes.",
+        "Titre animé, scènes du monde et PNJ s'affichent tous correctement.",
+      ],
+      limits: [
+        "Le mainteneur signale une baisse de fluidité dans la deuxième scène de jeu, qui n'a pas été mesurée.",
+        "Le chargement a exigé de restaurer eboot.bin et sce_module/libc.prx depuis les sauvegardes laissées par le patcheur d'eboot de la copie, qui avait tronqué les deux.",
+      ],
+      performance:
+        "Menu-titre et première scène tiennent 60 FPS, mesuré comme 5 280 présentations sur 90 secondes.",
+      imageAlt:
+        "Dreaming Sarah, scène forestière avec un PNJ, rendu par PS5PCEM",
+    },
+
+    "jurassic-park-classic-games-collection": {
+      status: "Jouable · Terminable",
+      headline:
+        "Terminé, y compris l'intro, le titre animé et le menu de la collection.",
+      summary:
+        "Partie complète confirmée. Intro, titre animé et sélection dans la collection fonctionnent, avec jaquettes, flèches de navigation et aperçu animé. Les performances dépendent du jeu de la collection lancé.",
+      strengths: [
+        "Partie complète confirmée par le mainteneur.",
+        "La sélection affiche les jaquettes, les flèches de navigation et un aperçu animé.",
+        "Le rendu au démarrage, le logo du titre et la demande de confirmation sont corrects.",
+      ],
+      limits: [
+        "Enchaîner les aperçus vidéo peut épuiser un pool de descripteurs AvPlayer, après quoi les aperçus suivants se figent.",
+        "Le coût par image varie selon le jeu de la collection et le matériel.",
+      ],
+      performance:
+        "Les anciennes images de titre et de sélection s'échantillonnaient à environ 27 et 33 ms.",
+      imageAlt:
+        "Jurassic Park Classic Games Collection, écran de sélection avec jaquettes, rendu par PS5PCEM",
+    },
+
+    "jets-n-guns-2": {
+      status: "Jouable · Terminable",
+      headline:
+        "Terminé, avec niveaux, ATH, score et parallaxe tous corrects.",
+      summary:
+        "Confirmé jouable le 15 septembre 2026. Niveaux, ATH, score, ennemis et fond en parallaxe s'affichent correctement dans la partie capturée. Le coût par image est dominé par les attentes GPU et par la préparation d'un grand nombre de tampons invités à chaque image.",
+      strengths: [
+        "Partie complète confirmée par le mainteneur.",
+        "Niveaux, ATH, score, ennemis et couches de parallaxe s'affichent tous correctement.",
+        "Le son ne se déchire plus : la version 0.3.2 a mis fin à la concurrence de deux ports de sortie pour le périphérique de l'hôte.",
+      ],
+      limits: [
+        "Le coût par image reste dominé par les attentes GPU synchrones et la préparation des tampons.",
+      ],
+      performance:
+        "Les images mesurent 70–92 ms, environ 11–14 FPS. Dans une image de 70 ms, 18 ms attendent le GPU sur 33 soumissions, 11 ms préparent des points de contrôle de ressources et 13 ms préparent 894 tampons invités distincts totalisant 15 Mio.",
+      imageAlt:
+        "Jets 'n' Guns 2, partie en cours avec le vaisseau du joueur, l'ATH et le score, rendu par PS5PCEM",
+    },
+
+    "the-precinct": {
+      status: "Menu-titre, films d'intro et une première image dans le moteur",
+      headline:
+        "Lit les deux films d'intro, dessine le menu-titre et entre dans le chargement à froid du monde.",
+      summary:
+        "Le graphe invité complet à six images se lie, les plug-ins Unity démarrent, et les deux films d'intro observés se lisent en vidéo 4K synchronisée avec un son stéréo 48 kHz. L'illustration du titre et une confirmation NEW GAME lisible s'affichent, et maintenir Triangle lance le chargement du monde. Une session antérieure sous garde a produit la première image de jeu vérifiée dans le moteur.",
+      strengths: [
+        "Les deux films d'intro se lisent en vidéo 3840×2160 synchronisée avec un son stéréo 48 kHz.",
+        "L'illustration complète du titre en 1920×1080 et une confirmation NEW GAME lisible s'affichent.",
+        "La livraison d'exception à un thread cible achève la poignée de main stop-the-world d'Unity.",
+      ],
+      limits: [
+        "La première transition vers le monde prend encore des minutes : traduction de shaders à la première utilisation, compilation de pipelines par le pilote, soumission synchrone et préparation des ressources coûtent tous cher.",
+        "Un contournement de compilateur propre à ce titre a été retiré au profit du chemin de shaders général, la transition exige donc une nouvelle validation de bout en bout avant toute affirmation sur le jeu.",
+      ],
+      performance:
+        "L'image de chargement du monde mesure désormais 2,1 s contre 5,1 s, depuis que la récupération des descripteurs a cessé de rejouer le prologue de chaque noyau pour chaque ressource qu'il nomme.",
+      imageAlt:
+        "The Precinct, menu-titre avec la confirmation NEW GAME, rendu par PS5PCEM",
+    },
+
+    "ghost-of-yotei": {
+      status:
+        "Lecture de l'intro · avis de bonus · calibrage de la luminosité · atteint des scènes de jeu · non jouable",
+      headline:
+        "Dessine ses menus et ses scènes 3D correctement, beaucoup trop lentement pour jouer.",
+      summary:
+        "C'est le cas de test le plus dur du projet et le plus documenté. Les films d'intro se lisent avec le son, les avis de bonus et le calibrage de la luminosité apparaissent, et des scènes 3D tardives dont celle de l'arbre atteignent l'écran. Rien de tout cela n'est jouable : les images de scène arrivent bien en dessous de 1 FPS, et aucune partie complète n'est revendiquée.",
+      strengths: [
+        "Les films d'intro se lisent à environ leurs 30 FPS natifs, le son démarrant en phase avec la piste.",
+        "L'indicateur de chargement, les avis de bonus et l'écran de calibrage avec l'image du loup, le curseur et l'invite s'affichent tous.",
+        "Des scènes 3D tardives, dont celle de l'arbre, atteignent l'écran avec la musique du menu audible.",
+      ],
+      limits: [
+        "Le jeu lui-même — déplacer un personnage dans un monde chargé — reste non vérifié.",
+        "La préparation des scènes est extrêmement lente, et une image de transition a été mesurée à 167,2 s, dont 164,8 s à créer 206 pipelines de calcul.",
+        "Deux vérifications récentes se sont arrêtées en attente d'achèvement GPU avant la scène de l'arbre et ont été interrompues volontairement après diagnostic.",
+        "Appels de dessin indirects invalides, échec de compteur corrompu, traînées et luminosité excessive restent tous ouverts.",
+      ],
+      performance:
+        "La dernière scène de l'arbre mesurée a présenté 0,73 FPS. Le choix de difficulté mesurait plus tôt 0,6 FPS, avec des images de 1504–1554 ms pour 321 appels de dessin et environ 1330 dispatches de calcul. Le temps pour atteindre une scène varie beaucoup entre sessions d'un même build.",
+      imageAlt:
+        "Avis Digital Deluxe Bonus de Ghost of Yōtei, rendu par PS5PCEM",
+    },
+
+    "quake-ii-2023": {
+      status: "Jouable · Terminable",
+      headline: "Terminé, éclairage, modèles et armes rétablis.",
+      summary:
+        "Confirmé jouable le 16 septembre 2026 et revérifié le 25 septembre en PPSA09477 v1.003. L'éclairage des niveaux, les textures, les armes et les PNJ sont visibles : le monde sombre et les modèles manquants des builds antérieurs sont résolus dans la partie observée. Menus, ATH et manette fonctionnent tous.",
+      strengths: [
+        "Partie complète confirmée par le mainteneur, rendu revérifié ensuite.",
+        "Éclairage, textures, armes et modèles de PNJ apparaissent ; les anciens défauts de monde sombre et de géométrie manquante ont disparu.",
+        "Menus, ATH et entrée manette se comportent correctement.",
+      ],
+      limits: [
+        "Les combats chargés restent bien en dessous des pointes : les valeurs hautes ne sont donc pas un plancher.",
+        "Le travail sur les performances continue.",
+      ],
+      performance:
+        "Le mainteneur signale des pointes de 60–70 FPS dans les scènes légères, les combats chargés restant nettement plus lents. La réutilisation des tampons et les effacements GPU ont réduit le coût des transferts.",
+      imageAlt:
+        "Quake II, partie avec un niveau éclairé, des ennemis visibles et l'arme du joueur, rendu par PS5PCEM",
+    },
+
+    reanimal: {
+      status: "Menu-titre animé en 4K, libellés d'options incomplets",
+      headline:
+        "Lit la séquence de logo et maintient le graphe de rendu du menu-titre animé.",
+      summary:
+        "Les modules natifs et de micrologiciel observés se résolvent, la séquence du logo de l'éditeur se lit, et le menu-titre animé en 3840×2160 continue de s'afficher. Le fond à la bouée, le logo, les reflets sur l'eau et l'invite SELECT sont visibles — mais pas les libellés des options du menu.",
+      strengths: [
+        "La séquence du logo de l'éditeur se lit et le menu-titre animé en 4K se maintient.",
+        "Les tampons intermédiaires étroits de l'interface Unity ne remplacent plus l'image de sortie complète.",
+        "Les atlas de police R8 dynamiques invalident correctement les images échantillonnées périmées.",
+      ],
+      limits: [
+        "Les libellés centraux du menu sont réduits à de petites marques rouges, la navigation et le passage au jeu ne sont donc pas vérifiés.",
+        "Performances et stabilité sur la durée ne sont pas mesurées, et aucun jeu n'est revendiqué.",
+      ],
+      imageAlt:
+        "Menu-titre animé de REANIMAL avec des libellés incomplets, rendu par PS5PCEM",
+    },
+
+    "ritas-rewind": {
+      status: "Jouable · Terminable",
+      headline:
+        "Terminé, de la séquence de l'éditeur au jeu dans le Command Center.",
+      summary:
+        "Confirmé jouable le 24 septembre 2026. Séquence de l'éditeur, menu-titre et jeu s'affichent et répondent à la manette ; la capture montre le Ranger rouge dans l'étape d'entraînement du Command Center avec ATH, barre de vie, objectifs et indications de boutons.",
+      strengths: [
+        "Partie complète confirmée par le mainteneur.",
+        "Les fibres coopératives natives préservent les piles invitées suspendues.",
+        "L'implémentation exacte de V_SAD_U32, V_MUL_HI_I32 et V_CVT_FLR_I32_F32 a supprimé le shader de diagnostic de repli.",
+      ],
+      limits: [
+        "La composition CRT invitée exacte produit encore du bruit sur la machine de référence, aussi un repli étroitement ciblé par signature de shader agrandit la scène 4× en RGBA8 avant le post-traitement.",
+      ],
+      performance:
+        "L'intro tient environ 13–20 ms par image. Les images denses après le menu, environ 255 appels de dessin, coûtent près de 470 ms, surtout à cause de la préparation répétée des tampons invités.",
+      imageAlt:
+        "Mighty Morphin Power Rangers: Rita's Rewind, partie avec le Ranger rouge dans le Command Center, rendu par PS5PCEM",
+    },
+
+    "big-helmet-heroes": {
+      status: "Menu principal et tutoriel s'affichent · jouabilité non vérifiée",
+      headline:
+        "Atteint un menu principal correct et une scène de tutoriel, à une fréquence d'images à un chiffre.",
+      summary:
+        "Le titre passe de son intro à un menu principal correctement dessiné, avec modèles de personnages, textures, éclairage et couleurs, puis à une scène de tutoriel. Les corrections ont porté sur l'adressage de textures Gen5 à échantillon unique, les cibles de rendu en couches et l'ordre des canaux à l'affichage. Le jeu lui-même n'est pas vérifié.",
+      strengths: [
+        "Un menu principal correct avec modèles, textures, éclairage et couleurs.",
+        "La scène de tutoriel s'affiche après correction des blocages au démarrage et au chargement.",
+        "La sortie est un 1080p propre, même si les cibles internes peuvent être plus grandes.",
+      ],
+      limits: [
+        "Jeu, récupération des sauvegardes et stabilité sur de longues sessions ne sont pas vérifiés.",
+        "Des artefacts visuels subsistent, et copies, préparation des ressources et attentes GPU restent coûteuses.",
+        "Les 30 FPS n'ont pas été atteints.",
+      ],
+      performance:
+        "Des échantillons de menu comparables mesurent 157 ms, environ 6,37 FPS ; les échantillons de tutoriel 270 ms, environ 3,70 FPS. Le dernier changement de comptabilité n'a montré aucun gain démontrable de fluidité en jeu.",
+      imageAlt: "Scène de tutoriel de Big Helmet Heroes, rendue par PS5PCEM",
+    },
+
+    "tetris-effect-connected": {
+      status:
+        "Logos des développeurs · écran de licence lisible · sélection du mode Journey · jeu non vérifié",
+      headline:
+        "Logos, écran de licence et sélection Journey s'affichent, bien plus vite qu'avant.",
+      summary:
+        "Vérifié le 24 septembre 2026 avec PPSA07923 v2.000.022. Une composition traduite a remplacé les anciens remplacements 4K spéculatifs, et les pages de licence et de menu s'affichent maintenant sans l'interface dupliquée ni la couture verticale des builds antérieurs. Les deux écrans sont aussi devenus bien moins coûteux.",
+      strengths: [
+        "L'écran de licence et les menus s'affichent sans interface dupliquée ni frontière verticale de scène.",
+        "La publication de remplissages linéaires de métadonnées, avec effacements DCC R11G11B10 et RGB10A2, a supprimé les copies d'interface accumulées.",
+        "Un profil à 128 cibles conserve l'ensemble de travail d'une centaine d'attachements au lieu de saturer un cache plus petit.",
+      ],
+      limits: [
+        "Des éléments d'interface sombres et une liaison de texture de calcul non résolue restent ouverts.",
+        "La lecture vidéo tardive plante dans le décodeur H.264 invité.",
+        "La stabilité sur la durée et le jeu ne sont pas établis.",
+      ],
+      performance:
+        "Les images médianes de licence sont passées de 235 ms à 159 ms, environ de 4,3 à 6,3 FPS. Les images Journey échantillonnées de 1127–1276 ms à 318–396 ms.",
+      imageAlt:
+        "Une première image de particules de Tetris Effect, rendue par PS5PCEM",
+    },
+
+    "propagation-paradise-hotel": {
+      status:
+        "Monte son paquet, ouvre l'archive de shaders, soumet le premier tampon de commandes",
+      headline: "Achève l'amorçage d'Unreal jusqu'à sa première soumission.",
+      summary:
+        "Le paquet Unreal de 8,8 Gio se monte, l'amorçage d'ICU et de la configuration s'achève, l'archive globale de shaders précompilée s'ouvre, les shaders AGC sont créés, et le premier tampon de commandes est soumis. Rien n'est affirmé sur une image affichée.",
+      strengths: [
+        "Le paquet Unreal de 8,8 Gio se monte et l'amorçage du moteur s'achève.",
+        "L'archive globale de shaders précompilée s'ouvre et les shaders AGC sont créés.",
+        "Le premier tampon de commandes atteint la soumission.",
+      ],
+      limits: [
+        "L'étape précède les constructeurs de paquets de synchronisation actuels et exige une nouvelle session.",
+        "L'affichage VR n'a aucun pont vers un casque sur l'hôte : il n'y a donc rien sur quoi afficher.",
+      ],
+    },
+
+    "pistol-whip": {
+      status: "Charge ses modules VR, puis les archives Unity",
+      headline: "Va jusqu'au chargement des archives de données Unity.",
+      summary:
+        "Le plug-in PS VR2 natif et le module Burst se chargent tous les deux, et le titre commence à charger ses archives de données Unity. Tout ce qui suit dépend d'un support VR que le projet a volontairement reporté.",
+      strengths: [
+        "Le plug-in PS VR2 natif et le module Burst se chargent correctement.",
+        "Le chargement des archives de données Unity commence.",
+      ],
+      limits: [
+        "Casque, suivi, manettes et OpenXR côté hôte sont volontairement reportés.",
+      ],
+    },
+  },
+
+  history: {
+    "subnautica-startup": {
+      title: "Plantage au démarrage dû à un en-tête de shader mal lu",
+      summary:
+        "Les premières sessions s'arrêtaient net à la même adresse invitée. Le lecteur de shaders d'Unity avait pris quatre octets de données de maillage pour une longueur de chaîne signée et écrit un terminateur en mémoire non mappée. Corriger le comportement des descripteurs de fichiers derrière cela a fait passer le titre au-delà du démarrage.",
+    },
+    "subnautica-menu-missing": {
+      title: "Le menu manquait parce que l'initialisation audio restait bloquée",
+      summary:
+        "Le fond animé tournait déjà, mais aucun menu n'apparaissait : la coroutine d'initialisation de la plateforme s'était arrêtée dans FMOD, laissant à jamais vides les services que l'écran de démarrage attend. Ce furent les dernières mesures de l'ère 4K avant le passage au 1080p natif.",
+      imageAlt:
+        "Écran-titre de Subnautica: Below Zero sans son menu, rendu par PS5PCEM",
+    },
+    "subnautica-native-1080p": {
+      title: "Sortie 1080p native et préparation des ressources moins coûteuse",
+      summary:
+        "L'affichage est passé au 1920×1080 natif, et le chemin graphique commun a cessé de recopier des structures d'instructions décodées pendant la préparation des ressources et l'interprétation scalaire. Play, Options et Credits sont lisibles ; les artefacts d'eau et d'éclairage subsistent.",
+      imageAlt:
+        "Menu de Subnautica: Below Zero en 1080p natif, rendu par PS5PCEM",
+    },
+    "subnautica-menu-performance": {
+      title: "Une série de réductions côté CPU dans le chemin de dessin commun",
+      summary:
+        "Préparation des index, recherche de pipelines, instantanés de registres scalaires, sondage des files et initialisation de la mémoire de travail sont devenus moins coûteux un à un, tout cela sans condition propre à un titre. Le menu s'est fixé autour de 17 FPS — toujours loin de l'objectif de 30 FPS.",
+      imageAlt:
+        "Menu de Subnautica: Below Zero depuis le build de développement mesuré, rendu par PS5PCEM",
+    },
+    "subnautica-new-game": {
+      title: "Le mode survie crée une sauvegarde, puis le chargement du monde plante",
+      summary:
+        "Choisir la survie laissait auparavant le panneau Nouvelle partie ouvert, parce que l'effacement de la sauvegarde temporaire sortait des limites du tableau et que le menu conservait son indicateur d'occupation. Avec un stockage temporaire inscriptible monté, l'espace de sauvegarde est créé et le chargement démarre — mais un thread de travail plante toujours pendant le chargement du monde, la partie n'est donc pas établie.",
+      imageAlt:
+        "Écran de chargement du monde de Subnautica: Below Zero avec un vaisseau au-dessus de la planète, rendu par PS5PCEM",
+    },
+
+    "yotei-intro-video": {
+      title: "La vidéo d'intro se décode et se lit",
+      summary:
+        "Les unités d'accès H.264 que le titre confie à la bibliothèque vidéo invitée sont maintenant décodées sur l'hôte, converties depuis NV12 avec les coefficients BT.709, et cadencées à environ une image par intervalle d'affichage, pour qu'un titre qui fournit des images aussi vite qu'on les accepte ne brûle plus tout un film en quelques secondes. L'image du moteur derrière la vidéo restait noire : ce n'était donc qu'une étape de lecture.",
+      imageAlt:
+        "Une image d'intro de Ghost of Yōtei, décodée et affichée par PS5PCEM",
+    },
+    "yotei-bonus-notices": {
+      title: "De l'intro aux avis de bonus et au calibrage de la luminosité",
+      summary:
+        "La lecture de l'intro est devenue continue à environ les 30 FPS natifs du flux, et la session a franchi le chargement en flux des ressources de menu jusqu'à l'indicateur de chargement, aux avis Digital Deluxe Bonus, Gift of the Northern Star et Pre-order Bonus, puis au calibrage de la luminosité — image du loup, instructions, curseur et glyphe de confirmation tous lisibles.",
+      imageAlt:
+        "Écran de calibrage de la luminosité de Ghost of Yōtei avec l'image du loup, rendu par PS5PCEM",
+    },
+    "yotei-difficulty": {
+      title: "Le choix de difficulté s'affiche sur une scène 3D chargée",
+      summary:
+        "La composition du menu a atteint le choix de difficulté dessiné par-dessus une véritable géométrie 3D, avec des arbres et des parties du décor visibles et la musique du menu audible. Il a fallu plusieurs minutes d'intro et de chargement de scène, et les images arrivaient à 0,6 FPS.",
+      imageAlt:
+        "Choix de difficulté de Ghost of Yōtei sur une scène 3D chargée, rendu par PS5PCEM",
+    },
+    "yotei-tree-scene": {
+      title: "Le son des films fonctionne et des scènes 3D tardives apparaissent",
+      summary:
+        "Les films d'intro ont gagné le son, démarrant en phase avec la piste au lieu de rester muets, après que l'ATRAC9 multicanal a été décodé en flux mono entrelacés sur des configurations de 2 à 36 canaux. La session a atteint des scènes 3D tardives dont celle de l'arbre, à 0,73 FPS, et la séquence de chargement suivante a perdu le périphérique Vulkan.",
+      imageAlt: "Scène de l'arbre de Ghost of Yōtei, rendue par PS5PCEM",
+    },
+    "yotei-command-writes": {
+      title: "Les écritures du processeur de commandes survivent à la relecture différée",
+      summary:
+        "Une écriture explicite du processeur de commandes dans un tampon de stockage en cache pouvait être perdue quand un résultat GPU plus ancien était publié par-dessus, car le chemin de vidage ne comparait que l'adresse de base du tampon. Indexer les tampons qui se chevauchent et ne publier que des plages d'écriture prouvées a corrigé la corruption d'en-tête qui en résultait.",
+      imageAlt:
+        "Scène de l'arbre de Ghost of Yōtei après les corrections d'écriture de commandes, rendue par PS5PCEM",
+    },
+    "yotei-null-images": {
+      title:
+        "Les textures entièrement nulles traitées comme non liées, et récupération de descripteurs plus rapide",
+      summary:
+        "Les textures dont on prouve qu'elles sont entièrement nulles utilisent désormais la sémantique d'image non liée au lieu de faire rejeter le shader, et la récupération scalaire de descripteurs réutilise les valeurs intermédiaires au sein d'un appel — un cas de test imbriqué est passé de 504 lectures à 18 et a tourné environ 4,6× plus vite en isolation. Deux vérifications du runner installé se sont tout de même arrêtées en attente d'achèvement GPU avant la scène de l'arbre et ont été interrompues volontairement après diagnostic.",
+      imageAlt:
+        "Avis Digital Deluxe Bonus de Ghost of Yōtei avant l'attente GPU du 1er octobre, rendu par PS5PCEM",
+    },
+
+    "bhh-startup": {
+      title: "Une attente sans fin pendant le chargement, corrigée",
+      summary:
+        "Le titre pouvait s'arrêter sur sa première image noire ou en pleine phase de chargement des ressources alors que son processus et ses threads audio restaient vivants : le thread de chargement attendait indéfiniment après qu'une lecture de fichier a renvoyé une erreur d'entrée-sortie. Traiter correctement les lectures de fichiers surveillées par le GPU a levé le blocage.",
+      imageAlt:
+        "Menu principal de Big Helmet Heroes après la correction du démarrage, rendu par PS5PCEM",
+    },
+    "bhh-menu": {
+      title: "Un menu principal correct, et où part le temps",
+      summary:
+        "Avec l'adressage de textures Gen5 à échantillon unique, les cibles de rendu en couches et l'ordre des canaux à l'affichage corrigés, le menu s'affiche correctement avec ses modèles de personnages, textures et éclairage. Le profilage a situé le coût dans le backend graphique de l'hôte — préparation des ressources, copies de la mémoire invitée vers Vulkan et synchronisation — plutôt que dans la compilation de pipelines.",
+      imageAlt:
+        "Menu principal de Big Helmet Heroes avec modèles de personnages et éclairage, rendu par PS5PCEM",
+    },
+    "bhh-copies": {
+      title:
+        "Copies de tuiles plus larges, éviction moins coûteuse et surveillance de pages groupée",
+      summary:
+        "Le convertisseur de disposition copie désormais une séquence horizontale complète de 16 octets dès que son équation d'adresse prouve que ces octets sont contigus, au lieu de déplacer un pixel à la fois. L'éviction du cache de tampons a cessé de parcourir les 4 096 entrées, les pages invitées voisines sont surveillées par groupes, et les tampons Vulkan terminés sont recyclés.",
+      imageAlt:
+        "Scène de tutoriel de Big Helmet Heroes après les optimisations de copie, rendue par PS5PCEM",
+    },
+    "bhh-scalar-history": {
+      title: "Comptabilité scalaire allégée, sans gain de fluidité à montrer",
+      summary:
+        "Les points de contrôle de ressources ne portent plus d'historique de chargements scalaires inutilisé, et l'analyse scalaire complète évite les parcours redondants lors des visites en avant. Les cas de test isolés sont devenus 9–45 % moins coûteux, mais les échantillons de jeu comparables n'ont pratiquement pas bougé — 157 ms dans le menu contre 154,5 ms dans le témoin — et le rapport le dit sans détour.",
+      imageAlt:
+        "Tutoriel de Big Helmet Heroes après le changement de comptabilité des chargements scalaires, rendu par PS5PCEM",
+    },
+
+    "quake-playable": {
+      title: "Jouable et terminable",
+      summary:
+        "Le mainteneur a confirmé une partie complète. Le travail derrière cela a couvert les imports au démarrage et les listes de répertoires, les écritures de G-buffer différées, les échantillonneurs de comparaison de profondeur et les lectures de tampons typés dont dépendent les sommets de modèles et les données d'éclairage. La géométrie de PNJ manquante est revenue.",
+      imageAlt: "Écran-titre de Quake II, rendu par PS5PCEM",
+    },
+    "quake-rendering": {
+      title: "Rendu revérifié, avec des pointes de 60–70 FPS",
+      summary:
+        "Une revérification en PPSA09477 v1.003 a trouvé l'éclairage des niveaux, les textures, les armes et les PNJ tous visibles, ce qui clôt les anciens signalements de monde sombre et de modèles manquants. La réutilisation des tampons et les effacements GPU ont réduit le coût des transferts ; les scènes légères culminent à 60–70 FPS tandis que les combats chargés restent plus lents.",
+      imageAlt:
+        "Quake II, partie avec un niveau éclairé, des ennemis visibles et l'arme du joueur, rendu par PS5PCEM",
+    },
+
+    "tetris-first-render": {
+      title: "La première image reconnaissable issue du graphe de démarrage",
+      summary:
+        "595 appels de dessin invités et 63 dispatches de calcul se sont achevés sans un seul appel rejeté, produisant la première image de particules reconnaissable. Comme la cible de sortie 4K déclarée restait noire, l'affichage s'est replié sur la conversion d'une image intermédiaire en 1920×1080 — une étape de rendu précoce, pas un menu.",
+      imageAlt:
+        "La première image de particules reconnaissable de Tetris Effect, rendue par PS5PCEM",
+    },
+    "tetris-license-journey": {
+      title: "Écran de licence et sélection Journey, plusieurs fois plus rapides",
+      summary:
+        "Une composition traduite a remplacé les remplacements 4K spéculatifs, et la publication de remplissages linéaires de métadonnées a supprimé l'interface dupliquée et la couture verticale. Les images médianes de licence sont passées de 235 ms à 159 ms, et les images Journey échantillonnées de 1127–1276 ms à 318–396 ms. Des éléments d'interface sombres et un plantage du décodeur invité subsistent.",
+    },
+
+    "rita-intro-menu": {
+      title: "Intro de l'éditeur, menu-titre et la scène derrière",
+      summary:
+        "Le titre s'est installé dans une boucle graphique et audio stable en 1920×1080 et a dessiné sa séquence d'éditeur animée, son menu-titre et la scène d'après-menu. Cette scène provient d'une véritable cible invitée en 480×270 portée à travers la chaîne CRT et de post-traitement, ce qui a remplacé l'ancien bruit plein écran.",
+      imageAlt:
+        "Intro de l'éditeur de Mighty Morphin Power Rangers: Rita's Rewind, rendue par PS5PCEM",
+    },
+    "rita-playable": {
+      title: "Jouable et terminable",
+      summary:
+        "Le mainteneur a confirmé une partie complète le 24 septembre. La capture montre le Ranger rouge dans l'étape d'entraînement du Command Center avec ATH, barre de vie, objectifs et indications de boutons, tous réagissant à la manette. Le repli étroitement ciblé de mise à l'échelle CRT reste nécessaire sur la machine de référence.",
+      imageAlt:
+        "Rita's Rewind, partie avec le Ranger rouge dans le Command Center, rendu par PS5PCEM",
+    },
+
+    "jets-tutorial": {
+      title: "START GAME atteint le tutoriel en 4K",
+      summary:
+        "Le contenu du titre s'est résolu, l'enregistrement des ressources AGC s'est achevé, et la boucle complète graphique, calcul et affichage s'est maintenue. START GAME a franchi l'écran de chargement jusqu'à un tutoriel reconnaissable en 3840×2160, et une session sans surveillance est restée vivante au-delà de la présentation 300.",
+      imageAlt:
+        "Tutoriel de Jets 'n' Guns 2, rendu par PS5PCEM",
+    },
+    "jets-playable": {
+      title: "Jouable et terminable",
+      summary:
+        "Le mainteneur a confirmé une partie complète. Niveaux, ATH, score, ennemis et scène en parallaxe s'affichent tous correctement. Le profilage d'une image de 70 ms a trouvé 18 ms d'attente GPU sur 33 soumissions, 11 ms de points de contrôle de ressources et 13 ms de préparation de 894 tampons invités.",
+      imageAlt:
+        "Jets 'n' Guns 2, partie avec le vaisseau du joueur, l'ATH et le score, rendu par PS5PCEM",
+    },
+    "jets-audio": {
+      title: "Le son cesse de se couper lui-même",
+      summary:
+        "Deux ports de sortie actifs se disputaient le périphérique audio de l'hôte, démontant le mixage et réouvrant le périphérique plusieurs fois par image. La version 0.3.2 a corrigé le routage ; le statut jouable et terminable existant n'en a pas été affecté.",
+    },
+
+    "cat-quest-render-fixes": {
+      title:
+        "Un monde à l'envers, du texte corrompu et des couleurs inversées, tous corrigés",
+      summary:
+        "Le monde s'affichait à l'envers alors que l'interface non ; la couverture des fragments et les passes de pochoir seul corrompaient le texte des menus ; l'interface AGC d'origine pour la correspondance des interpolants manquait, si bien que les illustrations d'aventure et les décors utilisaient de mauvaises sorties sommet-vers-fragment ; et les formats d'affichage déclarés étaient ignorés, inversant le rouge et le bleu. Les quatre ont été corrigés.",
+      imageAlt:
+        "Liste des langues de Cat Quest III avec un texte lisible rogné dans son panneau, rendue par PS5PCEM",
+    },
+    "cat-quest-playable": {
+      title: "Jouable et terminable",
+      summary:
+        "Le mainteneur a confirmé une partie complète. En parallèle, le travail de traduction de shaders par image échantillonnée est passé d'environ 40 ms à 7 ms et les envois de tampons d'environ 125 Mio à 65–75 Mio, faisant passer l'île de départ de quelque 148 ms à une médiane de 124 ms.",
+      imageAlt:
+        "Cat Quest III, partie sur l'île avec l'ATH, les montagnes et la mer bleue, rendu par PS5PCEM",
+    },
+
+    "precinct-title-menu": {
+      title: "Les deux films d'intro, le menu-titre et une première image de jeu",
+      summary:
+        "Le graphe invité à six images s'est lié, les plug-ins Unity ont démarré, et les deux films d'intro se sont lus en 4K synchronisée avec son stéréo avant l'apparition de l'illustration du titre et d'une confirmation NEW GAME lisible. Une session antérieure sous garde a atteint l'invite Croix et produit la première image de jeu vérifiée dans le moteur.",
+      imageAlt:
+        "The Precinct, menu-titre avec la confirmation NEW GAME, rendu par PS5PCEM",
+    },
+    "sarah-playable": {
+      title: "Jouable et terminable à la limite de fréquence",
+      summary:
+        "Partie complète confirmée, avec menu-titre et première scène tenant la limite de 60 FPS — 5 280 présentations en 90 secondes. Le chargement a d'abord exigé de restaurer eboot.bin et sce_module/libc.prx depuis les sauvegardes laissées par le patcheur d'eboot de la copie après avoir tronqué les deux.",
+      imageAlt: "Dreaming Sarah, scène forestière avec un PNJ, rendue par PS5PCEM",
+    },
+    "terminator-playable": {
+      title: "Jouable et terminable",
+      summary:
+        "Terminé sans défaut signalé. Décors, personnages, ATH, textures et couleurs sont tous corrects, et les images de démarrage à chaud mesurent 22–65 ms. L'alpha des textures, l'ordre des canaux et l'échantillonnage sRGB préservent l'équilibre des couleurs voulu.",
+      imageAlt:
+        "Terminator 2D, partie avec le personnage, l'ATH et une scène désertique, rendu par PS5PCEM",
+    },
+    "asterix-playable": {
+      title: "Jouable et terminable",
+      summary:
+        "Partie complète confirmée à 28–31 ms par image, avec une session de développement de 3 000 présentations sans soumission rejetée. La composition plein écran reste résidente sur le GPU, et l'affichage conserve l'orientation de la fenêtre invitée sans détour par la mémoire de l'hôte.",
+      imageAlt:
+        "Asterix & Obelix: Slap Them All!, partie avec l'ATH et un panneau GO, rendu par PS5PCEM",
+    },
+    "jurassic-playable": {
+      title: "Jouable et terminable",
+      summary:
+        "Partie complète confirmée. Le rendu au démarrage a été rétabli, avec le logo du titre, la demande de confirmation, les jaquettes de la collection et l'aperçu animé. Enchaîner les aperçus peut encore épuiser un pool de descripteurs multimédias, après quoi les aperçus suivants se figent.",
+      imageAlt:
+        "Écran de sélection de Jurassic Park Classic Games Collection avec jaquettes, rendu par PS5PCEM",
+    },
+    "reanimal-title-menu": {
+      title: "Un menu-titre animé en 4K, sans ses libellés",
+      summary:
+        "Les modules natifs et de micrologiciel se sont résolus, la séquence du logo de l'éditeur s'est lue, et le menu-titre animé en 3840×2160 s'est maintenu avec son fond à la bouée, son logo, les reflets sur l'eau et l'invite SELECT visibles. Les libellés centraux ne sont toujours que de petites marques rouges : la navigation n'a jamais été vérifiée.",
+      imageAlt:
+        "Menu-titre animé de REANIMAL avec des libellés incomplets, rendu par PS5PCEM",
+    },
+    "propagation-bootstrap": {
+      title: "Amorçage d'Unreal jusqu'à la première soumission",
+      summary:
+        "Le paquet de 8,8 Gio s'est monté, l'amorçage d'ICU et de la configuration s'est achevé, l'archive globale de shaders précompilée s'est ouverte, les shaders AGC ont été créés, et le premier tampon de commandes a été soumis. La session précède les constructeurs de paquets de synchronisation actuels et doit être refaite.",
+    },
+    "pistol-whip-modules": {
+      title: "Les modules VR se chargent, les archives Unity commencent à charger",
+      summary:
+        "Le plug-in PS VR2 natif et le module Burst se sont tous deux chargés, et le titre a commencé à charger ses archives de données Unity. Aller plus loin attend le support du casque, du suivi et d'OpenXR côté hôte, que le projet a volontairement reporté.",
+    },
+  },
+};
+
+export default fr;

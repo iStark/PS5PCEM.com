@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { CompatibilityTier } from "@/data/compatibility";
-import { tierOf } from "@/data/compatibility";
+import type { Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n";
 
 const tierClasses: Record<CompatibilityTier, string> = {
   playable: "border-playable/40 bg-playable/10 text-playable",
@@ -11,19 +12,26 @@ const tierClasses: Record<CompatibilityTier, string> = {
 
 export function TierBadge({
   tier,
+  locale,
   className = "",
 }: {
   tier: CompatibilityTier;
+  locale: Locale;
   className?: string;
 }) {
-  const meta = tierOf(tier);
+  const t = getDictionary(locale);
   return (
     <span
       className={`inline-flex shrink-0 items-center rounded-full border px-2.5 py-1 text-xs font-medium ${tierClasses[tier]} ${className}`}
     >
-      {meta.shortLabel}
+      {t.tiers[tier].short}
     </span>
   );
+}
+
+/** The same palette as TierBadge, for callers that render their own element. */
+export function tierClass(tier: CompatibilityTier): string {
+  return tierClasses[tier];
 }
 
 export function SectionHeading({
@@ -34,7 +42,7 @@ export function SectionHeading({
 }: {
   eyebrow?: string;
   title: string;
-  description?: string;
+  description?: React.ReactNode;
   id?: string;
 }) {
   return (
@@ -138,5 +146,34 @@ export function Stat({
       <p className="mt-1 text-sm font-medium text-ink-200">{label}</p>
       {hint ? <p className="mt-1 text-xs text-ink-400">{hint}</p> : null}
     </div>
+  );
+}
+
+/** A short list of translated bullets, used for strengths and limits. */
+export function BulletList({
+  items,
+  tone = "neutral",
+}: {
+  items: readonly string[];
+  tone?: "neutral" | "good" | "bad";
+}) {
+  const dot = {
+    neutral: "bg-ink-600",
+    good: "bg-playable",
+    bad: "bg-intro",
+  } as const;
+
+  return (
+    <ul className="space-y-2.5">
+      {items.map((item) => (
+        <li key={item} className="flex gap-3 text-sm leading-relaxed text-ink-300">
+          <span
+            aria-hidden
+            className={`mt-2 size-1.5 shrink-0 rounded-full ${dot[tone]}`}
+          />
+          {item}
+        </li>
+      ))}
+    </ul>
   );
 }

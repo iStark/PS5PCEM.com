@@ -2,41 +2,72 @@ import type { Metadata } from "next";
 import {
   latestRelease,
   quickStart,
-  releaseHighlights,
   releaseHistory,
   systemRequirements,
 } from "@/data/release";
 import { site } from "@/data/site";
+import {
+  alternateLanguages,
+  locales,
+  localePath,
+  toLocale,
+} from "@/i18n/config";
+import { format, getDictionary } from "@/i18n";
 import { formatBytes, formatDate } from "@/lib/format";
 import { ButtonLink, Notice, SectionHeading } from "@/components/ui";
 
-export const metadata: Metadata = {
-  title: "Download",
-  description: `Download PS5PCEM ${latestRelease.version} for Windows x64 — portable ZIP or per-user installer, with SHA-256 checksums and system requirements.`,
-};
+type PageProps = { params: Promise<{ locale: string }> };
 
-export default function DownloadPage() {
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export const dynamicParams = false;
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const locale = toLocale((await params).locale);
+  const t = getDictionary(locale);
+  return {
+    title: format(t.download.heading, { version: latestRelease.version }),
+    description: t.meta.description,
+    alternates: {
+      canonical: localePath(locale, "/download"),
+      languages: alternateLanguages("/download"),
+    },
+  };
+}
+
+export default async function DownloadPage({ params }: PageProps) {
+  const locale = toLocale((await params).locale);
+  const t = getDictionary(locale);
+  const [leadBefore, leadAfter] = t.download.lead.split("{link}");
+
   return (
     <div className="container-page py-16">
       <header className="max-w-3xl">
         <p className="text-xs font-semibold uppercase tracking-widest text-accent-400">
-          Windows x64 · {latestRelease.prerelease ? "Pre-release" : "Release"}
+          {format(t.download.eyebrow, {
+            channel: latestRelease.prerelease
+              ? t.download.channelPrerelease
+              : t.download.channelRelease,
+          })}
         </p>
         <h1 className="mt-2 text-balance text-4xl font-semibold tracking-tight text-ink-100 sm:text-5xl">
-          Download PS5PCEM {latestRelease.version}
+          {format(t.download.heading, { version: latestRelease.version })}
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-ink-300">
-          Published {formatDate(latestRelease.publishedAt)}. Every file is served
-          from the{" "}
+          {format(leadBefore, {
+            date: formatDate(latestRelease.publishedAt, locale),
+          })}
           <a
             href={latestRelease.releaseUrl}
             className="text-accent-400 underline underline-offset-2 hover:text-accent-300"
             rel="noreferrer noopener"
             target="_blank"
           >
-            GitHub release
+            {t.download.leadLink}
           </a>
-          , which is the only place official builds are published.
+          {leadAfter}
         </p>
       </header>
 
@@ -54,7 +85,7 @@ export default function DownloadPage() {
               </h2>
               {asset.primary ? (
                 <span className="rounded-full border border-accent-500/40 bg-accent-500/10 px-2.5 py-1 text-xs font-medium text-accent-400">
-                  Recommended
+                  {t.common.recommended}
                 </span>
               ) : null}
             </div>
@@ -65,7 +96,7 @@ export default function DownloadPage() {
               {asset.fileName}
             </p>
             <p className="mt-1 text-xs text-ink-400">
-              {formatBytes(asset.size)}
+              {formatBytes(asset.size, locale)}
             </p>
             <ButtonLink
               href={asset.url}
@@ -73,54 +104,33 @@ export default function DownloadPage() {
               variant={asset.primary ? "primary" : "secondary"}
               className="mt-5 w-full"
             >
-              Download
+              {t.download.download}
             </ButtonLink>
           </article>
         ))}
       </section>
 
       <section className="mt-10 max-w-3xl">
-        <Notice tone="info" title="Signed applications and installer">
-          The launcher, game runner, PKG extractor and installer carry SHA-256
-          Authenticode signatures from Artur Strazewicz / PS5PCEM, with DigiCert
-          timestamps. The signing certificate is self-signed, so Windows may
-          still show an Unknown Publisher or SmartScreen warning. The checksums
-          below let you verify the downloaded files.
+        <Notice tone="info" title={t.download.signingTitle}>
+          {t.download.signingBody}
         </Notice>
-      </section>
-
-      <section className="mt-16 max-w-3xl">
-        <SectionHeading
-          eyebrow="Since 0.3.1-beta.1"
-          title={`What's new in ${latestRelease.version}`}
-        />
-        <ul className="mt-6 space-y-3 text-sm leading-relaxed text-ink-300">
-          {releaseHighlights.map((highlight) => (
-            <li key={highlight} className="border-l-2 border-accent-500/40 pl-4">
-              {highlight}
-            </li>
-          ))}
-        </ul>
-        <ButtonLink href={latestRelease.notesUrl} variant="secondary" external className="mt-6">
-          Read the full changelog
-        </ButtonLink>
       </section>
 
       <section className="mt-16">
         <SectionHeading
-          eyebrow="Verify"
-          title="SHA-256 checksums"
-          description="On Windows, run certutil -hashfile <file> SHA256 and compare the result with the value here."
+          eyebrow={t.download.verifyEyebrow}
+          title={t.download.verifyHeading}
+          description={t.download.verifyLead}
         />
         <div className="surface mt-8 overflow-x-auto">
-          <table className="w-full min-w-[40rem] text-left text-sm">
+          <table className="w-full min-w-[40rem] text-start text-sm">
             <thead className="border-b border-ink-700 text-xs uppercase tracking-widest text-ink-400">
               <tr>
-                <th scope="col" className="px-5 py-3.5 font-semibold">
-                  File
+                <th scope="col" className="px-5 py-3.5 text-start font-semibold">
+                  {t.download.tableFile}
                 </th>
-                <th scope="col" className="px-5 py-3.5 font-semibold">
-                  SHA-256
+                <th scope="col" className="px-5 py-3.5 text-start font-semibold">
+                  {t.download.tableHash}
                 </th>
               </tr>
             </thead>
@@ -132,7 +142,10 @@ export default function DownloadPage() {
                     <td className="px-5 py-4 align-top font-mono text-xs break-all text-ink-200">
                       {asset.fileName}
                     </td>
-                    <td className="px-5 py-4 align-top font-mono text-xs break-all text-ink-400">
+                    <td
+                      className="px-5 py-4 align-top font-mono text-xs break-all text-ink-400"
+                      dir="ltr"
+                    >
                       {asset.sha256}
                     </td>
                   </tr>
@@ -145,11 +158,11 @@ export default function DownloadPage() {
       <section className="mt-16 grid gap-10 lg:grid-cols-2">
         <div>
           <h2 className="text-xl font-semibold text-ink-100">
-            System requirements
+            {t.download.requirementsHeading}
           </h2>
           <dl className="mt-5 space-y-4">
             {systemRequirements.map((item) => (
-              <div key={item.label} className="border-l-2 border-ink-700 pl-4">
+              <div key={item.label} className="border-s-2 border-ink-700 ps-4">
                 <dt className="text-sm font-medium text-ink-100">
                   {item.label}
                 </dt>
@@ -162,7 +175,9 @@ export default function DownloadPage() {
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold text-ink-100">Quick start</h2>
+          <h2 className="text-xl font-semibold text-ink-100">
+            {t.download.quickStartHeading}
+          </h2>
           <ol className="mt-5 space-y-4">
             {quickStart.map((step, index) => (
               <li key={step} className="flex gap-4">
@@ -176,44 +191,46 @@ export default function DownloadPage() {
             ))}
           </ol>
           <p className="mt-6 text-sm leading-relaxed text-ink-400">
-            Games, firmware, keys, system libraries and console software are not
-            included, and will never be distributed here.
+            {t.download.noContentNote}
           </p>
         </div>
       </section>
 
       <section className="mt-16">
         <SectionHeading
-          eyebrow="Also available"
-          title="Release notes, source, and older builds"
+          eyebrow={t.download.alsoEyebrow}
+          title={t.download.alsoHeading}
         />
         <div className="mt-8 flex flex-wrap gap-3">
           <ButtonLink href={latestRelease.notesUrl} variant="secondary" external>
-            Release notes for {latestRelease.version}
+            {format(t.download.releaseNotesCta, {
+              version: latestRelease.version,
+            })}
           </ButtonLink>
-          <ButtonLink href="/extract" variant="secondary">
-            PKG extractor
-          </ButtonLink>
-          <ButtonLink href={site.links.gettingStarted} variant="secondary" external>
-            Build from source with Zig
+          <ButtonLink
+            href={site.links.gettingStarted}
+            variant="secondary"
+            external
+          >
+            {t.download.buildFromSource}
           </ButtonLink>
           <ButtonLink href={site.links.releases} variant="secondary" external>
-            All GitHub releases
+            {t.download.allReleases}
           </ButtonLink>
         </div>
 
         <div className="surface mt-8 overflow-x-auto">
-          <table className="w-full min-w-[32rem] text-left text-sm">
+          <table className="w-full min-w-[32rem] text-start text-sm">
             <thead className="border-b border-ink-700 text-xs uppercase tracking-widest text-ink-400">
               <tr>
-                <th scope="col" className="px-5 py-3.5 font-semibold">
-                  Version
+                <th scope="col" className="px-5 py-3.5 text-start font-semibold">
+                  {t.download.tableVersion}
                 </th>
-                <th scope="col" className="px-5 py-3.5 font-semibold">
-                  Published
+                <th scope="col" className="px-5 py-3.5 text-start font-semibold">
+                  {t.download.tablePublished}
                 </th>
-                <th scope="col" className="px-5 py-3.5 font-semibold">
-                  Link
+                <th scope="col" className="px-5 py-3.5 text-start font-semibold">
+                  {t.download.tableLink}
                 </th>
               </tr>
             </thead>
@@ -223,13 +240,13 @@ export default function DownloadPage() {
                   <td className="px-5 py-4 font-medium text-ink-100">
                     {release.version}
                     {release.version === latestRelease.version ? (
-                      <span className="ml-2 rounded-full border border-accent-500/40 bg-accent-500/10 px-2 py-0.5 text-xs font-normal text-accent-400">
-                        Latest
+                      <span className="ms-2 rounded-full border border-accent-500/40 bg-accent-500/10 px-2 py-0.5 text-xs font-normal text-accent-400">
+                        {t.common.latest}
                       </span>
                     ) : null}
                   </td>
                   <td className="px-5 py-4 text-ink-300">
-                    {formatDate(release.publishedAt)}
+                    {formatDate(release.publishedAt, locale)}
                   </td>
                   <td className="px-5 py-4">
                     <a
@@ -238,7 +255,7 @@ export default function DownloadPage() {
                       rel="noreferrer noopener"
                       target="_blank"
                     >
-                      View on GitHub
+                      {t.download.viewOnGitHub}
                     </a>
                   </td>
                 </tr>

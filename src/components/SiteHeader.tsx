@@ -4,18 +4,43 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { navigation, site } from "@/data/site";
+import { site } from "@/data/site";
 import { latestRelease } from "@/data/release";
+import { type Locale, localePath, stripLocale } from "@/i18n/config";
+import { format, getDictionary } from "@/i18n";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
-export function SiteHeader() {
+export function SiteHeader({ locale }: { locale: Locale }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const t = getDictionary(locale);
+  const here = stripLocale(pathname ?? "/");
+
+  const navigation = [
+    { href: "/", label: t.nav.home },
+    { href: "/download", label: t.nav.download },
+    { href: "/compatibility", label: t.nav.compatibility },
+    { href: "/status", label: t.nav.status },
+    { href: "/media", label: t.nav.media },
+    { href: "/extract", label: t.nav.extract },
+  ];
+
+  function isActive(href: string) {
+    if (href === "/") {
+      return here === "/";
+    }
+    // /games/<slug> keeps the Compatibility tab lit.
+    if (href === "/compatibility") {
+      return here.startsWith("/compatibility") || here.startsWith("/games");
+    }
+    return here.startsWith(href);
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink-800 bg-ink-950/85 backdrop-blur">
       <div className="container-page flex h-16 items-center gap-4">
         <Link
-          href="/"
+          href={localePath(locale)}
           className="flex items-center gap-2.5 font-semibold text-ink-100"
           onClick={() => setOpen(false)}
         >
@@ -31,67 +56,65 @@ export function SiteHeader() {
         </Link>
 
         <nav
-          aria-label="Main"
-          className="ml-auto hidden items-center gap-1 md:flex"
+          aria-label={t.nav.home}
+          className="ms-auto hidden items-center gap-1 lg:flex"
         >
-          {navigation.map((item) => {
-            const active =
-              item.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(item.href);
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                aria-current={active ? "page" : undefined}
-                className={`rounded-md px-3 py-2 text-sm transition-colors ${
-                  active
-                    ? "bg-ink-800 text-ink-100"
-                    : "text-ink-300 hover:bg-ink-850 hover:text-ink-100"
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
+          {navigation.map((item) => (
+            <Link
+              key={item.href}
+              href={localePath(locale, item.href)}
+              aria-current={isActive(item.href) ? "page" : undefined}
+              className={`rounded-md px-3 py-2 text-sm transition-colors ${
+                isActive(item.href)
+                  ? "bg-ink-800 text-ink-100"
+                  : "text-ink-300 hover:bg-ink-850 hover:text-ink-100"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
           <a
             href={site.links.github}
-            className="ml-2 rounded-md px-3 py-2 text-sm text-ink-300 transition-colors hover:bg-ink-850 hover:text-ink-100"
+            className="rounded-md px-3 py-2 text-sm text-ink-300 transition-colors hover:bg-ink-850 hover:text-ink-100"
             rel="noreferrer noopener"
             target="_blank"
           >
-            GitHub
+            {t.common.github}
           </a>
+          <LanguageSwitcher locale={locale} className="ms-1" />
           <Link
-            href="/download"
-            className="ml-1 rounded-md bg-accent-500 px-3.5 py-2 text-sm font-medium text-ink-950 transition-colors hover:bg-accent-400"
+            href={localePath(locale, "/download")}
+            className="ms-1 rounded-md bg-accent-500 px-3.5 py-2 text-sm font-medium text-ink-950 transition-colors hover:bg-accent-400"
           >
-            Get {latestRelease.version}
+            {format(t.common.getVersion, { version: latestRelease.version })}
           </Link>
         </nav>
 
-        <button
-          type="button"
-          className="ml-auto rounded-md border border-ink-700 px-3 py-2 text-sm text-ink-200 md:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? "Close" : "Menu"}
-        </button>
+        <div className="ms-auto flex items-center gap-2 lg:hidden">
+          <LanguageSwitcher locale={locale} />
+          <button
+            type="button"
+            className="rounded-md border border-ink-700 px-3 py-2 text-sm text-ink-200"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? t.common.close : t.common.menu}
+          </button>
+        </div>
       </div>
 
       <nav
         id="mobile-nav"
-        aria-label="Main"
+        aria-label={t.nav.home}
         hidden={!open}
-        className="border-t border-ink-800 bg-ink-950 md:hidden"
+        className="border-t border-ink-800 bg-ink-950 lg:hidden"
       >
         <ul className="container-page flex flex-col py-2">
           {navigation.map((item) => (
             <li key={item.href}>
               <Link
-                href={item.href}
+                href={localePath(locale, item.href)}
                 className="block rounded-md px-2 py-2.5 text-sm text-ink-200 hover:bg-ink-850"
                 onClick={() => setOpen(false)}
               >
@@ -106,7 +129,7 @@ export function SiteHeader() {
               rel="noreferrer noopener"
               target="_blank"
             >
-              GitHub
+              {t.common.github}
             </a>
           </li>
         </ul>
