@@ -348,6 +348,19 @@ const es: Content = {
       "summary": "Compilación de desarrollo del 1 de octubre, PPSA02457 v1.022.125: Supervivencia carga el mundo, reproduce la introducción y muestra la zona nevada del accidente con su HUD. Las correcciones evitan escrituras GPU obsoletas sobre memoria CPU, lecturas repetidas de búferes liberados y el borrado del color por pases de profundidad. Esta prueba no incluyó una partida completa, recuperación de guardados ni verificación del audio.",
       "imageAlt": "Zona inicial nevada de Subnautica: Below Zero con HUD de supervivencia, capturada en PS5PCEM"
     },
+    "subnautica-lighting-baseline": {
+      "title": "Prueba de iluminación: la carga sigue siendo inestable",
+      "summary": "Tres pruebas adicionales de la compilación anterior fallaron durante la carga o la transición al mundo, después de dos pruebas que sí llegaron al juego. Un hilo puede detenerse mientras el audio continúa y la ventana queda negra. El registro anterior confirma además que un mip de 1×1 actualizaba erróneamente la textura base de 512×512. Estos fallos se registran por separado del ensayo exitoso; la carga estable aún no está confirmada."
+    },
+    "subnautica-colour-mips": {
+      "title": "Mips de color corregidos en la GPU",
+      "summary": "La búsqueda de texturas residentes distingue ahora los niveles mip y las capas. Las pirámides de color completas pueden ensamblarse en la GPU. Una prueba RG32F de seis niveles verifica los valores, una reescritura en el mismo fotograma y el muestreo sin lecturas adicionales hacia la CPU ni nuevas cargas de texturas; pasan 128 pruebas específicas. El juego sigue fallando al cargar, incluso en modo síncrono y con 8192 entradas de caché. La mejora de FPS en el mundo y el resultado final de iluminación siguen sin verificar."
+    },
+    "subnautica-mip-coherence": {
+      "title": "Memoria mip: eliminadas las transferencias repetidas",
+      "summary": "La traza del juego mostró diez lecturas de niveles RG32F por fotograma (2730 KiB), seguidas de nuevas cargas. La validación distingue ahora una escritura GPU comprobada de una sustitución por la CPU. Pasan cuatro casos Vulkan con niveles lineales/empaquetados y seguimiento de memoria, junto con 129 pruebas específicas. En la nueva ejecución, las transferencias de los destinos de color del menú bajan a cero: los diez niveles permanecen en la GPU. Siguen pendientes la iluminación oscura, los fallos intermitentes de carga y los 30 FPS. La versión llega a la escena nevada: 260 fotogramas en 30,01 segundos sin moverse equivalen a 8,66 FPS. No se ha demostrado una mejora global de FPS.",
+      "imageAlt": "Zona nevada del accidente y HUD de Subnautica: Below Zero tras corregir la coherencia mip; la iluminación sigue oscura"
+    },
 
     "yotei-intro-video": {
       title: "El vídeo de intro se decodifica y se reproduce",

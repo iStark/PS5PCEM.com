@@ -347,6 +347,19 @@ const fr: Content = {
       "summary": "Version de développement du 1er octobre, PPSA02457 v1.022.125 : le mode Survie charge le monde, joue l’introduction et affiche le site enneigé du crash avec son interface. Les corrections empêchent les écritures GPU périmées dans la mémoire CPU, les lectures répétées de tampons libérés et l’effacement des couleurs par les passes de profondeur. Ce test ne couvre pas une partie complète, la récupération des sauvegardes ni la fidélité audio.",
       "imageAlt": "Zone de départ enneigée de Subnautica: Below Zero avec son interface de survie, capturée dans PS5PCEM"
     },
+    "subnautica-lighting-baseline": {
+      "title": "Éclairage : chargement encore instable",
+      "summary": "Trois essais supplémentaires de la version précédente ont échoué pendant le chargement ou la transition vers le monde, après deux essais ayant atteint le jeu. Un thread peut s’arrêter tandis que le son continue et que la fenêtre reste noire. L’ancien journal confirme aussi qu’un mip 1×1 remplaçait à tort la texture de base 512×512. Ces échecs sont consignés séparément de l’essai réussi ; la stabilité du chargement reste à établir."
+    },
+    "subnautica-colour-mips": {
+      "title": "Échantillonnage des mips couleur corrigé sur le GPU",
+      "summary": "La recherche de textures résidentes distingue désormais les niveaux mip et les couches. Les pyramides couleur complètes peuvent être assemblées sur le GPU. Un test RG32F à six niveaux vérifie les valeurs, une réécriture dans la même image et l’échantillonnage sans lecture supplémentaire vers le CPU ni nouvel envoi de texture ; 128 tests ciblés réussissent. Le jeu échoue encore au chargement, même en mode synchrone et avec 8192 entrées de cache. Le gain de FPS dans le monde et le résultat visuel final restent à vérifier."
+    },
+    "subnautica-mip-coherence": {
+      "title": "Mémoire des mipmaps : transferts répétés supprimés",
+      "summary": "La trace du jeu révélait dix lectures de mipmaps RG32F par image (2730 Kio), suivies de nouveaux transferts vers le GPU. La validation distingue désormais une écriture GPU vérifiée d’un remplacement par le CPU. Les quatre cas Vulkan avec niveaux linéaires/compactés et suivi mémoire passent, ainsi que 129 tests ciblés. Dans le nouveau lancement, les transferts des cibles couleur du menu tombent à zéro : les dix niveaux restent sur le GPU. L’éclairage sombre, les chargements intermittents et l’objectif de 30 FPS restent à résoudre. La version atteint la scène enneigée : 260 images en 30,01 secondes sans déplacement donnent 8,66 FPS. Un gain global de fréquence d’images n’est pas établi.",
+      "imageAlt": "Site enneigé du crash et interface de Subnautica: Below Zero après la correction des mipmaps ; éclairage encore sombre"
+    },
 
     "yotei-intro-video": {
       title: "La vidéo d'intro se décode et se lit",

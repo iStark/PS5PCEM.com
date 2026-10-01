@@ -347,6 +347,19 @@ const de: Content = {
       "summary": "Entwicklungsbuild vom 1. Oktober, PPSA02457 v1.022.125: Der Überlebensmodus lädt die Welt, spielt die Einleitung ab und zeigt die verschneite Absturzstelle mit HUD. Die Korrekturen verhindern veraltete GPU-Rückschreibungen in CPU-Speicher, wiederholte Zugriffe auf freigegebene Puffer und das Löschen der Farbe durch Tiefenpässe. Dieser Test umfasste keinen vollständigen Durchlauf, keine Wiederherstellung von Spielständen und keine Prüfung der Audiokorrektheit.",
       "imageAlt": "Verschneites Startgebiet von Subnautica: Below Zero mit Überlebens-HUD, aufgenommen in PS5PCEM"
     },
+    "subnautica-lighting-baseline": {
+      "title": "Beleuchtungsprüfung: Laden bleibt instabil",
+      "summary": "Drei weitere Läufe des vorherigen Builds scheiterten beim Laden oder beim Übergang in die Spielwelt, nachdem zwei frühere Läufe das Gameplay erreicht hatten. Ein Arbeitsthread kann stoppen, während Audio weiterläuft und das Fenster schwarz bleibt. Das alte Protokoll bestätigt außerdem, dass ein 1×1-Mip die 512×512-Basistex­tur fälschlich aktualisierte. Diese Fehler stehen getrennt vom erfolgreichen Lauf; stabiles Laden ist noch nicht bestätigt."
+    },
+    "subnautica-colour-mips": {
+      "title": "Farb-Mip-Abtastung auf der GPU korrigiert",
+      "summary": "Die Suche nach residenten Texturen unterscheidet jetzt Mip-Stufen und Array-Schichten. Vollständige Farbpyramiden lassen sich auf der GPU zusammensetzen. Ein RG32F-Test mit sechs Stufen prüft die Werte, eine Änderung im selben Frame und die Abtastung ohne zusätzliche Rücklesungen oder Textur-Uploads; 128 gezielte Tests bestehen. Das Spiel scheitert weiterhin beim Laden, auch synchron und mit 8192 Cache-Einträgen. Mehr FPS in der Spielwelt und das endgültige Beleuchtungsergebnis sind noch nicht bestätigt."
+    },
+    "subnautica-mip-coherence": {
+      "title": "Mip-Speicher: wiederholte Transfers beseitigt",
+      "summary": "Die Spielaufzeichnung zeigte zehn RG32F-Mip-Rücklesevorgänge pro Frame (2730 KiB) und erneute Uploads. Die Speicherprüfung unterscheidet nun bestätigte GPU-Schreibvorgänge von CPU-Ersetzungen. Vier Vulkan-Fälle mit linearen/gepackten Mips und Speicherüberwachung sowie 129 gezielte Tests bestehen. Im neuen Lauf entfallen im Menü die Uploads und Rücklesevorgänge für Farbziele; die zehnstufige Pyramide bleibt auf der GPU. Dunkle Beleuchtung, sporadische Ladefehler und das Ziel von 30 FPS bleiben offen. Der Kandidat erreicht die Schneeszene: 260 Frames in 30,01 Sekunden ohne Bewegung ergeben 8,66 FPS. Eine Steigerung der Gesamtbildrate ist nicht belegt.",
+      "imageAlt": "Verschneite Absturzstelle und HUD in Subnautica: Below Zero nach der Mip-Korrektur; dunkle Beleuchtung bleibt"
+    },
 
     "yotei-intro-video": {
       title: "Das Introvideo wird dekodiert und abgespielt",

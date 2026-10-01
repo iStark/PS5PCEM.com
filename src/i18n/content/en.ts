@@ -373,6 +373,19 @@ const content: Content = {
       "summary": "October 1 development build, PPSA02457 v1.022.125: Survival passes loading and the intro, then renders the snowy crash site and HUD. Fixes protect CPU memory from stale GPU writeback, retire released storage buffers and preserve colour during depth-only draws. RG32F attachments, mip views and D16 shadow bias are supported. This validation did not include a full playthrough, save recovery or audio correctness.",
       "imageAlt": "Subnautica: Below Zero snowy opening area with the survival HUD, captured from PS5PCEM"
     },
+    "subnautica-lighting-baseline": {
+      "title": "Lighting baseline: loading is still intermittent",
+      "summary": "Three additional runs of the previous build failed during loading or the world transition, after two earlier runs had reached gameplay. A worker can stop while audio continues and the window stays black. The old log also confirms a 1×1 mip incorrectly refreshing the 512×512 base texture. These failures are recorded separately from the earlier successful run; stable loading is not yet established."
+    },
+    "subnautica-colour-mips": {
+      "title": "Colour mip sampling corrected on the GPU",
+      "summary": "Resident texture lookup now keeps mip levels and array slices distinct. Complete colour pyramids can be assembled on the GPU. A six-level RG32F probe verifies each level, a same-frame rewrite and sampling without extra target readbacks or texture uploads; 128 focused tests pass. The game candidate still faults during loading, including diagnostic synchronous and 8192-entry-cache runs. A world FPS gain and the final lighting result remain unverified."
+    },
+    "subnautica-mip-coherence": {
+      "title": "Tracked mip memory: repeated transfers removed",
+      "summary": "A real-game trace found ten RG32F mip readbacks per frame (2730 KiB) followed by repeated uploads. Shared-memory validation now distinguishes a verified GPU publication from a CPU replacement. All four Vulkan cases with linear/packed mips and memory tracking pass, alongside 129 focused tests. In the new game run, menu render-target uploads and readbacks fall to zero and the ten-level pyramid stays on the GPU. Dark lighting, intermittent loading failures and the 30 FPS target remain open. The candidate reaches the snowy world; a 30.01-second stationary sample records 260 flips (8.66 FPS), so an overall FPS gain is not established.",
+      "imageAlt": "Subnautica: Below Zero snowy crash site and HUD after the mip-coherence fix; dark lighting remains"
+    },
 
     // Ghost of Yōtei
     "yotei-intro-video": {
