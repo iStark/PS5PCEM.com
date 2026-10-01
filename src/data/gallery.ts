@@ -97,6 +97,13 @@ export const captures: Capture[] = [
       "The menu reference confirmed on September 20, 2026: characters, textures, lighting and colors render correctly across two clean launches. Short menu samples measured 3.2–3.3 FPS. Gameplay has not been verified.",
   },
   {
+    src: "/images/yotei-null-images-bonus.png",
+    alt: "Ghost of Yotei Digital Deluxe Bonus notice in the October 1 development runner",
+    title: "Ghost of Yōtei — uniform null-image validation",
+    caption:
+      "October 1, 2026. Unedited 1765×993 capture from the installed null-texture and scalar-recovery correction, with output configured for 1080p. This first run stops advancing at flip 740 while awaiting GPU completion and is deliberately terminated after diagnostics. A repeat encounters the same wait path at flip 748, after a 167-second compilation-heavy frame. The isolated descriptor benchmark is about 4.6 times faster, but neither run reaches the tree or establishes an FPS gain. Malformed nonzero resources remain errors; rendering and startup stability remain unresolved. Public release archives are unchanged.",
+  },
+  {
     src: "/images/yotei-command-writes-tree.png",
     alt: "Ghost of Yotei tree with remaining vertical lighting streaks and excessive brightness",
     title: "Ghost of Yōtei — ordered command writes",
