@@ -72,19 +72,19 @@ export const compatibility: CompatibilityEntry[] = [
     slug: "subnautica-below-zero",
     title: "Subnautica: Below Zero",
     tier: "intro",
-    status: "Main menu renders · gameplay unverified",
-    headline: "The 1080p menu remains around 17 FPS after scalar scratch changes.",
+    status: "New Game reaches loading · gameplay blocked",
+    headline: "Survival now leaves the mode panel and starts loading the world.",
     milestone:
-      "Rechecked on September 28, 2026 with PPSA02457 v1.022.125. Enter opens Play, Options and Credits over the animated ocean scene. The default 1920×1080 setting reaches Unity's startup configuration without editing installed game files. The shared scalar interpreter now initializes branch tables only when needed and searches occupied spill records. This builds on earlier register borrowing, queue discovery, index staging and shader reuse changes. The latest measurements do not demonstrate an FPS improvement.",
+      "October 1, 2026 development build, PPSA02457 v1.022.125. Writable per-title temporary storage fixes the empty Unity cache path that blocked new-save creation. Shared signal delivery preserves the interrupted guest stack and register roots during garbage collection. Deferred frame writeback checks for loss of previously accessible backing. Main-scene objects and a larger rendering workload were observed, but presentation became black; playable gameplay is not established.",
     notes:
-      "Development-build result; the existing 0.3.2 download predates these fixes. The 30 FPS menu target remains unmet. Rendering artifacts and intermittent missing labels remain unresolved. No guest fault or device loss was reported in the measured runs; an earlier startup fault has not been isolated. Gameplay, audio correctness and longer-run stability are unverified. Other engines can still choose their own internal render resolution.",
+      "The latest retest still faults in a worker during world loading; the runtime correction does not fully resolve that failure. Earlier runs also reached a black screen with repeated draw failures, and the final cache change has not yet established a visible loaded scene. The published 0.3.2 archives predate these fixes. Shader/resource failures and low FPS remain under investigation. Save persistence, audio correctness and stability are unverified. Installed game content and existing saves were not edited.",
     performance:
-      "Three fresh 180-second ReleaseFast runs on the RTX 3070 Ti host compare 24 matching menu samples at native 1920×1080. The installed build measures 59 ms median (about 17 FPS), with a 55–73 ms range; previous-build controls measure 57 and 58 ms. The installed sample is slightly slower, and run-to-run variation prevents attributing the small difference to this change. Median GPU waits are 1.7–2.1 ms, while checkpoint preparation remains about 6.7 ms. A separate combined-worker experiment increased frame time to 61 ms and was removed. CPU preparation and command handling remain the main costs; 30 FPS requires a frame below 33.3 ms.",
+      "These startup fixes are not an FPS benchmark. Earlier September 28 measurements on the RTX 3070 Ti host found a 59 ms median menu frame, about 17 FPS, versus 57 and 58 ms in controls. The 30 FPS target remains unmet. A loading-screen frame rate does not describe gameplay performance.",
     image: {
-      src: "/images/subnautica-below-zero-menu.png",
-      alt: "Subnautica Below Zero main menu showing Play, Options and Credits in PS5PCEM",
+      src: "/images/subnautica-below-zero-new-game-loading.png",
+      alt: "Subnautica Below Zero world-loading screen with a ship above the planet",
     },
-    confirmedOn: "2026-09-28",
+    confirmedOn: "2026-10-01",
   },
   {
     slug: "terminator-2d-no-fate",

@@ -13,11 +13,11 @@ export type Capture = {
 
 export const captures: Capture[] = [
   {
-    src: "/images/subnautica-below-zero-menu.png",
-    alt: "Subnautica Below Zero main menu showing Play, Options and Credits in PS5PCEM",
-    title: "Subnautica: Below Zero — main menu",
+    src: "/images/subnautica-below-zero-new-game-loading.png",
+    alt: "Subnautica Below Zero world-loading screen with a ship above the planet",
+    title: "Subnautica: Below Zero — new-game loading",
     caption:
-      "PPSA02457 v1.022.125, September 28, 2026. Frame 512 from the final measured development run, captured at native 1920×1080 after the scalar scratch change. Enter opens Play, Options and Credits. Median menu performance is about 17 FPS. This change does not demonstrate an FPS improvement; 30 FPS has not been reached. Rendering artifacts and intermittent missing labels remain unresolved. Gameplay is unverified.",
+      "PPSA02457 v1.022.125, October 1, 2026. An unedited 1765×993 client-window capture from the final development build with 1080p guest output. Writable temporary storage allows Survival to leave the mode panel and start world loading. This run later faulted in a worker despite the stack-context correction. Earlier runs also produced a black screen; a visible loaded scene is not established. Gameplay, save persistence and audio correctness remain unverified. These startup fixes are not a measured FPS improvement. Public release 0.3.2 predates them.",
   },
   {
     src: "/images/launcher-library.png",
