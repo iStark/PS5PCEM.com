@@ -40,6 +40,14 @@ export type HistoryEntry = {
 export const history: HistoryEntry[] = [
   // Subnautica: Below Zero — PPSA02457 v1.022.125
   {
+    id: "subnautica-descriptor-unmap",
+    slug: "subnautica-below-zero",
+    date: "2026-10-02",
+    release: null,
+    image: "/images/subnautica-below-zero-descriptor-world.png",
+    source: devReport("subnautica-vector-walk-save-2026-10-02.md"),
+  },
+  {
     id: "subnautica-read-lease",
     slug: "subnautica-below-zero",
     date: "2026-10-02",

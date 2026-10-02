@@ -381,6 +381,11 @@ const content: Content = {
       "title": "Colour mip sampling corrected on the GPU",
       "summary": "Resident texture lookup now keeps mip levels and array slices distinct. Complete colour pyramids can be assembled on the GPU. A six-level RG32F probe verifies each level, a same-frame rewrite and sampling without extra target readbacks or texture uploads; 128 focused tests pass. The game candidate still faults during loading, including diagnostic synchronous and 8192-entry-cache runs. A world FPS gain and the final lighting result remain unverified."
     },
+    "subnautica-descriptor-unmap": {
+      "title": "Descriptor workspace reuse and safer failed unmaps",
+      "summary": "Sampled-image descriptor updates reuse temporary arrays, reducing their stack frame from 753,720 to 56 bytes without changing the Vulkan batch. A separate regression fixes unmap failures that left removed native pages marked readable. 154 renderer/index, 29 memory and 60 submission tests pass, along with Vulkan checks including 4352 mixed texture views. The first fresh load restores the saved world; a stationary unpaused sample records 12.03 FPS over 30.01 seconds. Different weather and warm-up prevent a controlled speedup claim. One scalar resource remains unresolved. 30 FPS, reliable loading and a full playthrough are not verified.",
+      "imageAlt": "Subnautica: Below Zero — unpaused 12.03 FPS sample, 2026-10-02"
+    },
     "subnautica-read-lease": {
       "title": "Smaller draw stack and protected guest reads",
       "summary": "Reusable scalar storage reduces the draw function stack from 447,424 to 32,640 bytes. A further loading crash in hashing exposed a check-to-read race: GPU input copies and hashes now hold the mapping until they finish. A concurrent-unmap regression passes, along with 34 memory/lifetime/index tests and 60 submission tests. The first follow-up restores the saved world and measures 8.63 FPS over 30.01 seconds without pausing. Different weather and warm-up prevent a direct comparison with the earlier 10.00 FPS sample. One shader resource remains unresolved; 30 FPS and long-session stability are still unverified. A fresh repeat with the same executable still crashes during loading in hash + 0xf0. The protected-read regression is valid, but this observed crash is not fixed; the failing caller is under investigation.",
