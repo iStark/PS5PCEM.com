@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
   extractor,
+  extractorCheck,
   extractorLimits,
   extractorSteps,
   extractorWrites,
@@ -68,6 +69,26 @@ export default async function ExtractPage({ params }: PageProps) {
 
       <section className="mt-12 max-w-3xl">
         <Notice title={t.extract.noticeTitle}>{t.extract.noticeBody}</Notice>
+      </section>
+
+      <section className="surface mt-8 max-w-3xl p-6">
+        <time dateTime={extractorCheck.date} className="text-xs text-ink-400">
+          {extractorCheck.date}
+        </time>
+        <h2 className="mt-2 text-lg font-semibold text-ink-100">
+          {t.extract.checkTitle}
+        </h2>
+        <p className="mt-3 text-sm leading-relaxed text-ink-300">
+          {t.extract.checkBody}
+        </p>
+        <a
+          href={extractorCheck.source}
+          className="mt-4 inline-block text-sm text-accent-400 underline underline-offset-2"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          {t.extract.checkLink}
+        </a>
       </section>
 
       <section className="mt-16">

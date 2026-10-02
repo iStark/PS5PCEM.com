@@ -244,6 +244,9 @@ const pt: Dictionary = {
   },
 
   extract: {
+    checkTitle: "GTA III: extração completa do pacote",
+    checkBody: "A versão de desenvolvimento do extrator de 2 de outubro corrige InvalidPfs em GTA III: The Definitive Edition (PPSA03527 v1.007). Os 48 ficheiros são extraídos, incluindo eboot.bin, seis módulos e os dois arquivos PAK; as somas de verificação dos dois índices PAK coincidem. Os 21 testes passam. O jogo não foi iniciado. A correção está no código-fonte e na ferramenta local; os downloads publicados não foram alterados.",
+    checkLink: "Ler o relatório de extração",
     eyebrow: "Ferramenta incluída",
     heading: "Extrator de PKG",
     lead: "Desde a {version}, o pkgextractor.exe acompanha o lançador, com um botão Extract PKG que o executa.",

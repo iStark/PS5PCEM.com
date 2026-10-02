@@ -240,6 +240,9 @@ const zh: Dictionary = {
   },
 
   extract: {
+    checkTitle: "GTA III：完整解包",
+    checkBody: "10 月 2 日的开发版解包工具修复了 GTA III: The Definitive Edition（PPSA03527 v1.007）的 InvalidPfs 错误。全部 48 个文件均已解包，包括 eboot.bin、六个模块和两个 PAK 文件；两个 PAK 索引的校验和均匹配。全部 21 项测试通过。此次未启动游戏。修复已纳入开发源码和本地工具，已发布的下载包未更新。",
+    checkLink: "查看解包报告",
     eyebrow: "随附工具",
     heading: "PKG 解包器",
     lead: "从 {version} 起，启动器旁会一同提供 pkgextractor.exe，并带有调用它的 Extract PKG 按钮。",

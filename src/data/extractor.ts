@@ -11,6 +11,12 @@ export const extractor = {
     "Included with PS5PCEM 0.3.2, pkgextractor reads supported PS5 debug packages (FPKG / FIH), writes sce_sys metadata, and extracts application files from the inner PFS, including observed NAPS layouts and Kraken-compressed payloads.",
 } as const;
 
+export const extractorCheck = {
+  date: "2026-10-02",
+  source:
+    "https://github.com/iStark/PS5PCEM/blob/main/docs/development/gta3-pkg-extraction-2026-10-02.md",
+} as const;
+
 export const extractorSteps = [
   {
     title: "From the launcher",
