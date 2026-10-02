@@ -39,6 +39,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "gta3-ngg-gameplay",
+    slug: "gta-iii-definitive-edition",
+    date: "2026-10-02",
+    release: null,
+    image: "/images/gta3-opening-gameplay.png",
+    source: devReport("gta3-ngg-exports-2026-10-02.md"),
+  },
+  {
     id: "gta3-ampr-startup",
     slug: "gta-iii-definitive-edition",
     date: "2026-10-02",

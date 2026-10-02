@@ -3,19 +3,19 @@ import type { Content } from "./en";
 const zh: Content = {
   games: {
     "gta-iii-definitive-edition": {
-      "status": "可启动 · 可显示条款界面",
-      "headline": "GTA III 已进入 Rockstar 条款界面。",
-      "summary": "10 月 2 日开发版，PPSA03527 v1.007：补齐 13 个缺失的 AMPR 导入后，游戏可以启动。两次全新启动均在初始空白画面按下 Cross 后，进入了文字清晰的条款界面。",
+      "status": "进入游戏 · 已验证移动",
+      "headline": "GTA III 已进入 Give Me Liberty，角色可响应操作。",
+      "summary": "10 月 2 日开发版本，PPSA03527 v1.007：Callahan Bridge 的首个任务显示角色、车辆、HUD 和小地图。保留 NGG 导出时的数值恢复了全部 32 层颜色校正表，并消除了一处导致场景全黑的问题。",
       "strengths": [
-        "完整解包和启动已验证。",
-        "完成事件使用正确的参数，16 项 APR/AMPR 测试通过。"
+        "新游戏可通过开场进入首个任务。",
+        "已验证键盘移动和改变方向。"
       ],
       "limits": [
-        "尚未验证实际游玩、存档和音频正确性。",
-        "仍有着色器诊断信息，等待与计数器模拟尚不完整。"
+        "仍有严重偏绿、过曝和纹理资源缺失。",
+        "其他测试仍出现加载崩溃和 RenderThread 超时；稳定启动、存档、音频正确性和通关尚未验证。"
       ],
-      "performance": "条款界面约为 30 FPS，实际游戏性能尚未测量。",
-      "imageAlt": "PS5PCEM 渲染的 GTA III Rockstar 条款界面"
+      "performance": "30.002 秒的场景采样显示了 29 个新画面：0.97 FPS。这不代表已提速或达到可玩状态。",
+      "imageAlt": "GTA III 角色在 Callahan Bridge 跑向汽车，HUD 可见，画面严重偏绿过曝"
     },
     "subnautica-below-zero": {
       "status": "可玩 · 可通关",
@@ -307,6 +307,11 @@ const zh: Content = {
   },
 
   history: {
+    "gta3-ngg-gameplay": {
+      "title": "修复 NGG 导出；已验证首个任务和角色移动",
+      "summary": "已安装的运行程序进入 Give Me Liberty，显示场景、角色、车辆、HUD 和小地图。W 可移动角色，D 可改变方向。通用 NGG 修复恢复了全部 32 层颜色校正表。场景实测为 0.97 FPS；仍有偏绿过曝、资源缺失，以及间歇性崩溃或超时。",
+      "imageAlt": "GTA III 角色在 Callahan Bridge 跑向汽车，HUD 可见，画面严重偏绿过曝"
+    },
     "gta3-ampr-startup": {
       "title": "补齐 AMPR 导入，进入条款界面",
       "summary": "10 月 2 日开发版，PPSA03527 v1.007：补齐 13 个缺失的 AMPR 导入后，游戏可以启动。两次全新启动均在初始空白画面按下 Cross 后，进入了文字清晰的条款界面。 条款界面约为 30 FPS，实际游戏性能尚未测量。 尚未验证实际游玩、存档和音频正确性。 仍有着色器诊断信息，等待与计数器模拟尚不完整。",

@@ -3,19 +3,19 @@ import type { Content } from "./en";
 const de: Content = {
   games: {
     "gta-iii-definitive-edition": {
-      "status": "Startet · Richtlinienbildschirm sichtbar",
-      "headline": "GTA III erreicht Rockstars Richtlinienbildschirm.",
-      "summary": "Entwicklungsstand vom 2. Oktober, PPSA03527 v1.007: 13 fehlende AMPR-Importe sind aufgelöst. Zwei neue Prozesse erreichen den lesbaren Richtlinienbildschirm, nachdem Cross den zunächst leeren Bildschirm weitergeschaltet hat.",
+      "status": "Im Spiel · Bewegung bestätigt",
+      "headline": "GTA III erreicht Give Me Liberty mit steuerbarer Spielfigur.",
+      "summary": "Entwicklungsstand vom 2. Oktober, PPSA03527 v1.007: Die erste Mission auf der Callahan Bridge zeigt Spielfigur, Fahrzeug, HUD und Minikarte. Gesicherte NGG-Exportwerte stellen die 32 Ebenen der Farbkorrekturtabelle wieder her und beseitigen eine Ursache der schwarzen Spielwelt.",
       "strengths": [
-        "Vollständige Extraktion und Start geprüft.",
-        "Abschlussereignisse erhalten die korrekten Argumente; 16 APR/AMPR-Tests bestehen."
+        "Ein neues Spiel gelangt durch das Intro zur ersten Mission.",
+        "Tastaturbewegung und Richtungswechsel wurden geprüft."
       ],
       "limits": [
-        "Gameplay, Speicherstände und Audiokorrektheit sind ungeprüft.",
-        "Shader-Diagnosen und unvollständige Warte-/Zähleremulation bleiben."
+        "Starker Grünstich, Überbelichtung und fehlende Texturressourcen bestehen weiterhin.",
+        "Andere Durchläufe zeigen Ladeabstürze und RenderThread-Zeitüberschreitungen; zuverlässiger Start, Spielstände, korrekter Ton und vollständiges Durchspielen sind unbestätigt."
       ],
-      "performance": "Der Richtlinienbildschirm zeigt etwa 30 FPS. Die Gameplay-Leistung wurde nicht gemessen.",
-      "imageAlt": "GTA III mit dem von PS5PCEM gerenderten Rockstar-Richtlinienbildschirm"
+      "performance": "Eine Messung über 30,002 Sekunden zeigt 29 neue Bilder: 0,97 FPS. Daraus folgt keine bestätigte Beschleunigung oder Spielbarkeit.",
+      "imageAlt": "GTA-III-Spielfigur läuft auf der Callahan Bridge zu einem Auto; HUD und starke grüne Überbelichtung sind sichtbar"
     },
     "subnautica-below-zero": {
       "status": "Spielbar · Abschließbar",
@@ -331,6 +331,11 @@ const de: Content = {
   },
 
   history: {
+    "gta3-ngg-gameplay": {
+      "title": "NGG-Exporte korrigiert; erste Mission und Bewegung bestätigt",
+      "summary": "Der installierte Runner erreicht Give Me Liberty mit sichtbarer Welt, Spielfigur, Fahrzeug, HUD und Minikarte. W bewegt die Figur, D ändert ihre Richtung. Die allgemeine NGG-Korrektur stellt alle 32 Farbkorrekturebenen wieder her. Gemessen wurden 0,97 FPS; grüne Überbelichtung, fehlende Ressourcen sowie sporadische Abstürze und Zeitüberschreitungen bleiben.",
+      "imageAlt": "GTA-III-Spielfigur läuft auf der Callahan Bridge zu einem Auto; HUD und starke grüne Überbelichtung sind sichtbar"
+    },
     "gta3-ampr-startup": {
       "title": "AMPR-Importe aufgelöst; Richtlinienbildschirm erreicht",
       "summary": "Entwicklungsstand vom 2. Oktober, PPSA03527 v1.007: 13 fehlende AMPR-Importe sind aufgelöst. Zwei neue Prozesse erreichen den lesbaren Richtlinienbildschirm, nachdem Cross den zunächst leeren Bildschirm weitergeschaltet hat. Der Richtlinienbildschirm zeigt etwa 30 FPS. Die Gameplay-Leistung wurde nicht gemessen. Gameplay, Speicherstände und Audiokorrektheit sind ungeprüft. Shader-Diagnosen und unvollständige Warte-/Zähleremulation bleiben.",

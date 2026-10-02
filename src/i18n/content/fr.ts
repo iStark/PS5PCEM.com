@@ -3,19 +3,19 @@ import type { Content } from "./en";
 const fr: Content = {
   games: {
     "gta-iii-definitive-edition": {
-      "status": "Démarre · écran des conditions affiché",
-      "headline": "GTA III atteint l’écran des conditions de Rockstar.",
-      "summary": "Version de développement du 2 octobre, PPSA03527 v1.007 : les 13 imports AMPR manquants sont résolus. Deux nouveaux processus atteignent l’écran lisible des conditions après un appui sur Cross pour dépasser un écran initialement vide.",
+      "status": "En jeu · déplacement vérifié",
+      "headline": "GTA III atteint Give Me Liberty avec contrôle du personnage.",
+      "summary": "Version de développement du 2 octobre, PPSA03527 v1.007 : la première mission sur Callahan Bridge affiche le personnage, le véhicule, le HUD et la minicarte. La conservation des valeurs exportées par NGG restaure les 32 couches de correction colorimétrique et élimine une cause du monde noir.",
       "strengths": [
-        "Extraction complète et démarrage vérifiés.",
-        "Les événements de fin reçoivent les bons arguments ; 16 tests APR/AMPR réussissent."
+        "Une nouvelle partie passe l’introduction et atteint la première mission.",
+        "Le déplacement au clavier et le changement de direction sont vérifiés."
       ],
       "limits": [
-        "Le gameplay, les sauvegardes et la fidélité audio ne sont pas vérifiés.",
-        "Des diagnostics de shaders et une émulation incomplète des attentes et compteurs subsistent."
+        "Une forte dominante verte, une surexposition et des ressources de texture manquantes persistent.",
+        "D’autres essais subissent des plantages au chargement et des délais RenderThread dépassés ; démarrage fiable, sauvegardes, exactitude audio et partie complète restent non vérifiés."
       ],
-      "performance": "L’écran des conditions affiche environ 30 FPS. Les performances en jeu n’ont pas été mesurées.",
-      "imageAlt": "Écran des conditions Rockstar de GTA III, rendu par PS5PCEM"
+      "performance": "Un échantillon de 30,002 secondes affiche 29 nouvelles images : 0,97 FPS. Ce résultat ne confirme ni accélération ni jouabilité.",
+      "imageAlt": "Personnage de GTA III courant vers une voiture sur Callahan Bridge, avec HUD et forte surexposition verte"
     },
     "subnautica-below-zero": {
       "status": "Jouable · Terminable",
@@ -331,6 +331,11 @@ const fr: Content = {
   },
 
   history: {
+    "gta3-ngg-gameplay": {
+      "title": "Exports NGG corrigés ; première mission et déplacement vérifiés",
+      "summary": "Le programme installé atteint Give Me Liberty avec monde, personnage, véhicule, HUD et minicarte visibles. W déplace le personnage et D change sa direction. La correction générale NGG restaure les 32 couches de correction colorimétrique. La mesure donne 0,97 FPS ; surexposition verte, ressources manquantes, plantages et blocages intermittents persistent.",
+      "imageAlt": "Personnage de GTA III courant vers une voiture sur Callahan Bridge, avec HUD et forte surexposition verte"
+    },
     "gta3-ampr-startup": {
       "title": "Imports AMPR résolus ; écran des conditions atteint",
       "summary": "Version de développement du 2 octobre, PPSA03527 v1.007 : les 13 imports AMPR manquants sont résolus. Deux nouveaux processus atteignent l’écran lisible des conditions après un appui sur Cross pour dépasser un écran initialement vide. L’écran des conditions affiche environ 30 FPS. Les performances en jeu n’ont pas été mesurées. Le gameplay, les sauvegardes et la fidélité audio ne sont pas vérifiés. Des diagnostics de shaders et une émulation incomplète des attentes et compteurs subsistent.",

@@ -67,17 +67,18 @@ describe("compatibility dataset", () => {
     expect(countByTier().playable).toBe(9);
   });
 
-  it("does not grade Ghost of Yotei as playable", () => {
-    const yotei = findBySlug("ghost-of-yotei");
-    expect(yotei).toBeDefined();
-    expect(yotei!.tier).toBe("ingame");
+  it("keeps in-game titles with severe defects short of playable", () => {
+    for (const slug of ["ghost-of-yotei", "gta-iii-definitive-edition"]) {
+      const game = findBySlug(slug);
+      expect(game).toBeDefined();
+      expect(game!.tier, slug).toBe("ingame");
+    }
   });
 
   it("keeps titles with unverified gameplay short of playable", () => {
     for (const slug of [
       "big-helmet-heroes",
       "tetris-effect-connected",
-      "gta-iii-definitive-edition",
     ]) {
       expect(findBySlug(slug)!.tier, slug).toBe("intro");
     }
