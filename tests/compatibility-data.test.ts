@@ -29,6 +29,7 @@ describe("compatibility dataset", () => {
         "Cat Quest III",
         "Dreaming Sarah",
         "Ghost of Yōtei",
+        "Grand Theft Auto III: The Definitive Edition",
         "Jets 'n' Guns 2",
         "Jurassic Park Classic Games Collection",
         "Mighty Morphin Power Rangers: Rita's Rewind",
@@ -72,10 +73,11 @@ describe("compatibility dataset", () => {
     expect(yotei!.tier).toBe("ingame");
   });
 
-  it("keeps Big Helmet Heroes and Tetris short of playable", () => {
+  it("keeps titles with unverified gameplay short of playable", () => {
     for (const slug of [
       "big-helmet-heroes",
       "tetris-effect-connected",
+      "gta-iii-definitive-edition",
     ]) {
       expect(findBySlug(slug)!.tier, slug).toBe("intro");
     }
@@ -84,7 +86,7 @@ describe("compatibility dataset", () => {
   it("attributes every measurement to the documented test host", () => {
     expect(compatibilityMeta.host).toBe("NVIDIA GeForce RTX 3070 Ti");
     expect(compatibilityMeta.testedOnRelease).toBe("0.3.2");
-    expect(compatibilityMeta.confirmedOn).toBe("2026-10-01");
+    expect(compatibilityMeta.confirmedOn).toBe("2026-10-02");
   });
 
   it("gives every entry a unique slug and a known tier", () => {

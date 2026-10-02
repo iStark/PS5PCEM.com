@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const zh: Content = {
   games: {
+    "gta-iii-definitive-edition": {
+      "status": "可启动 · 可显示条款界面",
+      "headline": "GTA III 已进入 Rockstar 条款界面。",
+      "summary": "10 月 2 日开发版，PPSA03527 v1.007：补齐 13 个缺失的 AMPR 导入后，游戏可以启动。两次全新启动均在初始空白画面按下 Cross 后，进入了文字清晰的条款界面。",
+      "strengths": [
+        "完整解包和启动已验证。",
+        "完成事件使用正确的参数，16 项 APR/AMPR 测试通过。"
+      ],
+      "limits": [
+        "尚未验证实际游玩、存档和音频正确性。",
+        "仍有着色器诊断信息，等待与计数器模拟尚不完整。"
+      ],
+      "performance": "条款界面约为 30 FPS，实际游戏性能尚未测量。",
+      "imageAlt": "PS5PCEM 渲染的 GTA III Rockstar 条款界面"
+    },
     "subnautica-below-zero": {
       "status": "可玩 · 可通关",
       "headline": "新游戏已进入初始区域，并验证了镜头转动和行走。",
@@ -292,6 +307,15 @@ const zh: Content = {
   },
 
   history: {
+    "gta3-ampr-startup": {
+      "title": "补齐 AMPR 导入，进入条款界面",
+      "summary": "10 月 2 日开发版，PPSA03527 v1.007：补齐 13 个缺失的 AMPR 导入后，游戏可以启动。两次全新启动均在初始空白画面按下 Cross 后，进入了文字清晰的条款界面。 条款界面约为 30 FPS，实际游戏性能尚未测量。 尚未验证实际游玩、存档和音频正确性。 仍有着色器诊断信息，等待与计数器模拟尚不完整。",
+      "imageAlt": "PS5PCEM 渲染的 GTA III Rockstar 条款界面"
+    },
+    "gta3-pkg-extraction": {
+      "title": "修正 NAPS 对齐，完成解包",
+      "summary": "全部 48 个文件均已解包，包括 eboot.bin、六个模块和两个 PAK 文件。两个 PAK 索引的校验和均匹配，21 项测试全部通过。启动结果另行记录。"
+    },
     "subnautica-startup": {
       title: "启动崩溃追查到被误读的着色器头部",
       summary:

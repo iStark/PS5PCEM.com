@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    slug: "gta-iii-definitive-edition",
+    title: "Grand Theft Auto III: The Definitive Edition",
+    tier: "intro",
+    image: "/images/gta3-policies.png",
+    confirmedOn: "2026-10-02",
+  },
+  {
     slug: "terminator-2d-no-fate",
     title: "Terminator 2D: No Fate",
     tier: "playable",
@@ -137,7 +144,7 @@ export const compatibility: CompatibilityEntry[] = [
 
 export const compatibilityMeta = {
   /** Newest maintainer confirmation across the dataset. */
-  confirmedOn: "2026-10-01",
+  confirmedOn: "2026-10-02",
   testedOnRelease: "0.3.2",
   host: "NVIDIA GeForce RTX 3070 Ti",
 } as const;

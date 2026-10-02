@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const es: Content = {
   games: {
+    "gta-iii-definitive-edition": {
+      "status": "Arranca · pantalla de condiciones visible",
+      "headline": "GTA III llega a la pantalla de condiciones de Rockstar.",
+      "summary": "Versión de desarrollo del 2 de octubre, PPSA03527 v1.007: se resuelven 13 importaciones AMPR ausentes. Dos procesos nuevos llegan a la pantalla legible de condiciones tras pulsar Cross para avanzar desde una pantalla inicialmente vacía.",
+      "strengths": [
+        "Extracción completa y arranque verificados.",
+        "Los eventos de finalización reciben los argumentos correctos; pasan 16 pruebas APR/AMPR."
+      ],
+      "limits": [
+        "No se han verificado la jugabilidad, las partidas guardadas ni el audio.",
+        "Persisten diagnósticos de shaders y emulación incompleta de esperas y contadores."
+      ],
+      "performance": "La pantalla de condiciones muestra unos 30 FPS. No se ha medido el rendimiento durante el juego.",
+      "imageAlt": "Pantalla de condiciones de Rockstar en GTA III, renderizada por PS5PCEM"
+    },
     "subnautica-below-zero": {
       "status": "Jugable · Se puede completar",
       "headline": "Una partida nueva llega a la zona inicial; se verificaron la cámara y el movimiento.",
@@ -317,6 +332,15 @@ const es: Content = {
   },
 
   history: {
+    "gta3-ampr-startup": {
+      "title": "Importaciones AMPR resueltas; pantalla de condiciones alcanzada",
+      "summary": "Versión de desarrollo del 2 de octubre, PPSA03527 v1.007: se resuelven 13 importaciones AMPR ausentes. Dos procesos nuevos llegan a la pantalla legible de condiciones tras pulsar Cross para avanzar desde una pantalla inicialmente vacía. La pantalla de condiciones muestra unos 30 FPS. No se ha medido el rendimiento durante el juego. No se han verificado la jugabilidad, las partidas guardadas ni el audio. Persisten diagnósticos de shaders y emulación incompleta de esperas y contadores.",
+      "imageAlt": "Pantalla de condiciones de Rockstar en GTA III, renderizada por PS5PCEM"
+    },
+    "gta3-pkg-extraction": {
+      "title": "Alineación NAPS corregida; paquete extraído por completo",
+      "summary": "Se extraen los 48 archivos, incluidos eboot.bin, seis módulos y dos archivos PAK. Coinciden las sumas de los dos índices PAK y pasan las 21 pruebas. El arranque se comprobó por separado."
+    },
     "subnautica-startup": {
       title: "Caída al arrancar por una cabecera de shader mal leída",
       summary:

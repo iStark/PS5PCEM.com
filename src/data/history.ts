@@ -38,6 +38,21 @@ export type HistoryEntry = {
 };
 
 export const history: HistoryEntry[] = [
+  {
+    id: "gta3-ampr-startup",
+    slug: "gta-iii-definitive-edition",
+    date: "2026-10-02",
+    release: null,
+    image: "/images/gta3-policies.png",
+    source: devReport("gta3-ampr-startup-2026-10-02.md"),
+  },
+  {
+    id: "gta3-pkg-extraction",
+    slug: "gta-iii-definitive-edition",
+    date: "2026-10-02",
+    release: null,
+    source: devReport("gta3-pkg-extraction-2026-10-02.md"),
+  },
   // Subnautica: Below Zero — PPSA02457 v1.022.125
   {
     id: "subnautica-windows-stack",

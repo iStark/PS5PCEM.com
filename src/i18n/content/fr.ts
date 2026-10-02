@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const fr: Content = {
   games: {
+    "gta-iii-definitive-edition": {
+      "status": "Démarre · écran des conditions affiché",
+      "headline": "GTA III atteint l’écran des conditions de Rockstar.",
+      "summary": "Version de développement du 2 octobre, PPSA03527 v1.007 : les 13 imports AMPR manquants sont résolus. Deux nouveaux processus atteignent l’écran lisible des conditions après un appui sur Cross pour dépasser un écran initialement vide.",
+      "strengths": [
+        "Extraction complète et démarrage vérifiés.",
+        "Les événements de fin reçoivent les bons arguments ; 16 tests APR/AMPR réussissent."
+      ],
+      "limits": [
+        "Le gameplay, les sauvegardes et la fidélité audio ne sont pas vérifiés.",
+        "Des diagnostics de shaders et une émulation incomplète des attentes et compteurs subsistent."
+      ],
+      "performance": "L’écran des conditions affiche environ 30 FPS. Les performances en jeu n’ont pas été mesurées.",
+      "imageAlt": "Écran des conditions Rockstar de GTA III, rendu par PS5PCEM"
+    },
     "subnautica-below-zero": {
       "status": "Jouable · Terminable",
       "headline": "Une nouvelle partie atteint la zone de départ ; caméra et déplacement ont été vérifiés.",
@@ -316,6 +331,15 @@ const fr: Content = {
   },
 
   history: {
+    "gta3-ampr-startup": {
+      "title": "Imports AMPR résolus ; écran des conditions atteint",
+      "summary": "Version de développement du 2 octobre, PPSA03527 v1.007 : les 13 imports AMPR manquants sont résolus. Deux nouveaux processus atteignent l’écran lisible des conditions après un appui sur Cross pour dépasser un écran initialement vide. L’écran des conditions affiche environ 30 FPS. Les performances en jeu n’ont pas été mesurées. Le gameplay, les sauvegardes et la fidélité audio ne sont pas vérifiés. Des diagnostics de shaders et une émulation incomplète des attentes et compteurs subsistent.",
+      "imageAlt": "Écran des conditions Rockstar de GTA III, rendu par PS5PCEM"
+    },
+    "gta3-pkg-extraction": {
+      "title": "Alignement NAPS corrigé ; paquet entièrement extrait",
+      "summary": "Les 48 fichiers sont extraits, dont eboot.bin, six modules et deux archives PAK. Les sommes de contrôle des deux index PAK correspondent et les 21 tests réussissent. Le démarrage fait l’objet d’un contrôle distinct."
+    },
     "subnautica-startup": {
       title: "Plantage au démarrage dû à un en-tête de shader mal lu",
       summary:

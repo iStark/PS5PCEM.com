@@ -29,6 +29,21 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "gta-iii-definitive-edition": {
+      "status": "Boots · policy screen renders",
+      "headline": "GTA III reaches Rockstar's policy screen.",
+      "summary": "October 2 development build, PPSA03527 v1.007: resolving 13 missing AMPR imports lets the extracted game start. Two fresh processes reach the readable policy screen after Cross input advances an initial blank stage.",
+      "strengths": [
+        "Complete package extraction and startup verified.",
+        "Completion events use the correct guest arguments; 16 APR/AMPR tests pass."
+      ],
+      "limits": [
+        "Gameplay, saves and audio correctness are unverified.",
+        "Shader diagnostics and incomplete wait/counter emulation remain."
+      ],
+      "performance": "The policy screen shows about 30 FPS. Gameplay performance has not been measured.",
+      "imageAlt": "GTA III Rockstar Games Policies and Terms screen rendered by PS5PCEM"
+    },
     "subnautica-below-zero": {
       "status": "Playable · Completable",
       "headline": "New Game reaches the opening world, with camera movement and walking verified.",
@@ -341,6 +356,15 @@ const content: Content = {
   },
 
   history: {
+    "gta3-ampr-startup": {
+      "title": "AMPR imports resolved; policy screen reached",
+      "summary": "October 2 development build, PPSA03527 v1.007: resolving 13 missing AMPR imports lets the extracted game start. Two fresh processes reach the readable policy screen after Cross input advances an initial blank stage. The policy screen shows about 30 FPS. Gameplay performance has not been measured. Gameplay, saves and audio correctness are unverified. Shader diagnostics and incomplete wait/counter emulation remain.",
+      "imageAlt": "GTA III Rockstar Games Policies and Terms screen rendered by PS5PCEM"
+    },
+    "gta3-pkg-extraction": {
+      "title": "NAPS alignment fixed; package fully extracted",
+      "summary": "The extractor now writes all 48 files, including eboot.bin, six modules and two PAK archives. Both PAK index checksums match and all 21 package tests pass. This was an extraction check; the startup result is recorded separately."
+    },
     // Subnautica: Below Zero
     "subnautica-startup": {
       title: "Startup crash traced to a misread shader header",

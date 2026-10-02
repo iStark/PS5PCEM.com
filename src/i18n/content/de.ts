@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const de: Content = {
   games: {
+    "gta-iii-definitive-edition": {
+      "status": "Startet · Richtlinienbildschirm sichtbar",
+      "headline": "GTA III erreicht Rockstars Richtlinienbildschirm.",
+      "summary": "Entwicklungsstand vom 2. Oktober, PPSA03527 v1.007: 13 fehlende AMPR-Importe sind aufgelöst. Zwei neue Prozesse erreichen den lesbaren Richtlinienbildschirm, nachdem Cross den zunächst leeren Bildschirm weitergeschaltet hat.",
+      "strengths": [
+        "Vollständige Extraktion und Start geprüft.",
+        "Abschlussereignisse erhalten die korrekten Argumente; 16 APR/AMPR-Tests bestehen."
+      ],
+      "limits": [
+        "Gameplay, Speicherstände und Audiokorrektheit sind ungeprüft.",
+        "Shader-Diagnosen und unvollständige Warte-/Zähleremulation bleiben."
+      ],
+      "performance": "Der Richtlinienbildschirm zeigt etwa 30 FPS. Die Gameplay-Leistung wurde nicht gemessen.",
+      "imageAlt": "GTA III mit dem von PS5PCEM gerenderten Rockstar-Richtlinienbildschirm"
+    },
     "subnautica-below-zero": {
       "status": "Spielbar · Abschließbar",
       "headline": "Ein neues Spiel erreicht das Startgebiet; Kamerabewegung und Laufen wurden geprüft.",
@@ -316,6 +331,15 @@ const de: Content = {
   },
 
   history: {
+    "gta3-ampr-startup": {
+      "title": "AMPR-Importe aufgelöst; Richtlinienbildschirm erreicht",
+      "summary": "Entwicklungsstand vom 2. Oktober, PPSA03527 v1.007: 13 fehlende AMPR-Importe sind aufgelöst. Zwei neue Prozesse erreichen den lesbaren Richtlinienbildschirm, nachdem Cross den zunächst leeren Bildschirm weitergeschaltet hat. Der Richtlinienbildschirm zeigt etwa 30 FPS. Die Gameplay-Leistung wurde nicht gemessen. Gameplay, Speicherstände und Audiokorrektheit sind ungeprüft. Shader-Diagnosen und unvollständige Warte-/Zähleremulation bleiben.",
+      "imageAlt": "GTA III mit dem von PS5PCEM gerenderten Rockstar-Richtlinienbildschirm"
+    },
+    "gta3-pkg-extraction": {
+      "title": "NAPS-Ausrichtung korrigiert; Paket vollständig extrahiert",
+      "summary": "Alle 48 Dateien werden extrahiert, darunter eboot.bin, sechs Module und zwei PAK-Archive. Beide PAK-Indexprüfsummen stimmen überein; alle 21 Pakettests bestehen. Der Start wurde separat geprüft."
+    },
     "subnautica-startup": {
       title: "Startabsturz auf einen falsch gelesenen Shader-Header zurückgeführt",
       summary:
