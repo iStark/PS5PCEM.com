@@ -355,6 +355,16 @@ const pt: Content = {
       "title": "Amostragem de mips de cor corrigida na GPU",
       "summary": "A busca de texturas residentes agora distingue níveis mip e camadas. Pirâmides de cor completas podem ser montadas na GPU. Um teste RG32F com seis níveis verifica os valores, uma regravação no mesmo quadro e a amostragem sem leituras adicionais para a CPU nem novos uploads de texturas; 128 testes específicos passam. O jogo ainda falha ao carregar, inclusive no modo síncrono e com 8192 entradas de cache. O ganho de FPS no mundo e o resultado final da iluminação ainda não foram verificados."
     },
+    "subnautica-windows-stack": {
+      "title": "Limites da pilha Windows corrigem o encerramento ao iniciar",
+      "summary": "Um exemplo mínimo terminava com 0x40010006 ao emitir diagnósticos Windows na pilha HLE. A troca de pilha atualiza os limites e as saídas do código convidado restauram o estado HLE. Passam as saídas ANSI/Unicode, 8 testes de pilha e 9 da ponte nativa. A versão instalada inicia sem depurador nem redirecionamento de TEMP e restaura a partida. Sem pausa: 7.93 FPS durante 30.02 segundos. Não é uma comparação controlada; 30 FPS, gráficos totalmente corretos e estabilidade prolongada continuam por confirmar.",
+      "imageAlt": "Subnautica: Below Zero — Windows stack-boundary fix, 2026-10-02"
+    },
+    "subnautica-resource-scratch": {
+      "title": "Menor custo dos recursos; aviso stencil localizado",
+      "summary": "As grandes tabelas de texturas indiretas deixam a pilha das chamadas normais. A recuperação de ponteiros partilha um estado de registos imutável e inicializa apenas a parte necessária do bitmap. Passam 72 testes e verificações Vulkan específicas. Um novo processo restaura a partida: 11.96 FPS durante 30.01 segundos sem pausa. O clima e o aquecimento impedem uma comparação controlada; 30 FPS não foram atingidos. O aviso restante corresponde a uma passagem stencil sem escrita de cor. A correção gráfica completa e a estabilidade prolongada continuam por verificar. Uma análise separada mostra mapeamentos repetidos de 4 MiB sob o bloqueio de memória. Reutilizar páginas físicas já comprometidas e eliminar consultas nativas duplicadas reduz a mediana do microteste em 18%; o ganho no jogo não está comprovado.",
+      "imageAlt": "Subnautica: Below Zero — resource preparation build, 2026-10-02"
+    },
     "subnautica-descriptor-unmap": {
       "title": "Reutilização de descritores e falhas unmap mais seguras",
       "summary": "Os arrays de descritores são reutilizados: a pilha passa de 753 720 para 56 bytes sem alterar o lote Vulkan. Outro teste corrige falhas unmap que deixavam páginas nativas removidas marcadas como legíveis. Passam 154 testes de renderizador/índice, 29 de memória e 60 de envio, além de Vulkan com 4352 vistas de texturas. O primeiro novo carregamento restaura o mundo; uma cena fixa sem pausa regista 12,03 FPS durante 30,01 segundos. O clima e o aquecimento impedem uma comparação controlada. Um recurso escalar continua por resolver. Não foram verificados 30 FPS, carregamento fiável ou uma partida completa.",

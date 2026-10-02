@@ -381,6 +381,16 @@ const content: Content = {
       "title": "Colour mip sampling corrected on the GPU",
       "summary": "Resident texture lookup now keeps mip levels and array slices distinct. Complete colour pyramids can be assembled on the GPU. A six-level RG32F probe verifies each level, a same-frame rewrite and sampling without extra target readbacks or texture uploads; 128 focused tests pass. The game candidate still faults during loading, including diagnostic synchronous and 8192-entry-cache runs. A world FPS gain and the final lighting result remain unverified."
     },
+    "subnautica-windows-stack": {
+      "title": "Windows stack bounds fix diagnostic-output startup failure",
+      "summary": "A standalone reproduction exited with 0x40010006 when Windows debug output ran on the firmware stack. The stack switch now updates Windows bounds, and guest escapes restore the enclosing HLE state. ANSI/Unicode output, 8 stack tests and 9 native bridge tests pass. The installed build starts without a debugger or a temporary-directory override and restores the save. Unpaused gameplay records 7.93 FPS over 30.02 seconds. This is not a controlled performance comparison; 30 FPS, complete rendering correctness and long-session stability remain unverified.",
+      "imageAlt": "Subnautica: Below Zero — Windows stack-boundary fix, 2026-10-02"
+    },
+    "subnautica-resource-scratch": {
+      "title": "Less resource preparation overhead; stencil warning located",
+      "summary": "Large indirect-image tables no longer occupy ordinary draw/dispatch stacks. Scalar pointer recovery reuses an immutable register snapshot and initializes only the eligible bitmap range. 72 scalar/resource tests and targeted Vulkan probes pass. A fresh process restores the save and records 11.96 FPS over 30.01 seconds in unpaused gameplay. Different weather and warm-up prevent a controlled speedup claim; 30 FPS remains unmet. A bounded trace locates the remaining scalar-resource warning in a stencil-only draw with colour writes disabled. Full rendering correctness and long-session stability remain unverified. A separate trace finds repeated 4 MiB mappings holding the memory lock. Reusing physical page commitment and removing duplicate native queries reduces the mapping microbenchmark median by 18%; a gameplay gain is not established.",
+      "imageAlt": "Subnautica: Below Zero — resource preparation build, 2026-10-02"
+    },
     "subnautica-descriptor-unmap": {
       "title": "Descriptor workspace reuse and safer failed unmaps",
       "summary": "Sampled-image descriptor updates reuse temporary arrays, reducing their stack frame from 753,720 to 56 bytes without changing the Vulkan batch. A separate regression fixes unmap failures that left removed native pages marked readable. 154 renderer/index, 29 memory and 60 submission tests pass, along with Vulkan checks including 4352 mixed texture views. The first fresh load restores the saved world; a stationary unpaused sample records 12.03 FPS over 30.01 seconds. Different weather and warm-up prevent a controlled speedup claim. One scalar resource remains unresolved. 30 FPS, reliable loading and a full playthrough are not verified.",

@@ -355,6 +355,16 @@ const de: Content = {
       "title": "Farb-Mip-Abtastung auf der GPU korrigiert",
       "summary": "Die Suche nach residenten Texturen unterscheidet jetzt Mip-Stufen und Array-Schichten. Vollständige Farbpyramiden lassen sich auf der GPU zusammensetzen. Ein RG32F-Test mit sechs Stufen prüft die Werte, eine Änderung im selben Frame und die Abtastung ohne zusätzliche Rücklesungen oder Textur-Uploads; 128 gezielte Tests bestehen. Das Spiel scheitert weiterhin beim Laden, auch synchron und mit 8192 Cache-Einträgen. Mehr FPS in der Spielwelt und das endgültige Beleuchtungsergebnis sind noch nicht bestätigt."
     },
+    "subnautica-windows-stack": {
+      "title": "Windows-Stackgrenzen beheben den Startabbruch bei Diagnoseausgaben",
+      "summary": "Ein Minimalbeispiel endete mit 0x40010006 bei Windows-Diagnoseausgaben auf dem Firmware-Stack. Der Wechsel aktualisiert nun Windows-Stackgrenzen; Gastausstiege stellen den umgebenden HLE-Zustand wieder her. ANSI/Unicode-Ausgaben, 8 Stack- und 9 Bridge-Tests bestehen. Der installierte Build startet ohne Debugger oder TEMP-Umleitung und lädt den Spielstand. Ohne Pause wurden 7.93 FPS über 30.02 Sekunden gemessen. Kein kontrollierter Leistungsvergleich; 30 FPS, vollständige Grafiktreue und Langzeitstabilität bleiben unbestätigt.",
+      "imageAlt": "Subnautica: Below Zero — Windows stack-boundary fix, 2026-10-02"
+    },
+    "subnautica-resource-scratch": {
+      "title": "Weniger Ressourcenaufwand; Stencil-Warnung zugeordnet",
+      "summary": "Große indirekte Texturtabellen belegen nicht mehr den Stack gewöhnlicher Draw-/Dispatch-Aufrufe. Die Zeigerauflösung teilt einen unveränderlichen Registerzustand und initialisiert nur den benötigten Bitmap-Bereich. 72 Tests und gezielte Vulkan-Prüfungen bestehen. Ein neuer Prozess lädt den Spielstand: 11.96 FPS über 30.01 Sekunden ohne Pause. Wetter und Aufwärmzustand verhindern einen kontrollierten Vergleich; 30 FPS sind nicht erreicht. Die verbleibende Ressourcenwarnung gehört zu einem Stencil-Durchlauf ohne Farbschreibzugriff. Vollständige Grafik- und Langzeitstabilität bleiben unbestätigt. Eine gesonderte Analyse zeigt wiederholte 4-MiB-Abbildungen unter der Speichersperre. Wiederverwendete Seitenzusagen und weniger native Abfragen senken den Median im Abbildungs-Mikrotest um 18%; ein Spielgewinn ist nicht belegt.",
+      "imageAlt": "Subnautica: Below Zero — resource preparation build, 2026-10-02"
+    },
     "subnautica-descriptor-unmap": {
       "title": "Wiederverwendbarer Deskriptorspeicher und sicherere Unmap-Fehler",
       "summary": "Texturdeskriptoren verwenden temporäre Arrays erneut: Der Stack sinkt von 753.720 auf 56 Byte bei unverändertem Vulkan-Batch. Ein separater Test behebt Unmap-Fehler, nach denen entfernte native Seiten noch als lesbar galten. 154 Renderer-/Indextests, 29 Speichertests und 60 Übermittlungstests bestehen, ebenso Vulkan-Prüfungen mit 4352 Texturansichten. Der erste frische Lauf lädt den Spielstand; eine unbewegte Szene erreicht ohne Pause 12,03 FPS über 30,01 Sekunden. Wetter und Aufwärmzustand erlauben keinen kontrollierten Geschwindigkeitsvergleich. Eine skalare Ressource bleibt ungeklärt. 30 FPS, zuverlässiges Laden und ein vollständiger Durchlauf sind nicht bestätigt.",
