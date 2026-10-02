@@ -381,6 +381,30 @@ const content: Content = {
       "title": "Colour mip sampling corrected on the GPU",
       "summary": "Resident texture lookup now keeps mip levels and array slices distinct. Complete colour pyramids can be assembled on the GPU. A six-level RG32F probe verifies each level, a same-frame rewrite and sampling without extra target readbacks or texture uploads; 128 focused tests pass. The game candidate still faults during loading, including diagnostic synchronous and 8192-entry-cache runs. A world FPS gain and the final lighting result remain unverified."
     },
+    "subnautica-read-lease": {
+      "title": "Smaller draw stack and protected guest reads",
+      "summary": "Reusable scalar storage reduces the draw function stack from 447,424 to 32,640 bytes. A further loading crash in hashing exposed a check-to-read race: GPU input copies and hashes now hold the mapping until they finish. A concurrent-unmap regression passes, along with 34 memory/lifetime/index tests and 60 submission tests. The first follow-up restores the saved world and measures 8.63 FPS over 30.01 seconds without pausing. Different weather and warm-up prevent a direct comparison with the earlier 10.00 FPS sample. One shader resource remains unresolved; 30 FPS and long-session stability are still unverified. A fresh repeat with the same executable still crashes during loading in hash + 0xf0. The protected-read regression is valid, but this observed crash is not fixed; the failing caller is under investigation.",
+      "imageAlt": "Subnautica: Below Zero — guest read lease build, 2026-10-02"
+    },
+    "subnautica-overlap-world": {
+      "title": "Second save recovery and buffer overlap measurements",
+      "summary": "A fresh process restores the same saved world again after the buffer ownership fix. Bounded overlap queries replace full scans without changing writer order or the 4096-entry cache limit. One paused ABBA comparison gives 11.93–12.23 FPS for linear scans and 12.30–12.43 for indexed scans; this small difference is not a proven general gain. A separate unpaused, fixed-camera sample records 300 flips in 30.01 seconds: 10.00 FPS, with changing weather and frost. 154 backend/index tests and five targeted Vulkan checks pass. 30 FPS, long-session stability and complete rendering correctness remain open.",
+      "imageAlt": "Subnautica: Below Zero — unpaused world, 2026-10-02"
+    },
+    "subnautica-save-recovery": {
+      "title": "Saved world loads after buffer ownership correction",
+      "summary": "A traced 6 MiB GPU readback overlapped a corrupted game object during loading. Buffer caches now track mapping ownership so a new allocation at an old address cannot receive a retired result. The first follow-up restores the saved snowy world and responds to walking input. This is one successful recovery, not proof of long-session stability. 29 memory/retirement tests, 60 submission tests and four targeted Vulkan probes pass. Increasing cache capacity alone measured 9.93 to 9.10 FPS in the same paused scene; the default remains unchanged. 30 FPS is still unmet.",
+      "imageAlt": "Subnautica: Below Zero — recovered world, 2026-10-02"
+    },
+    "subnautica-save-metadata": {
+      "title": "Save writes and metadata corrected; world reload still fails",
+      "summary": "Normal Save now writes a 213,388-byte archive, commits it and returns to gameplay. A fresh process recognizes the slot with the correct date and duration, without the damaged-save label. Shared fixes cover POSIX file writes and the complete save-parameter structure; 52 save/filesystem tests pass. Restoring the world still encounters memory corruption, so reliable save recovery is not claimed. A separate released-command-arena check passes 60 submission tests; its connection to the loading failure is unproven."
+    },
+    "subnautica-vector-walk": {
+      "title": "Cheaper CPU shader walks; world sample remains at 7 FPS",
+      "summary": "CPU resource walks bypass vector-only interpretation while retaining dependency checks and GPU instructions. A separate correction invalidates both words of vector mask outputs. All 71 scalar tests and nine GPU probes pass. Isolated walks take 15–36% less time; the latest 30-second world sample records 7.00 FPS, without a controlled before/after gain. Copying, resource preparation and submissions remain expensive. Keyboard input now follows foreground focus. Loading corruption, one unresolved binding and the 30 FPS target remain open.",
+      "imageAlt": "Subnautica: Below Zero — 1920×1080 gameplay, 2026-10-02"
+    },
     "subnautica-srgb-spans": {
       "title": "sRGB colour writes corrected; mip checks reuse their ranges",
       "summary": "The captured G-buffer and final output requested sRGB but used UNORM attachments, darkening colours when read back as sRGB. The renderer now encodes colour writes and preserves encoded bytes during display transfer. A GPU regression verifies sampling, alpha and scanout, including Vulkan validation; 129 focused tests pass. Mip backing checks also retain their calculated byte ranges. See the report for live runs and remaining limits. The new run reaches the snowy world with visibly brighter materials and records 9.49 FPS over 30.05 seconds (baseline: 9.13 FPS). Different weather and effects prevent a controlled speedup claim; 30 FPS, the unresolved scalar binding and intermittent loading failures remain open.",

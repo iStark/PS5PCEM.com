@@ -355,6 +355,30 @@ const fr: Content = {
       "title": "Échantillonnage des mips couleur corrigé sur le GPU",
       "summary": "La recherche de textures résidentes distingue désormais les niveaux mip et les couches. Les pyramides couleur complètes peuvent être assemblées sur le GPU. Un test RG32F à six niveaux vérifie les valeurs, une réécriture dans la même image et l’échantillonnage sans lecture supplémentaire vers le CPU ni nouvel envoi de texture ; 128 tests ciblés réussissent. Le jeu échoue encore au chargement, même en mode synchrone et avec 8192 entrées de cache. Le gain de FPS dans le monde et le résultat visuel final restent à vérifier."
     },
+    "subnautica-read-lease": {
+      "title": "Pile de dessin réduite et lectures mémoire protégées",
+      "summary": "Le stockage scalaire réutilisable réduit la pile de la fonction de dessin de 447 424 à 32 640 octets. Un autre plantage lors du hachage révèle une course entre vérification et lecture : les copies et hachages GPU conservent désormais le mappage jusqu’à leur fin. Le test de libération concurrente, 34 tests mémoire/tampons/index et 60 tests de soumission réussissent. Le premier essai restaure le monde sauvegardé avec 8,63 FPS sur 30,01 secondes sans pause. La météo et le préchauffage empêchent une comparaison directe avec les 10,00 FPS précédents. Une ressource de shader reste non résolue ; les 30 FPS et la stabilité prolongée ne sont pas confirmés. Une nouvelle tentative avec le même exécutable plante encore au chargement dans hash + 0xf0. Le test de lecture protégée réussit, mais ce plantage reste non corrigé ; le code appelant est en cours d’analyse.",
+      "imageAlt": "Subnautica: Below Zero — guest read lease build, 2026-10-02"
+    },
+    "subnautica-overlap-world": {
+      "title": "Deuxième restauration et mesure des chevauchements de tampons",
+      "summary": "Un nouveau processus restaure à nouveau le même monde sauvegardé après la correction de la propriété des tampons. Les requêtes indexées conservent l’ordre des écritures et la limite de 4096 tampons. Une comparaison ABBA en pause donne 11,93–12,23 FPS en parcours linéaire et 12,30–12,43 avec l’index ; cet écart ne prouve pas un gain général. Une mesure distincte sans pause, caméra fixe, compte 300 images en 30,01 secondes : 10,00 FPS avec météo et givre variables. Les 154 tests backend/index et cinq vérifications Vulkan ciblées réussissent. Les 30 FPS, la stabilité prolongée et la correction complète du rendu restent à établir.",
+      "imageAlt": "Subnautica: Below Zero — unpaused world, 2026-10-02"
+    },
+    "subnautica-save-recovery": {
+      "title": "Le monde sauvegardé charge après correction de la propriété des tampons",
+      "summary": "Une copie GPU vers la mémoire de 6 Mio recouvrait un objet corrompu lors du chargement. Le cache suit désormais la durée de vie des allocations et rejette les anciens résultats lorsque la même adresse est réutilisée. Le premier essai restaure le monde enneigé et permet de marcher, sans prouver une stabilité prolongée. Les 29 tests mémoire, 60 tests de soumission et quatre tests Vulkan ciblés réussissent. Agrandir le cache seul donne 9,93 → 9,10 FPS dans la même scène en pause ; la valeur par défaut reste inchangée. Les 30 FPS ne sont pas atteints.",
+      "imageAlt": "Subnautica: Below Zero — recovered world, 2026-10-02"
+    },
+    "subnautica-save-metadata": {
+      "title": "Écriture et métadonnées des sauvegardes corrigées ; chargement encore en échec",
+      "summary": "La sauvegarde normale écrit et valide une archive de 213 388 octets, puis revient au jeu. Un nouveau processus reconnaît la sauvegarde avec la bonne date et durée, sans avertissement de corruption. Les corrections générales concernent les écritures POSIX et la structure complète des paramètres ; 52 tests de sauvegarde et de fichiers réussissent. La restauration du monde rencontre encore une corruption mémoire. Un contrôle distinct des tampons de commandes libérés passe 60 tests ; son lien avec cet échec reste indémontré."
+    },
+    "subnautica-vector-walk": {
+      "title": "Analyse CPU des shaders allégée ; la scène reste à 7 FPS",
+      "summary": "L’analyse CPU des ressources évite l’interprétation purement vectorielle tout en conservant les contrôles de dépendance et les instructions GPU. Une correction distincte invalide les deux mots des masques vectoriels écrits. Les 71 tests scalaires et neuf tests GPU réussissent. Les parcours isolés prennent 15–36 % de temps en moins ; la dernière mesure de 30 secondes atteint 7,00 FPS, sans gain comparatif contrôlé. Copies, préparation des ressources et soumissions restent coûteuses. Le clavier suit désormais le focus. Les échecs de chargement, une liaison non résolue et les 30 FPS restent à traiter.",
+      "imageAlt": "Subnautica: Below Zero — 1920×1080 gameplay, 2026-10-02"
+    },
     "subnautica-srgb-spans": {
       "title": "Écriture sRGB corrigée et plages mémoire des mipmaps conservées",
       "summary": "Le G-buffer et la sortie finale capturés demandaient du sRGB, mais utilisaient des attachments UNORM, ce qui assombrissait les couleurs à la lecture sRGB. Le moteur encode désormais les écritures couleur et préserve les octets encodés lors de l’affichage. Un test GPU vérifie l’échantillonnage, l’alpha et la sortie avec la validation Vulkan ; 129 tests ciblés réussissent. Les contrôles des mipmaps réutilisent leurs plages mémoire calculées. Le rapport décrit les essais en jeu et les limites restantes. Le nouvel essai atteint la zone enneigée avec des matériaux visiblement plus clairs et mesure 9,49 FPS sur 30,05 secondes (référence : 9,13 FPS). La météo et les effets diffèrent, ce qui empêche de confirmer un gain ; les 30 FPS, une liaison scalaire non résolue et les échecs intermittents de chargement restent à traiter.",

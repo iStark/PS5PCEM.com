@@ -355,6 +355,30 @@ const de: Content = {
       "title": "Farb-Mip-Abtastung auf der GPU korrigiert",
       "summary": "Die Suche nach residenten Texturen unterscheidet jetzt Mip-Stufen und Array-Schichten. Vollständige Farbpyramiden lassen sich auf der GPU zusammensetzen. Ein RG32F-Test mit sechs Stufen prüft die Werte, eine Änderung im selben Frame und die Abtastung ohne zusätzliche Rücklesungen oder Textur-Uploads; 128 gezielte Tests bestehen. Das Spiel scheitert weiterhin beim Laden, auch synchron und mit 8192 Cache-Einträgen. Mehr FPS in der Spielwelt und das endgültige Beleuchtungsergebnis sind noch nicht bestätigt."
     },
+    "subnautica-read-lease": {
+      "title": "Kleinerer Draw-Stack und geschützte Speicherzugriffe",
+      "summary": "Wiederverwendbarer Skalarspeicher verkleinert den Stack der Zeichenfunktion von 447.424 auf 32.640 Byte. Ein weiterer Absturz beim Hashen zeigte eine Lücke zwischen Prüfung und Lesen: GPU-Kopien und Hashes halten die Speicherzuordnung jetzt bis zum Abschluss. Der Test mit paralleler Freigabe, 34 Speicher-/Puffer-/Indextests und 60 Übermittlungstests bestehen. Der erste Folgelauf lädt die gespeicherte Welt mit 8,63 FPS über 30,01 Sekunden ohne Pause. Wetter und Aufwärmzustand verhindern einen direkten Vergleich mit früheren 10,00 FPS. Eine Shader-Ressource bleibt ungeklärt; 30 FPS und Langzeitstabilität sind nicht bestätigt. Ein frischer Wiederholungslauf mit derselben Programmdatei stürzt beim Laden erneut in hash + 0xf0 ab. Der Test für geschütztes Lesen besteht, dieser beobachtete Absturz ist jedoch nicht behoben; die aufrufende Stelle wird untersucht.",
+      "imageAlt": "Subnautica: Below Zero — guest read lease build, 2026-10-02"
+    },
+    "subnautica-overlap-world": {
+      "title": "Zweite Wiederherstellung und Messung der Pufferüberschneidungen",
+      "summary": "Ein neuer Prozess lädt denselben Spielstand nach der Korrektur der Pufferzuordnung erneut. Begrenzte Indexabfragen ersetzen vollständige Durchläufe; Schreibreihenfolge und das Limit von 4096 Puffern bleiben erhalten. Ein pausierter ABBA-Vergleich ergibt 11,93–12,23 FPS linear und 12,30–12,43 mit Index, keinen belegten allgemeinen Gewinn. Eine separate Messung ohne Pause bei fester Kamera ergibt 300 Bilder in 30,01 Sekunden: 10,00 FPS bei wechselndem Wetter und Kälteeffekt. 154 Backend-/Indextests und fünf Vulkan-Prüfungen bestehen. 30 FPS, Langzeitstabilität und vollständig korrekte Grafik bleiben offen.",
+      "imageAlt": "Subnautica: Below Zero — unpaused world, 2026-10-02"
+    },
+    "subnautica-save-recovery": {
+      "title": "Gespeicherte Welt lädt nach Korrektur der Pufferzuordnung",
+      "summary": "Eine protokollierte GPU-Rückkopie von 6 MiB überlappte beim Laden ein beschädigtes Spielobjekt. Der Puffercache verfolgt nun die Lebensdauer der Zuordnung und verwirft alte Ergebnisse bei neuer Belegung derselben Adresse. Der erste Folgelauf stellt die gespeicherte Schneewelt wieder her und reagiert auf Bewegung. Das belegt noch keine Langzeitstabilität. 29 Speicher-/Lebensdauertests, 60 Übermittlungstests und vier Vulkan-Prüfungen bestehen. Ein größerer Cache ergab 9,93 → 9,10 FPS in derselben pausierten Szene; der Standard bleibt unverändert. 30 FPS sind nicht erreicht.",
+      "imageAlt": "Subnautica: Below Zero — recovered world, 2026-10-02"
+    },
+    "subnautica-save-metadata": {
+      "title": "Speicherdaten und Metadaten korrigiert; Laden der Welt schlägt noch fehl",
+      "summary": "Normales Speichern schreibt ein Archiv mit 213.388 Bytes, bestätigt es und kehrt ins Spiel zurück. Ein neuer Prozess erkennt den Spielstand mit korrektem Datum und Spielzeit, ohne Beschädigungswarnung. Allgemeine Korrekturen betreffen POSIX-Dateischreibzugriffe und die vollständige Parameterstruktur; 52 Speicher- und Dateisystemtests bestehen. Beim Wiederherstellen der Welt tritt weiterhin Speicherkorruption auf. Eine separate Prüfung freigegebener Befehlspuffer besteht 60 Tests; ihr Zusammenhang mit dem Ladefehler ist nicht belegt."
+    },
+    "subnautica-vector-walk": {
+      "title": "Weniger CPU-Arbeit beim Shader-Durchlauf; Spielwelt bei 7 FPS",
+      "summary": "Die CPU-Ressourcenanalyse überspringt reine Vektorinterpretation, behält aber Abhängigkeitsprüfungen und GPU-Befehle bei. Eine separate Korrektur verwirft beide Wörter geschriebener Vektormasken. 71 Skalartests und neun GPU-Prüfungen bestehen. Isolierte Durchläufe benötigen 15–36% weniger Zeit; die letzte 30-Sekunden-Weltmessung ergibt 7,00 FPS, ohne kontrollierten Leistungsnachweis. Kopieren, Ressourcenaufbereitung und Befehlsübermittlung bleiben teuer. Tastatureingaben beachten jetzt den Fensterfokus. Ladefehler, eine ungeklärte Bindung und das 30-FPS-Ziel bleiben offen.",
+      "imageAlt": "Subnautica: Below Zero — 1920×1080 gameplay, 2026-10-02"
+    },
     "subnautica-srgb-spans": {
       "title": "sRGB-Farbausgabe korrigiert; Mip-Prüfungen nutzen gespeicherte Bereiche",
       "summary": "Der erfasste G-Buffer und die finale Ausgabe verlangten sRGB, verwendeten aber UNORM-Anhänge. Das anschließende Lesen als sRGB verdunkelte die Farben. Der Renderer kodiert nun die Farbausgabe und erhält die kodierten Bytes bei der Anzeigeübertragung. Ein GPU-Test prüft Sampling, Alpha und Scanout mit Vulkan-Validierung; 129 gezielte Tests bestehen. Mip-Prüfungen verwenden berechnete Speicherbereiche erneut. Spieltests und verbleibende Grenzen stehen im Bericht. Der neue Lauf erreicht die verschneite Spielwelt mit sichtbar helleren Materialien und misst 9,49 FPS über 30,05 Sekunden (Basislauf: 9,13 FPS). Unterschiedliche Wetter- und Partikeleffekte erlauben keinen kontrollierten Leistungsnachweis; 30 FPS, eine ungeklärte Skalarbindung und sporadische Ladefehler bleiben offen.",

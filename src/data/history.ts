@@ -40,6 +40,45 @@ export type HistoryEntry = {
 export const history: HistoryEntry[] = [
   // Subnautica: Below Zero — PPSA02457 v1.022.125
   {
+    id: "subnautica-read-lease",
+    slug: "subnautica-below-zero",
+    date: "2026-10-02",
+    release: null,
+    image: "/images/subnautica-below-zero-read-lease-world.png",
+    source: devReport("subnautica-vector-walk-save-2026-10-02.md"),
+  },
+  {
+    id: "subnautica-overlap-world",
+    slug: "subnautica-below-zero",
+    date: "2026-10-02",
+    release: null,
+    image: "/images/subnautica-below-zero-overlap-world.png",
+    source: devReport("subnautica-vector-walk-save-2026-10-02.md"),
+  },
+  {
+    id: "subnautica-save-recovery",
+    slug: "subnautica-below-zero",
+    date: "2026-10-02",
+    release: null,
+    image: "/images/subnautica-below-zero-save-recovery.png",
+    source: devReport("subnautica-vector-walk-save-2026-10-02.md"),
+  },
+  {
+    id: "subnautica-save-metadata",
+    slug: "subnautica-below-zero",
+    date: "2026-10-02",
+    release: null,
+    source: devReport("subnautica-vector-walk-save-2026-10-02.md"),
+  },
+  {
+    id: "subnautica-vector-walk",
+    slug: "subnautica-below-zero",
+    date: "2026-10-02",
+    release: null,
+    image: "/images/subnautica-below-zero-vector-walk.png",
+    source: devReport("subnautica-vector-walk-save-2026-10-02.md"),
+  },
+  {
     id: "subnautica-srgb-spans",
     slug: "subnautica-below-zero",
     date: "2026-10-01",
