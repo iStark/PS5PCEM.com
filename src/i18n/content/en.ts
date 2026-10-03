@@ -47,16 +47,16 @@ const content: Content = {
     "subnautica-below-zero": {
       "status": "Playable · Completable",
       "headline": "New Game reaches the opening world, with camera movement and walking verified.",
-      "summary": "October 1 development build, PPSA02457 v1.022.125: Survival passes loading and the intro, then renders the snowy crash site and HUD. Fixes protect CPU memory from stale GPU writeback, retire released storage buffers and preserve colour during depth-only draws. RG32F attachments, mip views and D16 shadow bias are supported.",
+      "summary": "October 3 repeat, PPSA02457 v1.022.125: the installed runner restores the Survival save and renders the snowy crash site and HUD. This run measures the current build after the shared GTA III renderer changes; it adds no new emulator fixes.",
       "strengths": [
         "New Game, intro, world rendering, camera input and walking verified."
       ],
       "limits": [
         "Dark lighting, visual artifacts and long pauses remain.",
-        "This validation did not include a full playthrough, save recovery or audio correctness."
+        "Full playthrough, audio correctness and long-session stability remain unverified."
       ],
-      "performance": "A stationary world sample records 313 flips in 30.01 seconds: 10.43 FPS. Earlier menu measurements were about 17 FPS. The 30 FPS target remains unmet.",
-      "imageAlt": "Subnautica: Below Zero snowy opening area with the survival HUD, captured from PS5PCEM"
+      "performance": "Main menu: 14.67 FPS. Two unpaused 30-second stationary world samples: 7.27 and 11.77 FPS; 9.52 FPS combined. The first includes a 9.998-second stall. Output 1080p, Speed preset, warm caches. The earlier valid sample was 7.93 FPS, but this is not a controlled speedup comparison. 30 FPS remains unmet.",
+      "imageAlt": "Subnautica: Below Zero snowy crash site and survival HUD during the October 3 performance repeat"
     },
 
     "terminator-2d-no-fate": {
@@ -356,6 +356,11 @@ const content: Content = {
   },
 
   history: {
+    "subnautica-performance-repeat": {
+      "title": "Performance repeated on the current runner",
+      "summary": "October 3 repeat, PPSA02457 v1.022.125: the installed runner restores the Survival save and renders the snowy crash site and HUD. This run measures the current build after the shared GTA III renderer changes; it adds no new emulator fixes. Main menu: 14.67 FPS. Two unpaused 30-second stationary world samples: 7.27 and 11.77 FPS; 9.52 FPS combined. The first includes a 9.998-second stall. Output 1080p, Speed preset, warm caches. The earlier valid sample was 7.93 FPS, but this is not a controlled speedup comparison. 30 FPS remains unmet.",
+      "imageAlt": "Subnautica: Below Zero snowy crash site and survival HUD during the October 3 performance repeat"
+    },
     "gta3-renderer-performance": {
       "title": "Colors, reflections and resource preparation corrected",
       "summary": "The updated installed runner reaches Give Me Liberty with player control. Measured opening-position samples reach 8.10–8.97 FPS with Performance mode, Bloom and Motion Blur off and Classic Lighting on. Shared scalar walks, resident volume/mip copies and lower bookkeeping costs accompany the rendering fixes. The report records settings, slower samples and test limits; full playability is not established.",

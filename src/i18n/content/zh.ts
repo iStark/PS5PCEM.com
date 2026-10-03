@@ -20,16 +20,16 @@ const zh: Content = {
     "subnautica-below-zero": {
       "status": "可玩 · 可通关",
       "headline": "新游戏已进入初始区域，并验证了镜头转动和行走。",
-      "summary": "10月1日开发版本，PPSA02457 v1.022.125：生存模式完成世界加载和开场动画，随后显示积雪覆盖的坠机地点及HUD。修复了过期GPU回写破坏CPU内存、反复读取已释放缓冲区，以及深度通道错误清除颜色的问题。",
+      "summary": "10 月 3 日复测，PPSA02457 v1.022.125：已安装的运行程序恢复 Survival 存档并显示雪地坠机现场和 HUD。本次测量使用包含 GTA III 通用渲染改进的当前版本，没有新增模拟器修复。",
       "strengths": [
         "已验证新游戏、开场动画、世界显示、镜头控制和行走。"
       ],
       "limits": [
         "仍存在光照过暗、画面瑕疵及长时间停顿。",
-        "本次测试未覆盖完整通关、存档恢复或音频正确性。"
+        "完整通关、音频正确性和长时间稳定性仍未验证。"
       ],
-      "performance": "静止场景在30.01秒内显示313帧，约10.43 FPS。此前菜单约为17 FPS，尚未达到30 FPS目标。",
-      "imageAlt": "PS5PCEM中的Subnautica: Below Zero积雪初始区域与生存HUD截图"
+      "performance": "主菜单为 14.67 FPS。两个各 30 秒的未暂停静止视角测量分别为 7.27 和 11.77 FPS，合计 9.52 FPS。第一次包含 9.998 秒停顿。输出 1080p，Speed 预设，缓存已预热。此前有效测量为 7.93 FPS，但这不是受控加速对比。仍未达到 30 FPS。",
+      "imageAlt": "10 月 3 日复测中的 Subnautica: Below Zero 雪地坠机现场和生存 HUD"
     },
 
     "terminator-2d-no-fate": {
@@ -307,6 +307,11 @@ const zh: Content = {
   },
 
   history: {
+    "subnautica-performance-repeat": {
+      "title": "使用当前运行程序重新测量性能",
+      "summary": "10 月 3 日复测，PPSA02457 v1.022.125：已安装的运行程序恢复 Survival 存档并显示雪地坠机现场和 HUD。本次测量使用包含 GTA III 通用渲染改进的当前版本，没有新增模拟器修复。 主菜单为 14.67 FPS。两个各 30 秒的未暂停静止视角测量分别为 7.27 和 11.77 FPS，合计 9.52 FPS。第一次包含 9.998 秒停顿。输出 1080p，Speed 预设，缓存已预热。此前有效测量为 7.93 FPS，但这不是受控加速对比。仍未达到 30 FPS。",
+      "imageAlt": "10 月 3 日复测中的 Subnautica: Below Zero 雪地坠机现场和生存 HUD"
+    },
     "gta3-renderer-performance": {
       "title": "修复颜色、反射与资源准备",
       "summary": "已更新的主程序可进入 Give Me Liberty 并控制角色。桥上初始位置采样达到 8.10–8.97 FPS，使用 Performance 模式，关闭 Bloom 和 Motion Blur，开启 Classic Lighting。共享标量分析、GPU 内纹理复制和更低的管理开销与图形修复一并应用。报告列出设置、较慢样本和测试范围；尚未证实完整可玩性。",

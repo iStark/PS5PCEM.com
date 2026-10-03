@@ -107,8 +107,8 @@ export const compatibility: CompatibilityEntry[] = [
     slug: "subnautica-below-zero",
     title: "Subnautica: Below Zero",
     tier: "playable",
-    image: "/images/subnautica-below-zero-new-game-world.png",
-    confirmedOn: "2026-10-01",
+    image: "/images/subnautica-below-zero-repeat-2026-10-03.png",
+    confirmedOn: "2026-10-03",
   },
   {
     slug: "big-helmet-heroes",

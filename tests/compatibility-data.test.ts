@@ -228,7 +228,10 @@ describe("English source prose", () => {
     expect(games["big-helmet-heroes"].performance).toContain("157 ms");
     expect(games["tetris-effect-connected"].performance).toContain("235 ms");
     expect(games["ghost-of-yotei"].performance).toContain("0.73 FPS");
-    expect(games["subnautica-below-zero"].performance).toContain("10.43 FPS");
+    expect(games["subnautica-below-zero"].performance).toContain("14.67 FPS");
+    expect(games["subnautica-below-zero"].performance).toContain("7.27 and 11.77 FPS");
+    expect(games["subnautica-below-zero"].performance).toContain("9.52 FPS combined");
+    expect(games["subnautica-below-zero"].performance).toContain("9.998-second stall");
   });
 
   it("states plainly what is not claimed", () => {
@@ -237,7 +240,7 @@ describe("English source prose", () => {
       /remains unverified/i,
     );
     expect(enContent.games["subnautica-below-zero"].limits.join(" ")).toMatch(
-      /did not include a full playthrough/i,
+      /full playthrough.*remain unverified/i,
     );
     expect(enContent.games["reanimal"].limits.join(" ")).toMatch(
       /no gameplay is claimed/i,

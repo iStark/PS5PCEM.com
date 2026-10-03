@@ -20,16 +20,16 @@ const de: Content = {
     "subnautica-below-zero": {
       "status": "Spielbar · Abschließbar",
       "headline": "Ein neues Spiel erreicht das Startgebiet; Kamerabewegung und Laufen wurden geprüft.",
-      "summary": "Entwicklungsbuild vom 1. Oktober, PPSA02457 v1.022.125: Der Überlebensmodus lädt die Welt, spielt die Einleitung ab und zeigt die verschneite Absturzstelle mit HUD. Die Korrekturen verhindern veraltete GPU-Rückschreibungen in CPU-Speicher, wiederholte Zugriffe auf freigegebene Puffer und das Löschen der Farbe durch Tiefenpässe.",
+      "summary": "Wiederholung vom 3. Oktober, PPSA02457 v1.022.125: Der installierte Runner lädt den Survival-Spielstand und zeigt die verschneite Absturzstelle samt HUD. Gemessen wird der aktuelle Build nach den gemeinsamen GTA-III-Rendereränderungen; dieser Durchlauf enthält keine neuen Emulatorfixes.",
       "strengths": [
         "Neues Spiel, Einleitung, Weltanzeige, Kamera und Laufen geprüft."
       ],
       "limits": [
         "Dunkle Beleuchtung, Grafikfehler und lange Pausen bleiben bestehen.",
-        "Dieser Test umfasste keinen vollständigen Durchlauf, keine Wiederherstellung von Spielständen und keine Prüfung der Audiokorrektheit."
+        "Vollständiges Durchspielen, korrekter Ton und Langzeitstabilität bleiben ungeprüft."
       ],
-      "performance": "In einer unbewegten Spielszene: 313 Frames in 30,01 Sekunden, 10,43 FPS. Frühere Menüwerte lagen bei etwa 17 FPS. Das Ziel von 30 FPS bleibt unerreicht.",
-      "imageAlt": "Verschneites Startgebiet von Subnautica: Below Zero mit Überlebens-HUD, aufgenommen in PS5PCEM"
+      "performance": "Hauptmenü: 14,67 FPS. Zwei unpausierte Messungen mit ruhender Kamera über je 30 Sekunden: 7,27 und 11,77 FPS; zusammen 9,52 FPS. Die erste enthält einen Stillstand von 9,998 Sekunden. Ausgabe 1080p, Speed-Preset, warme Caches. Der frühere gültige Wert war 7,93 FPS, jedoch ist dies kein kontrollierter Beschleunigungsvergleich. 30 FPS bleiben unerreicht.",
+      "imageAlt": "Verschneite Absturzstelle und Survival-HUD in Subnautica: Below Zero bei der Messung am 3. Oktober"
     },
 
     "terminator-2d-no-fate": {
@@ -331,6 +331,11 @@ const de: Content = {
   },
 
   history: {
+    "subnautica-performance-repeat": {
+      "title": "Erneute Leistungsmessung mit dem aktuellen Runner",
+      "summary": "Wiederholung vom 3. Oktober, PPSA02457 v1.022.125: Der installierte Runner lädt den Survival-Spielstand und zeigt die verschneite Absturzstelle samt HUD. Gemessen wird der aktuelle Build nach den gemeinsamen GTA-III-Rendereränderungen; dieser Durchlauf enthält keine neuen Emulatorfixes. Hauptmenü: 14,67 FPS. Zwei unpausierte Messungen mit ruhender Kamera über je 30 Sekunden: 7,27 und 11,77 FPS; zusammen 9,52 FPS. Die erste enthält einen Stillstand von 9,998 Sekunden. Ausgabe 1080p, Speed-Preset, warme Caches. Der frühere gültige Wert war 7,93 FPS, jedoch ist dies kein kontrollierter Beschleunigungsvergleich. 30 FPS bleiben unerreicht.",
+      "imageAlt": "Verschneite Absturzstelle und Survival-HUD in Subnautica: Below Zero bei der Messung am 3. Oktober"
+    },
     "gta3-renderer-performance": {
       "title": "Farben, Reflexionen und Ressourcenvorbereitung korrigiert",
       "summary": "Der aktualisierte installierte Runner erreicht Give Me Liberty mit steuerbarer Spielfigur. Messungen der Startposition ergeben 8.10–8.97 FPS im Performance-Modus, mit Bloom und Motion Blur aus und Classic Lighting an. Gemeinsame Skalaranalysen, GPU-interne Texturkopien und geringerer Verwaltungsaufwand ergänzen die Grafikfixes. Der Bericht nennt Einstellungen, langsamere Messungen und Prüfgrenzen; vollständige Spielbarkeit ist nicht belegt.",

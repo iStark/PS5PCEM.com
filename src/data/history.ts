@@ -39,6 +39,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "subnautica-performance-repeat",
+    slug: "subnautica-below-zero",
+    date: "2026-10-03",
+    release: null,
+    image: "/images/subnautica-below-zero-repeat-2026-10-03.png",
+    source: devReport("subnautica-performance-repeat-2026-10-03.md"),
+  },
+  {
     id: "gta3-renderer-performance",
     slug: "gta-iii-definitive-edition",
     date: "2026-10-03",

@@ -20,16 +20,16 @@ const pt: Content = {
     "subnautica-below-zero": {
       "status": "Jogável · Concluível",
       "headline": "Uma nova partida chega à área inicial; a câmera e a caminhada foram verificadas.",
-      "summary": "Compilação de desenvolvimento de 1 de outubro, PPSA02457 v1.022.125: o modo Sobrevivência carrega o mundo, reproduz a introdução e mostra o local nevado do acidente com o HUD. As correções impedem escritas antigas da GPU sobre a memória da CPU, leituras repetidas de buffers liberados e o apagamento das cores por passes de profundidade.",
+      "summary": "Repetição de 3 de outubro, PPSA02457 v1.022.125: o executável instalado restaura a partida Survival e mostra o local nevado da queda e o HUD. A medição usa a versão atual após as alterações comuns do renderizador para GTA III; esta verificação não acrescenta novas correções.",
       "strengths": [
         "Verificados: nova partida, introdução, mundo, câmera e caminhada."
       ],
       "limits": [
         "Persistem iluminação escura, defeitos gráficos e pausas longas.",
-        "Este teste não incluiu uma partida completa, recuperação de saves ou verificação da correção do áudio."
+        "Conclusão do jogo, correção do áudio e estabilidade prolongada continuam por verificar."
       ],
-      "performance": "Cena estática: 313 quadros em 30,01 segundos, 10,43 FPS. As medições anteriores do menu eram de cerca de 17 FPS. A meta de 30 FPS ainda não foi alcançada.",
-      "imageAlt": "Área inicial nevada de Subnautica: Below Zero com HUD de sobrevivência, capturada no PS5PCEM"
+      "performance": "Menu principal: 14,67 FPS. Duas medições de 30 segundos sem pausa e com câmara fixa: 7,27 e 11,77 FPS; 9,52 FPS combinados. A primeira inclui uma paragem de 9,998 segundos. Saída 1080p, predefinição Speed, caches aquecidas. A medição válida anterior foi 7,93 FPS, mas não é uma comparação controlada do ganho. Os 30 FPS continuam por atingir.",
+      "imageAlt": "Local nevado da queda e HUD de sobrevivência de Subnautica: Below Zero na medição de 3 de outubro"
     },
 
     "terminator-2d-no-fate": {
@@ -331,6 +331,11 @@ const pt: Content = {
   },
 
   history: {
+    "subnautica-performance-repeat": {
+      "title": "Nova medição com o executável atual",
+      "summary": "Repetição de 3 de outubro, PPSA02457 v1.022.125: o executável instalado restaura a partida Survival e mostra o local nevado da queda e o HUD. A medição usa a versão atual após as alterações comuns do renderizador para GTA III; esta verificação não acrescenta novas correções. Menu principal: 14,67 FPS. Duas medições de 30 segundos sem pausa e com câmara fixa: 7,27 e 11,77 FPS; 9,52 FPS combinados. A primeira inclui uma paragem de 9,998 segundos. Saída 1080p, predefinição Speed, caches aquecidas. A medição válida anterior foi 7,93 FPS, mas não é uma comparação controlada do ganho. Os 30 FPS continuam por atingir.",
+      "imageAlt": "Local nevado da queda e HUD de sobrevivência de Subnautica: Below Zero na medição de 3 de outubro"
+    },
     "gta3-renderer-performance": {
       "title": "Correções de cores, reflexos e preparação de recursos",
       "summary": "O executável instalado atualizado chega a Give Me Liberty com controle do personagem. As amostras na posição inicial dão 8.10–8.97 FPS em modo Performance, com Bloom e Motion Blur desativados e Classic Lighting ativado. Análises escalares compartilhadas, cópias de texturas na GPU e menores custos auxiliares acompanham as correções gráficas. O relatório registra ajustes, amostras mais lentas e limites; a jogabilidade completa não foi comprovada.",
