@@ -4,18 +4,18 @@ const zh: Content = {
   games: {
     "gta-iii-definitive-edition": {
       "status": "进入游戏 · 已验证移动",
-      "headline": "GTA III 已进入 Give Me Liberty，角色可响应操作。",
-      "summary": "10 月 2 日开发版本，PPSA03527 v1.007：Callahan Bridge 的首个任务显示角色、车辆、HUD 和小地图。保留 NGG 导出时的数值恢复了全部 32 层颜色校正表，并消除了一处导致场景全黑的问题。",
+      "headline": "修复 GTA III 游戏场景中的颜色和反射。",
+      "summary": "10 月 3 日开发版本，PPSA03527 v1.007：Give Me Liberty 显示角色、车辆、桥梁、HUD 和小地图。修复了偏绿过曝及反射 mip 层不完整的原因。共享资源分析和 GPU 常驻纹理减少了重复 CPU 处理及传输。",
       "strengths": [
         "新游戏可通过开场进入首个任务。",
         "已验证键盘移动和改变方向。"
       ],
       "limits": [
-        "仍有严重偏绿、过曝和纹理资源缺失。",
-        "其他测试仍出现加载崩溃和 RenderThread 超时；稳定启动、存档、音频正确性和通关尚未验证。"
+        "仍有画面瑕疵和未解析资源的诊断信息。",
+        "稳定启动、存档、音频正确性及通关尚未验证。"
       ],
-      "performance": "30.002 秒的场景采样显示了 29 个新画面：0.97 FPS。这不代表已提速或达到可玩状态。",
-      "imageAlt": "GTA III 角色在 Callahan Bridge 跑向汽车，HUD 可见，画面严重偏绿过曝"
+      "performance": "初始位置实测 8.10–8.97 FPS（两次各 30 秒，合计平均 8.53 FPS）。坐进汽车后为 7.20 FPS，短途驾驶后面向城市的宽阔视角为 3.57 FPS。Performance 模式，关闭 Bloom/Motion Blur，开启 Classic Lighting。输出 1080p，内部渲染分辨率由游戏控制。尚未达到全程最低 8 FPS。",
+      "imageAlt": "修复颜色与反射后，GTA III 角色和汽车位于 Callahan Bridge"
     },
     "subnautica-below-zero": {
       "status": "可玩 · 可通关",
@@ -307,6 +307,11 @@ const zh: Content = {
   },
 
   history: {
+    "gta3-renderer-performance": {
+      "title": "修复颜色、反射与资源准备",
+      "summary": "已更新的主程序可进入 Give Me Liberty 并控制角色。桥上初始位置采样达到 8.10–8.97 FPS，使用 Performance 模式，关闭 Bloom 和 Motion Blur，开启 Classic Lighting。共享标量分析、GPU 内纹理复制和更低的管理开销与图形修复一并应用。报告列出设置、较慢样本和测试范围；尚未证实完整可玩性。",
+      "imageAlt": "修复颜色与反射后，GTA III 角色和汽车位于 Callahan Bridge"
+    },
     "gta3-ngg-gameplay": {
       "title": "修复 NGG 导出；已验证首个任务和角色移动",
       "summary": "已安装的运行程序进入 Give Me Liberty，显示场景、角色、车辆、HUD 和小地图。W 可移动角色，D 可改变方向。通用 NGG 修复恢复了全部 32 层颜色校正表。场景实测为 0.97 FPS；仍有偏绿过曝、资源缺失，以及间歇性崩溃或超时。",

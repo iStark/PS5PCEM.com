@@ -4,18 +4,18 @@ const fr: Content = {
   games: {
     "gta-iii-definitive-edition": {
       "status": "En jeu · déplacement vérifié",
-      "headline": "GTA III atteint Give Me Liberty avec contrôle du personnage.",
-      "summary": "Version de développement du 2 octobre, PPSA03527 v1.007 : la première mission sur Callahan Bridge affiche le personnage, le véhicule, le HUD et la minicarte. La conservation des valeurs exportées par NGG restaure les 32 couches de correction colorimétrique et élimine une cause du monde noir.",
+      "headline": "Couleurs et reflets corrigés dans le gameplay de GTA III.",
+      "summary": "Version de développement du 3 octobre, PPSA03527 v1.007 : Give Me Liberty affiche personnage, véhicule, pont, HUD et minicarte. Les causes de la surexposition verte et des niveaux de reflets incomplets sont corrigées. Une analyse partagée des ressources et des textures résidentes sur GPU réduisent les traitements CPU répétés et les transferts.",
       "strengths": [
         "Une nouvelle partie passe l’introduction et atteint la première mission.",
         "Le déplacement au clavier et le changement de direction sont vérifiés."
       ],
       "limits": [
-        "Une forte dominante verte, une surexposition et des ressources de texture manquantes persistent.",
-        "D’autres essais subissent des plantages au chargement et des délais RenderThread dépassés ; démarrage fiable, sauvegardes, exactitude audio et partie complète restent non vérifiés."
+        "Des défauts visuels et des diagnostics de ressources non résolues subsistent.",
+        "Fiabilité du démarrage, sauvegardes, exactitude audio et partie complète restent non vérifiées."
       ],
-      "performance": "Un échantillon de 30,002 secondes affiche 29 nouvelles images : 0,97 FPS. Ce résultat ne confirme ni accélération ni jouabilité.",
-      "imageAlt": "Personnage de GTA III courant vers une voiture sur Callahan Bridge, avec HUD et forte surexposition verte"
+      "performance": "8.10–8.97 FPS à la position initiale (deux mesures de 30 secondes ; moyenne combinée de 8,53 FPS). Dans la voiture : 7,20 FPS ; vue élargie vers la ville après un court trajet : 3,57 FPS. Performance, Bloom/Motion Blur désactivés, Classic Lighting activé. Sortie 1080p ; résolution interne contrôlée par le jeu. Pas de minimum de 8 FPS sur tout le parcours.",
+      "imageAlt": "Personnage et voiture de GTA III sur Callahan Bridge après correction des couleurs et des reflets"
     },
     "subnautica-below-zero": {
       "status": "Jouable · Terminable",
@@ -331,6 +331,11 @@ const fr: Content = {
   },
 
   history: {
+    "gta3-renderer-performance": {
+      "title": "Couleurs, reflets et préparation des ressources corrigés",
+      "summary": "Le programme installé mis à jour atteint Give Me Liberty avec contrôle du personnage. Les mesures à la position initiale donnent 8.10–8.97 FPS en mode Performance, Bloom et Motion Blur désactivés et Classic Lighting activé. Analyses scalaires partagées, copies de textures sur GPU et réduction des traitements auxiliaires complètent les corrections graphiques. Le rapport détaille réglages, mesures plus lentes et limites ; la jouabilité complète n’est pas établie.",
+      "imageAlt": "Personnage et voiture de GTA III sur Callahan Bridge après correction des couleurs et des reflets"
+    },
     "gta3-ngg-gameplay": {
       "title": "Exports NGG corrigés ; première mission et déplacement vérifiés",
       "summary": "Le programme installé atteint Give Me Liberty avec monde, personnage, véhicule, HUD et minicarte visibles. W déplace le personnage et D change sa direction. La correction générale NGG restaure les 32 couches de correction colorimétrique. La mesure donne 0,97 FPS ; surexposition verte, ressources manquantes, plantages et blocages intermittents persistent.",

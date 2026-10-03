@@ -4,18 +4,18 @@ const de: Content = {
   games: {
     "gta-iii-definitive-edition": {
       "status": "Im Spiel · Bewegung bestätigt",
-      "headline": "GTA III erreicht Give Me Liberty mit steuerbarer Spielfigur.",
-      "summary": "Entwicklungsstand vom 2. Oktober, PPSA03527 v1.007: Die erste Mission auf der Callahan Bridge zeigt Spielfigur, Fahrzeug, HUD und Minikarte. Gesicherte NGG-Exportwerte stellen die 32 Ebenen der Farbkorrekturtabelle wieder her und beseitigen eine Ursache der schwarzen Spielwelt.",
+      "headline": "Farben und Reflexionen im GTA-III-Spielgeschehen korrigiert.",
+      "summary": "Entwicklungsstand vom 3. Oktober, PPSA03527 v1.007: Give Me Liberty zeigt Spielfigur, Fahrzeug, Brücke, HUD und Minikarte. Ursachen des grünen Überstrahlens und unvollständiger Reflexions-Mips sind korrigiert. Gemeinsame Ressourcenanalyse und GPU-residente Texturen reduzieren wiederholte CPU-Arbeit und Transfers.",
       "strengths": [
         "Ein neues Spiel gelangt durch das Intro zur ersten Mission.",
         "Tastaturbewegung und Richtungswechsel wurden geprüft."
       ],
       "limits": [
-        "Starker Grünstich, Überbelichtung und fehlende Texturressourcen bestehen weiterhin.",
-        "Andere Durchläufe zeigen Ladeabstürze und RenderThread-Zeitüberschreitungen; zuverlässiger Start, Spielstände, korrekter Ton und vollständiges Durchspielen sind unbestätigt."
+        "Darstellungsfehler und Diagnosen zu nicht aufgelösten Ressourcen bleiben.",
+        "Zuverlässiger Start, Spielstände, korrekter Ton und vollständiges Durchspielen sind ungeprüft."
       ],
-      "performance": "Eine Messung über 30,002 Sekunden zeigt 29 neue Bilder: 0,97 FPS. Daraus folgt keine bestätigte Beschleunigung oder Spielbarkeit.",
-      "imageAlt": "GTA-III-Spielfigur läuft auf der Callahan Bridge zu einem Auto; HUD und starke grüne Überbelichtung sind sichtbar"
+      "performance": "8.10–8.97 FPS an der Startposition (zweimal 30 Sekunden; zusammen 8,53 FPS). Im Auto: 7,20 FPS; weiter Stadtblick nach kurzer Fahrt: 3,57 FPS. Performance-Modus, Bloom/Motion Blur aus, Classic Lighting an. Ausgabe 1080p; interne Auflösung vom Spiel bestimmt. Kein durchgehendes Minimum von 8 FPS.",
+      "imageAlt": "GTA-III-Spielfigur und Fahrzeug auf der Callahan Bridge nach den Farb- und Reflexionskorrekturen"
     },
     "subnautica-below-zero": {
       "status": "Spielbar · Abschließbar",
@@ -331,6 +331,11 @@ const de: Content = {
   },
 
   history: {
+    "gta3-renderer-performance": {
+      "title": "Farben, Reflexionen und Ressourcenvorbereitung korrigiert",
+      "summary": "Der aktualisierte installierte Runner erreicht Give Me Liberty mit steuerbarer Spielfigur. Messungen der Startposition ergeben 8.10–8.97 FPS im Performance-Modus, mit Bloom und Motion Blur aus und Classic Lighting an. Gemeinsame Skalaranalysen, GPU-interne Texturkopien und geringerer Verwaltungsaufwand ergänzen die Grafikfixes. Der Bericht nennt Einstellungen, langsamere Messungen und Prüfgrenzen; vollständige Spielbarkeit ist nicht belegt.",
+      "imageAlt": "GTA-III-Spielfigur und Fahrzeug auf der Callahan Bridge nach den Farb- und Reflexionskorrekturen"
+    },
     "gta3-ngg-gameplay": {
       "title": "NGG-Exporte korrigiert; erste Mission und Bewegung bestätigt",
       "summary": "Der installierte Runner erreicht Give Me Liberty mit sichtbarer Welt, Spielfigur, Fahrzeug, HUD und Minikarte. W bewegt die Figur, D ändert ihre Richtung. Die allgemeine NGG-Korrektur stellt alle 32 Farbkorrekturebenen wieder her. Gemessen wurden 0,97 FPS; grüne Überbelichtung, fehlende Ressourcen sowie sporadische Abstürze und Zeitüberschreitungen bleiben.",

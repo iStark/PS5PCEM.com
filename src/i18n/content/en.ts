@@ -31,18 +31,18 @@ const content: Content = {
   games: {
     "gta-iii-definitive-edition": {
       "status": "In-game · movement verified",
-      "headline": "GTA III reaches Give Me Liberty with player control.",
-      "summary": "October 2 development build, PPSA03527 v1.007: the opening mission at Callahan Bridge renders the player, vehicle, HUD and minimap. Preserving NGG export values restores the 32-layer color-grading table and removes one cause of the black world.",
+      "headline": "Corrected colors and reflections in GTA III gameplay.",
+      "summary": "October 3 development build, PPSA03527 v1.007: Give Me Liberty renders the player, vehicle, bridge, HUD and minimap. Fixes address green overexposure and incomplete reflection mips. Shared resource analysis and GPU-resident textures reduce repeated CPU work and transfers.",
       "strengths": [
         "New Game advances through the intro into the opening mission.",
         "Keyboard movement and a change of direction are verified."
       ],
       "limits": [
-        "Severe green tint, overexposure and missing sampled resources remain.",
-        "Loading crashes and RenderThread timeouts still occur in other runs; reliable startup, saves, audio correctness and completion are unverified."
+        "Rendering imperfections and unresolved resource diagnostics remain.",
+        "Reliable startup, saves, audio correctness and completion remain unverified."
       ],
-      "performance": "A 30.002-second world sample records 29 new presented frames: 0.97 FPS. This is not a speedup or playability claim.",
-      "imageAlt": "GTA III player running toward a car at Callahan Bridge, with the HUD and severe green overexposure"
+      "performance": "8.10–8.97 FPS at the opening position (two 30-second samples; 8.53 FPS combined). Seated car: 7.20 FPS; wider city view after driving: 3.57 FPS. Performance mode, Bloom/Motion Blur off, Classic Lighting on. Output 1080p; internal resolution is game-controlled. Not an 8 FPS minimum throughout gameplay.",
+      "imageAlt": "GTA III player and car at Callahan Bridge after the color and reflection fixes"
     },
     "subnautica-below-zero": {
       "status": "Playable · Completable",
@@ -356,6 +356,11 @@ const content: Content = {
   },
 
   history: {
+    "gta3-renderer-performance": {
+      "title": "Colors, reflections and resource preparation corrected",
+      "summary": "The updated installed runner reaches Give Me Liberty with player control. Measured opening-position samples reach 8.10–8.97 FPS with Performance mode, Bloom and Motion Blur off and Classic Lighting on. Shared scalar walks, resident volume/mip copies and lower bookkeeping costs accompany the rendering fixes. The report records settings, slower samples and test limits; full playability is not established.",
+      "imageAlt": "GTA III player and car at Callahan Bridge after the color and reflection fixes"
+    },
     "gta3-ngg-gameplay": {
       "title": "NGG exports corrected; opening gameplay and movement verified",
       "summary": "The installed runner reaches Give Me Liberty with visible geometry, the player, vehicle, HUD and minimap. W moves the player and D changes his direction. A shared NGG export fix restores all 32 color-grading layers. A world sample measures 0.97 FPS; severe green overexposure, missing resources and intermittent crashes or timeouts remain.",
