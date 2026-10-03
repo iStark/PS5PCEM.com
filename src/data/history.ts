@@ -39,6 +39,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "little-nightmares-startup",
+    slug: "little-nightmares-enhanced-edition",
+    date: "2026-10-03",
+    release: null,
+    image: "/images/little-nightmares-title.png",
+    source: devReport("little-nightmares-startup-2026-10-03.md"),
+  },
+  {
     id: "subnautica-performance-repeat-2",
     slug: "subnautica-below-zero",
     date: "2026-10-03",

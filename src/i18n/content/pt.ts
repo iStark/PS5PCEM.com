@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const pt: Content = {
   games: {
+    "little-nightmares-enhanced-edition": {
+      "status": "Ecrã de título · configuração inicial",
+      "headline": "O ecrã de título é apresentado e responde aos comandos.",
+      "summary": "Verificação de 3 de outubro, PPSA10737 v01.004.000: as correções de importações, eventos gráficos e BITSET escalar restauram o título e a indicação Press X. Os comandos abrem o ajuste de brilho e texto de licença legível. Um segundo arranque da versão instalada reproduz o ecrã de título.",
+      "strengths": [
+        "O título, a verificação de DLC e a configuração inicial avançam pelo teclado.",
+        "Foram corrigidas as importações ausentes e a paragem observada da GPU."
+      ],
+      "limits": [
+        "Gameplay e renderização 3D correta não foram confirmados.",
+        "Persistem lacunas de memória FLAT, interseções de raios e recursos.",
+        "Uma repetição termina após esperar 120 segundos pela thread de renderização na configuração inicial; a estabilidade não foi confirmada."
+      ],
+      "imageAlt": "Título de Little Nightmares Enhanced Edition e indicação Press X no PS5PCEM"
+    },
     "gta-iii-definitive-edition": {
       "status": "Em jogo · movimento verificado",
       "headline": "Cores e reflexos corrigidos no gameplay de GTA III.",
@@ -331,6 +346,11 @@ const pt: Content = {
   },
 
   history: {
+    "little-nightmares-startup": {
+      "title": "Título restaurado após correções de arranque e descritores",
+      "summary": "Foram corrigidas importações Trinity e IPMI, eventos gráficos nativos e validação das dimensões de dispatch. BITSET restaura o título e a configuração inicial. Dois arranques chegam ao título; gameplay e estabilidade prolongada não foram verificados. Uma repetição termina após esperar 120 segundos pela thread de renderização na configuração inicial; a estabilidade não foi confirmada.",
+      "imageAlt": "Título de Little Nightmares Enhanced Edition e indicação Press X no PS5PCEM"
+    },
     "subnautica-performance-repeat-2": {
       "title": "Segunda medição após um novo arranque",
       "summary": "Novo processo, mesmo executável e partida Survival: menu a 15,50 FPS; duas medições de 30 segundos sem pausa e com câmara fixa a 12,70 e 8,50 FPS, 10,60 FPS combinados. Saída 1080p, Speed, caches aquecidas. Não houve paragem de dez segundos nestes intervalos, mas persistem atrasos mais curtos. O arranque anterior deu uma média de 9,52 FPS. É variação entre testes, não uma nova otimização; os 30 FPS continuam por atingir.",

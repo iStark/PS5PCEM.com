@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const de: Content = {
   games: {
+    "little-nightmares-enhanced-edition": {
+      "status": "Titelbildschirm · Ersteinrichtung",
+      "headline": "Der Titelbildschirm wird dargestellt und reagiert auf Eingaben.",
+      "summary": "Prüfung vom 3. Oktober, PPSA10737 v01.004.000: Korrekturen an Importen, Grafikereignissen und skalarem BITSET stellen Titel und Press-X-Aufforderung wieder her. Eingaben führen zur Helligkeitskalibrierung und lesbaren Lizenzbedingungen. Ein zweiter Start des installierten Programms erreicht erneut den Titelbildschirm.",
+      "strengths": [
+        "Titelbildschirm, DLC-Prüfung und Ersteinrichtung reagieren auf Tastatureingaben.",
+        "Fehlende Importe und der beobachtete GPU-Stillstand wurden behoben."
+      ],
+      "limits": [
+        "Gameplay und korrekte 3D-Darstellung sind nicht bestätigt.",
+        "Lücken bei FLAT-Speicher, Strahlschnittoperationen und Ressourcenbindung bleiben.",
+        "Ein Wiederholungslauf endet nach 120 Sekunden Warten auf den Render-Thread während der Ersteinrichtung; Stabilität ist nicht bestätigt."
+      ],
+      "imageAlt": "Little Nightmares Enhanced Edition mit Titel und Press-X-Aufforderung in PS5PCEM"
+    },
     "gta-iii-definitive-edition": {
       "status": "Im Spiel · Bewegung bestätigt",
       "headline": "Farben und Reflexionen im GTA-III-Spielgeschehen korrigiert.",
@@ -331,6 +346,11 @@ const de: Content = {
   },
 
   history: {
+    "little-nightmares-startup": {
+      "title": "Titelbildschirm nach Start- und Deskriptorkorrekturen wieder sichtbar",
+      "summary": "Trinity- und IPMI-Importe, native Grafikereignisse und die Prüfung von Dispatch-Größen wurden ergänzt. Die BITSET-Korrektur stellt Titelbildschirm und Ersteinrichtung wieder her. Zwei Starts erreichen den Titel; Gameplay und Langzeitstabilität sind nicht geprüft. Ein Wiederholungslauf endet nach 120 Sekunden Warten auf den Render-Thread während der Ersteinrichtung; Stabilität ist nicht bestätigt.",
+      "imageAlt": "Little Nightmares Enhanced Edition mit Titel und Press-X-Aufforderung in PS5PCEM"
+    },
     "subnautica-performance-repeat-2": {
       "title": "Zweite Leistungsmessung nach einem Neustart",
       "summary": "Neuer Prozess, gleiche Programmdatei und gleicher Survival-Spielstand: Menü 15,50 FPS; zwei unpausierte Messungen mit ruhender Kamera über je 30 Sekunden ergeben 12,70 und 8,50 FPS, zusammen 10,60 FPS. Ausgabe 1080p, Speed, warme Caches. Kein Zehn-Sekunden-Stillstand in diesen Intervallen, aber kürzere Verzögerungen bleiben. Der vorherige Lauf ergab 9,52 FPS im Mittel. Das zeigt Schwankungen zwischen Läufen, keine neue Optimierung; 30 FPS bleiben unerreicht.",

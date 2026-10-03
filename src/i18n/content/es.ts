@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const es: Content = {
   games: {
+    "little-nightmares-enhanced-edition": {
+      "status": "Pantalla de título · configuración inicial",
+      "headline": "La pantalla de título se muestra y responde a los controles.",
+      "summary": "Comprobación del 3 de octubre, PPSA10737 v01.004.000: las correcciones de imports, eventos gráficos y BITSET escalar restauran el título y la indicación Press X. Los controles abren el ajuste de brillo y un texto de licencia legible. Un segundo arranque de la versión instalada reproduce la pantalla de título.",
+      "strengths": [
+        "El título, la comprobación de DLC y la configuración inicial avanzan con el teclado.",
+        "Se corrigieron los imports ausentes y el bloqueo observado de la GPU."
+      ],
+      "limits": [
+        "No se han verificado gameplay ni renderizado 3D correcto.",
+        "Persisten carencias en memoria FLAT, intersecciones de rayos y recursos.",
+        "Una repetición finaliza tras esperar 120 segundos al hilo de renderizado durante la configuración inicial; la estabilidad no está confirmada."
+      ],
+      "imageAlt": "Título de Little Nightmares Enhanced Edition e indicación Press X en PS5PCEM"
+    },
     "gta-iii-definitive-edition": {
       "status": "En juego · movimiento verificado",
       "headline": "Colores y reflejos corregidos en el gameplay de GTA III.",
@@ -332,6 +347,11 @@ const es: Content = {
   },
 
   history: {
+    "little-nightmares-startup": {
+      "title": "Título restaurado tras corregir el arranque y los descriptores",
+      "summary": "Se corrigieron imports de Trinity e IPMI, eventos gráficos nativos y validación de dimensiones de dispatch. BITSET restaura el título y la configuración inicial. Dos arranques alcanzan el título; gameplay y estabilidad prolongada siguen sin verificarse. Una repetición finaliza tras esperar 120 segundos al hilo de renderizado durante la configuración inicial; la estabilidad no está confirmada.",
+      "imageAlt": "Título de Little Nightmares Enhanced Edition e indicación Press X en PS5PCEM"
+    },
     "subnautica-performance-repeat-2": {
       "title": "Segunda medición tras un nuevo inicio",
       "summary": "Nuevo proceso, mismo ejecutable y partida Survival: menú a 15,50 FPS; dos mediciones de 30 segundos sin pausa y con cámara fija a 12,70 y 8,50 FPS, 10,60 FPS combinados. Salida 1080p, Speed, cachés calientes. No hubo una parada de diez segundos en estos intervalos, pero persisten retrasos más cortos. El inicio anterior dio 9,52 FPS de media. Es variación entre pruebas, no una nueva optimización; no se alcanzan los 30 FPS.",

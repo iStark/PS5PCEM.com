@@ -29,6 +29,21 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "little-nightmares-enhanced-edition": {
+      "status": "Title screen · first-run UI",
+      "headline": "The title screen renders and responds to input.",
+      "summary": "October 3 development check, PPSA10737 v01.004.000: startup import, graphics-event and scalar BITSET fixes restore the title and Press X prompt. Input reaches brightness calibration and readable license text. A second launch of the installed runner reproduces the title screen.",
+      "strengths": [
+        "The title, DLC check and first-run setup advance with keyboard input.",
+        "Missing imports and the observed GPU stall are addressed."
+      ],
+      "limits": [
+        "Gameplay and correct 3D rendering are unverified.",
+        "FLAT memory, ray-intersection and resource-binding gaps remain.",
+        "A repeat exits after a 120-second render-thread wait during first-run setup; stability is not established."
+      ],
+      "imageAlt": "Little Nightmares Enhanced Edition title and Press X prompt rendered by PS5PCEM"
+    },
     "gta-iii-definitive-edition": {
       "status": "In-game · movement verified",
       "headline": "Corrected colors and reflections in GTA III gameplay.",
@@ -356,6 +371,11 @@ const content: Content = {
   },
 
   history: {
+    "little-nightmares-startup": {
+      "title": "Title screen restored after startup and descriptor fixes",
+      "summary": "Resolved Trinity-mode and IPMI imports, native graphics-event changes and invalid dispatch dimensions. Correcting scalar BITSET restores the visible title and first-run UI. Two launches reach the title screen; gameplay and long-session stability remain unverified. A repeat exits after a 120-second render-thread wait during first-run setup; stability is not established.",
+      "imageAlt": "Little Nightmares Enhanced Edition title and Press X prompt rendered by PS5PCEM"
+    },
     "subnautica-performance-repeat-2": {
       "title": "Second fresh-process performance repeat",
       "summary": "Second fresh launch, same executable and Survival save: menu 15.50 FPS; two unpaused 30-second stationary world samples 12.70 and 8.50 FPS, 10.60 FPS combined. Output 1080p, Speed preset, warm caches. No ten-second stop in these intervals, but shorter delays remain. The previous launch averaged 9.52 FPS. This is run-to-run variation, not a new optimization; 30 FPS remains unmet.",

@@ -32,6 +32,7 @@ describe("compatibility dataset", () => {
         "Grand Theft Auto III: The Definitive Edition",
         "Jets 'n' Guns 2",
         "Jurassic Park Classic Games Collection",
+        "Little Nightmares Enhanced Edition",
         "Mighty Morphin Power Rangers: Rita's Rewind",
         "Pistol Whip",
         "Propagation: Paradise Hotel",

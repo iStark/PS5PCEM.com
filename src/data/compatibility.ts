@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    slug: "little-nightmares-enhanced-edition",
+    title: "Little Nightmares Enhanced Edition",
+    tier: "intro",
+    image: "/images/little-nightmares-title.png",
+    confirmedOn: "2026-10-03",
+  },
+  {
     slug: "gta-iii-definitive-edition",
     title: "Grand Theft Auto III: The Definitive Edition",
     tier: "ingame",

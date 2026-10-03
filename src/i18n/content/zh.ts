@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const zh: Content = {
   games: {
+    "little-nightmares-enhanced-edition": {
+      "status": "标题画面 · 首次运行设置",
+      "headline": "标题画面可以显示并响应输入。",
+      "summary": "10 月 3 日开发检查，PPSA10737 v01.004.000：导入、图形事件和标量 BITSET 修复恢复了标题及 Press X 提示。输入可进入亮度校准和可读的许可文本。第二次启动已安装的程序也成功显示标题画面。",
+      "strengths": [
+        "可通过键盘推进标题、DLC 检查和首次运行设置。",
+        "已修复缺失导入和观察到的 GPU 停滞。"
+      ],
+      "limits": [
+        "尚未验证游戏过程和正确的 3D 渲染。",
+        "FLAT 内存、射线求交和资源绑定仍存在缺口。",
+        "一次重复测试在首次设置期间等待渲染线程 120 秒后退出，稳定性尚未确认。"
+      ],
+      "imageAlt": "PS5PCEM 中的 Little Nightmares Enhanced Edition 标题与 Press X 提示"
+    },
     "gta-iii-definitive-edition": {
       "status": "进入游戏 · 已验证移动",
       "headline": "修复 GTA III 游戏场景中的颜色和反射。",
@@ -307,6 +322,11 @@ const zh: Content = {
   },
 
   history: {
+    "little-nightmares-startup": {
+      "title": "启动和描述符修复后恢复标题画面",
+      "summary": "补充 Trinity 和 IPMI 导入、原生图形事件及调度尺寸校验。BITSET 修复恢复了标题画面和首次运行设置。两次启动均到达标题；游戏过程及长时间稳定性尚未验证。 一次重复测试在首次设置期间等待渲染线程 120 秒后退出，稳定性尚未确认。",
+      "imageAlt": "PS5PCEM 中的 Little Nightmares Enhanced Edition 标题与 Press X 提示"
+    },
     "subnautica-performance-repeat-2": {
       "title": "重新启动后的第二次性能复测",
       "summary": "新进程使用相同的可执行文件和 Survival 存档：菜单 15.50 FPS；两个各 30 秒的未暂停静止视角测量为 12.70 和 8.50 FPS，合计 10.60 FPS。输出 1080p，Speed 预设，缓存已预热。这两个区间没有十秒停顿，但较短延迟仍然存在。上次启动平均为 9.52 FPS。这是运行间波动，并非新增优化；仍未达到 30 FPS。",
