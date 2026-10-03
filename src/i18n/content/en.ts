@@ -55,7 +55,7 @@ const content: Content = {
         "Dark lighting, visual artifacts and long pauses remain.",
         "Full playthrough, audio correctness and long-session stability remain unverified."
       ],
-      "performance": "Main menu: 14.67 FPS. Two unpaused 30-second stationary world samples: 7.27 and 11.77 FPS; 9.52 FPS combined. The first includes a 9.998-second stall. Output 1080p, Speed preset, warm caches. The earlier valid sample was 7.93 FPS, but this is not a controlled speedup comparison. 30 FPS remains unmet.",
+      "performance": "Second fresh launch, same executable and Survival save: menu 15.50 FPS; two unpaused 30-second stationary world samples 12.70 and 8.50 FPS, 10.60 FPS combined. Output 1080p, Speed preset, warm caches. No ten-second stop in these intervals, but shorter delays remain. The previous launch averaged 9.52 FPS. This is run-to-run variation, not a new optimization; 30 FPS remains unmet.",
       "imageAlt": "Subnautica: Below Zero snowy crash site and survival HUD during the October 3 performance repeat"
     },
 
@@ -356,6 +356,11 @@ const content: Content = {
   },
 
   history: {
+    "subnautica-performance-repeat-2": {
+      "title": "Second fresh-process performance repeat",
+      "summary": "Second fresh launch, same executable and Survival save: menu 15.50 FPS; two unpaused 30-second stationary world samples 12.70 and 8.50 FPS, 10.60 FPS combined. Output 1080p, Speed preset, warm caches. No ten-second stop in these intervals, but shorter delays remain. The previous launch averaged 9.52 FPS. This is run-to-run variation, not a new optimization; 30 FPS remains unmet.",
+      "imageAlt": "Subnautica: Below Zero snowy crash site and survival HUD during the October 3 performance repeat"
+    },
     "subnautica-performance-repeat": {
       "title": "Performance repeated on the current runner",
       "summary": "October 3 repeat, PPSA02457 v1.022.125: the installed runner restores the Survival save and renders the snowy crash site and HUD. This run measures the current build after the shared GTA III renderer changes; it adds no new emulator fixes. Main menu: 14.67 FPS. Two unpaused 30-second stationary world samples: 7.27 and 11.77 FPS; 9.52 FPS combined. The first includes a 9.998-second stall. Output 1080p, Speed preset, warm caches. The earlier valid sample was 7.93 FPS, but this is not a controlled speedup comparison. 30 FPS remains unmet.",

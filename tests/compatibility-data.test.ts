@@ -228,10 +228,10 @@ describe("English source prose", () => {
     expect(games["big-helmet-heroes"].performance).toContain("157 ms");
     expect(games["tetris-effect-connected"].performance).toContain("235 ms");
     expect(games["ghost-of-yotei"].performance).toContain("0.73 FPS");
-    expect(games["subnautica-below-zero"].performance).toContain("14.67 FPS");
-    expect(games["subnautica-below-zero"].performance).toContain("7.27 and 11.77 FPS");
-    expect(games["subnautica-below-zero"].performance).toContain("9.52 FPS combined");
-    expect(games["subnautica-below-zero"].performance).toContain("9.998-second stall");
+    expect(games["subnautica-below-zero"].performance).toContain("15.50 FPS");
+    expect(games["subnautica-below-zero"].performance).toContain("12.70 and 8.50 FPS");
+    expect(games["subnautica-below-zero"].performance).toContain("10.60 FPS combined");
+    expect(enContent.history["subnautica-performance-repeat"].summary).toContain("9.998-second stall");
   });
 
   it("states plainly what is not claimed", () => {

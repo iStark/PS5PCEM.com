@@ -28,7 +28,7 @@ const pt: Content = {
         "Persistem iluminação escura, defeitos gráficos e pausas longas.",
         "Conclusão do jogo, correção do áudio e estabilidade prolongada continuam por verificar."
       ],
-      "performance": "Menu principal: 14,67 FPS. Duas medições de 30 segundos sem pausa e com câmara fixa: 7,27 e 11,77 FPS; 9,52 FPS combinados. A primeira inclui uma paragem de 9,998 segundos. Saída 1080p, predefinição Speed, caches aquecidas. A medição válida anterior foi 7,93 FPS, mas não é uma comparação controlada do ganho. Os 30 FPS continuam por atingir.",
+      "performance": "Novo processo, mesmo executável e partida Survival: menu a 15,50 FPS; duas medições de 30 segundos sem pausa e com câmara fixa a 12,70 e 8,50 FPS, 10,60 FPS combinados. Saída 1080p, Speed, caches aquecidas. Não houve paragem de dez segundos nestes intervalos, mas persistem atrasos mais curtos. O arranque anterior deu uma média de 9,52 FPS. É variação entre testes, não uma nova otimização; os 30 FPS continuam por atingir.",
       "imageAlt": "Local nevado da queda e HUD de sobrevivência de Subnautica: Below Zero na medição de 3 de outubro"
     },
 
@@ -331,6 +331,11 @@ const pt: Content = {
   },
 
   history: {
+    "subnautica-performance-repeat-2": {
+      "title": "Segunda medição após um novo arranque",
+      "summary": "Novo processo, mesmo executável e partida Survival: menu a 15,50 FPS; duas medições de 30 segundos sem pausa e com câmara fixa a 12,70 e 8,50 FPS, 10,60 FPS combinados. Saída 1080p, Speed, caches aquecidas. Não houve paragem de dez segundos nestes intervalos, mas persistem atrasos mais curtos. O arranque anterior deu uma média de 9,52 FPS. É variação entre testes, não uma nova otimização; os 30 FPS continuam por atingir.",
+      "imageAlt": "Local nevado da queda e HUD de sobrevivência de Subnautica: Below Zero na medição de 3 de outubro"
+    },
     "subnautica-performance-repeat": {
       "title": "Nova medição com o executável atual",
       "summary": "Repetição de 3 de outubro, PPSA02457 v1.022.125: o executável instalado restaura a partida Survival e mostra o local nevado da queda e o HUD. A medição usa a versão atual após as alterações comuns do renderizador para GTA III; esta verificação não acrescenta novas correções. Menu principal: 14,67 FPS. Duas medições de 30 segundos sem pausa e com câmara fixa: 7,27 e 11,77 FPS; 9,52 FPS combinados. A primeira inclui uma paragem de 9,998 segundos. Saída 1080p, predefinição Speed, caches aquecidas. A medição válida anterior foi 7,93 FPS, mas não é uma comparação controlada do ganho. Os 30 FPS continuam por atingir.",

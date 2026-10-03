@@ -28,7 +28,7 @@ const fr: Content = {
         "Éclairage sombre, défauts graphiques et longues pauses persistent.",
         "La fin du jeu, la fidélité audio et la stabilité prolongée restent non vérifiées."
       ],
-      "performance": "Menu principal : 14,67 FPS. Deux mesures de 30 secondes, caméra immobile et jeu non suspendu : 7,27 et 11,77 FPS ; 9,52 FPS au total. La première inclut un blocage de 9,998 secondes. Sortie 1080p, préréglage Speed, caches chauds. La mesure valide précédente était de 7,93 FPS, mais ce n’est pas une comparaison contrôlée du gain. Les 30 FPS ne sont pas atteints.",
+      "performance": "Nouveau processus, même exécutable et sauvegarde Survival : menu à 15,50 FPS ; deux mesures de 30 secondes sans pause et caméra fixe à 12,70 et 8,50 FPS, soit 10,60 FPS combinés. Sortie 1080p, Speed, caches chauds. Aucun arrêt de dix secondes dans ces intervalles, mais des retards plus courts persistent. Le lancement précédent donnait 9,52 FPS en moyenne. Cette variation ne correspond pas à une nouvelle optimisation ; les 30 FPS restent hors d’atteinte.",
       "imageAlt": "Site enneigé du crash et HUD de survie de Subnautica: Below Zero lors de la mesure du 3 octobre"
     },
 
@@ -331,6 +331,11 @@ const fr: Content = {
   },
 
   history: {
+    "subnautica-performance-repeat-2": {
+      "title": "Deuxième mesure après un nouveau lancement",
+      "summary": "Nouveau processus, même exécutable et sauvegarde Survival : menu à 15,50 FPS ; deux mesures de 30 secondes sans pause et caméra fixe à 12,70 et 8,50 FPS, soit 10,60 FPS combinés. Sortie 1080p, Speed, caches chauds. Aucun arrêt de dix secondes dans ces intervalles, mais des retards plus courts persistent. Le lancement précédent donnait 9,52 FPS en moyenne. Cette variation ne correspond pas à une nouvelle optimisation ; les 30 FPS restent hors d’atteinte.",
+      "imageAlt": "Site enneigé du crash et HUD de survie de Subnautica: Below Zero lors de la mesure du 3 octobre"
+    },
     "subnautica-performance-repeat": {
       "title": "Nouvelle mesure avec le binaire actuel",
       "summary": "Vérification du 3 octobre, PPSA02457 v1.022.125 : le binaire installé restaure la sauvegarde Survival et affiche le site enneigé du crash et le HUD. Cette mesure porte sur la version actuelle après les changements communs du rendu pour GTA III ; aucun nouveau correctif n’est ajouté. Menu principal : 14,67 FPS. Deux mesures de 30 secondes, caméra immobile et jeu non suspendu : 7,27 et 11,77 FPS ; 9,52 FPS au total. La première inclut un blocage de 9,998 secondes. Sortie 1080p, préréglage Speed, caches chauds. La mesure valide précédente était de 7,93 FPS, mais ce n’est pas une comparaison contrôlée du gain. Les 30 FPS ne sont pas atteints.",

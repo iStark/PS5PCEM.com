@@ -28,7 +28,7 @@ const de: Content = {
         "Dunkle Beleuchtung, Grafikfehler und lange Pausen bleiben bestehen.",
         "Vollständiges Durchspielen, korrekter Ton und Langzeitstabilität bleiben ungeprüft."
       ],
-      "performance": "Hauptmenü: 14,67 FPS. Zwei unpausierte Messungen mit ruhender Kamera über je 30 Sekunden: 7,27 und 11,77 FPS; zusammen 9,52 FPS. Die erste enthält einen Stillstand von 9,998 Sekunden. Ausgabe 1080p, Speed-Preset, warme Caches. Der frühere gültige Wert war 7,93 FPS, jedoch ist dies kein kontrollierter Beschleunigungsvergleich. 30 FPS bleiben unerreicht.",
+      "performance": "Neuer Prozess, gleiche Programmdatei und gleicher Survival-Spielstand: Menü 15,50 FPS; zwei unpausierte Messungen mit ruhender Kamera über je 30 Sekunden ergeben 12,70 und 8,50 FPS, zusammen 10,60 FPS. Ausgabe 1080p, Speed, warme Caches. Kein Zehn-Sekunden-Stillstand in diesen Intervallen, aber kürzere Verzögerungen bleiben. Der vorherige Lauf ergab 9,52 FPS im Mittel. Das zeigt Schwankungen zwischen Läufen, keine neue Optimierung; 30 FPS bleiben unerreicht.",
       "imageAlt": "Verschneite Absturzstelle und Survival-HUD in Subnautica: Below Zero bei der Messung am 3. Oktober"
     },
 
@@ -331,6 +331,11 @@ const de: Content = {
   },
 
   history: {
+    "subnautica-performance-repeat-2": {
+      "title": "Zweite Leistungsmessung nach einem Neustart",
+      "summary": "Neuer Prozess, gleiche Programmdatei und gleicher Survival-Spielstand: Menü 15,50 FPS; zwei unpausierte Messungen mit ruhender Kamera über je 30 Sekunden ergeben 12,70 und 8,50 FPS, zusammen 10,60 FPS. Ausgabe 1080p, Speed, warme Caches. Kein Zehn-Sekunden-Stillstand in diesen Intervallen, aber kürzere Verzögerungen bleiben. Der vorherige Lauf ergab 9,52 FPS im Mittel. Das zeigt Schwankungen zwischen Läufen, keine neue Optimierung; 30 FPS bleiben unerreicht.",
+      "imageAlt": "Verschneite Absturzstelle und Survival-HUD in Subnautica: Below Zero bei der Messung am 3. Oktober"
+    },
     "subnautica-performance-repeat": {
       "title": "Erneute Leistungsmessung mit dem aktuellen Runner",
       "summary": "Wiederholung vom 3. Oktober, PPSA02457 v1.022.125: Der installierte Runner lädt den Survival-Spielstand und zeigt die verschneite Absturzstelle samt HUD. Gemessen wird der aktuelle Build nach den gemeinsamen GTA-III-Rendereränderungen; dieser Durchlauf enthält keine neuen Emulatorfixes. Hauptmenü: 14,67 FPS. Zwei unpausierte Messungen mit ruhender Kamera über je 30 Sekunden: 7,27 und 11,77 FPS; zusammen 9,52 FPS. Die erste enthält einen Stillstand von 9,998 Sekunden. Ausgabe 1080p, Speed-Preset, warme Caches. Der frühere gültige Wert war 7,93 FPS, jedoch ist dies kein kontrollierter Beschleunigungsvergleich. 30 FPS bleiben unerreicht.",
