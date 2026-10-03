@@ -4,18 +4,18 @@ const de: Content = {
   games: {
     "little-nightmares-enhanced-edition": {
       "status": "Im Spiel · Darstellung unvollständig",
-      "headline": "Six ist im ersten Raum steuerbar: 2,16 FPS.",
-      "summary": "3. Oktober, PPSA10737 v01.004.000: Die Verarbeitung nativer Compute-Warteschlangen behebt den Stopp nach 510 Bildern. Mit sofortiger GPU-Rückschreibung erreicht der Test den ersten Raum; Bewegung, Kameraführung und Feuerzeug sind bestätigt. Das Spielprofil aktiviert diesen Modus jetzt automatisch.",
+      "headline": "Speichern und Laden funktionieren; 3,73–4,46 FPS im ersten Raum.",
+      "summary": "3. Oktober, PPSA10737 v01.004.000: Asynchrone Schreibvorgänge speichern den Fortschritt; ein neuer Prozess lädt den ersten Raum über Fortsetzen. HTILE, gebündelte sofortige GPU-Rücklesevorgänge und vier Kopier-Threads senken die Renderkosten. 5 FPS werden noch nicht erreicht.",
       "strengths": [
-        "Ein neues Spiel erreicht den ersten Raum.",
-        "Bewegung und Feuerzeugsteuerung sind bestätigt."
+        "Neues Spiel, Bewegung, Kameraführung und Feuerzeug sind geprüft.",
+        "Nichtleere Spielstände werden nach einem Neustart des Emulators geladen."
       ],
       "limits": [
-        "Materialien und Beleuchtung bleiben dunkel und fehlerhaft; FLAT-, Strahlenschnitt- und Ressourcenbindungslücken bestehen.",
-        "Die beobachteten Speicherdateien sind leer; dauerhafter Fortschritt, Durchspielbarkeit und lange Spielsitzungen sind unbestätigt."
+        "Dunkle Beleuchtung, fehlerhafte reflektierende Materialien und fehlende FLAT-/Strahlenschnitt-Shader bleiben.",
+        "Sporadische Speicherverwaltungsfehler können den Start abbrechen; Durchspielen und Langzeitstabilität sind ungeprüft."
       ],
-      "performance": "Zwei stationäre Messungen ohne Pause: jeweils 65 Bilder in etwa 30 Sekunden, zusammen 2,16 FPS. RTX 3070 Ti, 1080p-Ausgabe, Speed-Profil; interne Auflösung vom Spiel bestimmt. Noch keine spielbare Geschwindigkeit.",
-      "imageAlt": "Six mit Feuerzeug im ersten Raum; Materialien und Beleuchtung sind noch fehlerhaft"
+      "performance": "Aktualisierter Standard-Build: 4,46 FPS am Koffer, 3,73 FPS nach Bewegung nach rechts, jeweils 30 Sekunden ohne Pause. RTX 3070 Ti, 1080p-Ausgabe, Speed-Preset, im Spiel Performance; interne Auflösung vom Spiel bestimmt. Der frühere Wert von 2,16 FPS stammt aus einer anderen Position. 5 FPS bleiben unerreicht.",
+      "imageAlt": "Six am Koffer im ersten Raum; dunkle Beleuchtung und fehlerhafte reflektierende Materialien bleiben"
     },
     "gta-iii-definitive-edition": {
       "status": "Im Spiel · Bewegung bestätigt",
@@ -346,6 +346,11 @@ const de: Content = {
   },
 
   history: {
+    "little-nightmares-saves-performance": {
+      "title": "Speichern und Laden geprüft; 3,73–4,46 FPS im Spiel",
+      "summary": "Schreibvorgänge und Dateigrößenänderungen speichern nun echte Daten; Fortsetzen lädt nach einem Neustart den ersten Raum. HTILE, gebündelte GPU-Rücklesevorgänge und vier Kopier-Threads ergeben 4,46 FPS am Koffer und 3,73 FPS nach Bewegung in zwei Messungen von je 30 Sekunden. Die installierte Datei entspricht dem gemessenen Build. 5 FPS, korrekte Materialien und ein zuverlässiger Start bleiben offen; Shader-Lücken und sporadische Speicherfehler sind dokumentiert.",
+      "imageAlt": "Six am Koffer im ersten Raum; dunkle Beleuchtung und fehlerhafte reflektierende Materialien bleiben"
+    },
     "little-nightmares-gameplay": {
       "title": "Spielszene erreicht: 2,16 FPS gemessen",
       "summary": "Native Compute-Ringe beheben den reproduzierbaren Stopp nach 510 Bildern. Verzögerte Rückschreibung führt danach beim Spielstart zu einem MallocBinned3-Fehler; ein neuer Lauf mit sofortiger Rückschreibung erreicht steuerbares Gameplay und 3.540 Bilder vor dem manuellen Testende. Zwei 30-Sekunden-Messungen liefern je 65 Bilder: zusammen 2,16 FPS. Das Spielprofil wählt sofortige Rückschreibung automatisch. Grafikfehler und leere Speicherdateien bleiben.",

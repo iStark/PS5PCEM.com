@@ -4,18 +4,18 @@ const fr: Content = {
   games: {
     "little-nightmares-enhanced-edition": {
       "status": "En jeu · rendu incomplet",
-      "headline": "Six est contrôlable dans la première pièce à 2,16 FPS.",
-      "summary": "3 octobre, PPSA10737 v01.004.000 : le traitement des files de calcul natives corrige l’arrêt après 510 images. Un essai avec écriture immédiate des résultats GPU atteint la première pièce ; déplacement, suivi de caméra et briquet sont vérifiés. Le profil du jeu active désormais ce mode automatiquement.",
+      "headline": "Sauvegarde et chargement fonctionnent ; 3,73–4,46 FPS dans la première pièce.",
+      "summary": "3 octobre, PPSA10737 v01.004.000 : les écritures asynchrones conservent la progression et un nouveau processus recharge la première pièce via Continuer. HTILE, les lectures GPU immédiates groupées et quatre threads de copie réduisent le coût du rendu. Les 5 FPS ne sont pas encore atteints.",
       "strengths": [
-        "Une nouvelle partie atteint la première pièce.",
-        "Le déplacement et le briquet répondent aux commandes."
+        "Nouvelle partie, déplacement, suivi de caméra et briquet vérifiés.",
+        "Des sauvegardes non vides sont écrites puis chargées après redémarrage."
       ],
       "limits": [
-        "Matériaux et éclairage restent sombres et incorrects ; des lacunes FLAT, d’intersection de rayons et de liaison des ressources subsistent.",
-        "Les fichiers de sauvegarde observés sont vides ; persistance, fin du jeu et longues sessions ne sont pas vérifiées."
+        "Éclairage sombre, matériaux réfléchissants incorrects et shaders FLAT/intersection de rayons non pris en charge subsistent.",
+        "Des erreurs intermittentes de gestion mémoire peuvent interrompre le démarrage ; fin du jeu et stabilité prolongée non vérifiées."
       ],
-      "performance": "Deux mesures immobiles sans pause : 65 images en environ 30 secondes chacune, soit 2,16 FPS au total. RTX 3070 Ti, sortie 1080p, préréglage Speed, résolution interne gérée par le jeu. La vitesse reste insuffisante pour jouer confortablement.",
-      "imageAlt": "Six et son briquet dans la première pièce, avec des défauts de matériaux et d’éclairage"
+      "performance": "Version actuelle avec réglages par défaut : 4,46 FPS près de la valise, 3,73 FPS après déplacement à droite, chaque mesure durant 30 secondes sans pause. RTX 3070 Ti, sortie 1080p, préréglage Speed, mode Performance du jeu ; résolution interne contrôlée par le jeu. Les anciens 2,16 FPS ne correspondent pas à une position identique. Objectif de 5 FPS non atteint.",
+      "imageAlt": "Six près de la valise dans la première pièce ; éclairage sombre et matériaux réfléchissants incorrects"
     },
     "gta-iii-definitive-edition": {
       "status": "En jeu · déplacement vérifié",
@@ -346,6 +346,11 @@ const fr: Content = {
   },
 
   history: {
+    "little-nightmares-saves-performance": {
+      "title": "Sauvegarde et chargement vérifiés ; 3,73–4,46 FPS en jeu",
+      "summary": "Les écritures et changements de taille des fichiers conservent les données ; Continuer recharge la première pièce après redémarrage. HTILE, les lectures GPU groupées et quatre threads de copie donnent 4,46 FPS près de la valise et 3,73 FPS après déplacement, sur deux mesures de 30 secondes. Le programme installé correspond à la version mesurée. Les 5 FPS, les matériaux corrects et un démarrage fiable restent à résoudre ; shaders omis et erreurs mémoire intermittentes sont documentés.",
+      "imageAlt": "Six près de la valise dans la première pièce ; éclairage sombre et matériaux réfléchissants incorrects"
+    },
     "little-nightmares-gameplay": {
       "title": "Première scène jouable atteinte : 2,16 FPS mesurés",
       "summary": "Les anneaux de calcul natifs corrigent l’arrêt reproductible après 510 images. L’écriture différée expose ensuite une erreur MallocBinned3 au lancement d’une partie ; un nouvel essai en écriture immédiate atteint le contrôle du personnage et 3 540 images avant l’arrêt volontaire. Deux mesures de 30 secondes donnent 65 images chacune, soit 2,16 FPS au total. Le profil active l’écriture immédiate. Les défauts graphiques et les sauvegardes vides subsistent.",

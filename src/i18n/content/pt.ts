@@ -4,18 +4,18 @@ const pt: Content = {
   games: {
     "little-nightmares-enhanced-edition": {
       "status": "Em jogo · renderização incompleta",
-      "headline": "Six pode ser controlada na primeira sala a 2,16 FPS.",
-      "summary": "3 de outubro, PPSA10737 v01.004.000: o processamento das filas de computação nativas elimina a paragem após 510 fotogramas. Um teste com escrita imediata dos resultados da GPU chega à primeira sala e confirma movimento, acompanhamento da câmara e isqueiro. O perfil do jogo ativa agora este modo automaticamente.",
+      "headline": "Salvar e carregar funciona; 3,73–4,46 FPS no primeiro quarto.",
+      "summary": "3 de outubro, PPSA10737 v01.004.000: gravações assíncronas preservam o progresso e um novo processo carrega o primeiro quarto ao continuar. HTILE, leituras imediatas da GPU agrupadas e quatro threads de cópia reduzem o custo de renderização. Os 5 FPS ainda não foram alcançados.",
       "strengths": [
-        "Um novo jogo chega à primeira sala.",
-        "O movimento e o isqueiro respondem aos comandos."
+        "Novo jogo, movimento, acompanhamento da câmera e isqueiro verificados.",
+        "Saves não vazios são gravados e carregados após reiniciar o emulador."
       ],
       "limits": [
-        "Materiais e iluminação continuam escuros e incorretos; persistem lacunas de FLAT, interseção de raios e ligação de recursos.",
-        "Os ficheiros de gravação observados estão vazios; persistência, conclusão e sessões longas não foram verificadas."
+        "Persistem iluminação escura, materiais reflexivos incorretos e shaders FLAT/interseção de raios sem suporte.",
+        "Falhas intermitentes do gerenciador de memória podem interromper a inicialização; conclusão e estabilidade prolongada não foram verificadas."
       ],
-      "performance": "Duas medições sem movimento nem pausa: 65 fotogramas em cerca de 30 segundos cada, 2,16 FPS combinados. RTX 3070 Ti, saída 1080p, perfil Speed e resolução interna controlada pelo jogo. A velocidade ainda é insuficiente para jogar com fluidez.",
-      "imageAlt": "Six com o isqueiro na primeira sala; materiais e iluminação apresentam defeitos"
+      "performance": "Build atual com padrões: 4,46 FPS junto à mala e 3,73 FPS após mover para a direita, em amostras de 30 segundos sem pausa. RTX 3070 Ti, saída 1080p, preset Speed e modo Performance do jogo; resolução interna controlada pelo jogo. Os 2,16 FPS anteriores não foram medidos na mesma posição. A meta de 5 FPS não foi atingida.",
+      "imageAlt": "Six junto à mala no primeiro quarto; iluminação escura e materiais reflexivos incorretos persistem"
     },
     "gta-iii-definitive-edition": {
       "status": "Em jogo · movimento verificado",
@@ -346,6 +346,11 @@ const pt: Content = {
   },
 
   history: {
+    "little-nightmares-saves-performance": {
+      "title": "Salvar e carregar verificados; 3,73–4,46 FPS em jogo",
+      "summary": "Gravação e redimensionamento de arquivos agora preservam dados reais; continuar após reiniciar carrega o primeiro quarto. HTILE, leituras da GPU agrupadas e quatro threads de cópia resultam em 4,46 FPS junto à mala e 3,73 FPS após movimento em amostras de 30 segundos. O executável instalado corresponde ao medido. Os 5 FPS, materiais corretos e inicialização confiável continuam pendentes; o relatório registra shaders omitidos e falhas intermitentes de memória.",
+      "imageAlt": "Six junto à mala no primeiro quarto; iluminação escura e materiais reflexivos incorretos persistem"
+    },
     "little-nightmares-gameplay": {
       "title": "Primeira sala alcançada: 2,16 FPS medidos",
       "summary": "Os anéis de computação nativos corrigem a paragem repetível após 510 fotogramas. A escrita adiada revela depois uma falha MallocBinned3 ao iniciar o jogo; um novo teste com escrita imediata permite controlar a personagem e apresenta 3540 fotogramas antes da paragem voluntária. Duas amostras de 30 segundos dão 65 fotogramas cada: 2,16 FPS combinados. O perfil ativa a escrita imediata. Persistem defeitos gráficos e gravações vazias.",

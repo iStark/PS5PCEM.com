@@ -31,18 +31,18 @@ const content: Content = {
   games: {
     "little-nightmares-enhanced-edition": {
       "status": "In-game · rendering incomplete",
-      "headline": "Six's opening room is interactive at 2.16 FPS.",
-      "summary": "October 3, PPSA10737 v01.004.000: consuming native compute queues removes the 510-frame stop. An eager GPU-writeback run reaches the opening room and verifies movement, camera follow and the lighter. The title profile now selects this mode automatically.",
+      "headline": "Save/reload works; opening gameplay measures 3.73–4.46 FPS.",
+      "summary": "October 3, PPSA10737 v01.004.000: asynchronous save writes now persist progress and fresh processes Resume the opening room. HTILE handling, batched eager readbacks and four copy workers reduce rendering costs. The updated runner still falls short of 5 FPS.",
       "strengths": [
-        "New Game reaches the opening room.",
-        "Movement and lighter input are verified."
+        "New Game, movement, camera follow and lighter input are verified.",
+        "Nonempty saves are written and reloaded after restarting the emulator."
       ],
       "limits": [
-        "Materials and lighting remain dark and incorrect; FLAT, ray-intersection and resource-binding gaps remain.",
-        "Observed save files are empty; persistence, completion and long gameplay sessions are unverified."
+        "Dark lighting, reflective material defects and unsupported FLAT/ray-intersection shaders remain.",
+        "Intermittent allocator failures can interrupt startup; completion and long-session stability remain unverified."
       ],
-      "performance": "Two unpaused stationary gameplay samples: 65 frames in about 30 seconds each, 2.16 FPS combined. RTX 3070 Ti, 1080p output request, Speed preset, game-controlled internal resolution. This remains below playable speed.",
-      "imageAlt": "Six with her lighter in the opening room; materials and lighting remain incomplete"
+      "performance": "Updated default build: 4.46 FPS beside the suitcase, 3.73 FPS after moving right, each over 30 unpaused seconds. RTX 3070 Ti, 1080p output request, Speed preset, in-game Performance; internal resolution is game-controlled. The earlier 2.16 FPS check is not an identical-position comparison. 5 FPS is not achieved.",
+      "imageAlt": "Six beside the suitcase in the opening room; dark lighting and reflective material defects remain"
     },
     "gta-iii-definitive-edition": {
       "status": "In-game · movement verified",
@@ -371,6 +371,11 @@ const content: Content = {
   },
 
   history: {
+    "little-nightmares-saves-performance": {
+      "title": "Save/reload verified; 3.73–4.46 FPS in gameplay",
+      "summary": "Save writes and file resizing now persist real payloads; restarting and Resume load the opening room. Shared HTILE and eager-readback changes, plus four copy workers, yield 4.46 FPS beside the suitcase and 3.73 FPS after movement in separate 30-second samples. The installed executable matches the measured build. 5 FPS, correct materials and reliable startup remain unresolved; the report records shader omissions and intermittent allocator failures.",
+      "imageAlt": "Six beside the suitcase in the opening room; dark lighting and reflective material defects remain"
+    },
     "little-nightmares-gameplay": {
       "title": "Opening gameplay reached; 2.16 FPS measured",
       "summary": "Native compute-ring consumption fixes the repeatable 510-frame stop. Deferred writes then expose a MallocBinned3 failure during New Game; a fresh eager-write run reaches interactive gameplay and presents 3,540 frames before an intentional stop. Two unpaused 30-second samples each present 65 frames: 2.16 FPS combined. The title profile selects eager writes automatically. Graphics defects and empty save files remain.",
