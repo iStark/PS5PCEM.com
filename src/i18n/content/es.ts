@@ -190,7 +190,7 @@ const es: Content = {
       status:
         "Reproducción de intro · avisos de bonus · calibración de brillo · llega a escenas de juego · no jugable",
       headline:
-        "Dibuja sus menús y escenas 3D correctamente, demasiado despacio para jugar.",
+        "Los menús y el árbol se muestran, con defectos visibles y una tasa de imágenes muy baja.",
       summary:
         "Es el caso de prueba más duro del proyecto y el mejor documentado. Las películas de intro suenan, aparecen los avisos de bonus y la calibración de brillo, y escenas 3D tardías como la del árbol llegan a la pantalla. Nada de eso es jugable: los fotogramas de escena llegan muy por debajo de 1 FPS, y no se afirma ninguna partida completa.",
       strengths: [
@@ -205,7 +205,7 @@ const es: Content = {
         "Llamadas de dibujo indirectas no válidas, un fallo de contador corrupto, estelas y brillo excesivo siguen todos abiertos.",
       ],
       performance:
-        "La última escena del árbol medida presentó 0,73 FPS. La selección de dificultad medía antes 0,6 FPS, con fotogramas de 1504–1554 ms para 321 llamadas de dibujo y unos 1330 despachos de cómputo. El tiempo hasta llegar a una escena varía muchísimo entre sesiones de la misma compilación.",
+        "Mediciones base del árbol del 3 de octubre antes del cambio de estados dinámicos: 0,83–0,97 FPS contando imágenes presentadas durante 30 segundos. El anterior resultado de 0,73 FPS es histórico. Son mediciones del árbol y la configuración, no del juego tras la cinemática. Los distintos historiales de caché impiden una comparación controlada del antes y el después.",
       imageAlt:
         "Aviso Digital Deluxe Bonus de Ghost of Yōtei, renderizado por PS5PCEM",
     },
@@ -347,6 +347,16 @@ const es: Content = {
   },
 
   history: {
+    "yotei-candidate-visual-check": {
+      "title": "Prueba del candidato: persisten las estelas del árbol",
+      "summary": "La tercera prueba mide 1,30 FPS en el árbol con otros límites de caché, pero muestra más estelas. Restaurar el límite de destinos de renderizado no lo corrige visiblemente. El usuario cierra la prueba durante la preparación de la escena; no se confirma el juego tras la cinemática. No es una mejora de FPS verificada; el ejecutable instalado sigue siendo el de referencia hasta una comparación visual controlada.",
+      "imageAlt": "Prueba del candidato: persisten las estelas del árbol"
+    },
+    "yotei-post-tree-dynamic-state": {
+      "title": "Mediciones del árbol y reutilización de pipelines gráficos",
+      "summary": "Antes del cambio, las mediciones del árbol dan 0,83–0,97 FPS. Dos intentos de continuar se detienen deliberadamente cerca del límite de memoria comprometida de Windows. El sesgo de profundidad y las referencias stencil dinámicos eliminan 61 variantes redundantes de una captura de 1.007 pipelines; las pruebas de GPU pasan. No demuestra una mejora de FPS durante el juego y las franjas luminosas persisten.",
+      "imageAlt": "Árbol en la selección de dificultad con franjas verticales luminosas aún visibles"
+    },
     "little-nightmares-saves-performance": {
       "title": "Guardado y carga verificados; 3,73–4,46 FPS en juego",
       "summary": "Las escrituras y el cambio de tamaño de archivos conservan datos reales; continuar tras reiniciar carga la primera habitación. Los cambios de HTILE, las lecturas de GPU agrupadas y cuatro hilos de copia dan 4,46 FPS junto a la maleta y 3,73 FPS tras moverse en muestras de 30 segundos. El ejecutable instalado coincide con el medido. Siguen pendientes los 5 FPS, los materiales correctos y un arranque fiable; el informe documenta shaders omitidos y fallos intermitentes de memoria.",

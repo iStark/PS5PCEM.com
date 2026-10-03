@@ -39,6 +39,22 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "yotei-candidate-visual-check",
+    slug: "ghost-of-yotei",
+    date: "2026-10-03",
+    release: null,
+    image: "/images/yotei-post-tree-candidate-2026-10-03.png",
+    source: devReport("yotei-post-tree-2026-10-03.md"),
+  },
+  {
+    id: "yotei-post-tree-dynamic-state",
+    slug: "ghost-of-yotei",
+    date: "2026-10-03",
+    release: null,
+    image: "/images/yotei-post-tree-baseline-2026-10-03.png",
+    source: devReport("yotei-post-tree-2026-10-03.md"),
+  },
+  {
     id: "little-nightmares-saves-performance",
     slug: "little-nightmares-enhanced-edition",
     date: "2026-10-03",

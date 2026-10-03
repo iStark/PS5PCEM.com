@@ -190,7 +190,7 @@ const de: Content = {
       status:
         "Introwiedergabe · Bonushinweise · Helligkeitskalibrierung · erreicht Spielszenen · nicht spielbar",
       headline:
-        "Zeichnet Menüs und 3D-Szenen korrekt, viel zu langsam zum Spielen.",
+        "Menüs und Baum werden dargestellt, mit sichtbaren Fehlern und sehr niedriger Bildrate.",
       summary:
         "Das ist der schwierigste Testfall des Projekts und der am besten dokumentierte. Introfilme laufen mit Ton, die Bonushinweise und die Helligkeitskalibrierung erscheinen, und spätere 3D-Szenen einschließlich der Baumszene erreichen den Schirm. Spielbar ist davon nichts: Szenenbilder kommen deutlich unter 1 FPS an, und ein Durchspielen wird nicht behauptet.",
       strengths: [
@@ -205,7 +205,7 @@ const de: Content = {
         "Ungültige indirekte Zeichenaufrufe, ein Fehler mit beschädigter Zählung, Streifen und übermäßige Helligkeit sind alle offen.",
       ],
       performance:
-        "Die letzte gemessene Baumszene lieferte 0,73 FPS. Die Schwierigkeitswahl wurde früher mit 0,6 FPS gemessen, mit Bildern von 1504–1554 ms für 321 Zeichenaufrufe und etwa 1330 Compute-Dispatches. Die Zeit bis zu einer Szene schwankt stark zwischen Läufen desselben Builds.",
+        "Basismessungen am Baum vom 3. Oktober vor der Änderung dynamischer Zustände: 0,83–0,97 FPS, jeweils über 30 Sekunden anhand präsentierter Bilder. Die früheren 0,73 FPS sind ein historischer Wert. Gemessen wurden Baum und Einrichtung, nicht das Spiel nach der Zwischensequenz. Unterschiedliche Cache-Verläufe verhindern einen kontrollierten Vorher-nachher-Vergleich.",
       imageAlt:
         "Ghost of Yōtei — Digital-Deluxe-Bonus-Hinweis, gezeichnet von PS5PCEM",
     },
@@ -346,6 +346,16 @@ const de: Content = {
   },
 
   history: {
+    "yotei-candidate-visual-check": {
+      "title": "Prüfung des Kandidaten: Baum bleibt verschmiert",
+      "summary": "Der dritte Lauf misst 1,30 FPS am Baum mit anderen Cache-Budgets, zeigt aber stärkeres Verschmieren. Das Wiederherstellen des Render-Target-Limits behebt dies nicht sichtbar. Der Nutzer beendet den Lauf während der Szenenvorbereitung; Spielgeschehen nach der Zwischensequenz ist nicht bestätigt. Kein verifizierter FPS-Gewinn; der installierte Runner bleibt bis zu einem sauberen Bildvergleich unverändert.",
+      "imageAlt": "Prüfung des Kandidaten: Baum bleibt verschmiert"
+    },
+    "yotei-post-tree-dynamic-state": {
+      "title": "Messungen am Baum und Wiederverwendung von Grafik-Pipelines",
+      "summary": "Vor der Änderung ergeben Messintervalle am Baum 0,83–0,97 FPS. Zwei Versuche, weiterzukommen, werden nahe dem Windows-Commit-Limit gezielt beendet. Dynamischer Tiefenversatz und Stencil-Referenzwerte entfernen 61 redundante Varianten aus einer Aufnahme von 1.007 Pipelines; GPU-Prüfungen bestehen. Ein FPS-Gewinn im Gameplay ist damit nicht gemessen; die hellen Streifen bleiben.",
+      "imageAlt": "Baum bei der Schwierigkeitsauswahl mit weiterhin sichtbaren hellen vertikalen Streifen"
+    },
     "little-nightmares-saves-performance": {
       "title": "Speichern und Laden geprüft; 3,73–4,46 FPS im Spiel",
       "summary": "Schreibvorgänge und Dateigrößenänderungen speichern nun echte Daten; Fortsetzen lädt nach einem Neustart den ersten Raum. HTILE, gebündelte GPU-Rücklesevorgänge und vier Kopier-Threads ergeben 4,46 FPS am Koffer und 3,73 FPS nach Bewegung in zwei Messungen von je 30 Sekunden. Die installierte Datei entspricht dem gemessenen Build. 5 FPS, korrekte Materialien und ein zuverlässiger Start bleiben offen; Shader-Lücken und sporadische Speicherfehler sind dokumentiert.",

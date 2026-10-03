@@ -215,7 +215,7 @@ const content: Content = {
       status:
         "Intro playback · bonus notices · brightness calibration · reaches in-game scenes · not playable",
       headline:
-        "Draws its menus and 3D scenes correctly, far too slowly to play.",
+        "Menus and the tree render, with visible defects and very low frame rates.",
       summary:
         "This is the project's hardest test case and its most documented one. Intro movies play with sound, the bonus notices and brightness calibration appear, and later 3D scenes including the tree scene reach the screen. None of that is playable: scene frames arrive at well under 1 FPS, and a complete playthrough is not claimed.",
       strengths: [
@@ -230,7 +230,7 @@ const content: Content = {
         "Invalid indirect draws, a corrupt-count failure, streaking and excessive brightness are all still open.",
       ],
       performance:
-        "The last measured tree scene presented 0.73 FPS. Difficulty selection earlier measured 0.6 FPS, with frames of 1504–1554 ms for 321 draws and about 1330 compute dispatches. Time to reach a scene varies widely between runs of the same build.",
+        "October 3 baseline tree measurements before the dynamic-state change: 0.83–0.97 FPS over 30-second presentation-counter intervals. The earlier 0.73 FPS result is historical. These are tree/setup measurements, not post-cinematic gameplay. Different cache histories prevent a controlled before/after comparison.",
       imageAlt:
         "Ghost of Yōtei Digital Deluxe Bonus notice, rendered by PS5PCEM",
     },
@@ -371,6 +371,16 @@ const content: Content = {
   },
 
   history: {
+    "yotei-candidate-visual-check": {
+      "title": "Candidate check: tree smearing remains",
+      "summary": "The third run measures 1.30 FPS at the tree with different cache budgets, but the image is more smeared. Restoring the render-target limit does not visibly fix it. The user closes the run during scene preparation; post-cinematic gameplay is not confirmed. This is not a verified FPS gain, and the installed runner remains the baseline pending a clean visual comparison.",
+      "imageAlt": "Candidate check: tree smearing remains"
+    },
+    "yotei-post-tree-dynamic-state": {
+      "title": "Tree measurements and graphics pipeline reuse",
+      "summary": "Before the change, tree intervals measure 0.83–0.97 FPS. Two attempts to continue beyond the tree are deliberately stopped near the Windows commit limit. Dynamic depth bias and stencil references remove 61 redundant variants from a 1,007-pipeline snapshot; GPU probes pass. This is not a measured gameplay FPS gain, and the bright streaks remain.",
+      "imageAlt": "Tree at difficulty selection, with vertical bright streaks still visible"
+    },
     "little-nightmares-saves-performance": {
       "title": "Save/reload verified; 3.73–4.46 FPS in gameplay",
       "summary": "Save writes and file resizing now persist real payloads; restarting and Resume load the opening room. Shared HTILE and eager-readback changes, plus four copy workers, yield 4.46 FPS beside the suitcase and 3.73 FPS after movement in separate 30-second samples. The installed executable matches the measured build. 5 FPS, correct materials and reliable startup remain unresolved; the report records shader omissions and intermittent allocator failures.",

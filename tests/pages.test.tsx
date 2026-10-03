@@ -216,8 +216,8 @@ describe("title detail page", () => {
       ).toBeInTheDocument();
     }
 
-    // The newest run is dated October 1 and was never released.
-    expect(runs[0].date).toBe("2026-10-01");
+    // The newest run is dated October 3 and was never released.
+    expect(runs[0].date).toBe("2026-10-03");
     expect(
       screen.getAllByText(getDictionary("en").common.developmentBuild).length,
     ).toBeGreaterThan(0);
