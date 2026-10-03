@@ -30,8 +30,8 @@ export const compatibility: CompatibilityEntry[] = [
   {
     slug: "little-nightmares-enhanced-edition",
     title: "Little Nightmares Enhanced Edition",
-    tier: "intro",
-    image: "/images/little-nightmares-title.png",
+    tier: "ingame",
+    image: "/images/little-nightmares-gameplay.png",
     confirmedOn: "2026-10-03",
   },
   {

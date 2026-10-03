@@ -3,19 +3,19 @@ import type { Content } from "./en";
 const de: Content = {
   games: {
     "little-nightmares-enhanced-edition": {
-      "status": "Titelbildschirm · Ersteinrichtung",
-      "headline": "Der Titelbildschirm wird dargestellt und reagiert auf Eingaben.",
-      "summary": "Prüfung vom 3. Oktober, PPSA10737 v01.004.000: Korrekturen an Importen, Grafikereignissen und skalarem BITSET stellen Titel und Press-X-Aufforderung wieder her. Eingaben führen zur Helligkeitskalibrierung und lesbaren Lizenzbedingungen. Ein zweiter Start des installierten Programms erreicht erneut den Titelbildschirm.",
+      "status": "Im Spiel · Darstellung unvollständig",
+      "headline": "Six ist im ersten Raum steuerbar: 2,16 FPS.",
+      "summary": "3. Oktober, PPSA10737 v01.004.000: Die Verarbeitung nativer Compute-Warteschlangen behebt den Stopp nach 510 Bildern. Mit sofortiger GPU-Rückschreibung erreicht der Test den ersten Raum; Bewegung, Kameraführung und Feuerzeug sind bestätigt. Das Spielprofil aktiviert diesen Modus jetzt automatisch.",
       "strengths": [
-        "Titelbildschirm, DLC-Prüfung und Ersteinrichtung reagieren auf Tastatureingaben.",
-        "Fehlende Importe und der beobachtete GPU-Stillstand wurden behoben."
+        "Ein neues Spiel erreicht den ersten Raum.",
+        "Bewegung und Feuerzeugsteuerung sind bestätigt."
       ],
       "limits": [
-        "Gameplay und korrekte 3D-Darstellung sind nicht bestätigt.",
-        "Lücken bei FLAT-Speicher, Strahlschnittoperationen und Ressourcenbindung bleiben.",
-        "Ein Wiederholungslauf endet nach 120 Sekunden Warten auf den Render-Thread während der Ersteinrichtung; Stabilität ist nicht bestätigt."
+        "Materialien und Beleuchtung bleiben dunkel und fehlerhaft; FLAT-, Strahlenschnitt- und Ressourcenbindungslücken bestehen.",
+        "Die beobachteten Speicherdateien sind leer; dauerhafter Fortschritt, Durchspielbarkeit und lange Spielsitzungen sind unbestätigt."
       ],
-      "imageAlt": "Little Nightmares Enhanced Edition mit Titel und Press-X-Aufforderung in PS5PCEM"
+      "performance": "Zwei stationäre Messungen ohne Pause: jeweils 65 Bilder in etwa 30 Sekunden, zusammen 2,16 FPS. RTX 3070 Ti, 1080p-Ausgabe, Speed-Profil; interne Auflösung vom Spiel bestimmt. Noch keine spielbare Geschwindigkeit.",
+      "imageAlt": "Six mit Feuerzeug im ersten Raum; Materialien und Beleuchtung sind noch fehlerhaft"
     },
     "gta-iii-definitive-edition": {
       "status": "Im Spiel · Bewegung bestätigt",
@@ -346,6 +346,11 @@ const de: Content = {
   },
 
   history: {
+    "little-nightmares-gameplay": {
+      "title": "Spielszene erreicht: 2,16 FPS gemessen",
+      "summary": "Native Compute-Ringe beheben den reproduzierbaren Stopp nach 510 Bildern. Verzögerte Rückschreibung führt danach beim Spielstart zu einem MallocBinned3-Fehler; ein neuer Lauf mit sofortiger Rückschreibung erreicht steuerbares Gameplay und 3.540 Bilder vor dem manuellen Testende. Zwei 30-Sekunden-Messungen liefern je 65 Bilder: zusammen 2,16 FPS. Das Spielprofil wählt sofortige Rückschreibung automatisch. Grafikfehler und leere Speicherdateien bleiben.",
+      "imageAlt": "Six mit Feuerzeug im ersten Raum; Materialien und Beleuchtung sind noch fehlerhaft"
+    },
     "little-nightmares-startup": {
       "title": "Titelbildschirm nach Start- und Deskriptorkorrekturen wieder sichtbar",
       "summary": "Trinity- und IPMI-Importe, native Grafikereignisse und die Prüfung von Dispatch-Größen wurden ergänzt. Die BITSET-Korrektur stellt Titelbildschirm und Ersteinrichtung wieder her. Zwei Starts erreichen den Titel; Gameplay und Langzeitstabilität sind nicht geprüft. Ein Wiederholungslauf endet nach 120 Sekunden Warten auf den Render-Thread während der Ersteinrichtung; Stabilität ist nicht bestätigt.",

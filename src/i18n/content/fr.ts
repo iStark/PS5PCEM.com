@@ -3,19 +3,19 @@ import type { Content } from "./en";
 const fr: Content = {
   games: {
     "little-nightmares-enhanced-edition": {
-      "status": "Écran titre · configuration initiale",
-      "headline": "L’écran titre s’affiche et répond aux commandes.",
-      "summary": "Vérification du 3 octobre, PPSA10737 v01.004.000 : les corrections des imports, événements graphiques et BITSET scalaire rétablissent le titre et l’invite Press X. Les commandes ouvrent le réglage de luminosité et un texte de licence lisible. Un second lancement de la version installée reproduit l’écran titre.",
+      "status": "En jeu · rendu incomplet",
+      "headline": "Six est contrôlable dans la première pièce à 2,16 FPS.",
+      "summary": "3 octobre, PPSA10737 v01.004.000 : le traitement des files de calcul natives corrige l’arrêt après 510 images. Un essai avec écriture immédiate des résultats GPU atteint la première pièce ; déplacement, suivi de caméra et briquet sont vérifiés. Le profil du jeu active désormais ce mode automatiquement.",
       "strengths": [
-        "Le titre, la vérification des DLC et la configuration initiale avancent au clavier.",
-        "Les imports manquants et le blocage GPU observé sont corrigés."
+        "Une nouvelle partie atteint la première pièce.",
+        "Le déplacement et le briquet répondent aux commandes."
       ],
       "limits": [
-        "Gameplay et rendu 3D correct non vérifiés.",
-        "Des lacunes subsistent pour la mémoire FLAT, les intersections de rayons et les ressources.",
-        "Un nouvel essai se termine après 120 secondes d’attente du thread de rendu pendant la configuration initiale ; la stabilité n’est pas établie."
+        "Matériaux et éclairage restent sombres et incorrects ; des lacunes FLAT, d’intersection de rayons et de liaison des ressources subsistent.",
+        "Les fichiers de sauvegarde observés sont vides ; persistance, fin du jeu et longues sessions ne sont pas vérifiées."
       ],
-      "imageAlt": "Titre de Little Nightmares Enhanced Edition et invite Press X dans PS5PCEM"
+      "performance": "Deux mesures immobiles sans pause : 65 images en environ 30 secondes chacune, soit 2,16 FPS au total. RTX 3070 Ti, sortie 1080p, préréglage Speed, résolution interne gérée par le jeu. La vitesse reste insuffisante pour jouer confortablement.",
+      "imageAlt": "Six et son briquet dans la première pièce, avec des défauts de matériaux et d’éclairage"
     },
     "gta-iii-definitive-edition": {
       "status": "En jeu · déplacement vérifié",
@@ -346,6 +346,11 @@ const fr: Content = {
   },
 
   history: {
+    "little-nightmares-gameplay": {
+      "title": "Première scène jouable atteinte : 2,16 FPS mesurés",
+      "summary": "Les anneaux de calcul natifs corrigent l’arrêt reproductible après 510 images. L’écriture différée expose ensuite une erreur MallocBinned3 au lancement d’une partie ; un nouvel essai en écriture immédiate atteint le contrôle du personnage et 3 540 images avant l’arrêt volontaire. Deux mesures de 30 secondes donnent 65 images chacune, soit 2,16 FPS au total. Le profil active l’écriture immédiate. Les défauts graphiques et les sauvegardes vides subsistent.",
+      "imageAlt": "Six et son briquet dans la première pièce, avec des défauts de matériaux et d’éclairage"
+    },
     "little-nightmares-startup": {
       "title": "Écran titre rétabli après correction du démarrage et des descripteurs",
       "summary": "Correction des imports Trinity et IPMI, des événements graphiques natifs et de la validation des dimensions de dispatch. BITSET rétablit l’écran titre et la configuration initiale. Deux lancements atteignent le titre ; gameplay et stabilité prolongée restent non vérifiés. Un nouvel essai se termine après 120 secondes d’attente du thread de rendu pendant la configuration initiale ; la stabilité n’est pas établie.",

@@ -30,19 +30,19 @@ export type Content = {
 const content: Content = {
   games: {
     "little-nightmares-enhanced-edition": {
-      "status": "Title screen · first-run UI",
-      "headline": "The title screen renders and responds to input.",
-      "summary": "October 3 development check, PPSA10737 v01.004.000: startup import, graphics-event and scalar BITSET fixes restore the title and Press X prompt. Input reaches brightness calibration and readable license text. A second launch of the installed runner reproduces the title screen.",
+      "status": "In-game · rendering incomplete",
+      "headline": "Six's opening room is interactive at 2.16 FPS.",
+      "summary": "October 3, PPSA10737 v01.004.000: consuming native compute queues removes the 510-frame stop. An eager GPU-writeback run reaches the opening room and verifies movement, camera follow and the lighter. The title profile now selects this mode automatically.",
       "strengths": [
-        "The title, DLC check and first-run setup advance with keyboard input.",
-        "Missing imports and the observed GPU stall are addressed."
+        "New Game reaches the opening room.",
+        "Movement and lighter input are verified."
       ],
       "limits": [
-        "Gameplay and correct 3D rendering are unverified.",
-        "FLAT memory, ray-intersection and resource-binding gaps remain.",
-        "A repeat exits after a 120-second render-thread wait during first-run setup; stability is not established."
+        "Materials and lighting remain dark and incorrect; FLAT, ray-intersection and resource-binding gaps remain.",
+        "Observed save files are empty; persistence, completion and long gameplay sessions are unverified."
       ],
-      "imageAlt": "Little Nightmares Enhanced Edition title and Press X prompt rendered by PS5PCEM"
+      "performance": "Two unpaused stationary gameplay samples: 65 frames in about 30 seconds each, 2.16 FPS combined. RTX 3070 Ti, 1080p output request, Speed preset, game-controlled internal resolution. This remains below playable speed.",
+      "imageAlt": "Six with her lighter in the opening room; materials and lighting remain incomplete"
     },
     "gta-iii-definitive-edition": {
       "status": "In-game · movement verified",
@@ -371,6 +371,11 @@ const content: Content = {
   },
 
   history: {
+    "little-nightmares-gameplay": {
+      "title": "Opening gameplay reached; 2.16 FPS measured",
+      "summary": "Native compute-ring consumption fixes the repeatable 510-frame stop. Deferred writes then expose a MallocBinned3 failure during New Game; a fresh eager-write run reaches interactive gameplay and presents 3,540 frames before an intentional stop. Two unpaused 30-second samples each present 65 frames: 2.16 FPS combined. The title profile selects eager writes automatically. Graphics defects and empty save files remain.",
+      "imageAlt": "Six with her lighter in the opening room; materials and lighting remain incomplete"
+    },
     "little-nightmares-startup": {
       "title": "Title screen restored after startup and descriptor fixes",
       "summary": "Resolved Trinity-mode and IPMI imports, native graphics-event changes and invalid dispatch dimensions. Correcting scalar BITSET restores the visible title and first-run UI. Two launches reach the title screen; gameplay and long-session stability remain unverified. A repeat exits after a 120-second render-thread wait during first-run setup; stability is not established.",

@@ -3,19 +3,19 @@ import type { Content } from "./en";
 const es: Content = {
   games: {
     "little-nightmares-enhanced-edition": {
-      "status": "Pantalla de título · configuración inicial",
-      "headline": "La pantalla de título se muestra y responde a los controles.",
-      "summary": "Comprobación del 3 de octubre, PPSA10737 v01.004.000: las correcciones de imports, eventos gráficos y BITSET escalar restauran el título y la indicación Press X. Los controles abren el ajuste de brillo y un texto de licencia legible. Un segundo arranque de la versión instalada reproduce la pantalla de título.",
+      "status": "En juego · renderizado incompleto",
+      "headline": "Six se puede controlar en la primera habitación a 2,16 FPS.",
+      "summary": "3 de octubre, PPSA10737 v01.004.000: procesar las colas de cómputo nativas elimina la detención tras 510 fotogramas. Una prueba con escritura inmediata de resultados de GPU llega a la primera habitación y confirma movimiento, seguimiento de cámara y mechero. El perfil del juego activa ahora este modo automáticamente.",
       "strengths": [
-        "El título, la comprobación de DLC y la configuración inicial avanzan con el teclado.",
-        "Se corrigieron los imports ausentes y el bloqueo observado de la GPU."
+        "Una partida nueva llega a la primera habitación.",
+        "Movimiento y mechero responden a los controles."
       ],
       "limits": [
-        "No se han verificado gameplay ni renderizado 3D correcto.",
-        "Persisten carencias en memoria FLAT, intersecciones de rayos y recursos.",
-        "Una repetición finaliza tras esperar 120 segundos al hilo de renderizado durante la configuración inicial; la estabilidad no está confirmada."
+        "Materiales e iluminación siguen oscuros e incorrectos; quedan carencias de FLAT, intersección de rayos y vinculación de recursos.",
+        "Los archivos de guardado observados están vacíos; persistencia, finalización y sesiones largas sin verificar."
       ],
-      "imageAlt": "Título de Little Nightmares Enhanced Edition e indicación Press X en PS5PCEM"
+      "performance": "Dos mediciones inmóviles sin pausa: 65 fotogramas en unos 30 segundos cada una, 2,16 FPS combinados. RTX 3070 Ti, salida 1080p, preset Speed y resolución interna controlada por el juego. La velocidad aún es insuficiente para jugar con fluidez.",
+      "imageAlt": "Six con su mechero en la primera habitación; materiales e iluminación presentan defectos"
     },
     "gta-iii-definitive-edition": {
       "status": "En juego · movimiento verificado",
@@ -347,6 +347,11 @@ const es: Content = {
   },
 
   history: {
+    "little-nightmares-gameplay": {
+      "title": "Se alcanza el juego: 2,16 FPS medidos",
+      "summary": "Los anillos de cómputo nativos corrigen la detención repetible tras 510 fotogramas. La escritura diferida revela después un fallo MallocBinned3 al iniciar partida; una nueva prueba con escritura inmediata alcanza el control del personaje y 3540 fotogramas antes de detenerse voluntariamente. Dos muestras de 30 segundos dan 65 fotogramas cada una: 2,16 FPS combinados. El perfil activa la escritura inmediata. Persisten defectos gráficos y guardados vacíos.",
+      "imageAlt": "Six con su mechero en la primera habitación; materiales e iluminación presentan defectos"
+    },
     "little-nightmares-startup": {
       "title": "Título restaurado tras corregir el arranque y los descriptores",
       "summary": "Se corrigieron imports de Trinity e IPMI, eventos gráficos nativos y validación de dimensiones de dispatch. BITSET restaura el título y la configuración inicial. Dos arranques alcanzan el título; gameplay y estabilidad prolongada siguen sin verificarse. Una repetición finaliza tras esperar 120 segundos al hilo de renderizado durante la configuración inicial; la estabilidad no está confirmada.",
