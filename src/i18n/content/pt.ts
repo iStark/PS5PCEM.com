@@ -346,6 +346,11 @@ const pt: Content = {
   },
 
   history: {
+    "yotei-color-export-routing": {
+      "title": "Máscaras de cor e destinos das saídas",
+      "summary": "O renderizador respeita as máscaras de canais do shader e encaminha as saídas compactas para as superfícies corretas, inclusive com espaços entre os slots. Seis testes Vulkan passam: preservação de pixels, diferentes formatos compactados e reutilização do pipeline após mudar a máscara. A mistura em superfícies UNORM compactadas ativas continua sem suporte. Os testes do compilador não mostraram ganho útil e não foram ativados no jogo. Uma nova execução verifica as cenas após a árvore; mais FPS e controle do personagem ainda não foram confirmados.",
+      "imageAlt": ""
+    },
     "yotei-runtime-image-tables": {
       "title": "Tabelas de texturas em execução e cache em disco recuperado",
       "summary": "As pequenas tabelas indiretas guardam agora os endereços em dados de execução: mover texturas ou alterar colisões de hash não exige por si só outro pipeline. Um teste GPU verifica três passagens corretas com uma compilação; nove verificações Vulkan passam. O processo voltou a gravar o cache após a remoção de cópias redundantes dos testes. As falhas são comunicadas e a gravação é repetida, preservando o cache anterior. Não há novo ganho de FPS nem controle do personagem confirmado; faixas na árvore, iluminação e mistura de cores compactadas continuam pendentes. A repetição apresenta 37 quadros em 30,049 segundos na dificuldade Medium (1,231 FPS), como na medição anterior junto à árvore.",

@@ -346,6 +346,11 @@ const de: Content = {
   },
 
   history: {
+    "yotei-color-export-routing": {
+      "title": "Farbkanalmasken und Zuordnung der Renderziele",
+      "summary": "Der Renderer berücksichtigt nun Shader-Kanalmasken und ordnet kompakte Farbausgaben den richtigen Renderzielen zu, auch bei Lücken zwischen den Slots. Sechs native Vulkan-Prüfungen bestehen: erhaltene Pixel, verschiedene Packformate und Pipeline-Wiederverwendung nach Maskenwechsel. Blending aktiver gepackter UNORM-Ziele bleibt nicht unterstützt. Compiler-Versuche zeigen keinen nützlichen Geschwindigkeitsgewinn und wurden nicht im Spiel aktiviert. Ein Spieltest prüft die Szenen nach dem Baum; höhere FPS und Figurensteuerung sind noch nicht bestätigt.",
+      "imageAlt": ""
+    },
     "yotei-runtime-image-tables": {
       "title": "Texturtabellen zur Laufzeit und wieder gespeicherter Cache",
       "summary": "Kleine indirekte Texturtabellen halten Deskriptoradressen jetzt in Laufzeitdaten. Verschobene Texturen und andere Hash-Kollisionen allein erfordern keine neue Pipeline. Ein GPU-Test prüft drei korrekte Durchläufe mit einer Kompilierung; neun Vulkan-Prüfungen bestehen. Nach dem Entfernen überflüssiger Test-Cache-Kopien speichert der laufende Prozess wieder auf die Festplatte. Speicherfehler werden gemeldet und erneut versucht, der alte Cache bleibt erhalten. Mehr Spiel-FPS und Figurensteuerung sind nicht bestätigt; Baumstreifen, Beleuchtung und das Mischen gepackter Farben bleiben offen. Die Wiederholung zeigt 37 Bilder in 30,049 Sekunden auf Medium (1,231 FPS), entsprechend der vorigen Messung am Baum.",

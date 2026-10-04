@@ -347,6 +347,11 @@ const es: Content = {
   },
 
   history: {
+    "yotei-color-export-routing": {
+      "title": "Máscaras de color y destinos de las salidas",
+      "summary": "El renderizador respeta las máscaras de canales del shader y dirige las salidas compactas a las superficies correctas, incluso con huecos entre posiciones. Pasan seis pruebas Vulkan: conservación de píxeles, distintos formatos empaquetados y reutilización del pipeline tras cambiar la máscara. La mezcla en superficies UNORM empaquetadas activas sigue sin soporte. Las pruebas del compilador no demostraron una mejora útil y no se activaron en el juego. Se comprueba el efecto después del árbol; todavía no se confirman más FPS ni control del personaje.",
+      "imageAlt": ""
+    },
     "yotei-runtime-image-tables": {
       "title": "Tablas de texturas en ejecución y caché en disco recuperada",
       "summary": "Las tablas indirectas pequeñas guardan ahora las direcciones en datos de ejecución: mover texturas o cambiar colisiones de hash no exige por sí solo otro pipeline. Una prueba GPU verifica tres pasadas correctas con una compilación; pasan nueve comprobaciones Vulkan. El proceso volvió a guardar la caché tras eliminar copias de pruebas redundantes. Los fallos se notifican y se reintentan conservando la caché anterior. No se confirma una mejora de FPS ni control del personaje; siguen pendientes las franjas del árbol, la iluminación y la mezcla de colores empaquetados. La repetición presenta 37 fotogramas en 30,049 segundos en dificultad Medium (1,231 FPS), igual que la medición anterior junto al árbol.",

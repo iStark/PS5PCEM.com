@@ -371,6 +371,11 @@ const content: Content = {
   },
 
   history: {
+    "yotei-color-export-routing": {
+      "title": "Color export masks and attachment routing",
+      "summary": "The renderer now respects shader channel masks and routes compact color exports to the intended surfaces, including gaps between attachment slots. Six native Vulkan probes pass, checking retained pixels, mixed packing formats and pipeline reuse after a mask change. Active packed UNORM blending remains explicitly unsupported. Compiler experiments did not establish a useful speedup and were not enabled in the game. A live repeat is checking the effect after the tree; higher game FPS and character control are not yet confirmed.",
+      "imageAlt": ""
+    },
     "yotei-runtime-image-tables": {
       "title": "Runtime texture tables and recovered disk cache",
       "summary": "Small indirect texture tables now keep descriptor addresses in runtime data, avoiding new pipelines solely for relocation or changed hash collisions. A native probe verifies three correctly rendered passes with one compilation; nine Vulkan checks pass. The live disk cache resumed saving after redundant probe-cache copies were removed. Save failures now report an error and retry while retaining the previous cache. No new game FPS gain or character control is confirmed; tree streaks, lighting defects and packed-color blending remain open. The repeat presents 37 frames in 30.049 seconds at Medium difficulty (1.231 FPS), matching the previous tree measurement.",

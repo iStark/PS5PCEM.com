@@ -346,6 +346,11 @@ const fr: Content = {
   },
 
   history: {
+    "yotei-color-export-routing": {
+      "title": "Masques de couleur et destinations des sorties",
+      "summary": "Le moteur respecte désormais les masques de canaux du shader et associe les sorties couleur compactes aux bonnes surfaces, même avec des emplacements intermédiaires désactivés. Six tests Vulkan réussissent : pixels conservés, formats compactés différents et réutilisation du pipeline après changement du masque. Le mélange sur une surface UNORM compactée active reste non pris en charge. Les essais de compilation n’apportent pas de gain utile et ne sont pas activés en jeu. Un nouveau test vérifie les scènes après l’arbre ; hausse des FPS et contrôle du personnage restent à confirmer.",
+      "imageAlt": ""
+    },
     "yotei-runtime-image-tables": {
       "title": "Tables de textures à l’exécution et cache disque rétabli",
       "summary": "Les petites tables indirectes de textures conservent désormais les adresses dans les données d’exécution : déplacer les textures ou modifier les collisions de hachage ne suffit plus à recréer un pipeline. Un test GPU valide trois passes correctes avec une seule compilation ; neuf vérifications Vulkan réussissent. Le processus a repris l’enregistrement du cache après suppression de copies de tests superflues. Les échecs sont signalés et réessayés en conservant l’ancien cache. Aucun gain de FPS en jeu ni contrôle du personnage n’est confirmé ; les bandes de l’arbre, l’éclairage et le mélange des couleurs compactées restent à corriger. Le nouvel essai affiche 37 images en 30,049 secondes en difficulté Medium (1,231 FPS), comme la mesure précédente devant l’arbre.",
