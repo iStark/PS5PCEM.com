@@ -347,6 +347,11 @@ const es: Content = {
   },
 
   history: {
+    "yotei-sparse-regions-repeat": {
+      "title": "Repetición junto al árbol: 1,23 FPS y límite de memoria",
+      "summary": "El ejecutable local actualizado presenta 37 fotogramas en 30,043 segundos junto al árbol (1,23 FPS), sin mejora demostrada frente a los 1,26 FPS anteriores. Llega a una secuencia 3D incompleta, con compilaciones iniciales largas y mezcla de colores empaquetados no compatible. La protección de diagnóstico detiene la prueba tras 1158 segundos al acercarse al límite de memoria comprometida del sistema. El control del personaje sigue sin confirmar; la captura muestra fallos de materiales e iluminación.",
+      "imageAlt": "Escena posterior al árbol con materiales e iluminación incompletos"
+    },
     "yotei-sparse-material-regions": {
       "title": "Índices de materiales precisos y shaders más pequeños",
       "summary": "La repetición anterior junto al árbol registra 1,26 FPS; persisten las largas compilaciones iniciales y la escena oscura posterior. La búsqueda de texturas conserva ahora los índices posibles tras aplicar la máscara, sin incluir todos los registros intermedios. Las páginas capturadas contiguas comparten una región verificada. Un shader de fragmentos de prueba con una tabla amplia se reduce un 22,8 % con el mismo resultado; 12 pruebas de memoria y 26 de sampler superan la validación de Vulkan. La nueva prueba del juego continúa. Aún no se confirma una mejora de FPS ni el control del personaje.",

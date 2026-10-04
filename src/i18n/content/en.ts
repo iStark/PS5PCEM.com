@@ -371,6 +371,11 @@ const content: Content = {
   },
 
   history: {
+    "yotei-sparse-regions-repeat": {
+      "title": "Tree repeat: 1.23 FPS, post-tree memory limit",
+      "summary": "The updated local runner presents 37 frames in 30.043 seconds at the tree (1.23 FPS), with no demonstrated gain over the preceding 1.26 FPS sample. It reaches an incomplete 3D cinematic, with long first-use pipeline compilation and unsupported packed-color blending. The diagnostic guard stops the run after 1,158 seconds as system commit approaches its limit. Character control remains unconfirmed; the capture shows unresolved material and lighting defects.",
+      "imageAlt": "Incomplete post-tree scene with missing material and lighting detail"
+    },
     "yotei-sparse-material-regions": {
       "title": "Sparse material indices and smaller shaders",
       "summary": "The preceding tree repeat records 1.26 FPS; severe first-use stalls and dark post-tree rendering remain. Texture discovery now retains the possible masked indices instead of every intermediate record. Adjacent captured memory pages share one checked region. A native wide-table fragment is 22.8% smaller with the same pixel result; 12 memory-read cases and 26 sampler cases pass Vulkan validation. The game repeat is ongoing. A game FPS gain and character control are not yet confirmed.",

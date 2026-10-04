@@ -346,6 +346,11 @@ const de: Content = {
   },
 
   history: {
+    "yotei-sparse-regions-repeat": {
+      "title": "Erneuter Baumtest: 1,23 FPS und Speichergrenze danach",
+      "summary": "Der aktualisierte lokale Runner zeigt am Baum 37 Bilder in 30,043 Sekunden (1,23 FPS), ohne nachgewiesenen Gewinn gegenüber zuvor 1,26 FPS. Er erreicht eine unvollständig gerenderte 3D-Zwischensequenz mit langer Erstkompilierung und nicht unterstütztem Blending gepackter Farben. Der Diagnosewächter beendet den Test nach 1.158 Sekunden nahe der Commit-Grenze des Systems. Die Figurensteuerung bleibt unbestätigt; das Bild zeigt weiterhin Material- und Beleuchtungsfehler.",
+      "imageAlt": "Unvollständige Szene nach dem Baum mit Material- und Beleuchtungsfehlern"
+    },
     "yotei-sparse-material-regions": {
       "title": "Gezielte Materialindizes und kleinere Shader",
       "summary": "Der vorherige Test am Baum erreicht 1,26 FPS; lange Erstkompilierungen und die dunkle Szene danach bleiben bestehen. Die Textursuche berücksichtigt nun die möglichen maskierten Indizes statt aller Zwischenwerte. Benachbarte erfasste Speicherseiten bilden einen gemeinsam geprüften Bereich. Ein nativer Fragmentshader mit großer Tabelle wird bei gleichem Pixelresultat um 22,8 % kleiner; 12 Speichertests und 26 Samplertests bestehen die Vulkan-Validierung. Der erneute Spieltest läuft. Höhere Spiel-FPS und die Figurensteuerung sind noch nicht bestätigt.",
