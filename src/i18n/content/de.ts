@@ -346,6 +346,11 @@ const de: Content = {
   },
 
   history: {
+    "yotei-compact-shader-analysis": {
+      "title": "Weniger Shader-Cache-Speicher; 1,26 FPS am Baum",
+      "summary": "Nicht verwendete Diagnose-IR wird bei der Ausführung des dekodierten Befehlsstroms freigegeben. Am Baum belegen die zusätzlichen Arrays von 648 Shader-Analysen null Bytes; Originalcode und dekodierte Befehle bleiben erhalten. Der Lauf zeigt 38 Bilder in 30,044 Sekunden (1,26 FPS), im Bereich der bisherigen Messungen. Eine reproduzierbare Beschleunigung ist nicht belegt. Fünf gezielte Tests und native Vulkan-Bild- und Materialprüfungen bestehen. Streifen am Baum bleiben; die Figurensteuerung ist unbestätigt. Lokaler Runner und PDB wurden mit Sicherung aktualisiert.",
+      "imageAlt": ""
+    },
     "yotei-sparse-regions-repeat": {
       "title": "Erneuter Baumtest: 1,23 FPS und Speichergrenze danach",
       "summary": "Der aktualisierte lokale Runner zeigt am Baum 37 Bilder in 30,043 Sekunden (1,23 FPS), ohne nachgewiesenen Gewinn gegenüber zuvor 1,26 FPS. Er erreicht eine unvollständig gerenderte 3D-Zwischensequenz mit langer Erstkompilierung und nicht unterstütztem Blending gepackter Farben. Der Diagnosewächter beendet den Test nach 1.158 Sekunden nahe der Commit-Grenze des Systems. Die Figurensteuerung bleibt unbestätigt; das Bild zeigt weiterhin Material- und Beleuchtungsfehler.",

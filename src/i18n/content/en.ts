@@ -371,6 +371,11 @@ const content: Content = {
   },
 
   history: {
+    "yotei-compact-shader-analysis": {
+      "title": "Less shader-cache memory; tree at 1.26 FPS",
+      "summary": "Unused diagnostic shader IR is now released during decoded-stream execution. At the tree, 648 cached analyses retain zero bytes in those extra arrays; their original code and decoded instructions remain intact. The repeat presents 38 frames in 30.044 seconds (1.26 FPS), within the previous sample range, so no repeatable speedup is established. Five focused tests and native Vulkan image/material probes pass. Tree streaks remain and character control is unconfirmed. The local runner and matching PDB are updated with a backup.",
+      "imageAlt": ""
+    },
     "yotei-sparse-regions-repeat": {
       "title": "Tree repeat: 1.23 FPS, post-tree memory limit",
       "summary": "The updated local runner presents 37 frames in 30.043 seconds at the tree (1.23 FPS), with no demonstrated gain over the preceding 1.26 FPS sample. It reaches an incomplete 3D cinematic, with long first-use pipeline compilation and unsupported packed-color blending. The diagnostic guard stops the run after 1,158 seconds as system commit approaches its limit. Character control remains unconfirmed; the capture shows unresolved material and lighting defects.",

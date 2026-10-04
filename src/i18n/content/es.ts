@@ -347,6 +347,11 @@ const es: Content = {
   },
 
   history: {
+    "yotei-compact-shader-analysis": {
+      "title": "Menos memoria de shaders; 1,26 FPS junto al árbol",
+      "summary": "El IR de diagnóstico sin uso se libera al ejecutar el flujo decodificado. Junto al árbol, los arrays adicionales de 648 análisis de shaders ocupan cero bytes; se conservan el código original y las instrucciones decodificadas. La prueba presenta 38 fotogramas en 30,044 segundos (1,26 FPS), dentro del intervalo anterior, sin demostrar una mejora repetible. Pasan cinco pruebas específicas y las pruebas nativas de imágenes y materiales de Vulkan. Persisten las franjas del árbol y no se confirma el control del personaje. Runner y PDB locales actualizados con copia de seguridad.",
+      "imageAlt": ""
+    },
     "yotei-sparse-regions-repeat": {
       "title": "Repetición junto al árbol: 1,23 FPS y límite de memoria",
       "summary": "El ejecutable local actualizado presenta 37 fotogramas en 30,043 segundos junto al árbol (1,23 FPS), sin mejora demostrada frente a los 1,26 FPS anteriores. Llega a una secuencia 3D incompleta, con compilaciones iniciales largas y mezcla de colores empaquetados no compatible. La protección de diagnóstico detiene la prueba tras 1158 segundos al acercarse al límite de memoria comprometida del sistema. El control del personaje sigue sin confirmar; la captura muestra fallos de materiales e iluminación.",

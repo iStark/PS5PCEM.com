@@ -39,6 +39,13 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "yotei-compact-shader-analysis",
+    date: "2026-10-04",
+    slug: "ghost-of-yotei",
+    release: null,
+    source: devReport("yotei-array-layers-2026-10-04.md"),
+  },
+  {
     id: "yotei-sparse-regions-repeat",
     date: "2026-10-04",
     slug: "ghost-of-yotei",
