@@ -347,6 +347,11 @@ const es: Content = {
   },
 
   history: {
+    "yotei-integer-material-flat-reads": {
+      "title": "Índices enteros de materiales y lecturas de memoria verificadas",
+      "summary": "La tabla capturada ahora resuelve 84 texturas 2D válidas en vez de 229 candidatos con imágenes de matriz falsas. La prueba del juego supera esa lectura y revela después una lectura FLAT no compatible. La nueva ruta con comprobación de direcciones supera diez casos Vulkan; también pasan 26 casos de samplers. La repetición anterior junto al árbol registra 1,16 FPS, sin mejora demostrada. La compilación inicial y la presión de memoria siguen provocando pausas largas. Persisten fallos de iluminación y el control del personaje no está confirmado.",
+      "imageAlt": ""
+    },
     "yotei-checked-material-samplers": {
       "title": "Sampler recuperado; persisten grandes pausas tras el árbol",
       "summary": "La prueba conjunta de sampler y caché registra 1,23 FPS en el árbol y cinco fotogramas en 60 segundos después (0,083 FPS). Es otro momento de la cinemática, por lo que no demuestra una mejora. Se supera el rechazo original del material; una consulta posterior de textura sigue sin soporte. Pasan los tests de índices con signo y 26 casos Vulkan. Persisten las franjas, la iluminación incompleta y la mezcla de color empaquetado sin implementar. No se alcanza el control del personaje. La compilación está aislada; el runner instalado no cambia.",

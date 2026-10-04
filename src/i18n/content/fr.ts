@@ -346,6 +346,11 @@ const fr: Content = {
   },
 
   history: {
+    "yotei-integer-material-flat-reads": {
+      "title": "Indices entiers des matériaux et lectures mémoire vérifiées",
+      "summary": "La table capturée fournit désormais 84 textures 2D valides au lieu de 229 candidats comprenant de fausses images en tableau. Le jeu franchit cet accès puis révèle une lecture FLAT non prise en charge. Le nouveau chemin avec contrôle des adresses passe dix cas Vulkan ; 26 cas de samplers passent aussi. Le précédent essai près de l’arbre mesure 1,16 FPS, sans accélération démontrée. La compilation initiale et la pression mémoire causent encore de longues pauses. Les défauts d’éclairage persistent et le contrôle du personnage reste non confirmé.",
+      "imageAlt": ""
+    },
     "yotei-checked-material-samplers": {
       "title": "Sampler retrouvé ; fortes pauses persistantes après l’arbre",
       "summary": "L’essai combiné sampler/cache mesure 1,23 FPS à l’arbre et cinq images en 60 secondes après (0,083 FPS). Ce passage différent ne prouve pas une accélération. Le rejet initial du matériau est dépassé ; un accès ultérieur à une texture reste non pris en charge. Les tests des indices signés et 26 cas Vulkan passent. Rayures, éclairage incomplet et mélange des couleurs compactées restent à corriger. Le contrôle du personnage n’est pas atteint. Le candidat reste séparé ; le runner installé ne change pas.",

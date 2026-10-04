@@ -346,6 +346,11 @@ const de: Content = {
   },
 
   history: {
+    "yotei-integer-material-flat-reads": {
+      "title": "Ganzzahlige Materialindizes und geprüfte Speicherzugriffe",
+      "summary": "Die erfasste Materialtabelle liefert jetzt 84 gültige 2D-Texturen statt 229 Kandidaten mit falschen Array-Bildern. Der Spieltest passiert diesen Zugriff und zeigt danach einen nicht unterstützten FLAT-Lesezugriff. Der neue geprüfte Speicherpfad besteht zehn Vulkan-Fälle; auch 26 Sampler-Fälle bestehen. Die vorherige Wiederholung am Baum misst 1,16 FPS, ohne nachgewiesene Beschleunigung. Erste Pipeline-Kompilierung und Speicherdruck verursachen weiterhin lange Pausen. Beleuchtungsfehler bleiben; die Figurensteuerung ist unbestätigt.",
+      "imageAlt": ""
+    },
     "yotei-checked-material-samplers": {
       "title": "Material-Sampler wiederhergestellt; starke Stillstände bleiben",
       "summary": "Der kombinierte Sampler-/Cache-Test misst 1,23 FPS am Baum und fünf Bilder in 60 Sekunden danach (0,083 FPS). Der andere Filmabschnitt belegt keine Beschleunigung. Die ursprüngliche Materialablehnung wird überwunden; ein späterer Texturzugriff bleibt nicht unterstützt. Tests für vorzeichenbehaftete Indizes und 26 Vulkan-Fälle bestehen. Streifen, unvollständige Beleuchtung und das Mischen gepackter Farben bleiben offen. Figurensteuerung wird nicht erreicht. Der Testbuild bleibt separat; der installierte Runner ist unverändert.",

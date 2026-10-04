@@ -371,6 +371,11 @@ const content: Content = {
   },
 
   history: {
+    "yotei-integer-material-flat-reads": {
+      "title": "Integer material indices and checked memory reads",
+      "summary": "The captured material table now resolves 84 valid 2D textures instead of 229 candidates containing false array images. The live run passes that lookup and exposes a later unsupported FLAT read. A new checked memory path passes ten Vulkan cases; 26 sampler cases also pass. The preceding tree repeat records 1.16 FPS, with no demonstrated speedup. First-use pipeline compilation and host memory pressure still cause severe stalls. Lighting defects remain and character control is unconfirmed.",
+      "imageAlt": ""
+    },
     "yotei-checked-material-samplers": {
       "title": "Material sampler recovered; severe post-tree stalls remain",
       "summary": "The combined sampler/cache repeat records 1.23 FPS at the tree and five frames in 60 seconds after it (0.083 FPS). A different cinematic interval prevents claiming a speedup. The original material rejection is passed; a later texture lookup in the same shader remains unsupported. Signed-index tests and 26 native Vulkan cases pass. Tree streaks, incomplete lighting and packed-color blending remain unresolved. Character control is not reached. The candidate stays isolated; the installed runner is unchanged.",
