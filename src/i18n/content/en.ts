@@ -371,6 +371,17 @@ const content: Content = {
   },
 
   history: {
+    "yotei-checked-material-samplers": {
+      "title": "Material sampler recovered; severe post-tree stalls remain",
+      "summary": "The combined sampler/cache repeat records 1.23 FPS at the tree and five frames in 60 seconds after it (0.083 FPS). A different cinematic interval prevents claiming a speedup. The original material rejection is passed; a later texture lookup in the same shader remains unsupported. Signed-index tests and 26 native Vulkan cases pass. Tree streaks, incomplete lighting and packed-color blending remain unresolved. Character control is not reached. The candidate stays isolated; the installed runner is unchanged.",
+      "imageAlt": "Incomplete character surfaces after the tree in the material-pointer repeat"
+    },
+
+    "yotei-material-pointer-checks": {
+      "title": "Tree repeat at 1.30 FPS; material-pointer recovery",
+      "summary": "The content-generation repeat presents 39 frames in 30 seconds at the tree and only four in 60 seconds in the dark cinematic. Lighting and character geometry remain incomplete; character control is unconfirmed. A captured shader replay now resolves 60 texture descriptors. Ten native Vulkan cases verify sparse material tables and report an error when an active shader selects an unsupported record. Game validation of the new material fix is pending.",
+      "imageAlt": "Incomplete characters in the dark post-tree cinematic"
+    },
     "yotei-color-content-generations": {
       "title": "Packed color repeat; content-cache and memory fixes",
       "summary": "The packed UNORM candidate records 1.23 FPS at the tree. A later dark cinematic stalls at one frame in 60 seconds; this is not steady gameplay FPS. Lighting and geometry remain broken, and a blended color pass is unsupported. Further cache-generation and memory-batch fixes pass seven Vulkan probe groups and five kernel tests; their game benefit is not yet measured. Character control is unconfirmed.",

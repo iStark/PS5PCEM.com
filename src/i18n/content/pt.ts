@@ -346,6 +346,17 @@ const pt: Content = {
   },
 
   history: {
+    "yotei-checked-material-samplers": {
+      "title": "Sampler recuperado; grandes pausas após a árvore persistem",
+      "summary": "O teste combinado de sampler e cache registra 1,23 FPS na árvore e cinco quadros em 60 segundos depois (0,083 FPS). O trecho diferente da cena não comprova aceleração. A rejeição original do material foi superada; um acesso posterior à textura continua sem suporte. Passam os testes de índices com sinal e 26 casos Vulkan. Faixas, iluminação incompleta e mistura de cores compactadas seguem pendentes. O controle do personagem não foi alcançado. A compilação está isolada; o runner instalado não mudou.",
+      "imageAlt": "Superfícies incompletas de personagens após a árvore"
+    },
+
+    "yotei-material-pointer-checks": {
+      "title": "Árvore a 1,30 FPS; ponteiros de materiais",
+      "summary": "A repetição apresenta 39 quadros em 30 segundos junto à árvore e apenas quatro em 60 segundos na cena escura. A iluminação e os personagens continuam incompletos; o controle não foi confirmado. A reprodução dos dados do shader agora identifica 60 descritores de texturas. Dez testes Vulkan verificam tabelas de materiais e apontam registros incompatíveis realmente selecionados. A validação da correção no jogo continua pendente.",
+      "imageAlt": "Personagens incompletos na cena escura após a árvore"
+    },
     "yotei-color-content-generations": {
       "title": "Novo teste de cor e correções de cache",
       "summary": "A versão UNORM mede 1,23 FPS na árvore. Uma cena posterior apresenta um quadro em 60 segundos durante uma longa pausa, não uma taxa estável de jogo. Persistem falhas de iluminação, geometria e mistura de cores. As próximas correções de cache e memória passam em sete grupos Vulkan e cinco testes do núcleo; o ganho no jogo e o controle do personagem não foram confirmados.",

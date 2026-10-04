@@ -346,6 +346,17 @@ const de: Content = {
   },
 
   history: {
+    "yotei-checked-material-samplers": {
+      "title": "Material-Sampler wiederhergestellt; starke Stillstände bleiben",
+      "summary": "Der kombinierte Sampler-/Cache-Test misst 1,23 FPS am Baum und fünf Bilder in 60 Sekunden danach (0,083 FPS). Der andere Filmabschnitt belegt keine Beschleunigung. Die ursprüngliche Materialablehnung wird überwunden; ein späterer Texturzugriff bleibt nicht unterstützt. Tests für vorzeichenbehaftete Indizes und 26 Vulkan-Fälle bestehen. Streifen, unvollständige Beleuchtung und das Mischen gepackter Farben bleiben offen. Figurensteuerung wird nicht erreicht. Der Testbuild bleibt separat; der installierte Runner ist unverändert.",
+      "imageAlt": "Unvollständige Figuren nach dem Baum im Materialzeiger-Test"
+    },
+
+    "yotei-material-pointer-checks": {
+      "title": "Baum-Szene mit 1,30 FPS; Materialzeiger",
+      "summary": "Der erneute Lauf zeigt 39 Bilder in 30 Sekunden am Baum und nur vier in 60 Sekunden in der dunklen Zwischensequenz. Beleuchtung und Figuren bleiben unvollständig; die Steuerung ist nicht bestätigt. Die Wiedergabe erfasster Shaderdaten erkennt nun 60 Texturdeskriptoren. Zehn Vulkan-Tests prüfen lückenhafte Materialtabellen und melden aktiv ausgewählte ungültige Einträge. Die Prüfung der neuen Korrektur im Spiel läuft noch.",
+      "imageAlt": "Unvollständige Figuren in der dunklen Szene nach dem Baum"
+    },
     "yotei-color-content-generations": {
       "title": "Erneuter Farbtest und Cache-Korrekturen",
       "summary": "Der UNORM-Kandidat misst 1,23 FPS am Baum. Eine spätere Szene zeigt während eines Stillstands ein Bild in 60 Sekunden, keinen stabilen Gameplay-Wert. Beleuchtung, Geometrie und ein Blending-Pass bleiben fehlerhaft. Weitere Cache- und Speicherkorrekturen bestehen sieben Vulkan-Gruppen und fünf Kerneltests; ihr Spielnutzen und die Figurensteuerung sind unbestätigt.",
