@@ -347,6 +347,11 @@ const es: Content = {
   },
 
   history: {
+    "yotei-runtime-image-tables": {
+      "title": "Tablas de texturas en ejecución y caché en disco recuperada",
+      "summary": "Las tablas indirectas pequeñas guardan ahora las direcciones en datos de ejecución: mover texturas o cambiar colisiones de hash no exige por sí solo otro pipeline. Una prueba GPU verifica tres pasadas correctas con una compilación; pasan nueve comprobaciones Vulkan. El proceso volvió a guardar la caché tras eliminar copias de pruebas redundantes. Los fallos se notifican y se reintentan conservando la caché anterior. No se confirma una mejora de FPS ni control del personaje; siguen pendientes las franjas del árbol, la iluminación y la mezcla de colores empaquetados.",
+      "imageAlt": ""
+    },
     "yotei-selected-flat-reads": {
       "title": "Menos lecturas y menor coste de compilación",
       "summary": "Las lecturas FLAT seleccionan primero el búfer, conservando solapamientos, direcciones no alineadas y avisos de error. El test controlado reduce la compilación de 46,55 a 39,36 segundos y el pico de memoria privada de 3,96 a 3,37 GB. Se descartó la variante con bucles más lenta. Las pruebas Vulkan pasan. No son FPS del juego; persisten las rayas y el renderizado incompleto, sin control del personaje confirmado. El runner instalado muestra 37 fotogramas en 30,046 segundos ante el árbol (1,231 FPS), sin mejora de FPS demostrada.",

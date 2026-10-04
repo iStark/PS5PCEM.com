@@ -346,6 +346,11 @@ const de: Content = {
   },
 
   history: {
+    "yotei-runtime-image-tables": {
+      "title": "Texturtabellen zur Laufzeit und wieder gespeicherter Cache",
+      "summary": "Kleine indirekte Texturtabellen halten Deskriptoradressen jetzt in Laufzeitdaten. Verschobene Texturen und andere Hash-Kollisionen allein erfordern keine neue Pipeline. Ein GPU-Test prüft drei korrekte Durchläufe mit einer Kompilierung; neun Vulkan-Prüfungen bestehen. Nach dem Entfernen überflüssiger Test-Cache-Kopien speichert der laufende Prozess wieder auf die Festplatte. Speicherfehler werden gemeldet und erneut versucht, der alte Cache bleibt erhalten. Mehr Spiel-FPS und Figurensteuerung sind nicht bestätigt; Baumstreifen, Beleuchtung und das Mischen gepackter Farben bleiben offen.",
+      "imageAlt": ""
+    },
     "yotei-selected-flat-reads": {
       "title": "Weniger Speicherzugriffe und Compilerkosten",
       "summary": "FLAT-Lesezugriffe wählen zuerst den passenden Puffer; Überlappungen, unausgerichtete Adressen und Fehlerberichte bleiben erhalten. Im kontrollierten Shader-Test sinkt die Kompilierung von 46,55 auf 39,36 Sekunden und der private Spitzenspeicher von 3,96 auf 3,37 GB. Die langsamere Schleifenvariante wurde verworfen. Vulkan-Prüfungen bestehen. Das sind keine Spiel-FPS; Baumstreifen, unvollständige Grafik und unbestätigte Figurensteuerung bleiben. Der installierte Runner zeigt am Baum 37 Bilder in 30,046 Sekunden (1,231 FPS); kein Bildratengewinn ist belegt.",

@@ -371,6 +371,11 @@ const content: Content = {
   },
 
   history: {
+    "yotei-runtime-image-tables": {
+      "title": "Runtime texture tables and recovered disk cache",
+      "summary": "Small indirect texture tables now keep descriptor addresses in runtime data, avoiding new pipelines solely for relocation or changed hash collisions. A native probe verifies three correctly rendered passes with one compilation; nine Vulkan checks pass. The live disk cache resumed saving after redundant probe-cache copies were removed. Save failures now report an error and retry while retaining the previous cache. No new game FPS gain or character control is confirmed; tree streaks, lighting defects and packed-color blending remain open.",
+      "imageAlt": ""
+    },
     "yotei-selected-flat-reads": {
       "title": "Fewer snapshot reads; lower compiler cost",
       "summary": "Bounded FLAT reads now select the matching buffer before loading data, preserving overlaps, unaligned addresses and fault reports. In a controlled shader replay, compilation falls from 46.55 to 39.36 seconds and peak private memory from 3.96 to 3.37 GB. A slower loop variant was discarded. Native Vulkan checks pass. These are compiler results, not game FPS; tree streaks, incomplete later rendering and unconfirmed character control remain. The installed runner records 37 frames in 30.046 seconds at the tree (1.231 FPS), with no demonstrated frame-rate improvement.",
