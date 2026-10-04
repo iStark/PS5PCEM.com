@@ -347,6 +347,11 @@ const es: Content = {
   },
 
   history: {
+    "yotei-color-content-generations": {
+      "title": "Nuevo ensayo de color y ajustes de caché",
+      "summary": "La variante UNORM mide 1,23 FPS en el árbol. Una escena posterior presenta un fotograma en 60 segundos durante una pausa larga; no es una tasa estable de juego. Persisten errores de iluminación, geometría y mezcla de colores. Los siguientes ajustes de caché y memoria superan siete grupos Vulkan y cinco pruebas del núcleo; su beneficio en el juego y el control del personaje no están confirmados.",
+      "imageAlt": "Escena oscura después del árbol con defectos gráficos pendientes"
+    },
     "yotei-color-transfer-memory": {
       "title": "Transferencias de color compartidas; árbol a 1,40 FPS",
       "summary": "Se eliminan los búferes de lectura individuales de los destinos de color. Brillo y árbol presentan 42 fotogramas en 30 segundos: unos 1,40 FPS frente a 1,26. El historial de caché difiere y no permite atribuir la mejora. Persisten las franjas; se alcanza la película ilustrada, sin confirmar el control del personaje.",

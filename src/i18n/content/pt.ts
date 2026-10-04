@@ -346,6 +346,11 @@ const pt: Content = {
   },
 
   history: {
+    "yotei-color-content-generations": {
+      "title": "Novo teste de cor e correções de cache",
+      "summary": "A versão UNORM mede 1,23 FPS na árvore. Uma cena posterior apresenta um quadro em 60 segundos durante uma longa pausa, não uma taxa estável de jogo. Persistem falhas de iluminação, geometria e mistura de cores. As próximas correções de cache e memória passam em sete grupos Vulkan e cinco testes do núcleo; o ganho no jogo e o controle do personagem não foram confirmados.",
+      "imageAlt": "Cena escura após a árvore com defeitos gráficos pendentes"
+    },
     "yotei-color-transfer-memory": {
       "title": "Transferências de cor compartilhadas; árvore a 1,40 FPS",
       "summary": "Foram removidos os buffers individuais de leitura dos alvos de cor. Brilho e árvore apresentam 42 quadros em 30 segundos: cerca de 1,40 FPS contra 1,26. O histórico do cache difere e não permite atribuir o ganho. As faixas persistem; o filme ilustrado é alcançado, sem confirmação do controle do personagem.",

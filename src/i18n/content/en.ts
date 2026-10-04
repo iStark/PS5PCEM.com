@@ -371,6 +371,11 @@ const content: Content = {
   },
 
   history: {
+    "yotei-color-content-generations": {
+      "title": "Packed color repeat; content-cache and memory fixes",
+      "summary": "The packed UNORM candidate records 1.23 FPS at the tree. A later dark cinematic stalls at one frame in 60 seconds; this is not steady gameplay FPS. Lighting and geometry remain broken, and a blended color pass is unsupported. Further cache-generation and memory-batch fixes pass seven Vulkan probe groups and five kernel tests; their game benefit is not yet measured. Character control is unconfirmed.",
+      "imageAlt": "Dark post-tree cinematic with unresolved lighting and geometry defects"
+    },
     "yotei-color-transfer-memory": {
       "title": "Shared color transfers; tree repeat at 1.40 FPS",
       "summary": "The runner removes separate host readback buffers for color targets. Brightness and tree repeats each present 42 frames in 30 seconds, about 1.40 FPS versus 1.26 previously. Cache history differs, so this does not isolate the improvement. Tree streaks remain; the illustrated movie is reached, but character control is unconfirmed.",

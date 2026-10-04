@@ -346,6 +346,11 @@ const de: Content = {
   },
 
   history: {
+    "yotei-color-content-generations": {
+      "title": "Erneuter Farbtest und Cache-Korrekturen",
+      "summary": "Der UNORM-Kandidat misst 1,23 FPS am Baum. Eine spätere Szene zeigt während eines Stillstands ein Bild in 60 Sekunden, keinen stabilen Gameplay-Wert. Beleuchtung, Geometrie und ein Blending-Pass bleiben fehlerhaft. Weitere Cache- und Speicherkorrekturen bestehen sieben Vulkan-Gruppen und fünf Kerneltests; ihr Spielnutzen und die Figurensteuerung sind unbestätigt.",
+      "imageAlt": "Dunkle Szene nach dem Baum mit ungelösten Grafikfehlern"
+    },
     "yotei-color-transfer-memory": {
       "title": "Gemeinsame Farbtransfers; Baumtest mit 1,40 FPS",
       "summary": "Separate Host-Lesepuffer für Farbziele entfallen. Helligkeit und Baum zeigen jeweils 42 Bilder in 30 Sekunden: etwa 1,40 statt zuvor 1,26 FPS. Unterschiedliche Cache-Verläufe verhindern eine eindeutige Zuordnung. Streifen bleiben; der gezeichnete Film wird erreicht, die Figurensteuerung ist unbestätigt.",

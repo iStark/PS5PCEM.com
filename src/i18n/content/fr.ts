@@ -346,6 +346,11 @@ const fr: Content = {
   },
 
   history: {
+    "yotei-color-content-generations": {
+      "title": "Nouveau test des couleurs et corrections du cache",
+      "summary": "La variante UNORM mesure 1,23 FPS près de l’arbre. Une scène bloquée présente ensuite une image en 60 secondes, pas une cadence stable en jeu. Éclairage, géométrie et une passe de mélange restent défectueux. Les corrections suivantes du cache et de la mémoire passent sept groupes Vulkan et cinq tests du noyau ; leur gain en jeu et le contrôle du personnage restent à confirmer.",
+      "imageAlt": "Scène sombre après l’arbre avec défauts graphiques non résolus"
+    },
     "yotei-color-transfer-memory": {
       "title": "Transferts couleur partagés ; arbre à 1,40 FPS",
       "summary": "Les tampons de lecture individuels des cibles couleur sont supprimés. Luminosité et arbre présentent chacun 42 images en 30 secondes : environ 1,40 FPS contre 1,26. Les historiques de cache diffèrent, empêchant une attribution précise. Les bandes persistent ; le film illustré est atteint, sans contrôle du personnage confirmé.",
