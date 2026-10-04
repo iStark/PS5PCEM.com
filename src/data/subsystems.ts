@@ -58,7 +58,7 @@ export const subsystems: Subsystem[] = [
       "Structured control flow restores UI text in titles that previously lost it.",
       "Typed buffer accesses retain their resource bindings and per-access formats; comparison samplers follow the instructions that use them.",
       "Asynchronous pipeline compilation is enabled by default with two workers and a compute shader warmup catalog.",
-      "Shader coverage remains incomplete; ten recorded SPIR-V unit failures and one reported leak remain in the 0.3.2 validation run.",
+      "Shader coverage remains incomplete; the 0.3.3 validation run reproduces the same ten SPIR-V test failures and one reported leak as the 0.3.2 tag.",
     ],
   },
   {

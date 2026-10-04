@@ -8,7 +8,7 @@ export const extractor = {
   cli: "pkgextractor <game.pkg> [-o <output-dir>]",
   title: "PS5 package extractor",
   summary:
-    "Included with PS5PCEM 0.3.2, pkgextractor reads supported PS5 debug packages (FPKG / FIH), writes sce_sys metadata, and extracts application files from the inner PFS, including observed NAPS layouts and Kraken-compressed payloads.",
+    "Included with PS5PCEM 0.3.3, pkgextractor reads supported PS5 debug packages (FPKG / FIH), writes sce_sys metadata, and extracts application files from the inner PFS, including observed NAPS layouts and Kraken-compressed payloads.",
 } as const;
 
 export const extractorCheck = {

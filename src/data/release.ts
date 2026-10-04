@@ -21,56 +21,51 @@ export type Release = {
   assets: ReleaseAsset[];
 };
 
-const TAG = "v0.3.2";
-const DOWNLOAD_BASE = `https://github.com/iStark/PS5PCEM/releases/download/${TAG}`;
+const TAG = "v0.3.3";
 
 export const latestRelease: Release = {
-  version: "0.3.2",
-  tag: TAG,
-  publishedAt: "2026-09-24T14:59:54Z",
-  prerelease: false,
-  notesUrl:
-    "https://github.com/iStark/PS5PCEM/blob/v0.3.2/docs/release-notes/v0.3.2.md",
-  releaseUrl: `https://github.com/iStark/PS5PCEM/releases/tag/${TAG}`,
-  assets: [
+  "version": "0.3.3",
+  "tag": "v0.3.3",
+  "publishedAt": "2026-10-04T23:47:06Z",
+  "prerelease": false,
+  "notesUrl": "https://github.com/iStark/PS5PCEM/blob/v0.3.3/docs/release-notes/v0.3.3.md",
+  "releaseUrl": "https://github.com/iStark/PS5PCEM/releases/tag/v0.3.3",
+  "assets": [
     {
-      label: "Portable ZIP",
-      fileName: "PS5PCEM-0.3.2-windows-x64-portable.zip",
-      url: `${DOWNLOAD_BASE}/PS5PCEM-0.3.2-windows-x64-portable.zip`,
-      size: 29220424,
-      sha256:
-        "384ae82e6ae30f5800953af513f1eb167f95381884ca0add01a636236f5855a8",
-      description:
-        "Extract anywhere and run ps5pcem.exe. Settings and savedata stay beside the application.",
-      primary: true,
+      "label": "Portable ZIP",
+      "fileName": "PS5PCEM-0.3.3-windows-x64-portable.zip",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.3/PS5PCEM-0.3.3-windows-x64-portable.zip",
+      "size": 129837911,
+      "sha256": "b89dc8b60e932425e480a9262d9ba3ec51a8af15c15b6d66c1df93bff573a912",
+      "description": "Extract anywhere and run ps5pcem.exe. Settings and savedata stay beside the application.",
+      "primary": true
     },
     {
-      label: "Per-user installer",
-      fileName: "PS5PCEM-0.3.2-windows-x64-setup.exe",
-      url: `${DOWNLOAD_BASE}/PS5PCEM-0.3.2-windows-x64-setup.exe`,
-      size: 29071000,
-      sha256:
-        "bba5e8d8f3d10c6ce7f6958d36e1f8ee86e26696331a3b389d6b1b5835e8c974",
-      description:
-        "Installs for the current user only. No administrator rights required.",
+      "label": "Per-user installer",
+      "fileName": "PS5PCEM-0.3.3-windows-x64-setup.exe",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.3/PS5PCEM-0.3.3-windows-x64-setup.exe",
+      "size": 128205208,
+      "sha256": "090e6cbc0818f1a59c65803820cb5fa19daa43550f76794e0d44f9a469d5df03",
+      "description": "Installs for the current user only. No administrator rights required."
     },
     {
-      label: "SHA-256 checksums",
-      fileName: "SHA256SUMS.txt",
-      url: `${DOWNLOAD_BASE}/SHA256SUMS.txt`,
-      size: 209,
-      description:
-        "Verify a download before running it. Compare against the hashes listed on this page.",
-    },
-  ],
+      "label": "SHA-256 checksums",
+      "fileName": "SHA256SUMS.txt",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.3/SHA256SUMS.txt",
+      "size": 209,
+      "sha256": "13b6a270f9f13d0d04b38f4c9e13a796917bdc966720abe085ecb797d308a085",
+      "description": "Verify a download before running it. Compare against the hashes listed on this page."
+    }
+  ]
 };
 
 export const releaseHighlights = [
-  "Rita's Rewind is confirmed playable and completable. Quake II gains model, lighting-data and shadow-sampling fixes.",
-  "Ghost of Yōtei gains movie audio and reaches later 3D scenes. Its measured tree scene is still only 0.73 FPS; late loading remains unstable.",
-  "Tetris reaches a readable license screen and Journey Mode selection with fewer rendering artifacts and faster frames. Gameplay and stability remain unverified.",
-  "Shader compilation uses two workers by default, with parallel CPU command preparation and fewer unnecessary GPU waits.",
-  "The launcher displays 0.3.2, remembers 32 titles across pages of eight, and includes the debug PKG extractor with Kraken support.",
+  "Subnautica: Below Zero creates and restores a world; its latest development repeat measures 10.60 FPS combined in the world and 15.50 FPS in the menu.",
+  "GTA III reaches walking and driving: 8.53 FPS combined at the opening position, with lower FPS in wider city views and remaining rendering defects.",
+  "Little Nightmares reaches character control and save/reload at 3.73–4.46 FPS; Big Helmet Heroes reaches its tutorial.",
+  "Ghost of Yōtei reaches the post-tree cinematic and illustrated movie. Character control remains unconfirmed; compilation, texture churn and lighting defects remain.",
+  "Shared resource analysis, corrected GPU publications, runtime texture tables and smaller shader-cache allocations reduce repeated work and memory overhead.",
+  "Version 0.3.3 includes the GTA III package-extraction fix, launcher extraction progress, 1080p startup preferences and timestamped signatures on all three applications and the installer."
 ] as const;
 
 export const releaseHistory: {
@@ -80,10 +75,16 @@ export const releaseHistory: {
   url: string;
 }[] = [
   {
-    version: "0.3.2",
+    version: "0.3.3",
     tag: TAG,
     publishedAt: latestRelease.publishedAt,
     url: latestRelease.releaseUrl,
+  },
+  {
+    version: "0.3.2",
+    tag: "v0.3.2",
+    publishedAt: "2026-09-24T14:59:54Z",
+    url: "https://github.com/iStark/PS5PCEM/releases/tag/v0.3.2",
   },
   {
     version: "0.3.1-beta.1",
