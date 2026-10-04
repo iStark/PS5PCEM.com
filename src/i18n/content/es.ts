@@ -347,6 +347,11 @@ const es: Content = {
   },
 
   history: {
+    "yotei-array-layer-coherence": {
+      "title": "Capas coherentes: vuelven los detalles del árbol",
+      "summary": "El seguimiento de superficies de color se limita a las capas seleccionadas para evitar que las vecinas invaliden su contenido en la GPU. Los arrays compatibles actualizan las capas modificadas en la GPU. El árbol registra 1,23 FPS durante 30 segundos, frente a 1,03 del control, con distintas fases de animación e historial de caché. La corteza vuelve a verse, pero persisten las rayas brillantes. La carga posterior alcanza el límite de memoria; no se ha confirmado el control del personaje.",
+      "imageAlt": "Corteza y ramas visibles con rayas verticales brillantes"
+    },
     "yotei-candidate-visual-check": {
       "title": "Prueba del candidato: persisten las estelas del árbol",
       "summary": "La tercera prueba mide 1,30 FPS en el árbol con otros límites de caché, pero muestra más estelas. Restaurar el límite de destinos de renderizado no lo corrige visiblemente. El usuario cierra la prueba durante la preparación de la escena; no se confirma el juego tras la cinemática. No es una mejora de FPS verificada; el ejecutable instalado sigue siendo el de referencia hasta una comparación visual controlada.",

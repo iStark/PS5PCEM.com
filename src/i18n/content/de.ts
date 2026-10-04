@@ -346,6 +346,11 @@ const de: Content = {
   },
 
   history: {
+    "yotei-array-layer-coherence": {
+      "title": "Korrekte Array-Schichten: Baumdetails wieder sichtbar",
+      "summary": "Die Verfolgung von Farbflächen ist auf ausgewählte Schichten begrenzt; benachbarte Schichten verwerfen keine GPU-Inhalte mehr. Kompatible Texturarrays aktualisieren geänderte Schichten auf der GPU. Am Baum wurden über 30 Sekunden 1,23 FPS gemessen, gegenüber 1,03 im Kontrolllauf; Animationsphase und Cache-Verlauf unterscheiden sich. Die Rinde ist sichtbar, helle Streifen bleiben. Das Laden nach der Einrichtung erreicht weiterhin das Speicherlimit; Figurensteuerung ist nicht bestätigt.",
+      "imageAlt": "Baumrinde und Äste sind sichtbar, helle vertikale Streifen bleiben"
+    },
     "yotei-candidate-visual-check": {
       "title": "Prüfung des Kandidaten: Baum bleibt verschmiert",
       "summary": "Der dritte Lauf misst 1,30 FPS am Baum mit anderen Cache-Budgets, zeigt aber stärkeres Verschmieren. Das Wiederherstellen des Render-Target-Limits behebt dies nicht sichtbar. Der Nutzer beendet den Lauf während der Szenenvorbereitung; Spielgeschehen nach der Zwischensequenz ist nicht bestätigt. Kein verifizierter FPS-Gewinn; der installierte Runner bleibt bis zu einem sauberen Bildvergleich unverändert.",

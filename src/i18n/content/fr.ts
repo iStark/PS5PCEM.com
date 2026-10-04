@@ -346,6 +346,11 @@ const fr: Content = {
   },
 
   history: {
+    "yotei-array-layer-coherence": {
+      "title": "Cohérence des couches : les détails de l’arbre réapparaissent",
+      "summary": "Le suivi des surfaces couleur est limité aux couches sélectionnées : les couches voisines n’invalident plus leur contenu GPU. Les tableaux de textures compatibles actualisent les couches modifiées sur le GPU. Sur 30 secondes, l’arbre affiche 1,23 FPS contre 1,03 pour le témoin, avec une animation et un historique de cache différents. L’écorce est visible, mais les bandes lumineuses persistent. Le chargement suivant atteint encore la limite de mémoire ; le contrôle du personnage n’est pas confirmé.",
+      "imageAlt": "Écorce et branches visibles, avec des bandes verticales lumineuses"
+    },
     "yotei-candidate-visual-check": {
       "title": "Vérification du candidat : l’arbre reste étiré",
       "summary": "Le troisième essai mesure 1,30 FPS à l’arbre avec d’autres budgets de cache, mais l’image présente davantage de traînées. Rétablir la limite des cibles de rendu ne corrige pas visiblement le défaut. L’utilisateur ferme l’essai pendant la préparation de la scène ; le jeu après la cinématique reste non confirmé. Aucun gain de FPS vérifié ; l’exécutable installé reste la référence avant une comparaison visuelle contrôlée.",

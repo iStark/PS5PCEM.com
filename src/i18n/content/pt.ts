@@ -346,6 +346,11 @@ const pt: Content = {
   },
 
   history: {
+    "yotei-array-layer-coherence": {
+      "title": "Coerência das camadas: os detalhes da árvore regressam",
+      "summary": "O acompanhamento das superfícies de cor limita-se às camadas selecionadas, evitando que alterações nas vizinhas invalidem o conteúdo na GPU. Os arrays compatíveis atualizam as camadas modificadas na GPU. A árvore registou 1,23 FPS em 30 segundos, contra 1,03 no controlo, com fases de animação e histórico de cache diferentes. A casca voltou a aparecer, mas as riscas brilhantes persistem. O carregamento após a configuração ainda atinge o limite de memória; o controlo da personagem não está confirmado.",
+      "imageAlt": "Casca e ramos visíveis com riscas verticais brilhantes"
+    },
     "yotei-candidate-visual-check": {
       "title": "Verificação da nova versão: rastros na árvore persistem",
       "summary": "A terceira execução mede 1,30 FPS na árvore com outros limites de cache, mas a imagem apresenta mais rastros. Restaurar o limite de alvos de renderização não corrige o defeito visivelmente. O usuário fecha a execução durante a preparação da cena; a jogabilidade após a cena não é confirmada. Não há ganho de FPS verificado; o executável instalado permanece o de referência até uma comparação visual controlada.",

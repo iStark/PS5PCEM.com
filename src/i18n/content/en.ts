@@ -371,6 +371,11 @@ const content: Content = {
   },
 
   history: {
+    "yotei-array-layer-coherence": {
+      "title": "Array-layer coherence: tree detail returns",
+      "summary": "Restricting color-surface tracking to the selected slices prevents neighboring layers from invalidating GPU contents. Compatible sampled arrays now refresh dirty layers on the GPU. A 30-second tree interval records 1.23 FPS versus 1.03 in the control, with differing animation phases and cache history. Bark is visible again, but bright streaks remain. Loading beyond setup still reaches the host memory limit; character control is unconfirmed.",
+      "imageAlt": "Tree bark and branches are visible; bright vertical streaks remain"
+    },
     "yotei-candidate-visual-check": {
       "title": "Candidate check: tree smearing remains",
       "summary": "The third run measures 1.30 FPS at the tree with different cache budgets, but the image is more smeared. Restoring the render-target limit does not visibly fix it. The user closes the run during scene preparation; post-cinematic gameplay is not confirmed. This is not a verified FPS gain, and the installed runner remains the baseline pending a clean visual comparison.",
