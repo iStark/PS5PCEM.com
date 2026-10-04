@@ -346,6 +346,11 @@ const fr: Content = {
   },
 
   history: {
+    "yotei-sparse-material-regions": {
+      "title": "Indices de matériaux précis et shaders plus petits",
+      "summary": "Le précédent essai près de l’arbre mesure 1,26 FPS ; les longues compilations initiales et la scène sombre suivante persistent. La recherche de textures conserve les indices possibles après masquage, sans parcourir tous les enregistrements intermédiaires. Les pages capturées contiguës partagent une région vérifiée. Un shader de fragment de test avec une grande table diminue de 22,8 % à résultat identique ; 12 tests mémoire et 26 tests de sampler passent la validation Vulkan. Le nouvel essai du jeu continue. Le gain de FPS et le contrôle du personnage restent à confirmer.",
+      "imageAlt": ""
+    },
     "yotei-integer-material-flat-reads": {
       "title": "Indices entiers des matériaux et lectures mémoire vérifiées",
       "summary": "La table capturée fournit désormais 84 textures 2D valides au lieu de 229 candidats comprenant de fausses images en tableau. Le jeu franchit cet accès puis révèle une lecture FLAT non prise en charge. Le nouveau chemin avec contrôle des adresses passe dix cas Vulkan ; 26 cas de samplers passent aussi. Le précédent essai près de l’arbre mesure 1,16 FPS, sans accélération démontrée. La compilation initiale et la pression mémoire causent encore de longues pauses. Les défauts d’éclairage persistent et le contrôle du personnage reste non confirmé.",

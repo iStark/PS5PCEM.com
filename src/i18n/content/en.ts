@@ -371,6 +371,11 @@ const content: Content = {
   },
 
   history: {
+    "yotei-sparse-material-regions": {
+      "title": "Sparse material indices and smaller shaders",
+      "summary": "The preceding tree repeat records 1.26 FPS; severe first-use stalls and dark post-tree rendering remain. Texture discovery now retains the possible masked indices instead of every intermediate record. Adjacent captured memory pages share one checked region. A native wide-table fragment is 22.8% smaller with the same pixel result; 12 memory-read cases and 26 sampler cases pass Vulkan validation. The game repeat is ongoing. A game FPS gain and character control are not yet confirmed.",
+      "imageAlt": ""
+    },
     "yotei-integer-material-flat-reads": {
       "title": "Integer material indices and checked memory reads",
       "summary": "The captured material table now resolves 84 valid 2D textures instead of 229 candidates containing false array images. The live run passes that lookup and exposes a later unsupported FLAT read. A new checked memory path passes ten Vulkan cases; 26 sampler cases also pass. The preceding tree repeat records 1.16 FPS, with no demonstrated speedup. First-use pipeline compilation and host memory pressure still cause severe stalls. Lighting defects remain and character control is unconfirmed.",

@@ -346,6 +346,11 @@ const de: Content = {
   },
 
   history: {
+    "yotei-sparse-material-regions": {
+      "title": "Gezielte Materialindizes und kleinere Shader",
+      "summary": "Der vorherige Test am Baum erreicht 1,26 FPS; lange Erstkompilierungen und die dunkle Szene danach bleiben bestehen. Die Textursuche berücksichtigt nun die möglichen maskierten Indizes statt aller Zwischenwerte. Benachbarte erfasste Speicherseiten bilden einen gemeinsam geprüften Bereich. Ein nativer Fragmentshader mit großer Tabelle wird bei gleichem Pixelresultat um 22,8 % kleiner; 12 Speichertests und 26 Samplertests bestehen die Vulkan-Validierung. Der erneute Spieltest läuft. Höhere Spiel-FPS und die Figurensteuerung sind noch nicht bestätigt.",
+      "imageAlt": ""
+    },
     "yotei-integer-material-flat-reads": {
       "title": "Ganzzahlige Materialindizes und geprüfte Speicherzugriffe",
       "summary": "Die erfasste Materialtabelle liefert jetzt 84 gültige 2D-Texturen statt 229 Kandidaten mit falschen Array-Bildern. Der Spieltest passiert diesen Zugriff und zeigt danach einen nicht unterstützten FLAT-Lesezugriff. Der neue geprüfte Speicherpfad besteht zehn Vulkan-Fälle; auch 26 Sampler-Fälle bestehen. Die vorherige Wiederholung am Baum misst 1,16 FPS, ohne nachgewiesene Beschleunigung. Erste Pipeline-Kompilierung und Speicherdruck verursachen weiterhin lange Pausen. Beleuchtungsfehler bleiben; die Figurensteuerung ist unbestätigt.",
