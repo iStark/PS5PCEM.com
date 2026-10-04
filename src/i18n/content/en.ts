@@ -371,9 +371,14 @@ const content: Content = {
   },
 
   history: {
+    "yotei-cache-memory": {
+      "title": "Post-tree bottlenecks and lower cache memory",
+      "summary": "The repeat reaches the post-tree 3D cinematic, with incomplete lighting and character surfaces. The tree remains at 1.231 FPS; a later cinematic interval presents two frames in 30 seconds (0.067 FPS). One 198-second transition frame spends 177 seconds creating pipelines. Later frames also reload 1.4–2.6 GiB of textures. Shader variants now share canonical program bytes, and large Windows driver-cache snapshots use a temporary file mapping. A 256 MiB isolated snapshot test saves about 256 MiB of additional private memory and produces identical files. All 21 cache tests and three native Vulkan probes pass. These memory changes have no new game FPS measurement; character control remains unconfirmed.",
+      "imageAlt": "Pause overlay over the incomplete post-tree cinematic"
+    },
     "yotei-color-export-routing": {
       "title": "Color export masks and attachment routing",
-      "summary": "The renderer now respects shader channel masks and routes compact color exports to the intended surfaces, including gaps between attachment slots. Six native Vulkan probes pass, checking retained pixels, mixed packing formats and pipeline reuse after a mask change. Active packed UNORM blending remains explicitly unsupported. Compiler experiments did not establish a useful speedup and were not enabled in the game. A live repeat is checking the effect after the tree; higher game FPS and character control are not yet confirmed.",
+      "summary": "The renderer now respects shader channel masks and routes compact color exports to the intended surfaces, including gaps between attachment slots. Six native Vulkan probes pass, checking retained pixels, mixed packing formats and pipeline reuse after a mask change. Active packed UNORM blending remains explicitly unsupported. Compiler experiments did not establish a useful speedup and were not enabled in the game. The repeat records 1.231 FPS at the tree and reaches the incomplete post-tree cinematic; character control is unconfirmed.",
       "imageAlt": ""
     },
     "yotei-runtime-image-tables": {

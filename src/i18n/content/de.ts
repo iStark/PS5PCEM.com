@@ -346,9 +346,14 @@ const de: Content = {
   },
 
   history: {
+    "yotei-cache-memory": {
+      "title": "Kosten nach dem Baum und weniger Cache-Speicher",
+      "summary": "Der Test erreicht die 3D-Zwischensequenz nach dem Baum; Beleuchtung und Figurenoberflächen bleiben fehlerhaft. Am Baum sind es weiterhin 1,231 FPS, später zwei Bilder in 30 Sekunden (0,067 FPS). Ein Übergangsbild benötigt 198 Sekunden, davon 177 für die Pipeline-Erstellung. Weitere Bilder laden 1,4–2,6 GiB Texturen erneut. Shader-Varianten teilen nun kanonische Programmdaten; große Windows-Treiber-Cache-Snapshots verwenden eine temporäre Dateizuordnung. Ein isolierter 256-MiB-Test spart etwa 256 MiB zusätzlichen privaten Speicher bei identischen Dateien. Alle 21 Cache-Tests und drei Vulkan-Prüfungen bestehen. Neue Spiel-FPS für diese Änderungen und Figurensteuerung sind nicht bestätigt.",
+      "imageAlt": "Pausenanzeige über der unvollständigen Szene nach dem Baum"
+    },
     "yotei-color-export-routing": {
       "title": "Farbkanalmasken und Zuordnung der Renderziele",
-      "summary": "Der Renderer berücksichtigt nun Shader-Kanalmasken und ordnet kompakte Farbausgaben den richtigen Renderzielen zu, auch bei Lücken zwischen den Slots. Sechs native Vulkan-Prüfungen bestehen: erhaltene Pixel, verschiedene Packformate und Pipeline-Wiederverwendung nach Maskenwechsel. Blending aktiver gepackter UNORM-Ziele bleibt nicht unterstützt. Compiler-Versuche zeigen keinen nützlichen Geschwindigkeitsgewinn und wurden nicht im Spiel aktiviert. Ein Spieltest prüft die Szenen nach dem Baum; höhere FPS und Figurensteuerung sind noch nicht bestätigt.",
+      "summary": "Der Renderer berücksichtigt nun Shader-Kanalmasken und ordnet kompakte Farbausgaben den richtigen Renderzielen zu, auch bei Lücken zwischen den Slots. Sechs native Vulkan-Prüfungen bestehen: erhaltene Pixel, verschiedene Packformate und Pipeline-Wiederverwendung nach Maskenwechsel. Blending aktiver gepackter UNORM-Ziele bleibt nicht unterstützt. Compiler-Versuche zeigen keinen nützlichen Geschwindigkeitsgewinn und wurden nicht im Spiel aktiviert. Der Test misst 1,231 FPS am Baum und erreicht die fehlerhafte Zwischensequenz danach; Figurensteuerung bleibt unbestätigt.",
       "imageAlt": ""
     },
     "yotei-runtime-image-tables": {

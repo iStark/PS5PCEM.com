@@ -346,9 +346,14 @@ const fr: Content = {
   },
 
   history: {
+    "yotei-cache-memory": {
+      "title": "Coûts après l’arbre et mémoire des caches",
+      "summary": "Le test atteint la cinématique 3D après l’arbre, avec un éclairage et des surfaces de personnages incomplets. L’arbre reste à 1,231 FPS ; un intervalle ultérieur affiche deux images en 30 secondes (0,067 FPS). Sur une image de transition de 198 secondes, 177 servent à créer les pipelines. Les images suivantes rechargent aussi 1,4–2,6 Gio de textures. Les variantes de shaders partagent désormais les données canoniques du programme ; les grands instantanés du cache pilote Windows utilisent un fichier temporaire mappé. Un test isolé de 256 Mio économise environ 256 Mio de mémoire privée supplémentaire avec des fichiers identiques. Les 21 tests de cache et trois tests Vulkan réussissent. Aucun nouveau gain de FPS ni contrôle du personnage n’est confirmé.",
+      "imageAlt": "Écran de pause sur la cinématique incomplète après l’arbre"
+    },
     "yotei-color-export-routing": {
       "title": "Masques de couleur et destinations des sorties",
-      "summary": "Le moteur respecte désormais les masques de canaux du shader et associe les sorties couleur compactes aux bonnes surfaces, même avec des emplacements intermédiaires désactivés. Six tests Vulkan réussissent : pixels conservés, formats compactés différents et réutilisation du pipeline après changement du masque. Le mélange sur une surface UNORM compactée active reste non pris en charge. Les essais de compilation n’apportent pas de gain utile et ne sont pas activés en jeu. Un nouveau test vérifie les scènes après l’arbre ; hausse des FPS et contrôle du personnage restent à confirmer.",
+      "summary": "Le moteur respecte désormais les masques de canaux du shader et associe les sorties couleur compactes aux bonnes surfaces, même avec des emplacements intermédiaires désactivés. Six tests Vulkan réussissent : pixels conservés, formats compactés différents et réutilisation du pipeline après changement du masque. Le mélange sur une surface UNORM compactée active reste non pris en charge. Les essais de compilation n’apportent pas de gain utile et ne sont pas activés en jeu. Le test mesure 1,231 FPS près de l’arbre et atteint la cinématique incomplète suivante ; le contrôle du personnage reste à confirmer.",
       "imageAlt": ""
     },
     "yotei-runtime-image-tables": {

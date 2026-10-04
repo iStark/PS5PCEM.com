@@ -346,9 +346,14 @@ const pt: Content = {
   },
 
   history: {
+    "yotei-cache-memory": {
+      "title": "Custos após a árvore e menos memória de cache",
+      "summary": "A execução chega à cena 3D após a árvore, ainda com iluminação e superfícies dos personagens incompletas. A árvore mantém 1,231 FPS; um intervalo posterior apresenta dois quadros em 30 segundos (0,067 FPS). Um quadro de transição leva 198 segundos, sendo 177 para criar pipelines. Quadros posteriores recarregam 1,4–2,6 GiB de texturas. Variantes de shaders agora compartilham dados canônicos do programa; grandes snapshots do cache do driver no Windows usam um arquivo temporário mapeado. Um teste isolado de 256 MiB economiza cerca de 256 MiB de memória privada adicional com arquivos idênticos. Passam 21 testes de cache e três de Vulkan. Não há nova medição de ganho de FPS nem confirmação de controle do personagem.",
+      "imageAlt": "Tela de pausa sobre a cena incompleta após a árvore"
+    },
     "yotei-color-export-routing": {
       "title": "Máscaras de cor e destinos das saídas",
-      "summary": "O renderizador respeita as máscaras de canais do shader e encaminha as saídas compactas para as superfícies corretas, inclusive com espaços entre os slots. Seis testes Vulkan passam: preservação de pixels, diferentes formatos compactados e reutilização do pipeline após mudar a máscara. A mistura em superfícies UNORM compactadas ativas continua sem suporte. Os testes do compilador não mostraram ganho útil e não foram ativados no jogo. Uma nova execução verifica as cenas após a árvore; mais FPS e controle do personagem ainda não foram confirmados.",
+      "summary": "O renderizador respeita as máscaras de canais do shader e encaminha as saídas compactas para as superfícies corretas, inclusive com espaços entre os slots. Seis testes Vulkan passam: preservação de pixels, diferentes formatos compactados e reutilização do pipeline após mudar a máscara. A mistura em superfícies UNORM compactadas ativas continua sem suporte. Os testes do compilador não mostraram ganho útil e não foram ativados no jogo. A execução registra 1,231 FPS na árvore e chega à cena incompleta seguinte; o controle do personagem permanece sem confirmação.",
       "imageAlt": ""
     },
     "yotei-runtime-image-tables": {

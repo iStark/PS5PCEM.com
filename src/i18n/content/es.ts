@@ -347,9 +347,14 @@ const es: Content = {
   },
 
   history: {
+    "yotei-cache-memory": {
+      "title": "Costes tras el árbol y menor memoria de caché",
+      "summary": "La prueba llega a la cinemática 3D tras el árbol, con iluminación y superficies de personajes incompletas. El árbol mantiene 1,231 FPS; un intervalo posterior presenta dos imágenes en 30 segundos (0,067 FPS). De los 198 segundos de un fotograma de transición, 177 corresponden a crear pipelines. Otros fotogramas recargan 1,4–2,6 GiB de texturas. Las variantes de shaders comparten ahora los datos canónicos del programa; las grandes instantáneas de la caché del controlador en Windows usan un archivo temporal mapeado. Una prueba aislada de 256 MiB ahorra unos 256 MiB de memoria privada adicional con archivos idénticos. Pasan 21 pruebas de caché y tres de Vulkan. No se confirma una nueva mejora de FPS ni control del personaje.",
+      "imageAlt": "Pausa sobre la cinemática incompleta tras el árbol"
+    },
     "yotei-color-export-routing": {
       "title": "Máscaras de color y destinos de las salidas",
-      "summary": "El renderizador respeta las máscaras de canales del shader y dirige las salidas compactas a las superficies correctas, incluso con huecos entre posiciones. Pasan seis pruebas Vulkan: conservación de píxeles, distintos formatos empaquetados y reutilización del pipeline tras cambiar la máscara. La mezcla en superficies UNORM empaquetadas activas sigue sin soporte. Las pruebas del compilador no demostraron una mejora útil y no se activaron en el juego. Se comprueba el efecto después del árbol; todavía no se confirman más FPS ni control del personaje.",
+      "summary": "El renderizador respeta las máscaras de canales del shader y dirige las salidas compactas a las superficies correctas, incluso con huecos entre posiciones. Pasan seis pruebas Vulkan: conservación de píxeles, distintos formatos empaquetados y reutilización del pipeline tras cambiar la máscara. La mezcla en superficies UNORM empaquetadas activas sigue sin soporte. Las pruebas del compilador no demostraron una mejora útil y no se activaron en el juego. La prueba registra 1,231 FPS en el árbol y llega a la cinemática incompleta posterior; el control del personaje sigue sin confirmar.",
       "imageAlt": ""
     },
     "yotei-runtime-image-tables": {
