@@ -371,6 +371,16 @@ const content: Content = {
   },
 
   history: {
+    "yotei-illustrated-movie-compilation": {
+      "title": "Illustrated movie reached; compute compilation stalls",
+      "summary": "The updated runner passes the tree and dark cinematic into the illustrated narrative movie. Character control is still unconfirmed. The tree repeat remains 1.26 FPS; the read-only texture reuse fix shows no additional game FPS gain. One later frame takes 239.4 seconds, including 234.9 seconds creating compute pipelines. A live texture-cache increase coincides with the scene change and proves no speedup. Lighting, streaks and a missing pixel-shader resource remain open.",
+      "imageAlt": "Illustrated movie after the tree and dark cinematic; character control unconfirmed"
+    },
+    "yotei-post-tree-texture-reuse": {
+      "title": "Post-tree cinematic: compilation and texture churn",
+      "summary": "The combined build reaches a very dark cinematic after setup. One cold frame takes 59.3 seconds, including 35.4 seconds of graphics pipeline creation. Reducing caches to contain memory use causes several GiB of texture uploads per frame. A separate Vulkan regression verifies that read-only storage bindings no longer invalidate sampled textures. Gameplay FPS and character control are still unconfirmed; streaks and a missing pixel-shader resource remain.",
+      "imageAlt": "Very dark cinematic after the tree; character control is not confirmed"
+    },
     "yotei-array-layer-coherence": {
       "title": "Array-layer coherence: tree detail returns",
       "summary": "Restricting color-surface tracking to the selected slices prevents neighboring layers from invalidating GPU contents. Compatible sampled arrays now refresh dirty layers on the GPU. A 30-second tree interval records 1.23 FPS versus 1.03 in the control, with differing animation phases and cache history. Bark is visible again, but bright streaks remain. Loading beyond setup still reaches the host memory limit; character control is unconfirmed.",

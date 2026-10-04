@@ -346,6 +346,16 @@ const pt: Content = {
   },
 
   history: {
+    "yotei-illustrated-movie-compilation": {
+      "title": "Filme ilustrado alcançado; pausas de compilação",
+      "summary": "O executável atualizado passa pela árvore e pela cinemática escura até chegar ao filme ilustrado. O controle do personagem ainda não foi confirmado. O novo teste da árvore mantém 1,26 FPS; a reutilização após leituras não demonstra ganho adicional de FPS. Um quadro posterior leva 239,4 segundos, incluindo 234,9 na criação de pipelines de computação. O aumento do cache de texturas coincide com a mudança de cena e não comprova aceleração. Iluminação, faixas e um recurso de pixel shader ausente continuam pendentes.",
+      "imageAlt": "Filme ilustrado após a árvore e a cinemática escura; controle do personagem não confirmado"
+    },
+    "yotei-post-tree-texture-reuse": {
+      "title": "Cena após a árvore: compilação e recargas de texturas",
+      "summary": "A versão combinada chega a uma cinemática muito escura após a configuração. Um quadro a frio demora 59,3 segundos, incluindo 35,4 para criar pipelines gráficos. Reduzir os caches para limitar a memória provoca vários GiB de uploads de texturas por quadro. Um teste Vulkan separado confirma que leituras de storage images já não invalidam as texturas amostradas. O FPS no gameplay e o controle do personagem continuam sem confirmação; persistem as faixas e um recurso de pixel shader não resolvido.",
+      "imageAlt": "Cinemática muito escura após a árvore; controle do personagem não confirmado"
+    },
     "yotei-array-layer-coherence": {
       "title": "Coerência das camadas: os detalhes da árvore regressam",
       "summary": "O acompanhamento das superfícies de cor limita-se às camadas selecionadas, evitando que alterações nas vizinhas invalidem o conteúdo na GPU. Os arrays compatíveis atualizam as camadas modificadas na GPU. A árvore registou 1,23 FPS em 30 segundos, contra 1,03 no controlo, com fases de animação e histórico de cache diferentes. A casca voltou a aparecer, mas as riscas brilhantes persistem. O carregamento após a configuração ainda atinge o limite de memória; o controlo da personagem não está confirmado.",

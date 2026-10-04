@@ -347,6 +347,16 @@ const es: Content = {
   },
 
   history: {
+    "yotei-illustrated-movie-compilation": {
+      "title": "Película ilustrada alcanzada; pausas de compilación",
+      "summary": "El ejecutable actualizado supera el árbol y la cinemática oscura hasta la película ilustrada. El control del personaje sigue sin confirmarse. La repetición del árbol mantiene 1,26 FPS; la reutilización tras lecturas no aporta una mejora adicional de FPS demostrada. Un fotograma posterior tarda 239,4 segundos, incluidos 234,9 creando pipelines de cómputo. El aumento de la caché de texturas coincide con el cambio de escena y no demuestra una aceleración. Persisten los problemas de iluminación, franjas y un recurso de pixel shader ausente.",
+      "imageAlt": "Película ilustrada tras el árbol y la cinemática oscura; control del personaje sin confirmar"
+    },
+    "yotei-post-tree-texture-reuse": {
+      "title": "Escena tras el árbol: compilación y recarga de texturas",
+      "summary": "La compilación combinada llega a una cinemática muy oscura tras la configuración. Un fotograma en frío tarda 59,3 segundos, incluidos 35,4 en crear pipelines gráficos. Reducir las cachés para limitar la memoria provoca varios GiB de cargas de texturas por fotograma. Una prueba Vulkan independiente confirma que las lecturas de storage images ya no invalidan las texturas muestreadas. Los FPS durante el juego y el control del personaje siguen sin confirmarse; persisten las franjas y un recurso de pixel shader sin resolver.",
+      "imageAlt": "Cinemática muy oscura tras el árbol; control del personaje sin confirmar"
+    },
     "yotei-array-layer-coherence": {
       "title": "Capas coherentes: vuelven los detalles del árbol",
       "summary": "El seguimiento de superficies de color se limita a las capas seleccionadas para evitar que las vecinas invaliden su contenido en la GPU. Los arrays compatibles actualizan las capas modificadas en la GPU. El árbol registra 1,23 FPS durante 30 segundos, frente a 1,03 del control, con distintas fases de animación e historial de caché. La corteza vuelve a verse, pero persisten las rayas brillantes. La carga posterior alcanza el límite de memoria; no se ha confirmado el control del personaje.",

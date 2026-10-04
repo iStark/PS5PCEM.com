@@ -346,6 +346,16 @@ const de: Content = {
   },
 
   history: {
+    "yotei-illustrated-movie-compilation": {
+      "title": "Gezeichneter Film erreicht; lange Compute-Kompilierung",
+      "summary": "Der aktualisierte Runner erreicht nach Baum und dunkler Filmsequenz den gezeichneten Erzählfilm. Die Figurensteuerung ist noch unbestätigt. Der Baumtest bleibt bei 1,26 FPS; die Wiederverwendung nach reinen Lesezugriffen bringt keinen zusätzlichen nachgewiesenen FPS-Gewinn. Ein späterer Frame dauert 239,4 Sekunden, davon 234,9 für Compute-Pipelines. Die Vergrößerung des Textur-Caches fällt mit dem Szenenwechsel zusammen und belegt keine Beschleunigung. Beleuchtung, Streifen und eine fehlende Pixel-Shader-Ressource bleiben offen.",
+      "imageAlt": "Gezeichneter Film nach dem Baum und der dunklen Filmsequenz; Figurensteuerung unbestätigt"
+    },
+    "yotei-post-tree-texture-reuse": {
+      "title": "Filmsequenz nach dem Baum: Kompilierung und Texturwechsel",
+      "summary": "Der kombinierte Build erreicht nach der Einrichtung eine sehr dunkle Filmsequenz. Ein kalter Frame dauert 59,3 Sekunden, davon 35,4 für die Erstellung von Grafik-Pipelines. Kleinere Caches begrenzen den Speicherverbrauch, verursachen aber mehrere GiB Textur-Uploads pro Frame. Ein separater Vulkan-Test bestätigt, dass reine Storage-Image-Lesezugriffe gespeicherte Sampled-Texturen nicht mehr ungültig machen. Gameplay-FPS und Figurensteuerung sind unbestätigt; Streifen und eine fehlende Pixel-Shader-Ressource bleiben.",
+      "imageAlt": "Sehr dunkle Filmsequenz nach dem Baum; Figurensteuerung unbestätigt"
+    },
     "yotei-array-layer-coherence": {
       "title": "Korrekte Array-Schichten: Baumdetails wieder sichtbar",
       "summary": "Die Verfolgung von Farbflächen ist auf ausgewählte Schichten begrenzt; benachbarte Schichten verwerfen keine GPU-Inhalte mehr. Kompatible Texturarrays aktualisieren geänderte Schichten auf der GPU. Am Baum wurden über 30 Sekunden 1,23 FPS gemessen, gegenüber 1,03 im Kontrolllauf; Animationsphase und Cache-Verlauf unterscheiden sich. Die Rinde ist sichtbar, helle Streifen bleiben. Das Laden nach der Einrichtung erreicht weiterhin das Speicherlimit; Figurensteuerung ist nicht bestätigt.",

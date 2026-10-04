@@ -346,6 +346,16 @@ const fr: Content = {
   },
 
   history: {
+    "yotei-illustrated-movie-compilation": {
+      "title": "Film illustré atteint ; longues compilations de calcul",
+      "summary": "La version mise à jour dépasse l’arbre et la cinématique sombre pour atteindre le film illustré. Le contrôle du personnage reste non confirmé. Le nouveau test de l’arbre reste à 1,26 FPS ; la réutilisation après lecture seule ne démontre aucun gain supplémentaire en jeu. Une image ultérieure prend 239,4 secondes, dont 234,9 pour créer les pipelines de calcul. L’augmentation du cache de textures coïncide avec le changement de scène et ne prouve aucune accélération. Éclairage, bandes et ressource de pixel shader manquante restent à corriger.",
+      "imageAlt": "Film illustré après l’arbre et la cinématique sombre ; contrôle du personnage non confirmé"
+    },
+    "yotei-post-tree-texture-reuse": {
+      "title": "Cinématique après l’arbre : compilation et rechargements de textures",
+      "summary": "La version combinée atteint une cinématique très sombre après la configuration. Une image à froid prend 59,3 secondes, dont 35,4 pour créer les pipelines graphiques. Réduire les caches pour limiter la mémoire provoque plusieurs Gio de chargements de textures par image. Un test Vulkan distinct confirme que les lectures de storage images n’invalident plus les textures échantillonnées. Les FPS en jeu et le contrôle du personnage restent non confirmés ; des bandes et une ressource de pixel shader non résolue subsistent.",
+      "imageAlt": "Cinématique très sombre après l’arbre ; contrôle du personnage non confirmé"
+    },
     "yotei-array-layer-coherence": {
       "title": "Cohérence des couches : les détails de l’arbre réapparaissent",
       "summary": "Le suivi des surfaces couleur est limité aux couches sélectionnées : les couches voisines n’invalident plus leur contenu GPU. Les tableaux de textures compatibles actualisent les couches modifiées sur le GPU. Sur 30 secondes, l’arbre affiche 1,23 FPS contre 1,03 pour le témoin, avec une animation et un historique de cache différents. L’écorce est visible, mais les bandes lumineuses persistent. Le chargement suivant atteint encore la limite de mémoire ; le contrôle du personnage n’est pas confirmé.",
