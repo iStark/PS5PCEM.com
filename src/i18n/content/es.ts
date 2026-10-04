@@ -347,6 +347,16 @@ const es: Content = {
   },
 
   history: {
+    "yotei-selected-flat-reads": {
+      "title": "Menos lecturas y menor coste de compilación",
+      "summary": "Las lecturas FLAT seleccionan primero el búfer, conservando solapamientos, direcciones no alineadas y avisos de error. El test controlado reduce la compilación de 46,55 a 39,36 segundos y el pico de memoria privada de 3,96 a 3,37 GB. Se descartó la variante con bucles más lenta. Las pruebas Vulkan pasan. No son FPS del juego; persisten las rayas y el renderizado incompleto, sin control del personaje confirmado. El runner instalado muestra 37 fotogramas en 30,046 segundos ante el árbol (1,231 FPS), sin mejora de FPS demostrada.",
+      "imageAlt": "Árbol en la selección de dificultad; persisten las rayas verticales brillantes"
+    },
+    "yotei-compiler-memory-audit": {
+      "title": "Compilación inicial y presión de memoria",
+      "summary": "La inspección de hilos activos confirma que el controlador compila durante la pausa posterior al árbol. El módulo compute original tarda 59,47 segundos y alcanza 7,40 GB de memoria privada en una prueba aislada. Reutilizar su entrada de caché tarda 14 ms; se conserva una copia de la caché anterior para repetir el juego. La optimización de SPIR-V sin conexión no mejora sustancialmente este caso. Son mediciones del compilador, no FPS del juego. Persisten las franjas del árbol y las escenas posteriores incompletas; el control del personaje sigue sin confirmarse.",
+      "imageAlt": ""
+    },
     "yotei-compact-shader-analysis": {
       "title": "Menos memoria de shaders; 1,26 FPS junto al árbol",
       "summary": "El IR de diagnóstico sin uso se libera al ejecutar el flujo decodificado. Junto al árbol, los arrays adicionales de 648 análisis de shaders ocupan cero bytes; se conservan el código original y las instrucciones decodificadas. La prueba presenta 38 fotogramas en 30,044 segundos (1,26 FPS), dentro del intervalo anterior, sin demostrar una mejora repetible. Pasan cinco pruebas específicas y las pruebas nativas de imágenes y materiales de Vulkan. Persisten las franjas del árbol y no se confirma el control del personaje. Runner y PDB locales actualizados con copia de seguridad.",

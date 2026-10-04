@@ -371,6 +371,16 @@ const content: Content = {
   },
 
   history: {
+    "yotei-selected-flat-reads": {
+      "title": "Fewer snapshot reads; lower compiler cost",
+      "summary": "Bounded FLAT reads now select the matching buffer before loading data, preserving overlaps, unaligned addresses and fault reports. In a controlled shader replay, compilation falls from 46.55 to 39.36 seconds and peak private memory from 3.96 to 3.37 GB. A slower loop variant was discarded. Native Vulkan checks pass. These are compiler results, not game FPS; tree streaks, incomplete later rendering and unconfirmed character control remain. The installed runner records 37 frames in 30.046 seconds at the tree (1.231 FPS), with no demonstrated frame-rate improvement.",
+      "imageAlt": "Tree at difficulty selection in the installed selected-FLAT runner; bright vertical streaks remain"
+    },
+    "yotei-compiler-memory-audit": {
+      "title": "First-use shader compilation and memory pressure",
+      "summary": "A live thread audit confirms driver compilation during the post-tree stall. The captured original compute module takes 59.47 seconds and peaks at 7.40 GB of private memory in an isolated probe. Reusing its saved cache entry takes 14 ms; the old cache is backed up for the next game repeat. Offline SPIR-V optimization does not materially improve this case. These are compiler measurements, not gameplay FPS. Tree streaks and incomplete later rendering remain, and character control is unconfirmed.",
+      "imageAlt": ""
+    },
     "yotei-compact-shader-analysis": {
       "title": "Less shader-cache memory; tree at 1.26 FPS",
       "summary": "Unused diagnostic shader IR is now released during decoded-stream execution. At the tree, 648 cached analyses retain zero bytes in those extra arrays; their original code and decoded instructions remain intact. The repeat presents 38 frames in 30.044 seconds (1.26 FPS), within the previous sample range, so no repeatable speedup is established. Five focused tests and native Vulkan image/material probes pass. Tree streaks remain and character control is unconfirmed. The local runner and matching PDB are updated with a backup.",

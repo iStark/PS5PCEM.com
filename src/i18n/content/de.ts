@@ -346,6 +346,16 @@ const de: Content = {
   },
 
   history: {
+    "yotei-selected-flat-reads": {
+      "title": "Weniger Speicherzugriffe und Compilerkosten",
+      "summary": "FLAT-Lesezugriffe wählen zuerst den passenden Puffer; Überlappungen, unausgerichtete Adressen und Fehlerberichte bleiben erhalten. Im kontrollierten Shader-Test sinkt die Kompilierung von 46,55 auf 39,36 Sekunden und der private Spitzenspeicher von 3,96 auf 3,37 GB. Die langsamere Schleifenvariante wurde verworfen. Vulkan-Prüfungen bestehen. Das sind keine Spiel-FPS; Baumstreifen, unvollständige Grafik und unbestätigte Figurensteuerung bleiben. Der installierte Runner zeigt am Baum 37 Bilder in 30,046 Sekunden (1,231 FPS); kein Bildratengewinn ist belegt.",
+      "imageAlt": "Baum bei der Schwierigkeitsauswahl; helle vertikale Streifen bleiben"
+    },
+    "yotei-compiler-memory-audit": {
+      "title": "Erstkompilierung und Speicherbedarf",
+      "summary": "Die Prüfung aktiver Threads bestätigt eine Treiberkompilierung beim Stillstand nach dem Baum. Das ursprüngliche Compute-Modul benötigt im isolierten Test 59,47 Sekunden und bis zu 7,40 GB privaten Speicher. Mit dem gespeicherten Cache-Eintrag dauert es 14 ms; der alte Cache wurde vor dem nächsten Spieltest gesichert. Die Offline-Optimierung von SPIR-V bringt hier keinen wesentlichen Vorteil. Dies sind Compilermessungen, keine Spiel-FPS. Streifen am Baum, unvollständige spätere Szenen und die unbestätigte Figurensteuerung bleiben offen.",
+      "imageAlt": ""
+    },
     "yotei-compact-shader-analysis": {
       "title": "Weniger Shader-Cache-Speicher; 1,26 FPS am Baum",
       "summary": "Nicht verwendete Diagnose-IR wird bei der Ausführung des dekodierten Befehlsstroms freigegeben. Am Baum belegen die zusätzlichen Arrays von 648 Shader-Analysen null Bytes; Originalcode und dekodierte Befehle bleiben erhalten. Der Lauf zeigt 38 Bilder in 30,044 Sekunden (1,26 FPS), im Bereich der bisherigen Messungen. Eine reproduzierbare Beschleunigung ist nicht belegt. Fünf gezielte Tests und native Vulkan-Bild- und Materialprüfungen bestehen. Streifen am Baum bleiben; die Figurensteuerung ist unbestätigt. Lokaler Runner und PDB wurden mit Sicherung aktualisiert.",

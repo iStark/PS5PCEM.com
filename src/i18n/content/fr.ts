@@ -346,6 +346,16 @@ const fr: Content = {
   },
 
   history: {
+    "yotei-selected-flat-reads": {
+      "title": "Moins de lectures et de coûts de compilation",
+      "summary": "Les lectures FLAT choisissent le tampon avant de lire ses données, en conservant les chevauchements, les adresses non alignées et les erreurs. Le test contrôlé réduit la compilation de 46,55 à 39,36 secondes et le pic de mémoire privée de 3,96 à 3,37 Go. La variante à boucle, plus lente, est abandonnée. Les vérifications Vulkan réussissent. Ce ne sont pas des FPS de jeu ; stries, rendu incomplet et contrôle du personnage non confirmé restent ouverts. Le runner installé affiche 37 images en 30,046 secondes devant l’arbre (1,231 FPS), sans gain de fréquence démontré.",
+      "imageAlt": "Arbre au choix de difficulté ; les stries verticales restent visibles"
+    },
+    "yotei-compiler-memory-audit": {
+      "title": "Première compilation et pression mémoire",
+      "summary": "L’examen des threads actifs confirme une compilation du pilote pendant l’arrêt après l’arbre. Le module compute original prend 59,47 secondes et atteint 7,40 Go de mémoire privée lors d’un test isolé. Sa réutilisation depuis le cache prend 14 ms ; l’ancien cache est sauvegardé avant le nouvel essai du jeu. L’optimisation hors ligne de SPIR-V n’améliore pas sensiblement ce cas. Il s’agit de mesures du compilateur, pas des FPS du jeu. Les stries sur l’arbre et le rendu incomplet des scènes suivantes persistent ; le contrôle du personnage reste non confirmé.",
+      "imageAlt": ""
+    },
     "yotei-compact-shader-analysis": {
       "title": "Moins de mémoire pour les shaders ; 1,26 FPS à l’arbre",
       "summary": "L’IR de diagnostic inutilisé est libéré lors de l’exécution du flux décodé. À l’arbre, les tableaux supplémentaires de 648 analyses de shaders occupent zéro octet ; le code original et les instructions décodées sont conservés. L’essai présente 38 images en 30,044 secondes (1,26 FPS), dans la plage précédente, sans gain reproductible établi. Cinq tests ciblés et les essais Vulkan natifs d’images et de matériaux réussissent. Les stries sur l’arbre persistent et le contrôle du personnage reste non confirmé. Runner local et PDB mis à jour avec sauvegarde.",

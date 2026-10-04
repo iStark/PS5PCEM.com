@@ -346,6 +346,16 @@ const pt: Content = {
   },
 
   history: {
+    "yotei-selected-flat-reads": {
+      "title": "Menos leituras e menor custo de compilação",
+      "summary": "As leituras FLAT escolhem primeiro o buffer, preservando sobreposições, endereços desalinhados e relatórios de falhas. O teste controlado reduz a compilação de 46,55 para 39,36 segundos e o pico de memória privada de 3,96 para 3,37 GB. O ciclo mais lento foi descartado. Os testes Vulkan passam. Não são FPS do jogo; continuam as faixas e a renderização incompleta, sem controlo da personagem confirmado. O runner instalado apresenta 37 fotogramas em 30,046 segundos junto à árvore (1,231 FPS), sem ganho de FPS demonstrado.",
+      "imageAlt": "Árvore na seleção de dificuldade; continuam as faixas verticais brilhantes"
+    },
+    "yotei-compiler-memory-audit": {
+      "title": "Primeira compilação e pressão de memória",
+      "summary": "A inspeção das threads ativas confirma a compilação pelo driver durante a pausa após a árvore. O módulo compute original leva 59,47 segundos e atinge 7,40 GB de memória privada em um teste isolado. Reutilizar sua entrada de cache leva 14 ms; o cache anterior foi preservado antes de repetir o jogo. A otimização offline de SPIR-V não melhora significativamente este caso. São medições do compilador, não FPS do jogo. As listras na árvore e as cenas posteriores incompletas persistem; o controle do personagem ainda não foi confirmado.",
+      "imageAlt": ""
+    },
     "yotei-compact-shader-analysis": {
       "title": "Menos memória de shaders; 1,26 FPS junto à árvore",
       "summary": "O IR de diagnóstico não utilizado é libertado durante a execução do fluxo descodificado. Junto à árvore, os arrays adicionais de 648 análises de shaders ocupam zero bytes; o código original e as instruções descodificadas são preservados. O teste apresenta 38 fotogramas em 30,044 segundos (1,26 FPS), dentro do intervalo anterior, sem comprovar um ganho repetível. Passam cinco testes específicos e os testes nativos Vulkan de imagens e materiais. As riscas na árvore persistem e o controlo da personagem não foi confirmado. Runner local e PDB atualizados com cópia de segurança.",
