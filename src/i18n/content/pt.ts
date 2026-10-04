@@ -346,6 +346,11 @@ const pt: Content = {
   },
 
   history: {
+    "yotei-color-transfer-memory": {
+      "title": "Transferências de cor compartilhadas; árvore a 1,40 FPS",
+      "summary": "Foram removidos os buffers individuais de leitura dos alvos de cor. Brilho e árvore apresentam 42 quadros em 30 segundos: cerca de 1,40 FPS contra 1,26. O histórico do cache difere e não permite atribuir o ganho. As faixas persistem; o filme ilustrado é alcançado, sem confirmação do controle do personagem.",
+      "imageAlt": "Seleção de dificuldade na árvore; faixas luminosas persistem"
+    },
     "yotei-illustrated-movie-compilation": {
       "title": "Filme ilustrado alcançado; pausas de compilação",
       "summary": "O executável atualizado passa pela árvore e pela cinemática escura até chegar ao filme ilustrado. O controle do personagem ainda não foi confirmado. O novo teste da árvore mantém 1,26 FPS; a reutilização após leituras não demonstra ganho adicional de FPS. Um quadro posterior leva 239,4 segundos, incluindo 234,9 na criação de pipelines de computação. O aumento do cache de texturas coincide com a mudança de cena e não comprova aceleração. Iluminação, faixas e um recurso de pixel shader ausente continuam pendentes.",

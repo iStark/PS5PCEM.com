@@ -346,6 +346,11 @@ const de: Content = {
   },
 
   history: {
+    "yotei-color-transfer-memory": {
+      "title": "Gemeinsame Farbtransfers; Baumtest mit 1,40 FPS",
+      "summary": "Separate Host-Lesepuffer für Farbziele entfallen. Helligkeit und Baum zeigen jeweils 42 Bilder in 30 Sekunden: etwa 1,40 statt zuvor 1,26 FPS. Unterschiedliche Cache-Verläufe verhindern eine eindeutige Zuordnung. Streifen bleiben; der gezeichnete Film wird erreicht, die Figurensteuerung ist unbestätigt.",
+      "imageAlt": "Schwierigkeitsauswahl am Baum; helle Streifen bleiben"
+    },
     "yotei-illustrated-movie-compilation": {
       "title": "Gezeichneter Film erreicht; lange Compute-Kompilierung",
       "summary": "Der aktualisierte Runner erreicht nach Baum und dunkler Filmsequenz den gezeichneten Erzählfilm. Die Figurensteuerung ist noch unbestätigt. Der Baumtest bleibt bei 1,26 FPS; die Wiederverwendung nach reinen Lesezugriffen bringt keinen zusätzlichen nachgewiesenen FPS-Gewinn. Ein späterer Frame dauert 239,4 Sekunden, davon 234,9 für Compute-Pipelines. Die Vergrößerung des Textur-Caches fällt mit dem Szenenwechsel zusammen und belegt keine Beschleunigung. Beleuchtung, Streifen und eine fehlende Pixel-Shader-Ressource bleiben offen.",

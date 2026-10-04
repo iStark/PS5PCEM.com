@@ -371,6 +371,11 @@ const content: Content = {
   },
 
   history: {
+    "yotei-color-transfer-memory": {
+      "title": "Shared color transfers; tree repeat at 1.40 FPS",
+      "summary": "The runner removes separate host readback buffers for color targets. Brightness and tree repeats each present 42 frames in 30 seconds, about 1.40 FPS versus 1.26 previously. Cache history differs, so this does not isolate the improvement. Tree streaks remain; the illustrated movie is reached, but character control is unconfirmed.",
+      "imageAlt": "Tree difficulty screen; bright streaks remain"
+    },
     "yotei-illustrated-movie-compilation": {
       "title": "Illustrated movie reached; compute compilation stalls",
       "summary": "The updated runner passes the tree and dark cinematic into the illustrated narrative movie. Character control is still unconfirmed. The tree repeat remains 1.26 FPS; the read-only texture reuse fix shows no additional game FPS gain. One later frame takes 239.4 seconds, including 234.9 seconds creating compute pipelines. A live texture-cache increase coincides with the scene change and proves no speedup. Lighting, streaks and a missing pixel-shader resource remain open.",

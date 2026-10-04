@@ -347,6 +347,11 @@ const es: Content = {
   },
 
   history: {
+    "yotei-color-transfer-memory": {
+      "title": "Transferencias de color compartidas; árbol a 1,40 FPS",
+      "summary": "Se eliminan los búferes de lectura individuales de los destinos de color. Brillo y árbol presentan 42 fotogramas en 30 segundos: unos 1,40 FPS frente a 1,26. El historial de caché difiere y no permite atribuir la mejora. Persisten las franjas; se alcanza la película ilustrada, sin confirmar el control del personaje.",
+      "imageAlt": "Selección de dificultad junto al árbol; persisten las franjas"
+    },
     "yotei-illustrated-movie-compilation": {
       "title": "Película ilustrada alcanzada; pausas de compilación",
       "summary": "El ejecutable actualizado supera el árbol y la cinemática oscura hasta la película ilustrada. El control del personaje sigue sin confirmarse. La repetición del árbol mantiene 1,26 FPS; la reutilización tras lecturas no aporta una mejora adicional de FPS demostrada. Un fotograma posterior tarda 239,4 segundos, incluidos 234,9 creando pipelines de cómputo. El aumento de la caché de texturas coincide con el cambio de escena y no demuestra una aceleración. Persisten los problemas de iluminación, franjas y un recurso de pixel shader ausente.",

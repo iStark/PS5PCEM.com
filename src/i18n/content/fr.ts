@@ -346,6 +346,11 @@ const fr: Content = {
   },
 
   history: {
+    "yotei-color-transfer-memory": {
+      "title": "Transferts couleur partagés ; arbre à 1,40 FPS",
+      "summary": "Les tampons de lecture individuels des cibles couleur sont supprimés. Luminosité et arbre présentent chacun 42 images en 30 secondes : environ 1,40 FPS contre 1,26. Les historiques de cache diffèrent, empêchant une attribution précise. Les bandes persistent ; le film illustré est atteint, sans contrôle du personnage confirmé.",
+      "imageAlt": "Choix de difficulté devant l’arbre ; bandes lumineuses persistantes"
+    },
     "yotei-illustrated-movie-compilation": {
       "title": "Film illustré atteint ; longues compilations de calcul",
       "summary": "La version mise à jour dépasse l’arbre et la cinématique sombre pour atteindre le film illustré. Le contrôle du personnage reste non confirmé. Le nouveau test de l’arbre reste à 1,26 FPS ; la réutilisation après lecture seule ne démontre aucun gain supplémentaire en jeu. Une image ultérieure prend 239,4 secondes, dont 234,9 pour créer les pipelines de calcul. L’augmentation du cache de textures coïncide avec le changement de scène et ne prouve aucune accélération. Éclairage, bandes et ressource de pixel shader manquante restent à corriger.",
