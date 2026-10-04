@@ -348,8 +348,8 @@ const pt: Content = {
   history: {
     "yotei-runtime-image-tables": {
       "title": "Tabelas de texturas em execução e cache em disco recuperado",
-      "summary": "As pequenas tabelas indiretas guardam agora os endereços em dados de execução: mover texturas ou alterar colisões de hash não exige por si só outro pipeline. Um teste GPU verifica três passagens corretas com uma compilação; nove verificações Vulkan passam. O processo voltou a gravar o cache após a remoção de cópias redundantes dos testes. As falhas são comunicadas e a gravação é repetida, preservando o cache anterior. Não há novo ganho de FPS nem controle do personagem confirmado; faixas na árvore, iluminação e mistura de cores compactadas continuam pendentes.",
-      "imageAlt": ""
+      "summary": "As pequenas tabelas indiretas guardam agora os endereços em dados de execução: mover texturas ou alterar colisões de hash não exige por si só outro pipeline. Um teste GPU verifica três passagens corretas com uma compilação; nove verificações Vulkan passam. O processo voltou a gravar o cache após a remoção de cópias redundantes dos testes. As falhas são comunicadas e a gravação é repetida, preservando o cache anterior. Não há novo ganho de FPS nem controle do personagem confirmado; faixas na árvore, iluminação e mistura de cores compactadas continuam pendentes. A repetição apresenta 37 quadros em 30,049 segundos na dificuldade Medium (1,231 FPS), como na medição anterior junto à árvore.",
+      "imageAlt": "Menu de dificuldade Medium com tabelas de texturas em execução; as faixas brilhantes da árvore permanecem"
     },
     "yotei-selected-flat-reads": {
       "title": "Menos leituras e menor custo de compilação",

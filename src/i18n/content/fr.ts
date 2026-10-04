@@ -348,8 +348,8 @@ const fr: Content = {
   history: {
     "yotei-runtime-image-tables": {
       "title": "Tables de textures à l’exécution et cache disque rétabli",
-      "summary": "Les petites tables indirectes de textures conservent désormais les adresses dans les données d’exécution : déplacer les textures ou modifier les collisions de hachage ne suffit plus à recréer un pipeline. Un test GPU valide trois passes correctes avec une seule compilation ; neuf vérifications Vulkan réussissent. Le processus a repris l’enregistrement du cache après suppression de copies de tests superflues. Les échecs sont signalés et réessayés en conservant l’ancien cache. Aucun gain de FPS en jeu ni contrôle du personnage n’est confirmé ; les bandes de l’arbre, l’éclairage et le mélange des couleurs compactées restent à corriger.",
-      "imageAlt": ""
+      "summary": "Les petites tables indirectes de textures conservent désormais les adresses dans les données d’exécution : déplacer les textures ou modifier les collisions de hachage ne suffit plus à recréer un pipeline. Un test GPU valide trois passes correctes avec une seule compilation ; neuf vérifications Vulkan réussissent. Le processus a repris l’enregistrement du cache après suppression de copies de tests superflues. Les échecs sont signalés et réessayés en conservant l’ancien cache. Aucun gain de FPS en jeu ni contrôle du personnage n’est confirmé ; les bandes de l’arbre, l’éclairage et le mélange des couleurs compactées restent à corriger. Le nouvel essai affiche 37 images en 30,049 secondes en difficulté Medium (1,231 FPS), comme la mesure précédente devant l’arbre.",
+      "imageAlt": "Menu de difficulté Medium avec tables de textures à l’exécution ; les bandes lumineuses de l’arbre persistent"
     },
     "yotei-selected-flat-reads": {
       "title": "Moins de lectures et de coûts de compilation",

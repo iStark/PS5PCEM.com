@@ -348,8 +348,8 @@ const de: Content = {
   history: {
     "yotei-runtime-image-tables": {
       "title": "Texturtabellen zur Laufzeit und wieder gespeicherter Cache",
-      "summary": "Kleine indirekte Texturtabellen halten Deskriptoradressen jetzt in Laufzeitdaten. Verschobene Texturen und andere Hash-Kollisionen allein erfordern keine neue Pipeline. Ein GPU-Test prüft drei korrekte Durchläufe mit einer Kompilierung; neun Vulkan-Prüfungen bestehen. Nach dem Entfernen überflüssiger Test-Cache-Kopien speichert der laufende Prozess wieder auf die Festplatte. Speicherfehler werden gemeldet und erneut versucht, der alte Cache bleibt erhalten. Mehr Spiel-FPS und Figurensteuerung sind nicht bestätigt; Baumstreifen, Beleuchtung und das Mischen gepackter Farben bleiben offen.",
-      "imageAlt": ""
+      "summary": "Kleine indirekte Texturtabellen halten Deskriptoradressen jetzt in Laufzeitdaten. Verschobene Texturen und andere Hash-Kollisionen allein erfordern keine neue Pipeline. Ein GPU-Test prüft drei korrekte Durchläufe mit einer Kompilierung; neun Vulkan-Prüfungen bestehen. Nach dem Entfernen überflüssiger Test-Cache-Kopien speichert der laufende Prozess wieder auf die Festplatte. Speicherfehler werden gemeldet und erneut versucht, der alte Cache bleibt erhalten. Mehr Spiel-FPS und Figurensteuerung sind nicht bestätigt; Baumstreifen, Beleuchtung und das Mischen gepackter Farben bleiben offen. Die Wiederholung zeigt 37 Bilder in 30,049 Sekunden auf Medium (1,231 FPS), entsprechend der vorigen Messung am Baum.",
+      "imageAlt": "Schwierigkeitsmenü Medium mit Laufzeit-Texturtabellen; helle Baumstreifen bleiben"
     },
     "yotei-selected-flat-reads": {
       "title": "Weniger Speicherzugriffe und Compilerkosten",

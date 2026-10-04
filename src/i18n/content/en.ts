@@ -373,8 +373,8 @@ const content: Content = {
   history: {
     "yotei-runtime-image-tables": {
       "title": "Runtime texture tables and recovered disk cache",
-      "summary": "Small indirect texture tables now keep descriptor addresses in runtime data, avoiding new pipelines solely for relocation or changed hash collisions. A native probe verifies three correctly rendered passes with one compilation; nine Vulkan checks pass. The live disk cache resumed saving after redundant probe-cache copies were removed. Save failures now report an error and retry while retaining the previous cache. No new game FPS gain or character control is confirmed; tree streaks, lighting defects and packed-color blending remain open.",
-      "imageAlt": ""
+      "summary": "Small indirect texture tables now keep descriptor addresses in runtime data, avoiding new pipelines solely for relocation or changed hash collisions. A native probe verifies three correctly rendered passes with one compilation; nine Vulkan checks pass. The live disk cache resumed saving after redundant probe-cache copies were removed. Save failures now report an error and retry while retaining the previous cache. No new game FPS gain or character control is confirmed; tree streaks, lighting defects and packed-color blending remain open. The repeat presents 37 frames in 30.049 seconds at Medium difficulty (1.231 FPS), matching the previous tree measurement.",
+      "imageAlt": "Medium difficulty menu with runtime texture lookups; bright tree streaks remain"
     },
     "yotei-selected-flat-reads": {
       "title": "Fewer snapshot reads; lower compiler cost",
