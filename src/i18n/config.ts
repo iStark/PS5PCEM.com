@@ -103,9 +103,26 @@ export function dirOf(locale: Locale): "ltr" | "rtl" {
   return localeMeta[locale].dir;
 }
 
-/** Builds a locale-prefixed path: localePath("ru", "/compatibility"). */
+export function isDefaultLocale(locale: Locale): boolean {
+  return locale === defaultLocale;
+}
+
+/**
+ * Builds the canonical path for a page in one language.
+ *
+ * English, the default, lives at the site root with no prefix: "/compatibility",
+ * not "/en/compatibility". Every other language is prefixed:
+ * localePath("ru", "/compatibility") === "/ru/compatibility".
+ *
+ * Keeping English unprefixed matters for search: those were the URLs the site
+ * was originally indexed under, and a prefix would have made every one of them
+ * a redirect. /en/* still resolves, but only as a permanent redirect here.
+ */
 export function localePath(locale: Locale, path = "/"): string {
   const normalized = path === "/" ? "" : path.startsWith("/") ? path : `/${path}`;
+  if (isDefaultLocale(locale)) {
+    return normalized === "" ? "/" : normalized;
+  }
   return `/${locale}${normalized}`;
 }
 

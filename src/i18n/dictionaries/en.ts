@@ -31,6 +31,39 @@ const en = {
     backHome: "Back to the home page",
   },
 
+  seo: {
+    home: {
+      title: "PS5PCEM — experimental PlayStation 5 emulator for Windows",
+      description:
+        "Download the PS5PCEM prototype and see which PlayStation 5 titles actually run — measured frame times, known limits and a dated test history for every game.",
+    },
+    download: {
+      title: "Download PS5PCEM {version} for Windows x64",
+      description:
+        "PS5PCEM {version} for Windows: portable archive or per-user installer, published SHA-256 checksums, system requirements and every earlier build.",
+    },
+    compatibility: {
+      title: "PlayStation 5 game compatibility list — PS5PCEM",
+      description:
+        "Which PS5 games run under PS5PCEM: {total} titles on record, {playable} played to the end, each with measured frame times, known limits and a dated test history.",
+    },
+    status: {
+      title: "Project status — what PS5PCEM can do today",
+      description:
+        "PS5PCEM subsystem by subsystem: native guest execution, RDNA2 shader translation to SPIR-V, Vulkan rendering, audio, controllers, savedata and the Windows launcher.",
+    },
+    media: {
+      title: "Screenshots and recorded runs — PS5PCEM",
+      description:
+        "Development captures produced by PS5PCEM itself, each captioned with exactly what it shows, plus the YouTube channel of full recorded runs.",
+    },
+    extract: {
+      title: "PKG extractor for PS5 debug packages — PS5PCEM",
+      description:
+        "pkgextractor ships with PS5PCEM {version}: unpack observed PS5 debug FPKG layouts, inner PFS, NAPS mappings and Kraken blocks. Encrypted retail packages are not supported.",
+    },
+  },
+
   nav: {
     home: "Home",
     download: "Download",

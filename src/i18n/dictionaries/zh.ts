@@ -26,6 +26,39 @@ const zh: Dictionary = {
     backHome: "返回首页",
   },
 
+  seo: {
+    home: {
+      title: "PS5PCEM — 面向 Windows 的 PlayStation 5 实验性模拟器",
+      description:
+        "下载 PS5PCEM 原型版本，查看哪些 PlayStation 5 游戏真的能跑起来：实测帧时间、已知限制，以及每款游戏按日期排列的测试历史。",
+    },
+    download: {
+      title: "下载 PS5PCEM {version}（Windows x64）",
+      description:
+        "面向 Windows 的 PS5PCEM {version}：便携压缩包或单用户安装程序，公开的 SHA-256 校验值、系统要求，以及此前的全部版本。",
+    },
+    compatibility: {
+      title: "PlayStation 5 游戏兼容性列表 — PS5PCEM",
+      description:
+        "哪些 PS5 游戏能在 PS5PCEM 上运行：已记录 {total} 款，其中 {playable} 款完整通关，每款都附有实测帧时间、已知限制和按日期排列的测试历史。",
+    },
+    status: {
+      title: "项目进展 — PS5PCEM 目前的能力",
+      description:
+        "按子系统逐一说明 PS5PCEM：客户机代码原生执行、RDNA2 着色器翻译为 SPIR-V、Vulkan 呈现、音频、手柄、存档以及 Windows 启动器。",
+    },
+    media: {
+      title: "截图与运行实录 — PS5PCEM",
+      description:
+        "由 PS5PCEM 自身产生的开发截图，每张都注明它究竟是什么，另有发布完整运行录像的 YouTube 频道。",
+    },
+    extract: {
+      title: "用于 PS5 调试包的 PKG 解包器 — PS5PCEM",
+      description:
+        "pkgextractor 随 PS5PCEM {version} 一同提供：解包已观察到的 PS5 调试 FPKG 结构、内部 PFS、NAPS 映射与 Kraken 数据块。不支持加密的零售包。",
+    },
+  },
+
   nav: {
     home: "首页",
     download: "下载",

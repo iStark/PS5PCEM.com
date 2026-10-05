@@ -14,6 +14,9 @@ import { format, getDictionary, getHistoryContent } from "@/i18n";
 import { formatDate } from "@/lib/format";
 import { buildRows } from "@/lib/rows";
 import { ButtonLink, SectionHeading, TierBadge } from "@/components/ui";
+import { JsonLd } from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema, webPageSchema } from "@/lib/schema";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -26,14 +29,19 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const locale = toLocale((await params).locale);
   const t = getDictionary(locale);
-  return {
-    title: t.media.heading,
-    description: t.media.lead,
-    alternates: {
-      canonical: localePath(locale, "/media"),
-      languages: alternateLanguages("/media"),
-    },
-  };
+
+  return buildMetadata({
+    locale,
+    path: "/media",
+    title: t.seo.media.title,
+    description: t.seo.media.description,
+    image: "/images/yotei-intro-video.png",
+    keywords: [
+      "PS5 emulator screenshots",
+      "PS5PCEM gameplay",
+      "PS5PCEM YouTube",
+    ],
+  });
 }
 
 export default async function MediaPage({ params }: PageProps) {
@@ -49,6 +57,19 @@ export default async function MediaPage({ params }: PageProps) {
 
   return (
     <div className="container-page py-16">
+      <JsonLd
+        data={[
+          webPageSchema(locale, {
+            path: "/media",
+            name: t.seo.media.title,
+            description: t.seo.media.description,
+          }),
+          breadcrumbSchema(locale, [
+            { name: t.nav.home, path: "/" },
+            { name: t.nav.media, path: "/media" },
+          ]),
+        ]}
+      />
       <header className="max-w-3xl">
         <p className="text-xs font-semibold uppercase tracking-widest text-accent-400">
           {t.media.eyebrow}

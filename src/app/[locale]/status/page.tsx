@@ -16,6 +16,9 @@ import {
 import { format, getDictionary } from "@/i18n";
 import { formatDate } from "@/lib/format";
 import { ButtonLink, Notice, SectionHeading } from "@/components/ui";
+import { JsonLd } from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema, webPageSchema } from "@/lib/schema";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -28,14 +31,20 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const locale = toLocale((await params).locale);
   const t = getDictionary(locale);
-  return {
-    title: t.status.heading,
-    description: t.status.subsystemsLead,
-    alternates: {
-      canonical: localePath(locale, "/status"),
-      languages: alternateLanguages("/status"),
-    },
-  };
+
+  return buildMetadata({
+    locale,
+    path: "/status",
+    title: t.seo.status.title,
+    description: t.seo.status.description,
+    image: "/images/yotei-tree-scene.png",
+    keywords: [
+      "PS5PCEM project status",
+      "PS5 emulator progress",
+      "RDNA2 shader translation",
+      "Vulkan VideoOut",
+    ],
+  });
 }
 
 const stateClasses: Record<SubsystemState, string> = {
@@ -57,6 +66,19 @@ export default async function StatusPage({ params }: PageProps) {
 
   return (
     <div className="container-page py-16">
+      <JsonLd
+        data={[
+          webPageSchema(locale, {
+            path: "/status",
+            name: t.seo.status.title,
+            description: t.seo.status.description,
+          }),
+          breadcrumbSchema(locale, [
+            { name: t.nav.home, path: "/" },
+            { name: t.nav.status, path: "/status" },
+          ]),
+        ]}
+      />
       <header className="max-w-3xl">
         <p className="text-xs font-semibold uppercase tracking-widest text-accent-400">
           {format(t.status.eyebrow, {

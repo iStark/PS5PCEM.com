@@ -24,6 +24,50 @@ Every page lives under a locale prefix — `/ru/compatibility`,
 work. Arabic gets `dir="rtl"` on `<html>`, and the layout uses logical CSS
 properties (`ms-`, `ps-`, `start-`) so it mirrors correctly.
 
+## URLs and search
+
+English is served from the site root with **no prefix** — `/compatibility`, not
+`/en/compatibility`. This is load-bearing: those are the URLs the site was first
+indexed under, and putting a prefix on them turned every indexed page into a
+redirect, which cost the site its search visibility. Only the other seven
+languages are prefixed.
+
+[src/proxy.ts](src/proxy.ts) enforces the shape:
+
+| Request | Response |
+|---|---|
+| `/compatibility` | 200, internally rewritten to the prerendered `/en/compatibility` |
+| `/en/compatibility` | **301** to `/compatibility`, so the two never compete |
+| `/ru/compatibility` | 200, already canonical |
+
+There is deliberately **no Accept-Language redirect**. Sending a crawler — or
+anyone following a shared link — to a different URL than the one requested is
+what broke indexing; language is chosen with the switcher in the header.
+
+What every page carries, built in one place by
+[src/lib/seo.ts](src/lib/seo.ts):
+
+- a self-referencing canonical, unprefixed for English;
+- the complete reciprocal hreflang set, all eight languages plus `x-default`,
+  using full BCP 47 tags (`zh-Hans`, not `zh`);
+- an absolute `<title>` per page, so the layout template cannot double the
+  brand, with a unique keyword-led title and description per page per language;
+- `index, follow` stated explicitly, plus `max-image-preview:large` so the
+  captures can appear in results;
+- Open Graph and Twitter cards with a real 1920×1080 image and alt text.
+
+JSON-LD comes from [src/lib/schema.ts](src/lib/schema.ts): `WebSite` and
+`SoftwareApplication` on the home page, `SoftwareApplication` on the download
+page (version, OS, licence, real download URL), `ItemList` of every title on the
+compatibility page, and `TechArticle` + `BreadcrumbList` on each title page,
+with the game as the article's subject. No `aggregateRating` anywhere — the
+project has no review data, and inventing one would be both dishonest and a
+structured-data violation.
+
+`sitemap.xml` holds one entry per page per language with hreflang alternates,
+and takes `lastmod` from the content — the newest recorded run, or the release
+date — rather than from the build clock.
+
 ## Pages
 
 Each route exists once per locale: 6 pages + 16 title pages × 8 languages = 180
@@ -88,7 +132,7 @@ npm run build      # production build
 
 ## Tests
 
-`npm test` runs five suites, 98 tests:
+`npm test` runs six suites, 128 tests:
 
 - **`tests/i18n.test.ts`** — the locale list matches the launcher's eight
   languages in order; Arabic is RTL and everything else LTR; every BCP 47 tag is
@@ -96,6 +140,13 @@ npm run build      # production build
   `{placeholders}`; every title and history entry is translated in every
   language; no translated summary is still the English text; and the
   "not playable" wording survives in all eight languages.
+- **`tests/seo.test.ts`** — the recovery is pinned here: every originally
+  indexed URL resolves without a redirect, `/en/*` returns 301 (not 307) onto
+  the unprefixed path, `Accept-Language` never triggers a redirect, no canonical
+  or sitemap URL ever contains `/en`, every page in every language has a
+  canonical and a full hreflang set, titles and descriptions are unique per page
+  per language and fit a result snippet, and the JSON-LD serializes without
+  nulls and claims no rating.
 - **`tests/compatibility-data.test.ts`** — pins the dataset to
   `project-status.md`: the exact set of titles, which eight are confirmed
   completable, Ghost of Yōtei graded `ingame` and never `playable`, every

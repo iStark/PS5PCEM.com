@@ -15,6 +15,9 @@ import {
 import { format, getDictionary } from "@/i18n";
 import { formatBytes, formatDate } from "@/lib/format";
 import { ButtonLink, Notice, SectionHeading } from "@/components/ui";
+import { JsonLd } from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema, softwareSchema } from "@/lib/schema";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -27,14 +30,22 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const locale = toLocale((await params).locale);
   const t = getDictionary(locale);
-  return {
-    title: format(t.download.heading, { version: latestRelease.version }),
-    description: t.meta.description,
-    alternates: {
-      canonical: localePath(locale, "/download"),
-      languages: alternateLanguages("/download"),
-    },
-  };
+
+  return buildMetadata({
+    locale,
+    path: "/download",
+    title: format(t.seo.download.title, { version: latestRelease.version }),
+    description: format(t.seo.download.description, {
+      version: latestRelease.version,
+    }),
+    image: "/images/launcher-library.png",
+    keywords: [
+      "download PS5 emulator",
+      `PS5PCEM ${latestRelease.version}`,
+      "PS5 emulator Windows download",
+      "PS5PCEM SHA-256",
+    ],
+  });
 }
 
 export default async function DownloadPage({ params }: PageProps) {
@@ -44,6 +55,15 @@ export default async function DownloadPage({ params }: PageProps) {
 
   return (
     <div className="container-page py-16">
+      <JsonLd
+        data={[
+          softwareSchema(locale),
+          breadcrumbSchema(locale, [
+            { name: t.nav.home, path: "/" },
+            { name: t.nav.download, path: "/download" },
+          ]),
+        ]}
+      />
       <header className="max-w-3xl">
         <p className="text-xs font-semibold uppercase tracking-widest text-accent-400">
           {format(t.download.eyebrow, {

@@ -26,6 +26,9 @@ import {
   Stat,
   TierBadge,
 } from "@/components/ui";
+import { JsonLd } from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema, gameReportSchema } from "@/lib/schema";
 
 type PageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -47,25 +50,34 @@ export async function generateMetadata({
   const entry = findBySlug(slug);
 
   if (!entry) {
-    return {};
+    // An unknown slug renders notFound(); leaving the metadata empty keeps the
+    // 404 out of the index rather than publishing a half-built page.
+    return { robots: { index: false, follow: false } };
   }
 
   const t = getDictionary(locale);
   const content = getGameContent(locale, slug);
+  const runs = historyFor(slug);
 
-  return {
+  return buildMetadata({
+    locale,
+    path: `/games/${slug}`,
     title: format(t.game.metaTitle, { title: entry.title }),
-    description: format(t.game.metaDescription, { title: entry.title }),
-    alternates: {
-      canonical: localePath(locale, `/games/${slug}`),
-      languages: alternateLanguages(`/games/${slug}`),
-    },
-    openGraph: {
-      title: `${entry.title} — ${content.status}`,
-      description: content.headline,
-      images: entry.image ? [{ url: entry.image }] : undefined,
-    },
-  };
+    // The result line is the part a searcher is looking for, so it leads.
+    description: `${content.status}. ${content.headline}`,
+    image: entry.image,
+    imageAlt: content.imageAlt,
+    type: "article",
+    publishedTime: runs.at(-1)?.date,
+    modifiedTime: entry.confirmedOn ?? runs[0]?.date,
+    keywords: [
+      entry.title,
+      `${entry.title} PS5PCEM`,
+      `${entry.title} PS5 emulator`,
+      `${entry.title} PC`,
+      t.tiers[entry.tier].label,
+    ],
+  });
 }
 
 export default async function GamePage({ params }: PageProps) {
@@ -87,13 +99,47 @@ export default async function GamePage({ params }: PageProps) {
 
   return (
     <div className="container-page py-12">
+      <JsonLd
+        data={[
+          gameReportSchema(locale, slug),
+          breadcrumbSchema(locale, [
+            { name: t.nav.home, path: "/" },
+            { name: t.nav.compatibility, path: "/compatibility" },
+            { name: entry.title, path: `/games/${slug}` },
+          ]),
+        ]}
+      />
+
+      {/* A real breadcrumb trail, which search results can show in place of
+          the bare URL, and which tells a visitor where this page sits. */}
       <nav aria-label={t.nav.compatibility} className="text-sm">
-        <Link
-          href={localePath(locale, "/compatibility")}
-          className="text-ink-400 transition-colors hover:text-accent-400"
-        >
-          ← {t.game.backToList}
-        </Link>
+        <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-ink-400">
+          <li>
+            <Link
+              href={localePath(locale)}
+              className="transition-colors hover:text-accent-400"
+            >
+              {t.nav.home}
+            </Link>
+          </li>
+          <li aria-hidden className="text-ink-600">
+            /
+          </li>
+          <li>
+            <Link
+              href={localePath(locale, "/compatibility")}
+              className="transition-colors hover:text-accent-400"
+            >
+              {t.nav.compatibility}
+            </Link>
+          </li>
+          <li aria-hidden className="text-ink-600">
+            /
+          </li>
+          <li aria-current="page" className="text-ink-200">
+            {entry.title}
+          </li>
+        </ol>
       </nav>
 
       <header className="mt-6 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-start">

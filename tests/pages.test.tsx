@@ -77,7 +77,7 @@ describe("home page", () => {
 
     expect(
       screen.getByRole("link", { name: t.home.ctaResults }),
-    ).toHaveAttribute("href", "/en/compatibility");
+    ).toHaveAttribute("href", "/compatibility");
     expect(
       screen.getByRole("link", { name: t.home.youtubeCta }),
     ).toHaveAttribute("href", site.links.youtube);
@@ -252,12 +252,24 @@ describe("title detail page", () => {
     }
   });
 
-  it("offers a way back to the full list", async () => {
+  it("shows a breadcrumb trail back to the list", async () => {
     await renderGame("reanimal");
-    const link = screen.getByRole("link", {
-      name: new RegExp(getDictionary("en").game.backToList),
+    const t = getDictionary("en");
+
+    const crumbs = screen.getByRole("navigation", {
+      name: t.nav.compatibility,
     });
-    expect(link).toHaveAttribute("href", "/en/compatibility");
+    expect(
+      within(crumbs).getByRole("link", { name: t.nav.home }),
+    ).toHaveAttribute("href", "/");
+    expect(
+      within(crumbs).getByRole("link", { name: t.nav.compatibility }),
+    ).toHaveAttribute("href", "/compatibility");
+    // The current page is named but not linked.
+    expect(within(crumbs).getByText("REANIMAL")).toHaveAttribute(
+      "aria-current",
+      "page",
+    );
   });
 
   it("renders a title with no capture of its own", async () => {
@@ -275,9 +287,15 @@ describe("title detail page", () => {
     expect(
       screen.getByText(getGameContent("ru", "ghost-of-yotei").status),
     ).toBeInTheDocument();
+    const crumbs = screen.getByRole("navigation", {
+      name: ru.nav.compatibility,
+    });
     expect(
-      screen.getByRole("link", { name: new RegExp(ru.game.backToList) }),
+      within(crumbs).getByRole("link", { name: ru.nav.compatibility }),
     ).toHaveAttribute("href", "/ru/compatibility");
+    expect(
+      within(crumbs).getByRole("link", { name: ru.nav.home }),
+    ).toHaveAttribute("href", "/ru");
   });
 
   it("calls notFound() for a slug that is not on record", async () => {
@@ -319,7 +337,7 @@ describe("media page", () => {
     expect(
       screen
         .getAllByRole("link")
-        .some((link) => link.getAttribute("href")?.startsWith("/en/games/")),
+        .some((link) => link.getAttribute("href")?.startsWith("/games/")),
     ).toBe(true);
   });
 
@@ -367,7 +385,7 @@ describe("site chrome", () => {
     const items = within(menu).getAllByRole("menuitem");
     expect(items).toHaveLength(8);
     expect(items.map((item) => item.getAttribute("href"))).toEqual([
-      "/en",
+      "/",
       "/ru",
       "/de",
       "/fr",

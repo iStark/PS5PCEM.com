@@ -16,6 +16,9 @@ import {
 } from "@/i18n/config";
 import { format, getDictionary } from "@/i18n";
 import { BulletList, ButtonLink, Notice, SectionHeading } from "@/components/ui";
+import { JsonLd } from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema, webPageSchema } from "@/lib/schema";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -28,14 +31,21 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const locale = toLocale((await params).locale);
   const t = getDictionary(locale);
-  return {
-    title: t.extract.heading,
-    description: t.extract.noticeBody,
-    alternates: {
-      canonical: localePath(locale, "/extract"),
-      languages: alternateLanguages("/extract"),
-    },
-  };
+
+  return buildMetadata({
+    locale,
+    path: "/extract",
+    title: t.seo.extract.title,
+    description: format(t.seo.extract.description, {
+      version: latestRelease.version,
+    }),
+    keywords: [
+      "PS5 PKG extractor",
+      "pkgextractor",
+      "FPKG debug package",
+      "PS5PCEM extract PKG",
+    ],
+  });
 }
 
 export default async function ExtractPage({ params }: PageProps) {
@@ -44,6 +54,19 @@ export default async function ExtractPage({ params }: PageProps) {
 
   return (
     <div className="container-page py-16">
+      <JsonLd
+        data={[
+          webPageSchema(locale, {
+            path: "/extract",
+            name: t.seo.extract.title,
+            description: t.extract.noticeBody,
+          }),
+          breadcrumbSchema(locale, [
+            { name: t.nav.home, path: "/" },
+            { name: t.nav.extract, path: "/extract" },
+          ]),
+        ]}
+      />
       <header className="max-w-3xl">
         <p className="text-xs font-semibold uppercase tracking-widest text-accent-400">
           {t.extract.eyebrow} · {extractor.binary}

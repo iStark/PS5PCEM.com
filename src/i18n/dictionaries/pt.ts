@@ -26,6 +26,39 @@ const pt: Dictionary = {
     backHome: "Voltar ao início",
   },
 
+  seo: {
+    home: {
+      title: "PS5PCEM — emulador experimental de PlayStation 5 para Windows",
+      description:
+        "Baixe o protótipo do PS5PCEM e veja quais jogos de PlayStation 5 realmente rodam: tempos por quadro medidos, limites conhecidos e histórico de testes com datas.",
+    },
+    download: {
+      title: "Baixar PS5PCEM {version} para Windows x64",
+      description:
+        "PS5PCEM {version} para Windows: arquivo portátil ou instalação por usuário, somas SHA-256 publicadas, requisitos de sistema e todas as compilações anteriores.",
+    },
+    compatibility: {
+      title: "Lista de compatibilidade de jogos de PlayStation 5 — PS5PCEM",
+      description:
+        "Quais jogos de PS5 rodam no PS5PCEM: {total} jogos registrados, {playable} terminados, cada um com tempos por quadro medidos, limites conhecidos e histórico de testes.",
+    },
+    status: {
+      title: "Estado do projeto — o que o PS5PCEM faz hoje",
+      description:
+        "PS5PCEM subsistema por subsistema: execução nativa do código convidado, tradução de shaders RDNA2 para SPIR-V, renderização Vulkan, áudio, controles, saves e o lançador do Windows.",
+    },
+    media: {
+      title: "Capturas e sessões gravadas — PS5PCEM",
+      description:
+        "Capturas produzidas pelo próprio PS5PCEM, cada uma com uma legenda dizendo o que ela realmente é, além do canal do YouTube com sessões completas.",
+    },
+    extract: {
+      title: "Extrator de PKG para pacotes de depuração de PS5 — PS5PCEM",
+      description:
+        "O pkgextractor acompanha o PS5PCEM {version}: extrai os formatos FPKG de depuração observados, o PFS interno, os mapeamentos NAPS e os blocos Kraken. Pacotes de varejo criptografados não são suportados.",
+    },
+  },
+
   nav: {
     home: "Início",
     download: "Download",

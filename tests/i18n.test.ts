@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  alternateLanguages,
   defaultLocale,
   dirOf,
   isLocale,
@@ -91,13 +92,51 @@ describe("locale configuration", () => {
     expect(toLocale(undefined)).toBe(defaultLocale);
   });
 
-  it("builds locale-prefixed paths", () => {
+  it("keeps English unprefixed at the root and prefixes every other language", () => {
+    // English must stay on the URLs the site was originally indexed under;
+    // prefixing them would turn every indexed page into a redirect.
+    expect(localePath("en")).toBe("/");
+    expect(localePath("en", "/compatibility")).toBe("/compatibility");
+    expect(localePath("en", "/games/cat-quest-iii")).toBe(
+      "/games/cat-quest-iii",
+    );
+
     expect(localePath("ru", "/compatibility")).toBe("/ru/compatibility");
-    expect(localePath("en")).toBe("/en");
     expect(localePath("ar", "/games/cat-quest-iii")).toBe(
       "/ar/games/cat-quest-iii",
     );
     expect(localePath("pt", "download")).toBe("/pt/download");
+    expect(localePath("zh")).toBe("/zh");
+  });
+
+  it("never emits an /en prefix anywhere, because that URL only redirects", () => {
+    const paths = ["/", "/compatibility", "/download", "/games/reanimal"];
+    for (const path of paths) {
+      expect(localePath("en", path).startsWith("/en")).toBe(false);
+      for (const url of Object.values(alternateLanguages(path))) {
+        expect(url.startsWith("/en/"), url).toBe(false);
+        expect(url, url).not.toBe("/en");
+      }
+    }
+  });
+
+  it("points x-default and en at the same unprefixed URL", () => {
+    const alternates = alternateLanguages("/compatibility");
+    expect(alternates["x-default"]).toBe("/compatibility");
+    expect(alternates.en).toBe("/compatibility");
+    expect(alternates.ru).toBe("/ru/compatibility");
+    // zh must use its full tag, not a bare "zh".
+    expect(alternates["zh-Hans"]).toBe("/zh/compatibility");
+  });
+
+  it("lists every language in its alternates, so the set is reciprocal", () => {
+    const alternates = alternateLanguages("/status");
+    for (const code of locales) {
+      expect(
+        Object.values(alternates),
+        `${code} missing from alternates`,
+      ).toContain(localePath(code, "/status"));
+    }
   });
 
   it("strips a locale prefix so the switcher can stay on the same page", () => {

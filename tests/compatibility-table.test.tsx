@@ -134,7 +134,7 @@ describe("<CompatibilityTable />", () => {
 
     const link = screen.getByRole("heading", { name: "Cat Quest III" })
       .querySelector("a");
-    expect(link).toHaveAttribute("href", "/en/games/cat-quest-iii");
+    expect(link).toHaveAttribute("href", "/games/cat-quest-iii");
   });
 
   it("gives every capture descriptive alternative text", () => {

@@ -10,6 +10,9 @@ import { format, getDictionary } from "@/i18n";
 import { buildRows } from "@/lib/rows";
 import { formatDate } from "@/lib/format";
 import { ButtonLink, Notice, SectionHeading, Stat, TierBadge } from "@/components/ui";
+import { JsonLd } from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo";
+import { softwareSchema, websiteSchema } from "@/lib/schema";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -22,10 +25,22 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const locale = toLocale((await params).locale);
   const t = getDictionary(locale);
-  return {
-    title: `${site.name} — ${t.meta.tagline}`,
-    description: t.meta.description,
-  };
+
+  return buildMetadata({
+    locale,
+    path: "/",
+    title: t.seo.home.title,
+    description: t.seo.home.description,
+    keywords: [
+      "PS5PCEM",
+      "PS5 emulator",
+      "PlayStation 5 emulator",
+      "PS5 emulator for PC",
+      "Windows PS5 emulator",
+      "RDNA2 SPIR-V",
+      "Vulkan emulator",
+    ],
+  });
 }
 
 export default async function HomePage({ params }: PageProps) {
@@ -37,6 +52,7 @@ export default async function HomePage({ params }: PageProps) {
 
   return (
     <>
+      <JsonLd data={[websiteSchema(locale), softwareSchema(locale)]} />
       <section className="relative overflow-hidden border-b border-ink-800">
         <div
           aria-hidden

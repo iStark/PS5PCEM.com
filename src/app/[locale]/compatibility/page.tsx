@@ -11,6 +11,9 @@ import { format, getDictionary } from "@/i18n";
 import { buildRows } from "@/lib/rows";
 import { CompatibilityTable } from "@/components/CompatibilityTable";
 import { Notice, Stat, TierBadge } from "@/components/ui";
+import { JsonLd } from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema, compatibilityListSchema } from "@/lib/schema";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -23,17 +26,24 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const locale = toLocale((await params).locale);
   const t = getDictionary(locale);
-  return {
-    title: t.compatibility.heading,
-    description: t.compatibility.lead.replace(
-      "{source}",
-      t.compatibility.sourceLabel,
-    ),
-    alternates: {
-      canonical: localePath(locale, "/compatibility"),
-      languages: alternateLanguages("/compatibility"),
-    },
-  };
+  const counts = countByTier();
+
+  return buildMetadata({
+    locale,
+    path: "/compatibility",
+    title: t.seo.compatibility.title,
+    description: format(t.seo.compatibility.description, {
+      total: compatibility.length,
+      playable: counts.playable,
+    }),
+    image: "/images/quake-ii-gameplay.png",
+    keywords: [
+      "PS5 emulator compatibility",
+      "PlayStation 5 emulator game list",
+      "PS5PCEM compatibility",
+      ...compatibility.map((entry) => entry.title),
+    ],
+  });
 }
 
 export default async function CompatibilityPage({ params }: PageProps) {
@@ -47,6 +57,15 @@ export default async function CompatibilityPage({ params }: PageProps) {
 
   return (
     <div className="container-page py-16">
+      <JsonLd
+        data={[
+          compatibilityListSchema(locale),
+          breadcrumbSchema(locale, [
+            { name: t.nav.home, path: "/" },
+            { name: t.nav.compatibility, path: "/compatibility" },
+          ]),
+        ]}
+      />
       <header className="max-w-3xl">
         <p className="text-xs font-semibold uppercase tracking-widest text-accent-400">
           {t.compatibility.eyebrow}

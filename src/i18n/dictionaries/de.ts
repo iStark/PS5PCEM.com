@@ -26,6 +26,39 @@ const de: Dictionary = {
     backHome: "Zurück zur Startseite",
   },
 
+  seo: {
+    home: {
+      title: "PS5PCEM — experimenteller PlayStation-5-Emulator für Windows",
+      description:
+        "Laden Sie den PS5PCEM-Prototyp herunter und sehen Sie, welche PlayStation-5-Titel wirklich laufen: gemessene Bildzeiten, bekannte Grenzen und eine datierte Testhistorie je Spiel.",
+    },
+    download: {
+      title: "PS5PCEM {version} für Windows x64 herunterladen",
+      description:
+        "PS5PCEM {version} für Windows: portables Archiv oder Installation je Benutzer, veröffentlichte SHA-256-Prüfsummen, Systemanforderungen und alle früheren Builds.",
+    },
+    compatibility: {
+      title: "Kompatibilitätsliste für PlayStation-5-Spiele — PS5PCEM",
+      description:
+        "Welche PS5-Spiele unter PS5PCEM laufen: {total} erfasste Titel, {playable} durchgespielt, jeweils mit gemessenen Bildzeiten, bekannten Grenzen und datierter Testhistorie.",
+    },
+    status: {
+      title: "Projektstand — was PS5PCEM heute kann",
+      description:
+        "PS5PCEM Teilsystem für Teilsystem: native Gastausführung, RDNA2-Shaderübersetzung nach SPIR-V, Vulkan-Darstellung, Ton, Controller, Spielstände und der Windows-Launcher.",
+    },
+    media: {
+      title: "Screenshots und aufgezeichnete Läufe — PS5PCEM",
+      description:
+        "Aufnahmen, die PS5PCEM selbst erzeugt hat, jede mit einer Beschriftung, was sie wirklich zeigt, dazu der YouTube-Kanal mit vollständigen Läufen.",
+    },
+    extract: {
+      title: "PKG-Entpacker für PS5-Debug-Pakete — PS5PCEM",
+      description:
+        "pkgextractor liegt PS5PCEM {version} bei: entpackt beobachtete PS5-Debug-FPKG-Layouts, inneres PFS, NAPS-Zuordnungen und Kraken-Blöcke. Verschlüsselte Handelspakete werden nicht unterstützt.",
+    },
+  },
+
   nav: {
     home: "Start",
     download: "Download",

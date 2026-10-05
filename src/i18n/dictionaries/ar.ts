@@ -26,6 +26,39 @@ const ar: Dictionary = {
     backHome: "العودة إلى الصفحة الرئيسية",
   },
 
+  seo: {
+    home: {
+      title: "PS5PCEM — محاكي PlayStation 5 تجريبي لنظام Windows",
+      description:
+        "حمّل نموذج PS5PCEM وشاهد أي ألعاب PlayStation 5 تعمل فعلًا: أزمنة إطارات مقيسة، وحدود معروفة، وتاريخ اختبارات بالتواريخ لكل لعبة.",
+    },
+    download: {
+      title: "تنزيل PS5PCEM {version} لنظام Windows x64",
+      description:
+        "PS5PCEM {version} لنظام Windows: أرشيف محمول أو مثبِّت للمستخدم، بصمات SHA-256 منشورة، ومتطلبات النظام، وكل النسخ الأسبق.",
+    },
+    compatibility: {
+      title: "قائمة توافق ألعاب PlayStation 5 — PS5PCEM",
+      description:
+        "أي ألعاب PS5 تعمل على PS5PCEM: {total} لعبة مسجَّلة، أُكملت منها {playable}، ولكل منها أزمنة إطارات مقيسة وحدود معروفة وتاريخ اختبارات بالتواريخ.",
+    },
+    status: {
+      title: "حالة المشروع — ما يقدر عليه PS5PCEM اليوم",
+      description:
+        "PS5PCEM نظامًا فرعيًا بعد آخر: تنفيذ أصلي للشيفرة الضيفة، وترجمة مظلِّلات RDNA2 إلى SPIR-V، وعرض عبر Vulkan، والصوت، ويد التحكم، وملفات الحفظ، ومشغّل Windows.",
+    },
+    media: {
+      title: "صور ولقطات مسجَّلة — PS5PCEM",
+      description:
+        "صور أنتجها محاكي PS5PCEM نفسه، ولكل منها شرح يقول ما هي بالضبط، إلى جانب قناة YouTube التي تنشر الجلسات الكاملة.",
+    },
+    extract: {
+      title: "أداة فك حزم PKG التشخيصية لـ PS5 — PS5PCEM",
+      description:
+        "تُرفَق pkgextractor مع PS5PCEM {version}: فك تخطيطات FPKG التشخيصية المرصودة، وPFS الداخلي، وتعيينات NAPS، وكتل Kraken. والحزم التجارية المشفَّرة غير مدعومة.",
+    },
+  },
+
   nav: {
     home: "الرئيسية",
     download: "التنزيل",
