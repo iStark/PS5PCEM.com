@@ -91,6 +91,26 @@ export default async function DownloadPage({ params }: PageProps) {
         </p>
       </header>
 
+      <section className="surface mt-8 border-accent-500/40 p-6">
+        <h2 className="text-xl font-semibold text-ink-100">
+          {format(t.download.changesHeading, { version: latestRelease.version })}
+        </h2>
+        <p className="mt-3 font-medium leading-relaxed text-ink-100">
+          {t.download.changesLauncher}
+        </p>
+        <p className="mt-3 text-sm leading-relaxed text-ink-300">
+          {t.download.changesFeatures}
+        </p>
+        <p className="mt-3 text-sm leading-relaxed text-ink-400">
+          {t.download.changesLimits}
+        </p>
+        <div className="mt-5">
+          <ButtonLink href={latestRelease.notesUrl} variant="secondary" external>
+            {format(t.download.releaseNotesCta, { version: latestRelease.version })}
+          </ButtonLink>
+        </div>
+      </section>
+
       <section className="mt-12 grid gap-4 lg:grid-cols-3">
         {latestRelease.assets.map((asset) => (
           <article

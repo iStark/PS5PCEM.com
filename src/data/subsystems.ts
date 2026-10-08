@@ -58,7 +58,8 @@ export const subsystems: Subsystem[] = [
       "Structured control flow restores UI text in titles that previously lost it.",
       "Typed buffer accesses retain their resource bindings and per-access formats; comparison samplers follow the instructions that use them.",
       "Asynchronous pipeline compilation is enabled by default with two workers and a compute shader warmup catalog.",
-      "Shader coverage remains incomplete; the 0.3.3 validation run reproduces the same ten SPIR-V test failures and one reported leak as the 0.3.2 tag.",
+      "Version 0.3.4 adds bounded S_SWAPPC_B64/S_CALL_B64 subroutines and verified fetch returns, native-format BY2/BY4 and PCK2/PCK4 loads, horizontal gathers, DS atomics and permutes.",
+      "The October 9 scalar-call checkpoint passes 259/259 GPU-analysis and 232/232 Vulkan tests; RDNA2 passes 271/281 with the same ten existing failures and one reported leak. Instruction probes do not establish new game FPS results.",
     ],
   },
   {
@@ -74,6 +75,8 @@ export const subsystems: Subsystem[] = [
       "Timeline retirement avoids waits for unrelated buffers and retains upload data until its GPU readers complete. Public guest completion remains ordered.",
       "Correct HTILE/DCC metadata clears and a larger Tetris render-target cache reduce stale UI copies and repeated readbacks.",
       "GPU compute detile covers 4/8/16-byte 2D and 3D standard and PRT surfaces; RB+ and MSAA still fall back to the CPU.",
+      "Single-sample packed 11/11/10 UNORM targets now blend through a storage-buffer copy and fragment-shader unpack/blend/repack path. Game lighting remains incomplete.",
+      "VideoOut reports 1080p SDR and keeps 120 Hz unavailable; the default game preference requests performance mode. Internal resolution remains game-controlled.",
     ],
   },
   {
@@ -124,6 +127,7 @@ export const subsystems: Subsystem[] = [
       "Ships the debug PKG extractor with NAPS mapping and Kraken payload support.",
       "Reads artwork from each title's local sce_sys/icon0.png.",
       "Detects DualSense and DualShock controllers and persists sound and input profiles.",
+      "Version 0.3.4 fixes the working-directory regression that prevented packaged launchers from starting games. Refused launches show the Windows explanation, error code and translated advice.",
     ],
   },
   {
@@ -135,6 +139,20 @@ export const subsystems: Subsystem[] = [
     details: [
       "Aligned Windows direct-memory ranges share 64 KiB section views, so temporary uploads, readbacks and 16 KiB guest pages no longer accumulate as an ever-growing host commit charge.",
       "The opt-in GPU page tracker tracks 16 KiB guest pages by generation and handles the first native CPU store as an invalidation fault.",
+      "MemoryPool reserve, expand, commit, decommit, batch and statistics use shared backing with ownership checks and rollback. Batch MOVE remains unsupported.",
+    ],
+  },
+  {
+    id: "firmware",
+    name: "Fonts, PNG, RTC and AMPR",
+    state: "partial",
+    summary:
+      "FreeType glyph rendering, PNG encoding, calendar operations and software counter commands replace further HLE placeholders.",
+    details: [
+      "Noto Sans fallback, glyph metrics, rasterization, clipping, scaling, slant and kerning are implemented. Missing-glyph fallback fixes Jurassic Park's font-atlas startup; writing-line APIs remain incomplete.",
+      "PNG accepts pitched RGBA/BGRA and produces 8-bit RGB/RGBA at compression levels 0–9. RTC adds validation, FILETIME conversions and checked tick arithmetic; host DST conversion remains absent.",
+      "AMPR provides 128 software counters, coherent pairs, timestamps and deferred counter waits with ordered completion. WaitOnAddress remains a placeholder.",
+      "The release preparation passes all 594 HLE tests; no new full playthrough or FPS improvement is inferred from these checks.",
     ],
   },
   {

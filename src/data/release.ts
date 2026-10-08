@@ -21,51 +21,51 @@ export type Release = {
   assets: ReleaseAsset[];
 };
 
-const TAG = "v0.3.3";
+const TAG = "v0.3.4";
 
 export const latestRelease: Release = {
-  "version": "0.3.3",
-  "tag": "v0.3.3",
-  "publishedAt": "2026-10-04T23:47:06Z",
+  "version": "0.3.4",
+  "tag": "v0.3.4",
+  "publishedAt": "2026-10-08T23:26:59Z",
   "prerelease": false,
-  "notesUrl": "https://github.com/iStark/PS5PCEM/blob/v0.3.3/docs/release-notes/v0.3.3.md",
-  "releaseUrl": "https://github.com/iStark/PS5PCEM/releases/tag/v0.3.3",
+  "notesUrl": "https://github.com/iStark/PS5PCEM/blob/v0.3.4/docs/release-notes/v0.3.4.md",
+  "releaseUrl": "https://github.com/iStark/PS5PCEM/releases/tag/v0.3.4",
   "assets": [
     {
       "label": "Portable ZIP",
-      "fileName": "PS5PCEM-0.3.3-windows-x64-portable.zip",
-      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.3/PS5PCEM-0.3.3-windows-x64-portable.zip",
-      "size": 129837911,
-      "sha256": "b89dc8b60e932425e480a9262d9ba3ec51a8af15c15b6d66c1df93bff573a912",
+      "fileName": "PS5PCEM-0.3.4-windows-x64-portable.zip",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.4/PS5PCEM-0.3.4-windows-x64-portable.zip",
+      "size": 130614229,
+      "sha256": "d437316e9e07b7b40e4f32dc0738624381f0971cbc98440df014a35651f88f6a",
       "description": "Extract anywhere and run ps5pcem.exe. Settings and savedata stay beside the application.",
       "primary": true
     },
     {
       "label": "Per-user installer",
-      "fileName": "PS5PCEM-0.3.3-windows-x64-setup.exe",
-      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.3/PS5PCEM-0.3.3-windows-x64-setup.exe",
-      "size": 128205208,
-      "sha256": "090e6cbc0818f1a59c65803820cb5fa19daa43550f76794e0d44f9a469d5df03",
+      "fileName": "PS5PCEM-0.3.4-windows-x64-setup.exe",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.4/PS5PCEM-0.3.4-windows-x64-setup.exe",
+      "size": 128772280,
+      "sha256": "9776a4ae00f55959c3377928d43e0177126da24787d3ef32397a1926453ecc0d",
       "description": "Installs for the current user only. No administrator rights required."
     },
     {
       "label": "SHA-256 checksums",
       "fileName": "SHA256SUMS.txt",
-      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.3/SHA256SUMS.txt",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.4/SHA256SUMS.txt",
       "size": 209,
-      "sha256": "13b6a270f9f13d0d04b38f4c9e13a796917bdc966720abe085ecb797d308a085",
+      "sha256": "8954ce92d4afcd75637cc6a74e8f995c68775605d40a94cee43f495297c4ef91",
       "description": "Verify a download before running it. Compare against the hashes listed on this page."
     }
   ]
 };
 
 export const releaseHighlights = [
-  "Subnautica: Below Zero creates and restores a world; its latest development repeat measures 10.60 FPS combined in the world and 15.50 FPS in the menu.",
-  "GTA III reaches walking and driving: 8.53 FPS combined at the opening position, with lower FPS in wider city views and remaining rendering defects.",
-  "Little Nightmares reaches character control and save/reload at 3.73–4.46 FPS; Big Helmet Heroes reaches its tutorial.",
-  "Ghost of Yōtei reaches the post-tree cinematic and illustrated movie. Character control remains unconfirmed; compilation, texture churn and lighting defects remain.",
-  "Shared resource analysis, corrected GPU publications, runtime texture tables and smaller shader-cache allocations reduce repeated work and memory overhead.",
-  "Version 0.3.3 includes the GTA III package-extraction fix, launcher extraction progress, 1080p startup preferences and timestamped signatures on all three applications and the installer."
+  "Fixes packaged launchers failing to start games because Windows received an invalid working directory; launch failures now show the Windows error and code.",
+  "Adds FreeType font rendering and the missing-glyph fallback that restores Jurassic Park startup and its first level.",
+  "Implements MemoryPool allocation operations, PNG encoding, RTC additions and AMPR counters with deferred counter waits.",
+  "Adds packed 11/11/10 UNORM blending, DS instructions, BY2/BY4 and PCK2/PCK4 loads, horizontal gathers and bounded scalar shader calls.",
+  "Reports 1080p SDR output and leaves 120 Hz unavailable. Internal rendering remains game-controlled.",
+  "The applications and installer use the existing certificate with timestamps. Instruction tests do not establish new game FPS or full-playthrough results."
 ] as const;
 
 export const releaseHistory: {
@@ -75,10 +75,16 @@ export const releaseHistory: {
   url: string;
 }[] = [
   {
-    version: "0.3.3",
+    version: "0.3.4",
     tag: TAG,
     publishedAt: latestRelease.publishedAt,
     url: latestRelease.releaseUrl,
+  },
+  {
+    version: "0.3.3",
+    tag: "v0.3.3",
+    publishedAt: "2026-10-04T23:47:06Z",
+    url: "https://github.com/iStark/PS5PCEM/releases/tag/v0.3.3",
   },
   {
     version: "0.3.2",

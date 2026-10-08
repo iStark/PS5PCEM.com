@@ -192,6 +192,10 @@ const es: Dictionary = {
   },
 
   download: {
+    changesHeading: "Cambios en {version}",
+    changesLauncher: "Corrección importante: los juegos vuelven a iniciarse desde el lanzador distribuido. Se corrige el directorio de trabajo; los fallos ahora muestran el mensaje de Windows y su código.",
+    changesFeatures: "Novedades: fuentes FreeType y corrección del inicio de Jurassic Park, MemoryPool, codificación PNG, funciones RTC, contadores AMPR, mezcla de colores empaquetados, gathers horizontales y llamadas acotadas a subrutinas de shaders.",
+    changesLimits: "Los ejecutables usan el mismo certificado que la versión anterior. Las capturas de desarrollo están fechadas; las pruebas de instrucciones no acreditan nuevos FPS ni partidas completas.",
     eyebrow: "Windows x64 · {channel}",
     channelRelease: "Versión",
     channelPrerelease: "Versión preliminar",

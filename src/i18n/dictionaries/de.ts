@@ -192,6 +192,10 @@ const de: Dictionary = {
   },
 
   download: {
+    changesHeading: "Änderungen in {version}",
+    changesLauncher: "Wichtige Korrektur: Spiele starten wieder über den Launcher der veröffentlichten Pakete. Der Arbeitsverzeichnispfad ist korrigiert; Startfehler zeigen jetzt die Windows-Meldung und den Fehlercode.",
+    changesFeatures: "Neu sind FreeType-Schriften und die Startkorrektur für Jurassic Park, MemoryPool, PNG-Kodierung, RTC-Funktionen, AMPR-Zähler, Blending gepackter Farben, horizontale Gathers und begrenzte Shader-Unterprogrammaufrufe.",
+    changesLimits: "Die Programme verwenden dasselbe Signaturzertifikat wie die vorige Version. Entwicklungsaufnahmen sind datiert; Befehlstests belegen weder neue Spiel-FPS noch vollständige Spieldurchläufe.",
     eyebrow: "Windows x64 · {channel}",
     channelRelease: "Version",
     channelPrerelease: "Vorabversion",

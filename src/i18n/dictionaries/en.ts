@@ -197,6 +197,10 @@ const en = {
   },
 
   download: {
+    changesHeading: "Changes in {version}",
+    changesLauncher: "Important fix: games start from packaged launchers again. The working-directory error is corrected; launch failures now display the Windows message and error code.",
+    changesFeatures: "New: FreeType fonts and the Jurassic Park startup fix, MemoryPool, PNG encoding, RTC functions, AMPR counters, packed-color blending, horizontal gathers and bounded shader calls.",
+    changesLimits: "Executables use the same signing certificate as the previous release. Captures are dated development results; instruction tests do not establish new game FPS or completed playthroughs.",
     eyebrow: "Windows x64 · {channel}",
     channelRelease: "Release",
     channelPrerelease: "Pre-release",

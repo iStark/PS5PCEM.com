@@ -93,7 +93,7 @@ repository's own documentation, and the test suite pins them to it:
 | `src/data/compatibility.ts` | `docs/project-status.md` — slugs, tiers, captures, confirmation dates |
 | `src/data/history.ts` | `docs/development/*.md` and `docs/release-notes/*.md` — one entry per dated run |
 | `src/data/subsystems.ts` | `docs/implementation-status.md` |
-| `src/data/release.ts` | GitHub release `v0.3.2`, its release notes, and `SHA256SUMS.txt` |
+| `src/data/release.ts` | GitHub release `v0.3.4`, its release notes, and `SHA256SUMS.txt` |
 | `src/data/extractor.ts` | `zig-out/bin/pkgextractor.exe` behaviour |
 | `public/images/` | `docs/images/` |
 

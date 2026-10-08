@@ -190,6 +190,10 @@ const zh: Dictionary = {
   },
 
   download: {
+    changesHeading: "{version} 更新内容",
+    changesLauncher: "重要修复：发行包中的启动器可以再次启动游戏。工作目录路径已修正；现在启动失败会显示 Windows 错误信息及代码。",
+    changesFeatures: "新增 FreeType 字体和 Jurassic Park 启动修复、MemoryPool、PNG 编码、RTC 函数、AMPR 计数器、打包颜色混合、水平 gather 与受限着色器子程序调用。",
+    changesLimits: "可执行文件沿用上一版本的签名证书。开发截图标注了日期；指令测试不代表新的游戏帧率或完整通关验证。",
     eyebrow: "Windows x64 · {channel}",
     channelRelease: "正式版",
     channelPrerelease: "预发布版",
