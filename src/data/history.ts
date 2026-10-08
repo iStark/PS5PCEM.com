@@ -39,6 +39,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "jurassic-font-atlas-startup",
+    slug: "jurassic-park-classic-games-collection",
+    date: "2026-10-08",
+    release: null,
+    image: "/images/jurassic-park-font-fix-gameplay.png",
+    source: "https://github.com/iStark/PS5PCEM/blob/a3d371e934ce9fefd5c816e6ce940012098d1460/docs/project-status.md",
+  },
+  {
     id: "yotei-cache-memory",
     date: "2026-10-05",
     slug: "ghost-of-yotei",

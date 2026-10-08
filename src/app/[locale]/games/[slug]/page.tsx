@@ -166,7 +166,11 @@ export default async function GamePage({ params }: PageProps) {
             <MetaItem label={t.game.hostLabel} value={compatibilityMeta.host} />
             <MetaItem
               label={t.game.buildLabel}
-              value={compatibilityMeta.testedOnRelease}
+              value={
+                runs.length > 0
+                  ? runs[0].release?.replace(/^v/, "") ?? t.common.developmentBuild
+                  : compatibilityMeta.testedOnRelease
+              }
             />
             <MetaItem
               label={t.game.runsLabel}

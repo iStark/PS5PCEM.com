@@ -127,10 +127,11 @@ const fr: Content = {
     "jurassic-park-classic-games-collection": {
       status: "Jouable · Terminable",
       headline:
-        "Terminé, y compris l'intro, le titre animé et le menu de la collection.",
+        "Démarrage rétabli ; premier niveau vérifié à nouveau.",
       summary:
-        "Partie complète confirmée. Intro, titre animé et sélection dans la collection fonctionnent, avec jaquettes, flèches de navigation et aperçu animé. Les performances dépendent du jeu de la collection lancé.",
+        "Le jeu démarre à nouveau avec le commit de développement a3d371e. Le test du 8 octobre 2026 a réussi deux lancements, atteint le premier niveau et confirmé la réponse de la carte aux commandes du clavier. Le précédent compte rendu du développeur attestant une partie terminée reste dans l'historique.",
       strengths: [
+        "La version de développement du 8 octobre construit l'atlas de police et atteint le premier niveau.",
         "Partie complète confirmée par le mainteneur.",
         "La sélection affiche les jaquettes, les flèches de navigation et un aperçu animé.",
         "Le rendu au démarrage, le logo du titre et la demande de confirmation sont corrects.",
@@ -140,9 +141,9 @@ const fr: Content = {
         "Le coût par image varie selon le jeu de la collection et le matériel.",
       ],
       performance:
-        "Les anciennes images de titre et de sélection s'échantillonnaient à environ 27 et 33 ms.",
+        "Les anciennes mesures des écrans titre et de sélection étaient d'environ 27 et 33 ms par image. Le test du 8 octobre portait sur le démarrage et le premier niveau ; aucun nouveau benchmark FPS n'a été effectué.",
       imageAlt:
-        "Jurassic Park Classic Games Collection, écran de sélection avec jaquettes, rendu par PS5PCEM",
+        "Premier niveau de Jurassic Park devant les portes du parc après correction du démarrage lié à l'atlas de police, rendu par PS5PCEM",
     },
 
     "jets-n-guns-2": {
@@ -346,6 +347,11 @@ const fr: Content = {
   },
 
   history: {
+    "jurassic-font-atlas-startup": {
+      "title": "Démarrage corrigé pour l'atlas de police ; premier niveau atteint",
+      "summary": "Le commit de développement a3d371e corrige la régression de démarrage introduite par Font HLE. La collection demandait U+007F lors de la construction de son atlas ImGui. Le rejet de ce caractère absent déclenchait l'assertion CalcGlyphInfo et arrêtait CarbonMainThread, tandis que les autres threads attendaient les commandes AGC en suspens. Les caractères absents utilisent désormais le glyphe .notdef de la police. Les deux nouveaux lancements ont dépassé ce point ; le premier niveau s'est affiché et la carte a répondu au clavier. Les 569 tests HLE ont réussi, y compris les vérifications de métriques et de rendu de toute la plage Latin-1. Cette entrée décrit la nouvelle vérification du démarrage et du premier niveau.",
+      "imageAlt": "Premier niveau de Jurassic Park devant les portes du parc après correction du démarrage lié à l'atlas de police, rendu par PS5PCEM"
+    },
     "yotei-cache-memory": {
       "title": "Coûts après l’arbre et mémoire des caches",
       "summary": "Le test atteint la cinématique 3D après l’arbre, avec un éclairage et des surfaces de personnages incomplets. L’arbre reste à 1,231 FPS ; un intervalle ultérieur affiche deux images en 30 secondes (0,067 FPS). Sur une image de transition de 198 secondes, 177 servent à créer les pipelines. Les images suivantes rechargent aussi 1,4–2,6 Gio de textures. Les variantes de shaders partagent désormais les données canoniques du programme ; les grands instantanés du cache pilote Windows utilisent un fichier temporaire mappé. Un test isolé de 256 Mio économise environ 256 Mio de mémoire privée supplémentaire avec des fichiers identiques. Les 21 tests de cache et trois tests Vulkan réussissent. Aucun nouveau gain de FPS ni contrôle du personnage n’est confirmé.",

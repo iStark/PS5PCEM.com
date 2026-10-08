@@ -73,8 +73,8 @@ export const compatibility: CompatibilityEntry[] = [
     slug: "jurassic-park-classic-games-collection",
     title: "Jurassic Park Classic Games Collection",
     tier: "playable",
-    image: "/images/jurassic-park-menu.png",
-    confirmedOn: "2026-09-08",
+    image: "/images/jurassic-park-font-fix-gameplay.png",
+    confirmedOn: "2026-10-08",
   },
   {
     slug: "jets-n-guns-2",
@@ -151,7 +151,7 @@ export const compatibility: CompatibilityEntry[] = [
 
 export const compatibilityMeta = {
   /** Newest maintainer confirmation across the dataset. */
-  confirmedOn: "2026-10-02",
+  confirmedOn: "2026-10-08",
   testedOnRelease: "0.3.2",
   host: "NVIDIA GeForce RTX 3070 Ti",
 } as const;

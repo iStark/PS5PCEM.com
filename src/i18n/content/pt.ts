@@ -127,10 +127,11 @@ const pt: Content = {
     "jurassic-park-classic-games-collection": {
       status: "Jogável · Finalizável",
       headline:
-        "Terminado, incluindo a introdução, o título animado e o menu da coleção.",
+        "Inicialização restaurada; primeira fase verificada novamente.",
       summary:
-        "Partida completa confirmada. Introdução, título animado e seleção da coleção funcionam, com capas, setas de navegação e uma prévia animada. O desempenho depende de qual jogo da coleção está rodando.",
+        "O jogo volta a iniciar com o commit de desenvolvimento a3d371e. O teste de 8 de outubro de 2026 concluiu duas inicializações, chegou à primeira fase e confirmou que o mapa responde ao teclado. O relato anterior do desenvolvedor confirmando uma campanha concluída permanece no histórico.",
       strengths: [
+        "A versão de desenvolvimento de 8 de outubro cria o atlas de fontes e chega à primeira fase.",
         "Partida completa confirmada pelo mantenedor.",
         "A seleção mostra capas, setas de navegação e uma prévia animada.",
         "A renderização na inicialização, o logotipo do título e o pedido de confirmação estão corretos.",
@@ -140,9 +141,9 @@ const pt: Content = {
         "O custo por quadro varia conforme o jogo da coleção e o hardware.",
       ],
       performance:
-        "Quadros anteriores de título e seleção foram amostrados em cerca de 27 e 33 ms.",
+        "As medições anteriores das telas de título e seleção ficaram em torno de 27 e 33 ms por quadro. O teste de 8 de outubro verificou a inicialização e a primeira fase; não foi realizado um novo benchmark de FPS.",
       imageAlt:
-        "Jurassic Park Classic Games Collection, tela de seleção com capas, renderizada pelo PS5PCEM",
+        "Primeira fase de Jurassic Park nos portões do parque após a correção da inicialização do atlas de fontes, renderizada pelo PS5PCEM",
     },
 
     "jets-n-guns-2": {
@@ -346,6 +347,11 @@ const pt: Content = {
   },
 
   history: {
+    "jurassic-font-atlas-startup": {
+      "title": "Inicialização do atlas de fontes corrigida; primeira fase alcançada",
+      "summary": "O commit de desenvolvimento a3d371e corrige a regressão de inicialização introduzida pelo Font HLE. A coleção solicitava U+007F ao criar seu atlas ImGui. Rejeitar esse caractere ausente acionava a asserção CalcGlyphInfo e encerrava CarbonMainThread, enquanto as outras threads continuavam esperando comandos AGC pendentes. Caracteres ausentes agora usam o glifo .notdef da fonte. Ambas as novas inicializações passaram pelo ponto de falha; a primeira fase foi renderizada e o mapa respondeu ao teclado. Todos os 569 testes HLE passaram, incluindo verificações de métricas e renderização de todo o intervalo Latin-1. Este registro documenta a nova verificação da inicialização e da primeira fase.",
+      "imageAlt": "Primeira fase de Jurassic Park nos portões do parque após a correção da inicialização do atlas de fontes, renderizada pelo PS5PCEM"
+    },
     "yotei-cache-memory": {
       "title": "Custos após a árvore e menos memória de cache",
       "summary": "A execução chega à cena 3D após a árvore, ainda com iluminação e superfícies dos personagens incompletas. A árvore mantém 1,231 FPS; um intervalo posterior apresenta dois quadros em 30 segundos (0,067 FPS). Um quadro de transição leva 198 segundos, sendo 177 para criar pipelines. Quadros posteriores recarregam 1,4–2,6 GiB de texturas. Variantes de shaders agora compartilham dados canônicos do programa; grandes snapshots do cache do driver no Windows usam um arquivo temporário mapeado. Um teste isolado de 256 MiB economiza cerca de 256 MiB de memória privada adicional com arquivos idênticos. Passam 21 testes de cache e três de Vulkan. Não há nova medição de ganho de FPS nem confirmação de controle do personagem.",

@@ -127,10 +127,11 @@ const de: Content = {
     "jurassic-park-classic-games-collection": {
       status: "Spielbar · Durchspielbar",
       headline:
-        "Beendet, samt Intro, animiertem Titel und Sammlungsmenü.",
+        "Start wiederhergestellt; erster Level erneut geprüft.",
       summary:
-        "Ein bestätigter Durchlauf. Intro, animierter Titel und Sammlungsauswahl funktionieren, mit Cover-Artwork, Navigationspfeilen und einer animierten Vorschau. Die Leistung hängt davon ab, welches Spiel der Sammlung läuft.",
+        "Mit Entwicklungscommit a3d371e startet das Spiel wieder. Beim erneuten Test am 8. Oktober 2026 gelangen zwei Starts, der erste Level wurde erreicht und die Kartenansicht reagierte auf Tastatureingaben. Der frühere Bericht des Entwicklers über einen vollständigen Durchlauf bleibt dokumentiert.",
       strengths: [
+        "Die Entwicklungsversion vom 8. Oktober erstellt den Schriftatlas erfolgreich und erreicht den ersten Level.",
         "Vollständiger Durchlauf vom Entwickler bestätigt.",
         "Die Sammlungsauswahl zeigt Cover-Artwork, Navigationspfeile und eine animierte Vorschau.",
         "Startdarstellung, Titellogo und Bestätigungsabfrage sind korrekt.",
@@ -140,9 +141,9 @@ const de: Content = {
         "Die Bildkosten schwanken je nach Sammlungsspiel und Hardware.",
       ],
       performance:
-        "Frühere Titel- und Auswahlbilder wurden mit etwa 27 und 33 ms gemessen.",
+        "Frühere Messungen am Titel- und Auswahlbildschirm lagen bei ungefähr 27 und 33 ms pro Bild. Der Test vom 8. Oktober prüfte den Start und den ersten Level; ein neuer FPS-Benchmark wurde nicht erhoben.",
       imageAlt:
-        "Jurassic Park Classic Games Collection — Spielauswahl mit Cover-Artwork, gezeichnet von PS5PCEM",
+        "Erster Level von Jurassic Park am Parktor nach der Behebung des Schriftatlas-Startfehlers, von PS5PCEM gerendert",
     },
 
     "jets-n-guns-2": {
@@ -346,6 +347,11 @@ const de: Content = {
   },
 
   history: {
+    "jurassic-font-atlas-startup": {
+      "title": "Schriftatlas-Startfehler behoben; erster Level erreicht",
+      "summary": "Entwicklungscommit a3d371e behebt den durch Font HLE eingeführten Startfehler. Beim Aufbau des ImGui-Atlas forderte die Sammlung U+007F an. Die Ablehnung dieses fehlenden Zeichens löste die CalcGlyphInfo-Assertion aus und beendete CarbonMainThread; die übrigen Threads warteten weiter auf ausstehende AGC-Befehle. Fehlende Zeichen verwenden nun die .notdef-Glyphe der Schrift. Beide erneuten Starts passierten die Fehlerstelle; der erste Level wurde gerendert und die Kartenansicht reagierte auf die Tastatur. Alle 569 HLE-Tests bestanden, einschließlich Metrik- und Renderingprüfungen für den vollständigen Latin-1-Bereich. Dieser Eintrag dokumentiert den erneuten Start- und Erstleveltest.",
+      "imageAlt": "Erster Level von Jurassic Park am Parktor nach der Behebung des Schriftatlas-Startfehlers, von PS5PCEM gerendert"
+    },
     "yotei-cache-memory": {
       "title": "Kosten nach dem Baum und weniger Cache-Speicher",
       "summary": "Der Test erreicht die 3D-Zwischensequenz nach dem Baum; Beleuchtung und Figurenoberflächen bleiben fehlerhaft. Am Baum sind es weiterhin 1,231 FPS, später zwei Bilder in 30 Sekunden (0,067 FPS). Ein Übergangsbild benötigt 198 Sekunden, davon 177 für die Pipeline-Erstellung. Weitere Bilder laden 1,4–2,6 GiB Texturen erneut. Shader-Varianten teilen nun kanonische Programmdaten; große Windows-Treiber-Cache-Snapshots verwenden eine temporäre Dateizuordnung. Ein isolierter 256-MiB-Test spart etwa 256 MiB zusätzlichen privaten Speicher bei identischen Dateien. Alle 21 Cache-Tests und drei Vulkan-Prüfungen bestehen. Neue Spiel-FPS für diese Änderungen und Figurensteuerung sind nicht bestätigt.",

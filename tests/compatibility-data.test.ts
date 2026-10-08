@@ -88,7 +88,7 @@ describe("compatibility dataset", () => {
   it("attributes every measurement to the documented test host", () => {
     expect(compatibilityMeta.host).toBe("NVIDIA GeForce RTX 3070 Ti");
     expect(compatibilityMeta.testedOnRelease).toBe("0.3.2");
-    expect(compatibilityMeta.confirmedOn).toBe("2026-10-02");
+    expect(compatibilityMeta.confirmedOn).toBe("2026-10-08");
   });
 
   it("gives every entry a unique slug and a known tier", () => {

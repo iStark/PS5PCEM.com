@@ -153,10 +153,12 @@ const content: Content = {
 
     "jurassic-park-classic-games-collection": {
       status: "Playable · Completable",
-      headline: "Finished, including the intro, animated title and collection menu.",
+      headline:
+        "Startup restored; the first level is verified again.",
       summary:
-        "A confirmed playthrough. The intro, animated title and collection selection all work, with cover art, navigation arrows and an animated preview. Performance depends on which collection game is running.",
+        "Startup works again in development commit a3d371e. The October 8, 2026 retest passed two launches, reached the first level and confirmed keyboard input in the map overlay. The maintainer's earlier completed-playthrough report remains on record.",
       strengths: [
+        "The October 8 development build passes font-atlas initialization and reaches the first level.",
         "Complete playthrough confirmed by the maintainer.",
         "Collection selection shows cover art, navigation arrows and an animated preview.",
         "Startup rendering, title logo and confirmation prompt are all correct.",
@@ -166,9 +168,9 @@ const content: Content = {
         "Frame cost varies by collection game and by hardware.",
       ],
       performance:
-        "Earlier title and selection frames sampled at roughly 27 and 33 ms.",
+        "Historical title and selection frames sampled at roughly 27 and 33 ms. The October 8 retest checked startup and the first level; it did not establish a new FPS benchmark.",
       imageAlt:
-        "Jurassic Park Classic Games Collection game selection with cover art, rendered by PS5PCEM",
+        "Jurassic Park first level at the park gates after the font-atlas startup fix, rendered by PS5PCEM",
     },
 
     "jets-n-guns-2": {
@@ -371,6 +373,11 @@ const content: Content = {
   },
 
   history: {
+    "jurassic-font-atlas-startup": {
+      "title": "Font-atlas startup fixed; first level reached",
+      "summary": "Development commit a3d371e fixes the startup regression introduced by Font HLE. The collection requested U+007F while building its ImGui atlas; rejecting that missing character triggered the CalcGlyphInfo assertion and terminated CarbonMainThread, leaving other threads waiting on pending AGC commands. Missing characters now use the font's .notdef glyph. Both retest launches passed the failure point; the first level rendered and the map overlay responded to keyboard input. All 569 HLE tests passed, including complete Latin-1 atlas metrics and rendering checks. This record covers the startup and first-level retest.",
+      "imageAlt": "Jurassic Park first level at the park gates after the font-atlas startup fix, rendered by PS5PCEM"
+    },
     "yotei-cache-memory": {
       "title": "Post-tree bottlenecks and lower cache memory",
       "summary": "The repeat reaches the post-tree 3D cinematic, with incomplete lighting and character surfaces. The tree remains at 1.231 FPS; a later cinematic interval presents two frames in 30 seconds (0.067 FPS). One 198-second transition frame spends 177 seconds creating pipelines. Later frames also reload 1.4–2.6 GiB of textures. Shader variants now share canonical program bytes, and large Windows driver-cache snapshots use a temporary file mapping. A 256 MiB isolated snapshot test saves about 256 MiB of additional private memory and produces identical files. All 21 cache tests and three native Vulkan probes pass. These memory changes have no new game FPS measurement; character control remains unconfirmed.",
