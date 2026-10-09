@@ -39,6 +39,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "asterix-msaa-depth-passes",
+    slug: "asterix-obelix-slap-them-all",
+    date: "2026-10-09",
+    release: null,
+    image: "/images/asterix-msaa-depth-fix-2026-10-09.png",
+    source: devReport("asterix-msaa-depth-performance-2026-10-09.md"),
+  },
+  {
     id: "quake2-raw-pcm-audio",
     slug: "quake-ii-2023",
     date: "2026-10-09",

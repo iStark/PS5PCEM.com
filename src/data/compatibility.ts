@@ -52,7 +52,7 @@ export const compatibility: CompatibilityEntry[] = [
     slug: "asterix-obelix-slap-them-all",
     title: "Asterix & Obelix: Slap Them All!",
     tier: "playable",
-    image: "/images/asterix-obelix-gameplay.png",
+    image: "/images/asterix-msaa-depth-fix-2026-10-09.png",
     confirmedOn: "2026-09-08",
   },
   {

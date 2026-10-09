@@ -219,7 +219,8 @@ describe("English source prose", () => {
     const games = enContent.games;
 
     expect(games["terminator-2d-no-fate"].performance).toContain("22 and 65 ms");
-    expect(games["asterix-obelix-slap-them-all"].performance).toContain("28–31 ms");
+    expect(games["asterix-obelix-slap-them-all"].performance).toContain("46.45 → 162.20 FPS");
+    expect(games["asterix-obelix-slap-them-all"].performance).toContain("30-second UI-counter samples");
     expect(games["cat-quest-iii"].performance).toContain("124 ms");
     expect(games["dreaming-sarah"].performance).toContain("5,280 flips");
     expect(games["jets-n-guns-2"].performance).toContain("70–92 ms");

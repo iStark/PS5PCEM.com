@@ -106,7 +106,7 @@ const content: Content = {
       limits: [
         "Frame cost depends on scene density rather than being locked.",
       ],
-      performance: "Gameplay typically measures 28–31 ms per frame.",
+      performance: "October 9 development retest: stationary opening-forest median 46.45 → 162.20 FPS, from 30-second UI-counter samples at 1080p output on RTX 3070 Ti. Later levels are not measured.",
       imageAlt:
         "Asterix & Obelix: Slap Them All! gameplay in a forest with the HUD and a GO sign, rendered by PS5PCEM",
     },
@@ -371,6 +371,11 @@ const content: Content = {
   },
 
   history: {
+    "asterix-msaa-depth-passes": {
+      "title": "MSAA depth/stencil fix raises opening-forest FPS",
+      "summary": "The October 9 development build preserves the sample count in depth/stencil-only passes, restoring stencil masks and removing four accidental full-frame readbacks per frame. Stationary opening-forest UI-counter medians rise from 46.45 to 162.20 FPS in 30-second samples on the RTX 3070 Ti at 1080p output. Movement and the first Roman encounter are rechecked. All 233 Vulkan tests and native 2×/4× probes pass. This is a shared renderer fix after 0.3.4, not a minimum across all levels or a new full playthrough.",
+      "imageAlt": "Asterix in the opening forest with green HUD gauges after the MSAA depth/stencil fix"
+    },
     "quake2-raw-pcm-audio": {
       "title": "Native PCM restores Quake II audio",
       "summary": "The October 9 development build handles the raw stereo PCM blocks, compact playback commands and 256-frame NGS2 grain used by Quake II. A 10-second attract-sequence loopback changes from complete silence to audible output with no fully silent 10 ms blocks. Full routing and effects remain incomplete; this is not a new playthrough or an FPS benchmark. All 602 HLE tests pass.",

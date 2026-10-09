@@ -79,7 +79,7 @@ const es: Content = {
       limits: [
         "El coste por fotograma depende de la densidad de la escena en vez de estar fijado.",
       ],
-      performance: "El juego mide normalmente 28–31 ms por fotograma.",
+      performance: "Prueba de desarrollo del 9 de octubre: mediana de 46,45 → 162,20 FPS en la escena inicial inmóvil, muestras del contador de ventana de 30 segundos, salida 1080p, RTX 3070 Ti. Niveles posteriores sin medir.",
       imageAlt:
         "Asterix & Obelix: Slap Them All!, partida en un bosque con el HUD y un cartel GO, renderizada por PS5PCEM",
     },
@@ -345,6 +345,11 @@ const es: Content = {
   },
 
   history: {
+    "asterix-msaa-depth-passes": {
+      "title": "La corrección de profundidad y plantilla MSAA acelera el bosque inicial",
+      "summary": "La compilación de desarrollo del 9 de octubre conserva el número de muestras en las pasadas de profundidad y plantilla, restaura las máscaras y elimina cuatro lecturas accidentales de imagen completa por fotograma. La mediana del contador FPS en la escena inicial inmóvil sube de 46,45 a 162,20 en muestras de 30 segundos, con RTX 3070 Ti y salida 1080p. Se vuelven a comprobar el movimiento y el primer encuentro con romanos. Pasan los 233 tests Vulkan y las pruebas nativas 2×/4×. Es una corrección compartida posterior a 0.3.4, no un mínimo para todos los niveles ni una nueva partida completa.",
+      "imageAlt": "Astérix en el bosque inicial con indicadores verdes del HUD tras la corrección MSAA"
+    },
     "quake2-raw-pcm-audio": {
       "title": "Los bloques PCM recuperan el sonido de Quake II",
       "summary": "La versión de desarrollo del 9 de octubre procesa PCM estéreo, comandos compactos y bloques NGS2 de 256 muestras. Una grabación de diez segundos de la demostración pasa del silencio total a tener sonido, sin bloques de 10 ms totalmente silenciosos. El enrutamiento y los efectos siguen incompletos. No es una nueva partida completa ni una prueba FPS; pasan las 602 pruebas HLE.",

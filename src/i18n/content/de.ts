@@ -79,7 +79,7 @@ const de: Content = {
       limits: [
         "Die Bildkosten hängen von der Szenendichte ab und sind nicht festgeschrieben.",
       ],
-      performance: "Das Spielgeschehen liegt typischerweise bei 28–31 ms pro Bild.",
+      performance: "Entwicklungsbuild vom 9. Oktober: Median im stehenden Anfangsbild 46,45 → 162,20 FPS, jeweils 30 Sekunden Fensterzähler bei 1080p-Ausgabe auf RTX 3070 Ti. Spätere Level wurden nicht gemessen.",
       imageAlt:
         "Asterix & Obelix: Slap Them All! — Spielgeschehen in einem Wald mit HUD und GO-Schild, gezeichnet von PS5PCEM",
     },
@@ -344,6 +344,11 @@ const de: Content = {
   },
 
   history: {
+    "asterix-msaa-depth-passes": {
+      "title": "MSAA-Tiefen- und Stencil-Korrektur beschleunigt den ersten Wald",
+      "summary": "Der Entwicklungsbuild vom 9. Oktober erhält die Samplezahl in reinen Tiefen-/Stencil-Pässen, stellt Masken wieder her und entfernt vier versehentliche Vollbild-Rücklesevorgänge pro Frame. Im stehenden Anfangsbild steigt der Median des FPS-Fensterzählers von 46,45 auf 162,20: je 30 Sekunden, RTX 3070 Ti, 1080p-Ausgabe. Bewegung und die erste Begegnung mit Römern wurden erneut geprüft. Alle 233 Vulkan-Tests und nativen 2×/4×-Prüfungen bestehen. Dies ist eine allgemeine Renderer-Korrektur nach 0.3.4, keine Mindestleistung für alle Level und kein neuer vollständiger Durchlauf.",
+      "imageAlt": "Asterix im ersten Wald mit grünen HUD-Anzeigen nach der MSAA-Tiefen-/Stencil-Korrektur"
+    },
     "quake2-raw-pcm-audio": {
       "title": "Native PCM-Blöcke stellen den Ton in Quake II wieder her",
       "summary": "Der Entwicklungsstand vom 9. Oktober verarbeitet Stereo-PCM-Blöcke, kompakte Wiedergabebefehle und das NGS2-Quantum mit 256 Samples. Eine zehnsekündige Aufnahme der Demosequenz enthält nun Ton statt völliger Stille, ohne vollständig stille 10-ms-Blöcke. Routing und Effekte sind noch unvollständig. Kein neuer Durchlauf oder FPS-Benchmark; alle 602 HLE-Tests bestehen.",
