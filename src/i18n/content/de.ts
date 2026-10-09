@@ -344,6 +344,11 @@ const de: Content = {
   },
 
   history: {
+    "subnautica-acm-convolution": {
+      "title": "ACM-Hall behebt verzögerten und beschädigten Ton",
+      "summary": "ACM berechnet jetzt den Faltungshall und weist das Warten auf einen ungültigen ersten Auftrag zurück. Zuvor mischte FMOD unbeschriebene Ausgabedaten ein: Knacken, NaNs und lange Stille folgten. Zwei neue Starts liefern nach 11–13 Sekunden gültiges PCM; der Projektbetreuer bestätigt klaren Ton. Die frühere Options-Erklärung ist zurückgenommen. Alle 606 HLE-Tests bestehen. Kurze Aussetzer, Grafikfehler und das 30-FPS-Ziel bleiben offen.",
+      "imageAlt": "Subnautica-Menü beim ACM-Audiotest"
+    },
     "asterix-msaa-depth-passes": {
       "title": "MSAA-Tiefen- und Stencil-Korrektur beschleunigt den ersten Wald",
       "summary": "Der Entwicklungsbuild vom 9. Oktober erhält die Samplezahl in reinen Tiefen-/Stencil-Pässen, stellt Masken wieder her und entfernt vier versehentliche Vollbild-Rücklesevorgänge pro Frame. Im stehenden Anfangsbild steigt der Median des FPS-Fensterzählers von 46,45 auf 162,20: je 30 Sekunden, RTX 3070 Ti, 1080p-Ausgabe. Bewegung und die erste Begegnung mit Römern wurden erneut geprüft. Alle 233 Vulkan-Tests und nativen 2×/4×-Prüfungen bestehen. Dies ist eine allgemeine Renderer-Korrektur nach 0.3.4, keine Mindestleistung für alle Level und kein neuer vollständiger Durchlauf.",

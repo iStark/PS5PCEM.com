@@ -26,6 +26,8 @@ export type HistoryEntry = {
   slug: string;
   /** ISO date of the run or of the build that recorded it. */
   date: string;
+  /** Actual publication instant when known; date remains the displayed run day. */
+  recordedAt?: string;
   /**
    * The build the run was made on: a published release tag, or null for an
    * unreleased development build.
@@ -38,6 +40,15 @@ export type HistoryEntry = {
 };
 
 export const history: HistoryEntry[] = [
+  {
+    id: "subnautica-acm-convolution",
+    slug: "subnautica-below-zero",
+    date: "2026-10-10",
+    recordedAt: "2026-10-09T22:38:00Z",
+    release: null,
+    image: "/images/subnautica-acm-audio-2026-10-10.png",
+    source: devReport("subnautica-acm-audio-2026-10-10.md"),
+  },
   {
     id: "asterix-msaa-depth-passes",
     slug: "asterix-obelix-slap-them-all",

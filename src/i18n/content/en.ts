@@ -371,6 +371,11 @@ const content: Content = {
   },
 
   history: {
+    "subnautica-acm-convolution": {
+      "title": "ACM reverb fixes delayed and corrupted audio",
+      "summary": "ACM now computes convolution reverb and rejects the invalid initial batch wait. Previously FMOD mixed unwritten output into its effects, producing crackle, NaNs and prolonged silence. Two fresh launches produce finite, nonzero PCM within 11–13 seconds; the maintainer confirms clear sound. The earlier Options explanation is withdrawn. All 606 HLE tests pass. Short scheduling dropouts, rendering defects and the 30 FPS target remain separate work.",
+      "imageAlt": "Subnautica menu during the ACM convolution audio retest"
+    },
     "asterix-msaa-depth-passes": {
       "title": "MSAA depth/stencil fix raises opening-forest FPS",
       "summary": "The October 9 development build preserves the sample count in depth/stencil-only passes, restoring stencil masks and removing four accidental full-frame readbacks per frame. Stationary opening-forest UI-counter medians rise from 46.45 to 162.20 FPS in 30-second samples on the RTX 3070 Ti at 1080p output. Movement and the first Roman encounter are rechecked. All 233 Vulkan tests and native 2×/4× probes pass. This is a shared renderer fix after 0.3.4, not a minimum across all levels or a new full playthrough.",

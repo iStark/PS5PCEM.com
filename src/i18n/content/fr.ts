@@ -344,6 +344,11 @@ const fr: Content = {
   },
 
   history: {
+    "subnautica-acm-convolution": {
+      "title": "La réverbération ACM corrige le son retardé et corrompu",
+      "summary": "ACM calcule désormais la réverbération par convolution et rejette l’attente du premier lot invalide. FMOD mélangeait auparavant un tampon non rempli, causant craquements, NaN et silence prolongé. Deux nouveaux lancements produisent du PCM valide en 11–13 secondes ; le responsable confirme un son clair. L’explication précédente liée à Options est retirée. Les 606 tests HLE passent. Brèves coupures, défauts graphiques et objectif de 30 FPS restent à traiter.",
+      "imageAlt": "Menu de Subnautica pendant le test audio ACM"
+    },
     "asterix-msaa-depth-passes": {
       "title": "La correction profondeur/pochoir MSAA accélère la forêt initiale",
       "summary": "La version de développement du 9 octobre conserve le nombre d’échantillons des passes profondeur/pochoir, rétablit les masques et supprime quatre relectures accidentelles d’image complète par frame. Dans la scène initiale immobile, la médiane du compteur FPS passe de 46,45 à 162,20 sur des mesures de 30 secondes, avec une RTX 3070 Ti et une sortie 1080p. Déplacements et première rencontre avec les Romains revérifiés. Les 233 tests Vulkan et les vérifications natives 2×/4× passent. Correction commune du moteur après 0.3.4, sans garantie de minimum sur tous les niveaux ni nouvelle partie complète.",

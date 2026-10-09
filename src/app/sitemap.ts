@@ -20,7 +20,8 @@ import {
  * ignore the field.
  */
 
-const newestRun = allHistory()[0]?.date ?? latestRelease.publishedAt;
+const latestRun = allHistory()[0];
+const newestRun = latestRun?.recordedAt ?? latestRun?.date ?? latestRelease.publishedAt;
 
 type Page = { path: string; lastModified: string; priority: number };
 
@@ -45,7 +46,7 @@ const gamePages: Page[] = compatibility.map((entry) => {
   const runs = historyFor(entry.slug);
   return {
     path: `/games/${entry.slug}`,
-    lastModified: entry.confirmedOn ?? runs[0]?.date ?? newestRun,
+    lastModified: runs[0]?.recordedAt ?? entry.confirmedOn ?? runs[0]?.date ?? newestRun,
     // Titles that were played to the end are the ones people search for.
     priority: entry.tier === "playable" ? 0.8 : 0.6,
   };

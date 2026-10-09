@@ -345,6 +345,11 @@ const es: Content = {
   },
 
   history: {
+    "subnautica-acm-convolution": {
+      "title": "La reverberación ACM corrige el audio tardío y corrupto",
+      "summary": "ACM calcula ahora la reverberación por convolución y rechaza la espera del primer lote inválido. Antes FMOD mezclaba un búfer sin escribir, causando chasquidos, NaN y silencio prolongado. Dos arranques nuevos producen PCM válido en 11–13 segundos; el responsable confirma sonido claro. Se retira la explicación anterior sobre Options. Pasan las 606 pruebas HLE. Los cortes breves, los defectos gráficos y el objetivo de 30 FPS siguen pendientes.",
+      "imageAlt": "Menú de Subnautica durante la prueba de audio ACM"
+    },
     "asterix-msaa-depth-passes": {
       "title": "La corrección de profundidad y plantilla MSAA acelera el bosque inicial",
       "summary": "La compilación de desarrollo del 9 de octubre conserva el número de muestras en las pasadas de profundidad y plantilla, restaura las máscaras y elimina cuatro lecturas accidentales de imagen completa por fotograma. La mediana del contador FPS en la escena inicial inmóvil sube de 46,45 a 162,20 en muestras de 30 segundos, con RTX 3070 Ti y salida 1080p. Se vuelven a comprobar el movimiento y el primer encuentro con romanos. Pasan los 233 tests Vulkan y las pruebas nativas 2×/4×. Es una corrección compartida posterior a 0.3.4, no un mínimo para todos los niveles ni una nueva partida completa.",
