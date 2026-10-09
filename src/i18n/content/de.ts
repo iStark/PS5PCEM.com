@@ -344,6 +344,16 @@ const de: Content = {
   },
 
   history: {
+    "quake2-raw-pcm-audio": {
+      "title": "Native PCM-Blöcke stellen den Ton in Quake II wieder her",
+      "summary": "Der Entwicklungsstand vom 9. Oktober verarbeitet Stereo-PCM-Blöcke, kompakte Wiedergabebefehle und das NGS2-Quantum mit 256 Samples. Eine zehnsekündige Aufnahme der Demosequenz enthält nun Ton statt völliger Stille, ohne vollständig stille 10-ms-Blöcke. Routing und Effekte sind noch unvollständig. Kein neuer Durchlauf oder FPS-Benchmark; alle 602 HLE-Tests bestehen.",
+      "imageAlt": "Quake-II-Demosequenz beim PCM-Audiotest"
+    },
+    "subnautica-audio-clock": {
+      "title": "Audiotakt korrigiert; Menüton und FPS geprüft",
+      "summary": "Subnautica gab bereits vor der Änderung nach Bestätigung des Titelbildschirms Ton aus. Die Uhr einer Warteschlange mit nur einem Quantum verliert nun keine Zeitbruchteile mehr. Separate 30-Sekunden-Menüproben zeigen 14,4 FPS mit Ton, 14,9 ohne Ausgabe und 15,2 nach der Korrektur; die UI-Zähler belegen keinen kontrollierten Geschwindigkeitsgewinn. Kurze Aussetzer bleiben in längeren Aufnahmen.",
+      "imageAlt": "Subnautica-Menü beim erneuten Audiotest"
+    },
     "asterix-watched-video-buffers": {
       "title": "Intro läuft auch bei erneut verwendeten Videopuffern",
       "summary": "Die Entwicklungskorrektur vom 9. Oktober stellt den Start mit aktivierter GPU-Seitenverfolgung wieder her. FFmpeg schrieb zuvor direkt in nach dem Textur-Upload schreibgeschützte Gastseiten; die Wiedergabe blieb beim dritten Bild stehen. Video und Audio nutzen nun den vorhandenen Host-Puffer und veröffentlichen Änderungen über die Gast-Speicherverwaltung. Der erneute Test passiert das Intro und erreicht das Spiel. Alle 597 HLE-Tests bestehen. Die Korrektur ist neuer als 0.3.4; der zuvor bestätigte Durchspielstatus bleibt erhalten.",

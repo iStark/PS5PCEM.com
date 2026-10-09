@@ -371,6 +371,16 @@ const content: Content = {
   },
 
   history: {
+    "quake2-raw-pcm-audio": {
+      "title": "Native PCM restores Quake II audio",
+      "summary": "The October 9 development build handles the raw stereo PCM blocks, compact playback commands and 256-frame NGS2 grain used by Quake II. A 10-second attract-sequence loopback changes from complete silence to audible output with no fully silent 10 ms blocks. Full routing and effects remain incomplete; this is not a new playthrough or an FPS benchmark. All 602 HLE tests pass.",
+      "imageAlt": "Quake II attract sequence during the native PCM audio retest"
+    },
+    "subnautica-audio-clock": {
+      "title": "Audio clock corrected; menu audio and FPS checked",
+      "summary": "Subnautica already produced native audio after title-screen confirmation. A depth-one queue clock error is now fixed. Separate 30-second menu samples read 14.4 FPS with output, 14.9 with output disabled and 15.2 after the clock fix; these are UI counters, not a controlled speedup claim. Longer recordings still contain short dropouts, so crackling is not fully resolved.",
+      "imageAlt": "Subnautica menu during the audio-clock retest"
+    },
     "asterix-watched-video-buffers": {
       "title": "Opening movie no longer stalls on reused video buffers",
       "summary": "The October 9 development fix restores startup with GPU page tracking enabled. The old reader wrote FFmpeg output directly into guest video pages that had become read-only after texture upload, so playback stalled on the third frame. Video and audio now use the existing host pipe buffer before publishing tracked guest writes. The retest passes the bumper and reaches gameplay. All 597 HLE tests pass. This fix postdates 0.3.4; the earlier confirmed playthrough grade is retained.",

@@ -345,6 +345,16 @@ const es: Content = {
   },
 
   history: {
+    "quake2-raw-pcm-audio": {
+      "title": "Los bloques PCM recuperan el sonido de Quake II",
+      "summary": "La versión de desarrollo del 9 de octubre procesa PCM estéreo, comandos compactos y bloques NGS2 de 256 muestras. Una grabación de diez segundos de la demostración pasa del silencio total a tener sonido, sin bloques de 10 ms totalmente silenciosos. El enrutamiento y los efectos siguen incompletos. No es una nueva partida completa ni una prueba FPS; pasan las 602 pruebas HLE.",
+      "imageAlt": "Demostración de Quake II durante la prueba de audio PCM"
+    },
+    "subnautica-audio-clock": {
+      "title": "Reloj de audio corregido; sonido y FPS del menú comprobados",
+      "summary": "Subnautica ya emitía sonido al confirmar la pantalla inicial. Se corrige la pérdida de tiempo fraccionario en la cola de un bloque. Pruebas separadas de 30 segundos muestran 14,4 FPS con sonido, 14,9 sin salida y 15,2 tras el cambio; los contadores no demuestran una mejora controlada. Persisten cortes breves en grabaciones largas.",
+      "imageAlt": "Menú de Subnautica durante la prueba del reloj de audio"
+    },
     "asterix-watched-video-buffers": {
       "title": "La introducción reutiliza correctamente los búferes de vídeo",
       "summary": "La corrección del 9 de octubre restaura el inicio con el seguimiento de páginas GPU activado. FFmpeg escribía directamente en páginas de vídeo protegidas tras cargar las texturas, bloqueando el tercer fotograma. Vídeo y audio usan ahora el búfer del sistema anfitrión antes de publicar escrituras supervisadas. La nueva prueba supera la introducción y llega a la partida. Pasan las 597 pruebas HLE. La corrección es posterior a 0.3.4; se mantiene el estado de partida completa confirmado anteriormente.",

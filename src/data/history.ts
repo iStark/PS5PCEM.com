@@ -39,6 +39,22 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "quake2-raw-pcm-audio",
+    slug: "quake-ii-2023",
+    date: "2026-10-09",
+    release: null,
+    image: "/images/quake2-pcm-attract-2026-10-09.png",
+    source: devReport("quake2-subnautica-audio-2026-10-09.md"),
+  },
+  {
+    id: "subnautica-audio-clock",
+    slug: "subnautica-below-zero",
+    date: "2026-10-09",
+    release: null,
+    image: "/images/subnautica-audio-clock-2026-10-09.png",
+    source: devReport("quake2-subnautica-audio-2026-10-09.md"),
+  },
+  {
     id: "asterix-watched-video-buffers",
     slug: "asterix-obelix-slap-them-all",
     date: "2026-10-09",
