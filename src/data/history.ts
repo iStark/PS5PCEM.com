@@ -39,6 +39,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "jets-independent-audio-streams",
+    slug: "jets-n-guns-2",
+    date: "2026-10-09",
+    release: null,
+    image: "/images/jets-audio-combat-2026-10-09.png",
+    source: devReport("jets-audio-streams-2026-10-09.md"),
+  },
+  {
     id: "jurassic-font-atlas-startup",
     slug: "jurassic-park-classic-games-collection",
     date: "2026-10-08",

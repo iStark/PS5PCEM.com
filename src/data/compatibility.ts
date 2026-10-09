@@ -80,7 +80,7 @@ export const compatibility: CompatibilityEntry[] = [
     slug: "jets-n-guns-2",
     title: "Jets 'n' Guns 2",
     tier: "playable",
-    image: "/images/jets-n-guns-2-gameplay.png",
+    image: "/images/jets-audio-combat-2026-10-09.png",
     confirmedOn: "2026-09-15",
   },
   {

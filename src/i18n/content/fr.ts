@@ -147,23 +147,20 @@ const fr: Content = {
     },
 
     "jets-n-guns-2": {
-      status: "Jouable · Terminable",
-      headline:
-        "Terminé, avec niveaux, ATH, score et parallaxe tous corrects.",
-      summary:
-        "Confirmé jouable le 15 septembre 2026. Niveaux, ATH, score, ennemis et fond en parallaxe s'affichent correctement dans la partie capturée. Le coût par image est dominé par les attentes GPU et par la préparation d'un grand nombre de tampons invités à chaque image.",
-      strengths: [
+      "status": "Jouable · Terminable",
+      "headline": "Terminé, avec niveaux, ATH, score et parallaxe tous corrects.",
+      "summary": "La musique et les effets utilisent désormais des flux de sortie distincts. Le correctif de développement du 9 octobre préserve aussi l’ordre PCM après une file vide et est postérieur à la version 0.3.4. Le développeur a confirmé une partie complète le 15 septembre.",
+      "strengths": [
         "Partie complète confirmée par le mainteneur.",
         "Niveaux, ATH, score, ennemis et couches de parallaxe s'affichent tous correctement.",
-        "Le son ne se déchire plus : la version 0.3.2 a mis fin à la concurrence de deux ports de sortie pour le périphérique de l'hôte.",
+        "La musique et les effets ne se disputent plus le périphérique de sortie."
       ],
-      limits: [
-        "Le coût par image reste dominé par les attentes GPU synchrones et la préparation des tampons.",
+      "limits": [
+        "La dernière capture du menu de 30 secondes contient encore un intervalle silencieux de 30 ms ; sa cause reste indéterminée.",
+        "Les courts tests audio dans le menu et en combat sont réussis ; la latence totale et la stabilité prolongée ne sont pas mesurées."
       ],
-      performance:
-        "Les images mesurent 70–92 ms, environ 11–14 FPS. Dans une image de 70 ms, 18 ms attendent le GPU sur 33 soumissions, 11 ms préparent des points de contrôle de ressources et 13 ms préparent 894 tampons invités distincts totalisant 15 Mio.",
-      imageAlt:
-        "Jets 'n' Guns 2, partie en cours avec le vaisseau du joueur, l'ATH et le score, rendu par PS5PCEM",
+      "performance": "Le compteur en combat affichait 35,7–45,8 FPS le 9 octobre. Les anciens 11–14 FPS concernent une autre version et une autre scène ; ce n’est pas une comparaison contrôlée.",
+      "imageAlt": "Combat sur Pirate Base lors du test audio du 9 octobre"
     },
 
     "the-precinct": {
@@ -347,6 +344,11 @@ const fr: Content = {
   },
 
   history: {
+    "jets-independent-audio-streams": {
+      "title": "Flux distincts pour la musique et les effets ; nouvel essai audio",
+      "summary": "Dans une capture audio de 20 secondes du menu, la proportion de blocs silencieux de 10 ms passe de 92,25 % sous 0.3.4 à zéro après correction. Deux séquences de combat actif de 13 secondes ne présentent pas non plus de tels blocs. Les enregistrements complets incluent du silence lors des transitions et après la mort. Des flux distincts remplacent les changements de périphérique ; la reprise conserve l’ordre PCM dans la file active. Les 596 tests HLE passent. Ce correctif est postérieur à 0.3.4 ; il ne constitue ni une nouvelle partie complète ni une comparaison contrôlée des FPS.",
+      "imageAlt": "Combat sur Pirate Base lors du test audio du 9 octobre"
+    },
     "jurassic-font-atlas-startup": {
       "title": "Démarrage corrigé pour l'atlas de police ; premier niveau atteint",
       "summary": "Le commit de développement a3d371e corrige la régression de démarrage introduite par Font HLE. La collection demandait U+007F lors de la construction de son atlas ImGui. Le rejet de ce caractère absent déclenchait l'assertion CalcGlyphInfo et arrêtait CarbonMainThread, tandis que les autres threads attendaient les commandes AGC en suspens. Les caractères absents utilisent désormais le glyphe .notdef de la police. Les deux nouveaux lancements ont dépassé ce point ; le premier niveau s'est affiché et la carte a répondu au clavier. Les 569 tests HLE ont réussi, y compris les vérifications de métriques et de rendu de toute la plage Latin-1. Cette entrée décrit la nouvelle vérification du démarrage et du premier niveau.",

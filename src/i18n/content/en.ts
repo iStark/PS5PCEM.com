@@ -174,22 +174,20 @@ const content: Content = {
     },
 
     "jets-n-guns-2": {
-      status: "Playable · Completable",
-      headline: "Finished, with levels, HUD, score and parallax scene all correct.",
-      summary:
-        "Confirmed playable on September 15, 2026. Levels, HUD, score, enemies and the parallax background render correctly in the captured gameplay. Frame cost is dominated by GPU waits and by staging a large number of guest buffers each frame.",
-      strengths: [
+      "status": "Playable · Completable",
+      "headline": "Finished, with levels, HUD, score and parallax scene all correct.",
+      "summary": "Concurrent music and effects now keep separate host streams. The October 9 development fix also preserves PCM order after an underrun; it is newer than release 0.3.4. The maintainer confirmed a complete playthrough on September 15.",
+      "strengths": [
         "Complete playthrough confirmed by the maintainer.",
         "Levels, HUD, score, enemies and parallax layers all draw correctly.",
-        "Audio no longer thrashes: release 0.3.2 stopped two output ports competing for the host device.",
+        "Music and effects no longer compete for one output device."
       ],
-      limits: [
-        "Frame cost is still dominated by synchronous GPU waits and buffer staging.",
+      "limits": [
+        "A final 30-second installed-runner menu recording retained one 30 ms silent interval; its cause is not established.",
+        "Short menu and combat audio checks passed; end-to-end sound latency and long-session stability were not measured."
       ],
-      performance:
-        "Frames measure 70–92 ms, about 11–14 FPS. In a 70 ms frame, 18 ms waits on the GPU across 33 submissions, 11 ms prepares resource checkpoints, and 13 ms stages 894 distinct guest buffers totalling 15 MiB.",
-      imageAlt:
-        "Jets 'n' Guns 2 gameplay with the player ship, HUD and score, rendered by PS5PCEM",
+      "performance": "October 9 combat UI samples read 35.7–45.8 FPS. The historical 70–92 ms frames (11–14 FPS) used an earlier build and scene; this is not a matched speedup benchmark.",
+      "imageAlt": "Pirate Base combat during the October 9 audio retest"
     },
 
     "the-precinct": {
@@ -373,6 +371,11 @@ const content: Content = {
   },
 
   history: {
+    "jets-independent-audio-streams": {
+      "title": "Independent music and effects streams; audio retested",
+      "summary": "A 20-second mission-menu loopback recording fell from 92.25% silent 10 ms blocks on 0.3.4 to zero with the fix. Two 13-second active combat intervals also had no silent blocks. Full recordings include silence at transitions and after player death. Separate host streams replace device handoffs, and recovery now wraps within the active PCM ring. All 596 HLE tests passed. This is a development fix after 0.3.4, not a new complete playthrough or a controlled FPS comparison.",
+      "imageAlt": "Pirate Base combat during the October 9 audio retest"
+    },
     "jurassic-font-atlas-startup": {
       "title": "Font-atlas startup fixed; first level reached",
       "summary": "Development commit a3d371e fixes the startup regression introduced by Font HLE. The collection requested U+007F while building its ImGui atlas; rejecting that missing character triggered the CalcGlyphInfo assertion and terminated CarbonMainThread, leaving other threads waiting on pending AGC commands. Missing characters now use the font's .notdef glyph. Both retest launches passed the failure point; the first level rendered and the map overlay responded to keyboard input. All 569 HLE tests passed, including complete Latin-1 atlas metrics and rendering checks. This record covers the startup and first-level retest.",

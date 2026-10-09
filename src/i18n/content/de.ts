@@ -147,23 +147,20 @@ const de: Content = {
     },
 
     "jets-n-guns-2": {
-      status: "Spielbar · Durchspielbar",
-      headline:
-        "Beendet, mit korrekten Levels, HUD, Punktestand und Parallaxe.",
-      summary:
-        "Am 15. September 2026 als spielbar bestätigt. Levels, HUD, Punktestand, Gegner und der Parallaxe-Hintergrund werden im aufgenommenen Spielgeschehen korrekt gezeichnet. Die Bildkosten werden von GPU-Wartezeiten und davon bestimmt, dass pro Bild sehr viele Gastpuffer bereitgestellt werden.",
-      strengths: [
+      "status": "Spielbar · Durchspielbar",
+      "headline": "Beendet, mit korrekten Levels, HUD, Punktestand und Parallaxe.",
+      "summary": "Musik und Effekte verwenden jetzt getrennte Ausgabestreams. Die Entwicklungskorrektur vom 9. Oktober bewahrt auch die PCM-Reihenfolge nach einem Pufferleerlauf und entstand nach Version 0.3.4. Ein vollständiger Durchlauf wurde am 15. September vom Entwickler bestätigt.",
+      "strengths": [
         "Vollständiger Durchlauf vom Entwickler bestätigt.",
         "Levels, HUD, Punktestand, Gegner und Parallaxe-Ebenen werden alle korrekt gezeichnet.",
-        "Der Ton reißt nicht mehr ab: Version 0.3.2 beendete den Streit zweier Ausgabeports um das Hostgerät.",
+        "Musik und Effekte konkurrieren nicht mehr um ein Ausgabegerät."
       ],
-      limits: [
-        "Die Bildkosten werden weiter von synchronen GPU-Wartezeiten und der Pufferbereitstellung bestimmt.",
+      "limits": [
+        "Die abschließende 30-sekündige Menüaufnahme enthielt noch ein stilles Intervall von 30 ms; dessen Ursache ist nicht geklärt.",
+        "Kurze Audioprüfungen in Menü und Kampf bestanden; Gesamtlatenz und Langzeitstabilität wurden nicht gemessen."
       ],
-      performance:
-        "Bilder messen 70–92 ms, etwa 11–14 FPS. In einem 70-ms-Bild warten 18 ms über 33 Einreichungen auf die GPU, 11 ms bereiten Ressourcen-Prüfpunkte vor und 13 ms stellen 894 verschiedene Gastpuffer mit insgesamt 15 MiB bereit.",
-      imageAlt:
-        "Jets 'n' Guns 2 — Spielgeschehen mit Spielerschiff, HUD und Punktestand, gezeichnet von PS5PCEM",
+      "performance": "Die FPS-Anzeige im Kampf zeigte am 9. Oktober 35,7–45,8 FPS. Die früheren 11–14 FPS stammen aus einer anderen Version und Szene; dies ist kein vergleichbarer Beschleunigungstest.",
+      "imageAlt": "Kampf auf Pirate Base beim Audiotest vom 9. Oktober"
     },
 
     "the-precinct": {
@@ -347,6 +344,11 @@ const de: Content = {
   },
 
   history: {
+    "jets-independent-audio-streams": {
+      "title": "Getrennte Musik- und Effektstreams; Audio erneut geprüft",
+      "summary": "In einer 20-sekündigen Loopback-Aufnahme des Missionsmenüs sank der Anteil stiller 10-ms-Blöcke von 92,25 % mit 0.3.4 auf null. Zwei aktive Kampfintervalle von jeweils 13 Sekunden enthielten ebenfalls keine solchen Blöcke. Die vollständigen Aufnahmen enthalten Stille bei Übergängen und nach dem Tod. Getrennte Streams ersetzen Gerätewechsel; die Wiederherstellung hält die PCM-Reihenfolge im aktiven Ring ein. Alle 596 HLE-Tests bestanden. Die Korrektur entstand nach 0.3.4; kein erneuter vollständiger Durchlauf oder kontrollierter FPS-Vergleich.",
+      "imageAlt": "Kampf auf Pirate Base beim Audiotest vom 9. Oktober"
+    },
     "jurassic-font-atlas-startup": {
       "title": "Schriftatlas-Startfehler behoben; erster Level erreicht",
       "summary": "Entwicklungscommit a3d371e behebt den durch Font HLE eingeführten Startfehler. Beim Aufbau des ImGui-Atlas forderte die Sammlung U+007F an. Die Ablehnung dieses fehlenden Zeichens löste die CalcGlyphInfo-Assertion aus und beendete CarbonMainThread; die übrigen Threads warteten weiter auf ausstehende AGC-Befehle. Fehlende Zeichen verwenden nun die .notdef-Glyphe der Schrift. Beide erneuten Starts passierten die Fehlerstelle; der erste Level wurde gerendert und die Kartenansicht reagierte auf die Tastatur. Alle 569 HLE-Tests bestanden, einschließlich Metrik- und Renderingprüfungen für den vollständigen Latin-1-Bereich. Dieser Eintrag dokumentiert den erneuten Start- und Erstleveltest.",

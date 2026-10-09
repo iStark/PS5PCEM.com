@@ -147,23 +147,20 @@ const es: Content = {
     },
 
     "jets-n-guns-2": {
-      status: "Jugable · Completable",
-      headline:
-        "Terminado, con niveles, HUD, puntuación y parallax todos correctos.",
-      summary:
-        "Confirmado jugable el 15 de septiembre de 2026. Niveles, HUD, puntuación, enemigos y el fondo en parallax se dibujan correctamente en la partida capturada. El coste por fotograma lo dominan las esperas de GPU y la preparación de un gran número de búferes invitados en cada fotograma.",
-      strengths: [
+      "status": "Jugable · Completable",
+      "headline": "Terminado, con niveles, HUD, puntuación y parallax todos correctos.",
+      "summary": "La música y los efectos usan ahora flujos de salida independientes. La corrección de desarrollo del 9 de octubre también conserva el orden PCM al recuperarse de una cola vacía y es posterior a 0.3.4. El desarrollador confirmó una partida completa el 15 de septiembre.",
+      "strengths": [
         "Partida completa confirmada por el responsable.",
         "Niveles, HUD, puntuación, enemigos y capas de parallax se dibujan todos correctamente.",
-        "El audio ya no se corta: la versión 0.3.2 acabó con dos puertos de salida compitiendo por el dispositivo del anfitrión.",
+        "La música y los efectos ya no compiten por un dispositivo de salida."
       ],
-      limits: [
-        "El coste por fotograma lo siguen dominando las esperas sincrónicas de GPU y la preparación de búferes.",
+      "limits": [
+        "La grabación final del menú de 30 segundos conserva un intervalo silencioso de 30 ms; su causa no está determinada.",
+        "Superadas las pruebas breves de audio en menú y combate; no se midieron la latencia total ni la estabilidad prolongada."
       ],
-      performance:
-        "Los fotogramas miden 70–92 ms, unos 11–14 FPS. En un fotograma de 70 ms, 18 ms esperan a la GPU en 33 envíos, 11 ms preparan puntos de control de recursos y 13 ms preparan 894 búferes invitados distintos que suman 15 MiB.",
-      imageAlt:
-        "Jets 'n' Guns 2, partida con la nave del jugador, el HUD y la puntuación, renderizada por PS5PCEM",
+      "performance": "El contador en combate mostró 35,7–45,8 FPS el 9 de octubre. Los antiguos 11–14 FPS corresponden a otra versión y escena; no es una comparación controlada de rendimiento.",
+      "imageAlt": "Combate en Pirate Base durante la prueba de audio del 9 de octubre"
     },
 
     "the-precinct": {
@@ -348,6 +345,11 @@ const es: Content = {
   },
 
   history: {
+    "jets-independent-audio-streams": {
+      "title": "Flujos independientes para música y efectos; nueva prueba de audio",
+      "summary": "En una captura de audio de 20 segundos del menú, los bloques silenciosos de 10 ms bajaron del 92,25 % con 0.3.4 a cero tras la corrección. Dos intervalos de combate activo de 13 segundos tampoco contienen esos bloques. Las grabaciones completas incluyen silencio en transiciones y tras morir. Los flujos independientes sustituyen los cambios de dispositivo y la recuperación respeta el orden PCM en la cola activa. Pasaron las 596 pruebas HLE. Es una corrección posterior a 0.3.4, no otra partida completa ni una comparación controlada de FPS.",
+      "imageAlt": "Combate en Pirate Base durante la prueba de audio del 9 de octubre"
+    },
     "jurassic-font-atlas-startup": {
       "title": "Inicio del atlas de fuentes corregido; primer nivel alcanzado",
       "summary": "El commit de desarrollo a3d371e corrige la regresión de inicio introducida por Font HLE. La colección solicitaba U+007F al construir su atlas ImGui. Rechazar ese carácter ausente activaba la aserción CalcGlyphInfo y terminaba CarbonMainThread, mientras los demás hilos seguían esperando comandos AGC pendientes. Los caracteres ausentes ahora usan el glifo .notdef de la fuente. Ambos nuevos inicios superaron el punto de fallo; el primer nivel se renderizó y el mapa respondió al teclado. Pasaron las 569 pruebas HLE, incluidas las comprobaciones de métricas y renderizado de todo el rango Latin-1. Esta entrada documenta la repetición de la prueba de inicio y del primer nivel.",

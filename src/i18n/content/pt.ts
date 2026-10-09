@@ -147,23 +147,20 @@ const pt: Content = {
     },
 
     "jets-n-guns-2": {
-      status: "Jogável · Finalizável",
-      headline:
-        "Terminado, com fases, HUD, pontuação e parallax todos corretos.",
-      summary:
-        "Confirmado jogável em 15 de setembro de 2026. Fases, HUD, pontuação, inimigos e o fundo em parallax são desenhados corretamente na partida capturada. O custo por quadro é dominado pelas esperas de GPU e pela preparação de um grande número de buffers convidados a cada quadro.",
-      strengths: [
+      "status": "Jogável · Finalizável",
+      "headline": "Terminado, com fases, HUD, pontuação e parallax todos corretos.",
+      "summary": "Música e efeitos agora usam fluxos de saída separados. A correção de desenvolvimento de 9 de outubro também preserva a ordem PCM após o esvaziamento da fila e é posterior à versão 0.3.4. O desenvolvedor confirmou uma partida completa em 15 de setembro.",
+      "strengths": [
         "Partida completa confirmada pelo mantenedor.",
         "Fases, HUD, pontuação, inimigos e camadas de parallax são todos desenhados corretamente.",
-        "O áudio não se corta mais: a versão 0.3.2 acabou com dois portos de saída disputando o dispositivo do anfitrião.",
+        "Música e efeitos não disputam mais um único dispositivo de saída."
       ],
-      limits: [
-        "O custo por quadro continua dominado pelas esperas sincrônicas de GPU e pela preparação de buffers.",
+      "limits": [
+        "A gravação final do menu de 30 segundos ainda contém um intervalo silencioso de 30 ms; a causa não foi determinada.",
+        "Os testes curtos de áudio no menu e em combate passaram; latência total e estabilidade prolongada não foram medidas."
       ],
-      performance:
-        "Os quadros medem 70–92 ms, cerca de 11–14 FPS. Num quadro de 70 ms, 18 ms esperam pela GPU em 33 envios, 11 ms preparam pontos de verificação de recursos e 13 ms preparam 894 buffers convidados distintos somando 15 MiB.",
-      imageAlt:
-        "Jets 'n' Guns 2, partida com a nave do jogador, o HUD e a pontuação, renderizada pelo PS5PCEM",
+      "performance": "O contador em combate mostrou 35,7–45,8 FPS em 9 de outubro. Os antigos 11–14 FPS são de outra versão e cena; não é uma comparação controlada de desempenho.",
+      "imageAlt": "Combate em Pirate Base durante o teste de áudio de 9 de outubro"
     },
 
     "the-precinct": {
@@ -347,6 +344,11 @@ const pt: Content = {
   },
 
   history: {
+    "jets-independent-audio-streams": {
+      "title": "Fluxos separados para música e efeitos; áudio testado novamente",
+      "summary": "Numa captura de áudio de 20 segundos do menu, os blocos silenciosos de 10 ms caíram de 92,25% na versão 0.3.4 para zero com a correção. Dois intervalos de combate ativo de 13 segundos também não tiveram esses blocos. As gravações completas incluem silêncio nas transições e após a morte. Fluxos separados substituem a troca de dispositivo, e a recuperação preserva a ordem PCM na fila ativa. Todos os 596 testes HLE passaram. A correção é posterior à versão 0.3.4; não representa outra partida completa nem uma comparação controlada de FPS.",
+      "imageAlt": "Combate em Pirate Base durante o teste de áudio de 9 de outubro"
+    },
     "jurassic-font-atlas-startup": {
       "title": "Inicialização do atlas de fontes corrigida; primeira fase alcançada",
       "summary": "O commit de desenvolvimento a3d371e corrige a regressão de inicialização introduzida pelo Font HLE. A coleção solicitava U+007F ao criar seu atlas ImGui. Rejeitar esse caractere ausente acionava a asserção CalcGlyphInfo e encerrava CarbonMainThread, enquanto as outras threads continuavam esperando comandos AGC pendentes. Caracteres ausentes agora usam o glifo .notdef da fonte. Ambas as novas inicializações passaram pelo ponto de falha; a primeira fase foi renderizada e o mapa respondeu ao teclado. Todos os 569 testes HLE passaram, incluindo verificações de métricas e renderização de todo o intervalo Latin-1. Este registro documenta a nova verificação da inicialização e da primeira fase.",
