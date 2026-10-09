@@ -344,6 +344,11 @@ const fr: Content = {
   },
 
   history: {
+    "asterix-watched-video-buffers": {
+      "title": "Le film d’introduction réutilise correctement ses tampons",
+      "summary": "Le correctif du 9 octobre rétablit le démarrage avec le suivi des pages GPU activé. FFmpeg écrivait directement dans des pages vidéo invitées devenues protégées après le transfert des textures, bloquant la troisième image. Vidéo et audio utilisent désormais le tampon hôte existant avant de publier les écritures suivies. Le nouvel essai dépasse l’introduction et atteint le jeu. Les 597 tests HLE passent. Ce correctif est postérieur à 0.3.4 ; le statut de partie complète précédemment confirmé est conservé.",
+      "imageAlt": "Partie d’Asterix après correction des tampons vidéo surveillés"
+    },
     "jets-independent-audio-streams": {
       "title": "Flux distincts pour la musique et les effets ; nouvel essai audio",
       "summary": "Dans une capture audio de 20 secondes du menu, la proportion de blocs silencieux de 10 ms passe de 92,25 % sous 0.3.4 à zéro après correction. Deux séquences de combat actif de 13 secondes ne présentent pas non plus de tels blocs. Les enregistrements complets incluent du silence lors des transitions et après la mort. Des flux distincts remplacent les changements de périphérique ; la reprise conserve l’ordre PCM dans la file active. Les 596 tests HLE passent. Ce correctif est postérieur à 0.3.4 ; il ne constitue ni une nouvelle partie complète ni une comparaison contrôlée des FPS.",

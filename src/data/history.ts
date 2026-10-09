@@ -39,6 +39,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "asterix-watched-video-buffers",
+    slug: "asterix-obelix-slap-them-all",
+    date: "2026-10-09",
+    release: null,
+    image: "/images/asterix-video-buffer-fix-2026-10-09.png",
+    source: devReport("asterix-video-buffers-2026-10-09.md"),
+  },
+  {
     id: "jets-independent-audio-streams",
     slug: "jets-n-guns-2",
     date: "2026-10-09",

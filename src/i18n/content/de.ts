@@ -344,6 +344,11 @@ const de: Content = {
   },
 
   history: {
+    "asterix-watched-video-buffers": {
+      "title": "Intro läuft auch bei erneut verwendeten Videopuffern",
+      "summary": "Die Entwicklungskorrektur vom 9. Oktober stellt den Start mit aktivierter GPU-Seitenverfolgung wieder her. FFmpeg schrieb zuvor direkt in nach dem Textur-Upload schreibgeschützte Gastseiten; die Wiedergabe blieb beim dritten Bild stehen. Video und Audio nutzen nun den vorhandenen Host-Puffer und veröffentlichen Änderungen über die Gast-Speicherverwaltung. Der erneute Test passiert das Intro und erreicht das Spiel. Alle 597 HLE-Tests bestehen. Die Korrektur ist neuer als 0.3.4; der zuvor bestätigte Durchspielstatus bleibt erhalten.",
+      "imageAlt": "Asterix-Spielszene nach der Korrektur der überwachten Videopuffer"
+    },
     "jets-independent-audio-streams": {
       "title": "Getrennte Musik- und Effektstreams; Audio erneut geprüft",
       "summary": "In einer 20-sekündigen Loopback-Aufnahme des Missionsmenüs sank der Anteil stiller 10-ms-Blöcke von 92,25 % mit 0.3.4 auf null. Zwei aktive Kampfintervalle von jeweils 13 Sekunden enthielten ebenfalls keine solchen Blöcke. Die vollständigen Aufnahmen enthalten Stille bei Übergängen und nach dem Tod. Getrennte Streams ersetzen Gerätewechsel; die Wiederherstellung hält die PCM-Reihenfolge im aktiven Ring ein. Alle 596 HLE-Tests bestanden. Die Korrektur entstand nach 0.3.4; kein erneuter vollständiger Durchlauf oder kontrollierter FPS-Vergleich.",

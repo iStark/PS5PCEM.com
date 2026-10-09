@@ -344,6 +344,11 @@ const pt: Content = {
   },
 
   history: {
+    "asterix-watched-video-buffers": {
+      "title": "A introdução reutiliza corretamente os buffers de vídeo",
+      "summary": "A correção de 9 de outubro restaura a inicialização com o rastreamento de páginas GPU ativo. O FFmpeg escrevia diretamente em páginas de vídeo protegidas após o envio das texturas, travando no terceiro quadro. Vídeo e áudio agora usam o buffer existente do host antes de publicar escritas rastreadas. O novo teste passa pela introdução e chega à partida. Todos os 597 testes HLE passaram. A correção é posterior à versão 0.3.4; o estado de conclusão confirmado anteriormente é mantido.",
+      "imageAlt": "Partida de Asterix após a correção dos buffers de vídeo rastreados"
+    },
     "jets-independent-audio-streams": {
       "title": "Fluxos separados para música e efeitos; áudio testado novamente",
       "summary": "Numa captura de áudio de 20 segundos do menu, os blocos silenciosos de 10 ms caíram de 92,25% na versão 0.3.4 para zero com a correção. Dois intervalos de combate ativo de 13 segundos também não tiveram esses blocos. As gravações completas incluem silêncio nas transições e após a morte. Fluxos separados substituem a troca de dispositivo, e a recuperação preserva a ordem PCM na fila ativa. Todos os 596 testes HLE passaram. A correção é posterior à versão 0.3.4; não representa outra partida completa nem uma comparação controlada de FPS.",

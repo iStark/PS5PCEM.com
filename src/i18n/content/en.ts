@@ -371,6 +371,11 @@ const content: Content = {
   },
 
   history: {
+    "asterix-watched-video-buffers": {
+      "title": "Opening movie no longer stalls on reused video buffers",
+      "summary": "The October 9 development fix restores startup with GPU page tracking enabled. The old reader wrote FFmpeg output directly into guest video pages that had become read-only after texture upload, so playback stalled on the third frame. Video and audio now use the existing host pipe buffer before publishing tracked guest writes. The retest passes the bumper and reaches gameplay. All 597 HLE tests pass. This fix postdates 0.3.4; the earlier confirmed playthrough grade is retained.",
+      "imageAlt": "Asterix gameplay after the watched video-buffer startup fix"
+    },
     "jets-independent-audio-streams": {
       "title": "Independent music and effects streams; audio retested",
       "summary": "A 20-second mission-menu loopback recording fell from 92.25% silent 10 ms blocks on 0.3.4 to zero with the fix. Two 13-second active combat intervals also had no silent blocks. Full recordings include silence at transitions and after player death. Separate host streams replace device handoffs, and recovery now wraps within the active PCM ring. All 596 HLE tests passed. This is a development fix after 0.3.4, not a new complete playthrough or a controlled FPS comparison.",
