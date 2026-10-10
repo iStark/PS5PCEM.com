@@ -106,22 +106,22 @@ const de: Content = {
 
     "dreaming-sarah": {
       status: "Spielbar · Durchspielbar",
-      headline: "Beendet, und der Anfang läuft an der 60-FPS-Grenze.",
+      headline: "Der erste Waldabschnitt übertrifft nach optimierten Vertex-Uploads 100 FPS.",
       summary:
-        "Am 15. September 2026 als spielbar bestätigt. Menüs, der animierte Titel, Weltszenen, Figuren und NPCs werden alle korrekt gezeichnet, und die erste Szene hält die Bildratengrenze auf dem Referenzrechner.",
+        "Der Entwicklungsbuild vom 10. Oktober lädt nachweislich benötigte Vertex-Bereiche statt übergroßer Sprite-Puffer. Die Uploads sinken pro Anfangsbild von rund 78 auf 4,9 MiB. Bewegung, Springen und der nächste Plattformabschnitt wurden geprüft; der frühere Abschlussbericht bleibt bestehen.",
       strengths: [
         "Vollständiger Durchlauf vom Entwickler bestätigt.",
-        "Titelmenü und erste Szene halten die 60-FPS-Grenze — 5.280 Bildwechsel in 90 Sekunden.",
+        "Anfang, 60 Sekunden: Median 198.25 FPS, Bereich 187.8–203.2. Nach dem Aufwachen: 197.25 FPS; nächste Plattformszene: 144.35 FPS (je 30 Sekunden).",
         "Animierter Titel, Weltszenen und NPCs werden alle korrekt gezeichnet.",
       ],
       limits: [
-        "Der Entwickler berichtet von einer fallenden Bildrate in der zweiten Spielszene, die nicht gemessen wurde.",
+        "Dies sind Stichproben des Fensterzählers auf einer RTX 3070 Ti mit 1080p-Ausgabe und Ton, keine Mindestleistung für das gesamte Spiel.",
         "Zum Laden mussten eboot.bin und sce_module/libc.prx aus den Sicherungen wiederhergestellt werden, die der eigene eboot-Patcher der Kopie hinterlassen hatte, nachdem er beide abgeschnitten hatte.",
       ],
       performance:
-        "Titelmenü und erste Szene halten 60 FPS, gemessen als 5.280 Bildwechsel über 90 Sekunden.",
+        "Anfang, 60 Sekunden: Median 198.25 FPS, Bereich 187.8–203.2. Nach dem Aufwachen: 197.25 FPS; nächste Plattformszene: 144.35 FPS (je 30 Sekunden).",
       imageAlt:
-        "Dreaming Sarah — Waldszene mit einem NPC, gezeichnet von PS5PCEM",
+        "Dreaming Sarah im ersten Waldabschnitt nach begrenzten Vertex-Uploads",
     },
 
     "jurassic-park-classic-games-collection": {
@@ -344,6 +344,11 @@ const de: Content = {
   },
 
   history: {
+    "sarah-bounded-vertex-uploads": {
+      "title": "Belegte Vertex-Bereiche vermeiden übergroße Sprite-Uploads",
+      "summary": "Der Entwicklungsbuild vom 10. Oktober lädt nachweislich benötigte Vertex-Bereiche statt übergroßer Sprite-Puffer. Die Uploads sinken pro Anfangsbild von rund 78 auf 4,9 MiB. Bewegung, Springen und der nächste Plattformabschnitt wurden geprüft; der frühere Abschlussbericht bleibt bestehen. Anfang, 60 Sekunden: Median 198.25 FPS, Bereich 187.8–203.2. Nach dem Aufwachen: 197.25 FPS; nächste Plattformszene: 144.35 FPS (je 30 Sekunden). Dies sind Stichproben des Fensterzählers auf einer RTX 3070 Ti mit 1080p-Ausgabe und Ton, keine Mindestleistung für das gesamte Spiel.",
+      "imageAlt": "Dreaming Sarah im ersten Waldabschnitt nach begrenzten Vertex-Uploads"
+    },
     "subnautica-acm-convolution": {
       "title": "ACM-Hall behebt verzögerten und beschädigten Ton",
       "summary": "ACM berechnet jetzt den Faltungshall und weist das Warten auf einen ungültigen ersten Auftrag zurück. Zuvor mischte FMOD unbeschriebene Ausgabedaten ein: Knacken, NaNs und lange Stille folgten. Zwei neue Starts liefern nach 11–13 Sekunden gültiges PCM; der Projektbetreuer bestätigt klaren Ton. Die frühere Options-Erklärung ist zurückgenommen. Alle 606 HLE-Tests bestehen. Kurze Aussetzer, Grafikfehler und das 30-FPS-Ziel bleiben offen.",

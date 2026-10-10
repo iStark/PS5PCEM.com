@@ -133,22 +133,22 @@ const content: Content = {
 
     "dreaming-sarah": {
       status: "Playable · Completable",
-      headline: "Finished, and the opening runs at the 60 FPS cap.",
+      headline: "Opening forest exceeds 100 FPS after vertex upload optimization.",
       summary:
-        "Confirmed playable on September 15, 2026. Menus, the animated title, world scenes, characters and NPCs all render correctly, and the first scene holds the frame cap on the reference host.",
+        "The October 10 development build replaces oversized sprite-buffer copies with proven vertex ranges. Buffer uploads fall from about 78 MiB to 4.9 MiB per opening frame. Movement, jumping and the next platform screen are verified; the earlier completed-playthrough report remains on record.",
       strengths: [
         "Complete playthrough confirmed by the maintainer.",
-        "Title menu and first scene hold the 60 FPS cap — 5,280 flips over 90 seconds.",
+        "60-second opening sample: 198.25 FPS median, 187.8–203.2 FPS. After waking: 197.25 FPS; next platform screen: 144.35 FPS (30 seconds each).",
         "Animated title, world scenes and NPCs all draw correctly.",
       ],
       limits: [
-        "The maintainer reports frame rate dropping in the second gameplay scene, which has not been measured.",
+        "These are window-counter samples on an RTX 3070 Ti with 1080p output and audio enabled; they do not establish a minimum across the entire game.",
         "Loading needed eboot.bin and sce_module/libc.prx restored from the backups left by the copy's own eboot patcher, which had truncated both.",
       ],
       performance:
-        "The title menu and first scene hold 60 FPS, measured as 5,280 flips across 90 seconds.",
+        "60-second opening sample: 198.25 FPS median, 187.8–203.2 FPS. After waking: 197.25 FPS; next platform screen: 144.35 FPS (30 seconds each).",
       imageAlt:
-        "Dreaming Sarah forest scene with an NPC, rendered by PS5PCEM",
+        "Dreaming Sarah opening forest after bounded vertex uploads",
     },
 
     "jurassic-park-classic-games-collection": {
@@ -371,6 +371,11 @@ const content: Content = {
   },
 
   history: {
+    "sarah-bounded-vertex-uploads": {
+      "title": "Proven vertex ranges remove oversized sprite uploads",
+      "summary": "The October 10 development build replaces oversized sprite-buffer copies with proven vertex ranges. Buffer uploads fall from about 78 MiB to 4.9 MiB per opening frame. Movement, jumping and the next platform screen are verified; the earlier completed-playthrough report remains on record. 60-second opening sample: 198.25 FPS median, 187.8–203.2 FPS. After waking: 197.25 FPS; next platform screen: 144.35 FPS (30 seconds each). These are window-counter samples on an RTX 3070 Ti with 1080p output and audio enabled; they do not establish a minimum across the entire game.",
+      "imageAlt": "Dreaming Sarah opening forest after bounded vertex uploads"
+    },
     "subnautica-acm-convolution": {
       "title": "ACM reverb fixes delayed and corrupted audio",
       "summary": "ACM now computes convolution reverb and rejects the invalid initial batch wait. Previously FMOD mixed unwritten output into its effects, producing crackle, NaNs and prolonged silence. Two fresh launches produce finite, nonzero PCM within 11–13 seconds; the maintainer confirms clear sound. The earlier Options explanation is withdrawn. All 606 HLE tests pass. Short scheduling dropouts, rendering defects and the 30 FPS target remain separate work.",

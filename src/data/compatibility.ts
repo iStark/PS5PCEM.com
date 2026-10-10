@@ -66,8 +66,8 @@ export const compatibility: CompatibilityEntry[] = [
     slug: "dreaming-sarah",
     title: "Dreaming Sarah",
     tier: "playable",
-    image: "/images/dreaming-sarah-gameplay.png",
-    confirmedOn: "2026-09-15",
+    image: "/images/dreaming-sarah-vertex-uploads-2026-10-10.png",
+    confirmedOn: "2026-10-10",
   },
   {
     slug: "jurassic-park-classic-games-collection",

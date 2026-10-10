@@ -41,6 +41,15 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "sarah-bounded-vertex-uploads",
+    slug: "dreaming-sarah",
+    date: "2026-10-10",
+    recordedAt: "2026-10-10T10:35:50Z",
+    release: null,
+    image: "/images/dreaming-sarah-vertex-uploads-2026-10-10.png",
+    source: devReport("dreaming-sarah-vertex-upload-performance-2026-10-10.md"),
+  },
+  {
     id: "subnautica-acm-convolution",
     slug: "subnautica-below-zero",
     date: "2026-10-10",

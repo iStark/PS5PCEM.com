@@ -106,22 +106,22 @@ const pt: Content = {
 
     "dreaming-sarah": {
       status: "Jogável · Finalizável",
-      headline: "Terminado, e o início roda no limite de 60 FPS.",
+      headline: "A floresta inicial supera 100 FPS após otimizar o envio de vértices.",
       summary:
-        "Confirmado jogável em 15 de setembro de 2026. Menus, título animado, cenas do mundo, personagens e NPCs são todos desenhados corretamente, e a primeira cena mantém o limite de quadros na máquina de referência.",
+        "A compilação de desenvolvimento de 10 de outubro envia intervalos de vértices comprovados em vez de buffers de sprites excessivos. As transferências caem de cerca de 78 para 4,9 MiB por quadro inicial. Movimento, salto e a próxima tela de plataformas foram verificados; o relato anterior de conclusão permanece registrado.",
       strengths: [
         "Partida completa confirmada pelo mantenedor.",
-        "Menu de título e primeira cena mantêm o limite de 60 FPS — 5.280 apresentações em 90 segundos.",
+        "Início, 60 segundos: mediana 198.25 FPS, faixa 187.8–203.2. Após acordar: 197.25 FPS; próxima tela: 144.35 FPS (30 segundos cada).",
         "Título animado, cenas do mundo e NPCs são todos desenhados corretamente.",
       ],
       limits: [
-        "O mantenedor relata queda de quadros na segunda cena de jogo, que não foi medida.",
+        "Amostras do contador da janela em RTX 3070 Ti, saída 1080p e áudio ligado; não estabelecem um mínimo para o jogo inteiro.",
         "O carregamento exigiu restaurar eboot.bin e sce_module/libc.prx a partir das cópias deixadas pelo patcher de eboot da própria cópia, que havia truncado os dois.",
       ],
       performance:
-        "Menu de título e primeira cena mantêm 60 FPS, medidos como 5.280 apresentações em 90 segundos.",
+        "Início, 60 segundos: mediana 198.25 FPS, faixa 187.8–203.2. Após acordar: 197.25 FPS; próxima tela: 144.35 FPS (30 segundos cada).",
       imageAlt:
-        "Dreaming Sarah, cena de floresta com um NPC, renderizada pelo PS5PCEM",
+        "Floresta inicial de Dreaming Sarah após limitar o envio de vértices",
     },
 
     "jurassic-park-classic-games-collection": {
@@ -344,6 +344,11 @@ const pt: Content = {
   },
 
   history: {
+    "sarah-bounded-vertex-uploads": {
+      "title": "Intervalos de vértices comprovados eliminam envios excessivos",
+      "summary": "A compilação de desenvolvimento de 10 de outubro envia intervalos de vértices comprovados em vez de buffers de sprites excessivos. As transferências caem de cerca de 78 para 4,9 MiB por quadro inicial. Movimento, salto e a próxima tela de plataformas foram verificados; o relato anterior de conclusão permanece registrado. Início, 60 segundos: mediana 198.25 FPS, faixa 187.8–203.2. Após acordar: 197.25 FPS; próxima tela: 144.35 FPS (30 segundos cada). Amostras do contador da janela em RTX 3070 Ti, saída 1080p e áudio ligado; não estabelecem um mínimo para o jogo inteiro.",
+      "imageAlt": "Floresta inicial de Dreaming Sarah após limitar o envio de vértices"
+    },
     "subnautica-acm-convolution": {
       "title": "A reverberação ACM corrige o áudio atrasado e corrompido",
       "summary": "O ACM agora calcula a reverberação por convolução e rejeita a espera pelo primeiro lote inválido. Antes, o FMOD misturava um buffer não preenchido, causando estalos, NaN e silêncio prolongado. Duas novas inicializações produzem PCM válido em 11–13 segundos; o responsável confirmou som claro. A explicação anterior sobre Options foi retirada. Os 606 testes HLE passam. Cortes breves, defeitos gráficos e a meta de 30 FPS continuam pendentes.",

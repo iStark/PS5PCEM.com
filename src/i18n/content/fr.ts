@@ -106,22 +106,22 @@ const fr: Content = {
 
     "dreaming-sarah": {
       status: "Jouable · Terminable",
-      headline: "Terminé, et le début tourne à la limite de 60 FPS.",
+      headline: "La forêt initiale dépasse 100 FPS après optimisation des transferts de sommets.",
       summary:
-        "Confirmé jouable le 15 septembre 2026. Menus, titre animé, scènes du monde, personnages et PNJ s'affichent correctement, et la première scène tient la limite de fréquence sur la machine de référence.",
+        "La version de développement du 10 octobre transfère les plages de sommets nécessaires plutôt que des tampons de sprites surdimensionnés. Les transferts passent d’environ 78 à 4,9 Mio par image initiale. Déplacement, saut et écran de plateformes suivant sont vérifiés ; le précédent parcours complet reste documenté.",
       strengths: [
         "Partie complète confirmée par le mainteneur.",
-        "Menu-titre et première scène tiennent la limite de 60 FPS — 5 280 présentations en 90 secondes.",
+        "Début, 60 secondes : médiane 198.25 FPS, plage 187.8–203.2. Après le réveil : 197.25 FPS ; écran suivant : 144.35 FPS (30 secondes chacun).",
         "Titre animé, scènes du monde et PNJ s'affichent tous correctement.",
       ],
       limits: [
-        "Le mainteneur signale une baisse de fluidité dans la deuxième scène de jeu, qui n'a pas été mesurée.",
+        "Échantillons du compteur de fenêtre sur RTX 3070 Ti, sortie 1080p et son actif ; aucun minimum pour tout le jeu n’est établi.",
         "Le chargement a exigé de restaurer eboot.bin et sce_module/libc.prx depuis les sauvegardes laissées par le patcheur d'eboot de la copie, qui avait tronqué les deux.",
       ],
       performance:
-        "Menu-titre et première scène tiennent 60 FPS, mesuré comme 5 280 présentations sur 90 secondes.",
+        "Début, 60 secondes : médiane 198.25 FPS, plage 187.8–203.2. Après le réveil : 197.25 FPS ; écran suivant : 144.35 FPS (30 secondes chacun).",
       imageAlt:
-        "Dreaming Sarah, scène forestière avec un PNJ, rendu par PS5PCEM",
+        "Forêt initiale de Dreaming Sarah après réduction des transferts de sommets",
     },
 
     "jurassic-park-classic-games-collection": {
@@ -344,6 +344,11 @@ const fr: Content = {
   },
 
   history: {
+    "sarah-bounded-vertex-uploads": {
+      "title": "Les plages de sommets prouvées réduisent les transferts de sprites",
+      "summary": "La version de développement du 10 octobre transfère les plages de sommets nécessaires plutôt que des tampons de sprites surdimensionnés. Les transferts passent d’environ 78 à 4,9 Mio par image initiale. Déplacement, saut et écran de plateformes suivant sont vérifiés ; le précédent parcours complet reste documenté. Début, 60 secondes : médiane 198.25 FPS, plage 187.8–203.2. Après le réveil : 197.25 FPS ; écran suivant : 144.35 FPS (30 secondes chacun). Échantillons du compteur de fenêtre sur RTX 3070 Ti, sortie 1080p et son actif ; aucun minimum pour tout le jeu n’est établi.",
+      "imageAlt": "Forêt initiale de Dreaming Sarah après réduction des transferts de sommets"
+    },
     "subnautica-acm-convolution": {
       "title": "La réverbération ACM corrige le son retardé et corrompu",
       "summary": "ACM calcule désormais la réverbération par convolution et rejette l’attente du premier lot invalide. FMOD mélangeait auparavant un tampon non rempli, causant craquements, NaN et silence prolongé. Deux nouveaux lancements produisent du PCM valide en 11–13 secondes ; le responsable confirme un son clair. L’explication précédente liée à Options est retirée. Les 606 tests HLE passent. Brèves coupures, défauts graphiques et objectif de 30 FPS restent à traiter.",

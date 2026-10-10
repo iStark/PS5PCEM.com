@@ -222,7 +222,9 @@ describe("English source prose", () => {
     expect(games["asterix-obelix-slap-them-all"].performance).toContain("46.45 → 162.20 FPS");
     expect(games["asterix-obelix-slap-them-all"].performance).toContain("30-second UI-counter samples");
     expect(games["cat-quest-iii"].performance).toContain("124 ms");
-    expect(games["dreaming-sarah"].performance).toContain("5,280 flips");
+    expect(games["dreaming-sarah"].performance).toContain("198.25 FPS");
+    expect(games["dreaming-sarah"].performance).toContain("187.8–203.2 FPS");
+    expect(games["dreaming-sarah"].performance).toContain("144.35 FPS");
     expect(games["jets-n-guns-2"].performance).toContain("70–92 ms");
     expect(games["quake-ii-2023"].performance).toContain("60–70 FPS");
     expect(games["the-precinct"].performance).toContain("2.1 s");
