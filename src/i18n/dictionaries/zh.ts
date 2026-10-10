@@ -57,6 +57,11 @@ const zh: Dictionary = {
       description:
         "pkgextractor 随 PS5PCEM {version} 一同提供：解包已观察到的 PS5 调试 FPKG 结构、内部 PFS、NAPS 映射与 Kraken 数据块。不支持加密的零售包。",
     },
+    tech: {
+      title: "PS5PCEM 如何工作 — HLE、AMPR、ACM、MSAA 与 Vulkan",
+      description:
+        "PS5PCEM 如何实现 PlayStation 5 的固件与硬件：HLE、AMPR 计数器、ACM 卷积、MSAA、AGC、RDNA2 着色器、Vulkan、音频与存档。",
+    },
   },
 
   nav: {
@@ -66,6 +71,7 @@ const zh: Dictionary = {
     status: "项目进展",
     media: "影像",
     extract: "PKG 解包器",
+    tech: "技术",
     games: "游戏",
   },
 
@@ -253,6 +259,7 @@ const zh: Dictionary = {
     statusDocCta: "进展与兼容性",
     docsCta: "文档索引",
     issuesCta: "待解决问题",
+    techCta: "这些部分如何工作",
     supportHeading: "支持开发",
     supportBody:
       "PS5PCEM 采用 GPL-3.0-or-later 并公开开发。可以通过 Boosty 和 Patreon 支持这项工作。",
@@ -289,6 +296,27 @@ const zh: Dictionary = {
     noticeTitle: "零售包不在范围内",
     noticeBody:
       "解包器读取的是开发过程中观察到的调试 FPKG 结构。加密的零售包不受支持，也不包含、不暗示任何密钥。",
+  },
+
+  tech: {
+    eyebrow: "实现",
+    heading: "PS5PCEM 如何工作",
+    lead: "每一页对应模拟器真正运行的一种机制：主机做什么、Zig 代码做什么，以及还有什么没有实现。",
+    scopeTitle: "这些页面说明什么",
+    scopeBody:
+      "文字依据 PS5PCEM 仓库中的架构说明和 2026 年 10 月的报告。单项测试通过并不等于新的帧率，也不等于新的通关。",
+    categories: {
+      firmware: "固件与 HLE",
+      graphics: "图形",
+      audio: "音频与视频",
+      platform: "CPU、加载器与工具",
+    },
+    read: "工作方式",
+    works: "已经实现的部分",
+    gaps: "尚未实现的部分",
+    related: "相关机制",
+    back: "全部技术",
+    updated: "仓库笔记截至 {date}",
   },
 
   footer: {

@@ -136,6 +136,11 @@ export default async function StatusPage({ params }: PageProps) {
           title={t.status.subsystemsHeading}
           description={t.status.subsystemsLead}
         />
+        <div className="mt-6">
+          <ButtonLink href={localePath(locale, "/tech")}>
+            {t.status.techCta}
+          </ButtonLink>
+        </div>
 
         <div className="mt-10 space-y-4">
           {subsystems.map((subsystem) => (

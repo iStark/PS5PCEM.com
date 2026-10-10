@@ -11,6 +11,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
     { href: "/download", label: t.nav.download },
     { href: "/compatibility", label: t.nav.compatibility },
     { href: "/status", label: t.nav.status },
+    { href: "/tech", label: t.nav.tech },
     { href: "/media", label: t.nav.media },
     { href: "/extract", label: t.nav.extract },
   ];

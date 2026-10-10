@@ -3,7 +3,8 @@ import { historyFor } from "@/data/history";
 import { latestRelease } from "@/data/release";
 import { site } from "@/data/site";
 import { type Locale, localeMeta, localePath } from "@/i18n/config";
-import { getDictionary, getGameContent } from "@/i18n";
+import { technologies, technologyUpdated } from "@/data/technologies";
+import { getDictionary, getGameContent, getTechCopy } from "@/i18n";
 
 /**
  * JSON-LD builders. Every value here is already stated in the visible page —
@@ -166,6 +167,52 @@ export function gameReportSchema(locale: Locale, slug: string) {
       t.tiers[entry.tier].label,
       compatibilityMeta.host,
     ].join(", "),
+  };
+}
+
+/** The technology index, as links search engines can follow. */
+export function techIndexSchema(locale: Locale) {
+  const t = getDictionary(locale);
+  const copy = getTechCopy(locale);
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: t.tech.heading,
+    description: t.tech.lead,
+    numberOfItems: technologies.length,
+    itemListOrder: "https://schema.org/ItemListOrderAscending",
+    itemListElement: technologies.map((entry, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: copy[entry.slug].title,
+      url: absolute(localePath(locale, `/tech/${entry.slug}`)),
+    })),
+  };
+}
+
+/** One mechanism, described as a technical article. */
+export function techArticleSchema(locale: Locale, slug: string) {
+  const entry = technologies.find((candidate) => candidate.slug === slug);
+  if (!entry) {
+    return null;
+  }
+  const article = getTechCopy(locale)[entry.slug];
+  const url = absolute(localePath(locale, `/tech/${entry.slug}`));
+  return {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "@id": `${url}#article`,
+    headline: article.title,
+    description: article.summary,
+    url,
+    inLanguage: localeMeta[locale].htmlLang,
+    datePublished: technologyUpdated,
+    dateModified: technologyUpdated,
+    author: publisher,
+    publisher,
+    isPartOf: { "@id": `${site.url}/#website` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    proficiencyLevel: "Expert",
   };
 }
 

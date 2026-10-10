@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { compatibility } from "@/data/compatibility";
+import { technologies, technologyUpdated } from "@/data/technologies";
 import { allHistory, historyFor } from "@/data/history";
 import { latestRelease } from "@/data/release";
 import { site } from "@/data/site";
@@ -34,6 +35,7 @@ const staticPages: Page[] = [
     priority: 0.9,
   },
   { path: "/status", lastModified: newestRun, priority: 0.7 },
+  { path: "/tech", lastModified: technologyUpdated, priority: 0.8 },
   { path: "/media", lastModified: newestRun, priority: 0.6 },
   {
     path: "/extract",
@@ -41,6 +43,12 @@ const staticPages: Page[] = [
     priority: 0.5,
   },
 ];
+
+const techPages: Page[] = technologies.map((entry) => ({
+  path: `/tech/${entry.slug}`,
+  lastModified: technologyUpdated,
+  priority: 0.6,
+}));
 
 const gamePages: Page[] = compatibility.map((entry) => {
   const runs = historyFor(entry.slug);
@@ -52,7 +60,7 @@ const gamePages: Page[] = compatibility.map((entry) => {
   };
 });
 
-const pages = [...staticPages, ...gamePages];
+const pages = [...staticPages, ...techPages, ...gamePages];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return locales.flatMap((locale) =>

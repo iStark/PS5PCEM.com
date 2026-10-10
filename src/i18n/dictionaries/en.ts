@@ -62,6 +62,11 @@ const en = {
       description:
         "pkgextractor ships with PS5PCEM {version}: unpack observed PS5 debug FPKG layouts, inner PFS, NAPS mappings and Kraken blocks. Encrypted retail packages are not supported.",
     },
+    tech: {
+      title: "How PS5PCEM works — HLE, AMPR, ACM, MSAA and Vulkan",
+      description:
+        "How PS5PCEM implements PlayStation 5 firmware and hardware: HLE, AMPR counters, ACM convolution, MSAA, AGC, RDNA2 shaders, Vulkan, audio and savedata.",
+    },
   },
 
   nav: {
@@ -71,6 +76,7 @@ const en = {
     status: "Project status",
     media: "Media",
     extract: "PKG extractor",
+    tech: "Technology",
     games: "Titles",
   },
 
@@ -261,6 +267,7 @@ const en = {
     statusDocCta: "Status and compatibility",
     docsCta: "Documentation index",
     issuesCta: "Open issues",
+    techCta: "How these pieces work",
     supportHeading: "Support development",
     supportBody:
       "PS5PCEM is GPL-3.0-or-later and developed in the open. Boosty and Patreon are the two ways to back the work.",
@@ -298,6 +305,27 @@ const en = {
     noticeTitle: "Retail packages are out of scope",
     noticeBody:
       "The extractor reads the debug FPKG layouts that were observed during development. Encrypted retail packages are not supported, and no keys are included or implied.",
+  },
+
+  tech: {
+    eyebrow: "Implementation",
+    heading: "How PS5PCEM works",
+    lead: "Each page is one mechanism the emulator actually runs: what the console does, what the Zig code does, and what is still missing.",
+    scopeTitle: "What these pages are",
+    scopeBody:
+      "The text follows the architecture notes and the October 2026 reports in the PS5PCEM repository. A focused test passing is not a new frame rate and not a new playthrough.",
+    categories: {
+      firmware: "Firmware and HLE",
+      graphics: "Graphics",
+      audio: "Audio and video",
+      platform: "CPU, loader and tools",
+    },
+    read: "How it works",
+    works: "What is implemented",
+    gaps: "What is still missing",
+    related: "Related mechanisms",
+    back: "All technologies",
+    updated: "Repository notes through {date}",
   },
 
   footer: {

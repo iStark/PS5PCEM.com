@@ -5,6 +5,8 @@ import {
   compatibilityListSchema,
   gameReportSchema,
   softwareSchema,
+  techArticleSchema,
+  techIndexSchema,
   webPageSchema,
   websiteSchema,
 } from "@/lib/schema";
@@ -12,6 +14,7 @@ import sitemap from "@/app/sitemap";
 import robots from "@/app/robots";
 import proxy from "@/proxy";
 import { compatibility, countByTier } from "@/data/compatibility";
+import { technologies } from "@/data/technologies";
 import { latestRelease } from "@/data/release";
 import { site } from "@/data/site";
 import { locales, localeMeta } from "@/i18n/config";
@@ -97,6 +100,7 @@ describe("page metadata", () => {
     { path: "/compatibility", key: "compatibility" },
     { path: "/download", key: "download" },
     { path: "/status", key: "status" },
+    { path: "/tech", key: "tech" },
     { path: "/media", key: "media" },
     { path: "/extract", key: "extract" },
   ] as const;
@@ -308,6 +312,8 @@ describe("structured data", () => {
       softwareSchema("en"),
       compatibilityListSchema("en"),
       gameReportSchema("en", "pistol-whip"),
+      techIndexSchema("en"),
+      techArticleSchema("en", "hle"),
     ];
     for (const schema of schemas) {
       const json = JSON.stringify(schema);
@@ -320,7 +326,7 @@ describe("structured data", () => {
 
 describe("sitemap", () => {
   const entries = sitemap();
-  const pagesPerLocale = 6 + compatibility.length;
+  const pagesPerLocale = 7 + technologies.length + compatibility.length;
 
   it("covers every page in every language", () => {
     expect(entries).toHaveLength(pagesPerLocale * locales.length);

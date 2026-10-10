@@ -57,6 +57,11 @@ const es: Dictionary = {
       description:
         "pkgextractor acompaña a PS5PCEM {version}: extrae los diseños FPKG de depuración observados, el PFS interno, los mapeos NAPS y los bloques Kraken. Los paquetes comerciales cifrados no están admitidos.",
     },
+    tech: {
+      title: "Cómo funciona PS5PCEM — HLE, AMPR, ACM, MSAA y Vulkan",
+      description:
+        "Cómo PS5PCEM implementa el firmware y el hardware de PlayStation 5: HLE, contadores AMPR, convolución ACM, MSAA, AGC, shaders RDNA2, Vulkan, audio y partidas.",
+    },
   },
 
   nav: {
@@ -66,6 +71,7 @@ const es: Dictionary = {
     status: "Estado del proyecto",
     media: "Medios",
     extract: "Extractor de PKG",
+    tech: "Tecnología",
     games: "Juegos",
   },
 
@@ -256,6 +262,7 @@ const es: Dictionary = {
     statusDocCta: "Estado y compatibilidad",
     docsCta: "Índice de documentación",
     issuesCta: "Problemas abiertos",
+    techCta: "Cómo funcionan estas piezas",
     supportHeading: "Apoyar el desarrollo",
     supportBody:
       "PS5PCEM se publica bajo GPL-3.0-or-later y se desarrolla abiertamente. Boosty y Patreon son las dos formas de apoyar el trabajo.",
@@ -293,6 +300,27 @@ const es: Dictionary = {
     noticeTitle: "Los paquetes comerciales quedan fuera",
     noticeBody:
       "El extractor lee los diseños FPKG de depuración observados durante el desarrollo. Los paquetes comerciales cifrados no están admitidos, y no se incluye ni se da por supuesta ninguna clave.",
+  },
+
+  tech: {
+    eyebrow: "Implementación",
+    heading: "Cómo funciona PS5PCEM",
+    lead: "Cada página es un mecanismo que el emulador realmente ejecuta: qué hace la consola, qué hace el código Zig y qué falta todavía.",
+    scopeTitle: "Qué describen estas páginas",
+    scopeBody:
+      "El texto sigue las notas de arquitectura y los informes de octubre de 2026 del repositorio PS5PCEM. Un test concreto que pasa no es una tasa de fotogramas nueva ni una partida terminada nueva.",
+    categories: {
+      firmware: "Firmware y HLE",
+      graphics: "Gráficos",
+      audio: "Audio y vídeo",
+      platform: "CPU, cargador y herramientas",
+    },
+    read: "Cómo funciona",
+    works: "Qué está implementado",
+    gaps: "Qué falta todavía",
+    related: "Mecanismos relacionados",
+    back: "Todas las tecnologías",
+    updated: "Notas del repositorio hasta el {date}",
   },
 
   footer: {

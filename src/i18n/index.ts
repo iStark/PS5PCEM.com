@@ -17,7 +17,16 @@ import esContent from "./content/es";
 import arContent from "./content/ar";
 import ptContent from "./content/pt";
 
-export type { Dictionary, Content };
+import enTech, { type TechArticle, type TechCopy } from "./tech/en";
+import ruTech from "./tech/ru";
+import deTech from "./tech/de";
+import frTech from "./tech/fr";
+import zhTech from "./tech/zh";
+import esTech from "./tech/es";
+import arTech from "./tech/ar";
+import ptTech from "./tech/pt";
+
+export type { Dictionary, Content, TechArticle, TechCopy };
 
 /**
  * Every locale is imported statically: all pages are prerendered at build time,
@@ -46,12 +55,39 @@ const contents: Record<Locale, Content> = {
   pt: ptContent,
 };
 
+const techCopies: Record<Locale, TechCopy> = {
+  en: enTech,
+  ru: ruTech,
+  de: deTech,
+  fr: frTech,
+  zh: zhTech,
+  es: esTech,
+  ar: arTech,
+  pt: ptTech,
+};
+
 export function getDictionary(locale: Locale): Dictionary {
   return dictionaries[locale] ?? dictionaries[defaultLocale];
 }
 
 export function getContent(locale: Locale): Content {
   return contents[locale] ?? contents[defaultLocale];
+}
+
+export function getTechCopy(locale: Locale): TechCopy {
+  return techCopies[locale] ?? techCopies[defaultLocale];
+}
+
+/** One technology article. Unknown slugs return undefined. */
+export function getTechArticle(
+  locale: Locale,
+  slug: string,
+): TechArticle | undefined {
+  const copy = getTechCopy(locale);
+  if (Object.prototype.hasOwnProperty.call(copy, slug)) {
+    return copy[slug as keyof TechCopy];
+  }
+  return undefined;
 }
 
 /** Content for one title, falling back to English if a locale lacks the entry. */

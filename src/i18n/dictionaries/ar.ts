@@ -57,6 +57,11 @@ const ar: Dictionary = {
       description:
         "تُرفَق pkgextractor مع PS5PCEM {version}: فك تخطيطات FPKG التشخيصية المرصودة، وPFS الداخلي، وتعيينات NAPS، وكتل Kraken. والحزم التجارية المشفَّرة غير مدعومة.",
     },
+    tech: {
+      title: "كيف يعمل PS5PCEM — HLE وAMPR وACM وMSAA وVulkan",
+      description:
+        "كيف ينفّذ PS5PCEM برامج PlayStation 5 الثابتة وعنادها: HLE، وعدّادات AMPR، والتفاف ACM، وMSAA، وAGC، ومظللات RDNA2، وVulkan، والصوت، وملفات الحفظ.",
+    },
   },
 
   nav: {
@@ -66,6 +71,7 @@ const ar: Dictionary = {
     status: "حالة المشروع",
     media: "الصور والفيديو",
     extract: "أداة فك حزم PKG",
+    tech: "التقنية",
     games: "الألعاب",
   },
 
@@ -255,6 +261,7 @@ const ar: Dictionary = {
     statusDocCta: "الحالة والتوافق",
     docsCta: "فهرس التوثيق",
     issuesCta: "المشكلات المفتوحة",
+    techCta: "كيف تعمل هذه الأجزاء",
     supportHeading: "ادعم التطوير",
     supportBody:
       "PS5PCEM مرخَّص بـ GPL-3.0-or-later ويُطوَّر على المكشوف. ويمكن دعم العمل عبر Boosty وPatreon.",
@@ -292,6 +299,27 @@ const ar: Dictionary = {
     noticeTitle: "الحزم التجارية خارج النطاق",
     noticeBody:
       "تقرأ الأداة تخطيطات FPKG التشخيصية التي رُصدت خلال التطوير. والحزم التجارية المشفَّرة غير مدعومة، ولا تُرفَق أي مفاتيح ولا يُفترض وجودها.",
+  },
+
+  tech: {
+    eyebrow: "التنفيذ",
+    heading: "كيف يعمل PS5PCEM",
+    lead: "كل صفحة آلية ينفّذها المحاكي فعلًا: ماذا تفعل المنصة، وماذا يفعل كود Zig، وما الذي ما زال ناقصًا.",
+    scopeTitle: "ماذا تصف هذه الصفحات",
+    scopeBody:
+      "يتبع النص ملاحظات المعمارية وتقارير تشرين الأول/أكتوبر 2026 في مستودع PS5PCEM. نجاح اختبار محدد ليس معدل إطارات جديدًا ولا إكمالًا جديدًا للعبة.",
+    categories: {
+      firmware: "البرنامج الثابت وHLE",
+      graphics: "الرسوم",
+      audio: "الصوت والفيديو",
+      platform: "المعالج والمحمّل والأدوات",
+    },
+    read: "كيف تعمل",
+    works: "ما هو منفَّذ",
+    gaps: "ما زال ناقصًا",
+    related: "آليات مرتبطة",
+    back: "كل التقنيات",
+    updated: "ملاحظات المستودع حتى {date}",
   },
 
   footer: {

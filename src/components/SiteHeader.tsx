@@ -21,6 +21,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
     { href: "/download", label: t.nav.download },
     { href: "/compatibility", label: t.nav.compatibility },
     { href: "/status", label: t.nav.status },
+    { href: "/tech", label: t.nav.tech },
     { href: "/media", label: t.nav.media },
     { href: "/extract", label: t.nav.extract },
   ];
@@ -32,6 +33,9 @@ export function SiteHeader({ locale }: { locale: Locale }) {
     // /games/<slug> keeps the Compatibility tab lit.
     if (href === "/compatibility") {
       return here.startsWith("/compatibility") || here.startsWith("/games");
+    }
+    if (href === "/tech") {
+      return here.startsWith("/tech");
     }
     return here.startsWith(href);
   }

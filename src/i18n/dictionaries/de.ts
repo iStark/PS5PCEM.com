@@ -57,6 +57,11 @@ const de: Dictionary = {
       description:
         "pkgextractor liegt PS5PCEM {version} bei: entpackt beobachtete PS5-Debug-FPKG-Layouts, inneres PFS, NAPS-Zuordnungen und Kraken-Blöcke. Verschlüsselte Handelspakete werden nicht unterstützt.",
     },
+    tech: {
+      title: "So arbeitet PS5PCEM — HLE, AMPR, ACM, MSAA und Vulkan",
+      description:
+        "Wie PS5PCEM PlayStation-5-Firmware und Hardware umsetzt: HLE, AMPR-Zähler, ACM-Faltung, MSAA, AGC, RDNA2-Shader, Vulkan, Audio und Spielstände.",
+    },
   },
 
   nav: {
@@ -66,6 +71,7 @@ const de: Dictionary = {
     status: "Projektstand",
     media: "Medien",
     extract: "PKG-Entpacker",
+    tech: "Technik",
     games: "Titel",
   },
 
@@ -256,6 +262,7 @@ const de: Dictionary = {
     statusDocCta: "Status und Kompatibilität",
     docsCta: "Dokumentationsübersicht",
     issuesCta: "Offene Issues",
+    techCta: "Wie diese Teile arbeiten",
     supportHeading: "Entwicklung unterstützen",
     supportBody:
       "PS5PCEM steht unter GPL-3.0-or-later und wird offen entwickelt. Über Boosty und Patreon lässt sich die Arbeit unterstützen.",
@@ -293,6 +300,27 @@ const de: Dictionary = {
     noticeTitle: "Handelsversionen sind außerhalb des Umfangs",
     noticeBody:
       "Der Entpacker liest die Debug-FPKG-Layouts, die während der Entwicklung beobachtet wurden. Verschlüsselte Handelspakete werden nicht unterstützt, und es sind keine Schlüssel enthalten oder vorausgesetzt.",
+  },
+
+  tech: {
+    eyebrow: "Umsetzung",
+    heading: "So arbeitet PS5PCEM",
+    lead: "Jede Seite ist ein Mechanismus, den der Emulator wirklich ausführt: was die Konsole tut, was der Zig-Code tut und was noch fehlt.",
+    scopeTitle: "Worum es auf diesen Seiten geht",
+    scopeBody:
+      "Der Text folgt den Architektur-Notizen und den Berichten vom Oktober 2026 im PS5PCEM-Repository. Ein bestandener Einzeltest ist keine neue Bildrate und kein neuer Durchspielstand.",
+    categories: {
+      firmware: "Firmware und HLE",
+      graphics: "Grafik",
+      audio: "Ton und Video",
+      platform: "CPU, Lader und Werkzeuge",
+    },
+    read: "So funktioniert es",
+    works: "Was umgesetzt ist",
+    gaps: "Was noch fehlt",
+    related: "Verwandte Mechanismen",
+    back: "Alle Techniken",
+    updated: "Repository-Notizen bis {date}",
   },
 
   footer: {

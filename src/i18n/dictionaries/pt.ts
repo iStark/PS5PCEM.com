@@ -57,6 +57,11 @@ const pt: Dictionary = {
       description:
         "O pkgextractor acompanha o PS5PCEM {version}: extrai os formatos FPKG de depuração observados, o PFS interno, os mapeamentos NAPS e os blocos Kraken. Pacotes de varejo criptografados não são suportados.",
     },
+    tech: {
+      title: "Como o PS5PCEM funciona — HLE, AMPR, ACM, MSAA e Vulkan",
+      description:
+        "Como o PS5PCEM implementa o firmware e o hardware de PlayStation 5: HLE, contadores AMPR, convolução ACM, MSAA, AGC, shaders RDNA2, Vulkan, áudio e saves.",
+    },
   },
 
   nav: {
@@ -66,6 +71,7 @@ const pt: Dictionary = {
     status: "Estado do projeto",
     media: "Mídia",
     extract: "Extrator de PKG",
+    tech: "Tecnologia",
     games: "Jogos",
   },
 
@@ -256,6 +262,7 @@ const pt: Dictionary = {
     statusDocCta: "Estado e compatibilidade",
     docsCta: "Índice da documentação",
     issuesCta: "Problemas abertos",
+    techCta: "Como estas peças funcionam",
     supportHeading: "Apoiar o desenvolvimento",
     supportBody:
       "O PS5PCEM é GPL-3.0-or-later e desenvolvido abertamente. Boosty e Patreon são as duas formas de apoiar o trabalho.",
@@ -293,6 +300,27 @@ const pt: Dictionary = {
     noticeTitle: "Pacotes de varejo estão fora do escopo",
     noticeBody:
       "O extrator lê os formatos FPKG de depuração observados durante o desenvolvimento. Pacotes de varejo criptografados não são suportados, e nenhuma chave é incluída ou pressuposta.",
+  },
+
+  tech: {
+    eyebrow: "Implementação",
+    heading: "Como o PS5PCEM funciona",
+    lead: "Cada página é um mecanismo que o emulador realmente executa: o que o console faz, o que o código Zig faz e o que ainda falta.",
+    scopeTitle: "O que estas páginas descrevem",
+    scopeBody:
+      "O texto segue as notas de arquitetura e os relatórios de outubro de 2026 no repositório do PS5PCEM. Um teste pontual que passa não é uma nova taxa de quadros nem uma nova conclusão de jogo.",
+    categories: {
+      firmware: "Firmware e HLE",
+      graphics: "Gráficos",
+      audio: "Áudio e vídeo",
+      platform: "CPU, carregador e ferramentas",
+    },
+    read: "Como funciona",
+    works: "O que está implementado",
+    gaps: "O que ainda falta",
+    related: "Mecanismos relacionados",
+    back: "Todas as tecnologias",
+    updated: "Notas do repositório até {date}",
   },
 
   footer: {
