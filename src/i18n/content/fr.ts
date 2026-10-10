@@ -281,11 +281,10 @@ const fr: Content = {
       limits: [
         "Jeu, récupération des sauvegardes et stabilité sur de longues sessions ne sont pas vérifiés.",
         "Des artefacts visuels subsistent, et copies, préparation des ressources et attentes GPU restent coûteuses.",
-        "Les 30 FPS n'ont pas été atteints.",
+        "Les 15 FPS stables dans le menu ne sont pas atteints.",
       ],
-      performance:
-        "Des échantillons de menu comparables mesurent 157 ms, environ 6,37 FPS ; les échantillons de tutoriel 270 ms, environ 3,70 FPS. Le dernier changement de comptabilité n'a montré aucun gain démontrable de fluidité en jeu.",
-      imageAlt: "Scène de tutoriel de Big Helmet Heroes, rendue par PS5PCEM",
+      performance: "Médiane du menu : 9,4 FPS (9,0–9,5), contre 4,9 auparavant ; 45 relevés du compteur de fenêtre à une seconde d’intervalle après préchauffage. RTX 3070 Ti, sortie 1080p, résolution interne contrôlée par le jeu. Tous les relevés restent sous 15 FPS. Tutoriel non remesuré.",
+      imageAlt: "Menu de Big Helmet Heroes avec personnages, libellés lisibles et herbe orange dense",
     },
 
     "tetris-effect-connected": {
@@ -672,6 +671,11 @@ const fr: Content = {
         "Le convertisseur de disposition copie désormais une séquence horizontale complète de 16 octets dès que son équation d'adresse prouve que ces octets sont contigus, au lieu de déplacer un pixel à la fois. L'éviction du cache de tampons a cessé de parcourir les 4 096 entrées, les pages invitées voisines sont surveillées par groupes, et les tampons Vulkan terminés sont recyclés.",
       imageAlt:
         "Scène de tutoriel de Big Helmet Heroes après les optimisations de copie, rendue par PS5PCEM",
+    },
+    "bhh-menu-performance-20261010": {
+      title: "Moins de transferts, avec l’herbe préservée",
+      summary: "Test du menu du 10 octobre : médiane de 9,4 FPS (9,0–9,5) sur 45 secondes, contre 4,9 auparavant. Cohérence des ressources, lectures GPU limitées, réutilisation des textures volumiques et envois asynchrones réduisent le travail répété. Une régression intermédiaire du stencil a été retirée ; l’herbe dense est visible. Les compteurs d’erreurs échantillonnés sont nuls ; 15 FPS stables et une image sans défaut ne sont pas confirmés.",
+      imageAlt: "Menu de Big Helmet Heroes avec personnages, libellés lisibles et herbe orange dense",
     },
     "bhh-scalar-history": {
       title: "Comptabilité scalaire allégée, sans gain de fluidité à montrer",

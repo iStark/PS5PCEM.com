@@ -121,8 +121,8 @@ export const compatibility: CompatibilityEntry[] = [
     slug: "big-helmet-heroes",
     title: "Big Helmet Heroes",
     tier: "intro",
-    image: "/images/big-helmet-heroes-scalar-history-tutorial.png",
-    confirmedOn: "2026-09-29",
+    image: "/images/big-helmet-heroes-menu-performance-2026-10-10.png",
+    confirmedOn: "2026-10-10",
   },
   {
     slug: "tetris-effect-connected",

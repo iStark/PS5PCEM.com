@@ -281,11 +281,10 @@ const de: Content = {
       limits: [
         "Spielgeschehen, Wiederherstellung von Spielständen und Stabilität über lange Sitzungen sind alle unbestätigt.",
         "Darstellungsfehler bleiben, und Kopien, Ressourcenvorbereitung und GPU-Wartezeiten bleiben teuer.",
-        "30 FPS wurden nicht erreicht.",
+        "Stabile 15 FPS im Menü werden nicht erreicht.",
       ],
-      performance:
-        "Vergleichbare Menüproben messen 157 ms, etwa 6,37 FPS; Tutorial-Proben 270 ms, etwa 3,70 FPS. Die neueste Buchhaltungsänderung zeigte keinen belegbaren Gewinn an Bildrate im Spiel.",
-      imageAlt: "Big Helmet Heroes — Tutorial-Szene, gezeichnet von PS5PCEM",
+      performance: "Menümedian: 9,4 FPS (9,0–9,5), zuvor 4,9 FPS; 45 sekündliche Fensterzählerwerte nach dem Aufwärmen. RTX 3070 Ti, 1080p-Ausgabe, interne Auflösung vom Spiel gesteuert. Alle Werte unter 15 FPS. Tutorial nicht erneut gemessen.",
+      imageAlt: "Big Helmet Heroes: Hauptmenü mit Figuren, lesbaren Einträgen und dichtem orangefarbenem Gras",
     },
 
     "tetris-effect-connected": {
@@ -671,6 +670,11 @@ const de: Content = {
         "Der Layoutwandler kopiert nun einen vollen waagerechten 16-Byte-Lauf, wann immer seine Adressgleichung beweist, dass diese Bytes zusammenhängen, statt Pixel für Pixel zu bewegen. Die Verdrängung aus dem Puffercache hörte auf, alle 4.096 Einträge zu durchsuchen, benachbarte Gastseiten werden in Gruppen beobachtet, und abgeschlossene Vulkan-Puffer werden wiederverwendet.",
       imageAlt:
         "Tutorial-Szene von Big Helmet Heroes nach den Kopieroptimierungen, gezeichnet von PS5PCEM",
+    },
+    "bhh-menu-performance-20261010": {
+      title: "Weniger Datentransfers, Gras bleibt sichtbar",
+      summary: "Menütest vom 10. Oktober: Median 9,4 FPS (9,0–9,5) über 45 Sekunden statt zuvor 4,9 FPS. Ressourcenkohärenz, begrenzte GPU-Rücklesevorgänge, wiederverwendete Volumentexturen und asynchrone Übermittlung sparen Arbeit. Eine zwischenzeitliche Stencil-Regression wurde entfernt; dichtes Gras ist wieder sichtbar. Die erfassten Fehlerzähler sind null. Stabile 15 FPS und fehlerfreie Grafik sind nicht bestätigt.",
+      imageAlt: "Big Helmet Heroes: Hauptmenü mit Figuren, lesbaren Einträgen und dichtem orangefarbenem Gras",
     },
     "bhh-scalar-history": {
       title: "Skalare Buchhaltung gekürzt, ohne Gewinn an Bildrate",

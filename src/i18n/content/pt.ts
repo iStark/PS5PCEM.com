@@ -281,11 +281,10 @@ const pt: Content = {
       limits: [
         "Jogabilidade, recuperação de saves e estabilidade em sessões longas estão todas não verificadas.",
         "Restam artefatos visuais, e cópias, preparação de recursos e esperas de GPU seguem caras.",
-        "Os 30 FPS não foram alcançados.",
+        "Ainda não se atingem 15 FPS estáveis no menu.",
       ],
-      performance:
-        "Amostras de menu comparáveis medem 157 ms, cerca de 6,37 FPS; as do tutorial, 270 ms, cerca de 3,70 FPS. A última mudança de contabilidade não mostrou ganho demonstrável de quadros no jogo.",
-      imageAlt: "Cena de tutorial de Big Helmet Heroes, renderizada pelo PS5PCEM",
+      performance: "Mediana do menu: 9,4 FPS (9,0–9,5), antes 4,9 FPS; 45 amostras do contador da janela a cada segundo após aquecimento. RTX 3070 Ti, saída 1080p, resolução interna controlada pelo jogo. Todas as amostras abaixo de 15 FPS. Tutorial não medido novamente.",
+      imageAlt: "Menu de Big Helmet Heroes com personagens, texto legível e relva laranja densa",
     },
 
     "tetris-effect-connected": {
@@ -672,6 +671,11 @@ const pt: Content = {
         "O conversor de layout agora copia uma sequência horizontal completa de 16 bytes sempre que sua equação de endereço prova que esses bytes são contíguos, em vez de mover um pixel por vez. A remoção do cache de buffers deixou de percorrer todas as 4.096 entradas, páginas convidadas vizinhas são vigiadas em grupos, e buffers Vulkan concluídos são reciclados.",
       imageAlt:
         "Cena de tutorial de Big Helmet Heroes depois das otimizações de cópia, renderizada pelo PS5PCEM",
+    },
+    "bhh-menu-performance-20261010": {
+      title: "Menos transferências, com a relva preservada",
+      summary: "Teste do menu em 10 de outubro: mediana de 9,4 FPS (9,0–9,5) durante 45 segundos, contra 4,9 antes. Coerência de recursos, leituras GPU limitadas, reutilização de texturas volumétricas e envios assíncronos reduzem trabalho repetido. Foi removida uma regressão intermédia do stencil; a relva densa voltou a aparecer. Os contadores de erros amostrados estão a zero; 15 FPS estáveis e gráficos sem defeitos não estão confirmados.",
+      imageAlt: "Menu de Big Helmet Heroes com personagens, texto legível e relva laranja densa",
     },
     "bhh-scalar-history": {
       title: "Contabilidade escalar enxugada, sem ganho de quadros a mostrar",

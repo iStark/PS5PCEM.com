@@ -34,6 +34,12 @@ export const captures: Capture[] = [
       "The Red Ranger in the Command Center training stage, with the HUD, health bar, objectives and controller prompts. The maintainer confirmed the game is playable and completable on September 24, 2026.",
   },
   {
+    src: "/images/big-helmet-heroes-menu-performance-2026-10-10.png",
+    alt: "Big Helmet Heroes main menu with character models, readable labels and dense orange grass",
+    title: "Big Helmet Heroes — menu performance checkpoint",
+    caption: "October 10 menu check: 9.4 FPS median (9.0–9.5) over 45 seconds, versus 4.9 FPS before. Resource coherence fixes, bounded GPU readbacks, volume reuse and asynchronous batching reduce repeated work. An intermediate stencil-discard regression was removed and dense grass is visible again. Sampled failure counters are zero; stable 15 FPS and universal rendering correctness remain unverified. RTX 3070 Ti, 1080p output; internal resolution remains game-controlled. Gameplay and long-session stability are not revalidated. These changes postdate release 0.3.4.",
+  },
+  {
     src: "/images/big-helmet-heroes-scalar-history-tutorial.png",
     alt: "Big Helmet Heroes tutorial with the HUD, windmills, movement prompts and a blue circular effect",
     title: "Big Helmet Heroes — less scalar bookkeeping",

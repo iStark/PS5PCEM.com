@@ -229,7 +229,7 @@ describe("English source prose", () => {
     expect(games["quake-ii-2023"].performance).toContain("60–70 FPS");
     expect(games["the-precinct"].performance).toContain("2.1 s");
     expect(games["ritas-rewind"].performance).toContain("13–20 ms");
-    expect(games["big-helmet-heroes"].performance).toContain("157 ms");
+    expect(games["big-helmet-heroes"].performance).toContain("9.4 FPS");
     expect(games["tetris-effect-connected"].performance).toContain("235 ms");
     expect(games["ghost-of-yotei"].performance).toContain("0.73 FPS");
     expect(games["subnautica-below-zero"].performance).toContain("15.50 FPS");
@@ -259,7 +259,7 @@ describe("English source prose", () => {
       /30 FPS/,
     );
     expect(enContent.games["big-helmet-heroes"].limits.join(" ")).toMatch(
-      /30 FPS has not been reached/i,
+      /15 FPS.*not achieved/i,
     );
   });
 });

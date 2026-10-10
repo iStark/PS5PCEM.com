@@ -502,6 +502,14 @@ export const history: HistoryEntry[] = [
 
   // Big Helmet Heroes
   {
+    id: "bhh-menu-performance-20261010",
+    slug: "big-helmet-heroes",
+    date: "2026-10-10",
+    release: null,
+    image: "/images/big-helmet-heroes-menu-performance-2026-10-10.png",
+    source: devReport("big-helmet-heroes-menu-performance-2026-10-10.md"),
+  },
+  {
     id: "bhh-startup",
     slug: "big-helmet-heroes",
     date: "2026-09-28",

@@ -308,12 +308,10 @@ const content: Content = {
       limits: [
         "Gameplay, save recovery and long-session stability are all unverified.",
         "Visual artifacts remain, and copies, resource preparation and GPU waits stay expensive.",
-        "30 FPS has not been reached.",
+        "Stable 15 FPS in the menu is not achieved.",
       ],
-      performance:
-        "Matched menu samples measure 157 ms, about 6.37 FPS; tutorial samples measure 270 ms, about 3.70 FPS. The most recent bookkeeping change showed no demonstrable game frame-rate gain.",
-      imageAlt:
-        "Big Helmet Heroes tutorial scene rendered by PS5PCEM",
+      performance: "Main-menu median: 9.4 FPS (9.0–9.5), versus 4.9 FPS before; 45 one-second window-counter samples after warmup. RTX 3070 Ti, 1080p output, game-controlled internal resolution. All samples remain below 15 FPS. Tutorial performance was not retested.",
+      imageAlt: "Big Helmet Heroes main menu with character models, readable labels and dense orange grass",
     },
 
     "tetris-effect-connected": {
@@ -700,6 +698,11 @@ const content: Content = {
         "The layout converter now copies a full 16-byte horizontal run whenever its address equation proves those bytes are contiguous, instead of moving one pixel at a time. Buffer-cache eviction stopped scanning all 4,096 entries, adjacent guest pages are watched in groups, and completed Vulkan buffers are recycled.",
       imageAlt:
         "Big Helmet Heroes tutorial scene after the copy optimisations, rendered by PS5PCEM",
+    },
+    "bhh-menu-performance-20261010": {
+      title: "Less transfer work, with the grass preserved",
+      summary: "October 10 menu check: 9.4 FPS median (9.0–9.5) over 45 seconds, versus 4.9 FPS before. Resource coherence fixes, bounded GPU readbacks, volume reuse and asynchronous batching reduce repeated work. An intermediate stencil-discard regression was removed and dense grass is visible again. Sampled failure counters are zero; stable 15 FPS and universal rendering correctness remain unverified.",
+      imageAlt: "Big Helmet Heroes main menu with character models, readable labels and dense orange grass",
     },
     "bhh-scalar-history": {
       title: "Scalar bookkeeping trimmed, with no frame-rate gain to show",
