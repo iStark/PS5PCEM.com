@@ -23,8 +23,8 @@ import { site } from "@/data/site";
 import { compatibility, countByTier } from "@/data/compatibility";
 import { historyFor } from "@/data/history";
 import { subsystems } from "@/data/subsystems";
-import { getDictionary, getGameContent, getHistoryContent } from "@/i18n";
-import type { Locale } from "@/i18n/config";
+import { getDictionary, getGameContent, getHistoryContent, getTechCopy } from "@/i18n";
+import { locales, localePath, type Locale } from "@/i18n/config";
 
 /** Server components are async; render the resolved element. */
 async function renderPage(
@@ -216,11 +216,37 @@ describe("title detail page", () => {
       ).toBeInTheDocument();
     }
 
-    // The newest run is dated October 5 and was never released.
+    // The October 5 work was included in 0.3.3, published that night in Minsk.
     expect(runs[0].date).toBe("2026-10-05");
     expect(
-      screen.getAllByText(getDictionary("en").common.developmentBuild).length,
+      screen.getAllByText("Release 0.3.3").length,
     ).toBeGreaterThan(0);
+  });
+
+  it("labels released Big Helmet Heroes work without versioning the unreleased October run", async () => {
+    await renderGame("big-helmet-heroes");
+    const header = screen.getByRole("heading", { level: 1 }).closest("header")!;
+    expect(within(header).getByText("Development build")).toBeInTheDocument();
+    for (const [id, label] of [
+      ["bhh-menu-performance-20261010", "Development build"],
+      ["bhh-startup", "Release 0.3.3"],
+      ["bhh-scalar-history", "Release 0.3.3"],
+    ]) {
+      const title = getHistoryContent("en", id).title;
+      const article = screen.getByRole("heading", { name: title }).closest("article")!;
+      expect(within(article).getByText(label)).toBeInTheDocument();
+    }
+  });
+
+  it("does not assign the preceding release to an unversioned GTA III run", async () => {
+    await renderGame("gta-iii-definitive-edition");
+    const header = screen.getByRole("heading", { level: 1 }).closest("header")!;
+    expect(within(header).getByText("Development build")).toBeInTheDocument();
+    expect(within(header).queryByText(/0\.3\.4/)).not.toBeInTheDocument();
+    const title = getHistoryContent("en", "gta3-startup-reflections").title;
+    const article = screen.getByRole("heading", { name: title }).closest("article")!;
+    expect(within(article).getByText("Development build")).toBeInTheDocument();
+    expect(within(article).queryByText(/0\.3\.4/)).not.toBeInTheDocument();
   });
 
   it("links each run to the report that backs it", async () => {
@@ -306,16 +332,27 @@ describe("title detail page", () => {
 });
 
 describe("status page", () => {
-  it("lists every subsystem with a state", async () => {
-    await renderPage(StatusPage);
+  it.each(locales)("lists subsystems and links their technology articles in %s", async (locale) => {
+    await renderPage(StatusPage, locale);
+    const tech = getTechCopy(locale);
 
     for (const subsystem of subsystems) {
       expect(
         screen.getByRole("heading", { name: subsystem.name }),
       ).toBeInTheDocument();
+      const article = screen.getByRole("heading", { name: subsystem.name }).closest("article")!;
+      if (subsystem.techArticles.length > 0) {
+        for (const slug of subsystem.techArticles) {
+          expect(within(article).getByRole("link", { name: tech[slug].title }))
+            .toHaveAttribute("href", localePath(locale, `/tech/${slug}`));
+        }
+      } else {
+        expect(within(article).getByRole("link"))
+          .toHaveAttribute("href", localePath(locale, "/tech"));
+      }
     }
     expect(
-      screen.getAllByText(getDictionary("en").status.stateDeferred).length,
+      screen.getAllByText(getDictionary(locale).status.stateDeferred).length,
     ).toBeGreaterThan(0);
   });
 

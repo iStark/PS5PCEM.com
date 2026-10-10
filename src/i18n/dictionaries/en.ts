@@ -185,7 +185,7 @@ const en = {
     performanceHeading: "Measured performance",
     historyHeading: "Test history",
     historyLead:
-      "Every recorded run for this title, newest first. Entries marked as a development build were never published as a release.",
+      "Each entry names the release that includes the reported changes. Work not yet included in a published release is marked as a development build. Dates and FPS remain those of the original runs.",
     historyEmpty: "No individual runs have been written up for this title yet.",
     capturesHeading: "Captures",
     capturesLead:

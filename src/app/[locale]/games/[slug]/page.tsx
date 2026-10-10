@@ -19,6 +19,7 @@ import {
 } from "@/i18n/config";
 import { format, getDictionary, getGameContent, getHistoryContent } from "@/i18n";
 import { formatDate } from "@/lib/format";
+import { formatHistoryBuild } from "@/lib/history-build";
 import {
   BulletList,
   ButtonLink,
@@ -168,7 +169,7 @@ export default async function GamePage({ params }: PageProps) {
               label={t.game.buildLabel}
               value={
                 runs.length > 0
-                  ? runs[0].release?.replace(/^v/, "") ?? t.common.developmentBuild
+                  ? formatHistoryBuild(runs[0], locale)
                   : compatibilityMeta.testedOnRelease
               }
             />
@@ -294,11 +295,7 @@ export default async function GamePage({ params }: PageProps) {
                                 : "border-ink-600 bg-ink-850 text-ink-400"
                             }`}
                           >
-                            {run.release
-                              ? format(t.common.release, {
-                                  version: run.release.replace(/^v/, ""),
-                                })
-                              : t.common.developmentBuild}
+                            {formatHistoryBuild(run, locale)}
                           </span>
                         </div>
 
@@ -355,7 +352,7 @@ export default async function GamePage({ params }: PageProps) {
                     </p>
                     <p className="mt-1.5 text-xs text-ink-400">
                       {formatDate(run.date, locale)}
-                      {run.release ? ` · ${run.release}` : ""}
+                      {` · ${formatHistoryBuild(run, locale)}`}
                     </p>
                   </figcaption>
                 </figure>

@@ -180,7 +180,7 @@ const fr: Dictionary = {
     performanceHeading: "Performances mesurées",
     historyHeading: "Historique des tests",
     historyLead:
-      "Toutes les sessions enregistrées pour ce jeu, la plus récente d'abord. Les entrées marquées build de développement n'ont jamais été publiées comme version.",
+      "Chaque entrée indique la version publiée qui inclut les changements décrits. Les travaux pas encore publiés sont marqués comme build de développement. Les dates et les FPS restent ceux des tests d’origine.",
     historyEmpty: "Aucune session individuelle n'a encore été documentée pour ce jeu.",
     capturesHeading: "Captures",
     capturesLead:

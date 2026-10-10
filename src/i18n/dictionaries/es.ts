@@ -180,7 +180,7 @@ const es: Dictionary = {
     performanceHeading: "Rendimiento medido",
     historyHeading: "Historial de pruebas",
     historyLead:
-      "Todas las sesiones registradas de este juego, las más recientes primero. Las marcadas como compilación de desarrollo nunca se publicaron como versión.",
+      "Cada entrada indica la versión publicada que incluye los cambios descritos. El trabajo aún no publicado se marca como compilación de desarrollo. Las fechas y los FPS corresponden a las pruebas originales.",
     historyEmpty: "Aún no se han documentado sesiones concretas de este juego.",
     capturesHeading: "Capturas",
     capturesLead:

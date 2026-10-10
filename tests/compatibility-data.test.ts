@@ -11,6 +11,7 @@ import {
   tierOrder,
 } from "@/data/compatibility";
 import { allHistory, history, historyFor, historyIds } from "@/data/history";
+import { releaseHistory } from "@/data/release";
 import enContent from "@/i18n/content/en";
 
 const publicDir = path.resolve(__dirname, "..", "public");
@@ -160,12 +161,28 @@ describe("test history", () => {
     }
   });
 
-  it("labels a release build with a real tag, or marks it as development", () => {
+  it("uses a known release tag or marks unreleased work as development", () => {
+    const known = new Set(releaseHistory.map((release) => release.tag));
     for (const run of history) {
       if (run.release !== null) {
-        expect(run.release, run.id).toMatch(/^v0\.3\.\d/);
+        expect(known.has(run.release), run.id).toBe(true);
       }
     }
+  });
+
+  it("attributes report changes to the release containing them", () => {
+    for (const [id, release] of [
+      ["bhh-startup", "v0.3.3"],
+      ["yotei-cache-memory", "v0.3.3"],
+      ["jurassic-font-atlas-startup", "v0.3.4"],
+      ["jets-playable", "v0.3.2"],
+      ["quake-playable", "v0.3.2"],
+      ["gta3-startup-reflections", null],
+      ["bhh-menu-performance-20261010", null],
+    ]) {
+      expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
+    }
+    expect(history.filter((run) => run.release === null)).toHaveLength(9);
   });
 
   it("references captures that exist in public/", () => {

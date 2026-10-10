@@ -13,7 +13,7 @@ import {
   localePath,
   toLocale,
 } from "@/i18n/config";
-import { format, getDictionary } from "@/i18n";
+import { format, getDictionary, getTechCopy } from "@/i18n";
 import { formatDate } from "@/lib/format";
 import { ButtonLink, Notice, SectionHeading } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
@@ -56,6 +56,7 @@ const stateClasses: Record<SubsystemState, string> = {
 export default async function StatusPage({ params }: PageProps) {
   const locale = toLocale((await params).locale);
   const t = getDictionary(locale);
+  const tech = getTechCopy(locale);
   const counts = countByTier();
   const stateLabel: Record<SubsystemState, string> = {
     working: t.status.stateWorking,
@@ -172,6 +173,26 @@ export default async function StatusPage({ params }: PageProps) {
                   </li>
                 ))}
               </ul>
+              <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 border-t border-ink-700 pt-4 text-sm">
+                {subsystem.techArticles.length > 0 ? (
+                  subsystem.techArticles.map((slug) => (
+                    <Link
+                      key={slug}
+                      href={localePath(locale, `/tech/${slug}`)}
+                      className="text-accent-400 underline underline-offset-4 hover:text-accent-300"
+                    >
+                      {tech[slug].title}
+                    </Link>
+                  ))
+                ) : (
+                  <Link
+                    href={localePath(locale, "/tech")}
+                    className="text-accent-400 underline underline-offset-4 hover:text-accent-300"
+                  >
+                    {t.status.techCta}
+                  </Link>
+                )}
+              </div>
             </article>
           ))}
         </div>

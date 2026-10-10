@@ -3,6 +3,8 @@
  * in the PS5PCEM repository.
  */
 
+import type { TechSlug } from "@/data/technologies";
+
 export type SubsystemState = "working" | "partial" | "deferred";
 
 export type Subsystem = {
@@ -11,6 +13,8 @@ export type Subsystem = {
   state: SubsystemState;
   summary: string;
   details: string[];
+  /** Related technology articles; empty while no dedicated article exists. */
+  techArticles: TechSlug[];
 };
 
 export const subsystemStateLabel: Record<SubsystemState, string> = {
@@ -22,6 +26,7 @@ export const subsystemStateLabel: Record<SubsystemState, string> = {
 export const subsystems: Subsystem[] = [
   {
     id: "cpu",
+    techArticles: ["cpu", "loader", "hle", "fibers"],
     name: "Guest execution",
     state: "working",
     summary:
@@ -35,6 +40,7 @@ export const subsystems: Subsystem[] = [
   },
   {
     id: "gpu",
+    techArticles: ["agc", "vulkan", "page-tracker"],
     name: "AGC command stream",
     state: "partial",
     summary:
@@ -48,6 +54,7 @@ export const subsystems: Subsystem[] = [
   },
   {
     id: "shaders",
+    techArticles: ["rdna2", "ngg", "mimg", "gather4h", "scalar-calls"],
     name: "RDNA2 shader translation",
     state: "partial",
     summary:
@@ -64,6 +71,7 @@ export const subsystems: Subsystem[] = [
   },
   {
     id: "vulkan",
+    techArticles: ["vulkan", "msaa", "metadata", "detile", "videoout"],
     name: "Vulkan rendering",
     state: "working",
     summary:
@@ -81,6 +89,7 @@ export const subsystems: Subsystem[] = [
   },
   {
     id: "audio-video",
+    techArticles: ["audio", "acm", "ajm", "ngs2", "avplayer"],
     name: "Audio and media",
     state: "working",
     summary:
@@ -94,6 +103,7 @@ export const subsystems: Subsystem[] = [
   },
   {
     id: "input",
+    techArticles: ["input"],
     name: "Input",
     state: "working",
     summary:
@@ -106,6 +116,7 @@ export const subsystems: Subsystem[] = [
   },
   {
     id: "storage",
+    techArticles: ["savedata", "apr", "aio"],
     name: "Savedata and storage",
     state: "working",
     summary:
@@ -118,6 +129,7 @@ export const subsystems: Subsystem[] = [
   },
   {
     id: "launcher",
+    techArticles: ["pkg", "input", "savedata"],
     name: "Windows launcher",
     state: "working",
     summary:
@@ -132,6 +144,7 @@ export const subsystems: Subsystem[] = [
   },
   {
     id: "memory",
+    techArticles: ["memory", "page-tracker"],
     name: "Memory",
     state: "working",
     summary:
@@ -144,6 +157,7 @@ export const subsystems: Subsystem[] = [
   },
   {
     id: "firmware",
+    techArticles: ["hle", "fonts", "png", "rtc", "ampr"],
     name: "Fonts, PNG, RTC and AMPR",
     state: "partial",
     summary:
@@ -157,6 +171,7 @@ export const subsystems: Subsystem[] = [
   },
   {
     id: "vr",
+    techArticles: [],
     name: "VR presentation",
     state: "deferred",
     summary:

@@ -180,7 +180,7 @@ const de: Dictionary = {
     performanceHeading: "Gemessene Leistung",
     historyHeading: "Testhistorie",
     historyLead:
-      "Alle erfassten Läufe zu diesem Titel, die neuesten zuerst. Als Entwicklungsbuild markierte Einträge wurden nie als Version veröffentlicht.",
+      "Jeder Eintrag nennt die Veröffentlichung, die die beschriebenen Änderungen enthält. Noch nicht veröffentlichte Arbeiten sind als Entwicklungsbuild markiert. Datum und FPS stammen aus den ursprünglichen Tests.",
     historyEmpty: "Zu diesem Titel sind noch keine einzelnen Läufe dokumentiert.",
     capturesHeading: "Aufnahmen",
     capturesLead:

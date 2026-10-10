@@ -116,6 +116,34 @@ When the emulator publishes a new build or updates `project-status.md`, update
 the matching data file and run the tests — several assertions are written to
 fail on stale figures.
 
+### Versions in test history
+
+A run's `release` identifies the published version containing its reported
+changes. Keep `null` for work not yet included in any release; the site displays
+**Development build** in all eight languages. Run dates and FPS remain those
+of the original measurements, which may precede publication. Title metadata,
+report badges and capture captions share the same labels.
+
+The October 11, 2026 audit checked publication timestamps through the
+[GitHub releases API](https://api.github.com/repos/iStark/PS5PCEM/releases)
+and verified report commits against release tags with GitHub's compare API:
+
+| Previously unversioned reports | First release containing the changes |
+|---|---|
+| Jets and Quake II, September 15–16 (2 entries) | 0.3.2 — September 24, 14:59:54 UTC |
+| September 25–October 5 (51 entries) | 0.3.3 — October 4, 23:47:06 UTC |
+| Jurassic Park font-atlas fix, October 8 (1 entry) | 0.3.4 — October 8, 23:26:59 UTC |
+| October 9–10 (9 entries) | Development build — not yet released |
+
+For example, the September 28 Big Helmet Heroes startup fix is
+[included in 0.3.3](https://github.com/iStark/PS5PCEM/compare/1a11c32...v0.3.3),
+whereas its October 10 menu work
+[postdates 0.3.4](https://github.com/iStark/PS5PCEM/compare/v0.3.4...72e21bb).
+Yōtei's October 5 cache report is
+[included in 0.3.3](https://github.com/iStark/PS5PCEM/compare/fe80911...v0.3.3):
+the release's UTC timestamp falls on October 5 in Minsk. Use commit inclusion
+to resolve such boundaries instead of assigning the preceding release by date.
+
 ## Development
 
 ```bash
@@ -172,7 +200,9 @@ npm run build      # production build
    `SHA256SUMS.txt`.
 2. Update `src/data/compatibility.ts` from the new `project-status.md`, and copy
    any new captures into `public/images/`.
-3. Add an entry to `src/data/history.ts` for each new dated run.
+3. Add an entry to `src/data/history.ts` for each new dated run. Set `release`
+   to the first published version containing its changes, or `null` while they
+   are unreleased. Revisit these entries when publishing the next release.
 4. Write the prose for anything new in `src/i18n/content/en.ts`, then in the
    other seven content files. TypeScript will not let a locale fall behind.
 5. Run `npm test` and fix whatever the pinned assertions report.

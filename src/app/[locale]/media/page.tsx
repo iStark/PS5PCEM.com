@@ -10,8 +10,9 @@ import {
   localePath,
   toLocale,
 } from "@/i18n/config";
-import { format, getDictionary, getHistoryContent } from "@/i18n";
+import { getDictionary, getHistoryContent } from "@/i18n";
 import { formatDate } from "@/lib/format";
+import { formatHistoryBuild } from "@/lib/history-build";
 import { buildRows } from "@/lib/rows";
 import { ButtonLink, SectionHeading, TierBadge } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
@@ -107,6 +108,7 @@ export default async function MediaPage({ params }: PageProps) {
           <figcaption className="p-6">
             <p className="text-xs text-ink-400">
               {formatDate(hero.date, locale)}
+              {` · ${formatHistoryBuild(hero, locale)}`}
               {heroEntry ? ` · ${heroEntry.title}` : ""}
             </p>
             <p className="mt-1.5 text-base font-semibold text-ink-100">
@@ -150,11 +152,7 @@ export default async function MediaPage({ params }: PageProps) {
                 <figcaption className="p-5">
                   <p className="text-xs text-ink-400">
                     {formatDate(run.date, locale)}
-                    {run.release
-                      ? ` · ${format(t.common.release, {
-                          version: run.release.replace(/^v/, ""),
-                        })}`
-                      : ` · ${t.common.developmentBuild}`}
+                    {` · ${formatHistoryBuild(run, locale)}`}
                   </p>
                   <p className="mt-1.5 text-sm font-semibold text-ink-100">
                     {text?.title}

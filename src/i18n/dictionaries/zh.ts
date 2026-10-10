@@ -179,7 +179,7 @@ const zh: Dictionary = {
     performanceHeading: "实测性能",
     historyHeading: "测试历史",
     historyLead:
-      "这款游戏的所有记录运行，从最新开始。标为开发版本的条目从未作为正式版发布。",
+      "每条记录标明包含所述更改的发布版本。尚未纳入正式发布版本的工作标记为开发版本。日期和 FPS 保留原始测试的记录。",
     historyEmpty: "这款游戏还没有单独记录的运行。",
     capturesHeading: "截图",
     capturesLead: "上述运行过程中由模拟器自身产生的画面。",
