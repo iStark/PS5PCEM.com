@@ -38,8 +38,8 @@ export const compatibility: CompatibilityEntry[] = [
     slug: "gta-iii-definitive-edition",
     title: "Grand Theft Auto III: The Definitive Edition",
     tier: "ingame",
-    image: "/images/gta3-renderer-performance.png",
-    confirmedOn: "2026-10-03",
+    image: "/images/gta3-startup-reflections-2026-10-10.png",
+    confirmedOn: "2026-10-10",
   },
   {
     slug: "terminator-2d-no-fate",

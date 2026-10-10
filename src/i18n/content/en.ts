@@ -46,18 +46,19 @@ const content: Content = {
     },
     "gta-iii-definitive-edition": {
       "status": "In-game · movement verified",
-      "headline": "Corrected colors and reflections in GTA III gameplay.",
-      "summary": "October 3 development build, PPSA03527 v1.007: Give Me Liberty renders the player, vehicle, bridge, HUD and minimap. Fixes address green overexposure and incomplete reflection mips. Shared resource analysis and GPU-resident textures reduce repeated CPU work and transfers.",
+      "headline": "Cold launcher startup verified; green reflection publication fixed.",
+      "summary": "October 10 development build, PPSA03527 v1.007: the installed signed runner automatically reaches the menu after both startup movies, with the emulator caches absent. Give Me Liberty renders the player, car, bridge, HUD and minimap. Ordered buffer/storage-image publication removes the observed green reflection clear; shared shader analysis reduces repeated CPU work.",
       "strengths": [
-        "New Game advances through the intro into the opening mission.",
+        "Actual launcher cold start reaches the menu without skipping movies; New Game reaches the opening mission.",
         "Keyboard movement and a change of direction are verified."
       ],
       "limits": [
-        "Rendering imperfections and unresolved resource diagnostics remain.",
-        "Reliable startup, saves, audio correctness and completion remain unverified."
+        "Opening-scene reports show zero draw/dispatch failures and unresolved storage bindings; later shaders and remaining visual defects are not fully audited.",
+        "Vehicle/object shadows moving with the player and duplicated player shadows were reported on October 11; reproduction and correction remain pending. One rejected vertex-only draw at initialization is also under investigation.",
+        "Whole-game completion, long-session stability, save recovery and audio correctness remain unverified."
       ],
-      "performance": "8.10–8.97 FPS at the opening position (two 30-second samples; 8.53 FPS combined). Seated car: 7.20 FPS; wider city view after driving: 3.57 FPS. Performance mode, Bloom/Motion Blur off, Classic Lighting on. Output 1080p; internal resolution is game-controlled. Not an 8 FPS minimum throughout gameplay.",
-      "imageAlt": "GTA III player and car at Callahan Bridge after the color and reflection fixes"
+      "performance": "October 10–11 opening-position checks: 7.37 FPS on the installed runner after a cold launch and 8.27 FPS after indexing uniform scalar analysis. Each interval is 30 unpaused seconds. A later 7.10 FPS sample with user movement is excluded from the stationary comparison. Performance mode, Bloom/Motion Blur off, Classic Lighting on; output 1080p, internal resolution game-controlled. Traffic and time of day vary. Further buffer-index and compact variant-key changes await a clean gameplay measurement; 10 FPS is not yet established.",
+      "imageAlt": "GTA III player and car at Callahan Bridge after cold launcher startup and the reflection publication fixes"
     },
     "subnautica-below-zero": {
       "status": "Playable · Completable",
@@ -524,6 +525,11 @@ const content: Content = {
       "title": "Performance repeated on the current runner",
       "summary": "October 3 repeat, PPSA02457 v1.022.125: the installed runner restores the Survival save and renders the snowy crash site and HUD. This run measures the current build after the shared GTA III renderer changes; it adds no new emulator fixes. Main menu: 14.67 FPS. Two unpaused 30-second stationary world samples: 7.27 and 11.77 FPS; 9.52 FPS combined. The first includes a 9.998-second stall. Output 1080p, Speed preset, warm caches. The earlier valid sample was 7.93 FPS, but this is not a controlled speedup comparison. 30 FPS remains unmet.",
       "imageAlt": "Subnautica: Below Zero snowy crash site and survival HUD during the October 3 performance repeat"
+    },
+    "gta3-startup-reflections": {
+      "title": "Movie completion and green reflection publication corrected",
+      "summary": "The real launcher reaches the menu automatically in 139 seconds with both active emulator caches absent. Pending buffer and storage-image clears complete before newer reflection faces, removing the observed green wash and neon-green reflections. Live bounded uniform guards remove inactive resource references from both staging and SPIR-V. The tested opening scene reports zero draw/dispatch failures and unresolved storage bindings. Indexed resource checks and compact shader variant keys reduce repeated preparation work. A stationary opening sample records 8.27 FPS; 10 FPS remains unverified. Reported moving/duplicated shadows and one rejected vertex-only initialization draw remain under investigation.",
+      "imageAlt": "GTA III opening gameplay from the updated installed runner after the startup and reflection fixes"
     },
     "gta3-renderer-performance": {
       "title": "Colors, reflections and resource preparation corrected",
