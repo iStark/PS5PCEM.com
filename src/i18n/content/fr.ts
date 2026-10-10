@@ -18,19 +18,20 @@ const fr: Content = {
       "imageAlt": "Six près de la valise dans la première pièce ; éclairage sombre et matériaux réfléchissants incorrects"
     },
     "gta-iii-definitive-edition": {
-      "status": "En jeu · déplacement vérifié",
-      "headline": "Couleurs et reflets corrigés dans le gameplay de GTA III.",
-      "summary": "Version de développement du 3 octobre, PPSA03527 v1.007 : Give Me Liberty affiche personnage, véhicule, pont, HUD et minicarte. Les causes de la surexposition verte et des niveaux de reflets incomplets sont corrigées. Une analyse partagée des ressources et des textures résidentes sur GPU réduisent les traitements CPU répétés et les transferts.",
+      "status": "En jeu · déplacements vérifiés",
+      "headline": "Démarrage sans cache depuis le lanceur vérifié ; reflets verts corrigés.",
+      "summary": "Version de développement du 10 octobre, PPSA03527 v1.007 : l’exécutable installé et signé atteint automatiquement le menu après les deux vidéos d’introduction, sans les caches de l’émulateur. Give Me Liberty affiche le personnage, la voiture, le pont, le HUD et la minicarte. L’ordre correct des écritures des tampons et images élimine le remplissage vert observé dans les reflets ; l’analyse partagée des shaders réduit le travail CPU répété.",
       "strengths": [
-        "Une nouvelle partie passe l’introduction et atteint la première mission.",
-        "Le déplacement au clavier et le changement de direction sont vérifiés."
+        "Le véritable lanceur atteint le menu sans cache ni saut des vidéos ; une nouvelle partie charge la première mission.",
+        "Les déplacements au clavier et les changements de direction sont vérifiés."
       ],
       "limits": [
-        "Des défauts visuels et des diagnostics de ressources non résolues subsistent.",
-        "Fiabilité du démarrage, sauvegardes, exactitude audio et partie complète restent non vérifiées."
+        "La scène initiale ne signale aucune erreur de dessin ou de lancement de calcul, ni de liaison de ressource de stockage non résolue ; les shaders ultérieurs et les autres défauts visuels ne sont pas entièrement vérifiés.",
+        "Le 11 octobre, des ombres de voitures et d’objets suivant le personnage, ainsi que des ombres du personnage dupliquées, ont été signalées. Leur reproduction et leur correction restent à faire. Un appel rejeté à l’initialisation avec seulement un shader de sommets est également à l’étude.",
+        "La fin du jeu, la stabilité prolongée, la récupération des sauvegardes et la justesse du son ne sont pas vérifiées."
       ],
-      "performance": "8.10–8.97 FPS à la position initiale (deux mesures de 30 secondes ; moyenne combinée de 8,53 FPS). Dans la voiture : 7,20 FPS ; vue élargie vers la ville après un court trajet : 3,57 FPS. Performance, Bloom/Motion Blur désactivés, Classic Lighting activé. Sortie 1080p ; résolution interne contrôlée par le jeu. Pas de minimum de 8 FPS sur tout le parcours.",
-      "imageAlt": "Personnage et voiture de GTA III sur Callahan Bridge après correction des couleurs et des reflets"
+      "performance": "Mesures des 10–11 octobre à la position initiale : 7,37 FPS avec l’exécutable installé après un démarrage sans cache, puis 8,27 FPS après indexation de l’analyse scalaire des uniformes. Chaque mesure dure 30 secondes sans pause. Une mesure ultérieure de 7,10 FPS avec déplacements de l’utilisateur est exclue de la comparaison à vue fixe. Performance, Bloom/Motion Blur désactivés, Classic Lighting activé ; sortie 1080p, résolution interne contrôlée par le jeu. Le trafic et l’heure évoluent. Les changements suivants de l’index des tampons et des clés compactes de variantes attendent une mesure sans intervention ; 10 FPS ne sont pas encore confirmés.",
+      "imageAlt": "Personnage et voiture de GTA III sur Callahan Bridge après vérification du démarrage sans cache depuis le lanceur et correction des reflets"
     },
     "subnautica-below-zero": {
       "status": "Jouable · Terminable",
@@ -498,6 +499,11 @@ const fr: Content = {
       "title": "Nouvelle mesure avec le binaire actuel",
       "summary": "Vérification du 3 octobre, PPSA02457 v1.022.125 : le binaire installé restaure la sauvegarde Survival et affiche le site enneigé du crash et le HUD. Cette mesure porte sur la version actuelle après les changements communs du rendu pour GTA III ; aucun nouveau correctif n’est ajouté. Menu principal : 14,67 FPS. Deux mesures de 30 secondes, caméra immobile et jeu non suspendu : 7,27 et 11,77 FPS ; 9,52 FPS au total. La première inclut un blocage de 9,998 secondes. Sortie 1080p, préréglage Speed, caches chauds. La mesure valide précédente était de 7,93 FPS, mais ce n’est pas une comparaison contrôlée du gain. Les 30 FPS ne sont pas atteints.",
       "imageAlt": "Site enneigé du crash et HUD de survie de Subnautica: Below Zero lors de la mesure du 3 octobre"
+    },
+    "gta3-startup-reflections": {
+      "title": "Fin des vidéos et mise à jour des reflets verts corrigées",
+      "summary": "Le véritable lanceur atteint automatiquement le menu en 139 secondes sans les deux caches actifs de l’émulateur. Les effacements en attente des tampons et images s’achèvent avant les nouvelles faces des reflets, supprimant le voile vert et les reflets vert fluo observés. Les conditions uniformes évaluées sur les valeurs actuelles, avec contrôle des limites, retirent les références inactives de la préparation et du SPIR-V. La scène initiale testée ne signale aucune erreur de dessin/calcul ni de liaison de stockage non résolue. Les recherches indexées de ressources et les clés compactes de variantes réduisent la préparation répétée. Une mesure fixe au début donne 8,27 FPS ; 10 FPS restent non confirmés. Les ombres mobiles/dupliquées signalées et un appel rejeté avec seulement un shader de sommets à l’initialisation restent à l’étude.",
+      "imageAlt": "Début du gameplay de GTA III avec l’exécutable installé mis à jour après correction du démarrage et des reflets"
     },
     "gta3-renderer-performance": {
       "title": "Couleurs, reflets et préparation des ressources corrigés",

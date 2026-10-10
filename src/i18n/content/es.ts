@@ -19,18 +19,19 @@ const es: Content = {
     },
     "gta-iii-definitive-edition": {
       "status": "En juego · movimiento verificado",
-      "headline": "Colores y reflejos corregidos en el gameplay de GTA III.",
-      "summary": "Versión de desarrollo del 3 de octubre, PPSA03527 v1.007: Give Me Liberty muestra personaje, vehículo, puente, HUD y minimapa. Se corrigen causas de la sobreexposición verde y niveles de reflejos incompletos. El análisis compartido de recursos y las texturas residentes en GPU reducen trabajo repetido de CPU y transferencias.",
+      "headline": "Inicio sin caché desde el lanzador verificado; reflejos verdes corregidos.",
+      "summary": "Versión de desarrollo del 10 de octubre, PPSA03527 v1.007: el ejecutable instalado y firmado llega automáticamente al menú tras los dos vídeos de inicio, sin las cachés del emulador. Give Me Liberty muestra al personaje, el coche, el puente, el HUD y el minimapa. El orden correcto de las escrituras de búferes e imágenes elimina el relleno verde observado en los reflejos; el análisis compartido de shaders reduce el trabajo repetido de CPU.",
       "strengths": [
-        "Una partida nueva supera la introducción y llega a la primera misión.",
-        "Se verificaron el movimiento con teclado y el cambio de dirección."
+        "El lanzador real llega al menú sin caché y sin saltar los vídeos; una partida nueva carga la primera misión.",
+        "Se han verificado el movimiento con teclado y los cambios de dirección."
       ],
       "limits": [
-        "Persisten defectos visuales y diagnósticos de recursos sin resolver.",
-        "No se han verificado el inicio fiable, los guardados, la precisión del audio ni una partida completa."
+        "La escena inicial no registra errores de dibujo ni de despacho de cómputo, ni enlaces de recursos de almacenamiento sin resolver; los shaders posteriores y los demás defectos visuales no se han revisado por completo.",
+        "El 11 de octubre se notificaron sombras de coches y objetos que siguen al personaje y sombras duplicadas del personaje. Su reproducción y corrección están pendientes. También se investiga una llamada rechazada durante la inicialización con solo un shader de vértices.",
+        "No se han verificado la finalización del juego, la estabilidad prolongada, la recuperación de partidas ni la corrección del audio."
       ],
-      "performance": "8.10–8.97 FPS en la posición inicial (dos muestras de 30 segundos; 8,53 FPS combinados). Dentro del coche: 7,20 FPS; vista amplia de la ciudad tras conducir: 3,57 FPS. Performance, Bloom/Motion Blur desactivados, Classic Lighting activado. Salida 1080p; resolución interna controlada por el juego. No es un mínimo de 8 FPS en todo el juego.",
-      "imageAlt": "Personaje y coche de GTA III en Callahan Bridge tras corregir colores y reflejos"
+      "performance": "Mediciones del 10–11 de octubre en la posición inicial: 7,37 FPS con el ejecutable instalado tras iniciar sin caché y 8,27 FPS tras indexar el análisis escalar de uniformes. Cada intervalo dura 30 segundos sin pausa. Una muestra posterior de 7,10 FPS con movimiento del usuario se excluye de la comparación con cámara fija. Performance, Bloom/Motion Blur desactivados, Classic Lighting activado; salida 1080p, resolución interna controlada por el juego. El tráfico y la hora varían. Los cambios posteriores del índice de búferes y las claves compactas de variantes esperan una medición sin intervención; todavía no se han confirmado 10 FPS.",
+      "imageAlt": "Personaje y coche de GTA III en Callahan Bridge tras verificar el inicio sin caché desde el lanzador y corregir los reflejos"
     },
     "subnautica-below-zero": {
       "status": "Jugable · Se puede completar",
@@ -498,6 +499,11 @@ const es: Content = {
       "title": "Nueva medición con el ejecutable actual",
       "summary": "Repetición del 3 de octubre, PPSA02457 v1.022.125: el ejecutable instalado restaura la partida Survival y muestra el lugar nevado del accidente y el HUD. Se mide la versión actual tras los cambios compartidos del renderizador para GTA III; esta prueba no añade correcciones nuevas. Menú principal: 14,67 FPS. Dos mediciones de 30 segundos, sin pausa y con cámara fija: 7,27 y 11,77 FPS; 9,52 FPS combinados. La primera incluye un bloqueo de 9,998 segundos. Salida 1080p, ajuste Speed, cachés calientes. La medición válida anterior fue de 7,93 FPS, pero no es una comparación controlada de mejora. No se alcanzan los 30 FPS.",
       "imageAlt": "Lugar nevado del accidente y HUD de supervivencia de Subnautica: Below Zero en la medición del 3 de octubre"
+    },
+    "gta3-startup-reflections": {
+      "title": "Corregidos el final de los vídeos y la actualización de los reflejos verdes",
+      "summary": "El lanzador real llega automáticamente al menú en 139 segundos sin las dos cachés activas del emulador. Los borrados pendientes de búferes e imágenes terminan antes de escribir las nuevas caras de los reflejos, eliminando el tinte verde y los reflejos verde neón observados. Las condiciones uniformes con valores actuales y límites comprobados retiran las referencias inactivas tanto de la preparación como de SPIR-V. La escena inicial probada no registra errores de dibujo/cómputo ni enlaces de almacenamiento sin resolver. Las consultas indexadas de recursos y las claves compactas de variantes reducen la preparación repetida. Una muestra fija inicial da 8,27 FPS; 10 FPS siguen sin confirmar. Las sombras móviles/duplicadas notificadas y una llamada rechazada con solo un shader de vértices al inicializar siguen en investigación.",
+      "imageAlt": "Gameplay inicial de GTA III con el ejecutable instalado actualizado tras corregir el inicio y los reflejos"
     },
     "gta3-renderer-performance": {
       "title": "Correcciones de colores, reflejos y preparación de recursos",
