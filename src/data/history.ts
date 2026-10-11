@@ -38,6 +38,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "arcade-spirits-pthread-semaphores",
+    slug: "arcade-spirits-the-new-challengers",
+    date: "2026-10-11",
+    release: null,
+    image: "/images/arcade-spirits-intro-2026-10-11.jpg",
+    source: devReport("arcade-spirits-pthread-semaphores-2026-10-11.md"),
+  },
+  {
     id: "arkanoid-fiber-startup",
     slug: "arkanoid-eternal-battle",
     date: "2026-10-11",

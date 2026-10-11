@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    slug: "arcade-spirits-the-new-challengers",
+    title: "Arcade Spirits: The New Challengers",
+    tier: "intro",
+    image: "/images/arcade-spirits-menu-2026-10-11.jpg",
+    confirmedOn: "2026-10-11",
+  },
+  {
     slug: "arkanoid-eternal-battle",
     title: "Arkanoid: Eternal Battle",
     tier: "intro",

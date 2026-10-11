@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const zh: Content = {
   games: {
+    "arcade-spirits-the-new-challengers": {
+      "status": "主菜单 · 开场视频 · 游玩未验证",
+      "headline": "启动已修复；主菜单帧率中位数为 252.9 FPS。",
+      "summary": "10 月 11 日开发版本，PPSA06409 v01.000.000：五个缺失的 scePthreadSem 导入现已使用真正的计数信号量和调度器等待机制。Python/Ren’Py 完成初始化，已签名的 runner 显示主菜单。重复启动时，自动 Cross 输入选择 START，进入带字幕的开场视频。",
+      "strengths": [
+        "标题背景上显示 START、LOAD、PREFS、PRIZES 和 ABOUT；重复测试进入 Fist of Discomfort 2 Pro Tour 开场片段。",
+        "菜单测试的 517 份和重复测试的 278 份 GPU 跳过报告均为零，未出现客户程序崩溃或采样图像被拒绝。"
+      ],
+      "limits": [
+        "手动菜单导航和实际游玩仍未验证：UI 工具的短按键未出现在 Pad 诊断中。",
+        "音质、存档恢复、完整通关及长时间稳定性尚未测试。零跳过报告不能证明后续场景完全正确。"
+      ],
+      "performance": "菜单：关闭自动输入，以一秒间隔读取窗口计数器 30 次，跨度 29.939 秒，中位数 252.9 FPS，范围 221.1–272.3 FPS。RTX 3070 Ti，请求输出 1920×1080，内部渲染目标 3840×2160。开场截图显示 200.3 FPS，仅为单次观察。这些数据并非实际游玩基准，也不是优化前后的对照。",
+      "imageAlt": "Arcade Spirits 主菜单，标题背景上显示 START、LOAD、PREFS、PRIZES 和 ABOUT"
+    },
     "arkanoid-eternal-battle": {
       "status": "标题画面 · 主菜单 · 游玩未验证",
       "headline": "启动和菜单画面已修复；模式选择菜单的帧率中位数为 45.6 FPS。",
@@ -370,6 +385,11 @@ const zh: Content = {
   },
 
   history: {
+    "arcade-spirits-pthread-semaphores": {
+      "title": "计数 pthread 信号量使启动和开场剧情得以运行",
+      "summary": "在共享信号量存储上实现了 scePthreadSemInit、Wait、Trywait、Post 和 Destroy。等待会挂起线程并消耗令牌；Post 在唤醒接收线程之前预留令牌。空信号量的非阻塞等待、溢出、失效句柄和删除仍有等待线程的信号量会返回错误。全部 625 项 HLE 测试通过。重新构建并签名的 runner 到达菜单，30 次读数的中位数为 252.9 FPS；自动 Cross 输入在重复测试中进入带清晰字幕的开场视频。手动控制、实际游玩和音质仍未验证。本次使用开发版本。",
+      "imageAlt": "Arcade Spirits 中的 Fist of Discomfort 2 Pro Tour 开场视频和清晰字幕；窗口计数器为 200.3 FPS"
+    },
     "arkanoid-fiber-startup": {
       "title": "修复纤程启动问题并恢复大型菜单图集",
       "summary": "实现了 sceFiberGetInfo、sceFiberRename、进程私有的 pthread_mutexattr_setpshared 和真正的 fsync，sceKernelFsync 也使用同一文件操作。每个纤程独立的 HLE 栈可防止溢出；同步迁移使暂停的加载任务能够在另一工作线程上继续。采样图像采用独立的 512 MiB 上传限制，可接受 16K BC7 菜单图集，无需提高帧缓冲区限制。全部 623 项 HLE 测试和 244 项 Vulkan 测试通过；重新构建并签名的 runner 在重复启动中到达标题画面和模式菜单。菜单 30 次读数的中位数为 45.6 FPS。实际游玩仍未验证；本次使用开发版本。",

@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const es: Content = {
   games: {
+    "arcade-spirits-the-new-challengers": {
+      "status": "Menú principal · vídeo inicial · juego sin verificar",
+      "headline": "Inicio corregido; mediana de 252,9 FPS en el menú principal.",
+      "summary": "Compilación de desarrollo del 11 de octubre, PPSA06409 v01.000.000: cinco importaciones scePthreadSem ausentes usan ahora semáforos contadores reales y esperas del planificador. Python/Ren’Py se inicializa y el runner firmado muestra el menú principal. Un segundo arranque con Cross automático selecciona START y llega al vídeo inicial con subtítulos.",
+      "strengths": [
+        "START, LOAD, PREFS, PRIZES y ABOUT aparecen sobre la imagen del título; la repetición alcanza la introducción de Fist of Discomfort 2 Pro Tour.",
+        "Los 517 informes de omisiones GPU del menú y los 278 de la repetición marcan cero, sin fallos del invitado ni rechazos de imágenes muestreadas."
+      ],
+      "limits": [
+        "La navegación manual por el menú y el juego siguen sin verificarse: las pulsaciones breves de la herramienta de interfaz no aparecieron en los diagnósticos Pad.",
+        "No se han probado la calidad del audio, la recuperación de partidas, la finalización ni la estabilidad prolongada. Cero omisiones reportadas no garantiza las escenas posteriores."
+      ],
+      "performance": "Menú: mediana de 252,9 FPS, rango de 221,1–272,3 FPS en 30 lecturas del contador de ventana a intervalos de un segundo, durante 29,939 segundos, con entrada automática desactivada. RTX 3070 Ti, salida solicitada de 1920×1080, objetivo interno de 3840×2160. La captura de la introducción muestra 200,3 FPS, una observación aislada. No son pruebas de rendimiento del juego ni una comparación antes/después.",
+      "imageAlt": "Menú principal de Arcade Spirits con START, LOAD, PREFS, PRIZES y ABOUT sobre la imagen del título"
+    },
     "arkanoid-eternal-battle": {
       "status": "Pantalla de título · menú principal · juego sin verificar",
       "headline": "Inicio y gráficos del menú restaurados; mediana de 45,6 FPS en la selección de modos.",
@@ -389,6 +404,11 @@ const es: Content = {
   },
 
   history: {
+    "arcade-spirits-pthread-semaphores": {
+      "title": "Los semáforos contadores pthread desbloquean el inicio y la introducción",
+      "summary": "Implementados scePthreadSemInit, Wait, Trywait, Post y Destroy sobre el almacén común de semáforos. Las esperas suspenden el hilo y consumen señales; Post reserva una señal antes de despertar a su destinatario. La espera no bloqueante sin señales, el desbordamiento, los identificadores obsoletos y la destrucción con hilos en espera devuelven errores. Pasan las 625 pruebas HLE. El runner recompilado y firmado llega al menú con una mediana de 252,9 FPS en 30 lecturas; una repetición con Cross automático abre el vídeo inicial con subtítulos legibles. Controles manuales, juego y calidad del audio sin verificar. Compilación de desarrollo.",
+      "imageAlt": "Vídeo inicial de Fist of Discomfort 2 Pro Tour en Arcade Spirits con subtítulos legibles; contador a 200,3 FPS"
+    },
     "arkanoid-fiber-startup": {
       "title": "Inicio con fibras corregido y grandes atlas del menú restaurados",
       "summary": "Implementados sceFiberGetInfo, sceFiberRename, pthread_mutexattr_setpshared privado del proceso y fsync real, compartido con sceKernelFsync. Las pilas HLE propias de cada fibra evitan desbordamientos; la migración sincronizada permite reanudar tareas de carga en otro hilo. Un límite independiente de 512 MiB para transferir imágenes muestreadas admite los atlas BC7 de 16K sin aumentar los límites del framebuffer. Pasan las 623 pruebas HLE y 244 pruebas Vulkan; el runner recompilado y firmado alcanza el título y el menú de modos en arranques repetidos. Mediana del menú: 45,6 FPS en 30 lecturas. Juego sin verificar; compilación de desarrollo.",

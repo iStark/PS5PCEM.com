@@ -29,6 +29,21 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "arcade-spirits-the-new-challengers": {
+      "status": "Main menu · opening video · gameplay unverified",
+      "headline": "Startup fixed; the main menu measures a 252.9 FPS median.",
+      "summary": "October 11 development build, PPSA06409 v01.000.000: five missing scePthreadSem imports now use real counted semaphores and scheduler waits. Python/Ren’Py initializes and the signed runner renders the main menu. A repeat with automatic Cross input selects START and reaches the opening video with subtitles.",
+      "strengths": [
+        "START, LOAD, PREFS, PRIZES and ABOUT render over the title artwork; the repeat advances into the Fist of Discomfort 2 Pro Tour introduction.",
+        "All 517 menu-run and 278 repeat-run GPU-gap reports are zero, with no guest fault or sampled-image rejection."
+      ],
+      "limits": [
+        "Manual menu navigation and gameplay remain unverified: the UI tool’s short key presses did not appear in Pad diagnostics.",
+        "Audio quality, save recovery, full completion and long-session stability are untested. Zero reported gaps do not establish correctness in later scenes."
+      ],
+      "performance": "Menu: 252.9 FPS median, 221.1–272.3 FPS range from 30 one-second window-counter readings spanning 29.939 seconds, with automatic input disabled. RTX 3070 Ti, requested output 1920×1080, internal target 3840×2160. The intro capture shows 200.3 FPS, a single observation. These are not gameplay benchmarks or a before/after comparison.",
+      "imageAlt": "Arcade Spirits main menu with START, LOAD, PREFS, PRIZES and ABOUT over the title artwork"
+    },
     "arkanoid-eternal-battle": {
       "status": "Title screen · main menu · gameplay unverified",
       "headline": "Startup and menu artwork restored; the mode-selection menu measures 45.6 FPS.",
@@ -415,6 +430,11 @@ const content: Content = {
   },
 
   history: {
+    "arcade-spirits-pthread-semaphores": {
+      "title": "Counted pthread semaphores unblock startup and the opening story",
+      "summary": "Implemented scePthreadSemInit, Wait, Trywait, Post and Destroy on the shared semaphore store. Waits park and consume tokens; posting reserves a token before waking its recipient. Empty polling, overflow, stale handles and busy destruction return errors. All 625 HLE tests pass. The rebuilt, signed runner reaches the menu at a 252.9 FPS median over 30 readings; a repeat using automatic Cross advances into the opening video with readable subtitles. Manual controls, gameplay and audio quality remain unverified. Development build.",
+      "imageAlt": "Arcade Spirits opening Fist of Discomfort 2 Pro Tour video with readable subtitles; window counter 200.3 FPS"
+    },
     "arkanoid-fiber-startup": {
       "title": "Fiber startup fixed and large menu atlases restored",
       "summary": "Implemented sceFiberGetInfo, sceFiberRename, process-private pthread_mutexattr_setpshared and real fsync, shared by sceKernelFsync. Per-fiber firmware stacks prevent overflow; synchronized migration allows suspended loading jobs to resume on another worker. A separate 512 MiB sampled-image upload bound accepts the 16K BC7 menu atlases without raising framebuffer limits. All 623 HLE and 244 Vulkan tests pass; the rebuilt, signed runner reaches the title and mode menu in repeat launches. Menu median: 45.6 FPS over 30 samples. Gameplay remains unverified; this run uses a development build.",
