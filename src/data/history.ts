@@ -38,6 +38,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "dead-cells-ngs2-link",
+    slug: "dead-cells",
+    date: "2026-10-11",
+    release: null,
+    image: "/images/dead-cells-main-menu-2026-10-11.png",
+    source: devReport("dead-cells-ngs2-2026-10-11.md"),
+  },
+  {
     id: "gta3-startup-reflections",
     slug: "gta-iii-definitive-edition",
     date: "2026-10-10",

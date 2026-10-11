@@ -28,6 +28,7 @@ describe("compatibility dataset", () => {
         "Asterix & Obelix: Slap Them All!",
         "Big Helmet Heroes",
         "Cat Quest III",
+        "Dead Cells",
         "Dreaming Sarah",
         "Ghost of Yōtei",
         "Grand Theft Auto III: The Definitive Edition",
@@ -70,7 +71,7 @@ describe("compatibility dataset", () => {
   });
 
   it("keeps in-game titles with severe defects short of playable", () => {
-    for (const slug of ["ghost-of-yotei", "gta-iii-definitive-edition"]) {
+    for (const slug of ["dead-cells", "ghost-of-yotei", "gta-iii-definitive-edition"]) {
       const game = findBySlug(slug);
       expect(game).toBeDefined();
       expect(game!.tier, slug).toBe("ingame");
@@ -179,10 +180,11 @@ describe("test history", () => {
       ["quake-playable", "v0.3.2"],
       ["gta3-startup-reflections", null],
       ["bhh-menu-performance-20261010", null],
+      ["dead-cells-ngs2-link", null],
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(9);
+    expect(history.filter((run) => run.release === null)).toHaveLength(10);
   });
 
   it("references captures that exist in public/", () => {

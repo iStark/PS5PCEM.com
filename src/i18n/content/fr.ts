@@ -2,6 +2,23 @@ import type { Content } from "./en";
 
 const fr: Content = {
   games: {
+    "dead-cells": {
+      "status": "Menu principal · ATH du jeu atteint · niveau sombre",
+      "headline": "Se lie et atteint son menu principal et l’ATH du jeu ; le niveau reste sombre.",
+      "summary": "Version de développement du 11 octobre, PPSA15552 v01.005.000 : Dead Cells s’arrêtait jusqu’ici à l’édition des liens, faute de huit imports audio NGS2. La création du système audio dans un tampon du jeu et les fonctions de géométrie audio 3D sont désormais implémentées ; chaque appel observé réussit. Le menu principal s’affiche correctement ; une partie lancée montre l’ATH et l’astuce du tutoriel, mais le niveau et le personnage restent sombres.",
+      "strengths": [
+        "Se lie et démarre maintenant que les huit fonctions libSceNgs2 manquantes sont réellement implémentées, sans simples bouchons.",
+        "Le menu principal s’affiche correctement ; le compteur de fenêtre y indiquait 71–72 FPS.",
+        "L’ATH du jeu, l’emplacement d’arme, la barre de santé et l’astuce du tutoriel s’affichent ; selon le développeur, le jeu a du son."
+      ],
+      "limits": [
+        "Le niveau et le personnage restent sombres en jeu ; c’est la prochaine correction.",
+        "Le menu principal est muet.",
+        "La jouabilité, les sauvegardes et les longues sessions ne sont pas établies."
+      ],
+      "performance": "Relevés ponctuels du compteur de fenêtre : 71–72 FPS au menu principal et 52–62 FPS dans la scène de jeu sombre ; RTX 3070 Ti, sortie 1080p, préréglage Speed.",
+      "imageAlt": "Menu principal de Dead Cells avec l’illustration de la mise à jour Clean Cut"
+    },
     "little-nightmares-enhanced-edition": {
       "status": "En jeu · rendu incomplet",
       "headline": "Sauvegarde et chargement fonctionnent ; 3,73–4,46 FPS dans la première pièce.",
@@ -344,6 +361,11 @@ const fr: Content = {
   },
 
   history: {
+    "dead-cells-ngs2-link": {
+      "title": "Les fonctions audio NGS2 permettent à Dead Cells de se lier et d’atteindre le jeu",
+      "summary": "La version de développement du 11 octobre implémente huit fonctions libSceNgs2 nécessaires à l’édition des liens de Dead Cells : la création du système audio et des racks dans un tampon du jeu, et les fonctions de géométrie audio 3D — repère de l’auditeur, atténuation avec la distance, cône, effet Doppler et panoramique entre haut-parleurs. Chaque appel observé réussit. Le menu principal s’affiche correctement, à 71–72 FPS selon le compteur de fenêtre ; en jeu, l’ATH et l’astuce du tutoriel apparaissent, mais le niveau et le personnage sont sombres. Le menu principal est muet, tandis que le jeu a du son.",
+      "imageAlt": "Menu principal de Dead Cells avec l’illustration de la mise à jour Clean Cut"
+    },
     "sarah-bounded-vertex-uploads": {
       "title": "Les plages de sommets prouvées réduisent les transferts de sprites",
       "summary": "La version de développement du 10 octobre transfère les plages de sommets nécessaires plutôt que des tampons de sprites surdimensionnés. Les transferts passent d’environ 78 à 4,9 Mio par image initiale. Déplacement, saut et écran de plateformes suivant sont vérifiés ; le précédent parcours complet reste documenté. Début, 60 secondes : médiane 198.25 FPS, plage 187.8–203.2. Après le réveil : 197.25 FPS ; écran suivant : 144.35 FPS (30 secondes chacun). Échantillons du compteur de fenêtre sur RTX 3070 Ti, sortie 1080p et son actif ; aucun minimum pour tout le jeu n’est établi.",

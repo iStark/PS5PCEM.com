@@ -29,6 +29,23 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "dead-cells": {
+      "status": "Main menu · gameplay HUD reached · level renders dark",
+      "headline": "Links and reaches its main menu and gameplay HUD; the level still renders dark.",
+      "summary": "Development build of October 11, PPSA15552 v01.005.000: Dead Cells previously stopped at linking on eight missing NGS2 audio imports. Buffer-backed audio system creation and the 3D audio geometry helpers are now implemented, and every observed call succeeds. The main menu renders correctly; starting a game shows the HUD and tutorial prompt, but the level and the character remain dark.",
+      "strengths": [
+        "Links and starts now that the eight missing libSceNgs2 functions are implemented rather than stubbed.",
+        "The main menu renders correctly; the window counter read 71–72 FPS there.",
+        "The gameplay HUD, weapon slot, health bar and tutorial prompt render, and the developer reports audible gameplay."
+      ],
+      "limits": [
+        "The level and the character render dark in gameplay; this is the next fix.",
+        "The main menu is silent.",
+        "Playability, saves and longer sessions are not established."
+      ],
+      "performance": "Single window-counter readings: 71–72 FPS in the main menu and 52–62 FPS in the dark gameplay scene; RTX 3070 Ti, 1080p output, Speed preset.",
+      "imageAlt": "Dead Cells main menu with the Clean Cut Update title art"
+    },
     "little-nightmares-enhanced-edition": {
       "status": "In-game · rendering incomplete",
       "headline": "Save/reload works; opening gameplay measures 3.73–4.46 FPS.",
@@ -370,6 +387,11 @@ const content: Content = {
   },
 
   history: {
+    "dead-cells-ngs2-link": {
+      "title": "NGS2 audio functions let Dead Cells link and reach gameplay",
+      "summary": "The October 11 development build implements eight libSceNgs2 functions Dead Cells needs to link: buffer-backed creation of the audio system and racks, and the 3D audio geometry helpers — listener basis, distance rolloff, cone, Doppler and speaker panning. Every observed call returns success. The main menu renders correctly, with 71–72 FPS on the window counter; gameplay shows the HUD and tutorial prompt, but the level and the character are dark. The main menu is silent, while gameplay is audible.",
+      "imageAlt": "Dead Cells main menu with the Clean Cut Update title art"
+    },
     "sarah-bounded-vertex-uploads": {
       "title": "Proven vertex ranges remove oversized sprite uploads",
       "summary": "The October 10 development build replaces oversized sprite-buffer copies with proven vertex ranges. Buffer uploads fall from about 78 MiB to 4.9 MiB per opening frame. Movement, jumping and the next platform screen are verified; the earlier completed-playthrough report remains on record. 60-second opening sample: 198.25 FPS median, 187.8–203.2 FPS. After waking: 197.25 FPS; next platform screen: 144.35 FPS (30 seconds each). These are window-counter samples on an RTX 3070 Ti with 1080p output and audio enabled; they do not establish a minimum across the entire game.",

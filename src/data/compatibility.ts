@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    slug: "dead-cells",
+    title: "Dead Cells",
+    tier: "ingame",
+    image: "/images/dead-cells-main-menu-2026-10-11.png",
+    confirmedOn: "2026-10-11",
+  },
+  {
     slug: "little-nightmares-enhanced-edition",
     title: "Little Nightmares Enhanced Edition",
     tier: "ingame",
