@@ -29,6 +29,20 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "medieval-dynasty": {
+      "status": "Main menu · vertically inverted image",
+      "headline": "The main menu renders, but its artwork and text are upside down.",
+      "summary": "PPSA07933 v01.413.001: The existing runner reaches the main menu. The background, logo and option text are vertically inverted. Scripted Cross does not enter a level during this check; gameplay is unverified.",
+      "strengths": [
+        "New Game, Load Game, Settings and Credits render; no guest fault was logged."
+      ],
+      "limits": [
+        "38 of 50 GPU-gap reports contain 72 unresolved storage bindings. Their relationship to the inversion is unknown. Manual navigation remains unverified.",
+        "Manual controls, audio quality, saves, completion and long-session stability were not verified."
+      ],
+      "performance": "Menu: 32.3 FPS median (28.8–33.2), 30 readings over 29.763 s. Largest internal target 1920×1080. Not a gameplay benchmark. October 11 development build; RTX 3070 Ti, 1920×1080 output, Speed preset. Existing caches retained; automatic Cross input enabled. Internal rendering remains game-controlled.",
+      "imageAlt": "Medieval Dynasty main menu with vertically inverted snowy village artwork, logo and option text"
+    },
     "charons-staircase": {
       "status": "Opening 3D scene · controls unverified",
       "headline": "The illustrated introduction leads into the forest-road scene.",
@@ -488,6 +502,11 @@ const content: Content = {
   },
 
   history: {
+    "medieval-dynasty-startup-20261011": {
+      "title": "The main menu renders, but its artwork and text are upside down.",
+      "summary": "PPSA07933 v01.413.001: The existing runner reaches the main menu. The background, logo and option text are vertically inverted. Scripted Cross does not enter a level during this check; gameplay is unverified.",
+      "imageAlt": "Medieval Dynasty main menu with vertically inverted snowy village artwork, logo and option text"
+    },
     "charons-staircase-startup-20261011": {
       "title": "The illustrated introduction leads into the forest-road scene.",
       "summary": "PPSA06603 v01.000.000: The existing runner reaches the opening 3D forest road. A 32.342-second transition frame includes 26.810 seconds of graphics pipeline misses. The scene renders, but character control and playability are unverified.",

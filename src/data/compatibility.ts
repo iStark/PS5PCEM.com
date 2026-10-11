@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    "slug": "medieval-dynasty",
+    "title": "Medieval Dynasty",
+    "tier": "intro",
+    "confirmedOn": "2026-10-11",
+    "image": "/images/medieval-dynasty-menu-2026-10-11.jpg"
+  },
+  {
     "slug": "charons-staircase",
     "title": "Charon's Staircase",
     "tier": "ingame",

@@ -38,6 +38,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    "id": "medieval-dynasty-startup-20261011",
+    "slug": "medieval-dynasty",
+    "date": "2026-10-11",
+    "release": null,
+    "source": "https://github.com/iStark/PS5PCEM/blob/main/docs/development/medieval-dynasty-startup-2026-10-11.md",
+    "image": "/images/medieval-dynasty-menu-2026-10-11.jpg"
+  },
+  {
     "id": "charons-staircase-startup-20261011",
     "slug": "charons-staircase",
     "date": "2026-10-11",

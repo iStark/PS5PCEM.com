@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const de: Content = {
   games: {
+    "medieval-dynasty": {
+      "status": "Hauptmenü · vertikal gespiegeltes Bild",
+      "headline": "Das Hauptmenü erscheint, aber Bild und Text stehen auf dem Kopf.",
+      "summary": "PPSA07933 v01.413.001: Der Runner erreicht das Hauptmenü. Hintergrund, Logo und Optionen sind vertikal gespiegelt. Automatisches Cross öffnet während dieser Prüfung kein Level; Gameplay bleibt ungeprüft.",
+      "strengths": [
+        "New Game, Load Game, Settings und Credits erscheinen; kein Guest Fault."
+      ],
+      "limits": [
+        "38 von 50 GPU-Berichten enthalten 72 unaufgelöste Storage-Bindungen. Ihr Zusammenhang mit der Spiegelung ist unbekannt. Manuelle Navigation ungeprüft.",
+        "Manuelle Steuerung, Audioqualität, Speichern, vollständiges Durchspielen und Langzeitstabilität wurden nicht geprüft."
+      ],
+      "performance": "Menü: Median 32,3 FPS (28,8–33,2), 30 Werte über 29,763 s. Größtes internes Ziel 1920×1080. Kein Gameplay-Benchmark. Entwicklungsbuild vom 11. Oktober; RTX 3070 Ti, Ausgabe 1920×1080, Speed-Profil. Vorhandene Caches beibehalten; automatische Cross-Eingabe aktiv. Die interne Auflösung bestimmt das Spiel.",
+      "imageAlt": "Medieval Dynasty mit vertikal gespiegeltem Winterdorf, Logo und Menütext"
+    },
     "charons-staircase": {
       "status": "Erste 3D-Szene · Steuerung ungeprüft",
       "headline": "Die illustrierte Einführung führt zur Waldstraße.",
@@ -462,6 +476,11 @@ const de: Content = {
   },
 
   history: {
+    "medieval-dynasty-startup-20261011": {
+      "title": "Das Hauptmenü erscheint, aber Bild und Text stehen auf dem Kopf.",
+      "summary": "PPSA07933 v01.413.001: Der Runner erreicht das Hauptmenü. Hintergrund, Logo und Optionen sind vertikal gespiegelt. Automatisches Cross öffnet während dieser Prüfung kein Level; Gameplay bleibt ungeprüft.",
+      "imageAlt": "Medieval Dynasty mit vertikal gespiegeltem Winterdorf, Logo und Menütext"
+    },
     "charons-staircase-startup-20261011": {
       "title": "Die illustrierte Einführung führt zur Waldstraße.",
       "summary": "PPSA06603 v01.000.000: Der Runner erreicht die erste 3D-Waldstraße. Ein Übergangsframe dauert 32,342 s, davon 26,810 s für Grafik-Pipeline-Cache-Misses. Die Szene erscheint; Steuerung und Spielbarkeit sind ungeprüft.",

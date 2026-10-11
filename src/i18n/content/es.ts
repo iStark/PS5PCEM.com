@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const es: Content = {
   games: {
+    "medieval-dynasty": {
+      "status": "Menú principal · imagen invertida verticalmente",
+      "headline": "El menú aparece, pero su imagen y texto están invertidos.",
+      "summary": "PPSA07933 v01.413.001: El ejecutable llega al menú principal. Fondo, logotipo y opciones están invertidos verticalmente. Cruz automática no abre ningún nivel durante la prueba; juego sin verificar.",
+      "strengths": [
+        "Aparecen New Game, Load Game, Settings y Credits; no se registró guest fault."
+      ],
+      "limits": [
+        "38 de 50 informes GPU contienen 72 enlaces storage sin resolver. Se desconoce su relación con la inversión. Navegación manual sin verificar.",
+        "No se comprobaron los controles manuales, la calidad del audio, las partidas guardadas, la finalización ni la estabilidad prolongada."
+      ],
+      "performance": "Menú: mediana 32,3 FPS (28,8–33,2), 30 lecturas en 29,763 s. Destino interno máximo 1920×1080. No es una prueba de juego. Compilación en desarrollo del 11 de octubre; RTX 3070 Ti, salida 1920×1080, perfil Speed. Cachés conservadas y pulsaciones automáticas de Cruz activadas. El juego controla la resolución interna.",
+      "imageAlt": "Menú de Medieval Dynasty con pueblo nevado, logotipo y texto invertidos verticalmente"
+    },
     "charons-staircase": {
       "status": "Primera escena 3D · controles sin verificar",
       "headline": "La introducción ilustrada llega a la carretera del bosque.",
@@ -462,6 +476,11 @@ const es: Content = {
   },
 
   history: {
+    "medieval-dynasty-startup-20261011": {
+      "title": "El menú aparece, pero su imagen y texto están invertidos.",
+      "summary": "PPSA07933 v01.413.001: El ejecutable llega al menú principal. Fondo, logotipo y opciones están invertidos verticalmente. Cruz automática no abre ningún nivel durante la prueba; juego sin verificar.",
+      "imageAlt": "Menú de Medieval Dynasty con pueblo nevado, logotipo y texto invertidos verticalmente"
+    },
     "charons-staircase-startup-20261011": {
       "title": "La introducción ilustrada llega a la carretera del bosque.",
       "summary": "PPSA06603 v01.000.000: El ejecutable alcanza la primera carretera en 3D. Un fotograma de transición tarda 32,342 s, con 26,810 s en fallos de caché de pipelines gráficos. La escena se muestra; control y jugabilidad sin verificar.",

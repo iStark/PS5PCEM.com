@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const zh: Content = {
   games: {
+    "medieval-dynasty": {
+      "status": "主菜单 · 图像垂直翻转",
+      "headline": "主菜单可见，但背景与文字上下颠倒。",
+      "summary": "PPSA07933 v01.413.001: 现有程序进入主菜单。背景、标志和选项文字均垂直翻转。本次检查中，自动Cross未能进入关卡；尚未验证实际游玩。",
+      "strengths": [
+        "可见New Game、Load Game、Settings和Credits；未记录guest fault。"
+      ],
+      "limits": [
+        "50份GPU报告中有38份包含72项未解析的storage绑定。其与翻转问题的关系不明。手动菜单操作未验证。",
+        "尚未验证手动操作、音质、存档、通关或长时间运行的稳定性。"
+      ],
+      "performance": "菜单：30次读数跨越29.763秒，中位数32.3 FPS（28.8–33.2）。最大内部目标1920×1080。并非游戏内性能基准。 10月11日开发版本；RTX 3070 Ti，1920×1080输出，Speed预设。保留现有缓存，启用自动Cross按键。内部渲染分辨率由游戏控制。",
+      "imageAlt": "Medieval Dynasty主菜单，雪村背景、标志和文字均垂直翻转"
+    },
     "charons-staircase": {
       "status": "首个3D场景 · 操作未验证",
       "headline": "插画开场后进入森林道路场景。",
@@ -443,6 +457,11 @@ const zh: Content = {
   },
 
   history: {
+    "medieval-dynasty-startup-20261011": {
+      "title": "主菜单可见，但背景与文字上下颠倒。",
+      "summary": "PPSA07933 v01.413.001: 现有程序进入主菜单。背景、标志和选项文字均垂直翻转。本次检查中，自动Cross未能进入关卡；尚未验证实际游玩。",
+      "imageAlt": "Medieval Dynasty主菜单，雪村背景、标志和文字均垂直翻转"
+    },
     "charons-staircase-startup-20261011": {
       "title": "插画开场后进入森林道路场景。",
       "summary": "PPSA06603 v01.000.000: 现有程序进入首个3D森林道路场景。一个过渡帧耗时32.342秒，其中图形管线缓存未命中耗时26.810秒。场景可见，但角色操作与可玩性尚未验证。",

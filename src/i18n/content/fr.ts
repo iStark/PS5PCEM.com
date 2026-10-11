@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const fr: Content = {
   games: {
+    "medieval-dynasty": {
+      "status": "Menu principal · image inversée verticalement",
+      "headline": "Le menu apparaît, mais son décor et son texte sont à l’envers.",
+      "summary": "PPSA07933 v01.413.001: Le programme atteint le menu principal. Fond, logo et options sont inversés verticalement. Croix automatique ne lance aucun niveau pendant ce test ; gameplay non vérifié.",
+      "strengths": [
+        "New Game, Load Game, Settings et Credits s’affichent ; aucun guest fault."
+      ],
+      "limits": [
+        "38 rapports GPU sur 50 contiennent 72 liaisons storage non résolues. Leur lien avec l’inversion est inconnu. Navigation manuelle non vérifiée.",
+        "Les commandes manuelles, la qualité audio, les sauvegardes, la fin du jeu et la stabilité prolongée ne sont pas vérifiées."
+      ],
+      "performance": "Menu : médiane 32,3 FPS (28,8–33,2), 30 relevés en 29,763 s. Cible interne maximale 1920×1080. Pas un test de gameplay. Version de développement du 11 octobre ; RTX 3070 Ti, sortie 1920×1080, profil Speed. Caches conservés et pressions automatiques sur Croix. Le jeu contrôle la résolution interne.",
+      "imageAlt": "Menu de Medieval Dynasty avec village enneigé, logo et texte inversés verticalement"
+    },
     "charons-staircase": {
       "status": "Première scène 3D · commandes non vérifiées",
       "headline": "L’introduction illustrée mène à la route forestière.",
@@ -462,6 +476,11 @@ const fr: Content = {
   },
 
   history: {
+    "medieval-dynasty-startup-20261011": {
+      "title": "Le menu apparaît, mais son décor et son texte sont à l’envers.",
+      "summary": "PPSA07933 v01.413.001: Le programme atteint le menu principal. Fond, logo et options sont inversés verticalement. Croix automatique ne lance aucun niveau pendant ce test ; gameplay non vérifié.",
+      "imageAlt": "Menu de Medieval Dynasty avec village enneigé, logo et texte inversés verticalement"
+    },
     "charons-staircase-startup-20261011": {
       "title": "L’introduction illustrée mène à la route forestière.",
       "summary": "PPSA06603 v01.000.000: Le programme atteint la première route forestière en 3D. Une image de transition dure 32,342 s, dont 26,810 s de défauts de cache des pipelines graphiques. La scène s’affiche ; commandes et jouabilité restent non vérifiées.",
