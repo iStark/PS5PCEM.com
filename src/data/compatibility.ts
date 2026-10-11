@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    slug: "keywe",
+    title: "KeyWe",
+    tier: "intro",
+    image: "/images/keywe-save-slots-2026-10-11.jpg",
+    confirmedOn: "2026-10-11",
+  },
+  {
     slug: "super-woden-gp",
     title: "Super Woden GP",
     tier: "intro",

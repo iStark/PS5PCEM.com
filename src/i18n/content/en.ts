@@ -29,6 +29,21 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "keywe": {
+      "status": "Startup · save-slot menu · rendering incomplete",
+      "headline": "Missing imports resolved; the save-slot screen is reachable.",
+      "summary": "October 11 development build, PPSA02210 v01.000.000: pthread_setcancelstate now preserves state per guest thread. Seven subsequent Audio3d imports also have implementations, including owned PCM queues and stereo mixing. KeyWe passes linking and Unity initialization.",
+      "strengths": [
+        "The developer and publisher screens render. Automatic Cross input reaches the SAVE SLOT panel with Select and Delete prompts.",
+        "All 635 HLE tests pass. The first runtime check records 26 GPU-gap reports with zero counters and no guest fault."
+      ],
+      "limits": [
+        "The captured slot panels are empty against a black background; after automatic confirmation, the screen turns black while frame submissions continue. Gameplay is unverified. A keyboard-only repeat also turns black after the logos.",
+        "Audio3d uses approximate stereo positioning, without HRTF or room acoustics. This run opens ordinary AudioOut; Audio3d playback, audio quality, manual controls, saves and completion are unverified."
+      ],
+      "performance": "The save-slot capture shows 8.1 FPS on RTX 3070 Ti at 1920×1080 output and reported largest internal target. This is one window-counter reading, not a sustained or gameplay benchmark.",
+      "imageAlt": "KeyWe SAVE SLOT panel with three empty slots and Select/Delete prompts on a black background"
+    },
     "super-woden-gp": {
       "status": "Main menu · graphical issues · gameplay unverified",
       "headline": "Startup fixed; the world-map menu is now reachable.",
@@ -445,6 +460,11 @@ const content: Content = {
   },
 
   history: {
+    "keywe-pthread-audio3d": {
+      "title": "Thread cancellation state and Audio3d imports unblock startup",
+      "summary": "Implemented per-thread cancellation state with previous-state output and argument validation, plus seven Audio3d APIs with owned PCM queues, position/gain and simultaneous stereo mixing. All 635 HLE tests pass. The game reaches save-slot selection, but a subsequent black screen remains unresolved. Full spatial audio and gameplay are not established. Development build.",
+      "imageAlt": "KeyWe SAVE SLOT panel with three empty slots and Select/Delete prompts on a black background"
+    },
     "super-woden-gp-pthread-cleanup": {
       "title": "Thread cleanup handlers unblock Unity startup",
       "summary": "Implemented __pthread_cleanup_push_imp and __pthread_cleanup_pop_imp with a separate LIFO list for each guest thread, using caller-owned storage. Pop removes an entry before invoking its callback; pthread_exit runs remaining handlers before TLS destructors. All 627 HLE tests pass. A third launch reaches the map menu with scripted Cross/Down input. The capture shows 71.8 FPS, but inverted labels and incorrect flag colors remain. Racing is untested. Development build.",

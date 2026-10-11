@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const pt: Content = {
   games: {
+    "keywe": {
+      "status": "Inicialização · seleção de salvamento · gráficos incompletos",
+      "headline": "Imports ausentes implementados; a seleção de salvamento está acessível.",
+      "summary": "Versão em desenvolvimento de 11 de outubro, PPSA02210 v01.000.000: pthread_setcancelstate preserva agora o estado de cada thread convidada. Sete imports adicionais de Audio3d também foram implementados, com filas PCM próprias e mixagem estéreo. KeyWe passa pela vinculação e inicialização do Unity.",
+      "strengths": [
+        "As telas do desenvolvedor e da editora aparecem. Pressões automáticas de Cross chegam ao painel SAVE SLOT com as indicações Select e Delete.",
+        "Todos os 635 testes HLE passam. A primeira execução registra 26 relatórios de lacunas GPU com contadores zerados e nenhuma falha do convidado."
+      ],
+      "limits": [
+        "Os espaços capturados estão vazios sobre fundo preto; após a confirmação automática, a tela fica preta enquanto o envio de quadros continua. A jogabilidade não foi verificada. Uma repetição sem entradas automáticas também fica preta após os logotipos.",
+        "Audio3d usa posicionamento estéreo aproximado, sem HRTF ou acústica de ambientes. Esta execução abre AudioOut comum; reprodução Audio3d, qualidade do áudio, controles manuais, salvamento e conclusão não foram verificados."
+      ],
+      "performance": "A captura da seleção mostra 8,1 FPS na RTX 3070 Ti, com saída 1920×1080 e o mesmo tamanho máximo de renderização interna informado no registro. É uma única leitura do contador da janela, não um teste contínuo nem de gameplay.",
+      "imageAlt": "Painel SAVE SLOT de KeyWe com três espaços vazios e indicações Select/Delete sobre fundo preto"
+    },
     "super-woden-gp": {
       "status": "Menu principal · problemas gráficos · jogabilidade não verificada",
       "headline": "Inicialização corrigida; o menu do mapa mundial está acessível.",
@@ -419,6 +434,11 @@ const pt: Content = {
   },
 
   history: {
+    "keywe-pthread-audio3d": {
+      "title": "Estado de cancelamento de threads e Audio3d desbloqueiam a inicialização",
+      "summary": "Foram implementados o estado de cancelamento por thread, o retorno do valor anterior e a validação de argumentos, além de sete APIs Audio3d com filas PCM próprias, posição/ganho e mixagem estéreo simultânea. Todos os 635 testes HLE passam. A seleção de salvamento é alcançada, mas a tela preta seguinte continua sem solução. Áudio espacial completo e gameplay não confirmados. Versão em desenvolvimento.",
+      "imageAlt": "Painel SAVE SLOT de KeyWe com três espaços vazios e indicações Select/Delete sobre fundo preto"
+    },
     "super-woden-gp-pthread-cleanup": {
       "title": "Rotinas de limpeza de threads desbloqueiam a inicialização do Unity",
       "summary": "Implementados __pthread_cleanup_push_imp e __pthread_cleanup_pop_imp com uma lista LIFO por thread convidada na memória fornecida por quem chama. Pop remove a entrada antes do callback; pthread_exit executa as rotinas restantes antes dos destrutores TLS. Todos os 627 testes HLE passam. Uma terceira execução chega ao menu do mapa com entradas Cross/Down automáticas. A captura mostra 71,8 FPS, mas textos invertidos e cores incorretas nas bandeiras persistem. Corridas não testadas. Compilação de desenvolvimento.",

@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const zh: Content = {
   games: {
+    "keywe": {
+      "status": "启动 · 存档槽选择 · 渲染不完整",
+      "headline": "已实现缺失的导入，可进入存档槽选择画面。",
+      "summary": "10 月 11 日开发版本，PPSA02210 v01.000.000：pthread_setcancelstate 现在为每个客户线程保存独立状态。随后发现的七个 Audio3d 导入也已实现，包括由模拟器持有的 PCM 队列和立体声混音。KeyWe 可通过链接和 Unity 初始化。",
+      "strengths": [
+        "开发商和发行商画面可显示。自动 Cross 输入可进入带有 Select、Delete 提示的 SAVE SLOT 面板。",
+        "全部 635 项 HLE 测试通过。首次运行的 26 份 GPU 缺失报告计数均为零，未记录客户程序故障。"
+      ],
+      "limits": [
+        "截图中的存档槽为空，背景为黑色；自动确认后，画面变黑，但仍持续提交帧。尚未验证实际游玩。 关闭自动输入后的重复运行也在标志画面之后变黑。",
+        "Audio3d 采用近似立体声定位，不含 HRTF 或房间声学。此次运行使用普通 AudioOut；Audio3d 播放、音质、手动操作、存档及完整通关均未验证。"
+      ],
+      "performance": "存档槽截图显示 8.1 FPS，测试显卡为 RTX 3070 Ti，输出为 1920×1080，日志报告的最大内部渲染目标同尺寸。这只是一次窗口计数器读数，并非持续或实际游玩性能测试。",
+      "imageAlt": "KeyWe 的 SAVE SLOT 面板，黑色背景上有三个空存档槽和 Select/Delete 提示"
+    },
     "super-woden-gp": {
       "status": "主菜单 · 图形问题 · 游戏过程未验证",
       "headline": "启动问题已修复，现可进入世界地图菜单。",
@@ -400,6 +415,11 @@ const zh: Content = {
   },
 
   history: {
+    "keywe-pthread-audio3d": {
+      "title": "线程取消状态与 Audio3d 导入解除启动阻塞",
+      "summary": "实现了每线程取消状态、旧状态返回及参数检查，以及七个 Audio3d API，支持自有 PCM 队列、位置/增益和同时立体声混音。全部 635 项 HLE 测试通过。游戏进入存档槽选择，但后续黑屏尚未解决。完整空间音频与实际游玩尚未确认。开发版本。",
+      "imageAlt": "KeyWe 的 SAVE SLOT 面板，黑色背景上有三个空存档槽和 Select/Delete 提示"
+    },
     "super-woden-gp-pthread-cleanup": {
       "title": "线程清理处理程序修复 Unity 启动",
       "summary": "实现了 __pthread_cleanup_push_imp 和 __pthread_cleanup_pop_imp，使用调用方提供的内存，为每个客户线程维护独立的后进先出列表。Pop 在执行回调前移除条目；pthread_exit 在 TLS 析构函数之前执行剩余处理程序。全部 627 项 HLE 测试通过。第三次启动通过自动 Cross/Down 输入进入地图菜单。截图显示 71.8 FPS，但文字颠倒和旗帜颜色错误仍然存在。比赛尚未测试。开发版本。",

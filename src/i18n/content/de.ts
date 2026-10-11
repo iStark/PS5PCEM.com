@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const de: Content = {
   games: {
+    "keywe": {
+      "status": "Start · Speicherslot-Auswahl · Grafik unvollständig",
+      "headline": "Fehlende Importe implementiert; die Speicherslot-Auswahl ist erreichbar.",
+      "summary": "Entwicklungsbuild vom 11. Oktober, PPSA02210 v01.000.000: pthread_setcancelstate speichert den Zustand nun pro Gast-Thread. Sieben weitere Audio3d-Importe wurden ebenfalls implementiert, einschließlich eigener PCM-Warteschlangen und Stereo-Mischung. KeyWe durchläuft das Linken und die Unity-Initialisierung.",
+      "strengths": [
+        "Entwickler- und Publisher-Bildschirme werden dargestellt. Automatische Cross-Eingaben erreichen SAVE SLOT mit Select- und Delete-Hinweisen.",
+        "Alle 635 HLE-Tests bestehen. Der erste Lauf enthält 26 GPU-Lückenberichte mit Nullzählern und keinen Gastfehler."
+      ],
+      "limits": [
+        "Die aufgenommenen Slot-Felder sind vor schwarzem Hintergrund leer; nach automatischer Bestätigung bleibt das Bild schwarz, während Frames weiter eingereicht werden. Gameplay ist ungeprüft. Auch ein Wiederholungslauf ohne automatische Eingaben zeigt nach den Logos ein schwarzes Bild.",
+        "Audio3d bietet angenäherte Stereo-Positionierung ohne HRTF oder Raumakustik. Dieser Lauf öffnet normales AudioOut; Audio3d-Wiedergabe, Audioqualität, manuelle Steuerung, Speichern und vollständiges Durchspielen sind ungeprüft."
+      ],
+      "performance": "Die Aufnahme der Slot-Auswahl zeigt 8,1 FPS auf einer RTX 3070 Ti bei 1920×1080 Ausgabe und gleich großem gemeldeten internem Renderziel. Ein einzelner Fensterzählerwert, kein längerer oder Gameplay-Benchmark.",
+      "imageAlt": "KeyWe SAVE SLOT mit drei leeren Feldern und Select/Delete-Hinweisen vor schwarzem Hintergrund"
+    },
     "super-woden-gp": {
       "status": "Hauptmenü · Grafikfehler · Gameplay ungeprüft",
       "headline": "Start behoben; das Weltkartenmenü ist erreichbar.",
@@ -419,6 +434,11 @@ const de: Content = {
   },
 
   history: {
+    "keywe-pthread-audio3d": {
+      "title": "Thread-Abbruchzustand und Audio3d-Importe ermöglichen den Start",
+      "summary": "Implementiert wurden der Abbruchzustand pro Thread mit Rückgabe des alten Werts und Argumentprüfung sowie sieben Audio3d-APIs mit eigenen PCM-Warteschlangen, Position/Lautstärke und gleichzeitiger Stereo-Mischung. Alle 635 HLE-Tests bestehen. Die Slot-Auswahl wird erreicht; der anschließende schwarze Bildschirm bleibt offen. Vollständiges räumliches Audio und Gameplay sind nicht bestätigt. Entwicklungsbuild.",
+      "imageAlt": "KeyWe SAVE SLOT mit drei leeren Feldern und Select/Delete-Hinweisen vor schwarzem Hintergrund"
+    },
     "super-woden-gp-pthread-cleanup": {
       "title": "Thread-Aufräumhandler ermöglichen den Unity-Start",
       "summary": "__pthread_cleanup_push_imp und __pthread_cleanup_pop_imp sind mit einer eigenen LIFO-Liste je Gastthread im Speicher des Aufrufers implementiert. Pop entfernt den Eintrag vor dem Callback; pthread_exit führt verbleibende Handler vor TLS-Destruktoren aus. Alle 627 HLE-Tests bestehen. Ein dritter Start erreicht das Kartenmenü mit automatischen Cross/Down-Eingaben. Die Aufnahme zeigt 71,8 FPS, doch gespiegelte Beschriftungen und falsche Flaggenfarben bleiben. Rennen sind ungetestet. Entwicklungsversion.",

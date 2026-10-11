@@ -38,6 +38,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "keywe-pthread-audio3d",
+    slug: "keywe",
+    date: "2026-10-11",
+    release: null,
+    image: "/images/keywe-save-slots-2026-10-11.jpg",
+    source: devReport("keywe-pthread-cancel-state-2026-10-11.md"),
+  },
+  {
     id: "super-woden-gp-pthread-cleanup",
     slug: "super-woden-gp",
     date: "2026-10-11",

@@ -36,6 +36,7 @@ describe("compatibility dataset", () => {
         "Grand Theft Auto III: The Definitive Edition",
         "Jets 'n' Guns 2",
         "Jurassic Park Classic Games Collection",
+        "KeyWe",
         "Little Nightmares Enhanced Edition",
         "Mighty Morphin Power Rangers: Rita's Rewind",
         "Pistol Whip",
@@ -87,6 +88,7 @@ describe("compatibility dataset", () => {
       "arcade-spirits-the-new-challengers",
       "arkanoid-eternal-battle",
       "big-helmet-heroes",
+      "keywe",
       "super-woden-gp",
       "tetris-effect-connected",
     ]) {
@@ -193,10 +195,11 @@ describe("test history", () => {
       ["arkanoid-fiber-startup", null],
       ["arcade-spirits-pthread-semaphores", null],
       ["super-woden-gp-pthread-cleanup", null],
+      ["keywe-pthread-audio3d", null],
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(15);
+    expect(history.filter((run) => run.release === null)).toHaveLength(16);
   });
 
   it("references captures that exist in public/", () => {
