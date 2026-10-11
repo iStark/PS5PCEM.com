@@ -38,6 +38,15 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    "id": "monster-boy-gameplay-20261012",
+    "slug": "monster-boy-and-the-cursed-kingdom",
+    "date": "2026-10-12",
+    "recordedAt": "2026-10-12T00:43:57+03:00",
+    "release": null,
+    "source": "https://github.com/iStark/PS5PCEM/blob/main/docs/development/monster-boy-gameplay-2026-10-12.md",
+    "image": "/images/monster-boy-gameplay-2026-10-12.jpg"
+  },
+  {
     "id": "oxide-room-104-startup-20261011",
     "slug": "oxide-room-104",
     "date": "2026-10-11",

@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    "slug": "monster-boy-and-the-cursed-kingdom",
+    "title": "Monster Boy and the Cursed Kingdom",
+    "tier": "ingame",
+    "confirmedOn": "2026-10-12",
+    "image": "/images/monster-boy-gameplay-2026-10-12.jpg"
+  },
+  {
     "slug": "oxide-room-104",
     "title": "Oxide Room 104",
     "tier": "intro",
@@ -221,7 +228,7 @@ export const compatibility: CompatibilityEntry[] = [
 
 export const compatibilityMeta = {
   /** Newest maintainer confirmation across the dataset. */
-  confirmedOn: "2026-10-11",
+  confirmedOn: "2026-10-12",
   testedOnRelease: "0.3.2",
   host: "NVIDIA GeForce RTX 3070 Ti",
 } as const;

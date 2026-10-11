@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const zh: Content = {
   games: {
+    "monster-boy-and-the-cursed-kingdom": {
+      "status": "进入游戏 · 图形缺陷",
+      "headline": "已进入可操控的第一关",
+      "summary": "PPSA02787 v01.000.004: 修复 NGS2 端口查询、短按键输入和存档服务后，New Game 可以写入存档并加载第一关。已验证角色移动，但仍有大面积黑色多边形。",
+      "strengths": [
+        "菜单、创建存档和第一关中的移动可用。"
+      ],
+      "limits": [
+        "背景和地面存在严重缺陷；未验证完整通关、读取存档或可听见的音频。"
+      ],
+      "performance": "第一关：3.8–5.7 FPS，中位数 4.2；每秒采样一次，共 30 次。RTX 3070 Ti、1920×1080、Speed。测试期间同时进行编译，因此不是独立性能基准。",
+      "imageAlt": "Monster Boy 第一关，显示界面、角色、小屋和黑色多边形缺陷"
+    },
     "oxide-room-104": {
       "status": "启动提示 · 随后黑屏",
       "headline": "自动存档提示可见；后续出现着色器及队列错误。",
@@ -471,6 +484,11 @@ const zh: Content = {
   },
 
   history: {
+    "monster-boy-gameplay-20261012": {
+      "title": "已进入可操控的第一关",
+      "summary": "PPSA02787 v01.000.004: 修复 NGS2 端口查询、短按键输入和存档服务后，New Game 可以写入存档并加载第一关。已验证角色移动，但仍有大面积黑色多边形。",
+      "imageAlt": "Monster Boy 第一关，显示界面、角色、小屋和黑色多边形缺陷"
+    },
     "oxide-room-104-startup-20261011": {
       "title": "自动存档提示可见；后续出现着色器及队列错误。",
       "summary": "PPSA07653 v01.000.000: 两次启动均通过链接。自动Cross运行进入黑屏，并出现FLAT、IMAGE_BVH_INTERSECT_RAY、InvalidScalarCall和DMA_DATA错误。仅键盘模式重试显示自动存档提示。尚未验证实际游玩。",

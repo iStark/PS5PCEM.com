@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const fr: Content = {
   games: {
+    "monster-boy-and-the-cursed-kingdom": {
+      "status": "En jeu · défauts graphiques",
+      "headline": "Premier niveau contrôlable atteint",
+      "summary": "PPSA02787 v01.000.004: Après correction des requêtes de ports NGS2, des pressions brèves et des services de sauvegarde, New Game enregistre et charge le premier niveau. Le déplacement a été vérifié ; de grands polygones noirs subsistent.",
+      "strengths": [
+        "Le menu, la création de sauvegarde et les déplacements du premier niveau fonctionnent."
+      ],
+      "limits": [
+        "Défauts importants du décor et du sol ; partie complète, rechargement de sauvegarde et sortie sonore non vérifiés."
+      ],
+      "performance": "Premier niveau : 3,8–5,7 FPS, médiane 4,2 ; 30 relevés du compteur à une seconde d’intervalle. RTX 3070 Ti, 1920×1080, Speed. Une compilation simultanée affectait le test ; mesure non isolée.",
+      "imageAlt": "Premier niveau de Monster Boy avec interface, personnage, cabane et polygones noirs"
+    },
     "oxide-room-104": {
       "status": "Avis de démarrage · écran noir ensuite",
       "headline": "L’avis de sauvegarde s’affiche ; des erreurs de shaders et de file suivent.",
@@ -490,6 +503,11 @@ const fr: Content = {
   },
 
   history: {
+    "monster-boy-gameplay-20261012": {
+      "title": "Premier niveau contrôlable atteint",
+      "summary": "PPSA02787 v01.000.004: Après correction des requêtes de ports NGS2, des pressions brèves et des services de sauvegarde, New Game enregistre et charge le premier niveau. Le déplacement a été vérifié ; de grands polygones noirs subsistent.",
+      "imageAlt": "Premier niveau de Monster Boy avec interface, personnage, cabane et polygones noirs"
+    },
     "oxide-room-104-startup-20261011": {
       "title": "L’avis de sauvegarde s’affiche ; des erreurs de shaders et de file suivent.",
       "summary": "PPSA07653 v01.000.000: Deux lancements passent l’édition de liens. Croix automatique mène à un écran noir avec erreurs FLAT, IMAGE_BVH_INTERSECT_RAY, InvalidScalarCall et DMA_DATA. Le lancement clavier seul affiche l’avis de sauvegarde. Gameplay non vérifié.",

@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const es: Content = {
   games: {
+    "monster-boy-and-the-cursed-kingdom": {
+      "status": "En juego · fallos gráficos",
+      "headline": "Primer nivel controlable alcanzado",
+      "summary": "PPSA02787 v01.000.004: Tras corregir las consultas de puertos NGS2, las pulsaciones breves y los servicios de guardado, New Game guarda y carga el primer nivel. Se verificó el movimiento; persisten grandes polígonos negros.",
+      "strengths": [
+        "Funcionan el menú, la creación de partidas guardadas y el movimiento en el primer nivel."
+      ],
+      "limits": [
+        "Defectos graves del fondo y del suelo; no se verificaron la partida completa, la recarga de la partida ni el sonido audible."
+      ],
+      "performance": "Primer nivel: 3,8–5,7 FPS, mediana 4,2; 30 lecturas del contador a intervalos de un segundo. RTX 3070 Ti, 1920×1080, Speed. Había compilación simultánea; no es una medición aislada.",
+      "imageAlt": "Primer nivel de Monster Boy con interfaz, personaje, cabaña y polígonos negros"
+    },
     "oxide-room-104": {
       "status": "Aviso inicial · después pantalla negra",
       "headline": "Aparece el aviso de guardado; después fallan shaders y la cola.",
@@ -490,6 +503,11 @@ const es: Content = {
   },
 
   history: {
+    "monster-boy-gameplay-20261012": {
+      "title": "Primer nivel controlable alcanzado",
+      "summary": "PPSA02787 v01.000.004: Tras corregir las consultas de puertos NGS2, las pulsaciones breves y los servicios de guardado, New Game guarda y carga el primer nivel. Se verificó el movimiento; persisten grandes polígonos negros.",
+      "imageAlt": "Primer nivel de Monster Boy con interfaz, personaje, cabaña y polígonos negros"
+    },
     "oxide-room-104-startup-20261011": {
       "title": "Aparece el aviso de guardado; después fallan shaders y la cola.",
       "summary": "PPSA07653 v01.000.000: Dos inicios pasan el enlazado. Cruz automática lleva a una pantalla negra con errores FLAT, IMAGE_BVH_INTERSECT_RAY, InvalidScalarCall y DMA_DATA. La repetición solo con teclado muestra el aviso de guardado. Juego sin verificar.",

@@ -29,6 +29,19 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "monster-boy-and-the-cursed-kingdom": {
+      "status": "In-game · rendering defects",
+      "headline": "First controllable level reached",
+      "summary": "PPSA02787 v01.000.004: New Game now saves and loads the first level after fixes to NGS2 port queries, keyboard taps and save services. Movement was verified; large black polygons remain.",
+      "strengths": [
+        "Menu, save creation and first-level movement work."
+      ],
+      "limits": [
+        "Severe background and ground defects; no completed playthrough, save-reload or audible-output verification."
+      ],
+      "performance": "First level: 3.8–5.7 FPS, median 4.2; 30 one-second counter samples. RTX 3070 Ti, 1920×1080, Speed. Concurrent compilation affected the run; this is not an isolated benchmark.",
+      "imageAlt": "Monster Boy first level with HUD, character, hut and black polygon defects"
+    },
     "oxide-room-104": {
       "status": "Startup notice · later black screen",
       "headline": "The autosave notice renders; later rendering hits shader and queue errors.",
@@ -516,6 +529,11 @@ const content: Content = {
   },
 
   history: {
+    "monster-boy-gameplay-20261012": {
+      "title": "First controllable level reached",
+      "summary": "PPSA02787 v01.000.004: New Game now saves and loads the first level after fixes to NGS2 port queries, keyboard taps and save services. Movement was verified; large black polygons remain.",
+      "imageAlt": "Monster Boy first level with HUD, character, hut and black polygon defects"
+    },
     "oxide-room-104-startup-20261011": {
       "title": "The autosave notice renders; later rendering hits shader and queue errors.",
       "summary": "PPSA07653 v01.000.000: Two launches pass linking. Automatic Cross reaches black output with FLAT addressing, IMAGE_BVH_INTERSECT_RAY, InvalidScalarCall and DMA_DATA rejection errors. A keyboard-only repeat displays the autosave notice. Gameplay is unverified.",

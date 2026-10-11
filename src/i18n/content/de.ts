@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const de: Content = {
   games: {
+    "monster-boy-and-the-cursed-kingdom": {
+      "status": "Im Spiel · Grafikfehler",
+      "headline": "Erster steuerbarer Level erreicht",
+      "summary": "PPSA02787 v01.000.004: Nach Korrekturen an NGS2-Portabfragen, kurzen Tastendrücken und Speicherdiensten speichert New Game und lädt den ersten Level. Bewegung wurde geprüft; große schwarze Polygone bleiben sichtbar.",
+      "strengths": [
+        "Menü, Anlegen des Spielstands und Bewegung im ersten Level funktionieren."
+      ],
+      "limits": [
+        "Schwere Fehler an Hintergrund und Boden; Durchspielen, Laden des Spielstands und hörbare Ausgabe wurden nicht geprüft."
+      ],
+      "performance": "Erster Level: 3,8–5,7 FPS, Median 4,2; 30 Zählerwerte im Sekundenabstand. RTX 3070 Ti, 1920×1080, Speed. Gleichzeitige Kompilierung beeinflusste den Lauf; kein isolierter Benchmark.",
+      "imageAlt": "Erster Monster-Boy-Level mit HUD, Figur, Hütte und schwarzen Polygonfehlern"
+    },
     "oxide-room-104": {
       "status": "Starthinweis · später schwarzes Bild",
       "headline": "Der Speicherhinweis erscheint; spätere Grafikarbeit scheitert an Shadern und Queue.",
@@ -490,6 +503,11 @@ const de: Content = {
   },
 
   history: {
+    "monster-boy-gameplay-20261012": {
+      "title": "Erster steuerbarer Level erreicht",
+      "summary": "PPSA02787 v01.000.004: Nach Korrekturen an NGS2-Portabfragen, kurzen Tastendrücken und Speicherdiensten speichert New Game und lädt den ersten Level. Bewegung wurde geprüft; große schwarze Polygone bleiben sichtbar.",
+      "imageAlt": "Erster Monster-Boy-Level mit HUD, Figur, Hütte und schwarzen Polygonfehlern"
+    },
     "oxide-room-104-startup-20261011": {
       "title": "Der Speicherhinweis erscheint; spätere Grafikarbeit scheitert an Shadern und Queue.",
       "summary": "PPSA07653 v01.000.000: Zwei Starts passieren das Linken. Cross-Automatik führt zu schwarzem Bild mit FLAT-, IMAGE_BVH_INTERSECT_RAY-, InvalidScalarCall- und DMA_DATA-Fehlern. Die Tastatur-Wiederholung zeigt den Speicherhinweis. Gameplay ungeprüft.",

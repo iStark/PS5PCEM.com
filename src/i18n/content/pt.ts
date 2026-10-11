@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const pt: Content = {
   games: {
+    "monster-boy-and-the-cursed-kingdom": {
+      "status": "Em jogo · falhas gráficas",
+      "headline": "Primeiro nível controlável alcançado",
+      "summary": "PPSA02787 v01.000.004: Após correções nas consultas de portas NGS2, nos toques breves e nos serviços de salvamento, New Game salva e carrega o primeiro nível. O movimento foi verificado; grandes polígonos pretos persistem.",
+      "strengths": [
+        "Funcionam o menu, a criação do arquivo de progresso e o movimento no primeiro nível."
+      ],
+      "limits": [
+        "Defeitos graves no fundo e no chão; conclusão do jogo, recarga do progresso e áudio audível não foram verificados."
+      ],
+      "performance": "Primeiro nível: 3,8–5,7 FPS, mediana 4,2; 30 leituras do contador a cada segundo. RTX 3070 Ti, 1920×1080, Speed. Havia compilação simultânea; não é uma medição isolada.",
+      "imageAlt": "Primeiro nível de Monster Boy com interface, personagem, cabana e polígonos pretos"
+    },
     "oxide-room-104": {
       "status": "Aviso inicial · depois tela preta",
       "headline": "O aviso de salvamento aparece; depois há falhas de shaders e da fila.",
@@ -490,6 +503,11 @@ const pt: Content = {
   },
 
   history: {
+    "monster-boy-gameplay-20261012": {
+      "title": "Primeiro nível controlável alcançado",
+      "summary": "PPSA02787 v01.000.004: Após correções nas consultas de portas NGS2, nos toques breves e nos serviços de salvamento, New Game salva e carrega o primeiro nível. O movimento foi verificado; grandes polígonos pretos persistem.",
+      "imageAlt": "Primeiro nível de Monster Boy com interface, personagem, cabana e polígonos pretos"
+    },
     "oxide-room-104-startup-20261011": {
       "title": "O aviso de salvamento aparece; depois há falhas de shaders e da fila.",
       "summary": "PPSA07653 v01.000.000: Dois testes passam pela vinculação. Cruz automático leva à tela preta com erros FLAT, IMAGE_BVH_INTERSECT_RAY, InvalidScalarCall e DMA_DATA. A repetição apenas com teclado mostra o aviso de salvamento. Gameplay não verificado.",
