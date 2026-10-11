@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const pt: Content = {
   games: {
+    "arkanoid-eternal-battle": {
+      "status": "Ecrã de título · menu principal · jogabilidade não verificada",
+      "headline": "Arranque e gráficos do menu restaurados; mediana de 45,6 FPS na seleção de modos.",
+      "summary": "Compilação de desenvolvimento de 11 de outubro, PPSA06328 v01.002.000: foram implementadas quatro importações Fiber/POSIX em falta. Pilhas HLE independentes e a migração sincronizada de fibras entre threads corrigem as falhas de arranque seguintes. Um limite de transferência separado para grandes atlas BC7 restaura a imagem do título.",
+      "strengths": [
+        "Dois arranques chegam ao ecrã de título animado. As pressões automáticas de Cross abrem a seleção de modos com Options, Retro, Eternal Battle, Versus e Neo.",
+        "Os registos finais não mostram falhas do programa convidado nem rejeições de imagens amostradas; os contadores de omissões GPU reportados mantêm-se a zero nos fotogramas verificados."
+      ],
+      "limits": [
+        "O modo online Eternal Battle indica que não está acessível; o registo do convidado mostra falhas de ligação ao servidor.",
+        "A seleção de um modo offline, o controlo da raquete e a jogabilidade continuam por verificar. A qualidade do áudio, a conclusão do jogo e a estabilidade prolongada não foram testadas."
+      ],
+      "performance": "Menu: mediana de 45,6 FPS, intervalo de 43,5–46,6 FPS em 30 leituras do contador da janela, espaçadas por um segundo, ao longo de 29,962 segundos. As pressões automáticas de Cross permaneceram ativas. Ecrã de título: 138–149 FPS observados, sem medição de duração fixa. RTX 3070 Ti, saída pedida de 1920×1080, alvo interno de 3840×2160. São valores do menu, não de jogabilidade nem de uma comparação antes/depois.",
+      "imageAlt": "Menu de modos de Arkanoid com os cartões Retro, Eternal Battle e Versus; contador a 45,2 FPS"
+    },
     "raiden-iv-mikado-remix": {
       "status": "Em jogo · primeiro nível visível · jogabilidade não verificada",
       "headline": "O arranque funciona e a correção da limpeza de profundidade restaura o primeiro nível.",
@@ -374,6 +389,11 @@ const pt: Content = {
   },
 
   history: {
+    "arkanoid-fiber-startup": {
+      "title": "Arranque com fibras corrigido e grandes atlas do menu restaurados",
+      "summary": "Implementados sceFiberGetInfo, sceFiberRename, pthread_mutexattr_setpshared privado do processo e fsync real, partilhado com sceKernelFsync. As pilhas HLE próprias de cada fibra evitam transbordos; a migração sincronizada permite retomar tarefas de carregamento noutra thread. Um limite separado de 512 MiB para transferir imagens amostradas aceita os atlas BC7 de 16K sem aumentar os limites dos framebuffers. Passam os 623 testes HLE e os 244 testes Vulkan; o runner recompilado e assinado chega ao título e ao menu de modos em arranques repetidos. Mediana do menu: 45,6 FPS em 30 leituras. Jogabilidade não verificada; compilação de desenvolvimento.",
+      "imageAlt": "Imagem do título de Arkanoid: Eternal Battle restaurada com o pedido START; contador a 138,0 FPS"
+    },
     "raiden-iv-startup-depth": {
       "title": "Arranque corrigido; limpezas de profundidade restauram o primeiro nível",
       "summary": "O carregador distingue os metadados de versão da biblioteca das tabelas dinâmicas, em vez de ler um segmento ausente de 39 bytes. As consultas de ficheiros e racks NGS2 e a cache de fontes estão implementadas; as texturas compactadas de 16 bits usam a ordem correta dos canais. A publicação em Vulkan das limpezas completas do plano de profundidade elimina o nível negro. O teste final com entrada automática chega ao primeiro nível com disparos e inimigos visíveis. Passam os 921 testes do carregador, HLE e Vulkan e duas verificações nativas de limpeza na GPU. É uma compilação de desenvolvimento; a reprodução ATRAC9 no sampler, o cancelamento de threads ativas e a jogabilidade completa continuam incompletos.",

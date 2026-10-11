@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const fr: Content = {
   games: {
+    "arkanoid-eternal-battle": {
+      "status": "Écran titre · menu principal · gameplay non vérifié",
+      "headline": "Démarrage et graphismes du menu rétablis ; médiane de 45,6 FPS dans la sélection des modes.",
+      "summary": "Version de développement du 11 octobre, PPSA06328 v01.002.000 : quatre imports Fiber/POSIX manquants sont implémentés. Des piles HLE indépendantes et la migration synchronisée des fibres entre threads corrigent les échecs de démarrage suivants. Une limite de transfert distincte pour les grands atlas BC7 rétablit l’illustration du titre.",
+      "strengths": [
+        "Deux lancements atteignent l’écran titre animé. Les pressions automatiques sur Cross ouvrent le carrousel des modes : Options, Retro, Eternal Battle, Versus et Neo.",
+        "Les traces finales ne contiennent ni plantage invité ni rejet d’image échantillonnée ; les compteurs d’omissions GPU signalés restent à zéro dans les images contrôlées."
+      ],
+      "limits": [
+        "Le mode en ligne Eternal Battle indique qu’il est inaccessible ; le journal invité signale des échecs de connexion au serveur.",
+        "La sélection d’un mode hors ligne, le contrôle de la raquette et le gameplay restent non vérifiés. Qualité audio, progression complète et stabilité prolongée non testées."
+      ],
+      "performance": "Menu : médiane de 45,6 FPS, plage de 43,5–46,6 FPS sur 30 relevés du compteur de fenêtre, espacés d’une seconde, couvrant 29,962 secondes. Les pressions automatiques sur Cross sont restées actives. Écran titre : 138–149 FPS observés, sans mesure sur un intervalle fixe. RTX 3070 Ti, sortie demandée en 1920×1080, cible interne en 3840×2160. Il s’agit du menu, pas des performances en jeu ni d’une comparaison avant/après.",
+      "imageAlt": "Menu des modes d’Arkanoid avec les cartes Retro, Eternal Battle et Versus ; compteur à 45,2 FPS"
+    },
     "raiden-iv-mikado-remix": {
       "status": "En jeu · premier niveau visible · jouabilité non vérifiée",
       "headline": "Le démarrage fonctionne et la correction des effacements de profondeur révèle le premier niveau.",
@@ -374,6 +389,11 @@ const fr: Content = {
   },
 
   history: {
+    "arkanoid-fiber-startup": {
+      "title": "Démarrage avec fibres corrigé et grands atlas du menu rétablis",
+      "summary": "Implémentation de sceFiberGetInfo, sceFiberRename, pthread_mutexattr_setpshared privé au processus et d’un véritable fsync, également utilisé par sceKernelFsync. Les piles HLE propres à chaque fibre évitent les débordements ; la migration synchronisée permet de reprendre les tâches de chargement sur un autre thread. Une limite distincte de 512 Mio pour les transferts d’images échantillonnées accepte les atlas BC7 16K sans relever les limites des tampons d’image. Les 623 tests HLE et 244 tests Vulkan passent ; le runner recompilé et signé atteint le titre et le menu des modes lors des lancements répétés. Médiane du menu : 45,6 FPS sur 30 relevés. Gameplay non vérifié ; version de développement.",
+      "imageAlt": "Illustration du titre Arkanoid: Eternal Battle rétablie avec l’invite START ; compteur à 138,0 FPS"
+    },
     "raiden-iv-startup-depth": {
       "title": "Démarrage corrigé ; les effacements de profondeur rétablissent le premier niveau",
       "summary": "Le chargeur distingue les métadonnées de version de bibliothèque des tables dynamiques au lieu de lire un segment absent de 39 octets. Les requêtes de fichiers et de racks NGS2 ainsi que le cache des polices sont implémentés ; les textures compactées sur 16 bits utilisent le bon ordre de canaux. La transmission à Vulkan des effacements complets du plan de profondeur supprime le niveau noir. Le dernier essai avec saisie automatique atteint le premier niveau avec tirs et ennemis visibles. Les 921 tests du chargeur, de HLE et de Vulkan ainsi que deux vérifications natives des effacements sur GPU réussissent. Version de développement : lecture ATRAC9 du sampler, annulation des threads actifs et jouabilité complète restent inachevées.",

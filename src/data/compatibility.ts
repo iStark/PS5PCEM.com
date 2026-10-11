@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    slug: "arkanoid-eternal-battle",
+    title: "Arkanoid: Eternal Battle",
+    tier: "intro",
+    image: "/images/arkanoid-menu-2026-10-11.png",
+    confirmedOn: "2026-10-11",
+  },
+  {
     slug: "raiden-iv-mikado-remix",
     title: "Raiden IV x Mikado Remix",
     tier: "ingame",

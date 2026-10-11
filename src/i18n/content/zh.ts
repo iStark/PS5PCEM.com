@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const zh: Content = {
   games: {
+    "arkanoid-eternal-battle": {
+      "status": "标题画面 · 主菜单 · 游玩未验证",
+      "headline": "启动和菜单画面已修复；模式选择菜单的帧率中位数为 45.6 FPS。",
+      "summary": "10 月 11 日开发版本，PPSA06328 v01.002.000：实现了四个缺失的 Fiber/POSIX 导入。独立的 HLE 栈与工作线程间的同步纤程迁移修复了随后的启动故障。为大型 BC7 图集设置独立上传限制后，标题画面得以恢复。",
+      "strengths": [
+        "两次启动均进入动态标题画面。自动 Cross 输入可打开模式选择菜单，显示 Options、Retro、Eternal Battle、Versus 和 Neo。",
+        "最终日志中未出现客户程序崩溃或采样图像被拒绝；已检查帧报告的 GPU 跳过计数均为零。"
+      ],
+      "limits": [
+        "在线 Eternal Battle 模式提示无法访问；客户程序日志记录了服务器连接失败。",
+        "离线模式选择、挡板控制和实际游玩仍未验证。音质、完整通关及长时间稳定性尚未测试。"
+      ],
+      "performance": "菜单：以一秒间隔读取窗口计数器 30 次，跨度 29.962 秒，中位数 45.6 FPS，范围 43.5–46.6 FPS。自动 Cross 输入保持启用。标题画面观察值为 138–149 FPS，并非固定时段测试。RTX 3070 Ti，请求输出 1920×1080，内部渲染目标为 3840×2160。这些是菜单数据，不代表游戏内性能，也不是优化前后的对照。",
+      "imageAlt": "Arkanoid 模式选择菜单，显示 Retro、Eternal Battle 和 Versus 卡片；窗口计数器为 45.2 FPS"
+    },
     "raiden-iv-mikado-remix": {
       "status": "进入游戏 · 第一关可见 · 可玩性未验证",
       "headline": "启动问题已修复，深度清除修复后第一关正常显示。",
@@ -355,6 +370,11 @@ const zh: Content = {
   },
 
   history: {
+    "arkanoid-fiber-startup": {
+      "title": "修复纤程启动问题并恢复大型菜单图集",
+      "summary": "实现了 sceFiberGetInfo、sceFiberRename、进程私有的 pthread_mutexattr_setpshared 和真正的 fsync，sceKernelFsync 也使用同一文件操作。每个纤程独立的 HLE 栈可防止溢出；同步迁移使暂停的加载任务能够在另一工作线程上继续。采样图像采用独立的 512 MiB 上传限制，可接受 16K BC7 菜单图集，无需提高帧缓冲区限制。全部 623 项 HLE 测试和 244 项 Vulkan 测试通过；重新构建并签名的 runner 在重复启动中到达标题画面和模式菜单。菜单 30 次读数的中位数为 45.6 FPS。实际游玩仍未验证；本次使用开发版本。",
+      "imageAlt": "已恢复的 Arkanoid: Eternal Battle 标题画面和 START 提示；窗口计数器为 138.0 FPS"
+    },
     "raiden-iv-startup-depth": {
       "title": "修复启动；深度清除同步恢复第一关画面",
       "summary": "加载器现在区分库版本元数据与动态表，不再读取不存在的 39 字节段。实现了 NGS2 文件及 rack 查询和字体缓存，16 位打包纹理按正确通道顺序上传。将原始深度平面的完整清除同步到 Vulkan，消除了关卡黑屏。最终自动输入测试进入第一关，射击和敌人均可见。加载器、HLE 和 Vulkan 的 921 项单元测试及两项原生 GPU 清除验证均通过。这是开发构建；NGS2 采样器的 ATRAC9 播放、运行中线程取消和完整可玩性仍未完成。",

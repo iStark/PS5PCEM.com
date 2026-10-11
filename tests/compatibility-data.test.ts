@@ -25,6 +25,7 @@ describe("compatibility dataset", () => {
   it("covers every title listed in project-status.md", () => {
     expect(compatibility.map((entry) => entry.title).sort()).toEqual(
       [
+        "Arkanoid: Eternal Battle",
         "Asterix & Obelix: Slap Them All!",
         "Big Helmet Heroes",
         "Cat Quest III",
@@ -81,6 +82,7 @@ describe("compatibility dataset", () => {
 
   it("keeps titles with unverified gameplay short of playable", () => {
     for (const slug of [
+      "arkanoid-eternal-battle",
       "big-helmet-heroes",
       "tetris-effect-connected",
     ]) {
@@ -184,10 +186,11 @@ describe("test history", () => {
       ["dead-cells-ngs2-link", null],
       ["dead-cells-level-menu-audio", null],
       ["raiden-iv-startup-depth", null],
+      ["arkanoid-fiber-startup", null],
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(12);
+    expect(history.filter((run) => run.release === null)).toHaveLength(13);
   });
 
   it("references captures that exist in public/", () => {

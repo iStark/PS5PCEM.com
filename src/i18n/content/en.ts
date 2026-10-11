@@ -29,6 +29,21 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "arkanoid-eternal-battle": {
+      "status": "Title screen · main menu · gameplay unverified",
+      "headline": "Startup and menu artwork restored; the mode-selection menu measures 45.6 FPS.",
+      "summary": "October 11 development build, PPSA06328 v01.002.000: four missing Fiber/POSIX imports are implemented. Independent firmware stacks and synchronized fiber migration between workers remove the subsequent startup failures. A separate upload limit for large BC7 atlases restores the title artwork.",
+      "strengths": [
+        "Two launches reach the animated title screen. Automatic Cross input opens the mode-selection carousel with Options, Retro, Eternal Battle, Versus and Neo.",
+        "No guest faults or sampled-image rejections appear in the final traces; reported GPU gap counters remain zero in the checked frames."
+      ],
+      "limits": [
+        "The online Eternal Battle mode reports that it is not accessible, with failed server connections in the guest log.",
+        "Offline mode selection, paddle control and gameplay remain unverified. Audio quality, completion and long-session stability have not been tested."
+      ],
+      "performance": "Menu: 45.6 FPS median, 43.5–46.6 FPS range over 30 one-second window-counter samples spanning 29.962 seconds. Automatic Cross remained enabled. Title-screen observations: 138–149 FPS, not a timed benchmark. RTX 3070 Ti, 1920×1080 output request, 3840×2160 internal target. These are menu readings, not gameplay performance or a before/after comparison.",
+      "imageAlt": "Arkanoid main mode-selection menu with Retro, Eternal Battle and Versus cards; window counter 45.2 FPS"
+    },
     "raiden-iv-mikado-remix": {
       "status": "In-game · first level renders · playability unverified",
       "headline": "Startup succeeds and the first level renders after the depth-clear fix.",
@@ -400,6 +415,11 @@ const content: Content = {
   },
 
   history: {
+    "arkanoid-fiber-startup": {
+      "title": "Fiber startup fixed and large menu atlases restored",
+      "summary": "Implemented sceFiberGetInfo, sceFiberRename, process-private pthread_mutexattr_setpshared and real fsync, shared by sceKernelFsync. Per-fiber firmware stacks prevent overflow; synchronized migration allows suspended loading jobs to resume on another worker. A separate 512 MiB sampled-image upload bound accepts the 16K BC7 menu atlases without raising framebuffer limits. All 623 HLE and 244 Vulkan tests pass; the rebuilt, signed runner reaches the title and mode menu in repeat launches. Menu median: 45.6 FPS over 30 samples. Gameplay remains unverified; this run uses a development build.",
+      "imageAlt": "Restored Arkanoid: Eternal Battle title artwork and START prompt; window counter 138.0 FPS"
+    },
     "raiden-iv-startup-depth": {
       "title": "Startup fixed; raw depth clears restore the first level",
       "summary": "The loader now separates library-version metadata from dynamic tables instead of reading an absent 39-byte segment. NGS2 file/rack queries and font-cache storage are implemented; packed 16-bit textures now upload with correct channel order. Publishing full raw depth-plane clears to Vulkan removes the black level. The final automatic-input run reaches the first level with shots and enemies visible. All 921 loader, HLE and Vulkan unit tests and two native GPU clear probes pass. This is a development build; ATRAC9 sampler playback, live-thread cancellation and full playability remain incomplete.",

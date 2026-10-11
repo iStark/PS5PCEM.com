@@ -38,6 +38,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "arkanoid-fiber-startup",
+    slug: "arkanoid-eternal-battle",
+    date: "2026-10-11",
+    release: null,
+    image: "/images/arkanoid-title-2026-10-11.png",
+    source: devReport("arkanoid-fiber-startup-2026-10-11.md"),
+  },
+  {
     id: "raiden-iv-startup-depth",
     slug: "raiden-iv-mikado-remix",
     date: "2026-10-11",

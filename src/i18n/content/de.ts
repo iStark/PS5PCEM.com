@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const de: Content = {
   games: {
+    "arkanoid-eternal-battle": {
+      "status": "Titelbildschirm · Hauptmenü · Gameplay ungeprüft",
+      "headline": "Start und Menügrafik wiederhergestellt; Median im Modusmenü: 45,6 FPS.",
+      "summary": "Entwicklungsversion vom 11. Oktober, PPSA06328 v01.002.000: Vier fehlende Fiber/POSIX-Importe sind implementiert. Eigene Firmware-Stacks und die synchronisierte Migration von Fibers zwischen Arbeitsthreads beheben die nachfolgenden Startfehler. Eine separate Upload-Grenze für große BC7-Atlanten stellt die Titelgrafik wieder her.",
+      "strengths": [
+        "Zwei Starts erreichen den animierten Titelbildschirm. Automatische Cross-Eingaben öffnen die Modusauswahl mit Options, Retro, Eternal Battle, Versus und Neo.",
+        "Die abschließenden Protokolle enthalten keine Gastabstürze oder abgelehnten Sampled Images; die gemeldeten GPU-Auslassungszähler bleiben in den geprüften Frames bei null."
+      ],
+      "limits": [
+        "Der Online-Modus Eternal Battle meldet, dass er nicht zugänglich ist; das Gastprotokoll zeigt fehlgeschlagene Serververbindungen.",
+        "Offline-Modusauswahl, Schlägersteuerung und Gameplay sind ungeprüft. Audioqualität, vollständiges Durchspielen und Langzeitstabilität wurden nicht getestet."
+      ],
+      "performance": "Menü: Median 45,6 FPS, Bereich 43,5–46,6 FPS aus 30 im Sekundentakt erfassten Fensterzählerwerten über 29,962 Sekunden. Automatische Cross-Eingaben blieben aktiv. Beobachtungen am Titelbildschirm: 138–149 FPS, keine zeitlich abgegrenzte Messung. RTX 3070 Ti, angeforderte Ausgabe 1920×1080, internes Renderziel 3840×2160. Menüwerte, keine Gameplay-Leistung oder Vorher-nachher-Messung.",
+      "imageAlt": "Arkanoid-Modusmenü mit Retro, Eternal Battle und Versus; Fensterzähler bei 45,2 FPS"
+    },
     "raiden-iv-mikado-remix": {
       "status": "Im Spiel · erster Level sichtbar · Spielbarkeit unbestätigt",
       "headline": "Der Start funktioniert; korrigierte Tiefenlöschungen machen den ersten Level sichtbar.",
@@ -374,6 +389,11 @@ const de: Content = {
   },
 
   history: {
+    "arkanoid-fiber-startup": {
+      "title": "Fiber-Startfehler behoben und große Menüatlanten wiederhergestellt",
+      "summary": "sceFiberGetInfo, sceFiberRename, prozessinternes pthread_mutexattr_setpshared und echtes fsync sind implementiert; sceKernelFsync nutzt dieselbe Dateioperation. Eigene Firmware-Stacks verhindern Überläufe; synchronisierte Migration setzt pausierte Ladeaufgaben auf einem anderen Thread fort. Eine separate Upload-Grenze von 512 MiB für Sampled Images erlaubt die 16K-BC7-Menüatlanten, ohne Framebuffer-Grenzen anzuheben. Alle 623 HLE- und 244 Vulkan-Tests bestehen; der neu gebaute, signierte Runner erreicht bei wiederholten Starts Titelbildschirm und Modusmenü. Menümedian: 45,6 FPS aus 30 Werten. Gameplay bleibt ungeprüft; getestet wurde eine Entwicklungsversion.",
+      "imageAlt": "Wiederhergestellte Titelgrafik von Arkanoid: Eternal Battle mit START-Aufforderung; Fensterzähler bei 138,0 FPS"
+    },
     "raiden-iv-startup-depth": {
       "title": "Start behoben; Tiefenlöschungen stellen den ersten Level wieder her",
       "summary": "Der Loader unterscheidet nun Bibliotheksversionsmetadaten von dynamischen Tabellen und liest kein fehlendes 39-Byte-Segment mehr. NGS2-Datei- und Rackabfragen sowie der Schriftcache sind implementiert; gepackte 16-Bit-Texturen erhalten die richtige Kanalreihenfolge. Vollständige Löschungen der rohen Tiefenebene werden an Vulkan weitergegeben und beheben den schwarzen Level. Der abschließende Lauf mit automatischer Eingabe erreicht den ersten Level mit sichtbaren Schüssen und Gegnern. Alle 921 Loader-, HLE- und Vulkan-Tests sowie zwei native GPU-Löschtests bestehen. Entwicklungsbuild: ATRAC9-Samplerwiedergabe, Abbruch laufender Threads und vollständige Spielbarkeit bleiben unvollständig.",
