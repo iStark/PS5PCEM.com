@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const zh: Content = {
   games: {
+    "police-simulator-patrol-officers": {
+      "status": "开场/菜单 · 图形缺陷",
+      "headline": "已进入生涯创建和地区选择",
+      "summary": "PPSA05831 v01.000.000: 启动、New Career 和地区确认可用。主菜单背景出现强烈绿色错误；上下翻转的界面和递归重复的画面妨碍班次选择。未验证街头实际游玩。",
+      "strengths": [
+        "已验证键盘菜单操作和生涯存档创建。"
+      ],
+      "limits": [
+        "图形严重损坏；未验证街头控制、存档读取和音频质量。"
+      ],
+      "performance": "主菜单截图：16.3 FPS，单次读数。损坏的地区选择画面：8.2–9.9 FPS，中位数 9.2，每秒采样一次，共 30 次。RTX 3070 Ti、Speed、1920×1080 输出；内部目标最高 2560×1440。这不是实际游玩帧率。",
+      "imageAlt": "Police Simulator 主菜单及严重损坏的绿色背景"
+    },
     "monster-boy-and-the-cursed-kingdom": {
       "status": "进入游戏 · 图形缺陷",
       "headline": "已进入可操控的第一关",
@@ -484,6 +497,11 @@ const zh: Content = {
   },
 
   history: {
+    "police-simulator-career-20261012": {
+      "title": "已进入生涯创建和地区选择",
+      "summary": "PPSA05831 v01.000.000: 启动、New Career 和地区确认可用。主菜单背景出现强烈绿色错误；上下翻转的界面和递归重复的画面妨碍班次选择。未验证街头实际游玩。",
+      "imageAlt": "Police Simulator 主菜单及严重损坏的绿色背景"
+    },
     "monster-boy-gameplay-20261012": {
       "title": "已进入可操控的第一关",
       "summary": "PPSA02787 v01.000.004: 修复 NGS2 端口查询、短按键输入和存档服务后，New Game 可以写入存档并加载第一关。已验证角色移动，但仍有大面积黑色多边形。",

@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    "slug": "police-simulator-patrol-officers",
+    "title": "Police Simulator: Patrol Officers",
+    "tier": "intro",
+    "confirmedOn": "2026-10-12",
+    "image": "/images/police-simulator-menu-2026-10-12.jpg"
+  },
+  {
     "slug": "monster-boy-and-the-cursed-kingdom",
     "title": "Monster Boy and the Cursed Kingdom",
     "tier": "ingame",

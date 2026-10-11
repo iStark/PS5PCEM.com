@@ -30,6 +30,7 @@ describe("compatibility dataset", () => {
         "Medieval Dynasty",
         "Oxide Room 104",
         "Monster Boy and the Cursed Kingdom",
+        "Police Simulator: Patrol Officers",
         "Arcade Spirits: The New Challengers",
         "Arkanoid: Eternal Battle",
         "Asterix & Obelix: Slap Them All!",
@@ -93,6 +94,7 @@ describe("compatibility dataset", () => {
       "pac-man-world-re-pac",
       "medieval-dynasty",
       "oxide-room-104",
+      "police-simulator-patrol-officers",
       "arcade-spirits-the-new-challengers",
       "arkanoid-eternal-battle",
       "big-helmet-heroes",
@@ -204,6 +206,7 @@ describe("test history", () => {
       ["arcade-spirits-pthread-semaphores", null],
       ["super-woden-gp-pthread-cleanup", null],
       ["keywe-pthread-audio3d", null],
+      ["police-simulator-career-20261012", null],
       ["monster-boy-gameplay-20261012", null],
       ["oxide-room-104-startup-20261011", null],
       ["medieval-dynasty-startup-20261011", null],
@@ -212,7 +215,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(21);
+    expect(history.filter((run) => run.release === null)).toHaveLength(22);
   });
 
   it("references captures that exist in public/", () => {

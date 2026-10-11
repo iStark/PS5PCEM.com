@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const de: Content = {
   games: {
+    "police-simulator-patrol-officers": {
+      "status": "Intro/Menü · Grafikfehler",
+      "headline": "Karriere und Bezirksauswahl erreicht",
+      "summary": "PPSA05831 v01.000.000: Start, New Career und Bezirksbestätigung funktionieren. Hellgrüne Bildfehler überdecken den Menühintergrund; gespiegelte Oberfläche und rekursive Bildkopien behindern die Schichtauswahl. Straßenspiel wurde nicht verifiziert.",
+      "strengths": [
+        "Tastatursteuerung im Menü und das Anlegen einer Karriere wurden geprüft."
+      ],
+      "limits": [
+        "Schwere Grafikfehler; Steuerung auf der Straße, Laden des Spielstands und hörbare Qualität bleiben ungeprüft."
+      ],
+      "performance": "Menüaufnahme: 16,3 FPS, Einzelwert. Fehlerhafte Bezirksauswahl: 8,2–9,9 FPS, Median 9,2, 30 Werte im Sekundenabstand. RTX 3070 Ti, Speed, Ausgabe 1920×1080; interne Ziele bis 2560×1440. Keine Gameplay-FPS.",
+      "imageAlt": "Police-Simulator-Hauptmenü mit stark fehlerhaftem grünem Hintergrund"
+    },
     "monster-boy-and-the-cursed-kingdom": {
       "status": "Im Spiel · Grafikfehler",
       "headline": "Erster steuerbarer Level erreicht",
@@ -503,6 +516,11 @@ const de: Content = {
   },
 
   history: {
+    "police-simulator-career-20261012": {
+      "title": "Karriere und Bezirksauswahl erreicht",
+      "summary": "PPSA05831 v01.000.000: Start, New Career und Bezirksbestätigung funktionieren. Hellgrüne Bildfehler überdecken den Menühintergrund; gespiegelte Oberfläche und rekursive Bildkopien behindern die Schichtauswahl. Straßenspiel wurde nicht verifiziert.",
+      "imageAlt": "Police-Simulator-Hauptmenü mit stark fehlerhaftem grünem Hintergrund"
+    },
     "monster-boy-gameplay-20261012": {
       "title": "Erster steuerbarer Level erreicht",
       "summary": "PPSA02787 v01.000.004: Nach Korrekturen an NGS2-Portabfragen, kurzen Tastendrücken und Speicherdiensten speichert New Game und lädt den ersten Level. Bewegung wurde geprüft; große schwarze Polygone bleiben sichtbar.",

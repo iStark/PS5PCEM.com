@@ -38,6 +38,15 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    "id": "police-simulator-career-20261012",
+    "slug": "police-simulator-patrol-officers",
+    "date": "2026-10-12",
+    "recordedAt": "2026-10-12T00:55:22+03:00",
+    "release": null,
+    "source": "https://github.com/iStark/PS5PCEM/blob/main/docs/development/police-simulator-career-2026-10-12.md",
+    "image": "/images/police-simulator-menu-2026-10-12.jpg"
+  },
+  {
     "id": "monster-boy-gameplay-20261012",
     "slug": "monster-boy-and-the-cursed-kingdom",
     "date": "2026-10-12",

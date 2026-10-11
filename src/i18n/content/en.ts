@@ -29,6 +29,19 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "police-simulator-patrol-officers": {
+      "status": "Intro/menu · rendering defects",
+      "headline": "Career creation and district selection reached",
+      "summary": "PPSA05831 v01.000.000: Startup, New Career and district confirmation work. Bright green output corrupts the main-menu background; flipped UI and recursive image copies obstruct shift selection. Street gameplay was not verified.",
+      "strengths": [
+        "Keyboard menu input and creation of a career save were verified."
+      ],
+      "limits": [
+        "Severe rendering corruption; street control, save reload and audible quality remain unverified."
+      ],
+      "performance": "Main-menu capture: 16.3 FPS, one reading. Corrupted district selection: 8.2–9.9 FPS, median 9.2, 30 one-second samples. RTX 3070 Ti, Speed, 1920×1080 output; internal targets reach 2560×1440. These are not gameplay FPS.",
+      "imageAlt": "Police Simulator main menu with a severely corrupted green background"
+    },
     "monster-boy-and-the-cursed-kingdom": {
       "status": "In-game · rendering defects",
       "headline": "First controllable level reached",
@@ -529,6 +542,11 @@ const content: Content = {
   },
 
   history: {
+    "police-simulator-career-20261012": {
+      "title": "Career creation and district selection reached",
+      "summary": "PPSA05831 v01.000.000: Startup, New Career and district confirmation work. Bright green output corrupts the main-menu background; flipped UI and recursive image copies obstruct shift selection. Street gameplay was not verified.",
+      "imageAlt": "Police Simulator main menu with a severely corrupted green background"
+    },
     "monster-boy-gameplay-20261012": {
       "title": "First controllable level reached",
       "summary": "PPSA02787 v01.000.004: New Game now saves and loads the first level after fixes to NGS2 port queries, keyboard taps and save services. Movement was verified; large black polygons remain.",

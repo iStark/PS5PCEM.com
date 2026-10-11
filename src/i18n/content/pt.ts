@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const pt: Content = {
   games: {
+    "police-simulator-patrol-officers": {
+      "status": "Introdução/menu · falhas gráficas",
+      "headline": "Criação de carreira e seleção de distrito alcançadas",
+      "summary": "PPSA05831 v01.000.000: Funcionam a inicialização, New Career e a confirmação do distrito. Um verde intenso corrompe o fundo do menu; a interface invertida e as cópias recursivas dificultam escolher o turno. O jogo na rua não foi verificado.",
+      "strengths": [
+        "Foram verificados o menu pelo teclado e a criação do arquivo de carreira."
+      ],
+      "limits": [
+        "Corrupção gráfica grave; controle na rua, recarga do progresso e qualidade sonora não verificados."
+      ],
+      "performance": "Captura do menu: 16,3 FPS, leitura única. Seleção de distrito corrompida: 8,2–9,9 FPS, mediana 9,2, 30 leituras a cada segundo. RTX 3070 Ti, Speed, saída 1920×1080; alvos internos até 2560×1440. Não são FPS de jogabilidade.",
+      "imageAlt": "Menu principal de Police Simulator com fundo verde muito corrompido"
+    },
     "monster-boy-and-the-cursed-kingdom": {
       "status": "Em jogo · falhas gráficas",
       "headline": "Primeiro nível controlável alcançado",
@@ -503,6 +516,11 @@ const pt: Content = {
   },
 
   history: {
+    "police-simulator-career-20261012": {
+      "title": "Criação de carreira e seleção de distrito alcançadas",
+      "summary": "PPSA05831 v01.000.000: Funcionam a inicialização, New Career e a confirmação do distrito. Um verde intenso corrompe o fundo do menu; a interface invertida e as cópias recursivas dificultam escolher o turno. O jogo na rua não foi verificado.",
+      "imageAlt": "Menu principal de Police Simulator com fundo verde muito corrompido"
+    },
     "monster-boy-gameplay-20261012": {
       "title": "Primeiro nível controlável alcançado",
       "summary": "PPSA02787 v01.000.004: Após correções nas consultas de portas NGS2, nos toques breves e nos serviços de salvamento, New Game salva e carrega o primeiro nível. O movimento foi verificado; grandes polígonos pretos persistem.",

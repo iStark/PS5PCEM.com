@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const fr: Content = {
   games: {
+    "police-simulator-patrol-officers": {
+      "status": "Intro/menu · défauts graphiques",
+      "headline": "Création de carrière et sélection du quartier atteintes",
+      "summary": "PPSA05831 v01.000.000: Le démarrage, New Career et la confirmation du quartier fonctionnent. Un vert intense corrompt le fond du menu ; interface retournée et copies récursives gênent le choix du service. Le jeu dans la rue n’a pas été vérifié.",
+      "strengths": [
+        "Navigation au clavier et création de la sauvegarde de carrière vérifiées."
+      ],
+      "limits": [
+        "Défauts graphiques majeurs ; contrôle dans la rue, rechargement de sauvegarde et qualité sonore non vérifiés."
+      ],
+      "performance": "Capture du menu : 16,3 FPS, relevé unique. Sélection du quartier corrompue : 8,2–9,9 FPS, médiane 9,2, 30 relevés espacés d’une seconde. RTX 3070 Ti, Speed, sortie 1920×1080 ; cibles internes jusqu’à 2560×1440. Ce ne sont pas des FPS en jeu.",
+      "imageAlt": "Menu principal de Police Simulator avec un fond vert fortement corrompu"
+    },
     "monster-boy-and-the-cursed-kingdom": {
       "status": "En jeu · défauts graphiques",
       "headline": "Premier niveau contrôlable atteint",
@@ -503,6 +516,11 @@ const fr: Content = {
   },
 
   history: {
+    "police-simulator-career-20261012": {
+      "title": "Création de carrière et sélection du quartier atteintes",
+      "summary": "PPSA05831 v01.000.000: Le démarrage, New Career et la confirmation du quartier fonctionnent. Un vert intense corrompt le fond du menu ; interface retournée et copies récursives gênent le choix du service. Le jeu dans la rue n’a pas été vérifié.",
+      "imageAlt": "Menu principal de Police Simulator avec un fond vert fortement corrompu"
+    },
     "monster-boy-gameplay-20261012": {
       "title": "Premier niveau contrôlable atteint",
       "summary": "PPSA02787 v01.000.004: Après correction des requêtes de ports NGS2, des pressions brèves et des services de sauvegarde, New Game enregistre et charge le premier niveau. Le déplacement a été vérifié ; de grands polygones noirs subsistent.",

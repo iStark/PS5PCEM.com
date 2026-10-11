@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const es: Content = {
   games: {
+    "police-simulator-patrol-officers": {
+      "status": "Intro/menú · fallos gráficos",
+      "headline": "Creación de carrera y selección de distrito alcanzadas",
+      "summary": "PPSA05831 v01.000.000: Funcionan el inicio, New Career y la confirmación del distrito. Un verde intenso corrompe el fondo del menú; la interfaz invertida y las copias recursivas dificultan elegir turno. No se verificó el juego en la calle.",
+      "strengths": [
+        "Se verificaron el control del menú con teclado y la creación del guardado de carrera."
+      ],
+      "limits": [
+        "Corrupción gráfica grave; control en la calle, recarga del guardado y calidad sonora sin verificar."
+      ],
+      "performance": "Captura del menú: 16,3 FPS, lectura única. Selección de distrito corrupta: 8,2–9,9 FPS, mediana 9,2, 30 lecturas separadas por un segundo. RTX 3070 Ti, Speed, salida 1920×1080; objetivos internos hasta 2560×1440. No son FPS de juego.",
+      "imageAlt": "Menú principal de Police Simulator con un fondo verde muy corrupto"
+    },
     "monster-boy-and-the-cursed-kingdom": {
       "status": "En juego · fallos gráficos",
       "headline": "Primer nivel controlable alcanzado",
@@ -503,6 +516,11 @@ const es: Content = {
   },
 
   history: {
+    "police-simulator-career-20261012": {
+      "title": "Creación de carrera y selección de distrito alcanzadas",
+      "summary": "PPSA05831 v01.000.000: Funcionan el inicio, New Career y la confirmación del distrito. Un verde intenso corrompe el fondo del menú; la interfaz invertida y las copias recursivas dificultan elegir turno. No se verificó el juego en la calle.",
+      "imageAlt": "Menú principal de Police Simulator con un fondo verde muy corrupto"
+    },
     "monster-boy-gameplay-20261012": {
       "title": "Primer nivel controlable alcanzado",
       "summary": "PPSA02787 v01.000.004: Tras corregir las consultas de puertos NGS2, las pulsaciones breves y los servicios de guardado, New Game guarda y carga el primer nivel. Se verificó el movimiento; persisten grandes polígonos negros.",
