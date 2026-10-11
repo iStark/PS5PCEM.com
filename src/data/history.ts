@@ -1,8 +1,8 @@
 /**
  * Per-title test history: the dated runs behind each compatibility result.
  *
- * Only locale-independent facts live here — when a run happened, which release
- * includes its changes, its capture and its report. The prose for each
+ * Only locale-independent facts live here — when a run happened, its release label,
+ * its capture and its report. The prose for each
  * entry is translated, and lives under src/i18n/content keyed by `id`.
  *
  * Sources: docs/project-status.md, docs/release-notes/*.md and the dated
@@ -28,7 +28,7 @@ export type HistoryEntry = {
   date: string;
   /** Actual publication instant when known; date remains the displayed run day. */
   recordedAt?: string;
-  /** Published release containing the reported changes, or null for unreleased work. */
+  /** Release associated with the run date, or null for a development build. */
   release: string | null;
   /** Capture under /public/images, when the report published one. */
   image?: string;
@@ -621,7 +621,7 @@ export const history: HistoryEntry[] = [
     id: "jets-playable",
     slug: "jets-n-guns-2",
     date: "2026-09-15",
-    release: "v0.3.2",
+    release: "v0.3.1-beta.1",
     image: "/images/jets-n-guns-2-gameplay.png",
   },
   {
