@@ -38,6 +38,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "dead-cells-level-menu-audio",
+    slug: "dead-cells",
+    date: "2026-10-11",
+    release: null,
+    image: "/images/dead-cells-gameplay-2026-10-11.png",
+    source: devReport("dead-cells-level-and-menu-audio-2026-10-11.md"),
+  },
+  {
     id: "dead-cells-ngs2-link",
     slug: "dead-cells",
     date: "2026-10-11",

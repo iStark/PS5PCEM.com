@@ -176,15 +176,16 @@ describe("test history", () => {
       ["bhh-startup", "v0.3.3"],
       ["yotei-cache-memory", "v0.3.3"],
       ["jurassic-font-atlas-startup", "v0.3.4"],
-      ["jets-playable", "v0.3.2"],
+      ["jets-playable", "v0.3.1-beta.1"],
       ["quake-playable", "v0.3.2"],
       ["gta3-startup-reflections", null],
       ["bhh-menu-performance-20261010", null],
       ["dead-cells-ngs2-link", null],
+      ["dead-cells-level-menu-audio", null],
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(10);
+    expect(history.filter((run) => run.release === null)).toHaveLength(11);
   });
 
   it("references captures that exist in public/", () => {

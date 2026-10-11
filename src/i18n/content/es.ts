@@ -3,21 +3,19 @@ import type { Content } from "./en";
 const es: Content = {
   games: {
     "dead-cells": {
-      "status": "Menú principal · HUD de juego alcanzado · nivel oscuro",
-      "headline": "Se enlaza y llega al menú principal y al HUD de juego; el nivel sigue oscuro.",
-      "summary": "Versión de desarrollo del 11 de octubre, PPSA15552 v01.005.000: Dead Cells se detenía hasta ahora en el enlazado por ocho importaciones de audio NGS2 que faltaban. Ya están implementadas la creación del sistema de audio en un búfer del juego y las funciones de geometría de audio 3D; cada llamada observada tiene éxito. El menú principal se dibuja correctamente; al empezar una partida se ven el HUD y el consejo del tutorial, pero el nivel y el personaje siguen oscuros.",
+      "status": "Menú principal · primer nivel visible · jugabilidad sin verificar",
+      "headline": "Se ven la primera sala, el personaje y el HUD; la música del menú ya produce una señal.",
+      "summary": "Compilación de desarrollo del 11 de octubre, PPSA15552 v01.005.000: tras añadir ocho importaciones NGS2, dos correcciones comunes restauran el nivel visible y los datos de la música del menú. Las copias de pantalla completa respetan ahora la mezcla y conservan la escena iluminada. Las voces del sampler NGS2 personalizado aceptan formato, bloques y tono en lugar de mezclar silencio.",
       "strengths": [
-        "Se enlaza y arranca ahora que las ocho funciones de libSceNgs2 que faltaban están implementadas de verdad, no con sustitutos vacíos.",
-        "El menú principal se dibuja correctamente; el contador de ventana marcaba 71–72 FPS.",
-        "El HUD de juego, la ranura de arma, la barra de salud y el consejo del tutorial se dibujan; según el desarrollador, el juego tiene sonido."
+        "Se ven la sala de los Aposentos de los Prisioneros, el personaje, el arma, el consejo del tutorial y el HUD.",
+        "Los 101 informes periódicos registran cero fallos de draw/dispatch; la repetición no rechaza image_sample con InvalidStorageBinding."
       ],
       "limits": [
-        "El nivel y el personaje se ven oscuros durante el juego; es la siguiente corrección.",
-        "El menú principal no tiene sonido.",
-        "No están establecidas la jugabilidad, las partidas guardadas ni las sesiones largas."
+        "Pulsaciones automáticas de Cross iniciaron la partida; combate, progreso, guardado y sesiones largas no están probados.",
+        "El audio del menú solo se confirma mediante niveles de mezcla, no por escucha. Las matrices de audio espacial y el panorama de canales siguen incompletos."
       ],
-      "performance": "Lecturas puntuales del contador de ventana: 71–72 FPS en el menú principal y 52–62 FPS en la escena de juego oscura; RTX 3070 Ti, salida 1080p, preajuste Speed.",
-      "imageAlt": "Menú principal de Dead Cells con la ilustración de la actualización Clean Cut"
+      "performance": "Siete lecturas del contador de ventana en la sala inicial: 59,2–68,1 FPS, incluidos 62,5 FPS durante la captura; no es una mediana de un intervalo fijo. Lecturas anteriores del menú: 71–72 FPS. RTX 3070 Ti, preajuste Speed y salida 1080p solicitada.",
+      "imageAlt": "Dead Cells en los Aposentos de los Prisioneros con sala iluminada, personaje, tutorial y HUD"
     },
     "little-nightmares-enhanced-edition": {
       "status": "En juego · renderizado incompleto",
@@ -361,6 +359,11 @@ const es: Content = {
   },
 
   history: {
+    "dead-cells-level-menu-audio": {
+      "title": "Corregidas la composición de la escena y las voces del sampler personalizado",
+      "summary": "Un atajo de copia ignoraba la mezcla y sustituía la escena iluminada por una imagen emisiva negra. Limitarlo a la mezcla de reemplazo restaura el nivel y el personaje. El rack NGS2 personalizado (0x4001) acepta ahora formato, bloques y tono; la mezcla del menú pasa del silencio a un pico cercano a 0,12 de escala completa. Falta confirmar la música escuchándola. Siete lecturas en la sala inicial abarcan 59,2–68,1 FPS; combate, progreso y guardado no se probaron.",
+      "imageAlt": "Dead Cells en los Aposentos de los Prisioneros con sala iluminada, personaje, tutorial y HUD"
+    },
     "dead-cells-ngs2-link": {
       "title": "Las funciones de audio NGS2 permiten a Dead Cells enlazarse y llegar al juego",
       "summary": "La versión de desarrollo del 11 de octubre implementa ocho funciones de libSceNgs2 que Dead Cells necesita para enlazarse: la creación del sistema de audio y los racks en un búfer del juego, y las funciones de geometría de audio 3D — base del oyente, atenuación por distancia, cono, efecto Doppler y panoramización entre altavoces. Cada llamada observada tiene éxito. El menú principal se dibuja correctamente, a 71–72 FPS según el contador de ventana; en el juego aparecen el HUD y el consejo del tutorial, pero el nivel y el personaje están oscuros. El menú principal no tiene sonido; el juego sí.",

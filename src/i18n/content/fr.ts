@@ -3,21 +3,19 @@ import type { Content } from "./en";
 const fr: Content = {
   games: {
     "dead-cells": {
-      "status": "Menu principal · ATH du jeu atteint · niveau sombre",
-      "headline": "Se lie et atteint son menu principal et l’ATH du jeu ; le niveau reste sombre.",
-      "summary": "Version de développement du 11 octobre, PPSA15552 v01.005.000 : Dead Cells s’arrêtait jusqu’ici à l’édition des liens, faute de huit imports audio NGS2. La création du système audio dans un tampon du jeu et les fonctions de géométrie audio 3D sont désormais implémentées ; chaque appel observé réussit. Le menu principal s’affiche correctement ; une partie lancée montre l’ATH et l’astuce du tutoriel, mais le niveau et le personnage restent sombres.",
+      "status": "Menu principal · premier niveau visible · jouabilité non vérifiée",
+      "headline": "La première salle, le personnage et le HUD sont visibles ; la musique du menu produit désormais un signal.",
+      "summary": "Build de développement du 11 octobre, PPSA15552 v01.005.000 : après l’ajout de huit imports NGS2, deux corrections communes rétablissent le niveau et le traitement de la musique du menu. Les copies plein écran respectent désormais le mélange des couleurs et préservent la scène éclairée. Les voix du sampler NGS2 personnalisé acceptent le format, les blocs et la hauteur au lieu de mixer du silence.",
       "strengths": [
-        "Se lie et démarre maintenant que les huit fonctions libSceNgs2 manquantes sont réellement implémentées, sans simples bouchons.",
-        "Le menu principal s’affiche correctement ; le compteur de fenêtre y indiquait 71–72 FPS.",
-        "L’ATH du jeu, l’emplacement d’arme, la barre de santé et l’astuce du tutoriel s’affichent ; selon le développeur, le jeu a du son."
+        "La salle du Quartier des prisonniers, le personnage, l’arme, le conseil du tutoriel et le HUD sont visibles.",
+        "Les 101 rapports périodiques indiquent zéro échec de draw/dispatch ; le nouveau test ne rejette aucun image_sample avec InvalidStorageBinding."
       ],
       "limits": [
-        "Le niveau et le personnage restent sombres en jeu ; c’est la prochaine correction.",
-        "Le menu principal est muet.",
-        "La jouabilité, les sauvegardes et les longues sessions ne sont pas établies."
+        "Des pressions automatiques sur Cross ont lancé la partie ; combat, progression, sauvegardes et longues sessions ne sont pas testés.",
+        "L’audio du menu est confirmé uniquement par les niveaux du mix, sans écoute. Les matrices de spatialisation et le panoramique des canaux restent incomplets."
       ],
-      "performance": "Relevés ponctuels du compteur de fenêtre : 71–72 FPS au menu principal et 52–62 FPS dans la scène de jeu sombre ; RTX 3070 Ti, sortie 1080p, préréglage Speed.",
-      "imageAlt": "Menu principal de Dead Cells avec l’illustration de la mise à jour Clean Cut"
+      "performance": "Sept lectures du compteur de fenêtre dans la salle initiale : 59,2–68,1 FPS, dont 62,5 FPS lors de la capture ; ce n’est pas une médiane sur une durée fixe. Anciennes lectures du menu : 71–72 FPS. RTX 3070 Ti, préréglage Speed, sortie 1080p demandée.",
+      "imageAlt": "Dead Cells dans le Quartier des prisonniers avec la salle éclairée, le personnage, le tutoriel et le HUD"
     },
     "little-nightmares-enhanced-edition": {
       "status": "En jeu · rendu incomplet",
@@ -361,6 +359,11 @@ const fr: Content = {
   },
 
   history: {
+    "dead-cells-level-menu-audio": {
+      "title": "Composition de la scène et audio du sampler personnalisé corrigés",
+      "summary": "Un raccourci de copie ignorait le mélange et remplaçait la scène éclairée par une image émissive noire. Le limiter au mélange par remplacement rétablit le niveau et le personnage. Le rack NGS2 personnalisé (0x4001) accepte maintenant format, blocs et hauteur ; le mix du menu passe du silence à un pic d’environ 0,12 de la pleine échelle. La musique n’a pas encore été confirmée à l’écoute. Sept lectures dans la première salle vont de 59,2 à 68,1 FPS ; combat, progression et sauvegardes ne sont pas testés.",
+      "imageAlt": "Dead Cells dans le Quartier des prisonniers avec la salle éclairée, le personnage, le tutoriel et le HUD"
+    },
     "dead-cells-ngs2-link": {
       "title": "Les fonctions audio NGS2 permettent à Dead Cells de se lier et d’atteindre le jeu",
       "summary": "La version de développement du 11 octobre implémente huit fonctions libSceNgs2 nécessaires à l’édition des liens de Dead Cells : la création du système audio et des racks dans un tampon du jeu, et les fonctions de géométrie audio 3D — repère de l’auditeur, atténuation avec la distance, cône, effet Doppler et panoramique entre haut-parleurs. Chaque appel observé réussit. Le menu principal s’affiche correctement, à 71–72 FPS selon le compteur de fenêtre ; en jeu, l’ATH et l’astuce du tutoriel apparaissent, mais le niveau et le personnage sont sombres. Le menu principal est muet, tandis que le jeu a du son.",

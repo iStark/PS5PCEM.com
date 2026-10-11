@@ -30,21 +30,19 @@ export type Content = {
 const content: Content = {
   games: {
     "dead-cells": {
-      "status": "Main menu · gameplay HUD reached · level renders dark",
-      "headline": "Links and reaches its main menu and gameplay HUD; the level still renders dark.",
-      "summary": "Development build of October 11, PPSA15552 v01.005.000: Dead Cells previously stopped at linking on eight missing NGS2 audio imports. Buffer-backed audio system creation and the 3D audio geometry helpers are now implemented, and every observed call succeeds. The main menu renders correctly; starting a game shows the HUD and tutorial prompt, but the level and the character remain dark.",
+      "status": "Main menu · first level renders · playability unverified",
+      "headline": "The first room, character and HUD render; menu music now produces a nonzero mix.",
+      "summary": "October 11 development build, PPSA15552 v01.005.000: after resolving eight NGS2 imports, two shared fixes restore the visible level and menu-audio data. Full-screen copy shortcuts now respect blending, preserving the lit scene. Custom NGS2 sampler voices now accept waveform format, blocks and pitch instead of mixing silence.",
       "strengths": [
-        "Links and starts now that the eight missing libSceNgs2 functions are implemented rather than stubbed.",
-        "The main menu renders correctly; the window counter read 71–72 FPS there.",
-        "The gameplay HUD, weapon slot, health bar and tutorial prompt render, and the developer reports audible gameplay."
+        "The Prisoners’ Quarters room, character, weapon, tutorial prompt and HUD are visible.",
+        "All 101 periodic reports show zero draw/dispatch failures; the repeat has no image_sample rejection with InvalidStorageBinding."
       ],
       "limits": [
-        "The level and the character render dark in gameplay; this is the next fix.",
-        "The main menu is silent.",
-        "Playability, saves and longer sessions are not established."
+        "Automatic Cross presses started the game; combat, progression, saves and longer sessions remain untested.",
+        "Menu audio is confirmed only by mix levels, not listening. Spatial audio matrices and channel panning remain incomplete."
       ],
-      "performance": "Single window-counter readings: 71–72 FPS in the main menu and 52–62 FPS in the dark gameplay scene; RTX 3070 Ti, 1080p output, Speed preset.",
-      "imageAlt": "Dead Cells main menu with the Clean Cut Update title art"
+      "performance": "Seven starting-room window-counter readings: 59.2–68.1 FPS, including 62.5 FPS at capture; not a timed median. Earlier main-menu readings: 71–72 FPS. RTX 3070 Ti, Speed preset, 1080p output request.",
+      "imageAlt": "Dead Cells in the Prisoners’ Quarters with the lit room, character, tutorial prompt and HUD"
     },
     "little-nightmares-enhanced-edition": {
       "status": "In-game · rendering incomplete",
@@ -387,6 +385,11 @@ const content: Content = {
   },
 
   history: {
+    "dead-cells-level-menu-audio": {
+      "title": "Blended scene composition and custom sampler audio restored",
+      "summary": "A copy shortcut ignored blending and replaced the lit scene with a black emissive image. Restricting it to replace blending restores the level and character. The custom NGS2 sampler rack (0x4001) now accepts waveform format, blocks and pitch; the menu mix changes from silence to a peak near 0.12 of full scale. Listening has not yet confirmed the music. Seven starting-room counter readings span 59.2–68.1 FPS; combat, progression and saves were not tested.",
+      "imageAlt": "Dead Cells in the Prisoners’ Quarters with the lit room, character, tutorial prompt and HUD"
+    },
     "dead-cells-ngs2-link": {
       "title": "NGS2 audio functions let Dead Cells link and reach gameplay",
       "summary": "The October 11 development build implements eight libSceNgs2 functions Dead Cells needs to link: buffer-backed creation of the audio system and racks, and the 3D audio geometry helpers — listener basis, distance rolloff, cone, Doppler and speaker panning. Every observed call returns success. The main menu renders correctly, with 71–72 FPS on the window counter; gameplay shows the HUD and tutorial prompt, but the level and the character are dark. The main menu is silent, while gameplay is audible.",

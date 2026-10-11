@@ -3,21 +3,19 @@ import type { Content } from "./en";
 const de: Content = {
   games: {
     "dead-cells": {
-      "status": "Hauptmenü · Spiel-HUD erreicht · Level bleibt dunkel",
-      "headline": "Wird gelinkt und erreicht Hauptmenü und Spiel-HUD; das Level bleibt dunkel.",
-      "summary": "Entwicklungsstand vom 11. Oktober, PPSA15552 v01.005.000: Dead Cells scheiterte bisher beim Linken an acht fehlenden NGS2-Audioimporten. Das Anlegen des Audiosystems in einem Puffer des Spiels und die 3D-Audio-Geometriefunktionen sind jetzt implementiert; jeder beobachtete Aufruf ist erfolgreich. Das Hauptmenü wird korrekt gezeichnet; nach Spielbeginn erscheinen HUD und Tutorial-Hinweis, Level und Spielfigur bleiben aber dunkel.",
+      "status": "Hauptmenü · erstes Level sichtbar · Spielbarkeit unbestätigt",
+      "headline": "Der erste Raum, die Spielfigur und das HUD sind sichtbar; die Menümusik erzeugt nun ein Signal.",
+      "summary": "Entwicklungsbuild vom 11. Oktober, PPSA15552 v01.005.000: nach acht ergänzten NGS2-Importen stellen zwei allgemeine Korrekturen das Levelbild und die Verarbeitung der Menümusik wieder her. Vollbild-Kopierpfade berücksichtigen jetzt Blending und erhalten die beleuchtete Szene. Stimmen des benutzerdefinierten NGS2-Samplers übernehmen Format, Blöcke und Tonhöhe, statt Stille zu mischen.",
       "strengths": [
-        "Wird gelinkt und startet, da die acht fehlenden libSceNgs2-Funktionen vollständig implementiert sind und nicht nur als Platzhalter.",
-        "Das Hauptmenü wird korrekt gezeichnet; der Fensterzähler zeigte dort 71–72 FPS.",
-        "Spiel-HUD, Waffenplatz, Lebensleiste und Tutorial-Hinweis werden gezeichnet; laut Entwickler ist das Spielgeschehen hörbar."
+        "Der Raum im Gefangenenquartier, die Spielfigur, Waffe, Tutorial-Hinweis und HUD sind sichtbar.",
+        "Alle 101 periodischen Berichte zeigen null Draw-/Dispatch-Fehler; im Wiederholungslauf gibt es keine image_sample-Ablehnung mit InvalidStorageBinding."
       ],
       "limits": [
-        "Level und Spielfigur bleiben im Spiel dunkel; das ist die nächste Korrektur.",
-        "Das Hauptmenü ist stumm.",
-        "Spielbarkeit, Spielstände und längere Sitzungen sind nicht belegt."
+        "Automatische Cross-Eingaben starteten das Spiel; Kampf, weiterer Fortschritt, Spielstände und längere Sitzungen sind ungetestet.",
+        "Menüaudio ist nur durch Mischpegel bestätigt, nicht durch Anhören. Raumklangmatrizen und Kanal-Panning sind noch unvollständig."
       ],
-      "performance": "Einzelne Ablesungen des Fensterzählers: 71–72 FPS im Hauptmenü und 52–62 FPS in der dunklen Spielszene; RTX 3070 Ti, 1080p-Ausgabe, Speed-Preset.",
-      "imageAlt": "Hauptmenü von Dead Cells mit dem Titelbild des Clean Cut Update"
+      "performance": "Sieben Fensterzählerwerte im Startraum: 59,2–68,1 FPS, darunter 62,5 FPS bei der Aufnahme; kein Median über ein festes Zeitintervall. Frühere Hauptmenüwerte: 71–72 FPS. RTX 3070 Ti, Speed-Preset, angeforderte 1080p-Ausgabe.",
+      "imageAlt": "Dead Cells im Gefangenenquartier mit beleuchtetem Raum, Spielfigur, Tutorial-Hinweis und HUD"
     },
     "little-nightmares-enhanced-edition": {
       "status": "Im Spiel · Darstellung unvollständig",
@@ -361,6 +359,11 @@ const de: Content = {
   },
 
   history: {
+    "dead-cells-level-menu-audio": {
+      "title": "Szenen-Blending und Audio des benutzerdefinierten Samplers korrigiert",
+      "summary": "Ein Kopierpfad ignorierte Blending und ersetzte die beleuchtete Szene durch ein schwarzes Emissionsbild. Die Beschränkung auf ersetzendes Blending stellt Level und Spielfigur wieder her. Das benutzerdefinierte NGS2-Rack (0x4001) übernimmt nun Format, Blöcke und Tonhöhe; der Menümix erreicht statt Stille eine Spitze von etwa 0,12 des Vollpegels. Eine Hörprüfung steht aus. Sieben Zählerwerte im Startraum liegen bei 59,2–68,1 FPS; Kampf, Fortschritt und Spielstände wurden nicht getestet.",
+      "imageAlt": "Dead Cells im Gefangenenquartier mit beleuchtetem Raum, Spielfigur, Tutorial-Hinweis und HUD"
+    },
     "dead-cells-ngs2-link": {
       "title": "NGS2-Audiofunktionen lassen Dead Cells linken und ins Spiel starten",
       "summary": "Der Entwicklungsbuild vom 11. Oktober implementiert acht libSceNgs2-Funktionen, die Dead Cells zum Linken braucht: das Anlegen von Audiosystem und Racks in einem Puffer des Spiels sowie die 3D-Audio-Geometriefunktionen — Hörerbasis, Entfernungsabfall, Kegel, Doppler und Lautsprecherpanning. Jeder beobachtete Aufruf ist erfolgreich. Das Hauptmenü wird korrekt gezeichnet, der Fensterzähler zeigt 71–72 FPS; im Spiel erscheinen HUD und Tutorial-Hinweis, Level und Spielfigur sind aber dunkel. Das Hauptmenü ist stumm, das Spielgeschehen hörbar.",
