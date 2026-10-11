@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const de: Content = {
   games: {
+    "raiden-iv-mikado-remix": {
+      "status": "Im Spiel · erster Level sichtbar · Spielbarkeit unbestätigt",
+      "headline": "Der Start funktioniert; korrigierte Tiefenlöschungen machen den ersten Level sichtbar.",
+      "summary": "Entwicklungsbuild vom 11. Oktober, PPSA08832 v01.000.000: Die korrekte Verarbeitung der SELF-Metadaten behebt den fälschlichen TruncatedSelf-Fehler. Audiodateianalyse, NGS2-Rackinformationen, Schriftcache und gepackte 16-Bit-Texturen ermöglichen den Start. Synchronisierte Löschungen der Tiefenebene stellen den zuvor schwarzen Level wieder her.",
+      "strengths": [
+        "Titel- und Modusmenü führen in den ersten Level; Träger, Spielerschiff, Gelände, Gegner, Schüsse und HUD sind sichtbar.",
+        "Automatische Cross-Eingaben lösen Schüsse aus; die Aufnahme zeigt 4090 Punkte. Im geprüften Abschnitt traten weder Gastabstürze noch Zeichenfehler auf."
+      ],
+      "limits": [
+        "Manuelle Steuerung, vollständiges Durchspielen und Langzeitstabilität wurden nicht geprüft.",
+        "ATRAC9-Metadaten werden gelesen, die ATRAC9-Wiedergabe über den NGS2-Sampler fehlt jedoch. Korrekte Audiowiedergabe ist unbestätigt; das Abbrechen laufender Threads liefert weiterhin ENOSYS."
+      ],
+      "performance": "Die Aufnahme zeigt 16,0 FPS, ein früheres Trägerbild 20,7 FPS. Bei 20 ausgewählten Profilbildern beträgt der Median 49 ms (29–110 ms). Die wechselnden Szenen sind weder ein kontrollierter Vergleich noch eine Messung dauerhafter FPS. RTX 3070 Ti, Standardrendering ohne diagnostische Eingriffe.",
+      "imageAlt": "Erster Level von Raiden IV mit schießendem Spielerschiff, Gegnern, Gelände und HUD; 4090 Punkte"
+    },
     "dead-cells": {
       "status": "Hauptmenü · erstes Level sichtbar · Spielbarkeit unbestätigt",
       "headline": "Der erste Raum, die Spielfigur und das HUD sind sichtbar; die Menümusik erzeugt nun ein Signal.",
@@ -359,6 +374,11 @@ const de: Content = {
   },
 
   history: {
+    "raiden-iv-startup-depth": {
+      "title": "Start behoben; Tiefenlöschungen stellen den ersten Level wieder her",
+      "summary": "Der Loader unterscheidet nun Bibliotheksversionsmetadaten von dynamischen Tabellen und liest kein fehlendes 39-Byte-Segment mehr. NGS2-Datei- und Rackabfragen sowie der Schriftcache sind implementiert; gepackte 16-Bit-Texturen erhalten die richtige Kanalreihenfolge. Vollständige Löschungen der rohen Tiefenebene werden an Vulkan weitergegeben und beheben den schwarzen Level. Der abschließende Lauf mit automatischer Eingabe erreicht den ersten Level mit sichtbaren Schüssen und Gegnern. Alle 921 Loader-, HLE- und Vulkan-Tests sowie zwei native GPU-Löschtests bestehen. Entwicklungsbuild: ATRAC9-Samplerwiedergabe, Abbruch laufender Threads und vollständige Spielbarkeit bleiben unvollständig.",
+      "imageAlt": "Erster Level von Raiden IV mit schießendem Spielerschiff, Gegnern, Gelände und HUD; 4090 Punkte"
+    },
     "dead-cells-level-menu-audio": {
       "title": "Szenen-Blending und Audio des benutzerdefinierten Samplers korrigiert",
       "summary": "Ein Kopierpfad ignorierte Blending und ersetzte die beleuchtete Szene durch ein schwarzes Emissionsbild. Die Beschränkung auf ersetzendes Blending stellt Level und Spielfigur wieder her. Das benutzerdefinierte NGS2-Rack (0x4001) übernimmt nun Format, Blöcke und Tonhöhe; der Menümix erreicht statt Stille eine Spitze von etwa 0,12 des Vollpegels. Eine Hörprüfung steht aus. Sieben Zählerwerte im Startraum liegen bei 59,2–68,1 FPS; Kampf, Fortschritt und Spielstände wurden nicht getestet.",

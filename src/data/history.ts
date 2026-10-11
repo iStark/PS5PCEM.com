@@ -38,6 +38,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "raiden-iv-startup-depth",
+    slug: "raiden-iv-mikado-remix",
+    date: "2026-10-11",
+    release: null,
+    image: "/images/raiden-iv-gameplay.jpg",
+    source: devReport("raiden-iv-self-loader-2026-10-11.md"),
+  },
+  {
     id: "dead-cells-level-menu-audio",
     slug: "dead-cells",
     date: "2026-10-11",

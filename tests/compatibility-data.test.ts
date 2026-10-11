@@ -40,6 +40,7 @@ describe("compatibility dataset", () => {
         "Propagation: Paradise Hotel",
         "Quake II (2023)",
         "REANIMAL",
+        "Raiden IV x Mikado Remix",
         "Subnautica: Below Zero",
         "Terminator 2D: No Fate",
         "Tetris Effect: Connected",
@@ -90,7 +91,7 @@ describe("compatibility dataset", () => {
   it("attributes every measurement to the documented test host", () => {
     expect(compatibilityMeta.host).toBe("NVIDIA GeForce RTX 3070 Ti");
     expect(compatibilityMeta.testedOnRelease).toBe("0.3.2");
-    expect(compatibilityMeta.confirmedOn).toBe("2026-10-08");
+    expect(compatibilityMeta.confirmedOn).toBe("2026-10-11");
   });
 
   it("gives every entry a unique slug and a known tier", () => {
@@ -182,10 +183,11 @@ describe("test history", () => {
       ["bhh-menu-performance-20261010", null],
       ["dead-cells-ngs2-link", null],
       ["dead-cells-level-menu-audio", null],
+      ["raiden-iv-startup-depth", null],
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(11);
+    expect(history.filter((run) => run.release === null)).toHaveLength(12);
   });
 
   it("references captures that exist in public/", () => {

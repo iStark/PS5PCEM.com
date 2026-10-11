@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    slug: "raiden-iv-mikado-remix",
+    title: "Raiden IV x Mikado Remix",
+    tier: "ingame",
+    image: "/images/raiden-iv-gameplay.jpg",
+    confirmedOn: "2026-10-11",
+  },
+  {
     slug: "dead-cells",
     title: "Dead Cells",
     tier: "ingame",
@@ -158,7 +165,7 @@ export const compatibility: CompatibilityEntry[] = [
 
 export const compatibilityMeta = {
   /** Newest maintainer confirmation across the dataset. */
-  confirmedOn: "2026-10-08",
+  confirmedOn: "2026-10-11",
   testedOnRelease: "0.3.2",
   host: "NVIDIA GeForce RTX 3070 Ti",
 } as const;

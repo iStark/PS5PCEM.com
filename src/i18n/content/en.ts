@@ -29,6 +29,21 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "raiden-iv-mikado-remix": {
+      "status": "In-game · first level renders · playability unverified",
+      "headline": "Startup succeeds and the first level renders after the depth-clear fix.",
+      "summary": "October 11 development build, PPSA08832 v01.000.000: correct SELF metadata handling fixes the false TruncatedSelf error. Waveform-file parsing, rack information, font-cache storage and packed 16-bit textures allow startup. Synchronizing raw depth-plane clears restores the previously black level.",
+      "strengths": [
+        "Title and mode menus lead into the first level, with the carrier, player ship, terrain, enemies, shots and HUD visible.",
+        "Automatic Cross input fires the weapon; the saved capture shows a score of 4090. No guest fault or nonzero draw-failure counter appeared in the checked portion."
+      ],
+      "limits": [
+        "Manual controller input, a complete playthrough and long-session stability remain untested.",
+        "ATRAC9 metadata parsing is implemented, but ATRAC9 playback through the NGS2 sampler is not. Audio correctness is unverified; cancelling live threads still returns ENOSYS."
+      ],
+      "performance": "The capture shows 16.0 FPS; an earlier carrier frame showed 20.7 FPS. Twenty sampled profile frames have a 49 ms median (29–110 ms). These changing scenes are not a controlled comparison or a sustained FPS measurement. RTX 3070 Ti, default rendering, without diagnostic render overrides.",
+      "imageAlt": "Raiden IV first level with the player ship firing, enemies, terrain and HUD; score 4090"
+    },
     "dead-cells": {
       "status": "Main menu · first level renders · playability unverified",
       "headline": "The first room, character and HUD render; menu music now produces a nonzero mix.",
@@ -385,6 +400,11 @@ const content: Content = {
   },
 
   history: {
+    "raiden-iv-startup-depth": {
+      "title": "Startup fixed; raw depth clears restore the first level",
+      "summary": "The loader now separates library-version metadata from dynamic tables instead of reading an absent 39-byte segment. NGS2 file/rack queries and font-cache storage are implemented; packed 16-bit textures now upload with correct channel order. Publishing full raw depth-plane clears to Vulkan removes the black level. The final automatic-input run reaches the first level with shots and enemies visible. All 921 loader, HLE and Vulkan unit tests and two native GPU clear probes pass. This is a development build; ATRAC9 sampler playback, live-thread cancellation and full playability remain incomplete.",
+      "imageAlt": "Raiden IV first level with the player ship firing, enemies, terrain and HUD; score 4090"
+    },
     "dead-cells-level-menu-audio": {
       "title": "Blended scene composition and custom sampler audio restored",
       "summary": "A copy shortcut ignored blending and replaced the lit scene with a black emissive image. Restricting it to replace blending restores the level and character. The custom NGS2 sampler rack (0x4001) now accepts waveform format, blocks and pitch; the menu mix changes from silence to a peak near 0.12 of full scale. Listening has not yet confirmed the music. Seven starting-room counter readings span 59.2–68.1 FPS; combat, progression and saves were not tested.",

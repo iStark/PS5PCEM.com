@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const pt: Content = {
   games: {
+    "raiden-iv-mikado-remix": {
+      "status": "Em jogo · primeiro nível visível · jogabilidade não verificada",
+      "headline": "O arranque funciona e a correção da limpeza de profundidade restaura o primeiro nível.",
+      "summary": "Compilação de desenvolvimento de 11 de outubro, PPSA08832 v01.000.000: o tratamento correto dos metadados SELF elimina o falso erro TruncatedSelf. A análise de ficheiros de áudio, as informações dos racks NGS2, a cache de fontes e as texturas compactadas de 16 bits permitem iniciar. A sincronização das limpezas do plano de profundidade restaura o nível antes negro.",
+      "strengths": [
+        "Os menus de título e modo levam ao primeiro nível, com porta-aviões, nave do jogador, terreno, inimigos, disparos e interface visíveis.",
+        "Os comandos Cross automáticos disparam a arma; a captura mostra 4090 pontos. Não houve falhas do convidado nem contadores de erros de desenho diferentes de zero no trecho verificado."
+      ],
+      "limits": [
+        "O controlo manual, uma partida completa e a estabilidade prolongada não foram testados.",
+        "Os metadados ATRAC9 são analisados, mas falta a reprodução ATRAC9 pelo sampler NGS2. A correção do áudio não foi verificada; cancelar threads ativas continua a devolver ENOSYS."
+      ],
+      "performance": "A captura mostra 16,0 FPS; uma imagem anterior do porta-aviões mostrava 20,7 FPS. Vinte fotogramas amostrados do perfil têm mediana de 49 ms (29–110 ms). As cenas variáveis não constituem uma comparação controlada nem uma medição de FPS sustentados. RTX 3070 Ti, renderização padrão sem substituições de diagnóstico.",
+      "imageAlt": "Primeiro nível de Raiden IV com a nave a disparar, inimigos, terreno e interface; pontuação 4090"
+    },
     "dead-cells": {
       "status": "Menu principal · primeira fase visível · jogabilidade por verificar",
       "headline": "A primeira sala, a personagem e o HUD são visíveis; a música do menu já produz um sinal.",
@@ -359,6 +374,11 @@ const pt: Content = {
   },
 
   history: {
+    "raiden-iv-startup-depth": {
+      "title": "Arranque corrigido; limpezas de profundidade restauram o primeiro nível",
+      "summary": "O carregador distingue os metadados de versão da biblioteca das tabelas dinâmicas, em vez de ler um segmento ausente de 39 bytes. As consultas de ficheiros e racks NGS2 e a cache de fontes estão implementadas; as texturas compactadas de 16 bits usam a ordem correta dos canais. A publicação em Vulkan das limpezas completas do plano de profundidade elimina o nível negro. O teste final com entrada automática chega ao primeiro nível com disparos e inimigos visíveis. Passam os 921 testes do carregador, HLE e Vulkan e duas verificações nativas de limpeza na GPU. É uma compilação de desenvolvimento; a reprodução ATRAC9 no sampler, o cancelamento de threads ativas e a jogabilidade completa continuam incompletos.",
+      "imageAlt": "Primeiro nível de Raiden IV com a nave a disparar, inimigos, terreno e interface; pontuação 4090"
+    },
     "dead-cells-level-menu-audio": {
       "title": "Composição da cena e áudio do sampler personalizado corrigidos",
       "summary": "Um atalho de cópia ignorava a mistura e substituía a cena iluminada por uma imagem emissiva preta. Limitá-lo à mistura por substituição restaura a fase e a personagem. O rack NGS2 personalizado (0x4001) aceita agora formato, blocos e altura do som; a mistura do menu passa do silêncio para um pico próximo de 0,12 da escala completa. A música ainda não foi confirmada por audição. Sete leituras na sala inicial vão de 59,2 a 68,1 FPS; combate, progressão e gravações não foram testados.",
