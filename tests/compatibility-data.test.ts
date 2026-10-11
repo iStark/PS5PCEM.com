@@ -44,6 +44,7 @@ describe("compatibility dataset", () => {
         "REANIMAL",
         "Raiden IV x Mikado Remix",
         "Subnautica: Below Zero",
+        "Super Woden GP",
         "Terminator 2D: No Fate",
         "Tetris Effect: Connected",
         "The Precinct",
@@ -86,6 +87,7 @@ describe("compatibility dataset", () => {
       "arcade-spirits-the-new-challengers",
       "arkanoid-eternal-battle",
       "big-helmet-heroes",
+      "super-woden-gp",
       "tetris-effect-connected",
     ]) {
       expect(findBySlug(slug)!.tier, slug).toBe("intro");
@@ -190,10 +192,11 @@ describe("test history", () => {
       ["raiden-iv-startup-depth", null],
       ["arkanoid-fiber-startup", null],
       ["arcade-spirits-pthread-semaphores", null],
+      ["super-woden-gp-pthread-cleanup", null],
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(14);
+    expect(history.filter((run) => run.release === null)).toHaveLength(15);
   });
 
   it("references captures that exist in public/", () => {

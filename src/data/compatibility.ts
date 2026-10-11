@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    slug: "super-woden-gp",
+    title: "Super Woden GP",
+    tier: "intro",
+    image: "/images/super-woden-gp-menu-2026-10-11.jpg",
+    confirmedOn: "2026-10-11",
+  },
+  {
     slug: "arcade-spirits-the-new-challengers",
     title: "Arcade Spirits: The New Challengers",
     tier: "intro",

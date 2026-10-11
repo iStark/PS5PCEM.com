@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const de: Content = {
   games: {
+    "super-woden-gp": {
+      "status": "Hauptmenü · Grafikfehler · Gameplay ungeprüft",
+      "headline": "Start behoben; das Weltkartenmenü ist erreichbar.",
+      "summary": "Entwicklungsversion vom 11. Oktober, PPSA07211 v01.000.003: Zwei fehlende libkernel-Importe in Unitys Il2CppUserAssemblies.prx verfügen jetzt über echte Aufräumhandler pro Thread. Das Spiel durchläuft das Linken und die Unity-Initialisierung und erreicht die Sprachauswahl sowie das Weltkartenmenü.",
+      "strengths": [
+        "Drei Starts passieren die Startsequenz. Automatische Cross- und Down-Eingaben führen durch die Sprachauswahl zum Hauptmenü auf der Weltkarte.",
+        "Alle 164 regelmäßigen GPU-Auslassungsberichte des Menülaufs zeigen null; keine Gastabstürze oder Fehler beim Aufruf der Aufräumhandler wurden protokolliert."
+      ],
+      "limits": [
+        "Mehrere Kartenbeschriftungen und Symbole sind vertikal gespiegelt; die Flaggen in der Sprachauswahl haben falsche Farben. Null gemeldete Auslassungen belegen keine korrekte Grafik.",
+        "Manuelle Navigation, Rennen, Audioqualität, Spielstände, vollständiges Durchspielen und Langzeitstabilität bleiben ungeprüft."
+      ],
+      "performance": "Die gespeicherte Menüaufnahme zeigt 71,8 FPS auf RTX 3070 Ti bei 1920×1080 Ausgabe; das größte gemeldete interne Renderziel hat dieselbe Größe. Dies ist ein einzelner Fensterzählerwert mit automatischen Eingaben, kein Dauertest, Rennergebnis oder Vorher-nachher-Vergleich.",
+      "imageAlt": "Super-Woden-GP-Weltkartenmenü mit vertikal gespiegelten Beschriftungen und Symbolen; Fensterzähler 71,8 FPS"
+    },
     "arcade-spirits-the-new-challengers": {
       "status": "Hauptmenü · Einführungsvideo · Gameplay ungeprüft",
       "headline": "Start behoben; Median im Hauptmenü: 252,9 FPS.",
@@ -404,6 +419,11 @@ const de: Content = {
   },
 
   history: {
+    "super-woden-gp-pthread-cleanup": {
+      "title": "Thread-Aufräumhandler ermöglichen den Unity-Start",
+      "summary": "__pthread_cleanup_push_imp und __pthread_cleanup_pop_imp sind mit einer eigenen LIFO-Liste je Gastthread im Speicher des Aufrufers implementiert. Pop entfernt den Eintrag vor dem Callback; pthread_exit führt verbleibende Handler vor TLS-Destruktoren aus. Alle 627 HLE-Tests bestehen. Ein dritter Start erreicht das Kartenmenü mit automatischen Cross/Down-Eingaben. Die Aufnahme zeigt 71,8 FPS, doch gespiegelte Beschriftungen und falsche Flaggenfarben bleiben. Rennen sind ungetestet. Entwicklungsversion.",
+      "imageAlt": "Super-Woden-GP-Kartenmenü nach der Startkorrektur mit weiterhin gespiegelten Beschriftungen"
+    },
     "arcade-spirits-pthread-semaphores": {
       "title": "Zählende pthread-Semaphoren ermöglichen Start und Einführung",
       "summary": "scePthreadSemInit, Wait, Trywait, Post und Destroy sind über den gemeinsamen Semaphorspeicher implementiert. Warten parkt den Thread und verbraucht Tokens; Post reserviert ein Token vor dem Aufwecken. Leeres Polling, Überlauf, veraltete Handles und das Löschen belegter Semaphoren melden Fehler. Alle 625 HLE-Tests bestehen. Der neu gebaute, signierte Runner erreicht das Menü mit einem Median von 252,9 FPS aus 30 Werten; automatische Cross-Eingaben öffnen im Wiederholungslauf das Einführungsvideo mit lesbaren Untertiteln. Manuelle Steuerung, Gameplay und Audioqualität bleiben ungeprüft. Entwicklungsversion.",

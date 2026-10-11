@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const zh: Content = {
   games: {
+    "super-woden-gp": {
+      "status": "主菜单 · 图形问题 · 游戏过程未验证",
+      "headline": "启动问题已修复，现可进入世界地图菜单。",
+      "summary": "10 月 11 日开发版本，PPSA07211 v01.000.003：Unity 的 Il2CppUserAssemblies.prx 中缺失的两个 libkernel 导入现已实现真正的线程清理处理程序。游戏能够完成链接和 Unity 初始化，进入语言选择和世界地图菜单。",
+      "strengths": [
+        "三次启动均通过启动流程。自动 Cross 和 Down 输入可通过语言选择并进入主地图菜单。",
+        "菜单测试中的全部 164 次定期 GPU 遗漏报告计数均为零，未记录到客户程序崩溃或清理回调失败。"
+      ],
+      "limits": [
+        "地图上的部分文字和图标上下颠倒，语言选择界面的旗帜颜色不正确。遗漏计数为零并不代表画面正确。",
+        "手动导航、比赛、音质、存档、通关和长时间运行稳定性均未验证。"
+      ],
+      "performance": "保存的菜单截图在 RTX 3070 Ti 上显示 71.8 FPS，输出为 1920×1080，日志报告的最大内部渲染目标也是这一尺寸。这只是自动输入下的一次窗口计数器读数，不是持续性能测试、比赛性能数据或修改前后的对比。",
+      "imageAlt": "Super Woden GP 世界地图菜单，部分文字和图标上下颠倒；窗口计数器显示 71.8 FPS"
+    },
     "arcade-spirits-the-new-challengers": {
       "status": "主菜单 · 开场视频 · 游玩未验证",
       "headline": "启动已修复；主菜单帧率中位数为 252.9 FPS。",
@@ -385,6 +400,11 @@ const zh: Content = {
   },
 
   history: {
+    "super-woden-gp-pthread-cleanup": {
+      "title": "线程清理处理程序修复 Unity 启动",
+      "summary": "实现了 __pthread_cleanup_push_imp 和 __pthread_cleanup_pop_imp，使用调用方提供的内存，为每个客户线程维护独立的后进先出列表。Pop 在执行回调前移除条目；pthread_exit 在 TLS 析构函数之前执行剩余处理程序。全部 627 项 HLE 测试通过。第三次启动通过自动 Cross/Down 输入进入地图菜单。截图显示 71.8 FPS，但文字颠倒和旗帜颜色错误仍然存在。比赛尚未测试。开发版本。",
+      "imageAlt": "修复启动后的 Super Woden GP 主地图菜单，仍有上下颠倒的文字"
+    },
     "arcade-spirits-pthread-semaphores": {
       "title": "计数 pthread 信号量使启动和开场剧情得以运行",
       "summary": "在共享信号量存储上实现了 scePthreadSemInit、Wait、Trywait、Post 和 Destroy。等待会挂起线程并消耗令牌；Post 在唤醒接收线程之前预留令牌。空信号量的非阻塞等待、溢出、失效句柄和删除仍有等待线程的信号量会返回错误。全部 625 项 HLE 测试通过。重新构建并签名的 runner 到达菜单，30 次读数的中位数为 252.9 FPS；自动 Cross 输入在重复测试中进入带清晰字幕的开场视频。手动控制、实际游玩和音质仍未验证。本次使用开发版本。",

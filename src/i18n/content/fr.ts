@@ -2,6 +2,21 @@ import type { Content } from "./en";
 
 const fr: Content = {
   games: {
+    "super-woden-gp": {
+      "status": "Menu principal · défauts graphiques · jeu non vérifié",
+      "headline": "Démarrage corrigé ; le menu sur la carte du monde est accessible.",
+      "summary": "Version de développement du 11 octobre, PPSA07211 v01.000.003 : deux imports libkernel manquants dans Il2CppUserAssemblies.prx de Unity disposent désormais de véritables gestionnaires de nettoyage par thread. Le jeu passe l’édition des liens et l’initialisation de Unity, puis atteint le choix de la langue et le menu sur la carte du monde.",
+      "strengths": [
+        "Trois lancements passent la séquence de démarrage. Des pressions automatiques sur Cross et Down permettent de quitter le choix de la langue et d’ouvrir le menu principal sur la carte.",
+        "Les 164 rapports périodiques d’opérations GPU omises du test du menu affichent des compteurs nuls ; aucun plantage invité ni échec de rappel de nettoyage n’a été enregistré."
+      ],
+      "limits": [
+        "Plusieurs libellés et icônes de la carte sont inversés verticalement, et les drapeaux du choix de la langue ont des couleurs incorrectes. Des compteurs nuls ne prouvent pas la justesse du rendu.",
+        "La navigation manuelle, les courses, la qualité audio, les sauvegardes, la fin du jeu et la stabilité des longues sessions restent non vérifiées."
+      ],
+      "performance": "La capture du menu affiche 71,8 FPS sur RTX 3070 Ti, avec une sortie 1920×1080 et une cible interne maximale signalée de même taille. Il s’agit d’une seule lecture du compteur de fenêtre avec des entrées automatiques, pas d’un test prolongé, d’une mesure en course ni d’une comparaison avant/après.",
+      "imageAlt": "Menu sur la carte du monde de Super Woden GP avec libellés et icônes inversés ; compteur de fenêtre à 71,8 FPS"
+    },
     "arcade-spirits-the-new-challengers": {
       "status": "Menu principal · vidéo d’introduction · gameplay non vérifié",
       "headline": "Démarrage corrigé ; médiane de 252,9 FPS dans le menu principal.",
@@ -404,6 +419,11 @@ const fr: Content = {
   },
 
   history: {
+    "super-woden-gp-pthread-cleanup": {
+      "title": "Les gestionnaires de nettoyage des threads débloquent le démarrage de Unity",
+      "summary": "Implémentation de __pthread_cleanup_push_imp et __pthread_cleanup_pop_imp avec une liste LIFO par thread invité dans la mémoire fournie par l’appelant. Pop retire l’entrée avant le rappel ; pthread_exit exécute les gestionnaires restants avant les destructeurs TLS. Les 627 tests HLE passent. Un troisième lancement atteint le menu sur la carte avec des entrées Cross/Down automatiques. La capture affiche 71,8 FPS, mais des libellés inversés et des couleurs de drapeaux incorrectes subsistent. Courses non testées. Version de développement.",
+      "imageAlt": "Menu principal sur la carte de Super Woden GP après la correction du démarrage, avec des libellés encore inversés"
+    },
     "arcade-spirits-pthread-semaphores": {
       "title": "Les sémaphores pthread à compteur débloquent le démarrage et l’introduction",
       "summary": "scePthreadSemInit, Wait, Trywait, Post et Destroy utilisent le stockage commun des sémaphores. L’attente suspend le thread et consomme des jetons ; Post réserve un jeton avant de réveiller son destinataire. Attente non bloquante sans jeton, débordement, identifiants périmés et destruction avec attente en cours renvoient des erreurs. Les 625 tests HLE passent. Le runner recompilé et signé atteint le menu à une médiane de 252,9 FPS sur 30 relevés ; un second essai avec Cross automatique ouvre l’introduction avec des sous-titres lisibles. Commandes manuelles, gameplay et qualité audio non vérifiés. Version de développement.",

@@ -38,6 +38,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "super-woden-gp-pthread-cleanup",
+    slug: "super-woden-gp",
+    date: "2026-10-11",
+    release: null,
+    image: "/images/super-woden-gp-menu-2026-10-11.jpg",
+    source: devReport("super-woden-gp-pthread-cleanup-2026-10-11.md"),
+  },
+  {
     id: "arcade-spirits-pthread-semaphores",
     slug: "arcade-spirits-the-new-challengers",
     date: "2026-10-11",

@@ -29,6 +29,21 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "super-woden-gp": {
+      "status": "Main menu · graphical issues · gameplay unverified",
+      "headline": "Startup fixed; the world-map menu is now reachable.",
+      "summary": "October 11 development build, PPSA07211 v01.000.003: two missing libkernel imports in Unity’s Il2CppUserAssemblies.prx now have real per-thread cleanup handlers. The game passes linking and Unity initialization, then reaches language selection and the world-map menu.",
+      "strengths": [
+        "Three launches pass startup. Scripted Cross and Down input advances through language selection into the main map menu.",
+        "All 164 periodic GPU-gap reports in the menu run have zero counters; no guest fault or cleanup callback failure was recorded."
+      ],
+      "limits": [
+        "Several map labels and icons are vertically inverted, and flags on the language screen have incorrect colors. Zero gap counters do not establish correct graphics.",
+        "Manual navigation, racing, audio quality, saves, completion and long-session stability remain unverified."
+      ],
+      "performance": "The saved menu frame shows 71.8 FPS on RTX 3070 Ti, with 1920×1080 output and the same reported largest internal target. This is a single window-counter observation with scripted input, not a sustained benchmark, race performance result or before/after comparison.",
+      "imageAlt": "Super Woden GP world-map menu with inverted labels and icons; window counter 71.8 FPS"
+    },
     "arcade-spirits-the-new-challengers": {
       "status": "Main menu · opening video · gameplay unverified",
       "headline": "Startup fixed; the main menu measures a 252.9 FPS median.",
@@ -430,6 +445,11 @@ const content: Content = {
   },
 
   history: {
+    "super-woden-gp-pthread-cleanup": {
+      "title": "Thread cleanup handlers unblock Unity startup",
+      "summary": "Implemented __pthread_cleanup_push_imp and __pthread_cleanup_pop_imp with a separate LIFO list for each guest thread, using caller-owned storage. Pop removes an entry before invoking its callback; pthread_exit runs remaining handlers before TLS destructors. All 627 HLE tests pass. A third launch reaches the map menu with scripted Cross/Down input. The capture shows 71.8 FPS, but inverted labels and incorrect flag colors remain. Racing is untested. Development build.",
+      "imageAlt": "Super Woden GP main map menu after the startup fix, with remaining inverted labels"
+    },
     "arcade-spirits-pthread-semaphores": {
       "title": "Counted pthread semaphores unblock startup and the opening story",
       "summary": "Implemented scePthreadSemInit, Wait, Trywait, Post and Destroy on the shared semaphore store. Waits park and consume tokens; posting reserves a token before waking its recipient. Empty polling, overflow, stale handles and busy destruction return errors. All 625 HLE tests pass. The rebuilt, signed runner reaches the menu at a 252.9 FPS median over 30 readings; a repeat using automatic Cross advances into the opening video with readable subtitles. Manual controls, gameplay and audio quality remain unverified. Development build.",
