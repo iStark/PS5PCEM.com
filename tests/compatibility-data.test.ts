@@ -26,6 +26,7 @@ describe("compatibility dataset", () => {
     expect(compatibility.map((entry) => entry.title).sort()).toEqual(
       [
         "PAC-MAN WORLD Re-PAC",
+        "Charon's Staircase",
         "Arcade Spirits: The New Challengers",
         "Arkanoid: Eternal Battle",
         "Asterix & Obelix: Slap Them All!",
@@ -198,11 +199,12 @@ describe("test history", () => {
       ["arcade-spirits-pthread-semaphores", null],
       ["super-woden-gp-pthread-cleanup", null],
       ["keywe-pthread-audio3d", null],
+      ["charons-staircase-startup-20261011", null],
       ["pac-man-world-re-pac-startup-20261011", null],
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(17);
+    expect(history.filter((run) => run.release === null)).toHaveLength(18);
   });
 
   it("references captures that exist in public/", () => {

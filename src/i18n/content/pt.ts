@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const pt: Content = {
   games: {
+    "charons-staircase": {
+      "status": "Primeira cena 3D · controles não verificados",
+      "headline": "A introdução ilustrada chega à estrada na floresta.",
+      "summary": "PPSA06603 v01.000.000: O executável alcança a primeira estrada em 3D. Um quadro de transição dura 32,342 s, sendo 26,810 s em falhas de cache dos pipelines gráficos. A cena aparece; controle e jogabilidade não foram verificados.",
+      "strengths": [
+        "Texto, árvores, iluminação e reflexos de lente aparecem; nenhum guest fault registrado."
+      ],
+      "limits": [
+        "63 dos 64 relatórios GPU indicam vínculos storage não resolvidos, geralmente 72. O efeito visual e a correção da iluminação não foram determinados.",
+        "Os controles manuais, a qualidade do áudio, os salvamentos, a conclusão e a estabilidade prolongada não foram verificados."
+      ],
+      "performance": "Floresta: mediana 9,1 FPS (8,0–9,3), 30 leituras em 29,852 s. Cruz automático ativo; alvo interno máximo 3456×1944. Não representa o jogo inteiro. Versão em desenvolvimento de 11 de outubro; RTX 3070 Ti, saída 1920×1080, perfil Speed. Caches preservados e comandos automáticos de Cruz ativados. O jogo controla a resolução interna.",
+      "imageAlt": "Estrada inicial de Charon’s Staircase com árvores escuras, luz forte e reflexos de lente"
+    },
     "pac-man-world-re-pac": {
       "status": "Introdução · título e termos",
       "headline": "Vídeo inicial e tela de título alcançados; as cores do vídeo estão incorretas.",
@@ -448,6 +462,11 @@ const pt: Content = {
   },
 
   history: {
+    "charons-staircase-startup-20261011": {
+      "title": "A introdução ilustrada chega à estrada na floresta.",
+      "summary": "PPSA06603 v01.000.000: O executável alcança a primeira estrada em 3D. Um quadro de transição dura 32,342 s, sendo 26,810 s em falhas de cache dos pipelines gráficos. A cena aparece; controle e jogabilidade não foram verificados.",
+      "imageAlt": "Estrada inicial de Charon’s Staircase com árvores escuras, luz forte e reflexos de lente"
+    },
     "pac-man-world-re-pac-startup-20261011": {
       "title": "Vídeo inicial e tela de título alcançados; as cores do vídeo estão incorretas.",
       "summary": "PPSA06399 v01.000.002: O executável inicializa o Unity e chega ao título e aos termos após o vídeo inicial. As cores do vídeo estão muito distorcidas. Cruz automático alterna as telas iniciais; o gameplay não foi verificado.",

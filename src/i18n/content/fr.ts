@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const fr: Content = {
   games: {
+    "charons-staircase": {
+      "status": "Première scène 3D · commandes non vérifiées",
+      "headline": "L’introduction illustrée mène à la route forestière.",
+      "summary": "PPSA06603 v01.000.000: Le programme atteint la première route forestière en 3D. Une image de transition dure 32,342 s, dont 26,810 s de défauts de cache des pipelines graphiques. La scène s’affiche ; commandes et jouabilité restent non vérifiées.",
+      "strengths": [
+        "Texte, arbres, éclairage de route et reflets optiques sont visibles ; aucun guest fault."
+      ],
+      "limits": [
+        "63 rapports GPU sur 64 signalent des liaisons storage non résolues, généralement 72. Leur effet visuel et la correction de l’éclairage ne sont pas établis.",
+        "Les commandes manuelles, la qualité audio, les sauvegardes, la fin du jeu et la stabilité prolongée ne sont pas vérifiées."
+      ],
+      "performance": "Vue forestière : médiane 9,1 FPS (8,0–9,3), 30 relevés en 29,852 s. Croix automatique active ; cible interne maximale 3456×1944. Pas un test de tout le jeu. Version de développement du 11 octobre ; RTX 3070 Ti, sortie 1920×1080, profil Speed. Caches conservés et pressions automatiques sur Croix. Le jeu contrôle la résolution interne.",
+      "imageAlt": "Route forestière de Charon’s Staircase avec arbres sombres, éclairage intense et reflets optiques"
+    },
     "pac-man-world-re-pac": {
       "status": "Introduction · titre et conditions",
       "headline": "Le film et l’écran titre s’affichent ; les couleurs du film sont incorrectes.",
@@ -448,6 +462,11 @@ const fr: Content = {
   },
 
   history: {
+    "charons-staircase-startup-20261011": {
+      "title": "L’introduction illustrée mène à la route forestière.",
+      "summary": "PPSA06603 v01.000.000: Le programme atteint la première route forestière en 3D. Une image de transition dure 32,342 s, dont 26,810 s de défauts de cache des pipelines graphiques. La scène s’affiche ; commandes et jouabilité restent non vérifiées.",
+      "imageAlt": "Route forestière de Charon’s Staircase avec arbres sombres, éclairage intense et reflets optiques"
+    },
     "pac-man-world-re-pac-startup-20261011": {
       "title": "Le film et l’écran titre s’affichent ; les couleurs du film sont incorrectes.",
       "summary": "PPSA06399 v01.000.002: Le programme initialise Unity et atteint le titre et les conditions après le film d’ouverture. Les couleurs du film sont fortement déformées. Croix automatique alterne les écrans de démarrage ; le gameplay n’est pas vérifié.",

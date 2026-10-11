@@ -29,6 +29,20 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "charons-staircase": {
+      "status": "Opening 3D scene · controls unverified",
+      "headline": "The illustrated introduction leads into the forest-road scene.",
+      "summary": "PPSA06603 v01.000.000: The existing runner reaches the opening 3D forest road. A 32.342-second transition frame includes 26.810 seconds of graphics pipeline misses. The scene renders, but character control and playability are unverified.",
+      "strengths": [
+        "The introduction text, trees, road lighting and lens flare are visible; no guest fault was recorded."
+      ],
+      "limits": [
+        "63 of 64 GPU-gap reports contain unresolved storage bindings, usually 72. Their visual consequences remain unisolated; lighting correctness is unverified.",
+        "Manual controls, audio quality, saves, completion and long-session stability were not verified."
+      ],
+      "performance": "Forest view: 9.1 FPS median (8.0–9.3), 30 counter readings over 29.852 s. Automatic Cross remains active; largest internal target 3456×1944. Not a game-wide benchmark. October 11 development build; RTX 3070 Ti, 1920×1080 output, Speed preset. Existing caches retained; automatic Cross input enabled. Internal rendering remains game-controlled.",
+      "imageAlt": "Charon's Staircase opening forest road with dark trees, bright road lighting and lens flare"
+    },
     "pac-man-world-re-pac": {
       "status": "Intro · title and terms screens",
       "headline": "Opening movie and title screen reached; movie colors are incorrect.",
@@ -474,6 +488,11 @@ const content: Content = {
   },
 
   history: {
+    "charons-staircase-startup-20261011": {
+      "title": "The illustrated introduction leads into the forest-road scene.",
+      "summary": "PPSA06603 v01.000.000: The existing runner reaches the opening 3D forest road. A 32.342-second transition frame includes 26.810 seconds of graphics pipeline misses. The scene renders, but character control and playability are unverified.",
+      "imageAlt": "Charon's Staircase opening forest road with dark trees, bright road lighting and lens flare"
+    },
     "pac-man-world-re-pac-startup-20261011": {
       "title": "Opening movie and title screen reached; movie colors are incorrect.",
       "summary": "PPSA06399 v01.000.002: The existing runner passes Unity initialization and reaches the title and terms screens after the opening movie. The movie has severe color distortion. Automatic Cross cycles through startup screens; gameplay is unverified.",

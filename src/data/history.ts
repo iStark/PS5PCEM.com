@@ -38,6 +38,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    "id": "charons-staircase-startup-20261011",
+    "slug": "charons-staircase",
+    "date": "2026-10-11",
+    "release": null,
+    "source": "https://github.com/iStark/PS5PCEM/blob/main/docs/development/charons-staircase-startup-2026-10-11.md",
+    "image": "/images/charons-staircase-scene-2026-10-11.jpg"
+  },
+  {
     "id": "pac-man-world-re-pac-startup-20261011",
     "slug": "pac-man-world-re-pac",
     "date": "2026-10-11",

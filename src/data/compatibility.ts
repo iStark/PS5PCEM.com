@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    "slug": "charons-staircase",
+    "title": "Charon's Staircase",
+    "tier": "ingame",
+    "confirmedOn": "2026-10-11",
+    "image": "/images/charons-staircase-scene-2026-10-11.jpg"
+  },
+  {
     "slug": "pac-man-world-re-pac",
     "title": "PAC-MAN WORLD Re-PAC",
     "tier": "intro",

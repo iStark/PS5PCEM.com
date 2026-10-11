@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const de: Content = {
   games: {
+    "charons-staircase": {
+      "status": "Erste 3D-Szene · Steuerung ungeprüft",
+      "headline": "Die illustrierte Einführung führt zur Waldstraße.",
+      "summary": "PPSA06603 v01.000.000: Der Runner erreicht die erste 3D-Waldstraße. Ein Übergangsframe dauert 32,342 s, davon 26,810 s für Grafik-Pipeline-Cache-Misses. Die Szene erscheint; Steuerung und Spielbarkeit sind ungeprüft.",
+      "strengths": [
+        "Einführungstext, Bäume, Straßenbeleuchtung und Lens Flare sind sichtbar; kein Guest Fault."
+      ],
+      "limits": [
+        "63 von 64 GPU-Berichten melden unaufgelöste Storage-Bindungen, meist 72. Ihre Bildauswirkungen und die Beleuchtungskorrektheit sind ungeklärt.",
+        "Manuelle Steuerung, Audioqualität, Speichern, vollständiges Durchspielen und Langzeitstabilität wurden nicht geprüft."
+      ],
+      "performance": "Waldansicht: Median 9,1 FPS (8,0–9,3), 30 Zählerwerte über 29,852 s. Cross-Automatik aktiv; größtes internes Ziel 3456×1944. Kein spielweiter Benchmark. Entwicklungsbuild vom 11. Oktober; RTX 3070 Ti, Ausgabe 1920×1080, Speed-Profil. Vorhandene Caches beibehalten; automatische Cross-Eingabe aktiv. Die interne Auflösung bestimmt das Spiel.",
+      "imageAlt": "Erste Waldstraße in Charon's Staircase mit dunklen Bäumen, hellem Licht und Lens Flare"
+    },
     "pac-man-world-re-pac": {
       "status": "Intro · Titel- und Nutzungsbedingungen",
       "headline": "Introfilm und Titelbildschirm erreicht; Filmfarben fehlerhaft.",
@@ -448,6 +462,11 @@ const de: Content = {
   },
 
   history: {
+    "charons-staircase-startup-20261011": {
+      "title": "Die illustrierte Einführung führt zur Waldstraße.",
+      "summary": "PPSA06603 v01.000.000: Der Runner erreicht die erste 3D-Waldstraße. Ein Übergangsframe dauert 32,342 s, davon 26,810 s für Grafik-Pipeline-Cache-Misses. Die Szene erscheint; Steuerung und Spielbarkeit sind ungeprüft.",
+      "imageAlt": "Erste Waldstraße in Charon's Staircase mit dunklen Bäumen, hellem Licht und Lens Flare"
+    },
     "pac-man-world-re-pac-startup-20261011": {
       "title": "Introfilm und Titelbildschirm erreicht; Filmfarben fehlerhaft.",
       "summary": "PPSA06399 v01.000.002: Der vorhandene Runner initialisiert Unity und erreicht nach dem Introfilm den Titelbildschirm und die Nutzungsbedingungen. Die Filmfarben sind stark verfälscht. Automatische Cross-Eingaben wechseln zwischen Startbildschirmen; Gameplay ist ungeprüft.",
