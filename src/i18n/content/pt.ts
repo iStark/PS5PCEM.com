@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const pt: Content = {
   games: {
+    "oxide-room-104": {
+      "status": "Aviso inicial · depois tela preta",
+      "headline": "O aviso de salvamento aparece; depois há falhas de shaders e da fila.",
+      "summary": "PPSA07653 v01.000.000: Dois testes passam pela vinculação. Cruz automático leva à tela preta com erros FLAT, IMAGE_BVH_INTERSECT_RAY, InvalidScalarCall e DMA_DATA. A repetição apenas com teclado mostra o aviso de salvamento. Gameplay não verificado.",
+      "strengths": [
+        "Texto, ícone animado e Cruz/OK aparecem; nenhum erro de CPU convidada nos dois testes."
+      ],
+      "limits": [
+        "Ambos têm vínculos storage não resolvidos. A repetição permanece no aviso; a tecla breve não aparece nos diagnósticos Pad. Menu principal e controles não verificados.",
+        "Os controles manuais, a qualidade do áudio, os salvamentos, a conclusão e a estabilidade prolongada não foram verificados."
+      ],
+      "performance": "Aviso: mediana 18,45 FPS (17,5–19,1), 30 leituras em 29,829 s. Não é teste de gameplay. Os 18,8 FPS na tela preta são um valor antigo. Versão em desenvolvimento de 11 de outubro; RTX 3070 Ti, saída 1920×1080, perfil Speed. Caches preservados. Primeiro teste com Cruz automático; repetição medida apenas com teclado.",
+      "imageAlt": "Aviso de salvamento de Oxide Room 104 com ícone branco e Cruz OK sobre fundo vermelho escuro"
+    },
     "medieval-dynasty": {
       "status": "Menu principal · imagem invertida verticalmente",
       "headline": "O menu aparece, mas a imagem e o texto estão de cabeça para baixo.",
@@ -476,6 +490,11 @@ const pt: Content = {
   },
 
   history: {
+    "oxide-room-104-startup-20261011": {
+      "title": "O aviso de salvamento aparece; depois há falhas de shaders e da fila.",
+      "summary": "PPSA07653 v01.000.000: Dois testes passam pela vinculação. Cruz automático leva à tela preta com erros FLAT, IMAGE_BVH_INTERSECT_RAY, InvalidScalarCall e DMA_DATA. A repetição apenas com teclado mostra o aviso de salvamento. Gameplay não verificado.",
+      "imageAlt": "Aviso de salvamento de Oxide Room 104 com ícone branco e Cruz OK sobre fundo vermelho escuro"
+    },
     "medieval-dynasty-startup-20261011": {
       "title": "O menu aparece, mas a imagem e o texto estão de cabeça para baixo.",
       "summary": "PPSA07933 v01.413.001: O executável chega ao menu principal. Fundo, logo e opções estão invertidos verticalmente. Cruz automático não abre uma fase durante o teste; gameplay não verificado.",

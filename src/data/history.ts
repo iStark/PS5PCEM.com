@@ -38,6 +38,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    "id": "oxide-room-104-startup-20261011",
+    "slug": "oxide-room-104",
+    "date": "2026-10-11",
+    "release": null,
+    "source": "https://github.com/iStark/PS5PCEM/blob/main/docs/development/oxide-room-104-startup-2026-10-11.md",
+    "image": "/images/oxide-room-104-autosave-2026-10-11.jpg"
+  },
+  {
     "id": "medieval-dynasty-startup-20261011",
     "slug": "medieval-dynasty",
     "date": "2026-10-11",

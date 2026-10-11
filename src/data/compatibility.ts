@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    "slug": "oxide-room-104",
+    "title": "Oxide Room 104",
+    "tier": "intro",
+    "confirmedOn": "2026-10-11",
+    "image": "/images/oxide-room-104-autosave-2026-10-11.jpg"
+  },
+  {
     "slug": "medieval-dynasty",
     "title": "Medieval Dynasty",
     "tier": "intro",

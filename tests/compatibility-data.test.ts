@@ -28,6 +28,7 @@ describe("compatibility dataset", () => {
         "PAC-MAN WORLD Re-PAC",
         "Charon's Staircase",
         "Medieval Dynasty",
+        "Oxide Room 104",
         "Arcade Spirits: The New Challengers",
         "Arkanoid: Eternal Battle",
         "Asterix & Obelix: Slap Them All!",
@@ -90,6 +91,7 @@ describe("compatibility dataset", () => {
     for (const slug of [
       "pac-man-world-re-pac",
       "medieval-dynasty",
+      "oxide-room-104",
       "arcade-spirits-the-new-challengers",
       "arkanoid-eternal-battle",
       "big-helmet-heroes",
@@ -201,13 +203,14 @@ describe("test history", () => {
       ["arcade-spirits-pthread-semaphores", null],
       ["super-woden-gp-pthread-cleanup", null],
       ["keywe-pthread-audio3d", null],
+      ["oxide-room-104-startup-20261011", null],
       ["medieval-dynasty-startup-20261011", null],
       ["charons-staircase-startup-20261011", null],
       ["pac-man-world-re-pac-startup-20261011", null],
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(19);
+    expect(history.filter((run) => run.release === null)).toHaveLength(20);
   });
 
   it("references captures that exist in public/", () => {

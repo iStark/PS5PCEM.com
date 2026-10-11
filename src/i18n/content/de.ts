@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const de: Content = {
   games: {
+    "oxide-room-104": {
+      "status": "Starthinweis · später schwarzes Bild",
+      "headline": "Der Speicherhinweis erscheint; spätere Grafikarbeit scheitert an Shadern und Queue.",
+      "summary": "PPSA07653 v01.000.000: Zwei Starts passieren das Linken. Cross-Automatik führt zu schwarzem Bild mit FLAT-, IMAGE_BVH_INTERSECT_RAY-, InvalidScalarCall- und DMA_DATA-Fehlern. Die Tastatur-Wiederholung zeigt den Speicherhinweis. Gameplay ungeprüft.",
+      "strengths": [
+        "Text, animiertes Symbol und Cross/OK erscheinen; kein Guest-CPU-Fault in beiden Läufen."
+      ],
+      "limits": [
+        "Beide Läufe haben unaufgelöste Storage-Bindungen. Die Wiederholung bleibt am Hinweis; der kurze Tastendruck wurde nicht in der Pad-Diagnose erfasst. Hauptmenü und Steuerung ungeprüft.",
+        "Manuelle Steuerung, Audioqualität, Speichern, vollständiges Durchspielen und Langzeitstabilität wurden nicht geprüft."
+      ],
+      "performance": "Speicherhinweis: Median 18,45 FPS (17,5–19,1), 30 Werte über 29,829 s. Kein Gameplay-Benchmark. Die 18,8 FPS am schwarzen Bild sind ein veralteter Zählerstand. Entwicklungsbuild vom 11. Oktober; RTX 3070 Ti, Ausgabe 1920×1080, Speed-Profil. Caches beibehalten. Erster Lauf mit Cross-Automatik; gemessene Wiederholung nur mit Tastatureingabe.",
+      "imageAlt": "Oxide Room 104 mit Speicherhinweis, weißem Symbol und Cross-OK-Aufforderung vor dunkelrotem Hintergrund"
+    },
     "medieval-dynasty": {
       "status": "Hauptmenü · vertikal gespiegeltes Bild",
       "headline": "Das Hauptmenü erscheint, aber Bild und Text stehen auf dem Kopf.",
@@ -476,6 +490,11 @@ const de: Content = {
   },
 
   history: {
+    "oxide-room-104-startup-20261011": {
+      "title": "Der Speicherhinweis erscheint; spätere Grafikarbeit scheitert an Shadern und Queue.",
+      "summary": "PPSA07653 v01.000.000: Zwei Starts passieren das Linken. Cross-Automatik führt zu schwarzem Bild mit FLAT-, IMAGE_BVH_INTERSECT_RAY-, InvalidScalarCall- und DMA_DATA-Fehlern. Die Tastatur-Wiederholung zeigt den Speicherhinweis. Gameplay ungeprüft.",
+      "imageAlt": "Oxide Room 104 mit Speicherhinweis, weißem Symbol und Cross-OK-Aufforderung vor dunkelrotem Hintergrund"
+    },
     "medieval-dynasty-startup-20261011": {
       "title": "Das Hauptmenü erscheint, aber Bild und Text stehen auf dem Kopf.",
       "summary": "PPSA07933 v01.413.001: Der Runner erreicht das Hauptmenü. Hintergrund, Logo und Optionen sind vertikal gespiegelt. Automatisches Cross öffnet während dieser Prüfung kein Level; Gameplay bleibt ungeprüft.",

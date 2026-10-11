@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const zh: Content = {
   games: {
+    "oxide-room-104": {
+      "status": "启动提示 · 随后黑屏",
+      "headline": "自动存档提示可见；后续出现着色器及队列错误。",
+      "summary": "PPSA07653 v01.000.000: 两次启动均通过链接。自动Cross运行进入黑屏，并出现FLAT、IMAGE_BVH_INTERSECT_RAY、InvalidScalarCall和DMA_DATA错误。仅键盘模式重试显示自动存档提示。尚未验证实际游玩。",
+      "strengths": [
+        "重试中可见文字、动画图标及Cross/OK；两次运行均未记录guest CPU fault。"
+      ],
+      "limits": [
+        "两次运行均有未解析的storage绑定。重试停留在提示界面，工具的短暂按键未被Pad诊断记录。主菜单及操作未验证。",
+        "尚未验证手动操作、音质、存档、通关或长时间运行的稳定性。"
+      ],
+      "performance": "提示界面：30次读数跨越29.829秒，中位数18.45 FPS（17.5–19.1）。并非游戏性能基准。黑屏上的18.8 FPS是过时读数。 10月11日开发版本；RTX 3070 Ti，1920×1080输出，Speed预设。保留现有缓存。首次启用自动Cross，重复测量仅启用键盘输入。",
+      "imageAlt": "Oxide Room 104自动存档提示，深红背景上有白色图标及Cross OK"
+    },
     "medieval-dynasty": {
       "status": "主菜单 · 图像垂直翻转",
       "headline": "主菜单可见，但背景与文字上下颠倒。",
@@ -457,6 +471,11 @@ const zh: Content = {
   },
 
   history: {
+    "oxide-room-104-startup-20261011": {
+      "title": "自动存档提示可见；后续出现着色器及队列错误。",
+      "summary": "PPSA07653 v01.000.000: 两次启动均通过链接。自动Cross运行进入黑屏，并出现FLAT、IMAGE_BVH_INTERSECT_RAY、InvalidScalarCall和DMA_DATA错误。仅键盘模式重试显示自动存档提示。尚未验证实际游玩。",
+      "imageAlt": "Oxide Room 104自动存档提示，深红背景上有白色图标及Cross OK"
+    },
     "medieval-dynasty-startup-20261011": {
       "title": "主菜单可见，但背景与文字上下颠倒。",
       "summary": "PPSA07933 v01.413.001: 现有程序进入主菜单。背景、标志和选项文字均垂直翻转。本次检查中，自动Cross未能进入关卡；尚未验证实际游玩。",

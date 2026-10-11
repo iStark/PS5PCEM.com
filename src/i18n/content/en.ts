@@ -29,6 +29,20 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "oxide-room-104": {
+      "status": "Startup notice · later black screen",
+      "headline": "The autosave notice renders; later rendering hits shader and queue errors.",
+      "summary": "PPSA07653 v01.000.000: Two launches pass linking. Automatic Cross reaches black output with FLAT addressing, IMAGE_BVH_INTERSECT_RAY, InvalidScalarCall and DMA_DATA rejection errors. A keyboard-only repeat displays the autosave notice. Gameplay is unverified.",
+      "strengths": [
+        "The autosave text, animated icon and Cross/OK prompt render in the repeat; neither run logs a guest CPU fault."
+      ],
+      "limits": [
+        "Both runs have unresolved storage bindings. The repeat stays on the notice; a short automated key press was not observed by Pad diagnostics. Main menu and controls remain unverified.",
+        "Manual controls, audio quality, saves, completion and long-session stability were not verified."
+      ],
+      "performance": "Autosave notice: 18.45 FPS median (17.5–19.1), 30 readings over 29.829 s. Not a gameplay benchmark. The 18.8 FPS retained on the black screen is stale. October 11 development build; RTX 3070 Ti, 1920×1080 output, Speed preset. Existing caches retained. First run: automatic Cross; measured repeat: keyboard only.",
+      "imageAlt": "Oxide Room 104 autosave notice with a white icon and Cross OK prompt on a dark red background"
+    },
     "medieval-dynasty": {
       "status": "Main menu · vertically inverted image",
       "headline": "The main menu renders, but its artwork and text are upside down.",
@@ -502,6 +516,11 @@ const content: Content = {
   },
 
   history: {
+    "oxide-room-104-startup-20261011": {
+      "title": "The autosave notice renders; later rendering hits shader and queue errors.",
+      "summary": "PPSA07653 v01.000.000: Two launches pass linking. Automatic Cross reaches black output with FLAT addressing, IMAGE_BVH_INTERSECT_RAY, InvalidScalarCall and DMA_DATA rejection errors. A keyboard-only repeat displays the autosave notice. Gameplay is unverified.",
+      "imageAlt": "Oxide Room 104 autosave notice with a white icon and Cross OK prompt on a dark red background"
+    },
     "medieval-dynasty-startup-20261011": {
       "title": "The main menu renders, but its artwork and text are upside down.",
       "summary": "PPSA07933 v01.413.001: The existing runner reaches the main menu. The background, logo and option text are vertically inverted. Scripted Cross does not enter a level during this check; gameplay is unverified.",

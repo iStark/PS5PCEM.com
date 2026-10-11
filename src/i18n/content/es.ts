@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const es: Content = {
   games: {
+    "oxide-room-104": {
+      "status": "Aviso inicial · después pantalla negra",
+      "headline": "Aparece el aviso de guardado; después fallan shaders y la cola.",
+      "summary": "PPSA07653 v01.000.000: Dos inicios pasan el enlazado. Cruz automática lleva a una pantalla negra con errores FLAT, IMAGE_BVH_INTERSECT_RAY, InvalidScalarCall y DMA_DATA. La repetición solo con teclado muestra el aviso de guardado. Juego sin verificar.",
+      "strengths": [
+        "Se ven texto, icono animado y Cruz/OK; no hay fallos CPU invitados en ambos inicios."
+      ],
+      "limits": [
+        "Ambos tienen enlaces storage sin resolver. La repetición permanece en el aviso; la pulsación breve no aparece en los diagnósticos Pad. Menú principal y controles sin verificar.",
+        "No se comprobaron los controles manuales, la calidad del audio, las partidas guardadas, la finalización ni la estabilidad prolongada."
+      ],
+      "performance": "Aviso: mediana 18,45 FPS (17,5–19,1), 30 lecturas en 29,829 s. No es una prueba de juego. Los 18,8 FPS de la pantalla negra son una lectura antigua. Compilación en desarrollo del 11 de octubre; RTX 3070 Ti, salida 1920×1080, perfil Speed. Cachés conservadas. Primer inicio con Cruz automática; repetición medida solo con teclado.",
+      "imageAlt": "Aviso de guardado de Oxide Room 104 con icono blanco y Cruz OK sobre fondo rojo oscuro"
+    },
     "medieval-dynasty": {
       "status": "Menú principal · imagen invertida verticalmente",
       "headline": "El menú aparece, pero su imagen y texto están invertidos.",
@@ -476,6 +490,11 @@ const es: Content = {
   },
 
   history: {
+    "oxide-room-104-startup-20261011": {
+      "title": "Aparece el aviso de guardado; después fallan shaders y la cola.",
+      "summary": "PPSA07653 v01.000.000: Dos inicios pasan el enlazado. Cruz automática lleva a una pantalla negra con errores FLAT, IMAGE_BVH_INTERSECT_RAY, InvalidScalarCall y DMA_DATA. La repetición solo con teclado muestra el aviso de guardado. Juego sin verificar.",
+      "imageAlt": "Aviso de guardado de Oxide Room 104 con icono blanco y Cruz OK sobre fondo rojo oscuro"
+    },
     "medieval-dynasty-startup-20261011": {
       "title": "El menú aparece, pero su imagen y texto están invertidos.",
       "summary": "PPSA07933 v01.413.001: El ejecutable llega al menú principal. Fondo, logotipo y opciones están invertidos verticalmente. Cruz automática no abre ningún nivel durante la prueba; juego sin verificar.",

@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const fr: Content = {
   games: {
+    "oxide-room-104": {
+      "status": "Avis de démarrage · écran noir ensuite",
+      "headline": "L’avis de sauvegarde s’affiche ; des erreurs de shaders et de file suivent.",
+      "summary": "PPSA07653 v01.000.000: Deux lancements passent l’édition de liens. Croix automatique mène à un écran noir avec erreurs FLAT, IMAGE_BVH_INTERSECT_RAY, InvalidScalarCall et DMA_DATA. Le lancement clavier seul affiche l’avis de sauvegarde. Gameplay non vérifié.",
+      "strengths": [
+        "Texte, icône animée et Croix/OK s’affichent ; aucun défaut CPU invité dans les deux essais."
+      ],
+      "limits": [
+        "Les deux essais ont des liaisons storage non résolues. Le second reste sur l’avis ; la brève touche automatisée n’apparaît pas dans les diagnostics Pad. Menu principal et commandes non vérifiés.",
+        "Les commandes manuelles, la qualité audio, les sauvegardes, la fin du jeu et la stabilité prolongée ne sont pas vérifiées."
+      ],
+      "performance": "Avis : médiane 18,45 FPS (17,5–19,1), 30 relevés en 29,829 s. Pas un test de gameplay. Les 18,8 FPS de l’écran noir sont une ancienne valeur. Version de développement du 11 octobre ; RTX 3070 Ti, sortie 1920×1080, profil Speed. Caches conservés. Premier lancement avec Croix automatique ; mesure répétée en mode clavier seul.",
+      "imageAlt": "Avis de sauvegarde d’Oxide Room 104 avec icône blanche et invite Croix OK sur fond rouge sombre"
+    },
     "medieval-dynasty": {
       "status": "Menu principal · image inversée verticalement",
       "headline": "Le menu apparaît, mais son décor et son texte sont à l’envers.",
@@ -476,6 +490,11 @@ const fr: Content = {
   },
 
   history: {
+    "oxide-room-104-startup-20261011": {
+      "title": "L’avis de sauvegarde s’affiche ; des erreurs de shaders et de file suivent.",
+      "summary": "PPSA07653 v01.000.000: Deux lancements passent l’édition de liens. Croix automatique mène à un écran noir avec erreurs FLAT, IMAGE_BVH_INTERSECT_RAY, InvalidScalarCall et DMA_DATA. Le lancement clavier seul affiche l’avis de sauvegarde. Gameplay non vérifié.",
+      "imageAlt": "Avis de sauvegarde d’Oxide Room 104 avec icône blanche et invite Croix OK sur fond rouge sombre"
+    },
     "medieval-dynasty-startup-20261011": {
       "title": "Le menu apparaît, mais son décor et son texte sont à l’envers.",
       "summary": "PPSA07933 v01.413.001: Le programme atteint le menu principal. Fond, logo et options sont inversés verticalement. Croix automatique ne lance aucun niveau pendant ce test ; gameplay non vérifié.",
