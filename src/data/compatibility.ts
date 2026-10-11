@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    "slug": "pac-man-world-re-pac",
+    "title": "PAC-MAN WORLD Re-PAC",
+    "tier": "intro",
+    "confirmedOn": "2026-10-11",
+    "image": "/images/pac-man-world-re-pac-title-2026-10-11.jpg"
+  },
+  {
     slug: "keywe",
     title: "KeyWe",
     tier: "intro",

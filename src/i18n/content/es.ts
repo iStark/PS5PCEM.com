@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const es: Content = {
   games: {
+    "pac-man-world-re-pac": {
+      "status": "Introducción · título y condiciones",
+      "headline": "Se alcanzan el vídeo y el título; el vídeo presenta colores incorrectos.",
+      "summary": "PPSA06399 v01.000.002: El ejecutable inicializa Unity y llega al título y a las condiciones tras el vídeo inicial. Sus colores están muy distorsionados. Cruz automática alterna las pantallas iniciales; el juego no está verificado.",
+      "strengths": [
+        "Los 180 informes de fallos GPU tienen contadores en cero; no se registró guest fault."
+      ],
+      "limits": [
+        "Los contadores en cero no prueban que los gráficos sean correctos. No se probó ningún nivel ni el control del personaje.",
+        "No se comprobaron los controles manuales, la calidad del audio, las partidas guardadas, la finalización ni la estabilidad prolongada."
+      ],
+      "performance": "Transiciones iniciales: mediana de 9,55 FPS, 5,9–14,1 en 30 lecturas durante 29,927 s. Hubo actividad simultánea del lanzador; no es una prueba de escena fija ni de juego. Compilación en desarrollo del 11 de octubre; RTX 3070 Ti, salida 1920×1080, perfil Speed. Cachés conservadas y pulsaciones automáticas de Cruz activadas. El juego controla la resolución interna.",
+      "imageAlt": "Logotipo PAC-MAN WORLD Re-PAC y aviso de Cruz sobre una isla oscura"
+    },
     "keywe": {
       "status": "Inicio · selección de partida · gráficos incompletos",
       "headline": "Imports ausentes implementados; se alcanza la selección de partida.",
@@ -434,6 +448,11 @@ const es: Content = {
   },
 
   history: {
+    "pac-man-world-re-pac-startup-20261011": {
+      "title": "Se alcanzan el vídeo y el título; el vídeo presenta colores incorrectos.",
+      "summary": "PPSA06399 v01.000.002: El ejecutable inicializa Unity y llega al título y a las condiciones tras el vídeo inicial. Sus colores están muy distorsionados. Cruz automática alterna las pantallas iniciales; el juego no está verificado.",
+      "imageAlt": "Logotipo PAC-MAN WORLD Re-PAC y aviso de Cruz sobre una isla oscura"
+    },
     "keywe-pthread-audio3d": {
       "title": "El estado de cancelación de hilos y Audio3d desbloquean el inicio",
       "summary": "Se implementaron el estado de cancelación por hilo, la devolución del valor anterior y la validación de argumentos, además de siete API Audio3d con colas PCM propias, posición/ganancia y mezcla estéreo simultánea. Pasan las 635 pruebas HLE. Se llega a la selección de partida, pero persiste una pantalla negra posterior. Audio espacial completo y gameplay no confirmados. Compilación en desarrollo.",

@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const zh: Content = {
   games: {
+    "pac-man-world-re-pac": {
+      "status": "开场 · 标题与使用条款",
+      "headline": "已显示开场影片和标题；影片颜色错误。",
+      "summary": "PPSA06399 v01.000.002: 现有程序通过Unity初始化，在开场影片后显示标题和使用条款。影片颜色严重失真。自动Cross按键在启动画面间切换；尚未验证实际游玩。",
+      "strengths": [
+        "180份GPU缺失报告的计数均为零，日志中未出现guest fault。"
+      ],
+      "limits": [
+        "零计数不代表图形正确。尚未测试关卡或角色控制。",
+        "尚未验证手动操作、音质、存档、通关或长时间运行的稳定性。"
+      ],
+      "performance": "启动画面切换：30次读数跨越29.927秒，中位数9.55 FPS，范围5.9–14.1。同时存在启动器活动；并非固定场景或游戏性能基准。 10月11日开发版本；RTX 3070 Ti，1920×1080输出，Speed预设。保留现有缓存，启用自动Cross按键。内部渲染分辨率由游戏控制。",
+      "imageAlt": "暗色岛屿背景上的PAC-MAN WORLD Re-PAC标志及Cross提示"
+    },
     "keywe": {
       "status": "启动 · 存档槽选择 · 渲染不完整",
       "headline": "已实现缺失的导入，可进入存档槽选择画面。",
@@ -415,6 +429,11 @@ const zh: Content = {
   },
 
   history: {
+    "pac-man-world-re-pac-startup-20261011": {
+      "title": "已显示开场影片和标题；影片颜色错误。",
+      "summary": "PPSA06399 v01.000.002: 现有程序通过Unity初始化，在开场影片后显示标题和使用条款。影片颜色严重失真。自动Cross按键在启动画面间切换；尚未验证实际游玩。",
+      "imageAlt": "暗色岛屿背景上的PAC-MAN WORLD Re-PAC标志及Cross提示"
+    },
     "keywe-pthread-audio3d": {
       "title": "线程取消状态与 Audio3d 导入解除启动阻塞",
       "summary": "实现了每线程取消状态、旧状态返回及参数检查，以及七个 Audio3d API，支持自有 PCM 队列、位置/增益和同时立体声混音。全部 635 项 HLE 测试通过。游戏进入存档槽选择，但后续黑屏尚未解决。完整空间音频与实际游玩尚未确认。开发版本。",

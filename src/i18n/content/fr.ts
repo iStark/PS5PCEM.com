@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const fr: Content = {
   games: {
+    "pac-man-world-re-pac": {
+      "status": "Introduction · titre et conditions",
+      "headline": "Le film et l’écran titre s’affichent ; les couleurs du film sont incorrectes.",
+      "summary": "PPSA06399 v01.000.002: Le programme initialise Unity et atteint le titre et les conditions après le film d’ouverture. Les couleurs du film sont fortement déformées. Croix automatique alterne les écrans de démarrage ; le gameplay n’est pas vérifié.",
+      "strengths": [
+        "Les 180 rapports GPU ont des compteurs nuls ; aucun guest fault enregistré."
+      ],
+      "limits": [
+        "Des compteurs nuls ne prouvent pas la correction graphique. Aucun niveau ni contrôle du personnage n’a été testé.",
+        "Les commandes manuelles, la qualité audio, les sauvegardes, la fin du jeu et la stabilité prolongée ne sont pas vérifiées."
+      ],
+      "performance": "Transitions de démarrage : médiane 9,55 FPS, 5,9–14,1 sur 30 relevés en 29,927 s. Activité simultanée du lanceur ; ce n’est pas un test de scène fixe ou de gameplay. Version de développement du 11 octobre ; RTX 3070 Ti, sortie 1920×1080, profil Speed. Caches conservés et pressions automatiques sur Croix. Le jeu contrôle la résolution interne.",
+      "imageAlt": "Logo PAC-MAN WORLD Re-PAC et invite Croix sur une île sombre"
+    },
     "keywe": {
       "status": "Démarrage · choix de sauvegarde · rendu incomplet",
       "headline": "Imports manquants implémentés ; le choix de sauvegarde est accessible.",
@@ -434,6 +448,11 @@ const fr: Content = {
   },
 
   history: {
+    "pac-man-world-re-pac-startup-20261011": {
+      "title": "Le film et l’écran titre s’affichent ; les couleurs du film sont incorrectes.",
+      "summary": "PPSA06399 v01.000.002: Le programme initialise Unity et atteint le titre et les conditions après le film d’ouverture. Les couleurs du film sont fortement déformées. Croix automatique alterne les écrans de démarrage ; le gameplay n’est pas vérifié.",
+      "imageAlt": "Logo PAC-MAN WORLD Re-PAC et invite Croix sur une île sombre"
+    },
     "keywe-pthread-audio3d": {
       "title": "État d’annulation des threads et imports Audio3d débloquent le démarrage",
       "summary": "Implémentation de l’état d’annulation par thread, du retour de l’ancien état et de la validation des arguments, ainsi que de sept API Audio3d avec files PCM propres, position/gain et mixage stéréo simultané. Les 635 tests HLE réussissent. Le choix de sauvegarde est atteint, mais l’écran noir suivant reste à corriger. Audio spatial complet et gameplay non confirmés. Version en développement.",

@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const de: Content = {
   games: {
+    "pac-man-world-re-pac": {
+      "status": "Intro · Titel- und Nutzungsbedingungen",
+      "headline": "Introfilm und Titelbildschirm erreicht; Filmfarben fehlerhaft.",
+      "summary": "PPSA06399 v01.000.002: Der vorhandene Runner initialisiert Unity und erreicht nach dem Introfilm den Titelbildschirm und die Nutzungsbedingungen. Die Filmfarben sind stark verfälscht. Automatische Cross-Eingaben wechseln zwischen Startbildschirmen; Gameplay ist ungeprüft.",
+      "strengths": [
+        "Alle 180 GPU-Lückenberichte enthalten nur Nullwerte; kein Guest Fault wurde protokolliert."
+      ],
+      "limits": [
+        "Nullwerte belegen keine korrekte Grafik. Level und Figurensteuerung wurden nicht getestet.",
+        "Manuelle Steuerung, Audioqualität, Speichern, vollständiges Durchspielen und Langzeitstabilität wurden nicht geprüft."
+      ],
+      "performance": "Startübergänge: Median 9,55 FPS, 5,9–14,1 bei 30 Messwerten über 29,927 s. Gleichzeitige Launcher-Aktivität; kein stationärer oder Gameplay-Benchmark. Entwicklungsbuild vom 11. Oktober; RTX 3070 Ti, Ausgabe 1920×1080, Speed-Profil. Vorhandene Caches beibehalten; automatische Cross-Eingabe aktiv. Die interne Auflösung bestimmt das Spiel.",
+      "imageAlt": "PAC-MAN WORLD Re-PAC mit Titellogo und Cross-Aufforderung vor dunklem Inselhintergrund"
+    },
     "keywe": {
       "status": "Start · Speicherslot-Auswahl · Grafik unvollständig",
       "headline": "Fehlende Importe implementiert; die Speicherslot-Auswahl ist erreichbar.",
@@ -434,6 +448,11 @@ const de: Content = {
   },
 
   history: {
+    "pac-man-world-re-pac-startup-20261011": {
+      "title": "Introfilm und Titelbildschirm erreicht; Filmfarben fehlerhaft.",
+      "summary": "PPSA06399 v01.000.002: Der vorhandene Runner initialisiert Unity und erreicht nach dem Introfilm den Titelbildschirm und die Nutzungsbedingungen. Die Filmfarben sind stark verfälscht. Automatische Cross-Eingaben wechseln zwischen Startbildschirmen; Gameplay ist ungeprüft.",
+      "imageAlt": "PAC-MAN WORLD Re-PAC mit Titellogo und Cross-Aufforderung vor dunklem Inselhintergrund"
+    },
     "keywe-pthread-audio3d": {
       "title": "Thread-Abbruchzustand und Audio3d-Importe ermöglichen den Start",
       "summary": "Implementiert wurden der Abbruchzustand pro Thread mit Rückgabe des alten Werts und Argumentprüfung sowie sieben Audio3d-APIs mit eigenen PCM-Warteschlangen, Position/Lautstärke und gleichzeitiger Stereo-Mischung. Alle 635 HLE-Tests bestehen. Die Slot-Auswahl wird erreicht; der anschließende schwarze Bildschirm bleibt offen. Vollständiges räumliches Audio und Gameplay sind nicht bestätigt. Entwicklungsbuild.",

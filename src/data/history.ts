@@ -38,6 +38,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    "id": "pac-man-world-re-pac-startup-20261011",
+    "slug": "pac-man-world-re-pac",
+    "date": "2026-10-11",
+    "release": null,
+    "source": "https://github.com/iStark/PS5PCEM/blob/main/docs/development/pac-man-world-re-pac-startup-2026-10-11.md",
+    "image": "/images/pac-man-world-re-pac-title-2026-10-11.jpg"
+  },
+  {
     id: "keywe-pthread-audio3d",
     slug: "keywe",
     date: "2026-10-11",

@@ -25,6 +25,7 @@ describe("compatibility dataset", () => {
   it("covers every title listed in project-status.md", () => {
     expect(compatibility.map((entry) => entry.title).sort()).toEqual(
       [
+        "PAC-MAN WORLD Re-PAC",
         "Arcade Spirits: The New Challengers",
         "Arkanoid: Eternal Battle",
         "Asterix & Obelix: Slap Them All!",
@@ -85,6 +86,7 @@ describe("compatibility dataset", () => {
 
   it("keeps titles with unverified gameplay short of playable", () => {
     for (const slug of [
+      "pac-man-world-re-pac",
       "arcade-spirits-the-new-challengers",
       "arkanoid-eternal-battle",
       "big-helmet-heroes",
@@ -196,10 +198,11 @@ describe("test history", () => {
       ["arcade-spirits-pthread-semaphores", null],
       ["super-woden-gp-pthread-cleanup", null],
       ["keywe-pthread-audio3d", null],
+      ["pac-man-world-re-pac-startup-20261011", null],
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(16);
+    expect(history.filter((run) => run.release === null)).toHaveLength(17);
   });
 
   it("references captures that exist in public/", () => {

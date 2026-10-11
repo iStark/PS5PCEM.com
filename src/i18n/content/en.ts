@@ -29,6 +29,20 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "pac-man-world-re-pac": {
+      "status": "Intro · title and terms screens",
+      "headline": "Opening movie and title screen reached; movie colors are incorrect.",
+      "summary": "PPSA06399 v01.000.002: The existing runner passes Unity initialization and reaches the title and terms screens after the opening movie. The movie has severe color distortion. Automatic Cross cycles through startup screens; gameplay is unverified.",
+      "strengths": [
+        "All 180 periodic GPU-gap reports have zero counters; no guest fault was logged."
+      ],
+      "limits": [
+        "Zero diagnostic counters do not establish correct graphics. No level or character control was tested.",
+        "Manual controls, audio quality, saves, completion and long-session stability were not verified."
+      ],
+      "performance": "Startup transitions: 9.55 FPS median, 5.9–14.1 over 30 counter samples spanning 29.927 s. Concurrent desktop launcher activity; not a stationary or gameplay benchmark. October 11 development build; RTX 3070 Ti, 1920×1080 output, Speed preset. Existing caches retained; automatic Cross input enabled. Internal rendering remains game-controlled.",
+      "imageAlt": "PAC-MAN WORLD Re-PAC title logo and Cross prompt over a dark island background"
+    },
     "keywe": {
       "status": "Startup · save-slot menu · rendering incomplete",
       "headline": "Missing imports resolved; the save-slot screen is reachable.",
@@ -460,6 +474,11 @@ const content: Content = {
   },
 
   history: {
+    "pac-man-world-re-pac-startup-20261011": {
+      "title": "Opening movie and title screen reached; movie colors are incorrect.",
+      "summary": "PPSA06399 v01.000.002: The existing runner passes Unity initialization and reaches the title and terms screens after the opening movie. The movie has severe color distortion. Automatic Cross cycles through startup screens; gameplay is unverified.",
+      "imageAlt": "PAC-MAN WORLD Re-PAC title logo and Cross prompt over a dark island background"
+    },
     "keywe-pthread-audio3d": {
       "title": "Thread cancellation state and Audio3d imports unblock startup",
       "summary": "Implemented per-thread cancellation state with previous-state output and argument validation, plus seven Audio3d APIs with owned PCM queues, position/gain and simultaneous stereo mixing. All 635 HLE tests pass. The game reaches save-slot selection, but a subsequent black screen remains unresolved. Full spatial audio and gameplay are not established. Development build.",
