@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const fr: Content = {
   games: {
+    "goat-simulator-3": {
+      "status": "En jeu · image inversée · FPS faibles",
+      "headline": "Scène contrôlable à la ferme atteinte",
+      "summary": "PPSA04158 v01.000.000 : Avec les fichiers complets, la version de développement existante termine le long chargement du monde et le trajet introductif. La chèvre, la boussole et la mission Goat Castle apparaissent ; déplacement au clavier vérifié.",
+      "strengths": [
+        "Menus hors ligne, création du monde et déplacement fonctionnent. Des sauvegardes non vides sont écrites ; pause et roue des émotes répondent."
+      ],
+      "limits": [
+        "La scène et le HUD restent inversés verticalement après fermeture de la pause ; les transitions de menu dupliquent des parties de l’image. Défauts de matériaux, images de stockage 3D non prises en charge et liaisons de ressources non résolues persistent. Qualité audio, rechargement, multijoueur et fin du jeu non vérifiés."
+      ],
+      "performance": "Médiane de 1,8 FPS (1,7–1,8), 30 relevés du compteur de fenêtre sur 30,011 secondes sans déplacement. RTX 3070 Ti, sortie 1080p, cibles internes jusqu’à 3200×1800, profil Speed ; caches conservés.",
+      "imageAlt": "Scène contrôlable de Goat Simulator 3 à la ferme avec chèvre, boussole et mission affichées à l’envers"
+    },
     "minecraft-legends": {
       "status": "En jeu · défauts graphiques importants",
       "headline": "Premier tutoriel atteint, déplacements vérifiés",
@@ -529,6 +542,11 @@ const fr: Content = {
   },
 
   history: {
+    "goat-simulator-3-gameplay-20261013": {
+      "title": "Première capture en jeu à la ferme et mesure des FPS",
+      "summary": "PPSA04158 v01.000.000 : Avec les fichiers complets, la version de développement existante termine le long chargement du monde et le trajet introductif. La chèvre, la boussole et la mission Goat Castle apparaissent ; déplacement au clavier vérifié. Médiane de 1,8 FPS (1,7–1,8), 30 relevés du compteur de fenêtre sur 30,011 secondes sans déplacement. RTX 3070 Ti, sortie 1080p, cibles internes jusqu’à 3200×1800, profil Speed ; caches conservés. La scène et le HUD restent inversés verticalement après fermeture de la pause ; les transitions de menu dupliquent des parties de l’image. Défauts de matériaux, images de stockage 3D non prises en charge et liaisons de ressources non résolues persistent. Qualité audio, rechargement, multijoueur et fin du jeu non vérifiés.",
+      "imageAlt": "Scène contrôlable de Goat Simulator 3 à la ferme avec chèvre, boussole et mission affichées à l’envers"
+    },
     "minecraft-legends-gameplay-20261013": {
       "title": "Correction de la base de campagne et première capture en jeu",
       "summary": "Le renommage réel remplace les erreurs de fonction non prise en charge et permet à LevelDB de créer CURRENT. Les 653 tests HLE réussissent. Le nouvel essai atteint le tutoriel contrôlable, mais de graves défauts graphiques et textuels persistent. Version de développement, sans validation du jeu complet.",

@@ -38,6 +38,15 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    "id": "goat-simulator-3-gameplay-20261013",
+    "slug": "goat-simulator-3",
+    "date": "2026-10-13",
+    "recordedAt": "2026-10-13T01:32:26+03:00",
+    "release": null,
+    "source": "https://github.com/iStark/PS5PCEM/blob/main/docs/development/goat-simulator-3-gameplay-2026-10-13.md",
+    "image": "/images/goat-simulator-3-gameplay-2026-10-13.jpg"
+  },
+  {
     "id": "minecraft-legends-gameplay-20261013",
     "slug": "minecraft-legends",
     "date": "2026-10-13",

@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const de: Content = {
   games: {
+    "goat-simulator-3": {
+      "status": "Im Spiel · Bild kopfüber · niedrige FPS",
+      "headline": "Steuerbare Farmszene erreicht",
+      "summary": "PPSA04158 v01.000.000: Mit den vollständigen Spieldaten durchläuft der vorhandene Entwicklungsbuild das lange Laden der Welt und die Wagenfahrt. Ziege, Kompass und Goat-Castle-Aufgabe erscheinen; Tastaturbewegung ist geprüft.",
+      "strengths": [
+        "Offline-Menüs, Welterstellung und Bewegung funktionieren. Nichtleere Spielstandsdateien werden geschrieben; Pause und Emote-Rad reagieren."
+      ],
+      "limits": [
+        "Szene und HUD bleiben nach dem Schließen der Pause vertikal gespiegelt; Menüübergänge wiederholen Bildbereiche. Materialfehler, nicht unterstützte 3D-Storage-Images und ungelöste Ressourcenbindungen bleiben. Audioqualität, Laden von Spielständen, Mehrspieler und Durchspielen sind ungeprüft."
+      ],
+      "performance": "Median 1,8 FPS (1,7–1,8), 30 Fensterzähler-Messungen bei stillstehender Ziege über 30,011 Sekunden. RTX 3070 Ti, 1080p-Ausgabe, interne Ziele bis 3200×1800, Speed-Profil; Caches beibehalten.",
+      "imageAlt": "Steuerbare Farmszene in Goat Simulator 3 mit kopfüber dargestellter Ziege, Kompass und Aufgabe"
+    },
     "minecraft-legends": {
       "status": "Im Spiel · schwere Grafikfehler",
       "headline": "Erstes Tutorial erreicht; Bewegung geprüft",
@@ -529,6 +542,11 @@ const de: Content = {
   },
 
   history: {
+    "goat-simulator-3-gameplay-20261013": {
+      "title": "Erste Gameplay-Aufnahme auf der Farm und FPS-Messung",
+      "summary": "PPSA04158 v01.000.000: Mit den vollständigen Spieldaten durchläuft der vorhandene Entwicklungsbuild das lange Laden der Welt und die Wagenfahrt. Ziege, Kompass und Goat-Castle-Aufgabe erscheinen; Tastaturbewegung ist geprüft. Median 1,8 FPS (1,7–1,8), 30 Fensterzähler-Messungen bei stillstehender Ziege über 30,011 Sekunden. RTX 3070 Ti, 1080p-Ausgabe, interne Ziele bis 3200×1800, Speed-Profil; Caches beibehalten. Szene und HUD bleiben nach dem Schließen der Pause vertikal gespiegelt; Menüübergänge wiederholen Bildbereiche. Materialfehler, nicht unterstützte 3D-Storage-Images und ungelöste Ressourcenbindungen bleiben. Audioqualität, Laden von Spielständen, Mehrspieler und Durchspielen sind ungeprüft.",
+      "imageAlt": "Steuerbare Farmszene in Goat Simulator 3 mit kopfüber dargestellter Ziege, Kompass und Aufgabe"
+    },
     "minecraft-legends-gameplay-20261013": {
       "title": "Kampagnendatenbank repariert und erstes Gameplay aufgenommen",
       "summary": "Echte rename-Operationen ersetzen die Nicht-unterstützt-Fehler und ermöglichen LevelDB das Anlegen der CURRENT-Datei. Alle 653 HLE-Tests bestehen. Der erneute Lauf erreicht das steuerbare Tutorial; schwere Grafik- und Textfehler bleiben. Entwicklungsbuild, kein Nachweis eines vollständigen Durchspielens.",

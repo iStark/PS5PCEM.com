@@ -29,6 +29,19 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "goat-simulator-3": {
+      "status": "In-game · inverted image · low FPS",
+      "headline": "Controllable farm scene reached",
+      "summary": "PPSA04158 v01.000.000: With the complete game files, the existing development runner passes the long world load and cart introduction. The goat, compass and Goat Castle objective appear; keyboard movement is verified.",
+      "strengths": [
+        "Offline menu navigation, new-world creation and movement work. Nonempty save files are written; pause and the emote wheel respond."
+      ],
+      "limits": [
+        "The scene and HUD stay vertically inverted after closing pause; menu transitions repeat subframes. Shading artifacts, unsupported 3D storage images and unresolved bindings remain. Audio quality, save reload, multiplayer and completion are unverified."
+      ],
+      "performance": "1.8 FPS median (1.7–1.8), 30 stationary window-counter samples over 30.011 seconds. RTX 3070 Ti, 1080p output, internal targets up to 3200×1800, Speed preset; caches retained.",
+      "imageAlt": "Goat Simulator 3 controllable farm scene with goat, compass and objective rendered upside down"
+    },
     "minecraft-legends": {
       "status": "In-game · severe rendering defects",
       "headline": "Opening tutorial reached; movement verified",
@@ -555,6 +568,11 @@ const content: Content = {
   },
 
   history: {
+    "goat-simulator-3-gameplay-20261013": {
+      "title": "First farm gameplay capture and stationary FPS sample",
+      "summary": "PPSA04158 v01.000.000: With the complete game files, the existing development runner passes the long world load and cart introduction. The goat, compass and Goat Castle objective appear; keyboard movement is verified. 1.8 FPS median (1.7–1.8), 30 stationary window-counter samples over 30.011 seconds. RTX 3070 Ti, 1080p output, internal targets up to 3200×1800, Speed preset; caches retained. The scene and HUD stay vertically inverted after closing pause; menu transitions repeat subframes. Shading artifacts, unsupported 3D storage images and unresolved bindings remain. Audio quality, save reload, multiplayer and completion are unverified.",
+      "imageAlt": "Goat Simulator 3 controllable farm scene with goat, compass and objective rendered upside down"
+    },
     "minecraft-legends-gameplay-20261013": {
       "title": "Campaign database fix and first gameplay capture",
       "summary": "Real rename operations replace unsupported errors and allow LevelDB to publish its CURRENT file. All 653 HLE tests pass. The repeat reaches controllable tutorial gameplay, but severe graphics and text defects remain. This is a development build, not a completed-playthrough report.",

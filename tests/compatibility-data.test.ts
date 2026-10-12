@@ -25,6 +25,7 @@ describe("compatibility dataset", () => {
   it("covers every title listed in project-status.md", () => {
     expect(compatibility.map((entry) => entry.title).sort()).toEqual(
       [
+        "Goat Simulator 3",
         "Minecraft Legends",
         "PAC-MAN WORLD Re-PAC",
         "Charon's Staircase",
@@ -83,7 +84,7 @@ describe("compatibility dataset", () => {
   });
 
   it("keeps in-game titles with severe defects short of playable", () => {
-    for (const slug of ["minecraft-legends", "dead-cells", "ghost-of-yotei", "gta-iii-definitive-edition", "monster-boy-and-the-cursed-kingdom"]) {
+    for (const slug of ["goat-simulator-3", "minecraft-legends", "dead-cells", "ghost-of-yotei", "gta-iii-definitive-edition", "monster-boy-and-the-cursed-kingdom"]) {
       const game = findBySlug(slug);
       expect(game).toBeDefined();
       expect(game!.tier, slug).toBe("ingame");
@@ -207,6 +208,7 @@ describe("test history", () => {
       ["arcade-spirits-pthread-semaphores", null],
       ["super-woden-gp-pthread-cleanup", null],
       ["keywe-pthread-audio3d", null],
+      ["goat-simulator-3-gameplay-20261013", null],
       ["minecraft-legends-gameplay-20261013", null],
       ["police-simulator-career-20261012", null],
       ["monster-boy-gameplay-20261012", null],
@@ -217,7 +219,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(23);
+    expect(history.filter((run) => run.release === null)).toHaveLength(24);
   });
 
   it("references captures that exist in public/", () => {

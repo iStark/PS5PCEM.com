@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    "slug": "goat-simulator-3",
+    "title": "Goat Simulator 3",
+    "tier": "ingame",
+    "confirmedOn": "2026-10-13",
+    "image": "/images/goat-simulator-3-gameplay-2026-10-13.jpg"
+  },
+  {
     "slug": "minecraft-legends",
     "title": "Minecraft Legends",
     "tier": "ingame",
