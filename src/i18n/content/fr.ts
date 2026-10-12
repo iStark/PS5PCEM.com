@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const fr: Content = {
   games: {
+    "minecraft-legends": {
+      "status": "En jeu · défauts graphiques importants",
+      "headline": "Premier tutoriel atteint, déplacements vérifiés",
+      "summary": "PPSA05510 v01.013.000 : Le renommage réel des fichiers débloque la base de la campagne. Un nouveau lancement de la version de développement atteint le héros à cheval, les cœurs de vie et le tutoriel. Les déplacements et les changements de direction au clavier fonctionnent.",
+      "strengths": [
+        "Menu principal, création de campagne et première scène contrôlable du tutoriel vérifiés."
+      ],
+      "limits": [
+        "Couleurs et éclairage très altérés, grandes zones noires et texte manquant. Le démarrage signale aussi des erreurs de lecture des images. Rechargement des sauvegardes, qualité audio et fin du jeu non vérifiés."
+      ],
+      "performance": "Aucune mesure prolongée des FPS pendant cette capture. RTX 3070 Ti, sortie 1920×1080, profil Speed ; caches existants conservés.",
+      "imageAlt": "Tutoriel de Minecraft Legends avec héros à cheval, cœurs de vie, couleurs altérées et zones noires"
+    },
     "police-simulator-patrol-officers": {
       "status": "Intro/menu · défauts graphiques",
       "headline": "Création de carrière et sélection du quartier atteintes",
@@ -516,6 +529,11 @@ const fr: Content = {
   },
 
   history: {
+    "minecraft-legends-gameplay-20261013": {
+      "title": "Correction de la base de campagne et première capture en jeu",
+      "summary": "Le renommage réel remplace les erreurs de fonction non prise en charge et permet à LevelDB de créer CURRENT. Les 653 tests HLE réussissent. Le nouvel essai atteint le tutoriel contrôlable, mais de graves défauts graphiques et textuels persistent. Version de développement, sans validation du jeu complet.",
+      "imageAlt": "Tutoriel de Minecraft Legends avec héros à cheval, cœurs de vie, couleurs altérées et zones noires"
+    },
     "police-simulator-career-20261012": {
       "title": "Création de carrière et sélection du quartier atteintes",
       "summary": "PPSA05831 v01.000.000: Le démarrage, New Career et la confirmation du quartier fonctionnent. Un vert intense corrompt le fond du menu ; interface retournée et copies récursives gênent le choix du service. Le jeu dans la rue n’a pas été vérifié.",

@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const de: Content = {
   games: {
+    "minecraft-legends": {
+      "status": "Im Spiel · schwere Grafikfehler",
+      "headline": "Erstes Tutorial erreicht; Bewegung geprüft",
+      "summary": "PPSA05510 v01.013.000: Eine echte Dateiumbenennung entsperrt die Kampagnendatenbank. Ein neuer Lauf des Entwicklungsbuilds erreicht den berittenen Helden, die Lebensherzen und das Tutorial. Bewegung und Drehen per Tastatur funktionieren.",
+      "strengths": [
+        "Hauptmenü, Kampagnenerstellung und die erste steuerbare Tutorialszene wurden geprüft."
+      ],
+      "limits": [
+        "Starke Farb- und Beleuchtungsfehler, große schwarze Bereiche und fehlender Text bleiben. Beim Start treten auch Bildlesefehler auf. Spielstandladen, hörbare Audioqualität und vollständiges Durchspielen sind ungeprüft."
+      ],
+      "performance": "Keine längere FPS-Messung in diesem Aufnahmelauf. RTX 3070 Ti, 1920×1080-Ausgabe, Speed-Profil; vorhandene Caches beibehalten.",
+      "imageAlt": "Minecraft-Legends-Tutorial mit berittenem Helden, Lebensherzen, falschen Farben und schwarzen Bereichen"
+    },
     "police-simulator-patrol-officers": {
       "status": "Intro/Menü · Grafikfehler",
       "headline": "Karriere und Bezirksauswahl erreicht",
@@ -516,6 +529,11 @@ const de: Content = {
   },
 
   history: {
+    "minecraft-legends-gameplay-20261013": {
+      "title": "Kampagnendatenbank repariert und erstes Gameplay aufgenommen",
+      "summary": "Echte rename-Operationen ersetzen die Nicht-unterstützt-Fehler und ermöglichen LevelDB das Anlegen der CURRENT-Datei. Alle 653 HLE-Tests bestehen. Der erneute Lauf erreicht das steuerbare Tutorial; schwere Grafik- und Textfehler bleiben. Entwicklungsbuild, kein Nachweis eines vollständigen Durchspielens.",
+      "imageAlt": "Minecraft-Legends-Tutorial mit berittenem Helden, Lebensherzen, falschen Farben und schwarzen Bereichen"
+    },
     "police-simulator-career-20261012": {
       "title": "Karriere und Bezirksauswahl erreicht",
       "summary": "PPSA05831 v01.000.000: Start, New Career und Bezirksbestätigung funktionieren. Hellgrüne Bildfehler überdecken den Menühintergrund; gespiegelte Oberfläche und rekursive Bildkopien behindern die Schichtauswahl. Straßenspiel wurde nicht verifiziert.",

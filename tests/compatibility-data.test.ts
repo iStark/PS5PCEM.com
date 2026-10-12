@@ -25,6 +25,7 @@ describe("compatibility dataset", () => {
   it("covers every title listed in project-status.md", () => {
     expect(compatibility.map((entry) => entry.title).sort()).toEqual(
       [
+        "Minecraft Legends",
         "PAC-MAN WORLD Re-PAC",
         "Charon's Staircase",
         "Medieval Dynasty",
@@ -82,7 +83,7 @@ describe("compatibility dataset", () => {
   });
 
   it("keeps in-game titles with severe defects short of playable", () => {
-    for (const slug of ["dead-cells", "ghost-of-yotei", "gta-iii-definitive-edition", "monster-boy-and-the-cursed-kingdom"]) {
+    for (const slug of ["minecraft-legends", "dead-cells", "ghost-of-yotei", "gta-iii-definitive-edition", "monster-boy-and-the-cursed-kingdom"]) {
       const game = findBySlug(slug);
       expect(game).toBeDefined();
       expect(game!.tier, slug).toBe("ingame");
@@ -109,7 +110,7 @@ describe("compatibility dataset", () => {
   it("attributes every measurement to the documented test host", () => {
     expect(compatibilityMeta.host).toBe("NVIDIA GeForce RTX 3070 Ti");
     expect(compatibilityMeta.testedOnRelease).toBe("0.3.2");
-    expect(compatibilityMeta.confirmedOn).toBe("2026-10-12");
+    expect(compatibilityMeta.confirmedOn).toBe("2026-10-13");
   });
 
   it("gives every entry a unique slug and a known tier", () => {
@@ -206,6 +207,7 @@ describe("test history", () => {
       ["arcade-spirits-pthread-semaphores", null],
       ["super-woden-gp-pthread-cleanup", null],
       ["keywe-pthread-audio3d", null],
+      ["minecraft-legends-gameplay-20261013", null],
       ["police-simulator-career-20261012", null],
       ["monster-boy-gameplay-20261012", null],
       ["oxide-room-104-startup-20261011", null],
@@ -215,7 +217,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(22);
+    expect(history.filter((run) => run.release === null)).toHaveLength(23);
   });
 
   it("references captures that exist in public/", () => {

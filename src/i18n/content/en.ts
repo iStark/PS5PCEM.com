@@ -29,6 +29,19 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "minecraft-legends": {
+      "status": "In-game · severe rendering defects",
+      "headline": "Opening tutorial reached; movement verified",
+      "summary": "PPSA05510 v01.013.000: Native file rename unblocks the campaign database. A fresh development-build run reaches the mounted hero, health hearts and tutorial. Keyboard movement and turning work.",
+      "strengths": [
+        "Main menu, campaign creation and the first controllable tutorial scene are verified."
+      ],
+      "limits": [
+        "Severe color and lighting corruption, large black regions and missing text remain. Startup also logs image-read failures. Save reload, audible quality and completion are unverified."
+      ],
+      "performance": "No sustained FPS measurement in this capture run. RTX 3070 Ti, 1920×1080 output, Speed preset; existing caches retained.",
+      "imageAlt": "Minecraft Legends tutorial with a mounted hero, health hearts, corrupted colors and black regions"
+    },
     "police-simulator-patrol-officers": {
       "status": "Intro/menu · rendering defects",
       "headline": "Career creation and district selection reached",
@@ -542,6 +555,11 @@ const content: Content = {
   },
 
   history: {
+    "minecraft-legends-gameplay-20261013": {
+      "title": "Campaign database fix and first gameplay capture",
+      "summary": "Real rename operations replace unsupported errors and allow LevelDB to publish its CURRENT file. All 653 HLE tests pass. The repeat reaches controllable tutorial gameplay, but severe graphics and text defects remain. This is a development build, not a completed-playthrough report.",
+      "imageAlt": "Minecraft Legends tutorial with a mounted hero, health hearts, corrupted colors and black regions"
+    },
     "police-simulator-career-20261012": {
       "title": "Career creation and district selection reached",
       "summary": "PPSA05831 v01.000.000: Startup, New Career and district confirmation work. Bright green output corrupts the main-menu background; flipped UI and recursive image copies obstruct shift selection. Street gameplay was not verified.",

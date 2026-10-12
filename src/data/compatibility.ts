@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    "slug": "minecraft-legends",
+    "title": "Minecraft Legends",
+    "tier": "ingame",
+    "confirmedOn": "2026-10-13",
+    "image": "/images/minecraft-legends-gameplay-2026-10-13.jpg"
+  },
+  {
     "slug": "police-simulator-patrol-officers",
     "title": "Police Simulator: Patrol Officers",
     "tier": "intro",
@@ -235,7 +242,7 @@ export const compatibility: CompatibilityEntry[] = [
 
 export const compatibilityMeta = {
   /** Newest maintainer confirmation across the dataset. */
-  confirmedOn: "2026-10-12",
+  confirmedOn: "2026-10-13",
   testedOnRelease: "0.3.2",
   host: "NVIDIA GeForce RTX 3070 Ti",
 } as const;

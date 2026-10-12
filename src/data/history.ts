@@ -38,6 +38,15 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    "id": "minecraft-legends-gameplay-20261013",
+    "slug": "minecraft-legends",
+    "date": "2026-10-13",
+    "recordedAt": "2026-10-13T00:17:25+03:00",
+    "release": null,
+    "source": "https://github.com/iStark/PS5PCEM/blob/main/docs/development/minecraft-legends-campaign-2026-10-13.md",
+    "image": "/images/minecraft-legends-gameplay-2026-10-13.jpg"
+  },
+  {
     "id": "police-simulator-career-20261012",
     "slug": "police-simulator-patrol-officers",
     "date": "2026-10-12",

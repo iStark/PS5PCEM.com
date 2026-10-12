@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const zh: Content = {
   games: {
+    "minecraft-legends": {
+      "status": "进入游戏 · 严重画面缺陷",
+      "headline": "已进入初始教程，并验证移动操作",
+      "summary": "PPSA05510 v01.013.000：实现真正的文件重命名后，战役数据库能够正常创建。重新运行开发版本后，已进入显示骑乘英雄、生命值爱心和教程提示的场景。键盘移动和转向有效。",
+      "strengths": [
+        "已验证主菜单、战役创建和首个可控制的教程场景。"
+      ],
+      "limits": [
+        "仍有严重的色彩和光照错误、大块黑色区域以及文字缺失。启动阶段还记录了图像读取失败。尚未验证存档重载、音频质量或通关。"
+      ],
+      "performance": "本次截图运行未进行持续 FPS 测量。RTX 3070 Ti，1920×1080 输出，Speed 预设；保留现有缓存。",
+      "imageAlt": "Minecraft Legends 教程中的骑乘英雄、生命值爱心、错误色彩和黑色区域"
+    },
     "police-simulator-patrol-officers": {
       "status": "开场/菜单 · 图形缺陷",
       "headline": "已进入生涯创建和地区选择",
@@ -497,6 +510,11 @@ const zh: Content = {
   },
 
   history: {
+    "minecraft-legends-gameplay-20261013": {
+      "title": "修复战役数据库并记录首张实机游戏截图",
+      "summary": "真正的 rename 操作替代了不支持错误，使 LevelDB 能够创建 CURRENT 文件。653 项 HLE 测试全部通过。重新运行后进入可控制的教程，但严重的画面和文字缺陷仍然存在。这是开发版本记录，并非通关验证。",
+      "imageAlt": "Minecraft Legends 教程中的骑乘英雄、生命值爱心、错误色彩和黑色区域"
+    },
     "police-simulator-career-20261012": {
       "title": "已进入生涯创建和地区选择",
       "summary": "PPSA05831 v01.000.000: 启动、New Career 和地区确认可用。主菜单背景出现强烈绿色错误；上下翻转的界面和递归重复的画面妨碍班次选择。未验证街头实际游玩。",

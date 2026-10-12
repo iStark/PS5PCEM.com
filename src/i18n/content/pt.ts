@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const pt: Content = {
   games: {
+    "minecraft-legends": {
+      "status": "Em jogo · falhas gráficas graves",
+      "headline": "Tutorial inicial alcançado; movimento verificado",
+      "summary": "PPSA05510 v01.013.000: A renomeação real de arquivos desbloqueia o banco de dados da campanha. Uma nova execução da versão em desenvolvimento chega ao herói montado, aos corações de vida e ao tutorial. Movimento e mudanças de direção pelo teclado funcionam.",
+      "strengths": [
+        "Menu principal, criação da campanha e primeira cena controlável do tutorial verificados."
+      ],
+      "limits": [
+        "Persistem cores e iluminação muito distorcidas, grandes áreas pretas e texto incompleto. A inicialização também registra falhas de leitura de imagens. Carregamento de saves, qualidade do áudio e conclusão do jogo não foram verificados."
+      ],
+      "performance": "Não houve medição prolongada de FPS nesta captura. RTX 3070 Ti, saída 1920×1080, perfil Speed; caches existentes preservados.",
+      "imageAlt": "Tutorial de Minecraft Legends com herói montado, corações de vida, cores distorcidas e áreas pretas"
+    },
     "police-simulator-patrol-officers": {
       "status": "Introdução/menu · falhas gráficas",
       "headline": "Criação de carreira e seleção de distrito alcançadas",
@@ -516,6 +529,11 @@ const pt: Content = {
   },
 
   history: {
+    "minecraft-legends-gameplay-20261013": {
+      "title": "Correção do banco da campanha e primeira captura de gameplay",
+      "summary": "Operações rename reais substituem os erros de função não suportada e permitem ao LevelDB criar CURRENT. Todos os 653 testes HLE passam. A nova execução chega ao tutorial controlável, mas falhas gráficas e de texto graves permanecem. Versão em desenvolvimento, sem confirmação de conclusão do jogo.",
+      "imageAlt": "Tutorial de Minecraft Legends com herói montado, corações de vida, cores distorcidas e áreas pretas"
+    },
     "police-simulator-career-20261012": {
       "title": "Criação de carreira e seleção de distrito alcançadas",
       "summary": "PPSA05831 v01.000.000: Funcionam a inicialização, New Career e a confirmação do distrito. Um verde intenso corrompe o fundo do menu; a interface invertida e as cópias recursivas dificultam escolher o turno. O jogo na rua não foi verificado.",

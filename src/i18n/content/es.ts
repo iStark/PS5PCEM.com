@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const es: Content = {
   games: {
+    "minecraft-legends": {
+      "status": "En juego · fallos gráficos graves",
+      "headline": "Tutorial inicial alcanzado; movimiento verificado",
+      "summary": "PPSA05510 v01.013.000: El renombrado real de archivos desbloquea la base de datos de la campaña. Un nuevo inicio de la compilación en desarrollo llega al héroe montado, los corazones de salud y el tutorial. El movimiento y los giros con teclado funcionan.",
+      "strengths": [
+        "Se verificaron el menú principal, la creación de campaña y la primera escena controlable del tutorial."
+      ],
+      "limits": [
+        "Persisten colores e iluminación muy alterados, grandes zonas negras y texto incompleto. El inicio también registra errores de lectura de imágenes. No se verificaron la carga de partidas, la calidad del audio ni el juego completo."
+      ],
+      "performance": "No se realizó una medición prolongada de FPS en esta captura. RTX 3070 Ti, salida 1920×1080, perfil Speed; se conservaron las cachés existentes.",
+      "imageAlt": "Tutorial de Minecraft Legends con héroe montado, corazones de salud, colores alterados y zonas negras"
+    },
     "police-simulator-patrol-officers": {
       "status": "Intro/menú · fallos gráficos",
       "headline": "Creación de carrera y selección de distrito alcanzadas",
@@ -516,6 +529,11 @@ const es: Content = {
   },
 
   history: {
+    "minecraft-legends-gameplay-20261013": {
+      "title": "Corrección de la base de campaña y primera captura de juego",
+      "summary": "Las operaciones rename reales sustituyen los errores de función no admitida y permiten que LevelDB cree CURRENT. Pasan las 653 pruebas HLE. El nuevo intento llega al tutorial controlable, pero persisten fallos gráficos y de texto graves. Compilación en desarrollo, sin confirmar una partida completa.",
+      "imageAlt": "Tutorial de Minecraft Legends con héroe montado, corazones de salud, colores alterados y zonas negras"
+    },
     "police-simulator-career-20261012": {
       "title": "Creación de carrera y selección de distrito alcanzadas",
       "summary": "PPSA05831 v01.000.000: Funcionan el inicio, New Career y la confirmación del distrito. Un verde intenso corrompe el fondo del menú; la interfaz invertida y las copias recursivas dificultan elegir turno. No se verificó el juego en la calle.",
