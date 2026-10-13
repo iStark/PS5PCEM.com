@@ -389,20 +389,20 @@ const pt: Content = {
       headline:
         "Os menus e a árvore aparecem, com defeitos visíveis e uma taxa de quadros muito baixa.",
       summary:
-        "É o caso de teste mais difícil do projeto e o mais documentado. Os filmes de introdução têm som, os avisos de bônus e a calibração de brilho aparecem, e cenas 3D tardias, incluindo a da árvore, chegam à tela. Nada disso é jogável: os quadros de cena chegam bem abaixo de 1 FPS, e nenhuma partida completa é afirmada.",
+        "Carregamento, avisos de bônus, calibração de brilho e árvore com configurações aparecem. Testes anteriores chegaram a uma cinemática incompleta após a árvore. Em 13 de outubro, árvore/configurações registram 1,27 FPS; defeitos gráficos e longas pausas de compilação permanecem. Esta investigação não chegou ao controle do personagem.",
       strengths: [
         "Os filmes de introdução rodam a cerca de seus 30 FPS nativos, com o som começando em sincronia com a trilha.",
         "O indicador de carregamento, os avisos de bônus e a tela de calibração com a imagem do lobo, o controle deslizante e o aviso são todos desenhados.",
         "Cenas 3D tardias, incluindo a da árvore, chegam à tela com a música do menu audível.",
       ],
       limits: [
-        "O jogo em si — mover um personagem por um mundo carregado — continua não verificado.",
-        "A preparação de cenas é extremamente lenta, e um quadro de transição foi medido em 167,2 s, dos quais 164,8 s criaram 206 pipelines de computação.",
-        "Duas verificações recentes pararam esperando a conclusão da GPU antes da cena da árvore e foram encerradas de propósito depois do diagnóstico.",
-        "Chamadas de desenho indiretas inválidas, uma falha de contador corrompido, rastros e brilho excessivo seguem todos em aberto.",
+        "O controle do personagem continua sem verificação.",
+        "Listras brilhantes, iluminação incompleta e vínculos de recursos não resolvidos permanecem.",
+        "Compilação inicial, grandes transferências e alto consumo de memória atrasam transições.",
+        "O travamento BVH anterior continua aberto; a sincronização das capturas não comprova estabilidade em execuções normais.",
       ],
       performance:
-        "Medições de referência da árvore em 3 de outubro antes da mudança de estados dinâmicos: 0,83–0,97 FPS contando quadros apresentados durante 30 segundos. O resultado anterior de 0,73 FPS é histórico. São medições da árvore e da configuração, não da jogabilidade após a cena. Históricos de cache diferentes impedem uma comparação controlada antes e depois.",
+        "13 de outubro: 38 quadros apresentados em 30,001 segundos (1,27 FPS), árvore/configurações, RTX 3070 Ti, saída 1080p. Um quadro com compilação inicial leva 461,2 segundos, sendo 433,5 na criação de pipelines gráficos e de computação. São intervalos diferentes, não uma comparação controlada. Não há ganho de FPS medido para a última alteração de memória.",
       imageAlt:
         "Aviso Digital Deluxe Bonus de Ghost of Yōtei, renderizado pelo PS5PCEM",
     },
@@ -542,6 +542,11 @@ const pt: Content = {
   },
 
   history: {
+    "yotei-renderer-followup-20261013": {
+      "title": "Melhorias gerais do renderizador e repetições completas de computação",
+      "summary": "Build em desenvolvimento de 13 de outubro: árvore e configurações apresentam 38 quadros em 30,001 segundos (1,27 FPS). As alterações reduzem comandos Vulkan e cópias de camadas repetidos, indexam metadados de shaders, compactam shaders grandes de snapshots e liberam capacidade excedente de quadros na RAM. Os testes nativos passam; duas repetições completas reproduzem byte a byte todos os 26 e 25 buffers vinculados. Listras, iluminação incorreta, grandes transferências e compilação inicial lenta permanecem. O travamento anterior na travessia BVH continua aberto: capturas adicionam sincronização. Os testes foram interrompidos com pouca memória disponível no Windows. Controle do personagem e ganho de FPS não foram confirmados; a última alteração de memória ainda não foi medida no jogo.",
+      "imageAlt": ""
+    },
     "goat-simulator-3-gameplay-20261013": {
       "title": "Primeira captura de gameplay na fazenda e medição de FPS",
       "summary": "PPSA04158 v01.000.000: Com os arquivos completos, a versão de desenvolvimento existente passa pelo longo carregamento do mundo e pela introdução da carroça. Aparecem a cabra, a bússola e a missão Goat Castle; movimento pelo teclado verificado. Mediana de 1,8 FPS (1,7–1,8): 30 leituras do contador da janela em 30,011 segundos sem movimento. RTX 3070 Ti, saída 1080p, alvos internos até 3200×1800, perfil Speed; caches mantidos. A cena e o HUD continuam invertidos verticalmente após fechar a pausa; as transições repetem partes do quadro. Persistem defeitos de materiais, imagens de armazenamento 3D não suportadas e vínculos de recursos não resolvidos. Áudio, recarga dos saves, multijogador e conclusão não verificados.",

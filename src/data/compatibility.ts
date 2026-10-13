@@ -206,7 +206,7 @@ export const compatibility: CompatibilityEntry[] = [
     title: "Ghost of Yōtei",
     tier: "ingame",
     image: "/images/yotei-null-images-bonus.png",
-    confirmedOn: "2026-10-01",
+    confirmedOn: "2026-10-13",
   },
   {
     slug: "subnautica-below-zero",

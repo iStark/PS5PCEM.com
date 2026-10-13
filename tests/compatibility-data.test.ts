@@ -209,6 +209,7 @@ describe("test history", () => {
       ["super-woden-gp-pthread-cleanup", null],
       ["keywe-pthread-audio3d", null],
       ["goat-simulator-3-gameplay-20261013", null],
+      ["yotei-renderer-followup-20261013", null],
       ["minecraft-legends-gameplay-20261013", null],
       ["police-simulator-career-20261012", null],
       ["monster-boy-gameplay-20261012", null],
@@ -219,7 +220,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(24);
+    expect(history.filter((run) => run.release === null)).toHaveLength(25);
   });
 
   it("references captures that exist in public/", () => {
@@ -285,7 +286,7 @@ describe("English source prose", () => {
     expect(games["ritas-rewind"].performance).toContain("13–20 ms");
     expect(games["big-helmet-heroes"].performance).toContain("9.4 FPS");
     expect(games["tetris-effect-connected"].performance).toContain("235 ms");
-    expect(games["ghost-of-yotei"].performance).toContain("0.73 FPS");
+    expect(games["ghost-of-yotei"].performance).toContain("1.27 FPS");
     expect(games["subnautica-below-zero"].performance).toContain("15.50 FPS");
     expect(games["subnautica-below-zero"].performance).toContain("12.70 and 8.50 FPS");
     expect(games["subnautica-below-zero"].performance).toContain("10.60 FPS combined");

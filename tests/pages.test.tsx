@@ -216,8 +216,13 @@ describe("title detail page", () => {
       ).toBeInTheDocument();
     }
 
-    // The October 5 work was included in 0.3.3, published that night in Minsk.
-    expect(runs[0].date).toBe("2026-10-05");
+    // The October 13 follow-up is unreleased; October 5 remains in 0.3.3.
+    expect(runs[0].date).toBe("2026-10-13");
+    expect(runs[0].release).toBeNull();
+    const latest = screen.getByRole("heading", {
+      name: getHistoryContent("en", runs[0].id).title,
+    }).closest("article")!;
+    expect(within(latest).getByText("Development build")).toBeInTheDocument();
     expect(
       screen.getAllByText("Release 0.3.3").length,
     ).toBeGreaterThan(0);

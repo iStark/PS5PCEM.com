@@ -38,6 +38,13 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    "id": "yotei-renderer-followup-20261013",
+    "slug": "ghost-of-yotei",
+    "date": "2026-10-13",
+    "release": null,
+    "source": "https://github.com/iStark/PS5PCEM/blob/main/docs/development/yotei-renderer-followup-2026-10-13.md"
+  },
+  {
     "id": "goat-simulator-3-gameplay-20261013",
     "slug": "goat-simulator-3",
     "date": "2026-10-13",

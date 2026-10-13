@@ -416,20 +416,20 @@ const content: Content = {
       headline:
         "Menus and the tree render, with visible defects and very low frame rates.",
       summary:
-        "This is the project's hardest test case and its most documented one. Intro movies play with sound, the bonus notices and brightness calibration appear, and later 3D scenes including the tree scene reach the screen. None of that is playable: scene frames arrive at well under 1 FPS, and a complete playthrough is not claimed.",
+        "Loading, bonus notices, brightness calibration and the tree/settings scene render. Earlier runs reached an incomplete post-tree cinematic. The October 13 repeat measures 1.27 FPS at the tree/settings sequence; graphical defects and long compilation stalls remain. Controllable gameplay has not been reached in this investigation.",
       strengths: [
         "Intro movies play at roughly their native 30 FPS, with audio starting in step with the track.",
         "The loading indicator, bonus notices and the brightness calibration screen with its wolf image, slider and prompt all render.",
         "Later 3D scenes, including the tree scene, reach the screen with menu music audible.",
       ],
       limits: [
-        "Gameplay — moving a character through a loaded world — remains unverified.",
-        "Scene preparation is extremely slow, and a transition frame was measured at 167.2 s, of which 164.8 s created 206 compute pipelines.",
-        "Two recent checks stalled awaiting GPU completion before the tree scene and were terminated deliberately after diagnostics.",
-        "Invalid indirect draws, a corrupt-count failure, streaking and excessive brightness are all still open.",
+        "Character control remains unverified.",
+        "Bright tree streaks, incomplete lighting and unresolved resource bindings remain.",
+        "First-use pipeline compilation, large transfers and high memory use still dominate some transitions.",
+        "An earlier BVH traversal stall remains unresolved; captures add synchronization, so successful replay does not establish normal-run stability.",
       ],
       performance:
-        "October 3 baseline tree measurements before the dynamic-state change: 0.83–0.97 FPS over 30-second presentation-counter intervals. The earlier 0.73 FPS result is historical. These are tree/setup measurements, not post-cinematic gameplay. Different cache histories prevent a controlled before/after comparison.",
+        "October 13: 38 presented frames in 30.001 seconds (1.27 FPS), tree/settings sequence on RTX 3070 Ti at 1080p output. One first-use frame takes 461.2 seconds, including 433.5 seconds creating graphics and compute pipelines. These are different intervals, not a controlled before/after comparison. No FPS gain is established for the final memory change.",
       imageAlt:
         "Ghost of Yōtei Digital Deluxe Bonus notice, rendered by PS5PCEM",
     },
@@ -568,6 +568,11 @@ const content: Content = {
   },
 
   history: {
+    "yotei-renderer-followup-20261013": {
+      "title": "Shared renderer improvements and complete compute replays",
+      "summary": "October 13 development build: the tree/settings sequence presents 38 frames in 30.001 seconds (1.27 FPS). Changes reduce redundant Vulkan state commands and array-layer copies, index shader metadata reads, compact large snapshot shaders and release excessive CPU frame capacity. Native probes pass; two complete compute replays reproduce all 26 and 25 bound buffers byte for byte. Tree streaks, lighting defects, heavy transfers and first-use compilation remain. An earlier BVH traversal stall is unresolved: diagnostic captures add synchronization and cannot prove it fixed. Runs were stopped with low Windows memory headroom. Character control and a controlled FPS gain remain unverified; the final frame-memory change has no live benchmark.",
+      "imageAlt": ""
+    },
     "goat-simulator-3-gameplay-20261013": {
       "title": "First farm gameplay capture and stationary FPS sample",
       "summary": "PPSA04158 v01.000.000: With the complete game files, the existing development runner passes the long world load and cart introduction. The goat, compass and Goat Castle objective appear; keyboard movement is verified. 1.8 FPS median (1.7–1.8), 30 stationary window-counter samples over 30.011 seconds. RTX 3070 Ti, 1080p output, internal targets up to 3200×1800, Speed preset; caches retained. The scene and HUD stay vertically inverted after closing pause; menu transitions repeat subframes. Shading artifacts, unsupported 3D storage images and unresolved bindings remain. Audio quality, save reload, multiplayer and completion are unverified.",
