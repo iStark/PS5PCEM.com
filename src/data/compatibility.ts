@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    slug: "astro-bot",
+    title: "ASTRO BOT",
+    tier: "intro",
+    confirmedOn: "2026-10-13",
+    image: "/images/astro-bot-wave64-lighting-2026-10-13.png",
+  },
+  {
     "slug": "goat-simulator-3",
     "title": "Goat Simulator 3",
     "tier": "ingame",

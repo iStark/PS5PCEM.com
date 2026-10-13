@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const pt: Content = {
   games: {
+    "astro-bot": {
+      "status": "Cinemática de diagnóstico · defeitos gráficos",
+      "headline": "A cinemática de chegada apresenta menos falhas de iluminação",
+      "summary": "PPSA21564 v1.018: Aliases locais de fontes, propagação acústica desativada e seleção nativa do nível central permitem chegar à cinemática de chegada. As correções SDWA e wave32/wave64 eliminam a corrupção verde e as frequentes faixas horizontais.",
+      "strengths": [
+        "Os testes GPU de desvios escalares e barreiras LDS passam. As capturas BVH verificadas, ativadas para diagnóstico, concluem a consulta ativa capturada."
+      ],
+      "limits": [
+        "Faltam fontes nos arquivos originais; persistem superfícies escuras e manchadas. A preparação BVH geral está desativada por padrão. Inicialização normal, controle do personagem e conclusão não verificados."
+      ],
+      "performance": "RTX 3070 Ti, saída 1920×1080, Speed; caches mantidos. Alguns quadros da cinemática em movimento levam 339–2332 ms. Sem medição FPS com câmera fixa ou ganho de velocidade demonstrado; superfícies internas chegam a 2432×1368 e 4K.",
+      "imageAlt": "Cinemática de chegada de ASTRO BOT com uma pequena nave e uma nave caída; persistem superfícies escuras e manchadas"
+    },
     "goat-simulator-3": {
       "status": "Em jogo · imagem invertida · FPS baixos",
       "headline": "Cena controlável na fazenda alcançada",
@@ -542,6 +555,16 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-lighting-20261013": {
+      "title": "Sincronização de waves elimina faixas de iluminação",
+      "summary": "Desvios escalares de toda a wave e barreiras LDS convergentes corrigem as faixas repetidas. Limites BVH e ponteiros opacos de nós filhos são corrigidos; capturas PSR v9 opcionais concluem a consulta com limite de 16 384 blocos. Amostras posteriores não registram falhas draw/dispatch, mas quatro programas foram rejeitados antes da ativação. Superfícies escuras/manchadas persistem; jogabilidade e ganho sustentado de FPS não verificados.",
+      "imageAlt": "Cinemática de chegada de ASTRO BOT com uma pequena nave e uma nave caída; persistem superfícies escuras e manchadas"
+    },
+    "astro-bot-startup-20261013": {
+      "title": "Correções de inicialização e da corrupção verde",
+      "summary": "Correções JSON, APR, fontes e shaders permitem chegar à cinemática de diagnóstico com aliases locais de fontes e propagação acústica desativada. A correção SDWA elimina a forte corrupção verde; esse primeiro teste ainda rejeita quatro programas de computação BVH. O controle do personagem não foi confirmado.",
+      "imageAlt": "Cinemática de chegada de ASTRO BOT com uma pequena nave e uma nave caída; persistem superfícies escuras e manchadas"
+    },
     "yotei-renderer-followup-20261013": {
       "title": "Melhorias gerais do renderizador e repetições completas de computação",
       "summary": "Build em desenvolvimento de 13 de outubro: árvore e configurações apresentam 38 quadros em 30,001 segundos (1,27 FPS). As alterações reduzem comandos Vulkan e cópias de camadas repetidos, indexam metadados de shaders, compactam shaders grandes de snapshots e liberam capacidade excedente de quadros na RAM. Os testes nativos passam; duas repetições completas reproduzem byte a byte todos os 26 e 25 buffers vinculados. Listras, iluminação incorreta, grandes transferências e compilação inicial lenta permanecem. O travamento anterior na travessia BVH continua aberto: capturas adicionam sincronização. Os testes foram interrompidos com pouca memória disponível no Windows. Controle do personagem e ganho de FPS não foram confirmados; a última alteração de memória ainda não foi medida no jogo.",

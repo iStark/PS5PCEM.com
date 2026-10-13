@@ -2,6 +2,19 @@ import type { Content } from "./en";
 
 const de: Content = {
   games: {
+    "astro-bot": {
+      "status": "Diagnostische Zwischensequenz · Grafikfehler",
+      "headline": "Ankunftssequenz mit weniger Beleuchtungsfehlern",
+      "summary": "PPSA21564 v1.018: Lokale Schrift-Aliase, deaktivierte Schallausbreitung und die interne Hub-Levelauswahl ermöglichen die Ankunftssequenz. SDWA- und wave32/wave64-Korrekturen beseitigen die Grünverfärbung und häufige horizontale Beleuchtungsstreifen.",
+      "strengths": [
+        "GPU-Regressionstests für skalare Verzweigungen und LDS-Barrieren bestehen. Optionale geprüfte BVH-Snapshots schließen die erfasste aktive Abfrage ab."
+      ],
+      "limits": [
+        "Benötigte Schriften fehlen in den Quelldateien; dunkle und fleckige Flächen bleiben. Allgemeines BVH-Staging ist standardmäßig deaktiviert. Normaler Start, Figurensteuerung und Durchspielen sind nicht bestätigt."
+      ],
+      "performance": "RTX 3070 Ti, Ausgabe 1920×1080, Speed; Caches beibehalten. Einzelne Bilder der bewegten Sequenz benötigen 339–2.332 ms. Kein stationärer FPS-Test oder nachgewiesener Geschwindigkeitsgewinn; interne Flächen erreichen 2432×1368 und 4K.",
+      "imageAlt": "ASTRO BOT Ankunftssequenz mit kleinem Fluggerät und abgestürztem Schiff; dunkle und fleckige Flächen bleiben"
+    },
     "goat-simulator-3": {
       "status": "Im Spiel · Bild kopfüber · niedrige FPS",
       "headline": "Steuerbare Farmszene erreicht",
@@ -542,6 +555,16 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-lighting-20261013": {
+      "title": "Wellensynchronisierung beseitigt horizontale Beleuchtungsstreifen",
+      "summary": "Skalare Verzweigungen für die gesamte Wave und konvergente LDS-Barrieren beheben die Streifen. BVH-Grenzen und opake Kindzeiger sind korrigiert; optionale PSR-v9-Snapshots schließen die erfasste Abfrage mit einem Limit von 16.384 Blöcken ab. Spätere Stichproben zeigen keine Draw-/Dispatch-Fehler, aber vier Programme wurden vor Aktivierung abgelehnt. Dunkle/fleckige Flächen bleiben; Gameplay und dauerhafter FPS-Gewinn sind nicht bestätigt.",
+      "imageAlt": "ASTRO BOT Ankunftssequenz mit kleinem Fluggerät und abgestürztem Schiff; dunkle und fleckige Flächen bleiben"
+    },
+    "astro-bot-startup-20261013": {
+      "title": "Startkorrekturen und Beseitigung der Grünverfärbung",
+      "summary": "JSON-, APR-, Schrift- und Shaderkorrekturen ermöglichen die diagnostische Hub-Sequenz mit lokalen Schrift-Aliasen und deaktivierter Schallausbreitung. Die SDWA-Korrektur beseitigt starke Grünverfärbungen; bei diesem ersten Stand werden noch vier BVH-Compute-Programme abgelehnt. Figurensteuerung ist nicht bestätigt.",
+      "imageAlt": "ASTRO BOT Ankunftssequenz mit kleinem Fluggerät und abgestürztem Schiff; dunkle und fleckige Flächen bleiben"
+    },
     "yotei-renderer-followup-20261013": {
       "title": "Gemeinsame Renderer-Verbesserungen und vollständige Compute-Wiederholungen",
       "summary": "Entwicklungsbuild vom 13. Oktober: Baum und Einstellungen liefern 38 Bilder in 30,001 Sekunden (1,27 FPS). Änderungen reduzieren wiederholte Vulkan-Zustandsbefehle und Kopien von Texturschichten, indexieren Shader-Metadaten, verkleinern große Snapshot-Shader und geben überschüssigen CPU-Bildspeicher frei. Native Prüfungen bestehen; zwei vollständige Compute-Wiederholungen reproduzieren alle 26 beziehungsweise 25 gebundenen Puffer bytegenau. Streifen am Baum, Beleuchtungsfehler, große Transfers und die Erstkompilierung bleiben. Ein früherer BVH-Hänger ist ungelöst: Diagnoseaufnahmen synchronisieren zusätzlich und belegen keine Behebung. Die Läufe wurden bei knappem Windows-Speicher beendet. Figurensteuerung und FPS-Zuwachs sind unbestätigt; die letzte Bildspeicheränderung wurde noch nicht im Spiel gemessen.",

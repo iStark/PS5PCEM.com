@@ -38,6 +38,22 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "astro-bot-lighting-20261013",
+    slug: "astro-bot",
+    date: "2026-10-13",
+    release: null,
+    image: "/images/astro-bot-wave64-lighting-2026-10-13.png",
+    source: devReport("astro-bot-startup-2026-10-13.md#follow-up-bvh-and-optional-lighting-branches"),
+  },
+  {
+    id: "astro-bot-startup-20261013",
+    slug: "astro-bot",
+    date: "2026-10-13",
+    release: null,
+    image: "/images/astro-bot-arrival-2026-10-13.png",
+    source: devReport("astro-bot-startup-2026-10-13.md"),
+  },
+  {
     "id": "yotei-renderer-followup-20261013",
     "slug": "ghost-of-yotei",
     "date": "2026-10-13",

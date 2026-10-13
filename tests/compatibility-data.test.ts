@@ -25,6 +25,7 @@ describe("compatibility dataset", () => {
   it("covers every title listed in project-status.md", () => {
     expect(compatibility.map((entry) => entry.title).sort()).toEqual(
       [
+        "ASTRO BOT",
         "Goat Simulator 3",
         "Minecraft Legends",
         "PAC-MAN WORLD Re-PAC",
@@ -93,6 +94,7 @@ describe("compatibility dataset", () => {
 
   it("keeps titles with unverified gameplay short of playable", () => {
     for (const slug of [
+      "astro-bot",
       "pac-man-world-re-pac",
       "medieval-dynasty",
       "oxide-room-104",
@@ -210,6 +212,8 @@ describe("test history", () => {
       ["keywe-pthread-audio3d", null],
       ["goat-simulator-3-gameplay-20261013", null],
       ["yotei-renderer-followup-20261013", null],
+      ["astro-bot-startup-20261013", null],
+      ["astro-bot-lighting-20261013", null],
       ["minecraft-legends-gameplay-20261013", null],
       ["police-simulator-career-20261012", null],
       ["monster-boy-gameplay-20261012", null],
@@ -220,7 +224,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(25);
+    expect(history.filter((run) => run.release === null)).toHaveLength(27);
   });
 
   it("references captures that exist in public/", () => {

@@ -29,6 +29,19 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "astro-bot": {
+      "status": "Diagnostic cinematic · rendering defects",
+      "headline": "Arrival cinematic renders with fewer lighting defects",
+      "summary": "PPSA21564 v1.018: A local font-alias overlay, disabled acoustic propagation and native hub level selection reach the arrival cinematic. SDWA and wave32/wave64 fixes remove green corruption and frequent horizontal lighting bands.",
+      "strengths": [
+        "Scalar-branch and LDS-barrier GPU regressions pass. Opt-in checked BVH snapshots complete the captured active query."
+      ],
+      "limits": [
+        "Source fonts are missing; dark and patchy surfaces remain. Generic BVH staging is off by default. Ordinary startup, character control and completion are unverified."
+      ],
+      "performance": "RTX 3070 Ti, 1920×1080 output, Speed; caches retained. Selected moving-cinematic frames take 339–2,332 ms. No stationary FPS benchmark or demonstrated speedup; internal surfaces still reach 2432×1368 and 4K.",
+      "imageAlt": "ASTRO BOT arrival cinematic with the small craft and crashed ship; dark and patchy surfaces remain"
+    },
     "goat-simulator-3": {
       "status": "In-game · inverted image · low FPS",
       "headline": "Controllable farm scene reached",
@@ -568,6 +581,16 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-lighting-20261013": {
+      "title": "Wave synchronization removes horizontal lighting bands",
+      "summary": "Whole-wave scalar branches and converged LDS barriers fix the repeating bands. BVH bounds and opaque child pointers are corrected; opt-in PSR v9 snapshots complete the captured query with a 16,384-block budget. Later sampled frames report no draw/dispatch failures, but four warm-up programs were rejected before the switch was enabled. Dark/patchy surfaces remain; gameplay and a sustained FPS gain are unverified.",
+      "imageAlt": "ASTRO BOT arrival cinematic with the small craft and crashed ship; dark and patchy surfaces remain"
+    },
+    "astro-bot-startup-20261013": {
+      "title": "Startup fixes and removal of green corruption",
+      "summary": "JSON, APR, font and shader fixes reach the diagnostic hub cinematic using local font aliases and disabled acoustic propagation. The SDWA correction removes severe green corruption; this first checkpoint still rejects four BVH compute programs. Character control is not established.",
+      "imageAlt": "ASTRO BOT arrival cinematic with the small craft and crashed ship; dark and patchy surfaces remain"
+    },
     "yotei-renderer-followup-20261013": {
       "title": "Shared renderer improvements and complete compute replays",
       "summary": "October 13 development build: the tree/settings sequence presents 38 frames in 30.001 seconds (1.27 FPS). Changes reduce redundant Vulkan state commands and array-layer copies, index shader metadata reads, compact large snapshot shaders and release excessive CPU frame capacity. Native probes pass; two complete compute replays reproduce all 26 and 25 bound buffers byte for byte. Tree streaks, lighting defects, heavy transfers and first-use compilation remain. An earlier BVH traversal stall is unresolved: diagnostic captures add synchronization and cannot prove it fixed. Runs were stopped with low Windows memory headroom. Character control and a controlled FPS gain remain unverified; the final frame-memory change has no live benchmark.",
