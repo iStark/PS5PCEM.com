@@ -555,6 +555,10 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-relative-moves-20261014": {
+      "title": "Indirekte Shader-Registerzugriffe",
+      "summary": "M0-indizierte Registerbewegungen berücksichtigen nun indirekte Lese- und Schreibzugriffe, Ausführungsmasken und Schleifen. 128 native GPU-Prüfungen und 534/534 GPU/Vulkan-Tests bestanden. Die aufgewärmte Titelanimation erreichte 10,85 FPS über 1.320 Frames, vergleichbar mit dem vorherigen Build. Keine neuen Zeichen- oder Dispatch-Fehler im Protokoll. Kein neuer Screenshot und keine Bild- oder Steuerungsprüfung; das Ziel von 25 FPS bleibt unerreicht."
+    },
     "astro-bot-full-stores-20261014": {
       "title": "Nachgewiesene vollständige Bildüberschreibung",
       "summary": "Eine konservative Shader-Analyse vermeidet das Hochladen alter Ausgabepixel und erhält Padding, neuere CPU-Schreibvorgänge sowie die Wiederherstellung nach abgebrochener Vorbereitung. Native GPU-Prüfungen bestehen mit sofortigen und gebündelten Befehlen; 532 GPU/Vulkan-Tests bestehen. Vergleichbare Titelsequenzen: 9,45 FPS aktiviert gegenüber 9,36 deaktiviert, je 660 Frames, mit 25,38 MiB weniger Uploads pro Frame. Der erste Raster-Readback-Vergleich ergab 9,64 gegenüber 9,67 FPS, übersprang aber keinen Readback. 25 FPS sind nicht erreicht; keine neue Aufnahme oder Bestätigung der Figurensteuerung. Mit DCC-Rasterquellen unter denselben Abdeckungsprüfungen erreicht der abschließende Vergleich 10,95 gegenüber 9,68 FPS (je 660 Frames, etwa 13,1% schneller), mit einer vermiedenen Raster-Rücklesung pro Frame. Native Tests erhalten auch die DCC-Metadaten."

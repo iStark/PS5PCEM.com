@@ -555,6 +555,10 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-relative-moves-20261014": {
+      "title": "Accès indirects aux registres des shaders",
+      "summary": "Les déplacements indexés par M0 préservent désormais les lectures et écritures indirectes, les masques d’exécution et les boucles. 128 vérifications GPU et 534/534 tests GPU/Vulkan réussissent. L’animation du titre après préchauffage atteint 10,85 FPS sur 1 320 images, comme la version précédente. Aucun nouvel échec de dessin ou de dispatch dans le journal. Pas de nouvelle capture ni de vérification visuelle ou des commandes ; l’objectif de 25 FPS reste à atteindre."
+    },
     "astro-bot-full-stores-20261014": {
       "title": "Écriture complète des images vérifiée",
       "summary": "Une analyse conservatrice du shader évite de charger les anciens pixels de sortie tout en préservant le remplissage, les écritures CPU plus récentes et la récupération après annulation de la préparation. Les tests GPU avec commandes immédiates et groupées réussissent, ainsi que 532 tests GPU/Vulkan. Comparaison du titre : 9,45 FPS activé contre 9,36 désactivé, 660 images par réglage, avec 25,38 Mio de transferts évités par image. La première comparaison des anciennes surfaces donne 9,64 contre 9,67 FPS, mais ne supprime aucune relecture. L’objectif de 25 FPS reste non atteint ; aucune nouvelle capture ni validation du contrôle du personnage. Avec les surfaces DCC soumises aux mêmes vérifications de couverture, le résultat final atteint 10,95 contre 9,68 FPS (660 images par réglage, environ 13,1% plus rapide), avec une relecture de surface évitée par image. Les tests natifs préservent aussi les métadonnées DCC."

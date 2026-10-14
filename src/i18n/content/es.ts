@@ -555,6 +555,10 @@ const es: Content = {
   },
 
   history: {
+    "astro-bot-relative-moves-20261014": {
+      "title": "Accesos indirectos a registros de shaders",
+      "summary": "Los movimientos indexados por M0 conservan ahora lecturas y escrituras indirectas, máscaras de ejecución y bucles. Pasaron 128 comprobaciones en GPU y 534/534 pruebas GPU/Vulkan. La animación inicial con la caché preparada midió 10,85 FPS en 1320 fotogramas, similar a la compilación anterior. El registro no mostró nuevos fallos de dibujo o despacho. Sin nueva captura ni verificación visual o del control; aún no se alcanzan los 25 FPS."
+    },
     "astro-bot-full-stores-20261014": {
       "title": "Sobrescritura completa de imágenes verificada",
       "summary": "Un análisis conservador del shader evita cargar píxeles antiguos de salida y conserva el relleno, las escrituras posteriores de CPU y la recuperación tras cancelar la preparación. Pasan las pruebas GPU con comandos inmediatos y agrupados, y 532 pruebas GPU/Vulkan. Comparación del título: 9,45 FPS activado frente a 9,36 desactivado, 660 fotogramas por opción, evitando 25,38 MiB de cargas por fotograma. La primera comparación de lectura de superficies anteriores dio 9,64 frente a 9,67 FPS, sin omitir ninguna lectura. No se alcanzan 25 FPS; no hay nueva captura ni confirmación del control del personaje. Al incluir superficies con DCC bajo las mismas comprobaciones, la comparación final alcanza 10,95 frente a 9,68 FPS (660 fotogramas por ajuste, aproximadamente un 13,1% más), evitando una lectura de superficie por fotograma. Las pruebas nativas también conservan los metadatos DCC."
