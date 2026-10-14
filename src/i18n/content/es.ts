@@ -555,6 +555,10 @@ const es: Content = {
   },
 
   history: {
+    "astro-bot-gds-publication-20261014": {
+      "title": "Orden de GDS y nuevas mediciones de la secuencia inicial",
+      "summary": "Las capturas diferidas de GDS conservan los contadores tras reinicios posteriores; las transferencias agrupadas y la sobrescritura completa de imágenes superan las pruebas nativas. La secuencia inicial con caché caliente registra 9,20–9,65 FPS durante 20 segundos. Las comparaciones con los cambios activados y desactivados siguen en torno a 9–10 FPS, sin mejora confirmada. Pasan 256/256 pruebas Vulkan. Las vistas incompatibles aún causan unos 20 MiB de lectura de objetivos de renderizado por fotograma. No hay nueva captura ni comprobación del control: la automatización de ventanas no estaba disponible. No se alcanza la meta de 25–30 FPS."
+    },
     "astro-bot-performance-20261014": {
       "title": "Optimización del renderizado: mediciones del título y la multitud",
       "summary": "Compilación en desarrollo del 14 de octubre: unos 9–10 FPS en el título con cachés calientes; 46 cuadros en 10 segundos (4,60 FPS) en la multitud. Los estados de comandos compartidos, el análisis acotado de recursos, la recuperación de caché y las transferencias nativas GPU reducen costes. Pasan 272/272 pruebas GPU y 256/256 Vulkan. La última transferencia 2D storage-to-color pasa pruebas nativas, pero aún no tiene medición en el juego. Persisten defectos gráficos, el control del personaje no está verificado y no se alcanzan los 25–30 FPS. Sin captura nueva; la imagen es del 13 de octubre."

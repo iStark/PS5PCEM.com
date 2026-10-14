@@ -555,6 +555,10 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-gds-publication-20261014": {
+      "title": "GDS-Reihenfolge und erneute Messungen der Titelsequenz",
+      "summary": "Verzögerte GDS-Schnappschüsse bewahren Zählerwerte über spätere Rücksetzungen hinweg; gebündelte Transfers und vollständige Bildüberschreibungen bestehen native Prüfungen. Die aufgewärmte Titelsequenz erreicht im 20-Sekunden-Basislauf 9,20–9,65 FPS. Vergleiche mit aktivierten und deaktivierten Änderungen bleiben bei etwa 9–10 FPS und belegen keine Beschleunigung. 256/256 Vulkan-Tests bestehen. Inkompatible Bildansichten verursachen weiterhin etwa 20 MiB Renderziel-Rücklesen pro Bild. Kein neuer Screenshot oder Steuerungsnachweis: Die Fensterautomation war nicht verfügbar. Das Ziel von 25–30 FPS ist nicht erreicht."
+    },
     "astro-bot-performance-20261014": {
       "title": "Renderer-Optimierung: Messungen der Titel- und Gruppenszene",
       "summary": "Entwicklungsstand vom 14. Oktober: rund 9–10 FPS in der aufgewärmten Titelsequenz; 46 Bilder in 10 Sekunden (4,60 FPS) in der Gruppenszene. Gemeinsam genutzte Befehlszustände, begrenzte Ressourcenanalyse, Cache-Erholung und native GPU-Transfers senken den Aufwand. 272/272 GPU- und 256/256 Vulkan-Tests bestehen. Der letzte 2D-Storage-to-Color-Transfer besteht native Tests, wurde aber noch nicht im Spiel gemessen. Grafikfehler bleiben, die Figurensteuerung ist unbestätigt und 25–30 FPS sind nicht erreicht. Kein neuer Screenshot; das Bild stammt vom 13. Oktober."

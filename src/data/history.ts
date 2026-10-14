@@ -38,6 +38,13 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "astro-bot-gds-publication-20261014",
+    slug: "astro-bot",
+    date: "2026-10-14",
+    release: null,
+    source: devReport("astro-bot-renderer-performance-2026-10-14.md#follow-up-gds-snapshots-and-full-image-overwrites"),
+  },
+  {
     id: "astro-bot-performance-20261014",
     slug: "astro-bot",
     date: "2026-10-14",

@@ -581,6 +581,10 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-gds-publication-20261014": {
+      "title": "GDS ordering and repeated title measurements",
+      "summary": "Deferred GDS snapshots preserve counter values across later resets; transfer batching and full-image overwrite handling pass native checks. The follow-up warmed title baseline is 9.20–9.65 FPS over 20 seconds. Enabled/disabled comparisons remain around 9–10 FPS and do not establish a speedup. Vulkan tests pass 256/256. Incompatible image views still cause about 20 MiB of render-target readback per frame. No fresh screenshot or character-control check: window automation was unavailable. The 25–30 FPS target remains unmet."
+    },
     "astro-bot-performance-20261014": {
       "title": "Renderer optimization: title and crowd measurements",
       "summary": "October 14 development build: warmed title observations are about 9–10 FPS; the crowd scene presents 46 frames in 10 seconds (4.60 FPS). Shared command banks, bounded resource analysis, cache recovery and native GPU transfers reduce overhead. GPU tests pass 272/272 and Vulkan tests 256/256. The final 2D storage-to-color transfer passes native probes but has no live benchmark yet. Rendering defects remain, character control is unverified and the 25–30 FPS target is not reached. No new capture; the displayed image is from October 13."

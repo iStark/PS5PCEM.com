@@ -555,6 +555,10 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-gds-publication-20261014": {
+      "title": "Ordre GDS et nouvelles mesures de la séquence titre",
+      "summary": "Les instantanés GDS différés préservent les compteurs après les réinitialisations suivantes ; les transferts groupés et les réécritures complètes des images passent les tests natifs. La séquence titre préchauffée affiche 9,20–9,65 FPS sur 20 secondes. Les comparaisons avec et sans les changements restent autour de 9–10 FPS, sans gain confirmé. Les 256 tests Vulkan passent. Les vues incompatibles imposent encore environ 20 Mio de relecture des cibles de rendu par image. Aucune nouvelle capture ni vérification des commandes : l’automatisation de la fenêtre était indisponible. L’objectif de 25–30 FPS reste à atteindre."
+    },
     "astro-bot-performance-20261014": {
       "title": "Optimisation du rendu : mesures du titre et de la foule",
       "summary": "Version en développement du 14 octobre : environ 9–10 FPS sur la séquence de titre après préchauffage ; 46 images en 10 secondes (4,60 FPS) dans la foule. Le partage des états de commandes, l’analyse bornée des ressources, la récupération du cache et les transferts natifs GPU réduisent les coûts. 272/272 tests GPU et 256/256 tests Vulkan réussissent. Le dernier transfert 2D storage-to-color passe les tests natifs, sans mesure en jeu pour le moment. Des défauts graphiques persistent, le contrôle du personnage reste non vérifié et les 25–30 FPS ne sont pas atteints. Pas de nouvelle capture ; l’image date du 13 octobre."
