@@ -555,6 +555,11 @@ const es: Content = {
   },
 
   history: {
+    "astro-bot-storage-layouts-20261014": {
+      "title": "Memoria de texturas y límites exactos de bucles",
+      "summary": "Comparación del título: 14.48 frente a 14.26 FPS, 660 fotogramas por ajuste. La conversión GPU conserva el relleno; las escrituras completas verificadas evitan cargas. El análisis escalar compartido respeta límites exactos de instrucciones. Pasan 551 pruebas y las comprobaciones nativas de Vulkan. Nueva captura; 25 FPS y control del personaje sin confirmar.",
+      "imageAlt": "Pantalla inicial de ASTRO BOT tras cambios de memoria de texturas"
+    },
     "astro-bot-static-analysis-20261014": {
       "title": "Análisis estático y texturas de 8/16 bits",
       "summary": "Comparación del título: 14.25 frente a 14.19 FPS, 660 fotogramas por ajuste. Se reutiliza el análisis de llamadas/NGG y se reducen consultas de búferes y esperas Vulkan. Transformaciones GPU de 8/16 bits verificadas; las cargas storage más lentas siguen desactivadas. Pasan 548 pruebas. Nueva captura; 25 FPS y control del personaje no confirmados.",

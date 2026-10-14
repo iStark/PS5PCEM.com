@@ -581,6 +581,11 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-storage-layouts-20261014": {
+      "title": "Storage ownership and scalar loop budgets",
+      "summary": "Title comparison: 14.48 versus 14.26 FPS, 660 frames per setting. GPU layout conversion preserves padding; rectangular overwrite proofs avoid redundant uploads. Shared scalar walks use exact instruction budgets. All 551 tests and native validation probes pass. New title capture; 25 FPS and character control remain unverified.",
+      "imageAlt": "ASTRO BOT title screen after storage ownership changes"
+    },
     "astro-bot-static-analysis-20261014": {
       "title": "Static shader analysis and narrow texture layouts",
       "summary": "Title comparison: 14.25 versus 14.19 FPS, 660 frames per setting. Reused immutable call/NGG analysis, cheaper buffer queries and bounded Vulkan waits. Added verified 8/16-bit GPU layout transforms; storage uploads stay disabled after a slower comparison. 548 tests pass. New title capture; 25 FPS and character control are not confirmed.",

@@ -555,6 +555,11 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-storage-layouts-20261014": {
+      "title": "Texturspeicher und genaue Schleifenbudgets",
+      "summary": "Titelvergleich: 14.48 gegenüber 14.26 FPS, 660 Frames je Einstellung. GPU-Layoutkonvertierung erhält Padding; nachgewiesene vollständige Schreibzugriffe vermeiden Uploads. Gemeinsame Skalaranalysen beachten genaue Instruktionsbudgets. 551 Tests und native Vulkan-Prüfungen bestehen. Neue Titelaufnahme; 25 FPS und Charaktersteuerung bleiben unbestätigt.",
+      "imageAlt": "ASTRO BOT-Titelbild nach Änderungen am Texturspeicher"
+    },
     "astro-bot-static-analysis-20261014": {
       "title": "Statische Shaderanalyse und schmale Texturformate",
       "summary": "Titelvergleich: 14.25 gegenüber 14.19 FPS, 660 Frames je Einstellung. Wiederverwendete Aufruf-/NGG-Analyse, günstigere Pufferabfragen und begrenzte Vulkan-Wartephasen. Geprüfte 8/16-Bit-GPU-Layouttransformationen; langsamere Storage-Uploads bleiben deaktiviert. 548 Tests bestehen. Neue Titelaufnahme; 25 FPS und Charaktersteuerung nicht bestätigt.",

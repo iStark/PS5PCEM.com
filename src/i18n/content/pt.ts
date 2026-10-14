@@ -555,6 +555,11 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-storage-layouts-20261014": {
+      "title": "Memória de texturas e limites exatos de laços",
+      "summary": "Comparação do título: 14.48 contra 14.26 FPS, 660 quadros por ajuste. A conversão GPU preserva o preenchimento; escritas completas comprovadas evitam uploads. A análise escalar compartilhada respeita limites exatos de instruções. Passam 551 testes e as verificações nativas do Vulkan. Nova captura; 25 FPS e controle do personagem não confirmados.",
+      "imageAlt": "Tela inicial de ASTRO BOT após alterações na memória de texturas"
+    },
     "astro-bot-static-analysis-20261014": {
       "title": "Análise estática e texturas de 8/16 bits",
       "summary": "Comparação do título: 14.25 contra 14.19 FPS, 660 quadros por ajuste. Reutilização da análise de chamadas/NGG, consultas de buffers reduzidas e esperas Vulkan limitadas. Transformações GPU de 8/16 bits verificadas; uploads storage mais lentos continuam desativados. 548 testes passam. Nova captura; 25 FPS e controle do personagem não confirmados.",
