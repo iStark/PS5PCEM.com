@@ -555,6 +555,11 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-entry-scalars-20261015": {
+      "title": "Réutiliser les lectures scalaires vérifiées",
+      "summary": "AnyPS5 et KytyPS5 examinés ; préparation redondante des tampons supprimée pour les lectures scalaires initiales prouvées. Titre : 14,92 contre 15,02 FPS, 660 images par mode ; aucun gain mesuré, 25 FPS non atteints. Environ 411 préparations évitées par image. 558 tests GPU/Vulkan et la validation graphique native réussissent.",
+      "imageAlt": "Titre ASTRO BOT après validation des lectures scalaires"
+    },
     "astro-bot-descriptor-semantics-20261014": {
       "title": "Lectures scalaires et descripteurs répartis",
       "summary": "L’examen d’AnyPS5 a permis de corriger les champs scalaires inutilisés et les descripteurs de texture bornés assemblés par plusieurs chargements. Titre : 14.97 FPS sur 660 images. 556 tests GPU/Vulkan et les tests natifs passent ; dix échecs RDNA2 existent aussi dans la version de référence. Nouvelle capture ; 25 FPS et contrôle du personnage non confirmés.",

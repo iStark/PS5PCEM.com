@@ -555,6 +555,11 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-entry-scalars-20261015": {
+      "title": "Geprüfte skalare Lesezugriffe wiederverwenden",
+      "summary": "AnyPS5 und KytyPS5 geprüft; redundante Puffervorbereitung für nachgewiesene skalare Einstiegslesevorgänge entfernt. Titel: 14,92 gegenüber 15,02 FPS, je 660 Frames; kein messbarer Gewinn, 25 FPS nicht erreicht. Rund 411 Puffervorbereitungen pro Frame vermieden. 558 GPU/Vulkan-Tests und native Grafikprüfung bestehen.",
+      "imageAlt": "ASTRO BOT-Titel nach Prüfung skalarer Lesezugriffe"
+    },
     "astro-bot-descriptor-semantics-20261014": {
       "title": "Skalare Lesezugriffe und geteilte Texturdeskriptoren",
       "summary": "Die AnyPS5-Analyse führte zu Korrekturen ungenutzter Skalarpufferfelder und begrenzter, aus mehreren Ladevorgängen zusammengesetzter Texturdeskriptoren. Titel: 14.97 FPS über 660 Frames. 556 GPU/Vulkan-Tests und native Prüfungen bestehen; zehn RDNA2-Fehler treten auch in der Basisversion auf. Neue Aufnahme; 25 FPS und Charaktersteuerung unbestätigt.",

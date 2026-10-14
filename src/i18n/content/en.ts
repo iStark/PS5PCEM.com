@@ -581,6 +581,11 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-entry-scalars-20261015": {
+      "title": "Reuse proven scalar reads",
+      "summary": "Reviewed AnyPS5 and KytyPS5; removed redundant preparation for proven entry scalar reads. Title: 14.92 versus 15.02 FPS, 660 frames per mode; no measured gain, 25 FPS not reached. About 411 buffer preparations avoided per frame. 558 GPU/Vulkan tests and native graphics validation pass.",
+      "imageAlt": "ASTRO BOT title after entry-scalar validation"
+    },
     "astro-bot-descriptor-semantics-20261014": {
       "title": "Scalar reads and split texture descriptors",
       "summary": "AnyPS5 review led to fixes for unused scalar-buffer fields and bounded texture descriptors assembled from multiple loads. Title: 14.97 FPS over 660 frames. 556 GPU/Vulkan tests and native probes pass; ten broader RDNA2 failures also occur on the baseline. New capture; 25 FPS and character control remain unverified.",

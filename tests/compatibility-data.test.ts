@@ -225,6 +225,7 @@ describe("test history", () => {
       ["astro-bot-storage-layouts-20261014", null],
       ["astro-bot-draw-capture-20261014", null],
       ["astro-bot-descriptor-semantics-20261014", null],
+      ["astro-bot-entry-scalars-20261015", null],
       ["astro-bot-gds-publication-20261014", null],
       ["astro-bot-performance-20261014", null],
       ["minecraft-legends-gameplay-20261013", null],
@@ -237,7 +238,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(40);
+    expect(history.filter((run) => run.release === null)).toHaveLength(41);
   });
 
   it("references captures that exist in public/", () => {

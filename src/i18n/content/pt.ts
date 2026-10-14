@@ -555,6 +555,11 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-entry-scalars-20261015": {
+      "title": "Reutilizar leituras escalares verificadas",
+      "summary": "AnyPS5 e KytyPS5 analisados; removida a preparação repetida dos buffers de leituras escalares iniciais comprovadas. Título: 14,92 contra 15,02 FPS, 660 quadros por modo; sem ganho medido, 25 FPS não atingidos. Cerca de 411 preparações evitadas por quadro. Passam 558 testes GPU/Vulkan e a validação gráfica nativa.",
+      "imageAlt": "Título de ASTRO BOT após validar leituras escalares"
+    },
     "astro-bot-descriptor-semantics-20261014": {
       "title": "Leituras escalares e descritores divididos",
       "summary": "A análise do AnyPS5 ajudou a corrigir campos escalares não usados e descritores de textura limitados montados por várias cargas. Título: 14.97 FPS em 660 quadros. Passam 556 testes GPU/Vulkan e os testes nativos; dez falhas RDNA2 também existem na versão base. Nova captura; 25 FPS e controle do personagem não confirmados.",

@@ -536,6 +536,11 @@ const zh: Content = {
   },
 
   history: {
+    "astro-bot-entry-scalars-20261015": {
+      "title": "复用经过验证的标量读取",
+      "summary": "分析了 AnyPS5 和 KytyPS5，避免为已证明的着色器入口标量读取重复准备缓冲区。标题画面：14.92 对比 15.02 FPS，每种模式各测量 660 帧；未确认性能提升，尚未达到 25 FPS。每帧减少约 411 次缓冲区准备。558 项 GPU/Vulkan 测试及原生图形验证通过。",
+      "imageAlt": "验证标量读取后的 ASTRO BOT 标题画面"
+    },
     "astro-bot-descriptor-semantics-20261014": {
       "title": "标量读取与分段纹理描述符",
       "summary": "对 AnyPS5 的分析帮助修复了未使用的标量缓冲区字段检查，并支持由多次加载组成的有界纹理描述符。标题画面：660 帧平均 14.97 FPS。556 项 GPU/Vulkan 测试及原生测试通过；RDNA2 的十项失败在基准版本也能重现。新增截图；尚未达到 25 FPS，角色操控仍未验证。",
