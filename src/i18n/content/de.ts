@@ -555,6 +555,11 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-uniform-scan-20261015": {
+      "title": "Weniger Lesezugriffe bei der Verzweigungsanalyse",
+      "summary": "AnyPS5/KytyPS5 geprüft: 49 unnötige CPU-Lesezugriffe pro Frame vermieden und Indizes der Compute-Texturinstruktionen wiederverwendet. Später Titelvergleich: 14,95 gegenüber 14,91 FPS, je 660 Frames; kein belegter Gewinn, 25 FPS nicht erreicht. 560 GPU/Vulkan-Tests und native Validierung bestehen; 12 unaufgelöste Speicherbindungen bleiben. Die getestete Spezialisierung einheitlicher Grafikverzweigungen senkte die FPS und bleibt deaktiviert.",
+      "imageAlt": "ASTRO BOT-Titel beim Test der Lesezugriffe und Texturinstruktionen"
+    },
     "astro-bot-entry-scalars-20261015": {
       "title": "Geprüfte skalare Lesezugriffe wiederverwenden",
       "summary": "AnyPS5 und KytyPS5 geprüft; redundante Puffervorbereitung für nachgewiesene skalare Einstiegslesevorgänge entfernt. Titel: 14,92 gegenüber 15,02 FPS, je 660 Frames; kein messbarer Gewinn, 25 FPS nicht erreicht. Rund 411 Puffervorbereitungen pro Frame vermieden. 558 GPU/Vulkan-Tests und native Grafikprüfung bestehen.",

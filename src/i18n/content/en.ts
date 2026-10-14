@@ -581,6 +581,11 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-uniform-scan-20261015": {
+      "title": "Reduce uniform-analysis reads and texture scans",
+      "summary": "AnyPS5/KytyPS5 review: omit 49 unused CPU proof reads per frame and reuse compute texture instruction indices. Later title comparison: 14.95 versus 14.91 FPS, 660 frames per mode; no established gain, 25 FPS not reached. 560 GPU/Vulkan tests and native validation pass; 12 unresolved storage bindings remain. Graphics uniform specialization was also tested and remains disabled because it reduced FPS.",
+      "imageAlt": "ASTRO BOT title during uniform-read and texture-scan validation"
+    },
     "astro-bot-entry-scalars-20261015": {
       "title": "Reuse proven scalar reads",
       "summary": "Reviewed AnyPS5 and KytyPS5; removed redundant preparation for proven entry scalar reads. Title: 14.92 versus 15.02 FPS, 660 frames per mode; no measured gain, 25 FPS not reached. About 411 buffer preparations avoided per frame. 558 GPU/Vulkan tests and native graphics validation pass.",

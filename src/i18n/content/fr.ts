@@ -555,6 +555,11 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-uniform-scan-20261015": {
+      "title": "Réduire les lectures de l’analyse des branches",
+      "summary": "Revue AnyPS5/KytyPS5 : 49 lectures CPU inutiles évitées par image et réutilisation des indices des instructions de texture compute. Comparaison tardive : 14,95 contre 14,91 FPS, 660 images par mode ; aucun gain établi, 25 FPS non atteints. 560 tests GPU/Vulkan et validation native réussis ; 12 liaisons de stockage restent non résolues. La spécialisation des branches graphiques uniformes a réduit les FPS et reste désactivée.",
+      "imageAlt": "Titre ASTRO BOT pendant la validation des lectures et des textures"
+    },
     "astro-bot-entry-scalars-20261015": {
       "title": "Réutiliser les lectures scalaires vérifiées",
       "summary": "AnyPS5 et KytyPS5 examinés ; préparation redondante des tampons supprimée pour les lectures scalaires initiales prouvées. Titre : 14,92 contre 15,02 FPS, 660 images par mode ; aucun gain mesuré, 25 FPS non atteints. Environ 411 préparations évitées par image. 558 tests GPU/Vulkan et la validation graphique native réussissent.",
