@@ -555,6 +555,11 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-descriptor-semantics-20261014": {
+      "title": "Leituras escalares e descritores divididos",
+      "summary": "A análise do AnyPS5 ajudou a corrigir campos escalares não usados e descritores de textura limitados montados por várias cargas. Título: 14.97 FPS em 660 quadros. Passam 556 testes GPU/Vulkan e os testes nativos; dez falhas RDNA2 também existem na versão base. Nova captura; 25 FPS e controle do personagem não confirmados.",
+      "imageAlt": "Título de ASTRO BOT após correções dos descritores"
+    },
     "astro-bot-draw-capture-20261014": {
       "title": "Captura de dados e comparação de cache",
       "summary": "Título: 15,33 contra 15,22 FPS, 660 quadros por ajuste. Dados sem possibilidade de reutilização deixam de ser copiados e ter hash calculado. Um cache maior não melhora o FPS; o limite anterior permanece. Passam 553 testes e as verificações Vulkan. Nova captura; 25 FPS e controle do personagem não confirmados.",

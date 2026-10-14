@@ -555,6 +555,11 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-descriptor-semantics-20261014": {
+      "title": "Skalare Lesezugriffe und geteilte Texturdeskriptoren",
+      "summary": "Die AnyPS5-Analyse führte zu Korrekturen ungenutzter Skalarpufferfelder und begrenzter, aus mehreren Ladevorgängen zusammengesetzter Texturdeskriptoren. Titel: 14.97 FPS über 660 Frames. 556 GPU/Vulkan-Tests und native Prüfungen bestehen; zehn RDNA2-Fehler treten auch in der Basisversion auf. Neue Aufnahme; 25 FPS und Charaktersteuerung unbestätigt.",
+      "imageAlt": "ASTRO BOT-Titel nach Deskriptorkorrekturen"
+    },
     "astro-bot-draw-capture-20261014": {
       "title": "Draw-Erfassung und Cache-Vergleich",
       "summary": "Titel: 15,33 gegenüber 15,22 FPS, 660 Frames je Einstellung. Nicht wiederverwendbare Daten werden nicht mehr kopiert oder gehasht. Ein größerer Cache verbessert die FPS nicht; der Standard bleibt unverändert. 553 Tests und native Vulkan-Prüfungen bestehen. Neue Titelaufnahme; 25 FPS und Charaktersteuerung bleiben unbestätigt.",

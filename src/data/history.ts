@@ -38,6 +38,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "astro-bot-descriptor-semantics-20261014",
+    slug: "astro-bot",
+    date: "2026-10-14",
+    release: null,
+    image: "/images/astro-bot-title-scalar-descriptors-2026-10-14.png",
+    source: devReport("anyps5-descriptor-review-2026-10-14.md"),
+  },
+  {
     id: "astro-bot-draw-capture-20261014",
     slug: "astro-bot",
     date: "2026-10-14",

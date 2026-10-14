@@ -555,6 +555,11 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-descriptor-semantics-20261014": {
+      "title": "Lectures scalaires et descripteurs répartis",
+      "summary": "L’examen d’AnyPS5 a permis de corriger les champs scalaires inutilisés et les descripteurs de texture bornés assemblés par plusieurs chargements. Titre : 14.97 FPS sur 660 images. 556 tests GPU/Vulkan et les tests natifs passent ; dix échecs RDNA2 existent aussi dans la version de référence. Nouvelle capture ; 25 FPS et contrôle du personnage non confirmés.",
+      "imageAlt": "Titre ASTRO BOT après correction des descripteurs"
+    },
     "astro-bot-draw-capture-20261014": {
       "title": "Capture des données et comparaison du cache",
       "summary": "Titre : 15,33 contre 15,22 FPS, 660 images par réglage. Les données non réutilisables ne sont plus copiées ni hachées. Un cache plus grand ne gagne pas de FPS ; la limite reste inchangée. 553 tests et les vérifications Vulkan passent. Nouvelle capture ; 25 FPS et contrôle du personnage non confirmés.",

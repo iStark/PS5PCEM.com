@@ -536,6 +536,11 @@ const zh: Content = {
   },
 
   history: {
+    "astro-bot-descriptor-semantics-20261014": {
+      "title": "标量读取与分段纹理描述符",
+      "summary": "对 AnyPS5 的分析帮助修复了未使用的标量缓冲区字段检查，并支持由多次加载组成的有界纹理描述符。标题画面：660 帧平均 14.97 FPS。556 项 GPU/Vulkan 测试及原生测试通过；RDNA2 的十项失败在基准版本也能重现。新增截图；尚未达到 25 FPS，角色操控仍未验证。",
+      "imageAlt": "修复描述符后的 ASTRO BOT 标题画面"
+    },
     "astro-bot-draw-capture-20261014": {
       "title": "绘制数据捕获与缓存对比",
       "summary": "标题画面：15.33 对 15.22 FPS，每种设置 660 帧。不再复制或计算无法复用的数据的哈希。扩大缓存未提高 FPS，默认限制保持不变。553 项测试及原生 Vulkan 验证通过。新增标题截图；尚未达到 25 FPS，角色操控仍未验证。",
