@@ -581,6 +581,10 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-native-layouts-20261014": {
+      "title": "Native image transfers: correctness and FPS checks",
+      "summary": "Native image transfers preserve texels, padding and newer CPU writes in GPU tests. Exact buffer reads preserve published holes; completion batches reuse valid prefetched copies. Vulkan tests pass 259/259. Balanced title comparisons measured 9.42 FPS with native storage transfers versus 9.55 with the CPU path, and 9.50 versus 9.55 after the prefetch completion fix. Those experimental transfers remain disabled by default. Exact interior buffer reads recorded no uses in their measured interval. The 25 FPS target is not reached; no new screenshot or character-control result is claimed."
+    },
     "astro-bot-gds-publication-20261014": {
       "title": "GDS ordering and repeated title measurements",
       "summary": "Deferred GDS snapshots preserve counter values across later resets; transfer batching and full-image overwrite handling pass native checks. The follow-up warmed title baseline is 9.20–9.65 FPS over 20 seconds. Enabled/disabled comparisons remain around 9–10 FPS and do not establish a speedup. Vulkan tests pass 256/256. Incompatible image views still cause about 20 MiB of render-target readback per frame. No fresh screenshot or character-control check: window automation was unavailable. The 25–30 FPS target remains unmet."

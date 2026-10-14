@@ -555,6 +555,10 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-native-layouts-20261014": {
+      "title": "Transferências nativas de imagens: correção e FPS",
+      "summary": "Os testes GPU preservam texels, preenchimento e escritas mais recentes da CPU. Leituras exatas dos buffers preservam áreas já publicadas; lotes de conclusão reutilizam cópias antecipadas válidas. Passam 259/259 testes Vulkan. Fases comparáveis da tela de título: 9,42 FPS com transferências nativas contra 9,55 com CPU; após corrigir a leitura antecipada, 9,50 contra 9,55 FPS. Essas transferências experimentais continuam desativadas por padrão. Leituras exatas de intervalos internos não foram usadas em sua medição. A meta de 25 FPS não foi atingida; sem nova captura ou confirmação do controle do personagem."
+    },
     "astro-bot-gds-publication-20261014": {
       "title": "Ordem do GDS e novas medições da sequência inicial",
       "summary": "As capturas adiadas do GDS preservam os contadores após reinicializações posteriores; as transferências agrupadas e a sobrescrita completa de imagens passam nos testes nativos. A sequência inicial com cache aquecido registra 9,20–9,65 FPS em 20 segundos. As comparações com as alterações ativadas e desativadas ficam em cerca de 9–10 FPS, sem ganho confirmado. Passam 256/256 testes Vulkan. Visualizações incompatíveis ainda exigem cerca de 20 MiB de leitura dos alvos de renderização por quadro. Sem nova captura ou verificação dos controles: a automação de janelas estava indisponível. A meta de 25–30 FPS não foi atingida."

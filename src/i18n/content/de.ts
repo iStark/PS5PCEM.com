@@ -555,6 +555,10 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-native-layouts-20261014": {
+      "title": "Native Bildtransfers: Korrektheit und FPS",
+      "summary": "Native GPU-Bildtests erhalten Texel, Padding und neuere CPU-Schreibvorgänge. Exakte Pufferlesevorgänge bewahren bereits veröffentlichte Bereiche; Abschlussstapel verwenden gültige vorab kopierte Daten erneut. 259/259 Vulkan-Tests bestehen. Vergleichbare Titelphasen: 9,42 FPS mit nativen Bildtransfers gegenüber 9,55 mit dem CPU-Pfad; nach der Prefetch-Korrektur 9,50 gegenüber 9,55 FPS. Diese experimentellen Transfers bleiben standardmäßig deaktiviert. Exakte innere Pufferbereiche wurden im Messintervall nicht verwendet. 25 FPS sind nicht erreicht; kein neuer Screenshot oder Nachweis der Figurensteuerung."
+    },
     "astro-bot-gds-publication-20261014": {
       "title": "GDS-Reihenfolge und erneute Messungen der Titelsequenz",
       "summary": "Verzögerte GDS-Schnappschüsse bewahren Zählerwerte über spätere Rücksetzungen hinweg; gebündelte Transfers und vollständige Bildüberschreibungen bestehen native Prüfungen. Die aufgewärmte Titelsequenz erreicht im 20-Sekunden-Basislauf 9,20–9,65 FPS. Vergleiche mit aktivierten und deaktivierten Änderungen bleiben bei etwa 9–10 FPS und belegen keine Beschleunigung. 256/256 Vulkan-Tests bestehen. Inkompatible Bildansichten verursachen weiterhin etwa 20 MiB Renderziel-Rücklesen pro Bild. Kein neuer Screenshot oder Steuerungsnachweis: Die Fensterautomation war nicht verfügbar. Das Ziel von 25–30 FPS ist nicht erreicht."
