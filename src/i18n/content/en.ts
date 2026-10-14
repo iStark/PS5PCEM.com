@@ -581,6 +581,11 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-static-analysis-20261014": {
+      "title": "Static shader analysis and narrow texture layouts",
+      "summary": "Title comparison: 14.25 versus 14.19 FPS, 660 frames per setting. Reused immutable call/NGG analysis, cheaper buffer queries and bounded Vulkan waits. Added verified 8/16-bit GPU layout transforms; storage uploads stay disabled after a slower comparison. 548 tests pass. New title capture; 25 FPS and character control are not confirmed.",
+      "imageAlt": "ASTRO BOT title screen after static shader analysis changes"
+    },
     "astro-bot-scalar-merges-20261014": {
       "title": "Scalar analysis and queued completion",
       "summary": "Balanced title comparison: 13.79 versus 13.43 FPS, 660 frames per setting. Less repeated shader analysis, indexed dirty-buffer completion, queued satisfied waits and faster large copies. 542 GPU/Vulkan tests pass. New title capture; 25 FPS is not reached and character control remains unverified.",

@@ -555,6 +555,11 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-static-analysis-20261014": {
+      "title": "Statische Shaderanalyse und schmale Texturformate",
+      "summary": "Titelvergleich: 14.25 gegenüber 14.19 FPS, 660 Frames je Einstellung. Wiederverwendete Aufruf-/NGG-Analyse, günstigere Pufferabfragen und begrenzte Vulkan-Wartephasen. Geprüfte 8/16-Bit-GPU-Layouttransformationen; langsamere Storage-Uploads bleiben deaktiviert. 548 Tests bestehen. Neue Titelaufnahme; 25 FPS und Charaktersteuerung nicht bestätigt.",
+      "imageAlt": "ASTRO BOT-Titelbild nach Änderungen an der statischen Shaderanalyse"
+    },
     "astro-bot-scalar-merges-20261014": {
       "title": "Skalaranalyse und geordnete Fertigstellung",
       "summary": "Ausgewogener Titelvergleich: 13.79 gegenüber 13.43 FPS, 660 Frames je Einstellung. Weniger wiederholte Shaderanalyse, indizierte geänderte Puffer, eingereihte erfüllte Wartebedingungen und schnellere große Kopien. 542 GPU/Vulkan-Tests bestehen. Neue Titelaufnahme; 25 FPS nicht erreicht, Charaktersteuerung nicht bestätigt.",

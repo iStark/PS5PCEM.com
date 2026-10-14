@@ -555,6 +555,11 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-static-analysis-20261014": {
+      "title": "Análise estática e texturas de 8/16 bits",
+      "summary": "Comparação do título: 14.25 contra 14.19 FPS, 660 quadros por ajuste. Reutilização da análise de chamadas/NGG, consultas de buffers reduzidas e esperas Vulkan limitadas. Transformações GPU de 8/16 bits verificadas; uploads storage mais lentos continuam desativados. 548 testes passam. Nova captura; 25 FPS e controle do personagem não confirmados.",
+      "imageAlt": "Tela inicial de ASTRO BOT após alterações na análise estática"
+    },
     "astro-bot-scalar-merges-20261014": {
       "title": "Análise escalar e conclusão em fila",
       "summary": "Comparação equilibrada do título: 13.79 contra 13.43 FPS, 660 quadros por configuração. Menos análise repetida de shaders, buffers alterados indexados, esperas satisfeitas em fila e cópias grandes mais rápidas. Passam 542 testes GPU/Vulkan. Nova captura inicial; 25 FPS não foram atingidos e o controle do personagem não foi verificado.",
