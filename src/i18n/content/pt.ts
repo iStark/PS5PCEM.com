@@ -555,6 +555,10 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-cpu-baselines-20261014": {
+      "title": "Menos cópias de imagens na CPU",
+      "summary": "As somas de verificação dos texels substituem as cópias retidas; a leitura verificada da memória convidada evita a cópia temporária. Comparações do título: 11,19 contra 10,83 FPS para as somas e 11,51 contra 11,36 FPS para leitura direta, 660 fotogramas por opção. Cada etapa elimina uma cópia de CPU de 26,125 MiB por fotograma. Passaram 32 configurações nativas com preenchimento, novas escritas da CPU, somas indisponíveis, cancelamentos e alternativas; a publicação de mips também passou. Sem nova captura nem verificação visual ou de controlo. A meta de 25 FPS continua por atingir."
+    },
     "astro-bot-relative-moves-20261014": {
       "title": "Acessos indiretos aos registos dos shaders",
       "summary": "Os movimentos indexados por M0 preservam agora leituras e escritas indiretas, máscaras de execução e ciclos. Passaram 128 verificações na GPU e 534/534 testes GPU/Vulkan. A animação inicial após aquecimento mediu 10,85 FPS em 1320 fotogramas, semelhante à compilação anterior. O registo não mostrou novas falhas de desenho ou despacho. Sem nova captura ou verificação visual e de controlo; a meta de 25 FPS ainda não foi atingida."

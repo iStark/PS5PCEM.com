@@ -38,6 +38,13 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "astro-bot-cpu-baselines-20261014",
+    slug: "astro-bot",
+    date: "2026-10-14",
+    release: null,
+    source: devReport("astro-bot-renderer-performance-2026-10-14.md#follow-up-cpu-overwrite-baselines"),
+  },
+  {
     id: "astro-bot-relative-moves-20261014",
     slug: "astro-bot",
     date: "2026-10-14",

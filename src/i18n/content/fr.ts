@@ -555,6 +555,10 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-cpu-baselines-20261014": {
+      "title": "Moins de copies d’images sur le CPU",
+      "summary": "Des empreintes des texels remplacent les copies conservées ; la lecture contrôlée de la mémoire invitée évite la copie temporaire. Comparaisons du titre : 11,19 contre 10,83 FPS pour les empreintes, puis 11,51 contre 11,36 FPS en lecture directe, 660 images par option. Chaque étape évite une copie CPU de 26,125 Mio par image. 32 configurations natives valident le remplissage, les nouvelles écritures CPU, les empreintes indisponibles, les annulations et le repli ; la publication des mips passe aussi. Pas de nouvelle capture ni de vérification visuelle ou des commandes. Le seuil de 25 FPS reste à atteindre."
+    },
     "astro-bot-relative-moves-20261014": {
       "title": "Accès indirects aux registres des shaders",
       "summary": "Les déplacements indexés par M0 préservent désormais les lectures et écritures indirectes, les masques d’exécution et les boucles. 128 vérifications GPU et 534/534 tests GPU/Vulkan réussissent. L’animation du titre après préchauffage atteint 10,85 FPS sur 1 320 images, comme la version précédente. Aucun nouvel échec de dessin ou de dispatch dans le journal. Pas de nouvelle capture ni de vérification visuelle ou des commandes ; l’objectif de 25 FPS reste à atteindre."

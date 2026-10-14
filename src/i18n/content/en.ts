@@ -581,6 +581,10 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-cpu-baselines-20261014": {
+      "title": "Less CPU image copying",
+      "summary": "Exact texel digests replace retained image copies, and checked guest fingerprints avoid the temporary snapshot. Balanced title comparisons: 11.19 versus 10.83 FPS for digest baselines; 11.51 versus 11.36 FPS for direct fingerprints, 660 frames per setting. Each step removes a 26.125 MiB CPU copy per frame. Native checks pass 32 configurations covering padding, newer CPU writes, unavailable fingerprints, aborted preparation and fallback; mip publication also passes. No new capture or visual/control verification. The 25 FPS target remains unmet."
+    },
     "astro-bot-relative-moves-20261014": {
       "title": "Indirect shader register moves",
       "summary": "M0-indexed register moves now preserve indirect reads/writes, masked lanes and loops. Native checks pass 128 GPU dispatches; GPU/Vulkan tests pass 534/534. The warmed animated title measured 10.85 FPS across 1,320 frames, comparable to the previous build. No new draw/dispatch failures appeared in the log. No fresh screenshot or visual/control verification; the 25 FPS target remains unmet."

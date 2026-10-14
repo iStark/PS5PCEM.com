@@ -555,6 +555,10 @@ const es: Content = {
   },
 
   history: {
+    "astro-bot-cpu-baselines-20261014": {
+      "title": "Menos copias de imágenes en CPU",
+      "summary": "Las sumas de comprobación de texeles sustituyen las copias retenidas; la lectura verificada de memoria invitada evita la copia temporal. Comparaciones del título: 11,19 frente a 10,83 FPS para las sumas y 11,51 frente a 11,36 FPS para lectura directa, 660 fotogramas por opción. Cada paso elimina una copia de CPU de 26,125 MiB por fotograma. Pasaron 32 configuraciones nativas con relleno, nuevas escrituras de CPU, sumas no disponibles, cancelaciones y alternativas; también la publicación de mips. Sin nueva captura ni verificación visual o del control. Aún no se alcanzan 25 FPS."
+    },
     "astro-bot-relative-moves-20261014": {
       "title": "Accesos indirectos a registros de shaders",
       "summary": "Los movimientos indexados por M0 conservan ahora lecturas y escrituras indirectas, máscaras de ejecución y bucles. Pasaron 128 comprobaciones en GPU y 534/534 pruebas GPU/Vulkan. La animación inicial con la caché preparada midió 10,85 FPS en 1320 fotogramas, similar a la compilación anterior. El registro no mostró nuevos fallos de dibujo o despacho. Sin nueva captura ni verificación visual o del control; aún no se alcanzan los 25 FPS."

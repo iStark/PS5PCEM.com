@@ -555,6 +555,10 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-cpu-baselines-20261014": {
+      "title": "Weniger Bildkopien auf der CPU",
+      "summary": "Prüfsummen der Texel ersetzen gespeicherte Bildkopien; geprüfte Gastzugriffe vermeiden den Zwischenspeicher. Titelvergleich: 11,19 gegenüber 10,83 FPS für Prüfsummen und 11,51 gegenüber 11,36 FPS für direkte Zugriffe, je 660 Frames. Jeder Schritt spart eine CPU-Kopie von 26,125 MiB pro Frame. 32 native Konfigurationen prüfen Padding, neuere CPU-Schreibzugriffe, fehlende Prüfsummen, Abbrüche und Rückfallpfade; auch die Mip-Veröffentlichung besteht. Keine neue Aufnahme oder Bild-/Steuerungsprüfung. 25 FPS bleiben unerreicht."
+    },
     "astro-bot-relative-moves-20261014": {
       "title": "Indirekte Shader-Registerzugriffe",
       "summary": "M0-indizierte Registerbewegungen berücksichtigen nun indirekte Lese- und Schreibzugriffe, Ausführungsmasken und Schleifen. 128 native GPU-Prüfungen und 534/534 GPU/Vulkan-Tests bestanden. Die aufgewärmte Titelanimation erreichte 10,85 FPS über 1.320 Frames, vergleichbar mit dem vorherigen Build. Keine neuen Zeichen- oder Dispatch-Fehler im Protokoll. Kein neuer Screenshot und keine Bild- oder Steuerungsprüfung; das Ziel von 25 FPS bleibt unerreicht."
