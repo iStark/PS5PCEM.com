@@ -581,6 +581,10 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-full-stores-20261014": {
+      "title": "Proven full-image stores",
+      "summary": "A conservative shader proof avoids uploading old output pixels while preserving padding, newer CPU writes and recovery after aborted preparation. Native GPU checks pass with immediate and batched commands; 532 GPU/Vulkan unit tests pass. Balanced title samples: 9.45 FPS enabled versus 9.36 disabled, 660 frames per setting, with 25.38 MiB of uploads avoided per frame. The first old-raster readback comparison measured 9.64 versus 9.67 FPS but skipped no readbacks. The 25 FPS target remains unmet; no new screenshot or character-control result. With DCC-enabled raster sources included under the same coverage checks, the final comparison reaches 10.95 FPS versus 9.68 FPS (660 frames per setting, about 13.1% faster), avoiding one raster readback per frame. Native tests also preserve DCC metadata."
+    },
     "astro-bot-native-layouts-20261014": {
       "title": "Native image transfers: correctness and FPS checks",
       "summary": "Native image transfers preserve texels, padding and newer CPU writes in GPU tests. Exact buffer reads preserve published holes; completion batches reuse valid prefetched copies. Vulkan tests pass 259/259. Balanced title comparisons measured 9.42 FPS with native storage transfers versus 9.55 with the CPU path, and 9.50 versus 9.55 after the prefetch completion fix. Those experimental transfers remain disabled by default. Exact interior buffer reads recorded no uses in their measured interval. The 25 FPS target is not reached; no new screenshot or character-control result is claimed."

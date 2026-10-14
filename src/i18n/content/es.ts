@@ -555,6 +555,10 @@ const es: Content = {
   },
 
   history: {
+    "astro-bot-full-stores-20261014": {
+      "title": "Sobrescritura completa de imágenes verificada",
+      "summary": "Un análisis conservador del shader evita cargar píxeles antiguos de salida y conserva el relleno, las escrituras posteriores de CPU y la recuperación tras cancelar la preparación. Pasan las pruebas GPU con comandos inmediatos y agrupados, y 532 pruebas GPU/Vulkan. Comparación del título: 9,45 FPS activado frente a 9,36 desactivado, 660 fotogramas por opción, evitando 25,38 MiB de cargas por fotograma. La primera comparación de lectura de superficies anteriores dio 9,64 frente a 9,67 FPS, sin omitir ninguna lectura. No se alcanzan 25 FPS; no hay nueva captura ni confirmación del control del personaje. Al incluir superficies con DCC bajo las mismas comprobaciones, la comparación final alcanza 10,95 frente a 9,68 FPS (660 fotogramas por ajuste, aproximadamente un 13,1% más), evitando una lectura de superficie por fotograma. Las pruebas nativas también conservan los metadatos DCC."
+    },
     "astro-bot-native-layouts-20261014": {
       "title": "Transferencias nativas de imágenes: precisión y FPS",
       "summary": "Las pruebas GPU conservan los texeles, el relleno y las escrituras más recientes de la CPU. Las lecturas exactas de buffers conservan las zonas ya publicadas; los lotes de finalización reutilizan las copias anticipadas válidas. Pasan 259/259 pruebas Vulkan. Fases comparables del título: 9,42 FPS con transferencias nativas frente a 9,55 con CPU; tras corregir la lectura anticipada, 9,50 frente a 9,55 FPS. Estas transferencias experimentales siguen desactivadas por defecto. Las lecturas exactas de rangos internos no se utilizaron en su medición. No se alcanzan los 25 FPS; no hay nueva captura ni confirmación del control del personaje."

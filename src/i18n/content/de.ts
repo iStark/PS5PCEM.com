@@ -555,6 +555,10 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-full-stores-20261014": {
+      "title": "Nachgewiesene vollständige Bildüberschreibung",
+      "summary": "Eine konservative Shader-Analyse vermeidet das Hochladen alter Ausgabepixel und erhält Padding, neuere CPU-Schreibvorgänge sowie die Wiederherstellung nach abgebrochener Vorbereitung. Native GPU-Prüfungen bestehen mit sofortigen und gebündelten Befehlen; 532 GPU/Vulkan-Tests bestehen. Vergleichbare Titelsequenzen: 9,45 FPS aktiviert gegenüber 9,36 deaktiviert, je 660 Frames, mit 25,38 MiB weniger Uploads pro Frame. Der erste Raster-Readback-Vergleich ergab 9,64 gegenüber 9,67 FPS, übersprang aber keinen Readback. 25 FPS sind nicht erreicht; keine neue Aufnahme oder Bestätigung der Figurensteuerung. Mit DCC-Rasterquellen unter denselben Abdeckungsprüfungen erreicht der abschließende Vergleich 10,95 gegenüber 9,68 FPS (je 660 Frames, etwa 13,1% schneller), mit einer vermiedenen Raster-Rücklesung pro Frame. Native Tests erhalten auch die DCC-Metadaten."
+    },
     "astro-bot-native-layouts-20261014": {
       "title": "Native Bildtransfers: Korrektheit und FPS",
       "summary": "Native GPU-Bildtests erhalten Texel, Padding und neuere CPU-Schreibvorgänge. Exakte Pufferlesevorgänge bewahren bereits veröffentlichte Bereiche; Abschlussstapel verwenden gültige vorab kopierte Daten erneut. 259/259 Vulkan-Tests bestehen. Vergleichbare Titelphasen: 9,42 FPS mit nativen Bildtransfers gegenüber 9,55 mit dem CPU-Pfad; nach der Prefetch-Korrektur 9,50 gegenüber 9,55 FPS. Diese experimentellen Transfers bleiben standardmäßig deaktiviert. Exakte innere Pufferbereiche wurden im Messintervall nicht verwendet. 25 FPS sind nicht erreicht; kein neuer Screenshot oder Nachweis der Figurensteuerung."
