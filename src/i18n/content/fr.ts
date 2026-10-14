@@ -555,6 +555,15 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-bounded-recording-20261014": {
+      "title": "Enregistrement borné et vérification exacte de la mémoire",
+      "summary": "Un budget de 250 μs pour enregistrer les commandes améliore la comparaison équilibrée du titre de 11.69 à 12.43 FPS. Les changements mémoire suivants donnent 12.55 contre 12.49 FPS : aucun gain supplémentaire établi, mais 26,125 Mio de hachage redondant évités par image. 537 tests GPU/Vulkan et 64 configurations de réécriture passent. Nouvelle capture du titre ; 25 FPS et contrôle du personnage non vérifiés.",
+      "imageAlt": "Écran titre ASTRO BOT après limitation de l’enregistrement des commandes"
+    },
+    "astro-bot-scalar-checkpoints-20261014": {
+      "title": "Instantanés et transferts scalaires réduits",
+      "summary": "Les instantanés de registres occupent moitié moins de place tout en conservant le suivi des dépendances. Seules les valeurs scalaires utilisées par le shader sont écrites. Les 535 tests GPU/Vulkan passent ; les vérifications natives utilisent des tampons remplis de valeurs non nulles et couvrent les entrées changeantes, boucles, pixels et préparation parallèle/partagée. L’écran titre atteint 11,62 FPS sur 1 320 images. La comparaison équilibrée des transferts mesure 11,79 contre 11,69 FPS, 660 images par réglage : seulement 0,9 % d’écart observé. Aucune nouvelle capture ni vérification du contrôle du personnage ; 25 FPS restent hors d’atteinte."
+    },
     "astro-bot-cpu-baselines-20261014": {
       "title": "Moins de copies d’images sur le CPU",
       "summary": "Des empreintes des texels remplacent les copies conservées ; la lecture contrôlée de la mémoire invitée évite la copie temporaire. Comparaisons du titre : 11,19 contre 10,83 FPS pour les empreintes, puis 11,51 contre 11,36 FPS en lecture directe, 660 images par option. Chaque étape évite une copie CPU de 26,125 Mio par image. 32 configurations natives valident le remplissage, les nouvelles écritures CPU, les empreintes indisponibles, les annulations et le repli ; la publication des mips passe aussi. Pas de nouvelle capture ni de vérification visuelle ou des commandes. Le seuil de 25 FPS reste à atteindre."

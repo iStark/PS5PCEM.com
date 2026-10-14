@@ -218,6 +218,8 @@ describe("test history", () => {
       ["astro-bot-full-stores-20261014", null],
       ["astro-bot-relative-moves-20261014", null],
       ["astro-bot-cpu-baselines-20261014", null],
+      ["astro-bot-scalar-checkpoints-20261014", null],
+      ["astro-bot-bounded-recording-20261014", null],
       ["astro-bot-gds-publication-20261014", null],
       ["astro-bot-performance-20261014", null],
       ["minecraft-legends-gameplay-20261013", null],
@@ -230,7 +232,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(33);
+    expect(history.filter((run) => run.release === null)).toHaveLength(35);
   });
 
   it("references captures that exist in public/", () => {

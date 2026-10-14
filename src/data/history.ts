@@ -38,6 +38,21 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "astro-bot-bounded-recording-20261014",
+    slug: "astro-bot",
+    date: "2026-10-14",
+    release: null,
+    image: "/images/astro-bot-title-bounded-recording-2026-10-14.png",
+    source: devReport("astro-bot-renderer-performance-2026-10-14.md#follow-up-bounded-recording-and-storage-proofs"),
+  },
+  {
+    id: "astro-bot-scalar-checkpoints-20261014",
+    slug: "astro-bot",
+    date: "2026-10-14",
+    release: null,
+    source: devReport("astro-bot-renderer-performance-2026-10-14.md#follow-up-compact-scalar-checkpoints-and-uploads"),
+  },
+  {
     id: "astro-bot-cpu-baselines-20261014",
     slug: "astro-bot",
     date: "2026-10-14",

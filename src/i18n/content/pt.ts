@@ -555,6 +555,15 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-bounded-recording-20261014": {
+      "title": "Gravação limitada e verificação exata da memória",
+      "summary": "O limite de gravação de comandos de 250 μs elevou a comparação equilibrada do título de 11.69 para 12.43 FPS. Alterações posteriores de memória deram 12.55 contra 12.49 FPS: sem ganho adicional comprovado, mas evitam 26,125 MiB de hashing redundante por quadro. Passam 537 testes GPU/Vulkan e 64 configurações de sobrescrita. Nova captura inicial; 25 FPS e controle do personagem não foram verificados.",
+      "imageAlt": "Tela inicial de ASTRO BOT após limitar a gravação de comandos"
+    },
+    "astro-bot-scalar-checkpoints-20261014": {
+      "title": "Capturas e transferências escalares menores",
+      "summary": "As capturas dos registros ocupam metade do espaço e mantêm o rastreamento de dependências. As transferências escalares escrevem apenas os valores usados pelo shader. Passam 535/535 testes GPU/Vulkan; as verificações nativas usam buffers preenchidos com valores diferentes de zero e cobrem entradas variáveis, ciclos, pixels e preparação paralela/compartilhada. A tela inicial alcançou 11,62 FPS em 1.320 quadros. A comparação equilibrada das transferências mediu 11,79 contra 11,69 FPS, com 660 quadros por configuração: apenas 0,9% de diferença observada. Sem nova captura ou teste de controle do personagem; 25 FPS ainda não foram alcançados."
+    },
     "astro-bot-cpu-baselines-20261014": {
       "title": "Menos cópias de imagens na CPU",
       "summary": "As somas de verificação dos texels substituem as cópias retidas; a leitura verificada da memória convidada evita a cópia temporária. Comparações do título: 11,19 contra 10,83 FPS para as somas e 11,51 contra 11,36 FPS para leitura direta, 660 fotogramas por opção. Cada etapa elimina uma cópia de CPU de 26,125 MiB por fotograma. Passaram 32 configurações nativas com preenchimento, novas escritas da CPU, somas indisponíveis, cancelamentos e alternativas; a publicação de mips também passou. Sem nova captura nem verificação visual ou de controlo. A meta de 25 FPS continua por atingir."

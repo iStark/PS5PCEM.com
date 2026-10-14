@@ -581,6 +581,15 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-bounded-recording-20261014": {
+      "title": "Bounded recording and exact storage proofs",
+      "summary": "A 250 μs command-recording budget improved the balanced title comparison from 11.69 to 12.43 FPS. Later storage changes measured 12.55 versus 12.49 FPS: no clear extra gain, but 26.125 MiB of redundant hashing is avoided per frame. 537 GPU/Vulkan tests and 64 overwrite configurations pass. New title capture; 25 FPS and character control are not verified.",
+      "imageAlt": "ASTRO BOT title screen after bounded command recording"
+    },
+    "astro-bot-scalar-checkpoints-20261014": {
+      "title": "Smaller scalar checkpoints and uploads",
+      "summary": "Register snapshots are half the previous size while retaining dependency tracking. Scalar uploads write only the words used by the shader. GPU/Vulkan tests pass 535/535; native checks use nonzero poisoned buffers and cover changing inputs, loops, pixels and worker/shared preparation. A 1,320-frame title run measured 11.62 FPS. The balanced upload comparison measured 11.79 versus 11.69 FPS, 660 frames per setting: only a 0.9% observed difference. No fresh screenshot or character-control check; 25 FPS remains unmet."
+    },
     "astro-bot-cpu-baselines-20261014": {
       "title": "Less CPU image copying",
       "summary": "Exact texel digests replace retained image copies, and checked guest fingerprints avoid the temporary snapshot. Balanced title comparisons: 11.19 versus 10.83 FPS for digest baselines; 11.51 versus 11.36 FPS for direct fingerprints, 660 frames per setting. Each step removes a 26.125 MiB CPU copy per frame. Native checks pass 32 configurations covering padding, newer CPU writes, unavailable fingerprints, aborted preparation and fallback; mip publication also passes. No new capture or visual/control verification. The 25 FPS target remains unmet."

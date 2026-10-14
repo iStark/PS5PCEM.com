@@ -555,6 +555,15 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-bounded-recording-20261014": {
+      "title": "Begrenzte Befehlsaufzeichnung und genaue Speicherprüfung",
+      "summary": "Ein Aufzeichnungsbudget von 250 μs erhöhte den ausgewogenen Titelvergleich von 11.69 auf 12.43 FPS. Spätere Speicheränderungen ergaben 12.55 gegenüber 12.49 FPS: kein belegter zusätzlicher Gewinn, aber 26,125 MiB redundantes Hashing weniger pro Frame. 537 GPU/Vulkan-Tests und 64 Überschreibkonfigurationen bestehen. Neue Titelaufnahme; 25 FPS und Charaktersteuerung sind nicht bestätigt.",
+      "imageAlt": "ASTRO BOT-Titelbild nach Begrenzung der Befehlsaufzeichnung"
+    },
+    "astro-bot-scalar-checkpoints-20261014": {
+      "title": "Kleinere Registerabbilder und Uploads",
+      "summary": "Registerabbilder sind bei unveränderter Abhängigkeitsverfolgung halb so groß. Skalare Uploads schreiben nur die vom Shader verwendeten Werte. 535/535 GPU/Vulkan-Tests bestehen; native Prüfungen verwenden absichtlich mit Nichtnullwerten gefüllte Puffer und prüfen wechselnde Eingaben, Schleifen, Pixel und parallele/gemeinsame Vorbereitung. 1.320 Titelbildschirm-Frames ergeben 11,62 FPS. Der ausgewogene Upload-Vergleich misst 11,79 gegenüber 11,69 FPS bei 660 Frames pro Einstellung: nur 0,9 % beobachteter Unterschied. Kein neuer Screenshot oder Steuerungstest; 25 FPS bleiben unerreicht."
+    },
     "astro-bot-cpu-baselines-20261014": {
       "title": "Weniger Bildkopien auf der CPU",
       "summary": "Prüfsummen der Texel ersetzen gespeicherte Bildkopien; geprüfte Gastzugriffe vermeiden den Zwischenspeicher. Titelvergleich: 11,19 gegenüber 10,83 FPS für Prüfsummen und 11,51 gegenüber 11,36 FPS für direkte Zugriffe, je 660 Frames. Jeder Schritt spart eine CPU-Kopie von 26,125 MiB pro Frame. 32 native Konfigurationen prüfen Padding, neuere CPU-Schreibzugriffe, fehlende Prüfsummen, Abbrüche und Rückfallpfade; auch die Mip-Veröffentlichung besteht. Keine neue Aufnahme oder Bild-/Steuerungsprüfung. 25 FPS bleiben unerreicht."
