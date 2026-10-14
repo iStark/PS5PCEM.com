@@ -581,6 +581,11 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-draw-capture-20261014": {
+      "title": "Draw capture and cache comparison",
+      "summary": "Title: 15.33 versus 15.22 FPS, 660 frames per setting. Unusable replay data is no longer copied or hashed. A larger cache did not improve FPS; the default stays unchanged. All 553 tests and native Vulkan checks pass. New title capture; 25 FPS and character control remain unverified.",
+      "imageAlt": "ASTRO BOT title after draw capture optimization"
+    },
     "astro-bot-storage-layouts-20261014": {
       "title": "Storage ownership and scalar loop budgets",
       "summary": "Title comparison: 14.48 versus 14.26 FPS, 660 frames per setting. GPU layout conversion preserves padding; rectangular overwrite proofs avoid redundant uploads. Shared scalar walks use exact instruction budgets. All 551 tests and native validation probes pass. New title capture; 25 FPS and character control remain unverified.",

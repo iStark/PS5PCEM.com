@@ -555,6 +555,11 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-draw-capture-20261014": {
+      "title": "Capture des données et comparaison du cache",
+      "summary": "Titre : 15,33 contre 15,22 FPS, 660 images par réglage. Les données non réutilisables ne sont plus copiées ni hachées. Un cache plus grand ne gagne pas de FPS ; la limite reste inchangée. 553 tests et les vérifications Vulkan passent. Nouvelle capture ; 25 FPS et contrôle du personnage non confirmés.",
+      "imageAlt": "Titre ASTRO BOT après optimisation de la capture des données"
+    },
     "astro-bot-storage-layouts-20261014": {
       "title": "Mémoire des textures et budgets exacts des boucles",
       "summary": "Comparaison du titre : 14.48 contre 14.26 FPS, 660 images par réglage. La conversion GPU préserve le remplissage ; les écritures complètes vérifiées évitent des chargements. Les analyses scalaires partagées respectent un budget exact. 551 tests et les vérifications Vulkan natives passent. Nouvelle capture ; 25 FPS et contrôle du personnage non confirmés.",

@@ -555,6 +555,11 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-draw-capture-20261014": {
+      "title": "Draw-Erfassung und Cache-Vergleich",
+      "summary": "Titel: 15,33 gegenüber 15,22 FPS, 660 Frames je Einstellung. Nicht wiederverwendbare Daten werden nicht mehr kopiert oder gehasht. Ein größerer Cache verbessert die FPS nicht; der Standard bleibt unverändert. 553 Tests und native Vulkan-Prüfungen bestehen. Neue Titelaufnahme; 25 FPS und Charaktersteuerung bleiben unbestätigt.",
+      "imageAlt": "ASTRO BOT-Titelbild nach Optimierung der Datenerfassung"
+    },
     "astro-bot-storage-layouts-20261014": {
       "title": "Texturspeicher und genaue Schleifenbudgets",
       "summary": "Titelvergleich: 14.48 gegenüber 14.26 FPS, 660 Frames je Einstellung. GPU-Layoutkonvertierung erhält Padding; nachgewiesene vollständige Schreibzugriffe vermeiden Uploads. Gemeinsame Skalaranalysen beachten genaue Instruktionsbudgets. 551 Tests und native Vulkan-Prüfungen bestehen. Neue Titelaufnahme; 25 FPS und Charaktersteuerung bleiben unbestätigt.",
