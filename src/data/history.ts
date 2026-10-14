@@ -38,6 +38,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "astro-bot-scalar-merges-20261014",
+    slug: "astro-bot",
+    date: "2026-10-14",
+    release: null,
+    image: "/images/astro-bot-title-scalar-merges-2026-10-14.png",
+    source: devReport("astro-bot-renderer-performance-2026-10-14.md#follow-up-scalar-analysis-and-queued-completion"),
+  },
+  {
     id: "astro-bot-bounded-recording-20261014",
     slug: "astro-bot",
     date: "2026-10-14",

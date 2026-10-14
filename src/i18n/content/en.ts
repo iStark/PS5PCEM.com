@@ -581,6 +581,11 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-scalar-merges-20261014": {
+      "title": "Scalar analysis and queued completion",
+      "summary": "Balanced title comparison: 13.79 versus 13.43 FPS, 660 frames per setting. Less repeated shader analysis, indexed dirty-buffer completion, queued satisfied waits and faster large copies. 542 GPU/Vulkan tests pass. New title capture; 25 FPS is not reached and character control remains unverified.",
+      "imageAlt": "ASTRO BOT title screen after scalar-analysis optimizations"
+    },
     "astro-bot-bounded-recording-20261014": {
       "title": "Bounded recording and exact storage proofs",
       "summary": "A 250 μs command-recording budget improved the balanced title comparison from 11.69 to 12.43 FPS. Later storage changes measured 12.55 versus 12.49 FPS: no clear extra gain, but 26.125 MiB of redundant hashing is avoided per frame. 537 GPU/Vulkan tests and 64 overwrite configurations pass. New title capture; 25 FPS and character control are not verified.",

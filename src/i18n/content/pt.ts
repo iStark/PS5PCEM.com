@@ -555,6 +555,11 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-scalar-merges-20261014": {
+      "title": "Análise escalar e conclusão em fila",
+      "summary": "Comparação equilibrada do título: 13.79 contra 13.43 FPS, 660 quadros por configuração. Menos análise repetida de shaders, buffers alterados indexados, esperas satisfeitas em fila e cópias grandes mais rápidas. Passam 542 testes GPU/Vulkan. Nova captura inicial; 25 FPS não foram atingidos e o controle do personagem não foi verificado.",
+      "imageAlt": "Tela inicial de ASTRO BOT após otimizar a análise escalar"
+    },
     "astro-bot-bounded-recording-20261014": {
       "title": "Gravação limitada e verificação exata da memória",
       "summary": "O limite de gravação de comandos de 250 μs elevou a comparação equilibrada do título de 11.69 para 12.43 FPS. Alterações posteriores de memória deram 12.55 contra 12.49 FPS: sem ganho adicional comprovado, mas evitam 26,125 MiB de hashing redundante por quadro. Passam 537 testes GPU/Vulkan e 64 configurações de sobrescrita. Nova captura inicial; 25 FPS e controle do personagem não foram verificados.",

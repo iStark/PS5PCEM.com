@@ -555,6 +555,11 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-scalar-merges-20261014": {
+      "title": "Analyse scalaire et achèvement en file",
+      "summary": "Comparaison équilibrée du titre : 13.79 contre 13.43 FPS, 660 images par réglage. Moins d’analyse répétée des shaders, indexation des tampons modifiés, mise en file des attentes satisfaites et copies volumineuses accélérées. 542 tests GPU/Vulkan passent. Nouvelle capture du titre ; 25 FPS non atteints, contrôle du personnage non vérifié.",
+      "imageAlt": "Écran titre ASTRO BOT après optimisation de l’analyse scalaire"
+    },
     "astro-bot-bounded-recording-20261014": {
       "title": "Enregistrement borné et vérification exacte de la mémoire",
       "summary": "Un budget de 250 μs pour enregistrer les commandes améliore la comparaison équilibrée du titre de 11.69 à 12.43 FPS. Les changements mémoire suivants donnent 12.55 contre 12.49 FPS : aucun gain supplémentaire établi, mais 26,125 Mio de hachage redondant évités par image. 537 tests GPU/Vulkan et 64 configurations de réécriture passent. Nouvelle capture du titre ; 25 FPS et contrôle du personnage non vérifiés.",

@@ -555,6 +555,11 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-scalar-merges-20261014": {
+      "title": "Skalaranalyse und geordnete Fertigstellung",
+      "summary": "Ausgewogener Titelvergleich: 13.79 gegenüber 13.43 FPS, 660 Frames je Einstellung. Weniger wiederholte Shaderanalyse, indizierte geänderte Puffer, eingereihte erfüllte Wartebedingungen und schnellere große Kopien. 542 GPU/Vulkan-Tests bestehen. Neue Titelaufnahme; 25 FPS nicht erreicht, Charaktersteuerung nicht bestätigt.",
+      "imageAlt": "ASTRO BOT-Titelbild nach Optimierung der Skalaranalyse"
+    },
     "astro-bot-bounded-recording-20261014": {
       "title": "Begrenzte Befehlsaufzeichnung und genaue Speicherprüfung",
       "summary": "Ein Aufzeichnungsbudget von 250 μs erhöhte den ausgewogenen Titelvergleich von 11.69 auf 12.43 FPS. Spätere Speicheränderungen ergaben 12.55 gegenüber 12.49 FPS: kein belegter zusätzlicher Gewinn, aber 26,125 MiB redundantes Hashing weniger pro Frame. 537 GPU/Vulkan-Tests und 64 Überschreibkonfigurationen bestehen. Neue Titelaufnahme; 25 FPS und Charaktersteuerung sind nicht bestätigt.",
