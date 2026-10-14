@@ -31,15 +31,15 @@ const content: Content = {
   games: {
     "astro-bot": {
       "status": "Diagnostic cinematic · rendering defects",
-      "headline": "Arrival cinematic renders with fewer lighting defects",
-      "summary": "PPSA21564 v1.018: A local font-alias overlay, disabled acoustic propagation and native hub level selection reach the arrival cinematic. SDWA and wave32/wave64 fixes remove green corruption and frequent horizontal lighting bands.",
+      "headline": "Rendering and performance work continues",
+      "summary": "PPSA21564 v1.018 reaches diagnostic cinematic scenes. October 14 work reduces command-state copies, resource analysis and CPU/GPU transfers; graphics defects remain.",
       "strengths": [
-        "Scalar-branch and LDS-barrier GPU regressions pass. Opt-in checked BVH snapshots complete the captured active query."
+        "Shared command queues and native transfer paths pass targeted unit and GPU checks."
       ],
       "limits": [
-        "Source fonts are missing; dark and patchy surfaces remain. Generic BVH staging is off by default. Ordinary startup, character control and completion are unverified."
+        "Missing source fonts, dark/patchy surfaces and expensive readbacks remain. Character control and completion are unverified."
       ],
-      "performance": "RTX 3070 Ti, 1920×1080 output, Speed; caches retained. Selected moving-cinematic frames take 339–2,332 ms. No stationary FPS benchmark or demonstrated speedup; internal surfaces still reach 2432×1368 and 4K.",
+      "performance": "RTX 3070 Ti, 1080p output, retained caches: about 9–10 FPS in warmed title observations and 4.60 FPS over a 10-second crowd interval. Not gameplay minima. Final 2D transfer change has no live measurement; internal resolution remains game-controlled.",
       "imageAlt": "ASTRO BOT arrival cinematic with the small craft and crashed ship; dark and patchy surfaces remain"
     },
     "goat-simulator-3": {
@@ -581,6 +581,10 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-performance-20261014": {
+      "title": "Renderer optimization: title and crowd measurements",
+      "summary": "October 14 development build: warmed title observations are about 9–10 FPS; the crowd scene presents 46 frames in 10 seconds (4.60 FPS). Shared command banks, bounded resource analysis, cache recovery and native GPU transfers reduce overhead. GPU tests pass 272/272 and Vulkan tests 256/256. The final 2D storage-to-color transfer passes native probes but has no live benchmark yet. Rendering defects remain, character control is unverified and the 25–30 FPS target is not reached. No new capture; the displayed image is from October 13."
+    },
     "astro-bot-lighting-20261013": {
       "title": "Wave synchronization removes horizontal lighting bands",
       "summary": "Whole-wave scalar branches and converged LDS barriers fix the repeating bands. BVH bounds and opaque child pointers are corrected; opt-in PSR v9 snapshots complete the captured query with a 16,384-block budget. Later sampled frames report no draw/dispatch failures, but four warm-up programs were rejected before the switch was enabled. Dark/patchy surfaces remain; gameplay and a sustained FPS gain are unverified.",

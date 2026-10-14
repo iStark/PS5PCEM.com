@@ -31,7 +31,7 @@ export const compatibility: CompatibilityEntry[] = [
     slug: "astro-bot",
     title: "ASTRO BOT",
     tier: "intro",
-    confirmedOn: "2026-10-13",
+    confirmedOn: "2026-10-14",
     image: "/images/astro-bot-wave64-lighting-2026-10-13.png",
   },
   {

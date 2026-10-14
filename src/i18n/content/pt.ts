@@ -4,15 +4,15 @@ const pt: Content = {
   games: {
     "astro-bot": {
       "status": "Cinemática de diagnóstico · defeitos gráficos",
-      "headline": "A cinemática de chegada apresenta menos falhas de iluminação",
-      "summary": "PPSA21564 v1.018: Aliases locais de fontes, propagação acústica desativada e seleção nativa do nível central permitem chegar à cinemática de chegada. As correções SDWA e wave32/wave64 eliminam a corrupção verde e as frequentes faixas horizontais.",
+      "headline": "Continuam os ajustes gráficos e de desempenho",
+      "summary": "PPSA21564 v1.018 chega a cenas de diagnóstico. Mudanças de 14 de outubro reduzem cópias de estado, análise de recursos e transferências CPU/GPU; persistem defeitos gráficos.",
       "strengths": [
-        "Os testes GPU de desvios escalares e barreiras LDS passam. As capturas BVH verificadas, ativadas para diagnóstico, concluem a consulta ativa capturada."
+        "Filas de comandos compartilhadas e transferências nativas passam testes unitários e GPU específicos."
       ],
       "limits": [
-        "Faltam fontes nos arquivos originais; persistem superfícies escuras e manchadas. A preparação BVH geral está desativada por padrão. Inicialização normal, controle do personagem e conclusão não verificados."
+        "Persistem fontes originais ausentes, superfícies escuras/manchadas e leituras GPU caras. Controle do personagem e conclusão não verificados."
       ],
-      "performance": "RTX 3070 Ti, saída 1920×1080, Speed; caches mantidos. Alguns quadros da cinemática em movimento levam 339–2332 ms. Sem medição FPS com câmera fixa ou ganho de velocidade demonstrado; superfícies internas chegam a 2432×1368 e 4K.",
+      "performance": "RTX 3070 Ti, saída 1080p, caches mantidos: cerca de 9–10 FPS no título aquecido e 4,60 FPS durante 10 segundos na multidão. Não são mínimos de gameplay. Última transferência 2D ainda sem medição no jogo; resolução interna controlada pelo jogo.",
       "imageAlt": "Cinemática de chegada de ASTRO BOT com uma pequena nave e uma nave caída; persistem superfícies escuras e manchadas"
     },
     "goat-simulator-3": {
@@ -555,6 +555,10 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-performance-20261014": {
+      "title": "Otimização gráfica: medições do título e da multidão",
+      "summary": "Versão em desenvolvimento de 14 de outubro: cerca de 9–10 FPS no título com caches aquecidos; 46 quadros em 10 segundos (4,60 FPS) na multidão. Estados de comandos compartilhados, análise limitada de recursos, recuperação do cache e transferências nativas GPU reduzem custos. Passam 272/272 testes GPU e 256/256 Vulkan. A última transferência 2D storage-to-color passa testes nativos, mas ainda não foi medida no jogo. Persistem defeitos gráficos, o controle do personagem não foi verificado e a meta de 25–30 FPS não foi atingida. Sem nova captura; a imagem é de 13 de outubro."
+    },
     "astro-bot-lighting-20261013": {
       "title": "Sincronização de waves elimina faixas de iluminação",
       "summary": "Desvios escalares de toda a wave e barreiras LDS convergentes corrigem as faixas repetidas. Limites BVH e ponteiros opacos de nós filhos são corrigidos; capturas PSR v9 opcionais concluem a consulta com limite de 16 384 blocos. Amostras posteriores não registram falhas draw/dispatch, mas quatro programas foram rejeitados antes da ativação. Superfícies escuras/manchadas persistem; jogabilidade e ganho sustentado de FPS não verificados.",

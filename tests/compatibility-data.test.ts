@@ -214,6 +214,7 @@ describe("test history", () => {
       ["yotei-renderer-followup-20261013", null],
       ["astro-bot-startup-20261013", null],
       ["astro-bot-lighting-20261013", null],
+      ["astro-bot-performance-20261014", null],
       ["minecraft-legends-gameplay-20261013", null],
       ["police-simulator-career-20261012", null],
       ["monster-boy-gameplay-20261012", null],
@@ -224,7 +225,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(27);
+    expect(history.filter((run) => run.release === null)).toHaveLength(28);
   });
 
   it("references captures that exist in public/", () => {

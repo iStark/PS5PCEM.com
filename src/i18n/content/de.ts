@@ -4,15 +4,15 @@ const de: Content = {
   games: {
     "astro-bot": {
       "status": "Diagnostische Zwischensequenz · Grafikfehler",
-      "headline": "Ankunftssequenz mit weniger Beleuchtungsfehlern",
-      "summary": "PPSA21564 v1.018: Lokale Schrift-Aliase, deaktivierte Schallausbreitung und die interne Hub-Levelauswahl ermöglichen die Ankunftssequenz. SDWA- und wave32/wave64-Korrekturen beseitigen die Grünverfärbung und häufige horizontale Beleuchtungsstreifen.",
+      "headline": "Grafik und Leistung werden weiter verbessert",
+      "summary": "PPSA21564 v1.018 erreicht diagnostische Filmsequenzen. Änderungen vom 14. Oktober reduzieren Zustandskopien, Ressourcenanalyse und CPU/GPU-Transfers; Grafikfehler bleiben.",
       "strengths": [
-        "GPU-Regressionstests für skalare Verzweigungen und LDS-Barrieren bestehen. Optionale geprüfte BVH-Snapshots schließen die erfasste aktive Abfrage ab."
+        "Gemeinsame Befehlswarteschlangen und native Transfers bestehen gezielte Unit- und GPU-Tests."
       ],
       "limits": [
-        "Benötigte Schriften fehlen in den Quelldateien; dunkle und fleckige Flächen bleiben. Allgemeines BVH-Staging ist standardmäßig deaktiviert. Normaler Start, Figurensteuerung und Durchspielen sind nicht bestätigt."
+        "Fehlende Originalschriften, dunkle/fleckige Oberflächen und teure Rücklesevorgänge bleiben. Figurensteuerung und Abschluss sind ungeprüft."
       ],
-      "performance": "RTX 3070 Ti, Ausgabe 1920×1080, Speed; Caches beibehalten. Einzelne Bilder der bewegten Sequenz benötigen 339–2.332 ms. Kein stationärer FPS-Test oder nachgewiesener Geschwindigkeitsgewinn; interne Flächen erreichen 2432×1368 und 4K.",
+      "performance": "RTX 3070 Ti, 1080p-Ausgabe, vorhandene Caches: etwa 9–10 FPS in der aufgewärmten Titelsequenz und 4,60 FPS über 10 Sekunden in der Gruppenszene. Keine Gameplay-Mindestwerte. Der letzte 2D-Transfer ist noch nicht live gemessen; die interne Auflösung bestimmt das Spiel.",
       "imageAlt": "ASTRO BOT Ankunftssequenz mit kleinem Fluggerät und abgestürztem Schiff; dunkle und fleckige Flächen bleiben"
     },
     "goat-simulator-3": {
@@ -555,6 +555,10 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-performance-20261014": {
+      "title": "Renderer-Optimierung: Messungen der Titel- und Gruppenszene",
+      "summary": "Entwicklungsstand vom 14. Oktober: rund 9–10 FPS in der aufgewärmten Titelsequenz; 46 Bilder in 10 Sekunden (4,60 FPS) in der Gruppenszene. Gemeinsam genutzte Befehlszustände, begrenzte Ressourcenanalyse, Cache-Erholung und native GPU-Transfers senken den Aufwand. 272/272 GPU- und 256/256 Vulkan-Tests bestehen. Der letzte 2D-Storage-to-Color-Transfer besteht native Tests, wurde aber noch nicht im Spiel gemessen. Grafikfehler bleiben, die Figurensteuerung ist unbestätigt und 25–30 FPS sind nicht erreicht. Kein neuer Screenshot; das Bild stammt vom 13. Oktober."
+    },
     "astro-bot-lighting-20261013": {
       "title": "Wellensynchronisierung beseitigt horizontale Beleuchtungsstreifen",
       "summary": "Skalare Verzweigungen für die gesamte Wave und konvergente LDS-Barrieren beheben die Streifen. BVH-Grenzen und opake Kindzeiger sind korrigiert; optionale PSR-v9-Snapshots schließen die erfasste Abfrage mit einem Limit von 16.384 Blöcken ab. Spätere Stichproben zeigen keine Draw-/Dispatch-Fehler, aber vier Programme wurden vor Aktivierung abgelehnt. Dunkle/fleckige Flächen bleiben; Gameplay und dauerhafter FPS-Gewinn sind nicht bestätigt.",
