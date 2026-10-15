@@ -5,14 +5,14 @@ const de: Content = {
     "astro-bot": {
       "status": "Diagnostische Zwischensequenz · Grafikfehler",
       "headline": "Grafik und Leistung werden weiter verbessert",
-      "summary": "PPSA21564 v1.018 erreicht diagnostische Filmsequenzen. Änderungen vom 14. Oktober reduzieren Zustandskopien, Ressourcenanalyse und CPU/GPU-Transfers; Grafikfehler bleiben.",
+      "summary": "15. Oktober: Ressourcenanalyse, CPU-Kopien und GPU-Wartezeiten wurden optimiert. Für PPSA21564 v1.018 liegt eine neue Messung des Titelbildschirms vor; Grafikfehler in Zwischensequenzen bleiben bestehen.",
       "strengths": [
         "Gemeinsame Befehlswarteschlangen und native Transfers bestehen gezielte Unit- und GPU-Tests."
       ],
       "limits": [
         "Fehlende Originalschriften, dunkle/fleckige Oberflächen und teure Rücklesevorgänge bleiben. Figurensteuerung und Abschluss sind ungeprüft."
       ],
-      "performance": "RTX 3070 Ti, 1080p-Ausgabe, vorhandene Caches: etwa 9–10 FPS in der aufgewärmten Titelsequenz und 4,60 FPS über 10 Sekunden in der Gruppenszene. Keine Gameplay-Mindestwerte. Der letzte 2D-Transfer ist noch nicht live gemessen; die interne Auflösung bestimmt das Spiel.",
+      "performance": "Animierter Titelbildschirm: 18,05 FPS über 2.640 Frames / 146,30 s; Blöcke mit 60 Frames: 16,95–19,59 FPS. Ryzen 7 7700 / RTX 3070 Ti, 1080p-Ausgabe, spielgesteuerte 4K-Quelle, bestehende Caches. Gameplay-FPS und mindestens 18 FPS sind nicht bestätigt; die frühere Menschenmengenszene erreichte 4,60 FPS über 10 s.",
       "imageAlt": "ASTRO BOT Ankunftssequenz mit kleinem Fluggerät und abgestürztem Schiff; dunkle und fleckige Flächen bleiben"
     },
     "goat-simulator-3": {
@@ -555,6 +555,11 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-resource-costs-20261015": {
+      "title": "Weniger CPU-Aufwand; Titelbildschirm mit durchschnittlich 18,05 FPS",
+      "summary": "Zusammenhängende Texturlesevorgänge, kleinere temporäre Initialisierungen und Caches für statische Analysen senken den CPU-Aufwand. Die neue GPU-Abfrage erreicht im Vergleich 17,78 → 18,02 FPS; die durchgehende Messung über 2.640 Frames ergibt 18,05 FPS. 573 GPU/Vulkan-Tests und native Validierung bestanden. Zwölf ungelöste Ressourcenbindungen und Grafikfehler bleiben; die Figurensteuerung wurde nicht geprüft.",
+      "imageAlt": "Animierter ASTRO BOT-Titelbildschirm mit Logo und Tastenhinweis nach der Optimierung der Ressourcenvorbereitung"
+    },
     "astro-bot-uniform-scan-20261015": {
       "title": "Weniger Lesezugriffe bei der Verzweigungsanalyse",
       "summary": "AnyPS5/KytyPS5 geprüft: 49 unnötige CPU-Lesezugriffe pro Frame vermieden und Indizes der Compute-Texturinstruktionen wiederverwendet. Später Titelvergleich: 14,95 gegenüber 14,91 FPS, je 660 Frames; kein belegter Gewinn, 25 FPS nicht erreicht. 560 GPU/Vulkan-Tests und native Validierung bestehen; 12 unaufgelöste Speicherbindungen bleiben. Die getestete Spezialisierung einheitlicher Grafikverzweigungen senkte die FPS und bleibt deaktiviert.",

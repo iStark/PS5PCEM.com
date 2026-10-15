@@ -32,14 +32,14 @@ const content: Content = {
     "astro-bot": {
       "status": "Diagnostic cinematic · rendering defects",
       "headline": "Rendering and performance work continues",
-      "summary": "PPSA21564 v1.018 reaches diagnostic cinematic scenes. October 14 work reduces command-state copies, resource analysis and CPU/GPU transfers; graphics defects remain.",
+      "summary": "October 15: shared resource analysis, host copies and GPU waiting were optimized. PPSA21564 v1.018 has a new measured title run; cinematic rendering defects remain.",
       "strengths": [
         "Shared command queues and native transfer paths pass targeted unit and GPU checks."
       ],
       "limits": [
         "Missing source fonts, dark/patchy surfaces and expensive readbacks remain. Character control and completion are unverified."
       ],
-      "performance": "RTX 3070 Ti, 1080p output, retained caches: about 9–10 FPS in warmed title observations and 4.60 FPS over a 10-second crowd interval. Not gameplay minima. Final 2D transfer change has no live measurement; internal resolution remains game-controlled.",
+      "performance": "Animated title: 18.05 FPS over 2,640 frames / 146.30 s; 60-frame blocks 16.95–19.59 FPS. Ryzen 7 7700 / RTX 3070 Ti, 1080p output, game-controlled 4K source, retained caches. Gameplay FPS and an 18 FPS minimum are unverified; the earlier crowd sample was 4.60 FPS over 10 s.",
       "imageAlt": "ASTRO BOT arrival cinematic with the small craft and crashed ship; dark and patchy surfaces remain"
     },
     "goat-simulator-3": {
@@ -581,6 +581,11 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-resource-costs-20261015": {
+      "title": "Resource costs reduced; 18.05 FPS title average",
+      "summary": "Packed linear texture reads, smaller scalar scratch and static-query caches reduce CPU work. Counter-assisted GPU waiting measures 17.78 → 18.02 FPS in a balanced comparison; the uninterrupted 2,640-frame confirmation averages 18.05 FPS. 573 GPU/Vulkan tests and native validation pass. Twelve unresolved storage bindings and cinematic defects remain; character control is unverified.",
+      "imageAlt": "ASTRO BOT animated title screen with logo and button prompt after CPU resource optimizations"
+    },
     "astro-bot-uniform-scan-20261015": {
       "title": "Reduce uniform-analysis reads and texture scans",
       "summary": "AnyPS5/KytyPS5 review: omit 49 unused CPU proof reads per frame and reuse compute texture instruction indices. Later title comparison: 14.95 versus 14.91 FPS, 660 frames per mode; no established gain, 25 FPS not reached. 560 GPU/Vulkan tests and native validation pass; 12 unresolved storage bindings remain. Graphics uniform specialization was also tested and remains disabled because it reduced FPS.",

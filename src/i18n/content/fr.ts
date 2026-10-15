@@ -5,14 +5,14 @@ const fr: Content = {
     "astro-bot": {
       "status": "Cinématique de diagnostic · défauts graphiques",
       "headline": "Les travaux sur le rendu et les performances continuent",
-      "summary": "PPSA21564 v1.018 atteint des cinématiques de diagnostic. Les changements du 14 octobre réduisent les copies d’état, l’analyse des ressources et les transferts CPU/GPU ; des défauts graphiques persistent.",
+      "summary": "15 octobre : optimisation de l’analyse des ressources, des copies CPU et de l’attente GPU. PPSA21564 v1.018 bénéficie d’une nouvelle mesure de l’écran titre ; les défauts graphiques des cinématiques persistent.",
       "strengths": [
         "Les files de commandes partagées et les transferts natifs passent les tests unitaires et GPU ciblés."
       ],
       "limits": [
         "Polices originales manquantes, surfaces sombres/tachetées et lectures GPU coûteuses persistent. Contrôle du personnage et fin du jeu non vérifiés."
       ],
-      "performance": "RTX 3070 Ti, sortie 1080p, caches conservés : environ 9–10 FPS sur le titre préchauffé et 4,60 FPS sur 10 secondes dans la foule. Ce ne sont pas des minima en jeu. Dernier transfert 2D non mesuré en jeu ; résolution interne contrôlée par le jeu.",
+      "performance": "Écran titre animé : 18,05 FPS sur 2 640 images / 146,30 s ; blocs de 60 images : 16,95–19,59 FPS. Ryzen 7 7700 / RTX 3070 Ti, sortie 1080p, source 4K gérée par le jeu, caches conservés. Les FPS en jeu et un minimum de 18 FPS ne sont pas vérifiés ; l’ancienne scène de foule affichait 4,60 FPS sur 10 s.",
       "imageAlt": "Cinématique d’arrivée d’ASTRO BOT avec un petit appareil et un vaisseau écrasé ; surfaces sombres et tachetées persistantes"
     },
     "goat-simulator-3": {
@@ -555,6 +555,11 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-resource-costs-20261015": {
+      "title": "Coûts CPU réduits ; écran titre à 18,05 FPS en moyenne",
+      "summary": "Les lectures contiguës de textures, l’initialisation temporaire réduite et les caches d’analyse statique diminuent le travail CPU. La nouvelle interrogation GPU donne 17,78 → 18,02 FPS en comparaison ; 2 640 images continues confirment une moyenne de 18,05 FPS. Les 573 tests GPU/Vulkan et la validation native passent. Douze liaisons de ressources non résolues et des défauts cinématiques subsistent ; le contrôle du personnage reste non vérifié.",
+      "imageAlt": "Écran titre animé d’ASTRO BOT avec logo et invitation à appuyer sur une touche après optimisation des ressources"
+    },
     "astro-bot-uniform-scan-20261015": {
       "title": "Réduire les lectures de l’analyse des branches",
       "summary": "Revue AnyPS5/KytyPS5 : 49 lectures CPU inutiles évitées par image et réutilisation des indices des instructions de texture compute. Comparaison tardive : 14,95 contre 14,91 FPS, 660 images par mode ; aucun gain établi, 25 FPS non atteints. 560 tests GPU/Vulkan et validation native réussis ; 12 liaisons de stockage restent non résolues. La spécialisation des branches graphiques uniformes a réduit les FPS et reste désactivée.",

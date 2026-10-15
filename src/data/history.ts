@@ -38,6 +38,15 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "astro-bot-resource-costs-20261015",
+    recordedAt: "2026-10-15T14:25:36+00:00",
+    slug: "astro-bot",
+    date: "2026-10-15",
+    release: null,
+    image: "/images/astro-bot-title-resource-costs-2026-10-15.png",
+    source: devReport("astro-bot-resource-costs-2026-10-15.md"),
+  },
+  {
     id: "astro-bot-uniform-scan-20261015",
     recordedAt: "2026-10-14T21:37:36+00:00",
     slug: "astro-bot",
