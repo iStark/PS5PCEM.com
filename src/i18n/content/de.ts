@@ -5,14 +5,14 @@ const de: Content = {
     "astro-bot": {
       "status": "Diagnostische Zwischensequenz · Grafikfehler",
       "headline": "Grafik und Leistung werden weiter verbessert",
-      "summary": "15. Oktober: Ressourcenanalyse, CPU-Kopien und GPU-Wartezeiten wurden optimiert. Für PPSA21564 v1.018 liegt eine neue Messung des Titelbildschirms vor; Grafikfehler in Zwischensequenzen bleiben bestehen.",
+      "summary": "16. Oktober: Die gemeinsame Ressourcenaufbereitung benötigt weniger Kopien, schnellere Inhaltsprüfungen und kürzere skalare Durchläufe. Neue Titelmessung für PPSA21564 v1.018; Grafikfehler in Zwischensequenzen bleiben.",
       "strengths": [
         "Gemeinsame Befehlswarteschlangen und native Transfers bestehen gezielte Unit- und GPU-Tests."
       ],
       "limits": [
         "Fehlende Originalschriften, dunkle/fleckige Oberflächen und teure Rücklesevorgänge bleiben. Figurensteuerung und Abschluss sind ungeprüft."
       ],
-      "performance": "Animierter Titelbildschirm: 18,05 FPS über 2.640 Frames / 146,30 s; Blöcke mit 60 Frames: 16,95–19,59 FPS. Ryzen 7 7700 / RTX 3070 Ti, 1080p-Ausgabe, spielgesteuerte 4K-Quelle, bestehende Caches. Gameplay-FPS und mindestens 18 FPS sind nicht bestätigt; die frühere Menschenmengenszene erreichte 4,60 FPS über 10 s.",
+      "performance": "Animierter Titelbildschirm: 17,83 FPS über 2.640 Frames / 148,07 s; Blöcke mit 60 Frames: 16,08–19,75 FPS. Ryzen 7 7700 / RTX 3070 Ti, 1080p-Ausgabe, spielgesteuerte 4K-Quelle, bestehende Caches. 20 FPS sind nicht erreicht; Gameplay-FPS sind ungeprüft. Die frühere Menschenmengenszene erreichte 4,60 FPS über 10 s.",
       "imageAlt": "ASTRO BOT Ankunftssequenz mit kleinem Fluggerät und abgestürztem Schiff; dunkle und fleckige Flächen bleiben"
     },
     "goat-simulator-3": {
@@ -555,6 +555,11 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-resource-walks-20261016": {
+      "title": "Ressourcenaufbereitung aktualisiert: durchschnittlich 17,83 FPS im Titel",
+      "summary": "Direkte Verweise auf Shaderdaten, kompakte Suchschlüssel, Inhaltsprüfsummen und gespeicherte Schleifenschreibmasken reduzieren CPU-Arbeit. Das Auslassen wirkungsloser CPU-Schritte ergibt 17,85 → 17,88 FPS, ohne belastbaren Gewinn. Der abschließende Lauf über 2.640 Frames erreicht 17,83 FPS; 582 GPU/Vulkan-Tests und fünf native Prüfungen bestehen. Zwölf ungelöste Ressourcenbindungen und Grafikfehler bleiben; 20 FPS und Figurensteuerung sind nicht bestätigt.",
+      "imageAlt": "Animierter ASTRO BOT-Titelbildschirm nach Änderungen an Ressourcendurchläufen und Inhaltsprüfungen"
+    },
     "astro-bot-resource-costs-20261015": {
       "title": "Weniger CPU-Aufwand; Titelbildschirm mit durchschnittlich 18,05 FPS",
       "summary": "Zusammenhängende Texturlesevorgänge, kleinere temporäre Initialisierungen und Caches für statische Analysen senken den CPU-Aufwand. Die neue GPU-Abfrage erreicht im Vergleich 17,78 → 18,02 FPS; die durchgehende Messung über 2.640 Frames ergibt 18,05 FPS. 573 GPU/Vulkan-Tests und native Validierung bestanden. Zwölf ungelöste Ressourcenbindungen und Grafikfehler bleiben; die Figurensteuerung wurde nicht geprüft.",

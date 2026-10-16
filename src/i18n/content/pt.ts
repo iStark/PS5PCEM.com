@@ -5,14 +5,14 @@ const pt: Content = {
     "astro-bot": {
       "status": "Cinemática de diagnóstico · defeitos gráficos",
       "headline": "Continuam os ajustes gráficos e de desempenho",
-      "summary": "15 de outubro: otimização da análise de recursos, das cópias na CPU e da espera pela GPU. PPSA21564 v1.018 tem uma nova medição da tela de título; persistem os defeitos gráficos nas cenas cinematográficas.",
+      "summary": "16 de outubro: a preparação comum de recursos reduz cópias, acelera verificações de conteúdo e encurta percursos escalares. Nova medição do título PPSA21564 v1.018; os defeitos das cenas permanecem.",
       "strengths": [
         "Filas de comandos compartilhadas e transferências nativas passam testes unitários e GPU específicos."
       ],
       "limits": [
         "Persistem fontes originais ausentes, superfícies escuras/manchadas e leituras GPU caras. Controle do personagem e conclusão não verificados."
       ],
-      "performance": "Título animado: 18,05 FPS em 2.640 quadros / 146,30 s; blocos de 60 quadros: 16,95–19,59 FPS. Ryzen 7 7700 / RTX 3070 Ti, saída 1080p, fonte 4K controlada pelo jogo, caches mantidos. FPS de gameplay e mínimo de 18 FPS não foram verificados; a amostra anterior com multidão teve 4,60 FPS por 10 s.",
+      "performance": "Título animado: 17,83 FPS em 2.640 quadros / 148,07 s; blocos de 60 quadros: 16,08–19,75 FPS. Ryzen 7 7700 / RTX 3070 Ti, saída 1080p, fonte 4K controlada pelo jogo, caches mantidos. A meta de 20 FPS não foi atingida; FPS de gameplay não foi verificado. A amostra anterior com multidão teve 4,60 FPS por 10 s.",
       "imageAlt": "Cinemática de chegada de ASTRO BOT com uma pequena nave e uma nave caída; persistem superfícies escuras e manchadas"
     },
     "goat-simulator-3": {
@@ -555,6 +555,11 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-resource-walks-20261016": {
+      "title": "Preparação de recursos atualizada: média de 17,83 FPS no título",
+      "summary": "Referências aos dados de shaders, chaves compactas, hashes de conteúdo e máscaras de escrita dos laços reduzem trabalho da CPU. Omitir operações escalares inertes na CPU mede 17,85 → 17,88 FPS, uma diferença inconclusiva. O teste final de 2.640 quadros atinge média de 17,83 FPS; passam 582 testes GPU/Vulkan e cinco verificações nativas. Restam doze vínculos de recursos não resolvidos e defeitos nas cenas; 20 FPS e controle do personagem não foram confirmados.",
+      "imageAlt": "Título animado de ASTRO BOT após mudanças nos percursos de recursos e verificações de conteúdo"
+    },
     "astro-bot-resource-costs-20261015": {
       "title": "Menor custo de CPU; média de 18,05 FPS no título",
       "summary": "Leituras contíguas de texturas, menor inicialização temporária e caches de análise estática reduzem o trabalho da CPU. A nova consulta da GPU mede 17,78 → 18,02 FPS na comparação; 2.640 quadros contínuos confirmam média de 18,05 FPS. Passam 573 testes GPU/Vulkan e a validação nativa. Restam doze vínculos de recursos não resolvidos e defeitos nas cenas; o controle do personagem não foi verificado.",

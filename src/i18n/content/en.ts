@@ -32,14 +32,14 @@ const content: Content = {
     "astro-bot": {
       "status": "Diagnostic cinematic · rendering defects",
       "headline": "Rendering and performance work continues",
-      "summary": "October 15: shared resource analysis, host copies and GPU waiting were optimized. PPSA21564 v1.018 has a new measured title run; cinematic rendering defects remain.",
+      "summary": "October 16: shared resource preparation uses fewer copies, faster content checks and shorter scalar walks. PPSA21564 v1.018 has a new title measurement; cinematic rendering defects remain.",
       "strengths": [
         "Shared command queues and native transfer paths pass targeted unit and GPU checks."
       ],
       "limits": [
         "Missing source fonts, dark/patchy surfaces and expensive readbacks remain. Character control and completion are unverified."
       ],
-      "performance": "Animated title: 18.05 FPS over 2,640 frames / 146.30 s; 60-frame blocks 16.95–19.59 FPS. Ryzen 7 7700 / RTX 3070 Ti, 1080p output, game-controlled 4K source, retained caches. Gameplay FPS and an 18 FPS minimum are unverified; the earlier crowd sample was 4.60 FPS over 10 s.",
+      "performance": "Animated title: 17.83 FPS over 2,640 frames / 148.07 s; 60-frame blocks 16.08–19.75 FPS. Ryzen 7 7700 / RTX 3070 Ti, 1080p output, game-controlled 4K source, retained caches. The 20 FPS target is unmet; gameplay FPS is unverified. The earlier crowd sample was 4.60 FPS over 10 s.",
       "imageAlt": "ASTRO BOT arrival cinematic with the small craft and crashed ship; dark and patchy surfaces remain"
     },
     "goat-simulator-3": {
@@ -581,6 +581,11 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-resource-walks-20261016": {
+      "title": "Resource preparation updated; title averages 17.83 FPS",
+      "summary": "Borrowed shader data, compact lookup keys, content fingerprints and cached loop writes reduce CPU work. Omitting inert CPU scalar steps measures 17.85 → 17.88 FPS, an inconclusive difference. The final 2,640-frame run averages 17.83 FPS; 582 GPU/Vulkan tests and five native probes pass. Twelve unresolved storage bindings and cinematic defects remain; 20 FPS and character control are unverified.",
+      "imageAlt": "ASTRO BOT animated title screen after resource-walk and content-check changes"
+    },
     "astro-bot-resource-costs-20261015": {
       "title": "Resource costs reduced; 18.05 FPS title average",
       "summary": "Packed linear texture reads, smaller scalar scratch and static-query caches reduce CPU work. Counter-assisted GPU waiting measures 17.78 → 18.02 FPS in a balanced comparison; the uninterrupted 2,640-frame confirmation averages 18.05 FPS. 573 GPU/Vulkan tests and native validation pass. Twelve unresolved storage bindings and cinematic defects remain; character control is unverified.",

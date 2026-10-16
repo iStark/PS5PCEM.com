@@ -5,14 +5,14 @@ const fr: Content = {
     "astro-bot": {
       "status": "Cinématique de diagnostic · défauts graphiques",
       "headline": "Les travaux sur le rendu et les performances continuent",
-      "summary": "15 octobre : optimisation de l’analyse des ressources, des copies CPU et de l’attente GPU. PPSA21564 v1.018 bénéficie d’une nouvelle mesure de l’écran titre ; les défauts graphiques des cinématiques persistent.",
+      "summary": "16 octobre : la préparation commune des ressources réduit les copies, accélère les contrôles du contenu et raccourcit les parcours scalaires. Nouvelle mesure du titre PPSA21564 v1.018 ; les défauts des cinématiques persistent.",
       "strengths": [
         "Les files de commandes partagées et les transferts natifs passent les tests unitaires et GPU ciblés."
       ],
       "limits": [
         "Polices originales manquantes, surfaces sombres/tachetées et lectures GPU coûteuses persistent. Contrôle du personnage et fin du jeu non vérifiés."
       ],
-      "performance": "Écran titre animé : 18,05 FPS sur 2 640 images / 146,30 s ; blocs de 60 images : 16,95–19,59 FPS. Ryzen 7 7700 / RTX 3070 Ti, sortie 1080p, source 4K gérée par le jeu, caches conservés. Les FPS en jeu et un minimum de 18 FPS ne sont pas vérifiés ; l’ancienne scène de foule affichait 4,60 FPS sur 10 s.",
+      "performance": "Écran titre animé : 17,83 FPS sur 2 640 images / 148,07 s ; blocs de 60 images : 16,08–19,75 FPS. Ryzen 7 7700 / RTX 3070 Ti, sortie 1080p, source 4K gérée par le jeu, caches conservés. L’objectif de 20 FPS n’est pas atteint ; les FPS en jeu ne sont pas vérifiés. L’ancienne scène de foule affichait 4,60 FPS sur 10 s.",
       "imageAlt": "Cinématique d’arrivée d’ASTRO BOT avec un petit appareil et un vaisseau écrasé ; surfaces sombres et tachetées persistantes"
     },
     "goat-simulator-3": {
@@ -555,6 +555,11 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-resource-walks-20261016": {
+      "title": "Préparation des ressources mise à jour : 17,83 FPS en moyenne au titre",
+      "summary": "Les références aux données des shaders, les clés compactes, les empreintes de contenu et les masques d’écriture des boucles réduisent le travail CPU. Ignorer les opérations scalaires inertes sur CPU donne 17,85 → 17,88 FPS, sans gain établi. Le dernier test de 2 640 images atteint 17,83 FPS ; 582 tests GPU/Vulkan et cinq vérifications natives passent. Douze liaisons de ressources non résolues et des défauts cinématiques subsistent ; 20 FPS et le contrôle du personnage restent non confirmés.",
+      "imageAlt": "Écran titre animé d’ASTRO BOT après les changements de parcours des ressources et de contrôle du contenu"
+    },
     "astro-bot-resource-costs-20261015": {
       "title": "Coûts CPU réduits ; écran titre à 18,05 FPS en moyenne",
       "summary": "Les lectures contiguës de textures, l’initialisation temporaire réduite et les caches d’analyse statique diminuent le travail CPU. La nouvelle interrogation GPU donne 17,78 → 18,02 FPS en comparaison ; 2 640 images continues confirment une moyenne de 18,05 FPS. Les 573 tests GPU/Vulkan et la validation native passent. Douze liaisons de ressources non résolues et des défauts cinématiques subsistent ; le contrôle du personnage reste non vérifié.",
