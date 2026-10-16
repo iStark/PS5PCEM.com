@@ -4,7 +4,7 @@ const pt: Dictionary = {
   meta: {
     tagline: "Pesquisa experimental de emulação de PlayStation 5, escrita em Zig",
     description:
-      "PS5PCEM é um emulador experimental de PlayStation 5 para Windows. Acompanhe a compatibilidade jogo a jogo, o desempenho medido e baixe o protótipo atual.",
+      "PS5PCEM é um emulador experimental de PlayStation 5 para Windows e Linux. Acompanhe a compatibilidade jogo a jogo, o desempenho medido e baixe o protótipo atual.",
   },
 
   common: {
@@ -28,14 +28,14 @@ const pt: Dictionary = {
 
   seo: {
     home: {
-      title: "PS5PCEM — emulador experimental de PlayStation 5 para Windows",
+      title: "PS5PCEM — emulador experimental de PlayStation 5 para Windows e Linux",
       description:
         "Baixe o protótipo do PS5PCEM e veja quais jogos de PlayStation 5 realmente rodam: tempos por quadro medidos, limites conhecidos e histórico de testes com datas.",
     },
     download: {
-      title: "Baixar PS5PCEM {version} para Windows x64",
+      title: "Baixar PS5PCEM {version} para Windows e Linux x64",
       description:
-        "PS5PCEM {version} para Windows: arquivo portátil ou instalação por usuário, somas SHA-256 publicadas, requisitos de sistema e todas as compilações anteriores.",
+        "PS5PCEM {version} para Windows e Linux: arquivo portátil ou instalação por usuário, somas SHA-256 publicadas, requisitos de sistema e todas as compilações anteriores.",
     },
     compatibility: {
       title: "Lista de compatibilidade de jogos de PlayStation 5 — PS5PCEM",
@@ -45,7 +45,7 @@ const pt: Dictionary = {
     status: {
       title: "Estado do projeto — o que o PS5PCEM faz hoje",
       description:
-        "PS5PCEM subsistema por subsistema: execução nativa do código convidado, tradução de shaders RDNA2 para SPIR-V, renderização Vulkan, áudio, controles, saves e o lançador do Windows.",
+        "PS5PCEM subsistema por subsistema: execução nativa do código convidado, tradução de shaders RDNA2 para SPIR-V, renderização Vulkan, áudio, controles, saves e o lançador do Windows e Linux.",
     },
     media: {
       title: "Capturas e sessões gravadas — PS5PCEM",
@@ -105,11 +105,11 @@ const pt: Dictionary = {
   home: {
     badge: "Protótipo inicial · {version}",
     heading: "Pesquisa de emulação de PlayStation 5, à vista de todos",
-    lead: "PS5PCEM é um emulador experimental escrito em Zig: o código convidado roda nativamente, os shaders RDNA2 são traduzidos para SPIR-V, o Vulkan apresenta o resultado e um lançador do Windows liga tudo. {playable} dos {total} jogos registrados foram terminados de ponta a ponta.",
+    lead: "PS5PCEM é um emulador experimental escrito em Zig: o código convidado roda nativamente, os shaders RDNA2 são traduzidos para SPIR-V, o Vulkan apresenta o resultado e um lançador do Windows e Linux liga tudo. {playable} dos {total} jogos registrados foram terminados de ponta a ponta.",
     ctaDownload: "Baixar {version}",
     ctaResults: "Ver os resultados dos testes",
     requirements:
-      "Windows 10 2004 ou mais recente · x86-64-v3 · driver Vulkan 1.2 · GPL-3.0-or-later",
+      "Linux / Windows 10 2004 ou mais recente · x86-64-v3 · driver Vulkan 1.2 · GPL-3.0-or-later",
     heroCaption:
       "Cat Quest III, desenhado pelo PS5PCEM na máquina de referência. Confirmado como jogável do começo ao fim.",
     statTested: "Jogos registrados",
@@ -139,9 +139,9 @@ const pt: Dictionary = {
     legalBody:
       "Nenhum jogo, firmware de console, biblioteca de sistema, chave ou material do fabricante acompanha o PS5PCEM nem é oferecido aqui. O projeto existe para pesquisa de interoperabilidade e ensino. A",
     legalLink: "nota jurídica completa",
-    tryHeading: "Experimente a {version} no Windows",
+    tryHeading: "Experimente a {version} no Windows e Linux",
     tryLead:
-      "Arquivo portátil ou instalação por usuário, ambos com somas SHA-256 publicadas.",
+      "Arquivo portátil ou instalação por usuário, ambos com somas SHA-256 publicadas. Linux: DEB, RPM, Pacman, AppImage.",
     tryDownload: "Baixar",
     trySource: "Código-fonte no GitHub",
   },
@@ -199,10 +199,12 @@ const pt: Dictionary = {
 
   download: {
     changesHeading: "Novidades da versão {version}",
-    changesLauncher: "Correção importante: os jogos voltam a iniciar pelo launcher publicado. O diretório de trabalho foi corrigido; as falhas agora mostram a mensagem do Windows e seu código.",
-    changesFeatures: "Novidades: fontes FreeType e correção do início de Jurassic Park, MemoryPool, codificação PNG, funções RTC, contadores AMPR, mistura de cores compactadas, gathers horizontais e chamadas limitadas de sub-rotinas de shaders.",
-    changesLimits: "Os executáveis usam o mesmo certificado da versão anterior. As capturas de desenvolvimento têm data; os testes de instruções não comprovam novos FPS nem campanhas completas.",
-    eyebrow: "Windows x64 · {channel}",
+    changesLauncher: "Pacotes Linux nativos e um inicializador GTK 3 complementam as versões Windows assinadas. Ambos oferecem biblioteca para 48 jogos, pesquisa, visualização em tabela e verificação de atualizações.",
+    changesFeatures: "Inclui relatórios de 15 novos títulos, correções de áudio para Subnautica, Quake II e Jets, otimizações gráficas compartilhadas, vibração e LightBar controladas pelos jogos no Windows.",
+    changesLimits: "Capturas e FPS mantêm suas datas e limitações originais. Linux é experimental; os resultados do Windows não comprovam o desempenho no Linux. Os EXEs Windows usam o certificado anterior com carimbo de tempo.",
+    linuxNote: "Linux requer glibc 2.31+, Linux 5.11+, GTK 3, X11/XWayland, PulseAudio e driver Vulkan 1.2. Essas bibliotecas do sistema também são necessárias para o AppImage. A resposta do controle permanece exclusiva do Windows.",
+    linuxGuide: "Instalação e limitações no Linux",
+    eyebrow: "Windows / Linux x64 · {channel}",
     channelRelease: "Versão",
     channelPrerelease: "Versão prévia",
     heading: "Baixar PS5PCEM {version}",

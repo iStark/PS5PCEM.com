@@ -21,51 +21,83 @@ export type Release = {
   assets: ReleaseAsset[];
 };
 
-const TAG = "v0.3.4";
+const TAG = "v0.3.5";
 
 export const latestRelease: Release = {
-  "version": "0.3.4",
-  "tag": "v0.3.4",
-  "publishedAt": "2026-10-08T23:26:59Z",
+  "version": "0.3.5",
+  "tag": "v0.3.5",
+  "publishedAt": "2026-10-16T03:41:24Z",
   "prerelease": false,
-  "notesUrl": "https://github.com/iStark/PS5PCEM/blob/v0.3.4/docs/release-notes/v0.3.4.md",
-  "releaseUrl": "https://github.com/iStark/PS5PCEM/releases/tag/v0.3.4",
+  "notesUrl": "https://github.com/iStark/PS5PCEM/blob/v0.3.5/docs/release-notes/v0.3.5.md",
+  "releaseUrl": "https://github.com/iStark/PS5PCEM/releases/tag/v0.3.5",
   "assets": [
     {
-      "label": "Portable ZIP",
-      "fileName": "PS5PCEM-0.3.4-windows-x64-portable.zip",
-      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.4/PS5PCEM-0.3.4-windows-x64-portable.zip",
-      "size": 130614229,
-      "sha256": "d437316e9e07b7b40e4f32dc0738624381f0971cbc98440df014a35651f88f6a",
-      "description": "Extract anywhere and run ps5pcem.exe. Settings and savedata stay beside the application.",
+      "label": "Windows portable ZIP",
+      "fileName": "PS5PCEM-0.3.5-windows-x64-portable.zip",
+      "size": 228660896,
+      "sha256": "431730b7e3c8ad245f0819896e164fcce6015a7487e9bc6264151ccbeacbfbd2",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.5/PS5PCEM-0.3.5-windows-x64-portable.zip",
+      "description": "Extract and run ps5pcem.exe. Settings and saves stay beside the application.",
       "primary": true
     },
     {
-      "label": "Per-user installer",
-      "fileName": "PS5PCEM-0.3.4-windows-x64-setup.exe",
-      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.4/PS5PCEM-0.3.4-windows-x64-setup.exe",
-      "size": 128772280,
-      "sha256": "9776a4ae00f55959c3377928d43e0177126da24787d3ef32397a1926453ecc0d",
-      "description": "Installs for the current user only. No administrator rights required."
+      "label": "Windows per-user installer",
+      "fileName": "PS5PCEM-0.3.5-windows-x64-setup.exe",
+      "size": 224151816,
+      "sha256": "3ca145200479fdb34a7da6a2e14bbb41ea4f7ba3b01835e8f5d4a036991df8d0",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.5/PS5PCEM-0.3.5-windows-x64-setup.exe",
+      "description": "Installs for the current Windows user. No administrator rights required."
+    },
+    {
+      "label": "Linux DEB",
+      "fileName": "PS5PCEM-0.3.5-linux-x64.deb",
+      "size": 12862232,
+      "sha256": "85b6534e36982cd02db3c0eaadac29b4e71c0926a7a9dd74675603146c4c3d50",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.5/PS5PCEM-0.3.5-linux-x64.deb",
+      "description": "Native GTK 3 launcher, runner and extractor for Debian / Ubuntu."
+    },
+    {
+      "label": "Linux RPM",
+      "fileName": "PS5PCEM-0.3.5-linux-x64.rpm",
+      "size": 11777941,
+      "sha256": "7100cc97ac27f093f58331097585e8a328d5f8060acdec7884849c92d677a06a",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.5/PS5PCEM-0.3.5-linux-x64.rpm",
+      "description": "Native GTK 3 launcher, runner and extractor for Fedora and compatible distributions."
+    },
+    {
+      "label": "Linux Pacman",
+      "fileName": "PS5PCEM-0.3.5-linux-x64.pacman",
+      "size": 15025056,
+      "sha256": "03c14f20c6d2b79e8ad0c67fea29573adebca8fa8039c6b76ecbf29e5e811463",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.5/PS5PCEM-0.3.5-linux-x64.pacman",
+      "description": "Native GTK 3 launcher, runner and extractor for Arch Linux. Install with pacman -U."
+    },
+    {
+      "label": "Linux AppImage",
+      "fileName": "PS5PCEM-0.3.5-linux-x64.AppImage",
+      "size": 15903224,
+      "sha256": "0ff67ff06d1faff7e54513e58e983fe0b351bbfd850436ef7ad3df9ad121d26e",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.5/PS5PCEM-0.3.5-linux-x64.AppImage",
+      "description": "Executable Linux image. Requires system GTK 3, X11, PulseAudio and Vulkan libraries."
     },
     {
       "label": "SHA-256 checksums",
       "fileName": "SHA256SUMS.txt",
-      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.4/SHA256SUMS.txt",
-      "size": 209,
-      "sha256": "8954ce92d4afcd75637cc6a74e8f995c68775605d40a94cee43f495297c4ef91",
-      "description": "Verify a download before running it. Compare against the hashes listed on this page."
+      "size": 597,
+      "sha256": "12baac5358109a4691fcff184739ee79b4d611c44250d9f4675869fc90304dcd",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.5/SHA256SUMS.txt",
+      "description": "SHA-256 hashes for all six Windows and Linux packages."
     }
   ]
 };
 
 export const releaseHighlights = [
-  "Fixes packaged launchers failing to start games because Windows received an invalid working directory; launch failures now show the Windows error and code.",
-  "Adds FreeType font rendering and the missing-glyph fallback that restores Jurassic Park startup and its first level.",
-  "Implements MemoryPool allocation operations, PNG encoding, RTC additions and AMPR counters with deferred counter waits.",
-  "Adds packed 11/11/10 UNORM blending, DS instructions, BY2/BY4 and PCK2/PCK4 loads, horizontal gathers and bounded scalar shader calls.",
-  "Reports 1080p SDR output and leaves 120 Hz unavailable. Internal rendering remains game-controlled.",
-  "The applications and installer use the existing certificate with timestamps. Instruction tests do not establish new game FPS or full-playthrough results."
+  "First native Linux packages: DEB, RPM, Pacman and AppImage with the GTK 3 launcher, runner and extractor.",
+  "Both launchers support 48 games, search, table view and GitHub update checks.",
+  "Windows controller vibration and game-controlled LightBar; DualSense USB feedback physically confirmed.",
+  "Audio corrections for Subnautica, Quake II and Jets, plus shared renderer and loader fixes.",
+  "Fifteen newly documented titles, with screenshots and explicit limits for gameplay, graphics and performance.",
+  "Windows applications and installer use the existing timestamped certificate. Linux remains experimental; dated Windows FPS results are not Linux benchmarks."
 ] as const;
 
 export const releaseHistory: {
@@ -75,10 +107,16 @@ export const releaseHistory: {
   url: string;
 }[] = [
   {
-    version: "0.3.4",
+    version: "0.3.5",
     tag: TAG,
     publishedAt: latestRelease.publishedAt,
     url: latestRelease.releaseUrl,
+  },
+  {
+    version: "0.3.4",
+    tag: "v0.3.4",
+    publishedAt: "2026-10-08T23:26:59Z",
+    url: "https://github.com/iStark/PS5PCEM/releases/tag/v0.3.4",
   },
   {
     version: "0.3.3",
@@ -127,7 +165,7 @@ export const releaseHistory: {
 export const systemRequirements = [
   {
     label: "Operating system",
-    value: "Windows 10 version 2004 or newer, x86-64",
+    value: "Windows 10 version 2004 or newer, or Linux 5.11+ with glibc 2.31+, x86-64",
   },
   {
     label: "Graphics",
@@ -149,8 +187,8 @@ export const systemRequirements = [
 ] as const;
 
 export const quickStart = [
-  "Install the per-user build, or extract the portable ZIP anywhere you like.",
-  "Start ps5pcem.exe. The launcher opens with its recent-game library.",
+  "Install the Windows per-user build, extract the portable ZIP, or install a Linux package.",
+  "Start ps5pcem.exe on Windows, or ps5pcem / the AppImage on Linux. The launcher opens its library.",
   "Point it at a directory containing a decrypted title you are legally entitled to use.",
   "Select Launch game.",
 ] as const;

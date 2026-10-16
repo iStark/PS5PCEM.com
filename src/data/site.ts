@@ -2,7 +2,7 @@ export const site = {
   name: "PS5PCEM",
   tagline: "Experimental PlayStation 5 emulation research, written in Zig",
   description:
-    "PS5PCEM is an experimental PlayStation 5 emulator and interoperability research project for Windows. Track game compatibility, read measured performance results, and download the latest prototype.",
+    "PS5PCEM is an experimental PlayStation 5 emulator and interoperability research project for Windows and Linux. Track game compatibility, read measured performance results, and download the latest prototype.",
   url: "https://ps5pcem.com",
   author: "Artur Strazewicz",
   license: "GPL-3.0-or-later",

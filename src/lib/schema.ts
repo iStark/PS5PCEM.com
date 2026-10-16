@@ -57,7 +57,7 @@ export function softwareSchema(locale: Locale) {
     url: absolute(localePath(locale)),
     applicationCategory: "GameApplication",
     applicationSubCategory: "Emulator",
-    operatingSystem: "Windows 10 2004 or newer, x86-64-v3",
+    operatingSystem: "Windows 10 2004+ or Linux 5.11+ (glibc 2.31+), x86-64-v3",
     processorRequirements: "x86-64-v3 (AVX2, BMI2, FMA)",
     memoryRequirements: "Vulkan 1.2 capable GPU",
     softwareVersion: latestRelease.version,

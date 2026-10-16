@@ -4,7 +4,7 @@ const zh: Dictionary = {
   meta: {
     tagline: "用 Zig 编写的 PlayStation 5 实验性模拟研究",
     description:
-      "PS5PCEM 是面向 Windows 的 PlayStation 5 实验性模拟器。查看逐款游戏的兼容性、实测性能，并下载当前原型版本。",
+      "PS5PCEM 是面向 Windows 和 Linux 的 PlayStation 5 实验性模拟器。查看逐款游戏的兼容性、实测性能，并下载当前原型版本。",
   },
 
   common: {
@@ -28,14 +28,14 @@ const zh: Dictionary = {
 
   seo: {
     home: {
-      title: "PS5PCEM — 面向 Windows 的 PlayStation 5 实验性模拟器",
+      title: "PS5PCEM — 面向 Windows 和 Linux 的 PlayStation 5 实验性模拟器",
       description:
         "下载 PS5PCEM 原型版本，查看哪些 PlayStation 5 游戏真的能跑起来：实测帧时间、已知限制，以及每款游戏按日期排列的测试历史。",
     },
     download: {
-      title: "下载 PS5PCEM {version}（Windows x64）",
+      title: "下载 PS5PCEM {version}（Windows 和 Linux x64）",
       description:
-        "面向 Windows 的 PS5PCEM {version}：便携压缩包或单用户安装程序，公开的 SHA-256 校验值、系统要求，以及此前的全部版本。",
+        "面向 Windows 和 Linux 的 PS5PCEM {version}：便携压缩包或单用户安装程序，公开的 SHA-256 校验值、系统要求，以及此前的全部版本。",
     },
     compatibility: {
       title: "PlayStation 5 游戏兼容性列表 — PS5PCEM",
@@ -45,7 +45,7 @@ const zh: Dictionary = {
     status: {
       title: "项目进展 — PS5PCEM 目前的能力",
       description:
-        "按子系统逐一说明 PS5PCEM：客户机代码原生执行、RDNA2 着色器翻译为 SPIR-V、Vulkan 呈现、音频、手柄、存档以及 Windows 启动器。",
+        "按子系统逐一说明 PS5PCEM：客户机代码原生执行、RDNA2 着色器翻译为 SPIR-V、Vulkan 呈现、音频、手柄、存档以及 Windows 和 Linux 启动器。",
     },
     media: {
       title: "截图与运行实录 — PS5PCEM",
@@ -105,11 +105,11 @@ const zh: Dictionary = {
   home: {
     badge: "早期原型 · {version}",
     heading: "公开进行的 PlayStation 5 模拟研究",
-    lead: "PS5PCEM 是一个用 Zig 编写的实验性模拟器：客户机代码原生执行，RDNA2 着色器被翻译为 SPIR-V，由 Vulkan 呈现结果，再由 Windows 启动器把这一切串联起来。已记录的 {total} 款游戏中，有 {playable} 款被完整通关。",
+    lead: "PS5PCEM 是一个用 Zig 编写的实验性模拟器：客户机代码原生执行，RDNA2 着色器被翻译为 SPIR-V，由 Vulkan 呈现结果，再由 Windows 和 Linux 启动器把这一切串联起来。已记录的 {total} 款游戏中，有 {playable} 款被完整通关。",
     ctaDownload: "下载 {version}",
     ctaResults: "查看测试结果",
     requirements:
-      "Windows 10 2004 或更新 · x86-64-v3 · Vulkan 1.2 驱动 · GPL-3.0-or-later",
+      "Linux / Windows 10 2004 或更新 · x86-64-v3 · Vulkan 1.2 驱动 · GPL-3.0-or-later",
     heroCaption:
       "《Cat Quest III》，由 PS5PCEM 在基准机器上绘制。已确认可从头玩到尾。",
     statTested: "已记录游戏",
@@ -139,8 +139,8 @@ const zh: Dictionary = {
     legalBody:
       "PS5PCEM 不附带、本站也不提供任何游戏、主机固件、系统库、密钥或厂商资料。本项目用于互操作性研究与教育。完整的",
     legalLink: "法律说明",
-    tryHeading: "在 Windows 上试用 {version}",
-    tryLead: "便携压缩包或单用户安装程序，两者都附有公开的 SHA-256 校验值。",
+    tryHeading: "在 Windows 和 Linux 上试用 {version}",
+    tryLead: "便携压缩包或单用户安装程序，两者都附有公开的 SHA-256 校验值。 Linux: DEB, RPM, Pacman, AppImage.",
     tryDownload: "下载",
     trySource: "GitHub 上的源码",
   },
@@ -197,10 +197,12 @@ const zh: Dictionary = {
 
   download: {
     changesHeading: "{version} 更新内容",
-    changesLauncher: "重要修复：发行包中的启动器可以再次启动游戏。工作目录路径已修正；现在启动失败会显示 Windows 错误信息及代码。",
-    changesFeatures: "新增 FreeType 字体和 Jurassic Park 启动修复、MemoryPool、PNG 编码、RTC 函数、AMPR 计数器、打包颜色混合、水平 gather 与受限着色器子程序调用。",
-    changesLimits: "可执行文件沿用上一版本的签名证书。开发截图标注了日期；指令测试不代表新的游戏帧率或完整通关验证。",
-    eyebrow: "Windows x64 · {channel}",
+    changesLauncher: "新增原生 Linux 软件包和 GTK 3 启动器，同时提供已签名的 Windows 构建。两个启动器均支持 48 款游戏、搜索、表格视图和更新检查。",
+    changesFeatures: "收录 15 款新游戏的测试报告，修复 Subnautica、Quake II 和 Jets 的音频，优化通用图形处理，并在 Windows 上支持震动和游戏控制的 LightBar。",
+    changesLimits: "截图和 FPS 保留原始日期及测试限制。Linux 仍处于实验阶段；Windows 的游戏结果不能证明 Linux 的性能。Windows EXE 使用之前的证书签名并加盖时间戳。",
+    linuxNote: "Linux 需要 glibc 2.31+、Linux 5.11+、GTK 3、X11/XWayland、PulseAudio 和 Vulkan 1.2 驱动。AppImage 同样需要这些系统库。手柄反馈目前仅限 Windows。",
+    linuxGuide: "Linux 安装与限制",
+    eyebrow: "Windows / Linux x64 · {channel}",
     channelRelease: "正式版",
     channelPrerelease: "预发布版",
     heading: "下载 PS5PCEM {version}",

@@ -43,6 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       "download PS5 emulator",
       `PS5PCEM ${latestRelease.version}`,
       "PS5 emulator Windows download",
+      "PS5 emulator Linux download",
       "PS5PCEM SHA-256",
     ],
   });
@@ -104,9 +105,15 @@ export default async function DownloadPage({ params }: PageProps) {
         <p className="mt-3 text-sm leading-relaxed text-ink-400">
           {t.download.changesLimits}
         </p>
-        <div className="mt-5">
+        <p className="mt-3 text-sm leading-relaxed text-ink-400">
+          {t.download.linuxNote}
+        </p>
+        <div className="mt-5 flex flex-wrap gap-3">
           <ButtonLink href={latestRelease.notesUrl} variant="secondary" external>
             {format(t.download.releaseNotesCta, { version: latestRelease.version })}
+          </ButtonLink>
+          <ButtonLink href={`https://github.com/iStark/PS5PCEM/blob/${latestRelease.tag}/docs/linux.md`} variant="secondary" external>
+            {t.download.linuxGuide}
           </ButtonLink>
         </div>
       </section>

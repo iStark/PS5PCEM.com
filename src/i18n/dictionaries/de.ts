@@ -4,7 +4,7 @@ const de: Dictionary = {
   meta: {
     tagline: "Experimentelle PlayStation-5-Emulationsforschung, in Zig geschrieben",
     description:
-      "PS5PCEM ist ein experimenteller PlayStation-5-Emulator für Windows. Verfolgen Sie die Kompatibilität einzelner Titel, gemessene Leistungswerte und laden Sie den aktuellen Prototyp herunter.",
+      "PS5PCEM ist ein experimenteller PlayStation-5-Emulator für Windows und Linux. Verfolgen Sie die Kompatibilität einzelner Titel, gemessene Leistungswerte und laden Sie den aktuellen Prototyp herunter.",
   },
 
   common: {
@@ -28,14 +28,14 @@ const de: Dictionary = {
 
   seo: {
     home: {
-      title: "PS5PCEM — experimenteller PlayStation-5-Emulator für Windows",
+      title: "PS5PCEM — experimenteller PlayStation-5-Emulator für Windows und Linux",
       description:
         "Laden Sie den PS5PCEM-Prototyp herunter und sehen Sie, welche PlayStation-5-Titel wirklich laufen: gemessene Bildzeiten, bekannte Grenzen und eine datierte Testhistorie je Spiel.",
     },
     download: {
-      title: "PS5PCEM {version} für Windows x64 herunterladen",
+      title: "PS5PCEM {version} für Windows und Linux x64 herunterladen",
       description:
-        "PS5PCEM {version} für Windows: portables Archiv oder Installation je Benutzer, veröffentlichte SHA-256-Prüfsummen, Systemanforderungen und alle früheren Builds.",
+        "PS5PCEM {version} für Windows und Linux: portables Archiv oder Installation je Benutzer, veröffentlichte SHA-256-Prüfsummen, Systemanforderungen und alle früheren Builds.",
     },
     compatibility: {
       title: "Kompatibilitätsliste für PlayStation-5-Spiele — PS5PCEM",
@@ -45,7 +45,7 @@ const de: Dictionary = {
     status: {
       title: "Projektstand — was PS5PCEM heute kann",
       description:
-        "PS5PCEM Teilsystem für Teilsystem: native Gastausführung, RDNA2-Shaderübersetzung nach SPIR-V, Vulkan-Darstellung, Ton, Controller, Spielstände und der Windows-Launcher.",
+        "PS5PCEM Teilsystem für Teilsystem: native Gastausführung, RDNA2-Shaderübersetzung nach SPIR-V, Vulkan-Darstellung, Ton, Controller, Spielstände und der Windows und Linux-Launcher.",
     },
     media: {
       title: "Screenshots und aufgezeichnete Läufe — PS5PCEM",
@@ -105,11 +105,11 @@ const de: Dictionary = {
   home: {
     badge: "Früher Prototyp · {version}",
     heading: "PlayStation-5-Emulationsforschung, offen einsehbar",
-    lead: "PS5PCEM ist ein experimenteller Emulator in Zig: Gastcode läuft nativ, RDNA2-Shader werden nach SPIR-V übersetzt, Vulkan zeigt das Ergebnis, und ein Windows-Launcher hält alles zusammen. {playable} von {total} erfassten Titeln wurden vollständig durchgespielt.",
+    lead: "PS5PCEM ist ein experimenteller Emulator in Zig: Gastcode läuft nativ, RDNA2-Shader werden nach SPIR-V übersetzt, Vulkan zeigt das Ergebnis, und ein Windows und Linux-Launcher hält alles zusammen. {playable} von {total} erfassten Titeln wurden vollständig durchgespielt.",
     ctaDownload: "{version} herunterladen",
     ctaResults: "Testergebnisse ansehen",
     requirements:
-      "Windows 10 2004 oder neuer · x86-64-v3 · Vulkan-1.2-Treiber · GPL-3.0-or-later",
+      "Linux / Windows 10 2004 oder neuer · x86-64-v3 · Vulkan-1.2-Treiber · GPL-3.0-or-later",
     heroCaption:
       "Cat Quest III, von PS5PCEM auf dem Referenzrechner gezeichnet. Von Anfang bis Ende bestätigt spielbar.",
     statTested: "Erfasste Titel",
@@ -139,9 +139,9 @@ const de: Dictionary = {
     legalBody:
       "Weder Spiele noch Konsolen-Firmware, Systembibliotheken, Schlüssel oder Herstellermaterial werden mit PS5PCEM ausgeliefert oder hier angeboten. Das Projekt dient der Interoperabilitätsforschung und der Bildung. Der vollständige",
     legalLink: "Rechtshinweis",
-    tryHeading: "{version} unter Windows ausprobieren",
+    tryHeading: "{version} unter Windows und Linux ausprobieren",
     tryLead:
-      "Portables Archiv oder Installation für den aktuellen Benutzer, beide mit veröffentlichten SHA-256-Prüfsummen.",
+      "Portables Archiv oder Installation für den aktuellen Benutzer, beide mit veröffentlichten SHA-256-Prüfsummen. Linux: DEB, RPM, Pacman, AppImage.",
     tryDownload: "Herunterladen",
     trySource: "Quellcode auf GitHub",
   },
@@ -199,10 +199,12 @@ const de: Dictionary = {
 
   download: {
     changesHeading: "Änderungen in {version}",
-    changesLauncher: "Wichtige Korrektur: Spiele starten wieder über den Launcher der veröffentlichten Pakete. Der Arbeitsverzeichnispfad ist korrigiert; Startfehler zeigen jetzt die Windows-Meldung und den Fehlercode.",
-    changesFeatures: "Neu sind FreeType-Schriften und die Startkorrektur für Jurassic Park, MemoryPool, PNG-Kodierung, RTC-Funktionen, AMPR-Zähler, Blending gepackter Farben, horizontale Gathers und begrenzte Shader-Unterprogrammaufrufe.",
-    changesLimits: "Die Programme verwenden dasselbe Signaturzertifikat wie die vorige Version. Entwicklungsaufnahmen sind datiert; Befehlstests belegen weder neue Spiel-FPS noch vollständige Spieldurchläufe.",
-    eyebrow: "Windows x64 · {channel}",
+    changesLauncher: "Native Linux-Pakete und ein GTK-3-Launcher ergänzen die signierten Windows-Builds. Beide Launcher bieten eine Bibliothek für 48 Spiele, Suche, Tabellenansicht und Update-Prüfung.",
+    changesFeatures: "Enthält Berichte zu 15 neuen Titeln, Audiokorrekturen für Subnautica, Quake II und Jets, gemeinsame Grafikoptimierungen sowie Vibration und spielgesteuerte LightBar unter Windows.",
+    changesLimits: "Screenshots und FPS behalten ihre ursprünglichen Daten und Einschränkungen. Linux ist experimentell; Windows-Ergebnisse belegen keine Linux-Leistung. Windows-EXEs verwenden das bisherige Zertifikat mit Zeitstempel.",
+    linuxNote: "Linux benötigt glibc 2.31+, Linux 5.11+, GTK 3, X11/XWayland, PulseAudio und einen Vulkan-1.2-Treiber. Diese Systembibliotheken sind auch für das AppImage nötig. Controller-Feedback bleibt auf Windows beschränkt.",
+    linuxGuide: "Linux-Installation und Einschränkungen",
+    eyebrow: "Windows / Linux x64 · {channel}",
     channelRelease: "Version",
     channelPrerelease: "Vorabversion",
     heading: "PS5PCEM {version} herunterladen",

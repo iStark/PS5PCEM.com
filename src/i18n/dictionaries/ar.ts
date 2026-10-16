@@ -4,7 +4,7 @@ const ar: Dictionary = {
   meta: {
     tagline: "بحث تجريبي في محاكاة PlayStation 5، مكتوب بلغة Zig",
     description:
-      "PS5PCEM محاكي تجريبي لجهاز PlayStation 5 يعمل على Windows. تابع توافق كل لعبة على حدة، والأداء المقيس، وحمّل النموذج الحالي.",
+      "PS5PCEM محاكي تجريبي لجهاز PlayStation 5 يعمل على Windows وLinux. تابع توافق كل لعبة على حدة، والأداء المقيس، وحمّل النموذج الحالي.",
   },
 
   common: {
@@ -28,14 +28,14 @@ const ar: Dictionary = {
 
   seo: {
     home: {
-      title: "PS5PCEM — محاكي PlayStation 5 تجريبي لنظام Windows",
+      title: "PS5PCEM — محاكي PlayStation 5 تجريبي لنظام Windows وLinux",
       description:
         "حمّل نموذج PS5PCEM وشاهد أي ألعاب PlayStation 5 تعمل فعلًا: أزمنة إطارات مقيسة، وحدود معروفة، وتاريخ اختبارات بالتواريخ لكل لعبة.",
     },
     download: {
-      title: "تنزيل PS5PCEM {version} لنظام Windows x64",
+      title: "تنزيل PS5PCEM {version} لنظام Windows وLinux x64",
       description:
-        "PS5PCEM {version} لنظام Windows: أرشيف محمول أو مثبِّت للمستخدم، بصمات SHA-256 منشورة، ومتطلبات النظام، وكل النسخ الأسبق.",
+        "PS5PCEM {version} لنظام Windows وLinux: أرشيف محمول أو مثبِّت للمستخدم، بصمات SHA-256 منشورة، ومتطلبات النظام، وكل النسخ الأسبق.",
     },
     compatibility: {
       title: "قائمة توافق ألعاب PlayStation 5 — PS5PCEM",
@@ -45,7 +45,7 @@ const ar: Dictionary = {
     status: {
       title: "حالة المشروع — ما يقدر عليه PS5PCEM اليوم",
       description:
-        "PS5PCEM نظامًا فرعيًا بعد آخر: تنفيذ أصلي للشيفرة الضيفة، وترجمة مظلِّلات RDNA2 إلى SPIR-V، وعرض عبر Vulkan، والصوت، ويد التحكم، وملفات الحفظ، ومشغّل Windows.",
+        "PS5PCEM نظامًا فرعيًا بعد آخر: تنفيذ أصلي للشيفرة الضيفة، وترجمة مظلِّلات RDNA2 إلى SPIR-V، وعرض عبر Vulkan، والصوت، ويد التحكم، وملفات الحفظ، ومشغّل Windows وLinux.",
     },
     media: {
       title: "صور ولقطات مسجَّلة — PS5PCEM",
@@ -105,11 +105,11 @@ const ar: Dictionary = {
   home: {
     badge: "نموذج مبكر · {version}",
     heading: "بحث في محاكاة PlayStation 5، على المكشوف",
-    lead: "PS5PCEM محاكي تجريبي مكتوب بلغة Zig: الشيفرة الضيفة تُنفَّذ أصليًا، وتُترجم مظلِّلات RDNA2 إلى SPIR-V، ويعرض Vulkan النتيجة، ويربط كل ذلك مشغّل لنظام Windows. من بين {total} لعبة مسجَّلة، أُكملت {playable} من البداية إلى النهاية.",
+    lead: "PS5PCEM محاكي تجريبي مكتوب بلغة Zig: الشيفرة الضيفة تُنفَّذ أصليًا، وتُترجم مظلِّلات RDNA2 إلى SPIR-V، ويعرض Vulkan النتيجة، ويربط كل ذلك مشغّل لنظام Windows وLinux. من بين {total} لعبة مسجَّلة، أُكملت {playable} من البداية إلى النهاية.",
     ctaDownload: "تنزيل {version}",
     ctaResults: "اطّلع على نتائج الاختبارات",
     requirements:
-      "Windows 10 2004 أو أحدث · x86-64-v3 · برنامج تشغيل Vulkan 1.2 · GPL-3.0-or-later",
+      "Linux / Windows 10 2004 أو أحدث · x86-64-v3 · برنامج تشغيل Vulkan 1.2 · GPL-3.0-or-later",
     heroCaption:
       "لعبة Cat Quest III كما رسمها PS5PCEM على جهاز القياس المرجعي. مؤكَّد أنها قابلة للعب من البداية إلى النهاية.",
     statTested: "ألعاب مسجَّلة",
@@ -139,9 +139,9 @@ const ar: Dictionary = {
     legalBody:
       "لا تُرفَق مع PS5PCEM ولا تُقدَّم هنا أي ألعاب أو برامج ثابتة للجهاز أو مكتبات نظام أو مفاتيح أو مواد تابعة للمُصنِّع. المشروع قائم لأجل بحث التشغيل البيني والتعليم. وتجد",
     legalLink: "الملاحظة القانونية الكاملة",
-    tryHeading: "جرّب {version} على Windows",
+    tryHeading: "جرّب {version} على Windows وLinux",
     tryLead:
-      "أرشيف محمول أو مثبِّت للمستخدم الحالي، وكلاهما مع بصمات SHA-256 منشورة.",
+      "أرشيف محمول أو مثبِّت للمستخدم الحالي، وكلاهما مع بصمات SHA-256 منشورة. Linux: DEB, RPM, Pacman, AppImage.",
     tryDownload: "تنزيل",
     trySource: "الشيفرة المصدرية على GitHub",
   },
@@ -198,10 +198,12 @@ const ar: Dictionary = {
 
   download: {
     changesHeading: "التغييرات في {version}",
-    changesLauncher: "إصلاح مهم: يمكن تشغيل الألعاب مجددًا من واجهة التشغيل في الحزم المنشورة. تم تصحيح مسار مجلد العمل؛ تعرض حالات الفشل الآن رسالة Windows ورمز الخطأ.",
-    changesFeatures: "الجديد: خطوط FreeType وإصلاح بدء Jurassic Park، وMemoryPool وترميز PNG ووظائف RTC وعدادات AMPR ومزج الألوان المضغوطة والجمع الأفقي واستدعاءات برامج التظليل الفرعية المقيدة.",
-    changesLimits: "تستخدم الملفات التنفيذية شهادة التوقيع نفسها المستخدمة في الإصدار السابق. لقطات التطوير مؤرخة؛ اختبارات التعليمات لا تثبت معدل إطارات جديدًا أو إكمال الألعاب.",
-    eyebrow: "Windows x64 · {channel}",
+    changesLauncher: "تضاف حزم Linux الأصلية ومشغّل GTK 3 إلى إصدارات Windows الموقّعة. يدعم المشغّلان مكتبة من 48 لعبة والبحث وعرض الجدول والتحقق من التحديثات.",
+    changesFeatures: "يتضمن تقارير عن 15 لعبة جديدة وإصلاحات صوت Subnautica وQuake II وJets وتحسينات رسومية مشتركة، مع الاهتزاز وLightBar التي تتحكم بها الألعاب على Windows.",
+    changesLimits: "تحتفظ اللقطات وقياسات FPS بتواريخها وحدودها الأصلية. دعم Linux تجريبي؛ نتائج Windows لا تثبت أداء Linux. تستخدم ملفات EXE شهادة Windows السابقة مع ختم زمني.",
+    linuxNote: "يتطلب Linux ‏glibc 2.31+ ونواة 5.11+ وGTK 3 وX11/XWayland وPulseAudio وتعريف Vulkan 1.2. يحتاج AppImage أيضًا إلى مكتبات النظام هذه. استجابة وحدة التحكم متاحة حاليًا على Windows فقط.",
+    linuxGuide: "تثبيت Linux والقيود",
+    eyebrow: "Windows / Linux x64 · {channel}",
     channelRelease: "إصدار",
     channelPrerelease: "إصدار أولي",
     heading: "تنزيل PS5PCEM {version}",

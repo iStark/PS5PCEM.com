@@ -10,8 +10,8 @@ import { formatBytes, formatDate, shortHash } from "@/lib/format";
 
 describe("release data", () => {
   it("points at the current published tag", () => {
-    expect(latestRelease.version).toBe("0.3.4");
-    expect(latestRelease.tag).toBe("v0.3.4");
+    expect(latestRelease.version).toBe("0.3.5");
+    expect(latestRelease.tag).toBe("v0.3.5");
     expect(latestRelease.prerelease).toBe(false);
   });
 
@@ -28,10 +28,14 @@ describe("release data", () => {
   it("publishes the portable ZIP and the per-user installer", () => {
     const names = latestRelease.assets.map((asset) => asset.fileName);
     expect(names).toContain(
-      "PS5PCEM-0.3.4-windows-x64-portable.zip",
+      "PS5PCEM-0.3.5-windows-x64-portable.zip",
     );
-    expect(names).toContain("PS5PCEM-0.3.4-windows-x64-setup.exe");
+    expect(names).toContain("PS5PCEM-0.3.5-windows-x64-setup.exe");
     expect(names).toContain("SHA256SUMS.txt");
+    for (const extension of ["deb", "rpm", "pacman", "AppImage"]) {
+      expect(names).toContain(`PS5PCEM-0.3.5-linux-x64.${extension}`);
+    }
+    expect(names).toHaveLength(7);
   });
 
   it("recommends exactly one asset", () => {
@@ -46,11 +50,11 @@ describe("release data", () => {
     );
 
     expect(
-      byName.get("PS5PCEM-0.3.4-windows-x64-portable.zip")!.sha256,
-    ).toBe("d437316e9e07b7b40e4f32dc0738624381f0971cbc98440df014a35651f88f6a");
+      byName.get("PS5PCEM-0.3.5-windows-x64-portable.zip")!.sha256,
+    ).toBe("431730b7e3c8ad245f0819896e164fcce6015a7487e9bc6264151ccbeacbfbd2");
     expect(
-      byName.get("PS5PCEM-0.3.4-windows-x64-setup.exe")!.sha256,
-    ).toBe("9776a4ae00f55959c3377928d43e0177126da24787d3ef32397a1926453ecc0d");
+      byName.get("PS5PCEM-0.3.5-windows-x64-setup.exe")!.sha256,
+    ).toBe("3ca145200479fdb34a7da6a2e14bbb41ea4f7ba3b01835e8f5d4a036991df8d0");
 
     for (const asset of latestRelease.assets) {
       if (asset.sha256) {

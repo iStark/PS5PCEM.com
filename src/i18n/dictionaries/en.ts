@@ -9,7 +9,7 @@ const en = {
   meta: {
     tagline: "Experimental PlayStation 5 emulation research, written in Zig",
     description:
-      "PS5PCEM is an experimental PlayStation 5 emulator for Windows. Follow per-title compatibility, measured performance, and download the current prototype.",
+      "PS5PCEM is an experimental PlayStation 5 emulator for Windows and Linux. Follow per-title compatibility, measured performance, and download the current prototype.",
   },
 
   common: {
@@ -33,14 +33,14 @@ const en = {
 
   seo: {
     home: {
-      title: "PS5PCEM — experimental PlayStation 5 emulator for Windows",
+      title: "PS5PCEM — experimental PlayStation 5 emulator for Windows and Linux",
       description:
         "Download the PS5PCEM prototype and see which PlayStation 5 titles actually run — measured frame times, known limits and a dated test history for every game.",
     },
     download: {
-      title: "Download PS5PCEM {version} for Windows x64",
+      title: "Download PS5PCEM {version} for Windows and Linux x64",
       description:
-        "PS5PCEM {version} for Windows: portable archive or per-user installer, published SHA-256 checksums, system requirements and every earlier build.",
+        "PS5PCEM {version} for Windows and Linux: portable archive or per-user installer, published SHA-256 checksums, system requirements and every earlier build.",
     },
     compatibility: {
       title: "PlayStation 5 game compatibility list — PS5PCEM",
@@ -50,7 +50,7 @@ const en = {
     status: {
       title: "Project status — what PS5PCEM can do today",
       description:
-        "PS5PCEM subsystem by subsystem: native guest execution, RDNA2 shader translation to SPIR-V, Vulkan rendering, audio, controllers, savedata and the Windows launcher.",
+        "PS5PCEM subsystem by subsystem: native guest execution, RDNA2 shader translation to SPIR-V, Vulkan rendering, audio, controllers, savedata and the Windows and Linux launcher.",
     },
     media: {
       title: "Screenshots and recorded runs — PS5PCEM",
@@ -110,11 +110,11 @@ const en = {
   home: {
     badge: "Early prototype · {version}",
     heading: "PlayStation 5 emulation research, in the open",
-    lead: "PS5PCEM is an experimental emulator written in Zig: guest code runs natively, RDNA2 shaders are translated to SPIR-V, Vulkan presents the result, and a Windows launcher ties it together. {playable} of the {total} titles on record have been finished end to end.",
+    lead: "PS5PCEM is an experimental emulator written in Zig: guest code runs natively, RDNA2 shaders are translated to SPIR-V, Vulkan presents the result, and a Windows and Linux launcher ties it together. {playable} of the {total} titles on record have been finished end to end.",
     ctaDownload: "Download {version}",
     ctaResults: "See the test results",
     requirements:
-      "Windows 10 2004 or newer · x86-64-v3 · Vulkan 1.2 driver · GPL-3.0-or-later",
+      "Linux / Windows 10 2004 or newer · x86-64-v3 · Vulkan 1.2 driver · GPL-3.0-or-later",
     heroCaption:
       "Cat Quest III, drawn by PS5PCEM on the reference host. Confirmed playable from start to finish.",
     statTested: "Titles on record",
@@ -144,9 +144,9 @@ const en = {
     legalBody:
       "No games, console firmware, system libraries, keys or vendor material are shipped with PS5PCEM or offered here. The project exists for interoperability research and education. The full",
     legalLink: "legal note",
-    tryHeading: "Try {version} on Windows",
+    tryHeading: "Try {version} on Windows and Linux",
     tryLead:
-      "Portable archive or per-user installer, both with published SHA-256 checksums.",
+      "Portable archive or per-user installer, both with published SHA-256 checksums. Linux: DEB, RPM, Pacman, AppImage.",
     tryDownload: "Download",
     trySource: "Source on GitHub",
   },
@@ -204,10 +204,12 @@ const en = {
 
   download: {
     changesHeading: "Changes in {version}",
-    changesLauncher: "Important fix: games start from packaged launchers again. The working-directory error is corrected; launch failures now display the Windows message and error code.",
-    changesFeatures: "New: FreeType fonts and the Jurassic Park startup fix, MemoryPool, PNG encoding, RTC functions, AMPR counters, packed-color blending, horizontal gathers and bounded shader calls.",
-    changesLimits: "Executables use the same signing certificate as the previous release. Captures are dated development results; instruction tests do not establish new game FPS or completed playthroughs.",
-    eyebrow: "Windows x64 · {channel}",
+    changesLauncher: "Native Linux packages and a GTK 3 launcher join the signed Windows builds. Both launchers offer a 48-game library, search, table view and update checks.",
+    changesFeatures: "Includes 15 newly documented titles, Subnautica/Quake II/Jets audio fixes, shared graphics optimizations, Windows vibration and game-controlled LightBar.",
+    changesLimits: "Screenshots and FPS retain their original dates and limits. Linux is experimental; Windows game results do not establish Linux performance. Windows EXEs use the previous timestamped certificate.",
+    linuxNote: "Linux requires glibc 2.31+, Linux 5.11+, GTK 3, X11/XWayland, PulseAudio and a Vulkan 1.2 driver. These system libraries are also required for the AppImage. Controller feedback remains Windows-only.",
+    linuxGuide: "Linux installation and limitations",
+    eyebrow: "Windows / Linux x64 · {channel}",
     channelRelease: "Release",
     channelPrerelease: "Pre-release",
     heading: "Download PS5PCEM {version}",

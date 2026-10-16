@@ -30,12 +30,12 @@ export const subsystems: Subsystem[] = [
     name: "Guest execution",
     state: "working",
     summary:
-      "Native x86-64 guest execution on Windows, with ELF/SELF loading, relocation, module linking and TLS.",
+      "Native x86-64 guest execution on Windows and Linux, with ELF/SELF loading, relocation, module linking and TLS.",
     details: [
       "ELF and SELF loading, relocation, module linking, TLS and firmware HLE.",
       "Contained-fault diagnostics keep a faulting guest thread from taking down the host.",
       "Native cooperative fibers retain suspended guest stacks across switches.",
-      "Inspection, decoding and HLE components also build on Linux and macOS; native execution is Windows-only.",
+      "Linux 0.3.5 adds native execution, X11 presentation, PulseAudio and guest fibers; Windows game measurements do not establish Linux performance.",
     ],
   },
   {
@@ -110,7 +110,7 @@ export const subsystems: Subsystem[] = [
       "DualSense and DualShock 4 pads are read directly over HID, with XInput and keyboard fallbacks.",
     details: [
       "Sony pads work without a translation layer; the launcher reports which one it found.",
-      "The launcher can drive motors and the light bar as a check.",
+      "Windows games now drive rumble and LightBar through scePad calls, with coordinated Sony HID output and XInput motor fallback. DualSense USB feedback is physically confirmed; advanced audio haptics and adaptive triggers remain unsupported.",
       "Launcher-managed input profiles support controller, keyboard or hybrid control.",
     ],
   },
@@ -130,16 +130,16 @@ export const subsystems: Subsystem[] = [
   {
     id: "launcher",
     techArticles: ["pkg", "input", "savedata"],
-    name: "Windows launcher",
+    name: "Windows and Linux launchers",
     state: "working",
     summary:
       "A native library with local cover art, per-title saves, input profiles and direct launching.",
     details: [
-      "Remembers up to 32 titles across pages of eight and displays the release version.",
+      "Remembers up to 48 titles, with grid/table views, search, release display and update checks.",
       "Ships the debug PKG extractor with NAPS mapping and Kraken payload support.",
       "Reads artwork from each title's local sce_sys/icon0.png.",
       "Detects DualSense and DualShock controllers and persists sound and input profiles.",
-      "Version 0.3.4 fixes the working-directory regression that prevented packaged launchers from starting games. Refused launches show the Windows explanation, error code and translated advice.",
+      "Version 0.3.5 ships a GTK 3 Linux launcher and four Linux package formats. Installed packages and AppImages use writable XDG settings and data directories.",
     ],
   },
   {
@@ -186,7 +186,7 @@ export const subsystems: Subsystem[] = [
 export const highlights = [
   {
     title: "Native guest execution",
-    body: "x86-64 guest code runs natively on Windows with ELF/SELF loading, relocation, module linking, TLS, firmware HLE, savedata and contained-fault diagnostics.",
+    body: "x86-64 guest code runs natively on Windows and Linux with ELF/SELF loading, relocation, module linking, TLS, firmware HLE, savedata and contained-fault diagnostics.",
   },
   {
     title: "RDNA2 to SPIR-V",
