@@ -39,7 +39,7 @@ const content: Content = {
       "limits": [
         "Missing source fonts, dark/patchy surfaces and expensive readbacks remain. Character control and completion are unverified."
       ],
-      "performance": "Animated title: 17.83 FPS over 2,640 frames / 148.07 s; 60-frame blocks 16.08–19.75 FPS. Ryzen 7 7700 / RTX 3070 Ti, 1080p output, game-controlled 4K source, retained caches. The 20 FPS target is unmet; gameplay FPS is unverified. The earlier crowd sample was 4.60 FPS over 10 s.",
+      "performance": "Animated title: 20.07 FPS over 2,640 frames / 131.56 s; 60-frame blocks 18.39–21.68 FPS. Ryzen 7 7700 / RTX 3070 Ti, 1080p output, game-controlled 4K source, retained caches. This is a title-screen average, not a minimum or gameplay result. The earlier crowd sample was 4.60 FPS over 10 s.",
       "imageAlt": "ASTRO BOT arrival cinematic with the small craft and crashed ship; dark and patchy surfaces remain"
     },
     "goat-simulator-3": {
@@ -211,19 +211,19 @@ const content: Content = {
       "imageAlt": "Arkanoid main mode-selection menu with Retro, Eternal Battle and Versus cards; window counter 45.2 FPS"
     },
     "raiden-iv-mikado-remix": {
-      "status": "In-game · first level renders · playability unverified",
-      "headline": "Startup succeeds and the first level renders after the depth-clear fix.",
-      "summary": "October 11 development build, PPSA08832 v01.000.000: correct SELF metadata handling fixes the false TruncatedSelf error. Waveform-file parsing, rack information, font-cache storage and packed 16-bit textures allow startup. Synchronizing raw depth-plane clears restores the previously black level.",
+      "status": "Playable · Completable",
+      "headline": "First-level gameplay, working effects and reduced rendering costs.",
+      "summary": "October 17 development build: the NGS2 voice pool now accommodates 1,024 sampler voices plus the master. ATRAC9 decoding and in-memory waveform parsing restore sound effects. Compatible render passes and sampled-image descriptor banks reduce driver overhead.",
       "strengths": [
-        "Title and mode menus lead into the first level, with the carrier, player ship, terrain, enemies, shots and HUD visible.",
-        "Automatic Cross input fires the weapon; the saved capture shows a score of 4090. No guest fault or nonzero draw-failure counter appeared in the checked portion."
+        "The first OverKill level renders the player ship, enemies, bullets, terrain and HUD; death and continuation were checked.",
+        "The user confirms menu-button sounds. Checked frames report no draw/dispatch failures or unsupported compute operations."
       ],
       "limits": [
-        "Manual controller input, a complete playthrough and long-session stability remain untested.",
-        "ATRAC9 metadata parsing is implemented, but ATRAC9 playback through the NGS2 sampler is not. Audio correctness is unverified; cancelling live threads still returns ENOSYS."
+        "Playable · Completable is the maintainer-assigned grade. This run did not verify a complete playthrough or long-session stability.",
+        "Background music remains incorrect: the user hears it only around death. Sustained 60 FPS has not been reached."
       ],
-      "performance": "The capture shows 16.0 FPS; an earlier carrier frame showed 20.7 FPS. Twenty sampled profile frames have a 49 ms median (29–110 ms). These changing scenes are not a controlled comparison or a sustained FPS measurement. RTX 3070 Ti, default rendering, without diagnostic render overrides.",
-      "imageAlt": "Raiden IV first level with the player ship firing, enemies, terrain and HUD; score 4090"
+      "performance": "39.75 FPS: 1,193 frames in 30.013 seconds, one-second intervals 24.99–63.97 FPS. Later heavy combat was observed around 18–22 FPS. Moving scenes, not a controlled before/after comparison. RTX 3070 Ti, 1920×1080 output and observed internal target. The final snapshot optimization is not included in this timed candidate.",
+      "imageAlt": "Raiden IV gameplay with the player ship, enemy formation, bullets and HUD; score 14000"
     },
     "dead-cells": {
       "status": "Main menu · first level renders · playability unverified",
@@ -581,6 +581,16 @@ const content: Content = {
   },
 
   history: {
+    "raiden-iv-audio-rendering-20261017": {
+      "title": "Playable grade, partial audio fix and new gameplay capture",
+      "imageAlt": "Raiden IV gameplay with the player ship, enemy formation, bullets and HUD; score 14000",
+      "summary": "The maintainer assigns Playable · Completable. NGS2 voice allocation, ATRAC9 effects and render-pass/descriptor handling improve. A moving first-level interval averages 39.75 FPS over 1,193 frames; later combat falls to about 18–22 FPS. Background music remains incorrect and completion is unverified. The screenshot comes from the native renderer."
+    },
+    "astro-bot-storage-readbacks-20261016": {
+      "title": "Storage copies reduced; title averages 20.07 FPS",
+      "summary": "The renderer avoids 26.125 MiB of obsolete host copies per frame; queue discovery avoids about 117 repeated pointer checks. The uninterrupted title measurement is 20.07 FPS over 2,640 frames, with 60-frame blocks at 18.39–21.68. 680 HLE tests, 274 Vulkan tests and 64 native overwrite configurations pass. Twelve unresolved storage bindings and cinematic defects remain; character control is unverified.",
+      "imageAlt": "ASTRO BOT animated title after storage-copy and queue-discovery changes"
+    },
     "astro-bot-resource-walks-20261016": {
       "title": "Resource preparation updated; title averages 17.83 FPS",
       "summary": "Borrowed shader data, compact lookup keys, content fingerprints and cached loop writes reduce CPU work. Omitting inert CPU scalar steps measures 17.85 → 17.88 FPS, an inconclusive difference. The final 2,640-frame run averages 17.83 FPS; 582 GPU/Vulkan tests and five native probes pass. Twelve unresolved storage bindings and cinematic defects remain; 20 FPS and character control are unverified.",

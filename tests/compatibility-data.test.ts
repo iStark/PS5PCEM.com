@@ -62,7 +62,7 @@ describe("compatibility dataset", () => {
     );
   });
 
-  it("reflects the nine titles graded playable by the maintainer", () => {
+  it("reflects the ten titles graded playable by the maintainer", () => {
     expect(
       compatibility
         .filter((entry) => entry.tier === "playable")
@@ -76,12 +76,13 @@ describe("compatibility dataset", () => {
         "Jets 'n' Guns 2",
         "Jurassic Park Classic Games Collection",
         "Mighty Morphin Power Rangers: Rita's Rewind",
+        "Raiden IV x Mikado Remix",
         "Quake II (2023)",
         "Terminator 2D: No Fate",
         "Subnautica: Below Zero",
       ].sort(),
     );
-    expect(countByTier().playable).toBe(9);
+    expect(countByTier().playable).toBe(10);
   });
 
   it("keeps in-game titles with severe defects short of playable", () => {
@@ -113,7 +114,7 @@ describe("compatibility dataset", () => {
   it("attributes every measurement to the documented test host", () => {
     expect(compatibilityMeta.host).toBe("NVIDIA GeForce RTX 3070 Ti");
     expect(compatibilityMeta.testedOnRelease).toBe("0.3.2");
-    expect(compatibilityMeta.confirmedOn).toBe("2026-10-13");
+    expect(compatibilityMeta.confirmedOn).toBe("2026-10-17");
   });
 
   it("gives every entry a unique slug and a known tier", () => {
@@ -206,6 +207,7 @@ describe("test history", () => {
       ["dead-cells-ngs2-link", null],
       ["dead-cells-level-menu-audio", null],
       ["raiden-iv-startup-depth", null],
+      ["raiden-iv-audio-rendering-20261017", null],
       ["arkanoid-fiber-startup", null],
       ["arcade-spirits-pthread-semaphores", null],
       ["super-woden-gp-pthread-cleanup", null],
@@ -229,6 +231,7 @@ describe("test history", () => {
       ["astro-bot-uniform-scan-20261015", null],
       ["astro-bot-resource-costs-20261015", null],
       ["astro-bot-resource-walks-20261016", null],
+      ["astro-bot-storage-readbacks-20261016", null],
       ["astro-bot-gds-publication-20261014", null],
       ["astro-bot-performance-20261014", null],
       ["minecraft-legends-gameplay-20261013", null],
@@ -241,7 +244,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(44);
+    expect(history.filter((run) => run.release === null)).toHaveLength(46);
   });
 
   it("references captures that exist in public/", () => {

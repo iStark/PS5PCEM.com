@@ -12,7 +12,7 @@ const fr: Content = {
       "limits": [
         "Polices originales manquantes, surfaces sombres/tachetées et lectures GPU coûteuses persistent. Contrôle du personnage et fin du jeu non vérifiés."
       ],
-      "performance": "Écran titre animé : 17,83 FPS sur 2 640 images / 148,07 s ; blocs de 60 images : 16,08–19,75 FPS. Ryzen 7 7700 / RTX 3070 Ti, sortie 1080p, source 4K gérée par le jeu, caches conservés. L’objectif de 20 FPS n’est pas atteint ; les FPS en jeu ne sont pas vérifiés. L’ancienne scène de foule affichait 4,60 FPS sur 10 s.",
+      "performance": "Écran-titre animé : 20.07 FPS sur 2 640 images / 131.56 s ; blocs de 60 images : 18.39–21.68 FPS. Ryzen 7 7700 / RTX 3070 Ti, sortie 1080p, source 4K contrôlée par le jeu, caches conservés. Il s’agit d’une moyenne sur le titre, pas d’un minimum ni d’une mesure en jeu. L’ancienne scène de foule atteignait 4,60 FPS sur 10 s.",
       "imageAlt": "Cinématique d’arrivée d’ASTRO BOT avec un petit appareil et un vaisseau écrasé ; surfaces sombres et tachetées persistantes"
     },
     "goat-simulator-3": {
@@ -184,19 +184,19 @@ const fr: Content = {
       "imageAlt": "Menu des modes d’Arkanoid avec les cartes Retro, Eternal Battle et Versus ; compteur à 45,2 FPS"
     },
     "raiden-iv-mikado-remix": {
-      "status": "En jeu · premier niveau visible · jouabilité non vérifiée",
-      "headline": "Le démarrage fonctionne et la correction des effacements de profondeur révèle le premier niveau.",
-      "summary": "Version de développement du 11 octobre, PPSA08832 v01.000.000 : le traitement correct des métadonnées SELF supprime la fausse erreur TruncatedSelf. L’analyse des fichiers audio, les informations des racks NGS2, le cache des polices et les textures compactées sur 16 bits permettent le démarrage. La synchronisation des effacements du plan de profondeur rétablit le niveau auparavant noir.",
+      "status": "Playable · Completable",
+      "headline": "Premier niveau jouable, effets sonores audibles et coût du rendu réduit.",
+      "summary": "Version en développement du 17 octobre : le pool NGS2 accueille 1 024 voix de sampler et la voix principale. Le décodage ATRAC9 et la lecture des fichiers audio en mémoire rétablissent les effets. Les passes compatibles et les descripteurs de textures réduisent le travail du pilote.",
       "strengths": [
-        "Les menus de titre et de mode mènent au premier niveau, avec porte-avions, vaisseau du joueur, terrain, ennemis, tirs et interface visibles.",
-        "Les pressions automatiques sur Cross déclenchent les tirs ; la capture affiche 4090 points. Aucun plantage invité ni compteur d’erreurs de dessin non nul dans la partie vérifiée."
+        "Le premier niveau OverKill affiche le vaisseau, les ennemis, les tirs, le terrain et le HUD ; la mort et la reprise ont été vérifiées.",
+        "L’utilisateur confirme les sons des boutons. Aucune erreur de dessin ou de dispatch ni opération de calcul non prise en charge dans les images contrôlées."
       ],
       "limits": [
-        "Les commandes manuelles, une partie complète et la stabilité prolongée ne sont pas vérifiées.",
-        "Les métadonnées ATRAC9 sont analysées, mais la lecture ATRAC9 par le sampler NGS2 reste absente. La qualité audio n’est pas vérifiée ; l’annulation des threads actifs renvoie toujours ENOSYS."
+        "Playable · Completable est la classification du responsable du projet. Ce test ne valide ni une partie complète ni la stabilité sur une longue session.",
+        "La musique de fond reste incorrecte : l’utilisateur ne l’entend qu’à la mort. Les 60 FPS stables ne sont pas atteints."
       ],
-      "performance": "La capture affiche 16,0 FPS ; une image antérieure du porte-avions indiquait 20,7 FPS. Vingt images échantillonnées du profil donnent une médiane de 49 ms (29–110 ms). Ces scènes changeantes ne constituent ni une comparaison contrôlée ni une mesure de FPS soutenus. RTX 3070 Ti, rendu par défaut sans remplacement de diagnostic.",
-      "imageAlt": "Premier niveau de Raiden IV avec le vaisseau du joueur en train de tirer, les ennemis, le terrain et l’interface ; score 4090"
+      "performance": "39,75 FPS : 1 193 images en 30,013 s, intervalles d’une seconde entre 24,99 et 63,97 FPS. Des combats plus lourds ont ensuite affiché environ 18–22 FPS. Scènes variables, sans comparaison avant/après contrôlée. RTX 3070 Ti, sortie et cible interne observée à 1920×1080. La dernière optimisation des instantanés de registres ne figure pas dans cette mesure.",
+      "imageAlt": "Gameplay de Raiden IV avec le vaisseau, une formation ennemie, les tirs et le HUD ; score 14000"
     },
     "dead-cells": {
       "status": "Menu principal · premier niveau visible · jouabilité non vérifiée",
@@ -555,6 +555,16 @@ const fr: Content = {
   },
 
   history: {
+    "raiden-iv-audio-rendering-20261017": {
+      "title": "Statut Playable, correction audio partielle et nouvelle capture en jeu",
+      "imageAlt": "Gameplay de Raiden IV avec le vaisseau, une formation ennemie, les tirs et le HUD ; score 14000",
+      "summary": "Le responsable attribue Playable · Completable. Amélioration des voix NGS2, des effets ATRAC9, des passes et des descripteurs. Un passage du premier niveau atteint 39,75 FPS sur 1 193 images ; les combats suivants tombent vers 18–22 FPS. Musique de fond encore incorrecte et fin du jeu non vérifiée. Capture issue du moteur de rendu."
+    },
+    "astro-bot-storage-readbacks-20261016": {
+      "title": "Moins de copies ; le titre atteint 20.07 FPS en moyenne",
+      "summary": "Le moteur de rendu évite 26,125 Mio de copies obsolètes par image ; la recherche de files évite environ 117 vérifications répétées de pointeurs. La mesure continue donne 20.07 FPS sur 2 640 images, avec des blocs de 60 entre 18.39 et 21.68. Les 680 tests HLE, 274 tests Vulkan et 64 configurations natives d’écrasement réussissent. Douze liaisons de ressources non résolues et des défauts dans les cinématiques subsistent ; le contrôle du personnage reste non vérifié.",
+      "imageAlt": "Écran-titre animé d’ASTRO BOT après optimisation des copies mémoire et de la recherche de files"
+    },
     "astro-bot-resource-walks-20261016": {
       "title": "Préparation des ressources mise à jour : 17,83 FPS en moyenne au titre",
       "summary": "Les références aux données des shaders, les clés compactes, les empreintes de contenu et les masques d’écriture des boucles réduisent le travail CPU. Ignorer les opérations scalaires inertes sur CPU donne 17,85 → 17,88 FPS, sans gain établi. Le dernier test de 2 640 images atteint 17,83 FPS ; 582 tests GPU/Vulkan et cinq vérifications natives passent. Douze liaisons de ressources non résolues et des défauts cinématiques subsistent ; 20 FPS et le contrôle du personnage restent non confirmés.",

@@ -38,6 +38,23 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "raiden-iv-audio-rendering-20261017",
+    slug: "raiden-iv-mikado-remix",
+    date: "2026-10-17",
+    release: null,
+    image: "/images/raiden-iv-gameplay-2026-10-17.png",
+    source: devReport("raiden-iv-audio-rendering-2026-10-17.md"),
+  },
+  {
+    id: "astro-bot-storage-readbacks-20261016",
+    recordedAt: "2026-10-16T18:30:29+00:00",
+    slug: "astro-bot",
+    date: "2026-10-16",
+    release: null,
+    image: "/images/astro-bot-title-storage-readbacks-2026-10-16.png",
+    source: devReport("astro-bot-storage-readbacks-2026-10-16.md"),
+  },
+  {
     id: "astro-bot-resource-walks-20261016",
     recordedAt: "2026-10-16T02:13:49+00:00",
     slug: "astro-bot",

@@ -12,7 +12,7 @@ const es: Content = {
       "limits": [
         "Persisten fuentes originales ausentes, superficies oscuras/manchadas y lecturas GPU costosas. Control del personaje y finalización sin verificar."
       ],
-      "performance": "Título animado: 17,83 FPS en 2640 fotogramas / 148,07 s; bloques de 60 fotogramas: 16,08–19,75 FPS. Ryzen 7 7700 / RTX 3070 Ti, salida 1080p, fuente 4K controlada por el juego, cachés conservadas. No se alcanzan 20 FPS; los FPS jugables no están verificados. La muestra anterior con multitud dio 4,60 FPS durante 10 s.",
+      "performance": "Pantalla de título animada: 20.07 FPS en 2640 fotogramas / 131.56 s; bloques de 60 fotogramas: 18.39–21.68 FPS. Ryzen 7 7700 / RTX 3070 Ti, salida 1080p, fuente 4K controlada por el juego y cachés conservadas. Es un promedio del título, no un mínimo ni una medición de jugabilidad. La anterior escena con multitud registró 4,60 FPS durante 10 s.",
       "imageAlt": "Cinemática de llegada de ASTRO BOT con una pequeña nave y otra estrellada; persisten superficies oscuras y con manchas"
     },
     "goat-simulator-3": {
@@ -184,19 +184,19 @@ const es: Content = {
       "imageAlt": "Menú de modos de Arkanoid con las tarjetas Retro, Eternal Battle y Versus; contador a 45,2 FPS"
     },
     "raiden-iv-mikado-remix": {
-      "status": "En el juego · primer nivel visible · jugabilidad sin verificar",
-      "headline": "El inicio funciona y la corrección del borrado de profundidad restaura el primer nivel.",
-      "summary": "Compilación de desarrollo del 11 de octubre, PPSA08832 v01.000.000: el tratamiento correcto de los metadatos SELF elimina el falso error TruncatedSelf. El análisis de archivos de audio, la información de racks NGS2, la caché de fuentes y las texturas empaquetadas de 16 bits permiten iniciar. Sincronizar los borrados del plano de profundidad restaura el nivel antes negro.",
+      "status": "Playable · Completable",
+      "headline": "Primer nivel, efectos audibles y menor coste de renderizado.",
+      "summary": "Compilación en desarrollo del 17 de octubre: el grupo NGS2 admite 1024 voces de muestreo y la voz maestra. La decodificación ATRAC9 y la lectura de audio en memoria recuperan los efectos. Los pases compatibles y los descriptores de texturas reducen el trabajo del controlador.",
       "strengths": [
-        "Los menús de título y modo conducen al primer nivel; se ven el portaaviones, la nave del jugador, el terreno, enemigos, disparos e interfaz.",
-        "Las pulsaciones automáticas de Cross disparan el arma; la captura muestra 4090 puntos. No hubo fallos del invitado ni contadores de errores de dibujo distintos de cero en el tramo revisado."
+        "El primer nivel OverKill muestra la nave, enemigos, balas, terreno y HUD; se comprobaron la muerte y la continuación.",
+        "El usuario confirma los sonidos de los botones. Los fotogramas revisados no registran fallos de dibujo o despacho ni operaciones de cómputo no compatibles."
       ],
       "limits": [
-        "No se han probado el control manual, una partida completa ni la estabilidad prolongada.",
-        "Se analizan los metadatos ATRAC9, pero falta su reproducción mediante el sampler NGS2. El audio correcto no está verificado; cancelar hilos activos sigue devolviendo ENOSYS."
+        "Playable · Completable es la clasificación asignada por el responsable del proyecto. Esta prueba no verifica completar el juego ni la estabilidad prolongada.",
+        "La música de fondo sigue fallando: el usuario solo la oye al morir. No se han alcanzado 60 FPS sostenidos."
       ],
-      "performance": "La captura muestra 16,0 FPS; una imagen anterior del portaaviones mostraba 20,7 FPS. Veinte fotogramas muestreados del perfil tienen una mediana de 49 ms (29–110 ms). Las escenas cambiantes no son una comparación controlada ni una medición de FPS sostenidos. RTX 3070 Ti, renderizado predeterminado sin sustituciones de diagnóstico.",
-      "imageAlt": "Primer nivel de Raiden IV con la nave disparando, enemigos, terreno e interfaz; puntuación 4090"
+      "performance": "39,75 FPS: 1193 fotogramas en 30,013 s; intervalos de un segundo entre 24,99 y 63,97 FPS. Combates posteriores más exigentes rondaron 18–22 FPS. Escenas variables, sin comparación controlada antes/después. RTX 3070 Ti, salida y objetivo interno observado de 1920×1080. Esta medición aún no incluye la última optimización de instantáneas de registros.",
+      "imageAlt": "Raiden IV con la nave, formación enemiga, balas y HUD; puntuación 14000"
     },
     "dead-cells": {
       "status": "Menú principal · primer nivel visible · jugabilidad sin verificar",
@@ -555,6 +555,16 @@ const es: Content = {
   },
 
   history: {
+    "raiden-iv-audio-rendering-20261017": {
+      "title": "Clasificación Playable, audio parcialmente corregido y nueva captura",
+      "imageAlt": "Raiden IV con la nave, formación enemiga, balas y HUD; puntuación 14000",
+      "summary": "El responsable asigna Playable · Completable. Mejoran las voces NGS2, efectos ATRAC9, pases y descriptores. Un tramo del primer nivel promedia 39,75 FPS en 1193 fotogramas; combates posteriores rondan 18–22 FPS. La música de fondo sigue fallando y completar el juego no está verificado. Captura directa del renderizador."
+    },
+    "astro-bot-storage-readbacks-20261016": {
+      "title": "Menos copias; el título promedia 20.07 FPS",
+      "summary": "El renderizador evita 26,125 MiB de copias obsoletas por fotograma; la búsqueda de colas evita unas 117 comprobaciones repetidas de punteros. La medición continua alcanza 20.07 FPS en 2640 fotogramas, con bloques de 60 entre 18.39 y 21.68. Pasan 680 pruebas HLE, 274 de Vulkan y 64 configuraciones nativas de sobrescritura. Persisten doce enlaces de recursos sin resolver y defectos en las cinemáticas; no se ha verificado el control del personaje.",
+      "imageAlt": "Título animado de ASTRO BOT tras los cambios en copias de memoria y búsqueda de colas"
+    },
     "astro-bot-resource-walks-20261016": {
       "title": "Preparación de recursos actualizada: media de 17,83 FPS en el título",
       "summary": "Las referencias a datos de shaders, las claves compactas, las huellas de contenido y las máscaras de escritura de bucles reducen trabajo de CPU. Omitir operaciones escalares inertes en CPU da 17,85 → 17,88 FPS, una diferencia no concluyente. La prueba final de 2640 fotogramas promedia 17,83 FPS; pasan 582 pruebas GPU/Vulkan y cinco pruebas nativas. Persisten doce enlaces de recursos sin resolver y defectos en cinemáticas; 20 FPS y el control del personaje siguen sin confirmarse.",

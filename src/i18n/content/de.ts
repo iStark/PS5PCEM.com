@@ -12,7 +12,7 @@ const de: Content = {
       "limits": [
         "Fehlende Originalschriften, dunkle/fleckige Oberflächen und teure Rücklesevorgänge bleiben. Figurensteuerung und Abschluss sind ungeprüft."
       ],
-      "performance": "Animierter Titelbildschirm: 17,83 FPS über 2.640 Frames / 148,07 s; Blöcke mit 60 Frames: 16,08–19,75 FPS. Ryzen 7 7700 / RTX 3070 Ti, 1080p-Ausgabe, spielgesteuerte 4K-Quelle, bestehende Caches. 20 FPS sind nicht erreicht; Gameplay-FPS sind ungeprüft. Die frühere Menschenmengenszene erreichte 4,60 FPS über 10 s.",
+      "performance": "Animierter Titelbildschirm: 20.07 FPS über 2.640 Frames / 131.56 s; Blöcke mit 60 Frames: 18.39–21.68 FPS. Ryzen 7 7700 / RTX 3070 Ti, 1080p-Ausgabe, spielgesteuerte 4K-Quelle, vorhandene Caches. Dies ist ein Titelbildschirm-Durchschnitt, kein Mindestwert oder Gameplay-Ergebnis. Die frühere Menschenmengenszene erreichte 4,60 FPS über 10 s.",
       "imageAlt": "ASTRO BOT Ankunftssequenz mit kleinem Fluggerät und abgestürztem Schiff; dunkle und fleckige Flächen bleiben"
     },
     "goat-simulator-3": {
@@ -184,19 +184,19 @@ const de: Content = {
       "imageAlt": "Arkanoid-Modusmenü mit Retro, Eternal Battle und Versus; Fensterzähler bei 45,2 FPS"
     },
     "raiden-iv-mikado-remix": {
-      "status": "Im Spiel · erster Level sichtbar · Spielbarkeit unbestätigt",
-      "headline": "Der Start funktioniert; korrigierte Tiefenlöschungen machen den ersten Level sichtbar.",
-      "summary": "Entwicklungsbuild vom 11. Oktober, PPSA08832 v01.000.000: Die korrekte Verarbeitung der SELF-Metadaten behebt den fälschlichen TruncatedSelf-Fehler. Audiodateianalyse, NGS2-Rackinformationen, Schriftcache und gepackte 16-Bit-Texturen ermöglichen den Start. Synchronisierte Löschungen der Tiefenebene stellen den zuvor schwarzen Level wieder her.",
+      "status": "Playable · Completable",
+      "headline": "Gameplay im ersten Level, hörbare Effekte und weniger Renderaufwand.",
+      "summary": "Entwicklungsbuild vom 17. Oktober: Der NGS2-Pool bietet Platz für 1.024 Sampler-Stimmen und die Master-Stimme. ATRAC9-Decodierung und das Einlesen von Audiodaten im Speicher stellen Effekte wieder her. Kompatible Renderpässe und Texturdeskriptoren verringern den Treiberaufwand.",
       "strengths": [
-        "Titel- und Modusmenü führen in den ersten Level; Träger, Spielerschiff, Gelände, Gegner, Schüsse und HUD sind sichtbar.",
-        "Automatische Cross-Eingaben lösen Schüsse aus; die Aufnahme zeigt 4090 Punkte. Im geprüften Abschnitt traten weder Gastabstürze noch Zeichenfehler auf."
+        "Im ersten OverKill-Level sind Spielerschiff, Gegner, Geschosse, Gelände und HUD sichtbar; Tod und Fortsetzen wurden geprüft.",
+        "Der Nutzer bestätigt Tastentöne. Die geprüften Frames melden keine Draw-/Dispatch-Fehler oder nicht unterstützte Compute-Operationen."
       ],
       "limits": [
-        "Manuelle Steuerung, vollständiges Durchspielen und Langzeitstabilität wurden nicht geprüft.",
-        "ATRAC9-Metadaten werden gelesen, die ATRAC9-Wiedergabe über den NGS2-Sampler fehlt jedoch. Korrekte Audiowiedergabe ist unbestätigt; das Abbrechen laufender Threads liefert weiterhin ENOSYS."
+        "Playable · Completable ist die Einstufung des Projektbetreibers. Ein vollständiger Durchlauf und Langzeitstabilität wurden hier nicht geprüft.",
+        "Hintergrundmusik bleibt fehlerhaft: Laut Nutzer ist sie nur beim Tod hörbar. Stabile 60 FPS sind nicht erreicht."
       ],
-      "performance": "Die Aufnahme zeigt 16,0 FPS, ein früheres Trägerbild 20,7 FPS. Bei 20 ausgewählten Profilbildern beträgt der Median 49 ms (29–110 ms). Die wechselnden Szenen sind weder ein kontrollierter Vergleich noch eine Messung dauerhafter FPS. RTX 3070 Ti, Standardrendering ohne diagnostische Eingriffe.",
-      "imageAlt": "Erster Level von Raiden IV mit schießendem Spielerschiff, Gegnern, Gelände und HUD; 4090 Punkte"
+      "performance": "39,75 FPS: 1.193 Frames in 30,013 Sekunden; Einsekundenintervalle 24,99–63,97 FPS. Spätere anspruchsvolle Kämpfe lagen bei etwa 18–22 FPS. Wechselnde Szenen, kein kontrollierter Vorher-nachher-Vergleich. RTX 3070 Ti, Ausgabe und beobachtetes internes Ziel 1920×1080. Die letzte Register-Snapshot-Optimierung ist in diesem Messbuild noch nicht enthalten.",
+      "imageAlt": "Raiden-IV-Gameplay mit Spielerschiff, Gegnerformation, Geschossen und HUD; Punktestand 14000"
     },
     "dead-cells": {
       "status": "Hauptmenü · erstes Level sichtbar · Spielbarkeit unbestätigt",
@@ -555,6 +555,16 @@ const de: Content = {
   },
 
   history: {
+    "raiden-iv-audio-rendering-20261017": {
+      "title": "Playable-Einstufung, teilweise Audiokorrektur und neuer Gameplay-Screenshot",
+      "imageAlt": "Raiden-IV-Gameplay mit Spielerschiff, Gegnerformation, Geschossen und HUD; Punktestand 14000",
+      "summary": "Der Projektbetreiber vergibt Playable · Completable. NGS2-Stimmen, ATRAC9-Effekte, Renderpässe und Deskriptoren wurden verbessert. Ein bewegter Abschnitt des ersten Levels erreicht 39,75 FPS über 1.193 Frames; spätere Kämpfe etwa 18–22 FPS. Hintergrundmusik bleibt fehlerhaft, vollständiges Durchspielen ungeprüft. Aufnahme direkt aus dem Renderer."
+    },
+    "astro-bot-storage-readbacks-20261016": {
+      "title": "Weniger Speicherkopien; Titelbildschirm im Mittel bei 20.07 FPS",
+      "summary": "Der Renderer vermeidet 26,125 MiB veralteter Host-Kopien pro Frame; die Warteschlangensuche spart etwa 117 wiederholte Zeigerprüfungen. Die durchgehende Messung ergibt 20.07 FPS über 2.640 Frames, mit 60-Frame-Blöcken bei 18.39–21.68. 680 HLE-Tests, 274 Vulkan-Tests und 64 native Überschreibkonfigurationen bestehen. Zwölf ungelöste Ressourcenbindungen und Grafikfehler in Filmsequenzen bleiben; die Figurensteuerung ist unbestätigt.",
+      "imageAlt": "Animierter ASTRO BOT-Titelbildschirm nach Änderungen an Speicherkopien und Warteschlangensuche"
+    },
     "astro-bot-resource-walks-20261016": {
       "title": "Ressourcenaufbereitung aktualisiert: durchschnittlich 17,83 FPS im Titel",
       "summary": "Direkte Verweise auf Shaderdaten, kompakte Suchschlüssel, Inhaltsprüfsummen und gespeicherte Schleifenschreibmasken reduzieren CPU-Arbeit. Das Auslassen wirkungsloser CPU-Schritte ergibt 17,85 → 17,88 FPS, ohne belastbaren Gewinn. Der abschließende Lauf über 2.640 Frames erreicht 17,83 FPS; 582 GPU/Vulkan-Tests und fünf native Prüfungen bestehen. Zwölf ungelöste Ressourcenbindungen und Grafikfehler bleiben; 20 FPS und Figurensteuerung sind nicht bestätigt.",
