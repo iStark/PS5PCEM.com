@@ -49,8 +49,7 @@ const en = {
     },
     status: {
       title: "Project status — what PS5PCEM can do today",
-      description:
-        "PS5PCEM subsystem by subsystem: native guest execution, RDNA2 shader translation to SPIR-V, Vulkan rendering, audio, controllers, savedata and the Windows and Linux launcher.",
+      description: "PS5PCEM subsystem by subsystem: native guest execution, RDNA2 shader translation, Vulkan and experimental DirectX 12 rendering, audio, controllers, savedata and the Windows and Linux launcher.",
     },
     media: {
       title: "Screenshots and recorded runs — PS5PCEM",
@@ -63,9 +62,17 @@ const en = {
         "pkgextractor ships with PS5PCEM {version}: unpack observed PS5 debug FPKG layouts, inner PFS, NAPS mappings and Kraken blocks. Encrypted retail packages are not supported.",
     },
     tech: {
-      title: "How PS5PCEM works — HLE, AMPR, ACM, MSAA and Vulkan",
+      title: "How PS5PCEM works — HLE, AMPR, MSAA, Vulkan and DirectX 12",
+      description: "How PS5PCEM implements PlayStation 5 firmware and hardware: HLE, AMPR counters, ACM convolution, MSAA, AGC, RDNA2 shaders, Vulkan, DirectX 12, audio and savedata.",
+    },
+    launcher: {
+      title: "PS5PCEM launcher — library, controls, saves and settings",
+      description: "What the PS5PCEM launcher does on Windows and Linux: a 48-game library with search, controller and keyboard profiles, saves, resolution and preset settings, Vulkan or DirectX 12, update checks.",
+    },
+    languages: {
+      title: "Supported languages — PS5PCEM launcher and website",
       description:
-        "How PS5PCEM implements PlayStation 5 firmware and hardware: HLE, AMPR counters, ACM convolution, MSAA, AGC, RDNA2 shaders, Vulkan, audio and savedata.",
+        "PS5PCEM speaks twelve languages in the launcher and on this site: English, Russian, German, French, Chinese, Spanish, Arabic, Portuguese, Turkish, Japanese, Hindi and Korean.",
     },
   },
 
@@ -78,6 +85,8 @@ const en = {
     extract: "PKG extractor",
     tech: "Technology",
     games: "Titles",
+    launcher: "Launcher",
+    languages: "Languages",
   },
 
   tiers: {
@@ -110,7 +119,7 @@ const en = {
   home: {
     badge: "Early prototype · {version}",
     heading: "PlayStation 5 emulation research, in the open",
-    lead: "PS5PCEM is an experimental emulator written in Zig: guest code runs natively, RDNA2 shaders are translated to SPIR-V, Vulkan presents the result, and a Windows and Linux launcher ties it together. {playable} of the {total} titles on record have been finished end to end.",
+    lead: "PS5PCEM is an experimental emulator written in Zig: guest code runs natively, RDNA2 shaders are translated for Vulkan or the experimental DirectX 12 backend, and a Windows and Linux launcher ties it together. {playable} of the {total} titles on record have been finished end to end.",
     ctaDownload: "Download {version}",
     ctaResults: "See the test results",
     requirements:
@@ -149,6 +158,23 @@ const en = {
       "Portable archive or per-user installer, both with published SHA-256 checksums. Linux: DEB, RPM, Pacman, AppImage.",
     tryDownload: "Download",
     trySource: "Source on GitHub",
+    launcherEyebrow: "Launcher",
+    launcherHeading: "One launcher, twelve languages",
+    launcherLead:
+      "The launcher keeps up to {capacity} games with their covers, controller and keyboard profiles, saves and display settings, and checks Vulkan and new releases. Its interface speaks {count} languages; Turkish, Japanese, Hindi and Korean arrived after {version}.",
+    launcherCta: "About the launcher",
+    languagesCta: "Supported languages",
+    launcherImageAlt: "PS5PCEM launcher settings page with twelve language cards",
+    graphicsEyebrow: "Graphics APIs",
+    graphicsHeading: "Two renderers: Vulkan and DirectX 12",
+    graphicsLead: "Both execute the same AGC command stream and start from the same RDNA2 shader translation. Pick one under Graphics API in the launcher settings; the choice applies on the next launch.",
+    graphicsDefault: "Default",
+    graphicsExperimental: "Experimental",
+    graphicsPlatforms: "Platforms",
+    vulkanBody: "Every game result and frame time on this site was measured with Vulkan. It keeps render targets, storage images and pipelines resident, detiles textures on the GPU, and handles depth, stencil and MSAA. It needs a Vulkan 1.2 driver.",
+    d3d12Body: "A native Windows backend added after {version}, so far only in development builds. Shaders go from SPIR-V through SPIRV-Cross to HLSL and Shader Model 5.1, while execution and presentation use D3D12 and DXGI directly. Compute and simple draws pass hardware checks, but games do not run through it yet: play with Vulkan.",
+    vulkanCta: "How the Vulkan renderer works",
+    d3d12Cta: "How the DirectX 12 backend works",
   },
 
   compatibility: {
@@ -328,6 +354,161 @@ const en = {
     related: "Related mechanisms",
     back: "All technologies",
     updated: "Repository notes through {date}",
+  },
+
+  launcher: {
+    eyebrow: "Launcher · Windows and Linux",
+    heading: "The PS5PCEM launcher",
+    lead: "The launcher is where a session starts. It keeps your game library, checks the graphics driver, stores input and display preferences, extracts debug packages and starts game-run with those settings. Windows has a native Win32 interface; Linux has a GTK 3 version with the same pages.",
+    settingsCaption: "Settings in the development build after {version}: twelve interface languages, output resolution, preset, three switches and the graphics API.",
+    settingsAlt: "Launcher settings page with language cards, output resolution, preset, toggles and the Vulkan / DirectX 12 graphics API card",
+    pagesEyebrow: "Four pages",
+    pagesHeading: "What each page does",
+    library: {
+      title: "Library",
+      body: "Holds up to {capacity} games. Each shows its name from sce_sys/param.json and its cover from sce_sys/icon0.png. Switch between grid and table, search by name, title ID or folder, and remove an entry without touching the game files or its saves. Choose folder, Extract PKG and Launch game sit underneath.",
+    },
+    controls: {
+      title: "Controls",
+      body: "Pick Gamepad, Keyboard as DualSense, or both at once. On Windows a DualSense or DualShock 4 is read directly over USB or Bluetooth, and Xbox-compatible pads use XInput slots 1–4. Each DualSense button can be bound to a key; WASD drives the left stick and Alt + arrows the right one. Test runs a second of rumble and a light-bar colour sweep.",
+    },
+    saves: {
+      title: "Saves",
+      body: "Lists every local save slot, grouped by title ID, whichever game is selected, and opens the save folder. Saves live in savedata/<titleId>/<slot>/ in the emulator's home and are shared with direct command-line runs.",
+    },
+    settings: {
+      title: "Settings",
+      body: "Interface language, output resolution ({resolutions}, 1080p by default), the Speed or Graphics rendering preset, sound output, an FPS counter in the game window title, the game's performance mode when it offers one, and the graphics API: Vulkan or the experimental DirectX 12. Resolution, preset and API apply on the next launch.",
+    },
+    libraryCaption:
+      "The library in release 0.3.2, before the grid/table switch and search arrived in 0.3.5.",
+    libraryAlt:
+      "Launcher library page with eight game covers, the selected folder and the launch buttons",
+    controlsCaption:
+      "Controls in Hybrid mode with a DualSense connected and the default key bindings.",
+    controlsAlt:
+      "Launcher controls page with gamepad, keyboard and hybrid cards and the key binding list",
+    startEyebrow: "Before the game",
+    startHeading: "What happens when you press Launch",
+    vulkanTitle: "Vulkan is checked, not assumed",
+    vulkanBody:
+      "At startup the launcher asks the Vulkan loader for an instance and a device. It shows the GPU name and API version, or says that the runtime is missing, that no device was found, or that the driver is below 1.2.",
+    launchTitle: "Finding the game",
+    launchBody:
+      "It looks for eboot.bin in the chosen folder and in its decrypted subfolder, then starts game-run with the whole folder mounted as /app0.",
+    failureTitle: "When Windows refuses",
+    failureBody:
+      "If Windows will not start game-run.exe, the launcher explains the likely cause — Smart App Control, security software, denied access or a damaged file — and keeps the Windows error number for bug reports.",
+    updateTitle: "Update check",
+    updateBody:
+      "Check for updates asks GitHub Releases for the newest published version and links to it when it is newer. On Linux this uses curl.",
+    envEyebrow: "Under the hood",
+    envHeading: "What the launcher passes to game-run",
+    envLead:
+      "Preferences reach the runner as environment variables, so a direct command-line run behaves the same when you set them yourself.",
+    envVariable: "Variable",
+    envValues: "Values",
+    envMeaning: "Meaning",
+    env: {
+      input: "Input source: controller, keyboard or both",
+      controller: "XInput slot",
+      keymap: "Keyboard binding for each DualSense button, as virtual-key codes",
+      resolution: "Output resolution chosen in Settings",
+      preset: "Speed or Graphics rendering preset",
+      gamePreset: "Asks for the game's performance mode when the switch is on",
+      fps: "Shows the measured frame rate in the window title",
+      audio: "Turns host sound output off; AudioOut timing is kept",
+      graphicsApi: "Renderer for this run: Vulkan by default, or the experimental Windows-only DirectX 12 backend (dx12 is also accepted).",
+    },
+    storageEyebrow: "Settings file",
+    storageHeading: "Where preferences are stored",
+    storageWindows:
+      "Windows: ps5pcem.ini next to ps5pcem.exe, in both the portable archive and the per-user installation. Saves, logs and caches sit beside it.",
+    storageLinux:
+      "Linux packages and the AppImage: {settings} for preferences, and {data} for saves, logs and caches.",
+    timelineEyebrow: "History",
+    timelineHeading: "How the launcher grew",
+    timelineLead:
+      "Each line names the first published release that contained the change.",
+    timeline: {
+      alpha1:
+        "First Windows launcher: an eight-game library with cover art, a saves browser, and controller, keyboard and hybrid input, in English, Russian, German and French.",
+      alpha4:
+        "Simplified Chinese, Spanish, Arabic and Portuguese join the interface; Arabic reads right to left.",
+      beta1:
+        "Output resolution and the Speed/Graphics preset; Vulkan is checked at startup instead of assumed.",
+      v032: "Extract PKG, with pkgextractor shipped beside the launcher; the running release is shown.",
+      v033: "Extraction progress and log inside the launcher; the switch for the game's performance mode.",
+      v034: "Explanations for launch failures: Smart App Control, security software, denied access and damaged files.",
+      v035: "A 48-game library with grid and table views, search and update checks; a native GTK 3 launcher for Linux.",
+      development:
+        "Turkish, Japanese, Hindi and Korean; the language picker becomes two rows of six.",
+      graphicsApi: "A Graphics API choice in Settings: Vulkan by default or the experimental native DirectX 12 backend on Windows. Linux stays on Vulkan.",
+    },
+    linuxEyebrow: "Linux",
+    linuxHeading: "The Linux launcher",
+    linuxBody:
+      "Since 0.3.5 a GTK 3, Cairo and Pango launcher draws the same pages and phrases as the Windows one and keeps the same settings. Keyboard input works; Sony HID and XInput controllers, vibration and LightBar remain Windows features. Linux is experimental, and Windows game results are not Linux results.",
+    linuxGuide: "Linux installation guide",
+    languagesTitle: "Twelve interface languages",
+    languagesBody:
+      "Every page, status line and error explanation is translated. See which language arrived in which release and how to switch.",
+    languagesCta: "Supported languages",
+    docsCta: "Launcher notes in the repository",
+    graphicsEyebrow: "Graphics API",
+    graphicsHeading: "Vulkan or DirectX 12",
+    graphicsBody: "Settings has a Graphics API card. The choice is saved as graphics_api=vulkan or graphics_api=d3d12 in ps5pcem.ini and reaches game-run as PS5_GRAPHICS_API on the next launch. Vulkan is the default. DirectX 12 is marked experimental in every language, and the sidebar shows it in place of the Vulkan status.",
+    graphicsLinux: "The Linux launcher always starts Vulkan. The runner refuses DirectX 12 there, and refuses an unknown API name before it loads a title.",
+    graphicsFailure: "If DirectX 12 cannot start, or a game sends GPU work the backend does not support yet, the run stops and prints the reason. It never switches to Vulkan behind your back.",
+    graphicsAlt: "The Graphics API card in the launcher settings with DirectX 12 selected and the note that it is experimental",
+    graphicsCaption: "The Graphics API card in the development build after {version}, with DirectX 12 selected.",
+  },
+
+  languages: {
+    eyebrow: "Localization",
+    heading: "Supported languages",
+    lead: "The launcher and this site speak the same twelve languages, in the same order. {released} of them are in release {version}; Turkish, Japanese, Hindi and Korean arrived in the development build that follows it.",
+    imageAlt: "Launcher settings page in Japanese with all twelve language cards",
+    imageCaption:
+      "The language picker in the development build after {version}: twelve cards in two rows of six, here with Japanese selected.",
+    tableHeading: "Languages at a glance",
+    tableLead:
+      "The launcher ID is the number saved as language=<ID> in ps5pcem.ini.",
+    colLanguage: "Language",
+    colName: "Name in {language}",
+    colId: "Launcher ID",
+    colSince: "In the launcher since",
+    colDirection: "Direction",
+    colSite: "This site",
+    ltr: "Left to right",
+    rtl: "Right to left",
+    switchEyebrow: "Switching",
+    switchHeading: "How to change the language",
+    launcherTitle: "In the launcher",
+    launcherBody:
+      "Open Settings and choose a card under Language. The choice applies at once to every page, status line and error explanation and is saved as language=<ID> in ps5pcem.ini. New languages are added at the end, so an ID saved by an older version keeps its meaning.",
+    siteTitle: "On this site",
+    siteBody:
+      "Use the language menu in the header. Every page exists in all twelve languages at its own address: English without a prefix, the others under {prefixes}.",
+    detailsEyebrow: "Details",
+    detailsHeading: "Worth knowing",
+    rtlTitle: "Arabic reads right to left",
+    rtlBody:
+      "In the launcher, Arabic labels use right-to-left paragraph direction; centred buttons stay centred, and file paths and key names keep their own direction. This site mirrors its whole layout for Arabic.",
+    fontsTitle: "Fonts",
+    fontsBody:
+      "On Windows the launcher draws with Segoe UI, and Windows supplies Chinese, Japanese, Korean and Devanagari glyphs through its font fallback. On Linux, Pango chooses fonts through fontconfig: if a script shows up as boxes, install Noto Sans CJK and Noto Sans Devanagari or equivalent fonts.",
+    gamesTitle: "Games keep their own language",
+    gamesBody:
+      "The interface language does not change what a game sees. The emulator currently reports English (US) as the console's system language to every title, whatever the launcher shows.",
+    scopeTitle: "What is translated",
+    scopeBody:
+      "Every launcher phrase: navigation, library, controls, saves, settings, status lines, extraction messages and launch-failure explanations. Game names, folder paths, controller button and key names, the GPU name and log output appear as they are.",
+    reportTitle: "Spotted a wrong word?",
+    reportBody:
+      "The Turkish, Japanese, Hindi and Korean translations are new. Report wording problems through GitHub issues, with a screenshot and the phrase that reads wrong.",
+    reportCta: "Open an issue",
+    launcherCta: "About the launcher",
   },
 
   footer: {

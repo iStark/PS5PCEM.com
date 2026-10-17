@@ -103,6 +103,8 @@ describe("page metadata", () => {
     { path: "/tech", key: "tech" },
     { path: "/media", key: "media" },
     { path: "/extract", key: "extract" },
+    { path: "/launcher", key: "launcher" },
+    { path: "/languages", key: "languages" },
   ] as const;
 
   it("gives every page in every language a canonical and a full hreflang set", () => {
@@ -205,9 +207,9 @@ describe("page metadata", () => {
           total: compatibility.length,
           playable: countByTier().playable,
         });
-        // Chinese carries far more meaning per character, so the floor is
-        // lower there; the ceiling is what a result snippet can show.
-        const floor = locale === "zh" ? 40 : 60;
+        // Chinese and Japanese carry far more meaning per character, so the
+        // floor is lower there; the ceiling is what a result snippet can show.
+        const floor = locale === "zh" || locale === "ja" ? 40 : 60;
         expect(text.length, `${locale}.${page.key}`).toBeGreaterThan(floor);
         expect(text.length, `${locale}.${page.key}`).toBeLessThan(230);
       }
@@ -326,7 +328,7 @@ describe("structured data", () => {
 
 describe("sitemap", () => {
   const entries = sitemap();
-  const pagesPerLocale = 7 + technologies.length + compatibility.length;
+  const pagesPerLocale = 9 + technologies.length + compatibility.length;
 
   it("covers every page in every language", () => {
     expect(entries).toHaveLength(pagesPerLocale * locales.length);

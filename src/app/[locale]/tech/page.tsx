@@ -3,7 +3,7 @@ import Link from "next/link";
 import {
   techCategories,
   technologiesIn,
-  technologyUpdated,
+  technologyIndexUpdated,
   type TechSlug,
   type TechState,
 } from "@/data/technologies";
@@ -89,7 +89,7 @@ export default async function TechIndexPage({ params }: PageProps) {
         <p className="mt-5 text-lg leading-relaxed text-ink-300">{t.tech.lead}</p>
         <p className="mt-3 text-sm text-ink-400">
           {format(t.tech.updated, {
-            date: formatDate(technologyUpdated, locale),
+            date: formatDate(technologyIndexUpdated, locale),
           })}
         </p>
       </header>

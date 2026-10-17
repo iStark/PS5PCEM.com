@@ -4,7 +4,8 @@
  * The prose lives in src/i18n/tech. This file only records identity, grouping,
  * maturity and which pages should point at each other. States match the
  * implementation notes through 10 October 2026: a focused test passing is
- * "partial" until the path is the normal way a title runs.
+ * "partial" until the path is the normal way a title runs. An entry with its
+ * own `updated` date was written or rechecked after that audit.
  */
 
 export type TechCategory = "firmware" | "graphics" | "audio" | "platform";
@@ -16,6 +17,8 @@ export type Technology = {
   category: TechCategory;
   state: TechState;
   related: readonly string[];
+  /** Set when this article was written or rechecked after technologyUpdated. */
+  updated?: string;
 };
 
 export const technologyUpdated = "2026-10-10";
@@ -128,7 +131,15 @@ export const technologies = [
     slug: "vulkan",
     category: "graphics",
     state: "working",
-    related: ["agc", "rdna2", "videoout", "msaa", "detile", "page-tracker"],
+    related: ["agc", "rdna2", "d3d12", "videoout", "msaa", "detile", "page-tracker"],
+  },
+  {
+    // docs/architecture/d3d12.md, commit fafd205: native but experimental.
+    slug: "d3d12",
+    category: "graphics",
+    state: "partial",
+    related: ["vulkan", "rdna2", "agc", "videoout"],
+    updated: "2026-10-17",
   },
   {
     slug: "msaa",
@@ -225,6 +236,16 @@ export function technologySlugs(): TechSlug[] {
 export function findTechnology(slug: string): Technology | undefined {
   return technologies.find((entry) => entry.slug === slug);
 }
+
+/** When an article was last checked: its own date, or the shared audit date. */
+export function technologyDate(entry: Technology): string {
+  return entry.updated ?? technologyUpdated;
+}
+
+/** The newest date across every article, for the index page and its lastmod. */
+export const technologyIndexUpdated = technologies
+  .map((entry: Technology) => technologyDate(entry))
+  .reduce((newest, date) => (date > newest ? date : newest), technologyUpdated);
 
 export function technologiesIn(category: TechCategory): readonly Technology[] {
   return technologies.filter((entry) => entry.category === category);

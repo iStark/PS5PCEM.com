@@ -15,6 +15,8 @@ import CompatibilityPage from "@/app/[locale]/compatibility/page";
 import StatusPage from "@/app/[locale]/status/page";
 import MediaPage from "@/app/[locale]/media/page";
 import ExtractPage from "@/app/[locale]/extract/page";
+import LauncherPage from "@/app/[locale]/launcher/page";
+import LanguagesPage from "@/app/[locale]/languages/page";
 import GamePage from "@/app/[locale]/games/[slug]/page";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -23,8 +25,22 @@ import { site } from "@/data/site";
 import { compatibility, countByTier } from "@/data/compatibility";
 import { historyFor } from "@/data/history";
 import { subsystems } from "@/data/subsystems";
-import { getDictionary, getGameContent, getHistoryContent, getTechCopy } from "@/i18n";
-import { locales, localePath, type Locale } from "@/i18n/config";
+import { graphicsApis } from "@/data/graphics";
+import {
+  commitUrl,
+  launcherEnvironment,
+  launcherImages,
+  launcherLanguages,
+  launcherTimeline,
+} from "@/data/launcher";
+import {
+  format,
+  getDictionary,
+  getGameContent,
+  getHistoryContent,
+  getTechCopy,
+} from "@/i18n";
+import { localeMeta, locales, localePath, type Locale } from "@/i18n/config";
 
 /** Server components are async; render the resolved element. */
 async function renderPage(
@@ -43,6 +59,33 @@ async function renderGame(slug: string, locale: Locale = "en") {
 }
 
 describe("home page", () => {
+  it("presents both renderers, with Vulkan as the default", async () => {
+    await renderPage(HomePage);
+    const t = getDictionary("en");
+
+    expect(
+      screen.getByRole("heading", { name: t.home.graphicsHeading }),
+    ).toBeInTheDocument();
+    for (const api of graphicsApis) {
+      const card = screen
+        .getByRole("heading", { level: 3, name: api.label })
+        .closest("article") as HTMLElement;
+      expect(
+        within(card).getByText(
+          api.isDefault ? t.home.graphicsDefault : t.home.graphicsExperimental,
+        ),
+      ).toBeInTheDocument();
+      expect(within(card).getByText(api.value)).toBeInTheDocument();
+      expect(within(card).getByRole("link")).toHaveAttribute(
+        "href",
+        `/tech/${api.techSlug}`,
+      );
+    }
+    expect(graphicsApis.filter((api) => api.isDefault).map((api) => api.value)).toEqual([
+      "vulkan",
+    ]);
+  });
+
   it("leads with the project and its current version", async () => {
     await renderPage(HomePage);
     const t = getDictionary("en");
@@ -403,6 +446,97 @@ describe("extract page", () => {
   });
 });
 
+describe("launcher page", () => {
+  it("describes each launcher page and every variable it passes to game-run", async () => {
+    await renderPage(LauncherPage);
+    const t = getDictionary("en");
+
+    expect(
+      screen.getByRole("heading", { level: 1, name: t.launcher.heading }),
+    ).toBeInTheDocument();
+    for (const title of [
+      t.launcher.library.title,
+      t.launcher.controls.title,
+      t.launcher.saves.title,
+      t.launcher.settings.title,
+    ]) {
+      expect(screen.getByRole("heading", { level: 3, name: title })).toBeInTheDocument();
+    }
+    for (const variable of launcherEnvironment) {
+      expect(screen.getByText(variable.name)).toBeInTheDocument();
+    }
+  });
+
+  it("links each released step to its notes and each development step to its commit", async () => {
+    await renderPage(LauncherPage);
+    const t = getDictionary("en");
+
+    for (const entry of launcherTimeline) {
+      if (entry.version !== null) {
+        const link = screen.getByRole("link", {
+          name: format(t.common.release, { version: entry.version }),
+        });
+        expect(link.getAttribute("href")).toContain(
+          `docs/release-notes/v${entry.version}.md`,
+        );
+      } else {
+        expect(
+          screen.getByRole("link", {
+            name: `${t.common.developmentBuild} · ${entry.commit}`,
+          }),
+        ).toHaveAttribute("href", commitUrl(entry.commit));
+      }
+    }
+  });
+
+  it("explains the Vulkan / DirectX 12 choice and links to the backend article", async () => {
+    await renderPage(LauncherPage);
+    const t = getDictionary("en");
+
+    expect(
+      screen.getByRole("heading", { name: t.launcher.graphicsHeading }),
+    ).toBeInTheDocument();
+    expect(screen.getByAltText(t.launcher.graphicsAlt)).toHaveAttribute(
+      "src",
+      expect.stringContaining(encodeURIComponent(launcherImages.graphicsApi.src)),
+    );
+    expect(screen.getByRole("link", { name: t.home.d3d12Cta })).toHaveAttribute(
+      "href",
+      "/tech/d3d12",
+    );
+  });
+});
+
+describe("languages page", () => {
+  it("lists every launcher language in launcher order, each in its own script", async () => {
+    await renderPage(LanguagesPage);
+
+    const names = screen.getAllByRole("rowheader");
+    expect(names.map((cell) => cell.textContent)).toEqual(
+      launcherLanguages.map((language) => localeMeta[language.locale].nativeName),
+    );
+    expect(launcherLanguages.map((language) => language.locale)).toEqual([...locales]);
+    expect(launcherLanguages.map((language) => language.launcherId)).toEqual(
+      locales.map((_, index) => index),
+    );
+    const tagged = names.map((cell) => cell.querySelector("[lang]"));
+    expect(tagged.map((name) => name?.getAttribute("lang"))).toEqual(
+      launcherLanguages.map((language) => localeMeta[language.locale].htmlLang),
+    );
+    const arabic = tagged.find((name) => name?.getAttribute("lang") === "ar");
+    expect(arabic).toHaveAttribute("dir", "rtl");
+  });
+
+  it("links every row to the same page in that language", async () => {
+    await renderPage(LanguagesPage, "ja");
+    for (const code of locales) {
+      expect(
+        screen.getByRole("link", { name: localePath(code) }),
+      ).toHaveAttribute("href", localePath(code, "/languages"));
+    }
+  });
+});
+
 describe("site chrome", () => {
   it("marks the current page in the navigation", () => {
     render(<SiteHeader locale="en" />);
@@ -412,7 +546,7 @@ describe("site chrome", () => {
     expect(home).toHaveAttribute("aria-current", "page");
   });
 
-  it("offers all eight languages, pointing at the same page", async () => {
+  it("offers all twelve languages, pointing at the same page", async () => {
     const user = userEvent.setup();
     render(<SiteHeader locale="en" />);
 
@@ -425,7 +559,7 @@ describe("site chrome", () => {
 
     const menu = screen.getAllByRole("menu")[0];
     const items = within(menu).getAllByRole("menuitem");
-    expect(items).toHaveLength(8);
+    expect(items).toHaveLength(12);
     expect(items.map((item) => item.getAttribute("href"))).toEqual([
       "/",
       "/ru",
@@ -435,6 +569,10 @@ describe("site chrome", () => {
       "/es",
       "/ar",
       "/pt",
+      "/tr",
+      "/ja",
+      "/hi",
+      "/ko",
     ]);
   });
 

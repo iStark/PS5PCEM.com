@@ -1,8 +1,13 @@
 import type { MetadataRoute } from "next";
 import { compatibility } from "@/data/compatibility";
-import { technologies, technologyUpdated } from "@/data/technologies";
+import {
+  technologies,
+  technologyDate,
+  technologyIndexUpdated,
+} from "@/data/technologies";
 import { allHistory, historyFor } from "@/data/history";
 import { latestRelease } from "@/data/release";
+import { launcherDevelopmentCommit } from "@/data/launcher";
 import { site } from "@/data/site";
 import {
   defaultLocale,
@@ -13,7 +18,7 @@ import {
 
 /**
  * One entry per page per language, with hreflang alternates on each so search
- * engines can see the set as one page in eight languages rather than eight
+ * engines can see the set as one page in twelve languages rather than twelve
  * competing pages.
  *
  * lastModified comes from the content itself, not from the build clock: a
@@ -35,18 +40,20 @@ const staticPages: Page[] = [
     priority: 0.9,
   },
   { path: "/status", lastModified: newestRun, priority: 0.7 },
-  { path: "/tech", lastModified: technologyUpdated, priority: 0.8 },
+  { path: "/tech", lastModified: technologyIndexUpdated, priority: 0.8 },
   { path: "/media", lastModified: newestRun, priority: 0.6 },
   {
     path: "/extract",
     lastModified: latestRelease.publishedAt,
     priority: 0.5,
   },
+  { path: "/launcher", lastModified: launcherDevelopmentCommit.date, priority: 0.7 },
+  { path: "/languages", lastModified: launcherDevelopmentCommit.date, priority: 0.5 },
 ];
 
 const techPages: Page[] = technologies.map((entry) => ({
   path: `/tech/${entry.slug}`,
-  lastModified: technologyUpdated,
+  lastModified: technologyDate(entry),
   priority: 0.6,
 }));
 

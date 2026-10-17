@@ -75,7 +75,7 @@ export const subsystems: Subsystem[] = [
     name: "Vulkan rendering",
     state: "working",
     summary:
-      "VideoOut reaches a Vulkan swapchain with resident render targets and timeline scheduling.",
+      "The default renderer on Windows and Linux: VideoOut reaches a Vulkan swapchain with resident render targets and timeline scheduling.",
     details: [
       "Persistent render targets, large writable storage buffers, resident storage images, and bounded texture and pipeline caches.",
       "Fifty-six host formats are reachable, spanning BC1–BC7, signed and unsigned integer and normalized channels, R16/RG16, half-float and RGBA32_FLOAT.",
@@ -85,6 +85,20 @@ export const subsystems: Subsystem[] = [
       "GPU compute detile covers 4/8/16-byte 2D and 3D standard and PRT surfaces; RB+ and MSAA still fall back to the CPU.",
       "Single-sample packed 11/11/10 UNORM targets now blend through a storage-buffer copy and fragment-shader unpack/blend/repack path. Game lighting remains incomplete.",
       "VideoOut reports 1080p SDR and keeps 120 Hz unavailable; the default game preference requests performance mode. Internal resolution remains game-controlled.",
+    ],
+  },
+  {
+    id: "d3d12",
+    techArticles: ["d3d12", "rdna2", "agc"],
+    name: "Direct3D 12 rendering (experimental)",
+    state: "partial",
+    summary:
+      "A native Windows backend in development builds after 0.3.5, selected in launcher Settings or with PS5_GRAPHICS_API=d3d12. Games do not run through it yet.",
+    details: [
+      "Native device, direct queue, fences, upload/default/readback buffers, raw UAV descriptors and GPU copies behind a small C interface over COM.",
+      "RDNA2 shaders reuse the shared decoder, IR and SPIR-V generation, then go through SPIRV-Cross to HLSL and D3DCompiler Shader Model 5.1 bytecode.",
+      "Bounded DISPATCH_DIRECT, a restricted DRAW_INDEX_AUTO into one linear RGBA8 target, and a three-buffer DXGI flip swapchain with the renderer and FPS in the window title.",
+      "Hardware probes passed on an RTX 3070 Ti on 17 October 2026. Raiden IV stops at its first indexed draw, so no D3D12 game boot or FPS is claimed; Linux keeps Vulkan.",
     ],
   },
   {
@@ -140,6 +154,7 @@ export const subsystems: Subsystem[] = [
       "Reads artwork from each title's local sce_sys/icon0.png.",
       "Detects DualSense and DualShock controllers and persists sound and input profiles.",
       "Version 0.3.5 ships a GTK 3 Linux launcher and four Linux package formats. Installed packages and AppImages use writable XDG settings and data directories.",
+      "The development build after 0.3.5 adds Turkish, Japanese, Hindi and Korean, for twelve interface languages in both launchers.",
     ],
   },
   {
@@ -193,8 +208,8 @@ export const highlights = [
     body: "Stateful AGC command-stream execution feeds a growing RDNA2-to-SPIR-V shader pipeline covering both graphics and compute workloads.",
   },
   {
-    title: "Vulkan VideoOut",
-    body: "Resident render targets, image alias tracking, timeline scheduling, typed storage images, texture detiling, depth/stencil and MSAA reach a Vulkan swapchain.",
+    title: "Vulkan and DirectX 12",
+    body: "Vulkan is the default renderer: resident render targets, image alias tracking, timeline scheduling, texture detiling, depth/stencil and MSAA. An experimental native DirectX 12 backend is in Windows development builds.",
   },
   {
     title: "Audio, video and pads",

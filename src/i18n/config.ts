@@ -1,5 +1,5 @@
 /**
- * The site speaks the same eight languages as the emulator's own launcher.
+ * The site speaks the same twelve languages as the emulator's own launcher.
  * The order and the native labels follow `Language` and `language_labels` in
  * src/launcher.zig, so a visitor sees the site in the language they already
  * picked in the application.
@@ -14,6 +14,10 @@ export const locales = [
   "es",
   "ar",
   "pt",
+  "tr",
+  "ja",
+  "hi",
+  "ko",
 ] as const;
 
 export type Locale = (typeof locales)[number];
@@ -88,6 +92,34 @@ export const localeMeta: Record<Locale, LocaleMeta> = {
     htmlLang: "pt",
     dir: "ltr",
   },
+  tr: {
+    code: "tr",
+    nativeName: "Türkçe",
+    englishName: "Turkish",
+    htmlLang: "tr",
+    dir: "ltr",
+  },
+  ja: {
+    code: "ja",
+    nativeName: "日本語",
+    englishName: "Japanese",
+    htmlLang: "ja",
+    dir: "ltr",
+  },
+  hi: {
+    code: "hi",
+    nativeName: "हिन्दी",
+    englishName: "Hindi",
+    htmlLang: "hi",
+    dir: "ltr",
+  },
+  ko: {
+    code: "ko",
+    nativeName: "한국어",
+    englishName: "Korean",
+    htmlLang: "ko",
+    dir: "ltr",
+  },
 };
 
 export function isLocale(value: string): value is Locale {
@@ -101,6 +133,20 @@ export function toLocale(value: string | undefined): Locale {
 
 export function dirOf(locale: Locale): "ltr" | "rtl" {
   return localeMeta[locale].dir;
+}
+
+/**
+ * Wraps left-to-right text such as "0.3.0-alpha.1" in Unicode isolates on a
+ * right-to-left page; otherwise the bidi algorithm moves "alpha.1" in front
+ * of "0.3.0". Left-to-right pages get the text back unchanged.
+ */
+const LEFT_TO_RIGHT_ISOLATE = String.fromCharCode(0x2066);
+const POP_DIRECTIONAL_ISOLATE = String.fromCharCode(0x2069);
+
+export function isolateLtr(locale: Locale, text: string): string {
+  return dirOf(locale) === "rtl"
+    ? `${LEFT_TO_RIGHT_ISOLATE}${text}${POP_DIRECTIONAL_ISOLATE}`
+    : text;
 }
 
 export function isDefaultLocale(locale: Locale): boolean {

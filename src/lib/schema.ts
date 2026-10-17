@@ -3,7 +3,7 @@ import { historyFor } from "@/data/history";
 import { latestRelease } from "@/data/release";
 import { site } from "@/data/site";
 import { type Locale, localeMeta, localePath } from "@/i18n/config";
-import { technologies, technologyUpdated } from "@/data/technologies";
+import { technologies, technologyDate } from "@/data/technologies";
 import { getDictionary, getGameContent, getTechCopy } from "@/i18n";
 
 /**
@@ -206,8 +206,8 @@ export function techArticleSchema(locale: Locale, slug: string) {
     description: article.summary,
     url,
     inLanguage: localeMeta[locale].htmlLang,
-    datePublished: technologyUpdated,
-    dateModified: technologyUpdated,
+    datePublished: technologyDate(entry),
+    dateModified: technologyDate(entry),
     author: publisher,
     publisher,
     isPartOf: { "@id": `${site.url}/#website` },

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import {
   findTechnology,
   technologies,
-  technologyUpdated,
+  technologyDate,
   type TechSlug,
   type TechState,
 } from "@/data/technologies";
@@ -55,8 +55,8 @@ export async function generateMetadata({
     title: `${article.title} — PS5PCEM`,
     description: article.summary,
     type: "article",
-    publishedTime: technologyUpdated,
-    modifiedTime: technologyUpdated,
+    publishedTime: technologyDate(entry),
+    modifiedTime: technologyDate(entry),
     keywords: [article.title, "PS5PCEM", t.tech.categories[entry.category]],
   });
 }
@@ -143,7 +143,7 @@ export default async function TechArticlePage({ params }: PageProps) {
         </p>
         <p className="mt-3 text-sm text-ink-400">
           {format(t.tech.updated, {
-            date: formatDate(technologyUpdated, locale),
+            date: formatDate(technologyDate(entry), locale),
           })}
         </p>
       </header>

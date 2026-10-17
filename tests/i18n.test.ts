@@ -4,6 +4,7 @@ import {
   defaultLocale,
   dirOf,
   isLocale,
+  isolateLtr,
   localeMeta,
   localePath,
   locales,
@@ -52,9 +53,22 @@ function at(object: unknown, path: string): unknown {
 }
 
 describe("locale configuration", () => {
-  it("offers exactly the eight languages the emulator's launcher offers", () => {
+  it("offers exactly the twelve languages the emulator's launcher offers", () => {
     // Order and spelling follow Language / language_labels in src/launcher.zig.
-    expect([...locales]).toEqual(["en", "ru", "de", "fr", "zh", "es", "ar", "pt"]);
+    expect([...locales]).toEqual([
+      "en",
+      "ru",
+      "de",
+      "fr",
+      "zh",
+      "es",
+      "ar",
+      "pt",
+      "tr",
+      "ja",
+      "hi",
+      "ko",
+    ]);
     expect(locales.map((code) => localeMeta[code].nativeName)).toEqual([
       "English",
       "Русский",
@@ -64,6 +78,10 @@ describe("locale configuration", () => {
       "Español",
       "العربية",
       "Português",
+      "Türkçe",
+      "日本語",
+      "हिन्दी",
+      "한국어",
     ]);
   });
 
@@ -72,6 +90,15 @@ describe("locale configuration", () => {
     for (const code of locales.filter((candidate) => candidate !== "ar")) {
       expect(dirOf(code)).toBe("ltr");
     }
+  });
+
+  it("isolates left-to-right version strings on right-to-left pages only", () => {
+    const version = "0.3.0-alpha.1";
+    expect(isolateLtr("en", version)).toBe(version);
+    expect(isolateLtr("ja", version)).toBe(version);
+    expect(isolateLtr("ar", version)).toBe(
+      `${String.fromCharCode(0x2066)}${version}${String.fromCharCode(0x2069)}`,
+    );
   });
 
   it("gives every locale a usable BCP 47 tag", () => {
@@ -152,7 +179,7 @@ describe("locale configuration", () => {
 describe("dictionaries", () => {
   const referenceKeys = keyPaths(en).sort();
 
-  it("ships a dictionary and a content file for all eight locales", () => {
+  it("ships a dictionary and a content file for all twelve locales", () => {
     expect(translatedLocales()).toHaveLength(locales.length);
   });
 
@@ -273,6 +300,10 @@ describe("translated title content", () => {
       es: /no jugable/i,
       ar: /غير قابلة للعب/,
       pt: /não jogável/i,
+      tr: /oynanamaz/i,
+      ja: /プレイ不可/,
+      hi: /खेलने योग्य नहीं/,
+      ko: /플레이 불가/,
     };
 
     for (const code of locales) {

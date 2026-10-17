@@ -5,7 +5,9 @@ import { compatibility, compatibilityMeta, countByTier, tierOrder } from "@/data
 import { latestRelease } from "@/data/release";
 import { site } from "@/data/site";
 import { highlights } from "@/data/subsystems";
-import { locales, localePath, toLocale } from "@/i18n/config";
+import { graphicsApis } from "@/data/graphics";
+import { launcherFacts, launcherImages, launcherLanguages } from "@/data/launcher";
+import { localeMeta, locales, localePath, toLocale } from "@/i18n/config";
 import { format, getDictionary } from "@/i18n";
 import { buildRows } from "@/lib/rows";
 import { formatDate } from "@/lib/format";
@@ -39,6 +41,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       "Windows PS5 emulator",
       "RDNA2 SPIR-V",
       "Vulkan emulator",
+      "DirectX 12 PS5 emulator",
     ],
   });
 }
@@ -47,6 +50,13 @@ export default async function HomePage({ params }: PageProps) {
   const locale = toLocale((await params).locale);
   const t = getDictionary(locale);
   const counts = countByTier();
+  const graphicsCopy = {
+    vulkan: { body: t.home.vulkanBody, cta: t.home.vulkanCta },
+    d3d12: {
+      body: format(t.home.d3d12Body, { version: latestRelease.version }),
+      cta: t.home.d3d12Cta,
+    },
+  };
   const rows = buildRows(locale);
   const featured = rows.slice(0, 6);
 
@@ -167,6 +177,55 @@ export default async function HomePage({ params }: PageProps) {
       </section>
 
       <section className="container-page mt-24">
+        <SectionHeading
+          eyebrow={t.home.graphicsEyebrow}
+          title={t.home.graphicsHeading}
+          description={t.home.graphicsLead}
+        />
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {graphicsApis.map((api) => (
+            <article key={api.value} className="surface flex flex-col p-6">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <h3 className="text-xl font-semibold text-ink-100">{api.label}</h3>
+                <span
+                  className={`inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-medium ${
+                    api.isDefault
+                      ? "border-playable/40 bg-playable/10 text-playable"
+                      : "border-intro/40 bg-intro/10 text-intro"
+                  }`}
+                >
+                  {api.isDefault ? t.home.graphicsDefault : t.home.graphicsExperimental}
+                </span>
+              </div>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-300">
+                {graphicsCopy[api.value].body}
+              </p>
+              <dl className="mt-5 space-y-1.5 text-xs">
+                <div className="flex flex-wrap gap-x-2">
+                  <dt className="uppercase tracking-wider text-ink-400">
+                    {t.home.graphicsPlatforms}
+                  </dt>
+                  <dd className="text-ink-200">{api.platforms.join(" · ")}</dd>
+                </div>
+                <div className="flex flex-wrap gap-x-2">
+                  <dt className="font-mono text-ink-400">PS5_GRAPHICS_API</dt>
+                  <dd className="font-mono text-ink-200" dir="ltr">
+                    {api.value}
+                  </dd>
+                </div>
+              </dl>
+              <Link
+                href={localePath(locale, `/tech/${api.techSlug}`)}
+                className="mt-5 text-sm text-accent-400 underline underline-offset-2"
+              >
+                {graphicsCopy[api.value].cta}
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-page mt-24">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading
             eyebrow={t.home.resultsEyebrow}
@@ -272,6 +331,57 @@ export default async function HomePage({ params }: PageProps) {
                 className="aspect-video w-full object-cover"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-page mt-24">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+          <div>
+            <SectionHeading
+              eyebrow={t.home.launcherEyebrow}
+              title={t.home.launcherHeading}
+              description={format(t.home.launcherLead, {
+                capacity: launcherFacts.libraryCapacity,
+                count: launcherLanguages.length,
+                version: latestRelease.version,
+              })}
+            />
+            <div className="mt-7 flex flex-wrap gap-3">
+              <ButtonLink href={localePath(locale, "/launcher")}>
+                {t.home.launcherCta}
+              </ButtonLink>
+              <ButtonLink
+                href={localePath(locale, "/languages")}
+                variant="secondary"
+              >
+                {t.home.languagesCta}
+              </ButtonLink>
+            </div>
+            <ul className="mt-7 flex flex-wrap gap-2" aria-label={t.home.languagesCta}>
+              {launcherLanguages.map((language) => (
+                <li key={language.locale}>
+                  <Link
+                    href={localePath(language.locale)}
+                    hrefLang={localeMeta[language.locale].htmlLang}
+                    lang={localeMeta[language.locale].htmlLang}
+                    className="inline-block rounded-full border border-ink-700 px-3 py-1 text-xs text-ink-300 transition-colors hover:border-ink-500 hover:text-ink-100"
+                  >
+                    {localeMeta[language.locale].nativeName}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="overflow-hidden rounded-xl border border-ink-700">
+            <Image
+              src={launcherImages.settings.src}
+              alt={t.home.launcherImageAlt}
+              width={launcherImages.settings.width}
+              height={launcherImages.settings.height}
+              sizes="(max-width: 1024px) 100vw, 55vw"
+              className="w-full"
+            />
           </div>
         </div>
       </section>

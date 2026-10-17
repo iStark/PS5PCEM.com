@@ -1208,6 +1208,45 @@ const tech: TechCopy = {
       "Una extracción correcta no afirma que el título después se ejecute.",
     ],
   },
+
+  d3d12: {
+    title: "Backend Direct3D 12",
+    summary: "Un renderizador nativo y experimental para Windows añadido después de la 0.3.5. Comparte con Vulkan el decodificador PM4 y la traducción de shaders RDNA2, y después ejecuta y presenta mediante D3D12 y DXGI. Vulkan sigue siendo el predeterminado y los juegos todavía no pasan por esta ruta.",
+    sections: [
+      {
+        heading: "Elegir un renderizador",
+        paragraphs: [
+          "Los ajustes del lanzador de Windows tienen una tarjeta «API gráfica» con Vulkan y DirectX 12. El lanzador guarda graphics_api=vulkan o graphics_api=d3d12 en el ps5pcem.ini portátil y pasa PS5_GRAPHICS_API a game-run, de modo que la elección se aplica en el siguiente inicio. Vulkan es el predeterminado. En los doce idiomas el lanzador marca DirectX 12 como experimental, y la barra lateral lo muestra en lugar del estado del dispositivo Vulkan.",
+          "La misma variable funciona desde la línea de comandos, donde se aceptan d3d12 y dx12. Las versiones de Linux eligen Vulkan, y allí el ejecutor rechaza d3d12. Un valor desconocido se rechaza antes de cargar un juego. Si la inicialización o la ejecución de D3D12 fallan, el ejecutor no lo sustituye por Vulkan: el trabajo de GPU no admitido indica su motivo y termina la ejecución experimental en lugar de darlo por completado. Este backend no ofrece ejecución sin ventana.",
+        ],
+      },
+      {
+        heading: "Qué ejecuta el backend",
+        paragraphs: [
+          "El dispositivo, la cola directa, los asignadores y listas de comandos, las barreras, los fences y la vida de los recursos están detrás de una pequeña interfaz en C sobre COM. Están implementados los búferes de subida, predeterminados y de lectura, las matrices de descriptores UAV en bruto y las copias en GPU. Los shaders pasan por el mismo decodificador RDNA2, la misma IR y la misma generación de SPIR-V que la ruta de Vulkan; SPIRV-Cross convierte ese SPIR-V en HLSL y el D3DCompiler de Windows produce bytecode de Shader Model 5.1. Aquí SPIR-V es solo una forma intermedia y nada se ejecuta mediante Vulkan. SPIRV-Cross está fijado por hash del código fuente, y su licencia Apache-2.0 se distribuye con el proyecto.",
+          "En el lado de PM4, DISPATCH_DIRECT se ejecuta con descriptores de almacenamiento MUBUF y MTBUF acotados y resueltos estáticamente, especialización de USER_DATA y escritura exacta en la memoria invitada. DRAW_INDEX_AUTO cubre un caso restringido: shaders de vértices y píxeles sin recursos, listas o tiras de triángulos, un único destino lineal RGBA8 UNORM, viewport, scissor, descarte de caras, máscaras de canal e instanciado, conservando los bytes que ya había en el destino. Una swapchain DXGI flip de tres búferes presenta salidas lineales RGBA8 y BGRA8 y muestra el renderizador y los FPS en el título de la ventana. El trabajo de GPU termina de forma síncrona antes de que sus efectos lleguen a la memoria invitada, la ejecución paralela de AGC está desactivada, y los shaders, el estado de los pipelines y los recursos preparados todavía no se guardan en caché entre llamadas.",
+        ],
+      },
+      {
+        heading: "Qué se ha verificado",
+        paragraphs: [
+          "El 17 de octubre de 2026 pasaron las pruebas de hardware en una NVIDIA GeForce RTX 3070 Ti: subida y lectura de búferes de seis tamaños, cómputo nativo con seis tamaños de dispatch, traducción RDNA2 de shaders de cómputo y rasterizado con comprobación exacta del resultado, cómputo y dibujos PM4 a través del ejecutor de comandos hacia D3D12 con escritura en la memoria invitada, y presentación en ventana con tres tamaños de swapchain. La capa de depuración de D3D12 no estaba instalada, así que estas ejecuciones no demuestran que no haya avisos bajo esa capa.",
+          "Un arranque de Raiden IV con PS5_GRAPHICS_API=d3d12 eligió la RTX 3070 Ti, inició el juego y se detuvo con código de salida 1 en su primer dibujo indexado (IndexedAndIndirectDrawNotImplemented). Es un límite verificado, no un arranque de juego con D3D12. Todos los resultados de juegos y todas las cifras de FPS de este sitio se midieron con Vulkan.",
+        ],
+      },
+    ],
+    works: [
+      "Elección del lanzador guardada en ps5pcem.ini y pasada como PS5_GRAPHICS_API, con Vulkan por defecto.",
+      "Dispositivo nativo, cola, fences, búferes, descriptores UAV y copias en GPU tras una interfaz en C sobre COM.",
+      "Shaders RDNA2 por la ruta SPIR-V compartida, HLSL de SPIRV-Cross y bytecode de Shader Model 5.1.",
+      "Dispatches de cómputo acotados, un dibujo autoindexado restringido y una swapchain DXGI flip de tres búferes.",
+    ],
+    gaps: [
+      "Texturas y samplers, formatos de imagen y desentramado, dibujos indexados e indirectos, NGG y teselación aún no están implementados.",
+      "Faltan todavía la profundidad y el stencil del invitado, la mezcla, varios destinos de render, MSAA, los metadatos y la presentación de vídeo.",
+      "Sin caché de shaders y pipelines ni finalización asíncrona no se pueden medir FPS de juegos, y las versiones de Linux no tienen D3D12.",
+    ],
+  },
 };
 
 export default tech;

@@ -7,6 +7,10 @@ import zh from "./dictionaries/zh";
 import es from "./dictionaries/es";
 import ar from "./dictionaries/ar";
 import pt from "./dictionaries/pt";
+import tr from "./dictionaries/tr";
+import ja from "./dictionaries/ja";
+import hi from "./dictionaries/hi";
+import ko from "./dictionaries/ko";
 
 import enContent, { type Content } from "./content/en";
 import ruContent from "./content/ru";
@@ -16,6 +20,10 @@ import zhContent from "./content/zh";
 import esContent from "./content/es";
 import arContent from "./content/ar";
 import ptContent from "./content/pt";
+import trContent from "./content/tr";
+import jaContent from "./content/ja";
+import hiContent from "./content/hi";
+import koContent from "./content/ko";
 
 import enTech, { type TechArticle, type TechCopy } from "./tech/en";
 import ruTech from "./tech/ru";
@@ -25,6 +33,10 @@ import zhTech from "./tech/zh";
 import esTech from "./tech/es";
 import arTech from "./tech/ar";
 import ptTech from "./tech/pt";
+import trTech from "./tech/tr";
+import jaTech from "./tech/ja";
+import hiTech from "./tech/hi";
+import koTech from "./tech/ko";
 
 export type { Dictionary, Content, TechArticle, TechCopy };
 
@@ -42,6 +54,10 @@ const dictionaries: Record<Locale, Dictionary> = {
   es,
   ar,
   pt,
+  tr,
+  ja,
+  hi,
+  ko,
 };
 
 const contents: Record<Locale, Content> = {
@@ -53,6 +69,10 @@ const contents: Record<Locale, Content> = {
   es: esContent,
   ar: arContent,
   pt: ptContent,
+  tr: trContent,
+  ja: jaContent,
+  hi: hiContent,
+  ko: koContent,
 };
 
 const techCopies: Record<Locale, TechCopy> = {
@@ -64,6 +84,10 @@ const techCopies: Record<Locale, TechCopy> = {
   es: esTech,
   ar: arTech,
   pt: ptTech,
+  tr: trTech,
+  ja: jaTech,
+  hi: hiTech,
+  ko: koTech,
 };
 
 export function getDictionary(locale: Locale): Dictionary {
