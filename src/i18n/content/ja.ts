@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const ja: Content = {
   games: {
+    "severed-steel": {
+      "status": "ゲーム内到達 · 描画不具合 · 低FPS",
+      "headline": "最初のステージとキーボード移動を確認",
+      "summary": "PPSA05106 v01.000.000：New Game と Continue で Trash Compactor に到達し、Escape the Crusher の目標が表示されます。10月20～21日の開発ビルドの検証には、ゲームの ue4commandline.txt に -noraytracing を追加する必要があります。エミュレーターは自動追加しません。",
+      "strengths": [
+        "背景動画でメニューUIが隠れなくなりました。難易度選択、導入映像、最初のステージの再読み込み、キーボード移動を確認しました。"
+      ],
+      "limits": [
+        "暗い描画や斑点状の不具合が残ります。拒否されたレイトレーシング経路は未実装で、以前の OutOfMemory エラーも修正済みとはしていません。",
+        "出力ディスクの空き容量不足でも動画の準備に失敗しました。古い一時動画ファイルの削除後、再試行に成功しました。音質、後続ステージ、クリア、長時間の安定性は未確認です。"
+      ],
+      "performance": "RTX 3070 Ti、Vulkan、1920×1080出力、Speed、既存キャッシュ使用。内部ターゲットは最大3264×1836を観測。静止中のウィンドウFPS表示を5秒間隔で6回取得：9.2～10.1 FPS、平均9.75、中央値9.85。最初から最後まで25.133秒。総フレーム数によるベンチマークでも、速度向上の実証でもありません。",
+      "imageAlt": "Severed SteelのTrash Compactor。目標と移動ガイドが表示され、暗さと斑点状の描画不具合が残る"
+    },
     "astro-bot": {
       "status": "診断用シネマティック · 描画の不具合",
       "headline": "描画とパフォーマンスの作業が続いています",
@@ -494,6 +508,16 @@ const ja: Content = {
     },
   },
   history: {
+    "severed-steel-gameplay-20261021": {
+      "title": "ステージ再読み込みと移動の確認",
+      "summary": "Continue で再び Trash Compactor に到達し、キーボード移動を確認。静止中の6回の表示は9.2～10.1 FPS、平均9.75でした。再試行ではゲスト障害やdispatch拒否は記録されませんでしたが、描画不具合は残ります。未加工の画像は測定区間後の8.3 FPSを表示。クリアは未確認です。",
+      "imageAlt": "Severed SteelのTrash Compactor。目標と移動ガイドが表示され、暗さと斑点状の描画不具合が残る"
+    },
+    "severed-steel-menu-20261020": {
+      "title": "メニューUI復旧、起動時のレイトレーシングを無効化",
+      "summary": "元のRTシェーダーはInvalidScalarCallで失敗し、その後レンダースレッドの待機がタイムアウトしました。既存のue4commandline.txtへの-noraytracing追加で、この経路をローカルに回避。シェーダーヘッダーのscratchサイズ読み取りと動画表示の修正により、New Gameと難易度UIが復旧しました。RTの完全対応を意味しません。",
+      "imageAlt": "Severed SteelのNew Game難易度選択。文字とPlayボタンが読める"
+    },
     "raiden-iv-audio-rendering-20261017": {
       "title": "プレイ可能の評価、音声の部分的な修正、新しいゲームプレイのキャプチャ",
       "imageAlt": "自機、敵の編隊、弾、HUD が映る Raiden IV のゲームプレイ。スコア 14000",

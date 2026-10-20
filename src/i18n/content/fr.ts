@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const fr: Content = {
   games: {
+    "severed-steel": {
+      "status": "En jeu · défauts graphiques · FPS faibles",
+      "headline": "Premier niveau et déplacement au clavier vérifiés",
+      "summary": "PPSA05106 v01.000.000 : New Game et Continue atteignent Trash Compactor avec l'objectif Escape the Crusher. Ces essais des 20–21 octobre sur une version de développement nécessitent -noraytracing dans ue4commandline.txt ; l'émulateur ne l'ajoute pas automatiquement.",
+      "strengths": [
+        "L'interface du menu reste visible sur la vidéo de fond. Le choix de difficulté, l'introduction, le rechargement du premier niveau et le déplacement au clavier sont vérifiés."
+      ],
+      "limits": [
+        "Des zones sombres et des artefacts mouchetés subsistent. Le chemin de ray tracing rejeté n'est pas implémenté ; l'ancien échec OutOfMemory n'est pas considéré comme corrigé.",
+        "Un disque de sortie plein a également bloqué la préparation de la vidéo. Le nouvel essai a réussi après suppression d'anciens fichiers vidéo temporaires. Qualité audio, niveaux suivants, fin du jeu et stabilité prolongée non vérifiés."
+      ],
+      "performance": "RTX 3070 Ti, Vulkan, sortie 1920×1080, Speed, caches conservés ; cibles internes observées jusqu'à 3264×1836. Six relevés du compteur de fenêtre sans mouvement, espacés de cinq secondes : 9,2–10,1 FPS, moyenne 9,75, médiane 9,85 ; 25,133 s entre le premier et le dernier. Ce n'est ni une mesure sur le nombre total d'images, ni un gain de vitesse démontré.",
+      "imageAlt": "Severed Steel : Trash Compactor avec objectif, aide au déplacement et défauts graphiques sombres et mouchetés"
+    },
     "astro-bot": {
       "status": "Cinématique de diagnostic · défauts graphiques",
       "headline": "Les travaux sur le rendu et les performances continuent",
@@ -555,6 +569,16 @@ const fr: Content = {
   },
 
   history: {
+    "severed-steel-gameplay-20261021": {
+      "title": "Rechargement du niveau et contrôle du déplacement",
+      "summary": "Continue atteint de nouveau Trash Compactor ; le déplacement au clavier est vérifié. Six relevés immobiles : 9,2–10,1 FPS, moyenne 9,75. Aucun défaut invité ni dispatch rejeté dans cet essai, mais les défauts visuels restent. La capture non retouchée affiche 8,3 FPS après l'intervalle mesuré ; la fin du jeu n'est pas vérifiée.",
+      "imageAlt": "Severed Steel : Trash Compactor avec objectif, aide au déplacement et défauts graphiques sombres et mouchetés"
+    },
+    "severed-steel-menu-20261020": {
+      "title": "Interface du menu rétablie ; ray tracing désactivé au démarrage",
+      "summary": "Le shader RT initial échoue avec InvalidScalarCall, puis le thread de rendu dépasse son délai. Ajouter -noraytracing à ue4commandline.txt contourne localement ce chemin. La lecture de la taille scratch dans l'en-tête du shader et la correction de la présentation vidéo accompagnent le retour de New Game et du choix de difficulté. Le RT complet n'est pas pris en charge.",
+      "imageAlt": "Severed Steel : choix de difficulté de New Game avec textes lisibles et bouton Play"
+    },
     "raiden-iv-audio-rendering-20261017": {
       "title": "Statut Playable, correction audio partielle et nouvelle capture en jeu",
       "imageAlt": "Gameplay de Raiden IV avec le vaisseau, une formation ennemie, les tirs et le HUD ; score 14000",

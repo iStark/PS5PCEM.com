@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const tr: Content = {
   games: {
+    "severed-steel": {
+      "status": "Oyun içinde · grafik hataları · düşük FPS",
+      "headline": "İlk bölüm ve klavyeyle hareket doğrulandı",
+      "summary": "PPSA05106 v01.000.000: New Game ve Continue, Escape the Crusher hedefiyle Trash Compactor bölümüne ulaşıyor. 20–21 Ekim geliştirme derlemesi testleri, oyunun ue4commandline.txt dosyasında -noraytracing gerektiriyor; emülatör bunu otomatik eklemiyor.",
+      "strengths": [
+        "Menü arayüzü artık arka plan videosunun üzerinde görünür kalıyor. Zorluk seçimi, giriş videosu, ilk bölümün yeniden yüklenmesi ve klavyeyle hareket doğrulandı."
+      ],
+      "limits": [
+        "Karanlık ve benekli grafik hataları sürüyor. Reddedilen ışın izleme yolu uygulanmadı; önceki OutOfMemory hatasının giderildiği iddia edilmiyor.",
+        "Çıkış diskinin dolması da video hazırlığını engelledi. Eski geçici video dosyaları silindikten sonra tekrar başarılı oldu. Ses kalitesi, sonraki bölümler, oyunu bitirme ve uzun süreli kararlılık doğrulanmadı."
+      ],
+      "performance": "RTX 3070 Ti, Vulkan, 1920×1080 çıkış, Speed, mevcut önbellekler; 3264×1836 boyutuna kadar iç hedefler gözlendi. Hareketsiz sahnede beş saniye arayla altı pencere sayacı örneği: 9,2–10,1 FPS, ortalama 9,75, medyan 9,85; ilk ve son örnek arası 25,133 sn. Bu, toplam kare sayısına dayalı bir ölçüm veya kanıtlanmış hız artışı değildir.",
+      "imageAlt": "Severed Steel Trash Compactor: hedef, hareket yönergesi ve karanlık benekli grafik hataları"
+    },
     "astro-bot": {
       "status": "Tanılama ara sahnesi · işleme kusurları",
       "headline": "İşleme ve performans çalışmaları sürüyor",
@@ -494,6 +508,16 @@ const tr: Content = {
     },
   },
   history: {
+    "severed-steel-gameplay-20261021": {
+      "title": "Bölümü yeniden yükleme ve hareket testi",
+      "summary": "Continue tekrar Trash Compactor'a ulaşıyor; klavyeyle hareket doğrulandı. Altı hareketsiz sayaç örneği: 9,2–10,1 FPS, ortalama 9,75. Tekrarda konuk hatası veya reddedilen dispatch kaydı yok, ancak görsel hatalar sürüyor. Düzenlenmemiş görüntüdeki 8,3 FPS ölçüm aralığından sonradır; oyunun tamamlanması doğrulanmadı.",
+      "imageAlt": "Severed Steel Trash Compactor: hedef, hareket yönergesi ve karanlık benekli grafik hataları"
+    },
+    "severed-steel-menu-20261020": {
+      "title": "Menü arayüzü düzeltildi; başlangıçta ışın izleme kapatıldı",
+      "summary": "İlk RT gölgelendiricisi InvalidScalarCall ile başarısız oluyor, ardından işleme iş parçacığı bekleme süresi doluyor. Mevcut ue4commandline.txt dosyasına -noraytracing eklemek bu yolu yerel olarak atlıyor. Gölgelendirici başlığındaki scratch boyutunun okunması ve video sunumu düzeltmesiyle New Game ve zorluk arayüzü geri geldi. Tam RT desteği iddia edilmiyor.",
+      "imageAlt": "Severed Steel New Game zorluk seçimi: okunabilir yazılar ve Play düğmesi"
+    },
     "raiden-iv-audio-rendering-20261017": {
       "title": "Oynanabilir derecesi, kısmi ses düzeltmesi ve yeni oynanış görüntüsü",
       "imageAlt": "Oyuncu gemisi, düşman dizilişi, mermiler ve HUD ile Raiden IV oynanışı; skor 14000",

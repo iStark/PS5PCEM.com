@@ -38,6 +38,22 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "severed-steel-gameplay-20261021",
+    slug: "severed-steel",
+    date: "2026-10-21",
+    release: null,
+    image: "/images/severed-steel-gameplay-2026-10-21.jpg",
+    source: devReport("severed-steel-startup-2026-10-21.md"),
+  },
+  {
+    id: "severed-steel-menu-20261020",
+    slug: "severed-steel",
+    date: "2026-10-20",
+    release: null,
+    image: "/images/severed-steel-menu-2026-10-20.jpg",
+    source: devReport("severed-steel-startup-2026-10-21.md#black-screen-investigation-and-changes"),
+  },
+  {
     id: "raiden-iv-audio-rendering-20261017",
     slug: "raiden-iv-mikado-remix",
     date: "2026-10-17",

@@ -28,6 +28,13 @@ export type CompatibilityEntry = {
 
 export const compatibility: CompatibilityEntry[] = [
   {
+    slug: "severed-steel",
+    title: "Severed Steel",
+    tier: "ingame",
+    confirmedOn: "2026-10-21",
+    image: "/images/severed-steel-gameplay-2026-10-21.jpg",
+  },
+  {
     slug: "astro-bot",
     title: "ASTRO BOT",
     tier: "intro",
@@ -256,7 +263,7 @@ export const compatibility: CompatibilityEntry[] = [
 
 export const compatibilityMeta = {
   /** Newest maintainer confirmation across the dataset. */
-  confirmedOn: "2026-10-17",
+  confirmedOn: "2026-10-21",
   testedOnRelease: "0.3.2",
   host: "NVIDIA GeForce RTX 3070 Ti",
 } as const;

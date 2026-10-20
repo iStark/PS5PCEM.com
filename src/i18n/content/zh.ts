@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const zh: Content = {
   games: {
+    "severed-steel": {
+      "status": "已进入游戏 · 图形缺陷 · 帧率较低",
+      "headline": "已验证首关和键盘移动",
+      "summary": "PPSA05106 v01.000.000：New Game 和 Continue 均可进入 Trash Compactor，显示 Escape the Crusher 目标。10 月 20–21 日的开发版测试需要在游戏的 ue4commandline.txt 中加入 -noraytracing；模拟器不会自动添加此参数。",
+      "strengths": [
+        "菜单界面不再被背景视频遮住。已验证难度选择、开场动画、首关重新加载及键盘移动。"
+      ],
+      "limits": [
+        "仍有画面过暗和斑点状图形缺陷。被拒绝的光线追踪路径尚未实现；此前的 OutOfMemory 故障不能视为已修复。",
+        "输出磁盘已满也曾导致视频临时文件准备失败；删除旧的临时视频文件后，重试成功。音频质量、后续关卡、通关及长时间稳定性尚未验证。"
+      ],
+      "performance": "RTX 3070 Ti、Vulkan、1920×1080 输出、Speed 预设，保留缓存；观察到最高 3264×1836 的内部渲染目标。静止场景下每五秒读取一次窗口帧率，共六次：9.2–10.1 FPS，均值 9.75，中位数 9.85；首尾间隔 25.133 秒。这是计数器读数，不是总帧数除以时间的基准测试，也不能证明性能提升。",
+      "imageAlt": "Severed Steel 的 Trash Compactor 场景，显示目标和移动提示，画面过暗并有斑点缺陷"
+    },
     "astro-bot": {
       "status": "诊断过场动画 · 画面缺陷",
       "headline": "继续改进图形与性能",
@@ -536,6 +550,16 @@ const zh: Content = {
   },
 
   history: {
+    "severed-steel-gameplay-20261021": {
+      "title": "重新加载首关并验证移动",
+      "summary": "Continue 再次进入 Trash Compactor，已验证键盘移动。静止场景的六次读数为 9.2–10.1 FPS，均值 9.75。此次重试未记录客户程序故障或被拒绝的 dispatch，但图形缺陷仍存在。未经修改的截图在测量时段结束后显示 8.3 FPS；尚未验证通关。",
+      "imageAlt": "Severed Steel 的 Trash Compactor 场景，显示目标和移动提示，画面过暗并有斑点缺陷"
+    },
+    "severed-steel-menu-20261020": {
+      "title": "菜单界面恢复；关闭光线追踪以启动",
+      "summary": "原始 RT 计算着色器报 InvalidScalarCall，随后渲染线程等待超时。在现有 ue4commandline.txt 中追加 -noraytracing 可在本地绕过该路径。读取着色器头中的 scratch 大小并修正视频呈现后，New Game 和难度选择界面恢复。并不代表完整支持光线追踪。",
+      "imageAlt": "Severed Steel 的 New Game 难度选择界面，文字和 Play 按钮清晰可见"
+    },
     "raiden-iv-audio-rendering-20261017": {
       "title": "Playable 评级、部分音频修复及新游戏截图",
       "imageAlt": "Raiden IV 实机画面：玩家飞船、敌机编队、子弹和 HUD；分数14000",

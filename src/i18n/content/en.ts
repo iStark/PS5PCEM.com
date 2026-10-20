@@ -29,6 +29,20 @@ export type Content = {
 
 const content: Content = {
   games: {
+    "severed-steel": {
+      "status": "In-game · rendering defects · low FPS",
+      "headline": "First level and keyboard movement verified",
+      "summary": "PPSA05106 v01.000.000: New Game and Continue reach Trash Compactor with the Escape the Crusher objective. These October 20–21 development-build checks require the game's own -noraytracing switch in ue4commandline.txt; the runner does not add it automatically.",
+      "strengths": [
+        "Menu UI now stays visible over its background movie. Difficulty selection, the introduction, first-level reload and keyboard movement were verified."
+      ],
+      "limits": [
+        "Dark and speckled rendering defects remain. The rejected ray-tracing path is not implemented; an earlier OutOfMemory failure is not claimed fixed.",
+        "Movie staging also failed when the output disk was full. The successful repeat followed removal of old temporary movie files. Audio quality, later levels, completion and long-session stability remain unverified."
+      ],
+      "performance": "RTX 3070 Ti, Vulkan, 1920×1080 output, Speed, retained caches; internal targets up to 3264×1836 observed. Six stationary window-counter samples at five-second intervals: 9.2–10.1 FPS, mean 9.75, median 9.85; first-to-last span 25.133 s. This is a counter observation, not a total-frame benchmark or a measured speedup.",
+      "imageAlt": "Severed Steel Trash Compactor with objective, movement prompt and dark speckled rendering defects"
+    },
     "astro-bot": {
       "status": "Diagnostic cinematic · rendering defects",
       "headline": "Rendering and performance work continues",
@@ -581,6 +595,16 @@ const content: Content = {
   },
 
   history: {
+    "severed-steel-gameplay-20261021": {
+      "title": "First-level reload and movement check",
+      "summary": "Continue reaches Trash Compactor again. Keyboard movement is verified; six stationary counter readings range from 9.2 to 10.1 FPS (mean 9.75). The repeat logs no guest fault or rejected dispatch, but visible defects remain. The unedited screenshot shows 8.3 FPS after the measurement interval; completion is unverified.",
+      "imageAlt": "Severed Steel Trash Compactor with objective, movement prompt and dark speckled rendering defects"
+    },
+    "severed-steel-menu-20261020": {
+      "title": "Menu UI restored; ray tracing disabled for startup",
+      "summary": "The original RT compute shader fails with InvalidScalarCall and the guest render thread times out. Appending -noraytracing to the existing ue4commandline.txt bypasses that path locally. Shader-header scratch sizing and corrected video presentation restore the New Game/difficulty UI. Full ray-tracing support is not claimed.",
+      "imageAlt": "Severed Steel New Game difficulty selection with readable labels and Play button"
+    },
     "raiden-iv-audio-rendering-20261017": {
       "title": "Playable grade, partial audio fix and new gameplay capture",
       "imageAlt": "Raiden IV gameplay with the player ship, enemy formation, bullets and HUD; score 14000",

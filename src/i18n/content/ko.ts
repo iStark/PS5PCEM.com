@@ -2,6 +2,20 @@ import type { Content } from "./en";
 
 const ko: Content = {
   games: {
+    "severed-steel": {
+      "status": "게임 진입 · 그래픽 결함 · 낮은 FPS",
+      "headline": "첫 스테이지와 키보드 이동 확인",
+      "summary": "PPSA05106 v01.000.000: New Game과 Continue로 Trash Compactor에 진입하고 Escape the Crusher 목표가 표시됩니다. 10월 20–21일 개발 빌드 테스트에는 게임의 ue4commandline.txt에 -noraytracing을 추가해야 합니다. 에뮬레이터가 자동으로 추가하지는 않습니다.",
+      "strengths": [
+        "메뉴 UI가 배경 동영상에 가려지지 않습니다. 난이도 선택, 도입 영상, 첫 스테이지 재로딩, 키보드 이동을 확인했습니다."
+      ],
+      "limits": [
+        "어두운 화면과 얼룩 형태의 그래픽 결함이 남아 있습니다. 거부된 레이 트레이싱 경로는 구현되지 않았으며, 이전 OutOfMemory 오류도 해결되었다고 볼 수 없습니다.",
+        "출력 디스크 공간 부족으로 동영상 준비가 실패한 경우도 있습니다. 오래된 임시 동영상 파일을 삭제한 뒤 재시도에 성공했습니다. 음질, 이후 스테이지, 엔딩, 장시간 안정성은 확인하지 않았습니다."
+      ],
+      "performance": "RTX 3070 Ti, Vulkan, 1920×1080 출력, Speed, 기존 캐시 유지. 내부 렌더 타깃은 최대 3264×1836 관측. 정지 상태에서 5초 간격으로 창 FPS 표시를 6회 측정: 9.2–10.1 FPS, 평균 9.75, 중앙값 9.85. 첫 측정부터 마지막까지 25.133초입니다. 전체 프레임 수 기반 벤치마크나 성능 향상 입증이 아닙니다.",
+      "imageAlt": "Severed Steel의 Trash Compactor: 목표와 이동 안내가 보이며 어둡고 얼룩진 그래픽 결함이 남아 있음"
+    },
     "astro-bot": {
       "status": "진단용 시네마틱 · 렌더링 결함",
       "headline": "렌더링과 성능 작업이 계속되고 있습니다",
@@ -494,6 +508,16 @@ const ko: Content = {
     },
   },
   history: {
+    "severed-steel-gameplay-20261021": {
+      "title": "스테이지 재로딩 및 이동 확인",
+      "summary": "Continue로 Trash Compactor에 다시 진입하고 키보드 이동을 확인했습니다. 정지 상태의 6회 측정은 9.2–10.1 FPS, 평균 9.75입니다. 재시도 로그에 게스트 오류나 거부된 dispatch는 없지만 화면 결함은 남아 있습니다. 원본 스크린샷의 8.3 FPS는 측정 구간 이후 수치이며, 엔딩까지의 진행은 확인하지 않았습니다.",
+      "imageAlt": "Severed Steel의 Trash Compactor: 목표와 이동 안내가 보이며 어둡고 얼룩진 그래픽 결함이 남아 있음"
+    },
+    "severed-steel-menu-20261020": {
+      "title": "메뉴 UI 복구; 시작 시 레이 트레이싱 비활성화",
+      "summary": "기존 RT 셰이더가 InvalidScalarCall로 실패한 뒤 렌더 스레드 대기 시간이 초과되었습니다. 기존 ue4commandline.txt에 -noraytracing을 추가하여 해당 경로를 로컬에서 우회했습니다. 셰이더 헤더의 scratch 크기 처리와 동영상 표시 수정으로 New Game 및 난이도 UI를 복구했습니다. RT 완전 지원을 의미하지 않습니다.",
+      "imageAlt": "Severed Steel New Game 난이도 선택 화면의 읽을 수 있는 문구와 Play 버튼"
+    },
     "raiden-iv-audio-rendering-20261017": {
       "title": "플레이 가능 등급, 부분적인 오디오 수정, 새 게임플레이 캡처",
       "imageAlt": "플레이어 기체, 적 편대, 탄환, HUD가 보이는 Raiden IV 게임플레이. 점수 14000",
