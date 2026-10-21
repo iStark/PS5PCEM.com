@@ -11,13 +11,13 @@ export const commitUrl = (sha: string) =>
   `https://github.com/iStark/PS5PCEM/commit/${sha}`;
 
 /**
- * The newest development commit these pages describe: the Graphics API card.
- * The four newest languages came one commit earlier, in 83948d3.
+ * The newest development commit these pages describe: the FPS limit. The
+ * Graphics API card came in fafd205 and the four newest languages in 83948d3.
  */
 export const launcherDevelopmentCommit = {
-  sha: "fafd205",
-  date: "2026-10-17",
-  url: commitUrl("fafd205"),
+  sha: "6654cf5",
+  date: "2026-10-21",
+  url: commitUrl("6654cf5"),
 } as const;
 
 export type LauncherLanguage = {
@@ -69,6 +69,7 @@ export const launcherTimeline = [
   { key: "v035", version: "0.3.5", commit: null },
   { key: "development", version: null, commit: "83948d3" },
   { key: "graphicsApi", version: null, commit: "fafd205" },
+  { key: "fpsLimit", version: null, commit: "6654cf5" },
 ] as const;
 
 /** The environment variables the launcher sets before starting game-run. */
@@ -78,6 +79,7 @@ export const launcherEnvironment = [
   { name: "PS5_KEYMAP", values: "cross=32,circle=69,…", key: "keymap" },
   { name: "PS5_OUTPUT_RESOLUTION", values: "1080 | 1440 | 2160 | 4320", key: "resolution" },
   { name: "PS5_GRAPHICS_API", values: "vulkan | d3d12", key: "graphicsApi" },
+  { name: "PS5_FPS_LIMIT", values: "30 | 60 | 120 | 0", key: "fpsLimit" },
   { name: "PS5_PERFORMANCE_MODE", values: "speed | graphics", key: "preset" },
   { name: "PS5_GAME_PRESET", values: "default | performance", key: "gamePreset" },
   { name: "PS5_SHOW_FPS", values: "1", key: "fps" },
@@ -102,8 +104,10 @@ export const launcherFacts = {
 export const launcherImages = {
   settings: { src: "/images/launcher-settings-en.png", width: 1180, height: 760 },
   controls: { src: "/images/launcher-controls-en.png", width: 1180, height: 760 },
-  library: { src: "/images/launcher-library.png", width: 1196, height: 799 },
+  library: { src: "/images/launcher-library.png", width: 1182, height: 792 },
   languages: { src: "/images/launcher-settings-ja.png", width: 1180, height: 760 },
   /** The Graphics API card cropped from Settings, with DirectX 12 selected. */
   graphicsApi: { src: "/images/launcher-graphics-api-en.png", width: 838, height: 104 },
+  /** The library's bottom card with the FPS limit set to 60. */
+  fpsLimit: { src: "/images/launcher-fps-limit-en.png", width: 824, height: 105 },
 } as const;

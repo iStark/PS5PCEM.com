@@ -155,6 +155,7 @@ export const subsystems: Subsystem[] = [
       "Detects DualSense and DualShock controllers and persists sound and input profiles.",
       "Version 0.3.5 ships a GTK 3 Linux launcher and four Linux package formats. Installed packages and AppImages use writable XDG settings and data directories.",
       "The development build after 0.3.5 adds Turkish, Japanese, Hindi and Korean, for twelve interface languages in both launchers.",
+      "The Library page offers an FPS limit of 30, 60 or 120, or Unlimited, passed as PS5_FPS_LIMIT. It paces every completed flip with either renderer; Asterix held 29.9–30.0, 59.9–60.0 and 119.8–120.0 FPS on an RTX 3070 Ti.",
     ],
   },
   {

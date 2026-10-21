@@ -43,6 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       "PS5PCEM controller",
       "PS5PCEM Linux launcher",
       "PS5PCEM DirectX 12",
+      "PS5PCEM FPS limit",
     ],
   });
 }
@@ -149,7 +150,11 @@ export default async function LauncherPage({ params }: PageProps) {
         </div>
         <div className="mt-8 grid gap-6 lg:grid-cols-2">
           {[
-            { image: launcherImages.library, alt: l.libraryAlt, caption: l.libraryCaption },
+            {
+              image: launcherImages.library,
+              alt: l.libraryAlt,
+              caption: format(l.libraryCaption, { version: latestRelease.version }),
+            },
             { image: launcherImages.controls, alt: l.controlsAlt, caption: l.controlsCaption },
           ].map((shot) => (
             <figure key={shot.image.src}>
@@ -217,6 +222,32 @@ export default async function LauncherPage({ params }: PageProps) {
           </div>
           <figcaption className="mt-3 text-xs leading-relaxed text-ink-400">
             {format(l.graphicsCaption, { version: latestRelease.version })}
+          </figcaption>
+        </figure>
+      </section>
+
+      <section className="mt-20 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+        <div>
+          <SectionHeading eyebrow={l.fpsEyebrow} title={l.fpsHeading} />
+          <p className="mt-6 text-sm leading-relaxed text-ink-300">{l.fpsBody}</p>
+          <ul className="mt-5 space-y-3 text-sm leading-relaxed text-ink-300">
+            <li className="surface p-4">{l.fpsHow}</li>
+            <li className="surface p-4">{l.fpsMeasured}</li>
+          </ul>
+        </div>
+        <figure className="lg:mt-10">
+          <div className="overflow-hidden rounded-xl border border-ink-700">
+            <Image
+              src={launcherImages.fpsLimit.src}
+              alt={l.fpsAlt}
+              width={launcherImages.fpsLimit.width}
+              height={launcherImages.fpsLimit.height}
+              sizes="(max-width: 1024px) 100vw, 55vw"
+              className="w-full"
+            />
+          </div>
+          <figcaption className="mt-3 text-xs leading-relaxed text-ink-400">
+            {format(l.fpsCaption, { version: latestRelease.version })}
           </figcaption>
         </figure>
       </section>

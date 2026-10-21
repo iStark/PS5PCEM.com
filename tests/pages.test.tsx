@@ -505,6 +505,21 @@ describe("launcher page", () => {
       "/tech/d3d12",
     );
   });
+
+  it("explains the FPS limit with the caps it was measured at", async () => {
+    await renderPage(LauncherPage);
+    const t = getDictionary("en");
+
+    expect(
+      screen.getByRole("heading", { name: t.launcher.fpsHeading }),
+    ).toBeInTheDocument();
+    expect(screen.getByText(t.launcher.fpsMeasured)).toBeInTheDocument();
+    expect(screen.getByAltText(t.launcher.fpsAlt)).toHaveAttribute(
+      "src",
+      expect.stringContaining(encodeURIComponent(launcherImages.fpsLimit.src)),
+    );
+    expect(screen.getByText("PS5_FPS_LIMIT")).toBeInTheDocument();
+  });
 });
 
 describe("languages page", () => {

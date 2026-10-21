@@ -366,7 +366,7 @@ const en = {
     pagesHeading: "What each page does",
     library: {
       title: "Library",
-      body: "Holds up to {capacity} games. Each shows its name from sce_sys/param.json and its cover from sce_sys/icon0.png. Switch between grid and table, search by name, title ID or folder, and remove an entry without touching the game files or its saves. Choose folder, Extract PKG and Launch game sit underneath.",
+      body: "Holds up to {capacity} games. Each shows its name from sce_sys/param.json and its cover from sce_sys/icon0.png. Switch between grid and table, search by name, title ID or folder, and remove an entry without touching the game files or its saves. Below the covers sit the game folder, the graphics API and the FPS limit, then Choose folder, Extract PKG and Launch game.",
     },
     controls: {
       title: "Controls",
@@ -380,10 +380,8 @@ const en = {
       title: "Settings",
       body: "Interface language, output resolution ({resolutions}, 1080p by default), the Speed or Graphics rendering preset, sound output, an FPS counter in the game window title, the game's performance mode when it offers one, and the graphics API: Vulkan or the experimental DirectX 12. Resolution, preset and API apply on the next launch.",
     },
-    libraryCaption:
-      "The library in release 0.3.2, before the grid/table switch and search arrived in 0.3.5.",
-    libraryAlt:
-      "Launcher library page with eight game covers, the selected folder and the launch buttons",
+    libraryCaption: "The library in the development build after {version}: the game folder, the Vulkan / DirectX 12 choice and the FPS limit, here set to 60.",
+    libraryAlt: "Launcher library page with eight game covers, the game folder, the Vulkan / DirectX 12 choice and the FPS limit buttons with 60 selected",
     controlsCaption:
       "Controls in Hybrid mode with a DualSense connected and the default key bindings.",
     controlsAlt:
@@ -419,6 +417,7 @@ const en = {
       fps: "Shows the measured frame rate in the window title",
       audio: "Turns host sound output off; AudioOut timing is kept",
       graphicsApi: "Renderer for this run: Vulkan by default, or the experimental Windows-only DirectX 12 backend (dx12 is also accepted).",
+      fpsLimit: "Frame-rate cap for this run: 30, 60 or 120; 0 or unset leaves it uncapped.",
     },
     storageEyebrow: "Settings file",
     storageHeading: "Where preferences are stored",
@@ -444,6 +443,7 @@ const en = {
       development:
         "Turkish, Japanese, Hindi and Korean; the language picker becomes two rows of six.",
       graphicsApi: "A Graphics API choice in Settings: Vulkan by default or the experimental native DirectX 12 backend on Windows. Linux stays on Vulkan.",
+      fpsLimit: "An FPS limit on the Library page: 30, 60, 120 or Unlimited, applied to every completed flip with either renderer.",
     },
     linuxEyebrow: "Linux",
     linuxHeading: "The Linux launcher",
@@ -462,6 +462,13 @@ const en = {
     graphicsFailure: "If DirectX 12 cannot start, or a game sends GPU work the backend does not support yet, the run stops and prints the reason. It never switches to Vulkan behind your back.",
     graphicsAlt: "The Graphics API card in the launcher settings with DirectX 12 selected and the note that it is experimental",
     graphicsCaption: "The Graphics API card in the development build after {version}, with DirectX 12 selected.",
+    fpsEyebrow: "FPS limit",
+    fpsHeading: "Lock the frame rate at 30, 60 or 120",
+    fpsBody: "Next to the graphics API, the Library page offers an FPS limit of 30, 60 or 120, or Unlimited, which is the default. The choice is saved as fps_limit in ps5pcem.ini and reaches game-run as PS5_FPS_LIMIT on the next launch.",
+    fpsHow: "The limit holds every completed flip to its slot, whether the game flips from the CPU or from its GPU command stream, so the game itself slows down rather than only the window, with Vulkan or DirectX 12. A late frame is not delayed further and does not earn a catch-up burst. On Windows the wait uses a high-resolution timer, because the default 15.6 ms system tick cannot hold a 16.7 ms frame.",
+    fpsMeasured: "On an RTX 3070 Ti, the Asterix & Obelix: Slap Them All! title screen runs at several hundred FPS without a limit. With it, one-second samples held 29.9–30.0, 59.9–60.0 and 119.8–120.0 FPS, including when the game was started from the launcher.",
+    fpsAlt: "The bottom of the launcher library: the game folder, the graphics API and the FPS limit set to 60",
+    fpsCaption: "The FPS limit in the development build after {version}, set to 60.",
   },
 
   languages: {
