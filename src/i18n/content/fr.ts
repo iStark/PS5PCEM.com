@@ -4,17 +4,18 @@ const fr: Content = {
   games: {
     "severed-steel": {
       "status": "En jeu · défauts graphiques · FPS faibles",
-      "headline": "Premier niveau et déplacement au clavier vérifiés",
+      "headline": "Clignotement des images noires corrigé au premier niveau",
       "summary": "PPSA05106 v01.000.000 : New Game et Continue atteignent Trash Compactor avec l'objectif Escape the Crusher. Ces essais des 20–21 octobre sur une version de développement nécessitent -noraytracing dans ue4commandline.txt ; l'émulateur ne l'ajoute pas automatiquement.",
       "strengths": [
-        "L'interface du menu reste visible sur la vidéo de fond. Le choix de difficulté, l'introduction, le rechargement du premier niveau et le déplacement au clavier sont vérifiés."
+        "L'interface du menu reste visible sur la vidéo de fond. Le choix de difficulté, l'introduction, le rechargement du premier niveau et le déplacement au clavier sont vérifiés.",
+        "Les données d’exposition du GPU atteignent désormais la mémoire CPU avant le signal de fin ; l’utilisateur confirme la disparition du clignotement. L’effacement du tampon de vitesse, le clipping de la position finale des sommets et les vues de profondeur en tableau à une couche sont corrigés."
       ],
       "limits": [
-        "Des zones sombres et des artefacts mouchetés subsistent. Le chemin de ray tracing rejeté n'est pas implémenté ; l'ancien échec OutOfMemory n'est pas considéré comme corrigé.",
+        "La justesse complète du rendu reste à vérifier. Le ray tracing n’est pas implémenté ; le paramètre local -noraytracing reste nécessaire. Un premier candidat a échoué à allouer de la mémoire ; les 13 FPS ne sont pas atteints.",
         "Un disque de sortie plein a également bloqué la préparation de la vidéo. Le nouvel essai a réussi après suppression d'anciens fichiers vidéo temporaires. Qualité audio, niveaux suivants, fin du jeu et stabilité prolongée non vérifiés."
       ],
-      "performance": "RTX 3070 Ti, Vulkan, sortie 1920×1080, Speed, caches conservés ; cibles internes observées jusqu'à 3264×1836. Six relevés du compteur de fenêtre sans mouvement, espacés de cinq secondes : 9,2–10,1 FPS, moyenne 9,75, médiane 9,85 ; 25,133 s entre le premier et le dernier. Ce n'est ni une mesure sur le nombre total d'images, ni un gain de vitesse démontré.",
-      "imageAlt": "Severed Steel : Trash Compactor avec objectif, aide au déplacement et défauts graphiques sombres et mouchetés"
+      "performance": "Dernière mesure immobile : 261 images / 30,0004 s = 8,70 FPS. RTX 3070 Ti, Vulkan, Speed, caches conservés, sortie 1920×1080 ; cibles internes jusqu’à 3264×1836. Aucun gain de vitesse n’est établi. Build de développement ; essais suspendus après cette vérification.",
+      "imageAlt": "Severed Steel, Trash Compactor après la correction de l’exposition, avec objectif et indication de déplacement"
     },
     "astro-bot": {
       "status": "Cinématique de diagnostic · défauts graphiques",
@@ -569,6 +570,11 @@ const fr: Content = {
   },
 
   history: {
+    "severed-steel-exposure-20261021": {
+      "title": "Clignotement des images noires corrigé au premier niveau",
+      "summary": "Les données d’exposition du GPU atteignent désormais la mémoire CPU avant le signal de fin ; l’utilisateur confirme la disparition du clignotement. L’effacement du tampon de vitesse, le clipping de la position finale des sommets et les vues de profondeur en tableau à une couche sont corrigés. Dernière mesure immobile : 261 images / 30,0004 s = 8,70 FPS. RTX 3070 Ti, Vulkan, Speed, caches conservés, sortie 1920×1080 ; cibles internes jusqu’à 3264×1836. Aucun gain de vitesse n’est établi. Build de développement ; essais suspendus après cette vérification. La justesse complète du rendu reste à vérifier. Le ray tracing n’est pas implémenté ; le paramètre local -noraytracing reste nécessaire. Un premier candidat a échoué à allouer de la mémoire ; les 13 FPS ne sont pas atteints.",
+      "imageAlt": "Severed Steel, Trash Compactor après la correction de l’exposition, avec objectif et indication de déplacement"
+    },
     "severed-steel-gameplay-20261021": {
       "title": "Rechargement du niveau et contrôle du déplacement",
       "summary": "Continue atteint de nouveau Trash Compactor ; le déplacement au clavier est vérifié. Six relevés immobiles : 9,2–10,1 FPS, moyenne 9,75. Aucun défaut invité ni dispatch rejeté dans cet essai, mais les défauts visuels restent. La capture non retouchée affiche 8,3 FPS après l'intervalle mesuré ; la fin du jeu n'est pas vérifiée.",

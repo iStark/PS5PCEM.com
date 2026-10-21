@@ -32,7 +32,7 @@ export const compatibility: CompatibilityEntry[] = [
     title: "Severed Steel",
     tier: "ingame",
     confirmedOn: "2026-10-21",
-    image: "/images/severed-steel-gameplay-2026-10-21.jpg",
+    image: "/images/severed-steel-exposure-fixed-2026-10-21.jpg",
   },
   {
     slug: "astro-bot",

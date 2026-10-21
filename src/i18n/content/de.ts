@@ -4,17 +4,18 @@ const de: Content = {
   games: {
     "severed-steel": {
       "status": "Im Spiel · Grafikfehler · niedrige FPS",
-      "headline": "Erster Level und Tastatursteuerung geprüft",
+      "headline": "Flackernde schwarze Bilder im ersten Level behoben",
       "summary": "PPSA05106 v01.000.000: New Game und Continue erreichen Trash Compactor mit dem Ziel Escape the Crusher. Die Tests vom 20.–21. Oktober mit einem Entwicklungsbuild benötigen -noraytracing in der ue4commandline.txt des Spiels; der Emulator ergänzt den Parameter nicht automatisch.",
       "strengths": [
-        "Die Menüoberfläche bleibt über dem Hintergrundvideo sichtbar. Schwierigkeitswahl, Intro, erneutes Laden des ersten Levels und Bewegung per Tastatur wurden geprüft."
+        "Die Menüoberfläche bleibt über dem Hintergrundvideo sichtbar. Schwierigkeitswahl, Intro, erneutes Laden des ersten Levels und Bewegung per Tastatur wurden geprüft.",
+        "Die GPU-Belichtungsdaten erreichen den CPU-Speicher jetzt vor dem Abschlusssignal; der Nutzer bestätigt das Ende des Flackerns. Korrigiert wurden auch das Löschen des Geschwindigkeitsbuffers, das Clipping der endgültigen Vertexposition und einschichtige Tiefen-Array-Ansichten."
       ],
       "limits": [
-        "Dunkle und fleckige Grafikfehler bleiben. Der abgewiesene Raytracing-Pfad ist nicht implementiert; der frühere OutOfMemory-Fehler gilt nicht als behoben.",
+        "Eine vollständig korrekte Darstellung ist nicht bestätigt. Raytracing fehlt weiterhin; der lokale Parameter -noraytracing bleibt nötig. Ein erster Kandidat scheiterte an der Speicherzuweisung; 13 FPS sind noch nicht erreicht.",
         "Ein voller Ausgabedatenträger verhinderte außerdem die Vorbereitung des Videos. Nach dem Entfernen alter temporärer Videodateien gelang der nächste Test. Tonqualität, spätere Level, vollständiges Durchspielen und Langzeitstabilität sind ungeprüft."
       ],
-      "performance": "RTX 3070 Ti, Vulkan, Ausgabe 1920×1080, Speed, vorhandene Caches; interne Renderziele bis 3264×1836 beobachtet. Sechs FPS-Anzeigen bei ruhender Kamera im Abstand von fünf Sekunden: 9,2–10,1 FPS, Mittel 9,75, Median 9,85; erste bis letzte Probe 25,133 s. Keine Messung anhand der gesamten Bildzahl und kein belegter Geschwindigkeitsgewinn.",
-      "imageAlt": "Severed Steel: Trash Compactor mit Ziel, Bewegungshinweis und dunklen, fleckigen Grafikfehlern"
+      "performance": "Letzte stationäre Messung: 261 Frames / 30,0004 s = 8,70 FPS. RTX 3070 Ti, Vulkan, Speed, vorhandene Caches, Ausgabe 1920×1080; interne Ziele bis 3264×1836. Eine Beschleunigung ist nicht belegt. Entwicklungsbuild; weitere Läufe sind pausiert.",
+      "imageAlt": "Severed Steel: Trash Compactor nach der Belichtungskorrektur, mit Ziel und Bewegungshinweis"
     },
     "astro-bot": {
       "status": "Diagnostische Zwischensequenz · Grafikfehler",
@@ -569,6 +570,11 @@ const de: Content = {
   },
 
   history: {
+    "severed-steel-exposure-20261021": {
+      "title": "Flackernde schwarze Bilder im ersten Level behoben",
+      "summary": "Die GPU-Belichtungsdaten erreichen den CPU-Speicher jetzt vor dem Abschlusssignal; der Nutzer bestätigt das Ende des Flackerns. Korrigiert wurden auch das Löschen des Geschwindigkeitsbuffers, das Clipping der endgültigen Vertexposition und einschichtige Tiefen-Array-Ansichten. Letzte stationäre Messung: 261 Frames / 30,0004 s = 8,70 FPS. RTX 3070 Ti, Vulkan, Speed, vorhandene Caches, Ausgabe 1920×1080; interne Ziele bis 3264×1836. Eine Beschleunigung ist nicht belegt. Entwicklungsbuild; weitere Läufe sind pausiert. Eine vollständig korrekte Darstellung ist nicht bestätigt. Raytracing fehlt weiterhin; der lokale Parameter -noraytracing bleibt nötig. Ein erster Kandidat scheiterte an der Speicherzuweisung; 13 FPS sind noch nicht erreicht.",
+      "imageAlt": "Severed Steel: Trash Compactor nach der Belichtungskorrektur, mit Ziel und Bewegungshinweis"
+    },
     "severed-steel-gameplay-20261021": {
       "title": "Level erneut geladen und Bewegung geprüft",
       "summary": "Continue erreicht erneut Trash Compactor; Tastaturbewegung ist bestätigt. Sechs stationäre Zählerwerte: 9,2–10,1 FPS, Mittel 9,75. Kein Gastabsturz oder abgewiesener Dispatch im Wiederholungslauf, aber sichtbare Fehler bleiben. Das unveränderte Bild zeigt 8,3 FPS nach dem Messintervall; vollständiges Durchspielen ist ungeprüft.",

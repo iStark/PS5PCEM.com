@@ -4,17 +4,18 @@ const tr: Content = {
   games: {
     "severed-steel": {
       "status": "Oyun içinde · grafik hataları · düşük FPS",
-      "headline": "İlk bölüm ve klavyeyle hareket doğrulandı",
+      "headline": "İlk bölümdeki siyah kare titremesi düzeltildi",
       "summary": "PPSA05106 v01.000.000: New Game ve Continue, Escape the Crusher hedefiyle Trash Compactor bölümüne ulaşıyor. 20–21 Ekim geliştirme derlemesi testleri, oyunun ue4commandline.txt dosyasında -noraytracing gerektiriyor; emülatör bunu otomatik eklemiyor.",
       "strengths": [
-        "Menü arayüzü artık arka plan videosunun üzerinde görünür kalıyor. Zorluk seçimi, giriş videosu, ilk bölümün yeniden yüklenmesi ve klavyeyle hareket doğrulandı."
+        "Menü arayüzü artık arka plan videosunun üzerinde görünür kalıyor. Zorluk seçimi, giriş videosu, ilk bölümün yeniden yüklenmesi ve klavyeyle hareket doğrulandı.",
+        "GPU pozlama verileri artık tamamlanma sinyalinden önce CPU belleğine ulaşıyor; kullanıcı titremenin kaybolduğunu doğruladı. Hız tamponu temizliği, son köşe konumunun kırpılması ve tek katmanlı derinlik dizisi görünümleri de düzeltildi."
       ],
       "limits": [
-        "Karanlık ve benekli grafik hataları sürüyor. Reddedilen ışın izleme yolu uygulanmadı; önceki OutOfMemory hatasının giderildiği iddia edilmiyor.",
+        "Grafiklerin bütünüyle doğru olduğu henüz doğrulanmadı. Işın izleme uygulanmadı; yerel -noraytracing parametresi hâlâ gerekli. İlk aday sürüm bellek ayırma hatası verdi; 13 FPS hedefine ulaşılmadı.",
         "Çıkış diskinin dolması da video hazırlığını engelledi. Eski geçici video dosyaları silindikten sonra tekrar başarılı oldu. Ses kalitesi, sonraki bölümler, oyunu bitirme ve uzun süreli kararlılık doğrulanmadı."
       ],
-      "performance": "RTX 3070 Ti, Vulkan, 1920×1080 çıkış, Speed, mevcut önbellekler; 3264×1836 boyutuna kadar iç hedefler gözlendi. Hareketsiz sahnede beş saniye arayla altı pencere sayacı örneği: 9,2–10,1 FPS, ortalama 9,75, medyan 9,85; ilk ve son örnek arası 25,133 sn. Bu, toplam kare sayısına dayalı bir ölçüm veya kanıtlanmış hız artışı değildir.",
-      "imageAlt": "Severed Steel Trash Compactor: hedef, hareket yönergesi ve karanlık benekli grafik hataları"
+      "performance": "Son sabit sahne ölçümü: 261 kare / 30,0004 sn = 8,70 FPS. RTX 3070 Ti, Vulkan, Speed, korunmuş önbellekler, 1920×1080 çıkış; 3264×1836 boyutuna kadar dahili hedefler. Hız artışı kanıtlanmış değil. Geliştirme derlemesi; bu kontrolden sonra denemeler duraklatıldı.",
+      "imageAlt": "Pozlama verisi düzeltmesinden sonra Severed Steel Trash Compactor, görev ve hareket ipucuyla"
     },
     "astro-bot": {
       "status": "Tanılama ara sahnesi · işleme kusurları",
@@ -508,6 +509,11 @@ const tr: Content = {
     },
   },
   history: {
+    "severed-steel-exposure-20261021": {
+      "title": "İlk bölümdeki siyah kare titremesi düzeltildi",
+      "summary": "GPU pozlama verileri artık tamamlanma sinyalinden önce CPU belleğine ulaşıyor; kullanıcı titremenin kaybolduğunu doğruladı. Hız tamponu temizliği, son köşe konumunun kırpılması ve tek katmanlı derinlik dizisi görünümleri de düzeltildi. Son sabit sahne ölçümü: 261 kare / 30,0004 sn = 8,70 FPS. RTX 3070 Ti, Vulkan, Speed, korunmuş önbellekler, 1920×1080 çıkış; 3264×1836 boyutuna kadar dahili hedefler. Hız artışı kanıtlanmış değil. Geliştirme derlemesi; bu kontrolden sonra denemeler duraklatıldı. Grafiklerin bütünüyle doğru olduğu henüz doğrulanmadı. Işın izleme uygulanmadı; yerel -noraytracing parametresi hâlâ gerekli. İlk aday sürüm bellek ayırma hatası verdi; 13 FPS hedefine ulaşılmadı.",
+      "imageAlt": "Pozlama verisi düzeltmesinden sonra Severed Steel Trash Compactor, görev ve hareket ipucuyla"
+    },
     "severed-steel-gameplay-20261021": {
       "title": "Bölümü yeniden yükleme ve hareket testi",
       "summary": "Continue tekrar Trash Compactor'a ulaşıyor; klavyeyle hareket doğrulandı. Altı hareketsiz sayaç örneği: 9,2–10,1 FPS, ortalama 9,75. Tekrarda konuk hatası veya reddedilen dispatch kaydı yok, ancak görsel hatalar sürüyor. Düzenlenmemiş görüntüdeki 8,3 FPS ölçüm aralığından sonradır; oyunun tamamlanması doğrulanmadı.",

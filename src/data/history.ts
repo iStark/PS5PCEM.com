@@ -38,6 +38,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "severed-steel-exposure-20261021",
+    slug: "severed-steel",
+    date: "2026-10-21",
+    release: null,
+    image: "/images/severed-steel-exposure-fixed-2026-10-21.jpg",
+    source: devReport("severed-steel-startup-2026-10-21.md#october-21-follow-up-flicker-and-gpu-to-cpu-visibility"),
+  },
+  {
     id: "severed-steel-gameplay-20261021",
     slug: "severed-steel",
     date: "2026-10-21",

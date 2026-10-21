@@ -31,17 +31,18 @@ const content: Content = {
   games: {
     "severed-steel": {
       "status": "In-game · rendering defects · low FPS",
-      "headline": "First level and keyboard movement verified",
+      "headline": "Black-frame flicker fixed in the first level",
       "summary": "PPSA05106 v01.000.000: New Game and Continue reach Trash Compactor with the Escape the Crusher objective. These October 20–21 development-build checks require the game's own -noraytracing switch in ue4commandline.txt; the runner does not add it automatically.",
       "strengths": [
-        "Menu UI now stays visible over its background movie. Difficulty selection, the introduction, first-level reload and keyboard movement were verified."
+        "Menu UI now stays visible over its background movie. Difficulty selection, the introduction, first-level reload and keyboard movement were verified.",
+        "GPU exposure data now reaches CPU memory before completion; the user confirms that flicker disappeared. Velocity-buffer clears, final-position clipping and single-layer depth array views are corrected."
       ],
       "limits": [
-        "Dark and speckled rendering defects remain. The rejected ray-tracing path is not implemented; an earlier OutOfMemory failure is not claimed fixed.",
+        "Full rendering correctness remains unverified. Ray tracing is not implemented; the local -noraytracing workaround remains necessary. An initial candidate failed memory allocation; 13 FPS has not been reached.",
         "Movie staging also failed when the output disk was full. The successful repeat followed removal of old temporary movie files. Audio quality, later levels, completion and long-session stability remain unverified."
       ],
-      "performance": "RTX 3070 Ti, Vulkan, 1920×1080 output, Speed, retained caches; internal targets up to 3264×1836 observed. Six stationary window-counter samples at five-second intervals: 9.2–10.1 FPS, mean 9.75, median 9.85; first-to-last span 25.133 s. This is a counter observation, not a total-frame benchmark or a measured speedup.",
-      "imageAlt": "Severed Steel Trash Compactor with objective, movement prompt and dark speckled rendering defects"
+      "performance": "Latest stationary check: 261 flips / 30.0004 s = 8.70 FPS. RTX 3070 Ti, Vulkan, Speed, retained caches, 1920×1080 output; internal targets up to 3264×1836. This does not establish a speedup. Development build; testing paused after this check.",
+      "imageAlt": "Severed Steel Trash Compactor after the exposure visibility fix, with objective and movement prompt"
     },
     "astro-bot": {
       "status": "Diagnostic cinematic · rendering defects",
@@ -595,6 +596,11 @@ const content: Content = {
   },
 
   history: {
+    "severed-steel-exposure-20261021": {
+      "title": "Black-frame flicker fixed in the first level",
+      "summary": "GPU exposure data now reaches CPU memory before completion; the user confirms that flicker disappeared. Velocity-buffer clears, final-position clipping and single-layer depth array views are corrected. Latest stationary check: 261 flips / 30.0004 s = 8.70 FPS. RTX 3070 Ti, Vulkan, Speed, retained caches, 1920×1080 output; internal targets up to 3264×1836. This does not establish a speedup. Development build; testing paused after this check. Full rendering correctness remains unverified. Ray tracing is not implemented; the local -noraytracing workaround remains necessary. An initial candidate failed memory allocation; 13 FPS has not been reached.",
+      "imageAlt": "Severed Steel Trash Compactor after the exposure visibility fix, with objective and movement prompt"
+    },
     "severed-steel-gameplay-20261021": {
       "title": "First-level reload and movement check",
       "summary": "Continue reaches Trash Compactor again. Keyboard movement is verified; six stationary counter readings range from 9.2 to 10.1 FPS (mean 9.75). The repeat logs no guest fault or rejected dispatch, but visible defects remain. The unedited screenshot shows 8.3 FPS after the measurement interval; completion is unverified.",

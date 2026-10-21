@@ -209,6 +209,7 @@ describe("test history", () => {
       ["dead-cells-level-menu-audio", null],
       ["raiden-iv-startup-depth", null],
       ["raiden-iv-audio-rendering-20261017", null],
+      ["severed-steel-exposure-20261021", null],
       ["severed-steel-gameplay-20261021", null],
       ["severed-steel-menu-20261020", null],
       ["arkanoid-fiber-startup", null],
@@ -247,7 +248,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(48);
+    expect(history.filter((run) => run.release === null)).toHaveLength(49);
   });
 
   it("references captures that exist in public/", () => {

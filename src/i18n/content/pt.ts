@@ -4,17 +4,18 @@ const pt: Content = {
   games: {
     "severed-steel": {
       "status": "Em jogo · defeitos gráficos · FPS baixo",
-      "headline": "Primeiro nível e movimento pelo teclado verificados",
+      "headline": "Corrigida a intermitência de quadros pretos no primeiro nível",
       "summary": "PPSA05106 v01.000.000: New Game e Continue chegam a Trash Compactor com o objetivo Escape the Crusher. Os testes de 20–21 de outubro numa versão em desenvolvimento exigem -noraytracing em ue4commandline.txt; o emulador não adiciona o parâmetro automaticamente.",
       "strengths": [
-        "A interface do menu permanece visível sobre o vídeo de fundo. Seleção de dificuldade, introdução, recarregamento do primeiro nível e movimento pelo teclado foram verificados."
+        "A interface do menu permanece visível sobre o vídeo de fundo. Seleção de dificuldade, introdução, recarregamento do primeiro nível e movimento pelo teclado foram verificados.",
+        "Os dados de exposição da GPU agora chegam à memória da CPU antes do sinal de conclusão; o utilizador confirmou que a intermitência desapareceu. Também foram corrigidos a limpeza do buffer de velocidade, o recorte da posição final dos vértices e as vistas de profundidade em array de uma camada."
       ],
       "limits": [
-        "Persistem áreas escuras e artefactos pontilhados. O caminho de ray tracing rejeitado não está implementado; não se considera corrigida a falha anterior OutOfMemory.",
+        "A correção completa dos gráficos continua por verificar. O ray tracing não está implementado; o parâmetro local -noraytracing continua necessário. Uma primeira versão candidata falhou na alocação de memória; ainda não foram atingidos 13 FPS.",
         "O disco de saída cheio também impediu a preparação do vídeo. O novo teste teve sucesso após remover ficheiros de vídeo temporários antigos. Qualidade do áudio, níveis seguintes, conclusão e estabilidade prolongada não verificadas."
       ],
-      "performance": "RTX 3070 Ti, Vulkan, saída 1920×1080, Speed, caches mantidas; alvos internos observados até 3264×1836. Seis leituras do contador da janela sem movimento, a cada cinco segundos: 9,2–10,1 FPS, média 9,75, mediana 9,85; 25,133 s entre a primeira e a última. Não é uma medição pelo total de fotogramas nem um ganho de velocidade comprovado.",
-      "imageAlt": "Severed Steel: Trash Compactor com objetivo, indicação de movimento e defeitos gráficos escuros e pontilhados"
+      "performance": "Última medição sem movimento: 261 quadros / 30,0004 s = 8,70 FPS. RTX 3070 Ti, Vulkan, Speed, caches mantidas, saída 1920×1080; alvos internos até 3264×1836. Não comprova um aumento de velocidade. Versão em desenvolvimento; testes pausados após esta verificação.",
+      "imageAlt": "Severed Steel, Trash Compactor após a correção dos dados de exposição, com objetivo e instrução de movimento"
     },
     "astro-bot": {
       "status": "Cinemática de diagnóstico · defeitos gráficos",
@@ -569,6 +570,11 @@ const pt: Content = {
   },
 
   history: {
+    "severed-steel-exposure-20261021": {
+      "title": "Corrigida a intermitência de quadros pretos no primeiro nível",
+      "summary": "Os dados de exposição da GPU agora chegam à memória da CPU antes do sinal de conclusão; o utilizador confirmou que a intermitência desapareceu. Também foram corrigidos a limpeza do buffer de velocidade, o recorte da posição final dos vértices e as vistas de profundidade em array de uma camada. Última medição sem movimento: 261 quadros / 30,0004 s = 8,70 FPS. RTX 3070 Ti, Vulkan, Speed, caches mantidas, saída 1920×1080; alvos internos até 3264×1836. Não comprova um aumento de velocidade. Versão em desenvolvimento; testes pausados após esta verificação. A correção completa dos gráficos continua por verificar. O ray tracing não está implementado; o parâmetro local -noraytracing continua necessário. Uma primeira versão candidata falhou na alocação de memória; ainda não foram atingidos 13 FPS.",
+      "imageAlt": "Severed Steel, Trash Compactor após a correção dos dados de exposição, com objetivo e instrução de movimento"
+    },
     "severed-steel-gameplay-20261021": {
       "title": "Recarregamento do nível e teste de movimento",
       "summary": "Continue chega novamente a Trash Compactor; o movimento pelo teclado foi verificado. Seis leituras sem movimento: 9,2–10,1 FPS, média 9,75. O novo teste não regista falha do convidado nem dispatch rejeitado, mas os defeitos visuais persistem. A captura sem edição mostra 8,3 FPS após o intervalo medido; a conclusão do jogo não foi verificada.",
