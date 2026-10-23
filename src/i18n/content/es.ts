@@ -18,17 +18,18 @@ const es: Content = {
       "imageAlt": "Severed Steel, Trash Compactor tras corregir la visibilidad de la exposición, con objetivo e indicación de movimiento"
     },
     "astro-bot": {
-      "status": "Cinemática de diagnóstico · defectos gráficos",
-      "headline": "Continúa el trabajo de gráficos y rendimiento",
-      "summary": "16 de octubre: la preparación común de recursos usa menos copias, comprobaciones de contenido más rápidas y recorridos escalares más cortos. Nueva medición del título de PPSA21564 v1.018; persisten los defectos de las cinemáticas.",
+      "status": "En juego · gráficos mejorados · FPS bajos",
+      "headline": "Control del personaje confirmado y gráficos mejorados tras reiniciar",
+      "summary": "24 de octubre, PPSA21564 v1.018: el responsable confirmó el control del personaje antes del último reinicio e informa de gráficos corregidos en la nueva compilación. Las nuevas capturas de la introducción muestran el planeta, los asteroides y la nave.",
       "strengths": [
-        "Las colas de comandos compartidas y las transferencias nativas pasan pruebas unitarias y GPU específicas."
+        "Los borrados RG16F DCC y la protección de texturas preparadas corrigen rutas de renderizado compartidas. Los shaders y efectos siguen activos.",
+        "Superadas las pruebas nativas de conversión, sustitución por CPU y 64 configuraciones de sobrescritura completa de imágenes."
       ],
       "limits": [
-        "Persisten fuentes originales ausentes, superficies oscuras/manchadas y lecturas GPU costosas. Control del personaje y finalización sin verificar."
+        "Una captura posterior de la cinemática aún muestra superficies con manchas y artefactos de color; los gráficos no están totalmente corregidos. Faltan una nueva captura y medición de la misma escena controlable del lugar del accidente. No se han verificado todos los gráficos, los niveles posteriores ni el juego completo."
       ],
-      "performance": "Pantalla de título animada: 20.07 FPS en 2640 fotogramas / 131.56 s; bloques de 60 fotogramas: 18.39–21.68 FPS. Ryzen 7 7700 / RTX 3070 Ti, salida 1080p, fuente 4K controlada por el juego y cachés conservadas. Es un promedio del título, no un mínimo ni una medición de jugabilidad. La anterior escena con multitud registró 4,60 FPS durante 10 s.",
-      "imageAlt": "Cinemática de llegada de ASTRO BOT con una pequeña nave y otra estrellada; persisten superficies oscuras y con manchas"
+      "performance": "Nueva introducción: 266 fotogramas / 30,0002 s = 8,87 FPS. Gameplay anterior al arreglo del caché: 6,97 FPS. Son escenas distintas; no demuestra una mejora directa. RTX 3070 Ti, Vulkan, salida solicitada de 1080p y búfer de salida 4K controlado por el juego. Compilación de desarrollo.",
+      "imageAlt": "Introducción de ASTRO BOT tras los arreglos gráficos: motores de la nave, asteroides y planeta"
     },
     "goat-simulator-3": {
       "status": "En juego · imagen invertida · FPS bajos",
@@ -570,6 +571,11 @@ const es: Content = {
   },
 
   history: {
+    "astro-bot-graphics-20261024": {
+      "title": "Control confirmado, arreglos gráficos y dos capturas nuevas",
+      "summary": "Los borrados RG16F DCC y el arreglo de propiedad del caché conservan las texturas preparadas. El responsable informa de gráficos corregidos tras reiniciar. La introducción alcanza 8,87 FPS en 266 fotogramas durante 30 segundos; los anteriores 6,97 FPS corresponden a otra escena. Pasan las pruebas GPU nativas y 64 configuraciones de sobrescritura. Los contadores de errores y recursos sin resolver están a cero en los fotogramas examinados; sigue pendiente revisar de nuevo el lugar del accidente. Una captura posterior de la cinemática aún muestra superficies con manchas y artefactos de color; los gráficos no están totalmente corregidos.",
+      "imageAlt": "Introducción espacial de ASTRO BOT con planeta y asteroides tras los arreglos gráficos"
+    },
     "severed-steel-exposure-20261021": {
       "title": "Corregido el parpadeo de fotogramas negros en el primer nivel",
       "summary": "Los datos de exposición de la GPU llegan ahora a la memoria de la CPU antes de la señal de finalización; el usuario confirma que el parpadeo desapareció. También se corrigen el borrado del búfer de velocidad, el recorte de la posición final de los vértices y las vistas de profundidad en array de una capa. Última medición sin movimiento: 261 fotogramas / 30,0004 s = 8,70 FPS. RTX 3070 Ti, Vulkan, Speed, cachés conservadas, salida 1920×1080; destinos internos de hasta 3264×1836. No demuestra una mejora de velocidad. Compilación en desarrollo; pruebas pausadas tras esta comprobación. La corrección completa de los gráficos sigue sin verificarse. El trazado de rayos no está implementado; aún hace falta el parámetro local -noraytracing. Un primer candidato falló al asignar memoria; no se han alcanzado 13 FPS.",

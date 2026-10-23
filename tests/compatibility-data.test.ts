@@ -87,7 +87,7 @@ describe("compatibility dataset", () => {
   });
 
   it("keeps in-game titles with severe defects short of playable", () => {
-    for (const slug of ["severed-steel", "goat-simulator-3", "minecraft-legends", "dead-cells", "ghost-of-yotei", "gta-iii-definitive-edition", "monster-boy-and-the-cursed-kingdom"]) {
+    for (const slug of ["astro-bot", "severed-steel", "goat-simulator-3", "minecraft-legends", "dead-cells", "ghost-of-yotei", "gta-iii-definitive-edition", "monster-boy-and-the-cursed-kingdom"]) {
       const game = findBySlug(slug);
       expect(game).toBeDefined();
       expect(game!.tier, slug).toBe("ingame");
@@ -96,7 +96,6 @@ describe("compatibility dataset", () => {
 
   it("keeps titles with unverified gameplay short of playable", () => {
     for (const slug of [
-      "astro-bot",
       "pac-man-world-re-pac",
       "medieval-dynasty",
       "oxide-room-104",
@@ -115,7 +114,7 @@ describe("compatibility dataset", () => {
   it("attributes every measurement to the documented test host", () => {
     expect(compatibilityMeta.host).toBe("NVIDIA GeForce RTX 3070 Ti");
     expect(compatibilityMeta.testedOnRelease).toBe("0.3.2");
-    expect(compatibilityMeta.confirmedOn).toBe("2026-10-21");
+    expect(compatibilityMeta.confirmedOn).toBe("2026-10-24");
   });
 
   it("gives every entry a unique slug and a known tier", () => {
@@ -236,6 +235,7 @@ describe("test history", () => {
       ["astro-bot-resource-costs-20261015", null],
       ["astro-bot-resource-walks-20261016", null],
       ["astro-bot-storage-readbacks-20261016", null],
+      ["astro-bot-graphics-20261024", null],
       ["astro-bot-gds-publication-20261014", null],
       ["astro-bot-performance-20261014", null],
       ["minecraft-legends-gameplay-20261013", null],
@@ -248,7 +248,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(49);
+    expect(history.filter((run) => run.release === null)).toHaveLength(50);
   });
 
   it("references captures that exist in public/", () => {

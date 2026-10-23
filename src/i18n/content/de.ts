@@ -18,17 +18,18 @@ const de: Content = {
       "imageAlt": "Severed Steel: Trash Compactor nach der Belichtungskorrektur, mit Ziel und Bewegungshinweis"
     },
     "astro-bot": {
-      "status": "Diagnostische Zwischensequenz · Grafikfehler",
-      "headline": "Grafik und Leistung werden weiter verbessert",
-      "summary": "16. Oktober: Die gemeinsame Ressourcenaufbereitung benötigt weniger Kopien, schnellere Inhaltsprüfungen und kürzere skalare Durchläufe. Neue Titelmessung für PPSA21564 v1.018; Grafikfehler in Zwischensequenzen bleiben.",
+      "status": "Im Spiel · Grafik verbessert · niedrige FPS",
+      "headline": "Figurensteuerung bestätigt, Grafik nach Neustart verbessert",
+      "summary": "24. Oktober, PPSA21564 v1.018: Der Betreuer bestätigte vor dem letzten Neustart die Figurensteuerung und meldet mit dem neuen Build korrigierte Grafik. Neue Aufnahmen des Intros zeigen Planet, Asteroiden und Schiff.",
       "strengths": [
-        "Gemeinsame Befehlswarteschlangen und native Transfers bestehen gezielte Unit- und GPU-Tests."
+        "RG16F-DCC-Löschwerte und der Schutz vorbereiteter Texturen korrigieren gemeinsame Renderpfade. Shader und Effekte bleiben aktiv.",
+        "Native Konvertierungsprüfungen, CPU-Ersetzungen und 64 Konfigurationen für vollständige Bildüberschreibungen bestehen."
       ],
       "limits": [
-        "Fehlende Originalschriften, dunkle/fleckige Oberflächen und teure Rücklesevorgänge bleiben. Figurensteuerung und Abschluss sind ungeprüft."
+        "Eine spätere Aufnahme der Zwischensequenz zeigt weiterhin fleckige Oberflächen und Farbartefakte; die Grafik ist noch nicht vollständig korrigiert. Für dieselbe steuerbare Absturzszene fehlen noch eine neue Aufnahme und Messung. Vollständige Grafikkorrektheit, spätere Level und ein Durchspielen sind unbestätigt."
       ],
-      "performance": "Animierter Titelbildschirm: 20.07 FPS über 2.640 Frames / 131.56 s; Blöcke mit 60 Frames: 18.39–21.68 FPS. Ryzen 7 7700 / RTX 3070 Ti, 1080p-Ausgabe, spielgesteuerte 4K-Quelle, vorhandene Caches. Dies ist ein Titelbildschirm-Durchschnitt, kein Mindestwert oder Gameplay-Ergebnis. Die frühere Menschenmengenszene erreichte 4,60 FPS über 10 s.",
-      "imageAlt": "ASTRO BOT Ankunftssequenz mit kleinem Fluggerät und abgestürztem Schiff; dunkle und fleckige Flächen bleiben"
+      "performance": "Neues Intro: 266 Frames / 30,0002 s = 8,87 FPS. Früheres Gameplay vor dem Cache-Fix: 6,97 FPS. Unterschiedliche Szenen, kein direkter Leistungsnachweis. RTX 3070 Ti, Vulkan, angeforderte 1080p-Ausgabe, spielgesteuerter 4K-Ausgabepuffer. Entwicklungsbuild.",
+      "imageAlt": "ASTRO BOT-Intro nach den Grafikfixes: Schiffstriebwerke, Asteroiden und Planet"
     },
     "goat-simulator-3": {
       "status": "Im Spiel · Bild kopfüber · niedrige FPS",
@@ -570,6 +571,11 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-graphics-20261024": {
+      "title": "Steuerung bestätigt: Grafikfixes und zwei neue Aufnahmen",
+      "summary": "RG16F-DCC-Löschwerte und korrigierte Cache-Zuständigkeit erhalten vorbereitete Texturen. Der Betreuer meldet korrigierte Grafik nach dem Neustart. Das neue Intro erreicht 8,87 FPS über 266 Frames in 30 Sekunden; die früheren 6,97 FPS stammen aus einer anderen Spielszene. Native GPU-Prüfungen und 64 Überschreibkonfigurationen bestehen. Die geprüften Intro-Frames melden keine Fehler oder unaufgelösten Ressourcen; die erneute Prüfung der Absturzstelle steht aus. Eine spätere Aufnahme der Zwischensequenz zeigt weiterhin fleckige Oberflächen und Farbartefakte; die Grafik ist noch nicht vollständig korrigiert.",
+      "imageAlt": "ASTRO BOT-Weltraumintro mit Planet und Asteroiden nach den Grafikfixes"
+    },
     "severed-steel-exposure-20261021": {
       "title": "Flackernde schwarze Bilder im ersten Level behoben",
       "summary": "Die GPU-Belichtungsdaten erreichen den CPU-Speicher jetzt vor dem Abschlusssignal; der Nutzer bestätigt das Ende des Flackerns. Korrigiert wurden auch das Löschen des Geschwindigkeitsbuffers, das Clipping der endgültigen Vertexposition und einschichtige Tiefen-Array-Ansichten. Letzte stationäre Messung: 261 Frames / 30,0004 s = 8,70 FPS. RTX 3070 Ti, Vulkan, Speed, vorhandene Caches, Ausgabe 1920×1080; interne Ziele bis 3264×1836. Eine Beschleunigung ist nicht belegt. Entwicklungsbuild; weitere Läufe sind pausiert. Eine vollständig korrekte Darstellung ist nicht bestätigt. Raytracing fehlt weiterhin; der lokale Parameter -noraytracing bleibt nötig. Ein erster Kandidat scheiterte an der Speicherzuweisung; 13 FPS sind noch nicht erreicht.",

@@ -18,17 +18,18 @@ const pt: Content = {
       "imageAlt": "Severed Steel, Trash Compactor após a correção dos dados de exposição, com objetivo e instrução de movimento"
     },
     "astro-bot": {
-      "status": "Cinemática de diagnóstico · defeitos gráficos",
-      "headline": "Continuam os ajustes gráficos e de desempenho",
-      "summary": "16 de outubro: a preparação comum de recursos reduz cópias, acelera verificações de conteúdo e encurta percursos escalares. Nova medição do título PPSA21564 v1.018; os defeitos das cenas permanecem.",
+      "status": "Em jogo · gráficos melhorados · FPS baixo",
+      "headline": "Controle do personagem confirmado; gráficos melhoraram após reiniciar",
+      "summary": "24 de outubro, PPSA21564 v1.018: o mantenedor confirmou o controle do personagem antes do último reinício e relata gráficos corrigidos na nova compilação. As novas capturas da introdução mostram o planeta, asteroides e a nave.",
       "strengths": [
-        "Filas de comandos compartilhadas e transferências nativas passam testes unitários e GPU específicos."
+        "As limpezas RG16F DCC e a proteção de texturas preparadas corrigem caminhos comuns de renderização. Shaders e efeitos continuam ativos.",
+        "Passaram os testes nativos de conversão, substituição pela CPU e 64 configurações de sobrescrita completa de imagens."
       ],
       "limits": [
-        "Persistem fontes originais ausentes, superfícies escuras/manchadas e leituras GPU caras. Controle do personagem e conclusão não verificados."
+        "Uma captura posterior da cena ainda mostra superfícies manchadas e artefatos de cor; os gráficos não foram totalmente corrigidos. Ainda faltam nova captura e medição da mesma cena controlável no local da queda. A correção gráfica completa, as fases seguintes e a conclusão não foram verificadas."
       ],
-      "performance": "Tela de título animada: 20.07 FPS em 2.640 quadros / 131.56 s; blocos de 60 quadros: 18.39–21.68 FPS. Ryzen 7 7700 / RTX 3070 Ti, saída 1080p, fonte 4K controlada pelo jogo e caches mantidos. É uma média da tela de título, não um mínimo nem uma medição de jogabilidade. A cena anterior com multidão registrou 4,60 FPS em 10 s.",
-      "imageAlt": "Cinemática de chegada de ASTRO BOT com uma pequena nave e uma nave caída; persistem superfícies escuras e manchadas"
+      "performance": "Nova introdução: 266 quadros / 30,0002 s = 8,87 FPS. Gameplay anterior à correção do cache: 6,97 FPS. Cenas diferentes, sem comprovação de ganho direto. RTX 3070 Ti, Vulkan, saída 1080p solicitada e buffer de saída 4K controlado pelo jogo. Compilação de desenvolvimento.",
+      "imageAlt": "Introdução de ASTRO BOT após as correções: motores da nave, asteroides e planeta"
     },
     "goat-simulator-3": {
       "status": "Em jogo · imagem invertida · FPS baixos",
@@ -570,6 +571,11 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-graphics-20261024": {
+      "title": "Controle confirmado, correções gráficas e duas novas capturas",
+      "summary": "As limpezas RG16F DCC e a correção de propriedade do cache preservam texturas preparadas. O mantenedor relata gráficos corrigidos após reiniciar. A introdução registra 8,87 FPS em 266 quadros durante 30 segundos; os 6,97 FPS anteriores são de outra cena. Passaram os testes GPU nativos e 64 configurações de sobrescrita. Os contadores de erros e recursos não resolvidos estão zerados nos quadros analisados; a nova verificação do local da queda está pendente. Uma captura posterior da cena ainda mostra superfícies manchadas e artefatos de cor; os gráficos não foram totalmente corrigidos.",
+      "imageAlt": "Introdução espacial de ASTRO BOT com planeta e asteroides após as correções gráficas"
+    },
     "severed-steel-exposure-20261021": {
       "title": "Corrigida a intermitência de quadros pretos no primeiro nível",
       "summary": "Os dados de exposição da GPU agora chegam à memória da CPU antes do sinal de conclusão; o utilizador confirmou que a intermitência desapareceu. Também foram corrigidos a limpeza do buffer de velocidade, o recorte da posição final dos vértices e as vistas de profundidade em array de uma camada. Última medição sem movimento: 261 quadros / 30,0004 s = 8,70 FPS. RTX 3070 Ti, Vulkan, Speed, caches mantidas, saída 1920×1080; alvos internos até 3264×1836. Não comprova um aumento de velocidade. Versão em desenvolvimento; testes pausados após esta verificação. A correção completa dos gráficos continua por verificar. O ray tracing não está implementado; o parâmetro local -noraytracing continua necessário. Uma primeira versão candidata falhou na alocação de memória; ainda não foram atingidos 13 FPS.",

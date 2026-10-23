@@ -37,9 +37,9 @@ export const compatibility: CompatibilityEntry[] = [
   {
     slug: "astro-bot",
     title: "ASTRO BOT",
-    tier: "intro",
-    confirmedOn: "2026-10-16",
-    image: "/images/astro-bot-wave64-lighting-2026-10-13.png",
+    tier: "ingame",
+    confirmedOn: "2026-10-24",
+    image: "/images/astro-bot-ship-2026-10-24.png",
   },
   {
     "slug": "goat-simulator-3",
@@ -263,7 +263,7 @@ export const compatibility: CompatibilityEntry[] = [
 
 export const compatibilityMeta = {
   /** Newest maintainer confirmation across the dataset. */
-  confirmedOn: "2026-10-21",
+  confirmedOn: "2026-10-24",
   testedOnRelease: "0.3.2",
   host: "NVIDIA GeForce RTX 3070 Ti",
 } as const;

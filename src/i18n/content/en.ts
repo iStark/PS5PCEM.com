@@ -45,17 +45,18 @@ const content: Content = {
       "imageAlt": "Severed Steel Trash Compactor after the exposure visibility fix, with objective and movement prompt"
     },
     "astro-bot": {
-      "status": "Diagnostic cinematic · rendering defects",
-      "headline": "Rendering and performance work continues",
-      "summary": "October 16: shared resource preparation uses fewer copies, faster content checks and shorter scalar walks. PPSA21564 v1.018 has a new title measurement; cinematic rendering defects remain.",
+      "status": "In-game · graphics improved · low FPS",
+      "headline": "Character control reached; graphics improved after restart",
+      "summary": "October 24, PPSA21564 v1.018: the maintainer confirmed character control before the latest restart and reports corrected graphics with the new build. Fresh opening-cinematic captures show the planet, asteroids and ship.",
       "strengths": [
-        "Shared command queues and native transfer paths pass targeted unit and GPU checks."
+        "RG16F DCC clears and protection for prepared texture bindings correct two shared rendering paths. Guest shaders and effects remain enabled.",
+        "Native conversion, CPU-replacement and 64 full-image overwrite configurations pass."
       ],
       "limits": [
-        "Missing source fonts, dark/patchy surfaces and expensive readbacks remain. Character control and completion are unverified."
+        "A later cinematic capture still shows patchy surfaces and color artifacts; the graphics are not fully corrected. The same controllable crash-site scene still needs a fresh capture and measurement. Full graphics correctness, later levels and completion are unverified."
       ],
-      "performance": "Animated title: 20.07 FPS over 2,640 frames / 131.56 s; 60-frame blocks 18.39–21.68 FPS. Ryzen 7 7700 / RTX 3070 Ti, 1080p output, game-controlled 4K source, retained caches. This is a title-screen average, not a minimum or gameplay result. The earlier crowd sample was 4.60 FPS over 10 s.",
-      "imageAlt": "ASTRO BOT arrival cinematic with the small craft and crashed ship; dark and patchy surfaces remain"
+      "performance": "New opening cinematic: 266 frames / 30.0002 s = 8.87 FPS. Earlier gameplay before the cache fix: 6.97 FPS. Different scenes; no paired speedup claim. RTX 3070 Ti, Vulkan, 1080p output request, game-controlled 4K scanout. Development build.",
+      "imageAlt": "ASTRO BOT opening cinematic after the graphics fixes: ship engines, asteroids and a planet"
     },
     "goat-simulator-3": {
       "status": "In-game · inverted image · low FPS",
@@ -596,6 +597,11 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-graphics-20261024": {
+      "title": "Character control confirmed; graphics fixes and two new captures",
+      "summary": "RG16F DCC clears and a texture-cache ownership fix preserve prepared images. The maintainer reports corrected graphics after restart. The new cinematic averages 8.87 FPS over 266 frames in 30 seconds; the earlier 6.97 FPS gameplay sample is a different scene. Native GPU checks and 64 overwrite configurations pass. Sampled cinematic error and unresolved-resource counters are zero; the matching crash-site recheck remains pending. A later cinematic capture still shows patchy surfaces and color artifacts; the graphics are not fully corrected.",
+      "imageAlt": "ASTRO BOT opening space scene with planet and asteroids after the graphics fixes"
+    },
     "severed-steel-exposure-20261021": {
       "title": "Black-frame flicker fixed in the first level",
       "summary": "GPU exposure data now reaches CPU memory before completion; the user confirms that flicker disappeared. Velocity-buffer clears, final-position clipping and single-layer depth array views are corrected. Latest stationary check: 261 flips / 30.0004 s = 8.70 FPS. RTX 3070 Ti, Vulkan, Speed, retained caches, 1920×1080 output; internal targets up to 3264×1836. This does not establish a speedup. Development build; testing paused after this check. Full rendering correctness remains unverified. Ray tracing is not implemented; the local -noraytracing workaround remains necessary. An initial candidate failed memory allocation; 13 FPS has not been reached.",

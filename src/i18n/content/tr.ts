@@ -18,17 +18,18 @@ const tr: Content = {
       "imageAlt": "Pozlama verisi düzeltmesinden sonra Severed Steel Trash Compactor, görev ve hareket ipucuyla"
     },
     "astro-bot": {
-      "status": "Tanılama ara sahnesi · işleme kusurları",
-      "headline": "İşleme ve performans çalışmaları sürüyor",
-      "summary": "16 Ekim: ortak kaynak hazırlığı daha az kopya, daha hızlı içerik denetimi ve daha kısa skaler taramalar kullanıyor. PPSA21564 v1.018 için yeni bir başlık ekranı ölçümü var; ara sahne işleme kusurları sürüyor.",
+      "status": "Oyun içinde · grafikler iyileşti · düşük FPS",
+      "headline": "Karakter kontrolü doğrulandı; yeniden başlatınca grafikler iyileşti",
+      "summary": "24 Ekim, PPSA21564 v1.018: geliştirici son yeniden başlatmadan önce karakter kontrolünü doğruladı ve yeni derlemede grafiklerin düzeldiğini bildirdi. Yeni giriş görüntülerinde gezegen, asteroitler ve gemi görülüyor.",
       "strengths": [
-        "Ortak komut kuyrukları ve yerel aktarım yolları hedefli birim ve GPU denetimlerinden geçiyor.",
+        "RG16F DCC temizlemeleri ve hazırlanmış dokuların korunması ortak çizim yollarını düzeltiyor. Shader ve efektler etkin kalıyor.",
+        "Yerel dönüşüm, CPU tarafından veri değiştirme ve 64 tam görüntü üzerine yazma yapılandırması testleri geçti."
       ],
       "limits": [
-        "Eksik kaynak yazı tipleri, karanlık/lekeli yüzeyler ve pahalı geri okumalar sürüyor. Karakter kontrolü ve oyunun bitirilmesi doğrulanmadı.",
+        "Ara sahnenin daha sonraki bir karesinde lekeli yüzeyler ve renk bozulmaları hâlâ görülüyor; grafikler tamamen düzeltilmiş değil. Aynı kontrol edilebilir kaza sahnesinde yeni görüntü ve ölçüm gerekiyor. Tüm grafiklerin doğruluğu, sonraki bölümler ve oyunun tamamlanması doğrulanmadı."
       ],
-      "performance": "Hareketli başlık ekranı: 2.640 kare / 131,56 sn'de 20,07 FPS; 60 karelik bloklar 18,39–21,68 FPS. Ryzen 7 7700 / RTX 3070 Ti, 1080p çıkış, oyunun belirlediği 4K kaynak, önbellekler korundu. Bu bir başlık ekranı ortalamasıdır; en düşük değer veya oynanış sonucu değildir. Önceki kalabalık sahne ölçümü 10 sn'de 4,60 FPS idi.",
-      "imageAlt": "Küçük araç ve düşmüş gemiyle ASTRO BOT varış ara sahnesi; karanlık ve lekeli yüzeyler sürüyor",
+      "performance": "Yeni giriş: 266 kare / 30,0002 sn = 8,87 FPS. Önbellek düzeltmesinden önceki oynanış: 6,97 FPS. Farklı sahneler; doğrudan hızlanma sonucu çıkarılamaz. RTX 3070 Ti, Vulkan, istenen 1080p çıkış ve oyunun yönettiği 4K çıkış tamponu. Geliştirme derlemesi.",
+      "imageAlt": "Grafik düzeltmelerinden sonra ASTRO BOT girişi: gemi motorları, asteroitler ve gezegen"
     },
     "goat-simulator-3": {
       "status": "Oyun içi · ters görüntü · düşük FPS",
@@ -509,6 +510,11 @@ const tr: Content = {
     },
   },
   history: {
+    "astro-bot-graphics-20261024": {
+      "title": "Kontrol doğrulandı, grafikler düzeltildi ve iki yeni görüntü eklendi",
+      "summary": "RG16F DCC temizlemeleri ve önbellek sahipliği düzeltmesi hazırlanmış dokuları koruyor. Geliştirici yeniden başlatınca grafiklerin düzeldiğini bildirdi. Yeni giriş 30 saniyede 266 kareyle 8,87 FPS; önceki 6,97 FPS başka bir oyun sahnesinden. Yerel GPU testleri ve 64 üzerine yazma yapılandırması geçti. İncelenen giriş karelerinde hata ve çözülemeyen kaynak sayaçları sıfır; kaza sahnesinin yeniden kontrolü bekleniyor. Ara sahnenin daha sonraki bir karesinde lekeli yüzeyler ve renk bozulmaları hâlâ görülüyor; grafikler tamamen düzeltilmiş değil.",
+      "imageAlt": "Grafik düzeltmelerinden sonra gezegen ve asteroitlerin görüldüğü ASTRO BOT uzay girişi"
+    },
     "severed-steel-exposure-20261021": {
       "title": "İlk bölümdeki siyah kare titremesi düzeltildi",
       "summary": "GPU pozlama verileri artık tamamlanma sinyalinden önce CPU belleğine ulaşıyor; kullanıcı titremenin kaybolduğunu doğruladı. Hız tamponu temizliği, son köşe konumunun kırpılması ve tek katmanlı derinlik dizisi görünümleri de düzeltildi. Son sabit sahne ölçümü: 261 kare / 30,0004 sn = 8,70 FPS. RTX 3070 Ti, Vulkan, Speed, korunmuş önbellekler, 1920×1080 çıkış; 3264×1836 boyutuna kadar dahili hedefler. Hız artışı kanıtlanmış değil. Geliştirme derlemesi; bu kontrolden sonra denemeler duraklatıldı. Grafiklerin bütünüyle doğru olduğu henüz doğrulanmadı. Işın izleme uygulanmadı; yerel -noraytracing parametresi hâlâ gerekli. İlk aday sürüm bellek ayırma hatası verdi; 13 FPS hedefine ulaşılmadı.",
