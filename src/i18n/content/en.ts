@@ -597,6 +597,10 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-rgb-mask-performance-20261024": {
+      "title": "Exact alpha preservation accelerates an HDR pass",
+      "summary": "An NVIDIA RGB-only RGBA16F pass drops from 161.45 to 3.59 ms in isolated replay. GPU integer backup and restore keep alpha bits exact; effects and resolution are retained. All 267 Vulkan tests and exhaustive half-float alpha checks pass. Same-process title comparison: 11.55 FPS with the old path, 12.20–12.35 FPS with the optimization. The rebuilt runner enables it by default. A matched gameplay measurement is still pending; these title and isolated-pass figures are not gameplay FPS."
+    },
     "astro-bot-texture-min-lod-20261024": {
       "title": "Streamed texture fix corrects the opening cinematic",
       "summary": "Image MIN_LOD now prevents sampling texture levels that the game has not loaded. Colored panel noise and excessive rainbow glow disappear in repeated opening shots; the maintainer confirms corrected opening graphics. All 266 Vulkan tests and eight native clamp cases pass. New before/after captures accompany this development-build result. Opening cinematic: 327 frames / 30.0001754 s = 10.90 FPS. Earlier gameplay: 6.97 FPS in another scene/build; no paired speedup claim. RTX 3070 Ti, Vulkan, 1080p output, game-controlled 4K scanout. Development build.",

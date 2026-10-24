@@ -571,6 +571,10 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-rgb-mask-performance-20261024": {
+      "title": "La préservation exacte de l’alpha accélère une passe HDR",
+      "summary": "Une passe RGBA16F limitée à l’écriture RGB sur NVIDIA passe de 161,45 à 3,59 ms en rejeu isolé. La sauvegarde et la restauration entières sur GPU préservent tous les bits alpha, les effets et la résolution. Les 267 tests Vulkan et la vérification exhaustive des valeurs alpha sur 16 bits réussissent. Comparaison de l’écran titre dans le même processus : 11,55 FPS avant, 12,20–12,35 FPS avec l’optimisation, activée par défaut dans le nouvel exécutable. Une mesure comparable en jeu reste à faire ; ces chiffres ne sont pas des FPS de gameplay."
+    },
     "astro-bot-texture-min-lod-20261024": {
       "title": "Les textures diffusées corrigent la cinématique d’ouverture",
       "summary": "Image MIN_LOD empêche désormais de lire les niveaux de texture que le jeu n’a pas encore chargés. Le bruit coloré des panneaux et la lueur arc-en-ciel excessive disparaissent dans les plans d’ouverture répétés ; le responsable confirme la correction visuelle. Les 266 tests Vulkan et huit cas GPU natifs passent. De nouvelles captures avant/après documentent cette version en développement. Cinématique d’ouverture : 327 images / 30,0001754 s = 10,90 FPS. Ancienne mesure en jeu : 6,97 FPS dans une autre scène/version ; aucune accélération directement comparable. RTX 3070 Ti, Vulkan, sortie 1080p, scanout 4K piloté par le jeu. Version en développement.",

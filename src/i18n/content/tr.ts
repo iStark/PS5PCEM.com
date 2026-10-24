@@ -510,6 +510,10 @@ const tr: Content = {
     },
   },
   history: {
+    "astro-bot-rgb-mask-performance-20261024": {
+      "title": "Alfanın tam korunması bir HDR geçişini hızlandırıyor",
+      "summary": "NVIDIA üzerinde yalnızca RGB yazan bir RGBA16F geçişi, yalıtılmış tekrar testinde 161,45 ms’den 3,59 ms’ye düştü. GPU üzerindeki tamsayı yedekleme ve geri yükleme tüm alfa bitlerini korur; efektler ve çözünürlük değişmez. 267 Vulkan testi ve tüm 16 bit alfa değerlerinin kontrolü geçti. Aynı işlemde başlık ekranı karşılaştırması: eski yolda 11,55 FPS, optimizasyonla 12,20–12,35 FPS. Yeni çalıştırıcıda varsayılan olarak etkin. Aynı oyun sahnesindeki karşılaştırmalı ölçüm bekleniyor; bu değerler oynanış FPS’i değildir."
+    },
     "astro-bot-texture-min-lod-20261024": {
       "title": "Doku akışı düzeltmesi açılış sinematiğindeki bozulmayı gideriyor",
       "summary": "Image MIN_LOD artık oyunun henüz yüklemediği doku seviyelerinin örneklenmesini engelliyor. Tekrarlanan açılış çekimlerinde panellerdeki renkli gürültü ve aşırı gökkuşağı parlaması kayboldu; proje sahibi açılış grafiklerinin düzeldiğini doğruladı. 266 Vulkan testi ve sekiz yerel GPU durumu geçti. Geliştirme derlemesi için önce/sonra görüntüleri eklendi. Açılış sinematiği: 327 kare / 30,0001754 sn = 10,90 FPS. Önceki oynanış: farklı sahne/derlemede 6,97 FPS; doğrudan hızlanma karşılaştırması değil. RTX 3070 Ti, Vulkan, 1080p çıkış, oyunun yönettiği 4K scanout. Geliştirme derlemesi.",

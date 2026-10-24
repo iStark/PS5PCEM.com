@@ -571,6 +571,10 @@ const es: Content = {
   },
 
   history: {
+    "astro-bot-rgb-mask-performance-20261024": {
+      "title": "La conservación exacta de alfa acelera una pasada HDR",
+      "summary": "Una pasada RGBA16F que escribe solo RGB en NVIDIA baja de 161,45 a 3,59 ms en una reproducción aislada. La copia y restauración mediante enteros en la GPU preservan todos los bits de alfa, los efectos y la resolución. Pasan las 267 pruebas de Vulkan y la comprobación de todos los valores alfa de 16 bits. Comparación de la pantalla inicial en el mismo proceso: 11,55 FPS antes y 12,20–12,35 FPS con la optimización, activada por defecto en el nuevo ejecutable. Falta una medición comparable durante el juego; estas cifras no son FPS de gameplay."
+    },
     "astro-bot-texture-min-lod-20261024": {
       "title": "La corrección de texturas elimina defectos de la cinemática inicial",
       "summary": "Image MIN_LOD impide ahora muestrear niveles de textura que el juego aún no ha cargado. Desaparecen el ruido de color en los paneles y el resplandor arcoíris excesivo en las tomas iniciales repetidas; el responsable confirma la corrección visual. Pasan las 266 pruebas Vulkan y ocho casos GPU nativos. Se añaden capturas de antes y después de esta compilación en desarrollo. Cinemática inicial: 327 fotogramas / 30,0001754 s = 10,90 FPS. Jugabilidad anterior: 6,97 FPS en otra escena/compilación; no es una comparación directa de rendimiento. RTX 3070 Ti, Vulkan, salida 1080p y scanout 4K controlado por el juego. Compilación en desarrollo.",

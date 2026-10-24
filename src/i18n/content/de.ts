@@ -571,6 +571,10 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-rgb-mask-performance-20261024": {
+      "title": "Exakte Alpha-Erhaltung beschleunigt einen HDR-Durchlauf",
+      "summary": "Ein RGBA16F-Durchlauf mit reinen RGB-Schreibzugriffen auf NVIDIA sinkt im isolierten Replay von 161,45 auf 3,59 ms. Ganzzahlige GPU-Sicherung und Wiederherstellung erhalten alle Alpha-Bits; Effekte und Auflösung bleiben erhalten. Alle 267 Vulkan-Tests und sämtliche 16-Bit-Alpha-Werte bestehen die Prüfung. Vergleich des Titelbildschirms im selben Prozess: 11,55 FPS zuvor, 12,20–12,35 FPS mit Optimierung. Im neu gebauten Runner standardmäßig aktiv. Ein vergleichbarer Gameplay-Test steht noch aus; dies sind keine Gameplay-FPS."
+    },
     "astro-bot-texture-min-lod-20261024": {
       "title": "Textur-Streaming-Korrektur behebt Fehler im Eröffnungsfilm",
       "summary": "Image MIN_LOD verhindert nun das Abtasten noch nicht geladener Texturstufen. Farbrauschen auf Paneelen und übermäßiges Regenbogenleuchten verschwinden in wiederholten Eröffnungsszenen; der Projektbetreuer bestätigt die korrigierte Anfangsgrafik. Alle 266 Vulkan-Tests und acht native GPU-Fälle bestehen. Neue Vorher-/Nachher-Bilder dokumentieren den Entwicklungsbuild. Eröffnungsfilm: 327 Frames / 30,0001754 s = 10,90 FPS. Früheres Gameplay: 6,97 FPS in einer anderen Szene/Version; kein direkter Beschleunigungsvergleich. RTX 3070 Ti, Vulkan, 1080p-Ausgabe, spielgesteuerter 4K-Scanout. Entwicklungsbuild.",
