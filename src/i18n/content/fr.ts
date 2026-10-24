@@ -19,17 +19,17 @@ const fr: Content = {
     },
     "astro-bot": {
       "status": "En jeu · graphismes améliorés · FPS faibles",
-      "headline": "Contrôle du personnage confirmé, graphismes améliorés après redémarrage",
-      "summary": "24 octobre, PPSA21564 v1.018 : le mainteneur a confirmé le contrôle du personnage avant le dernier redémarrage et signale des graphismes corrigés avec la nouvelle compilation. Les nouvelles captures de l’introduction montrent la planète, les astéroïdes et le vaisseau.",
+      "headline": "Les textures diffusées corrigent la cinématique d’ouverture",
+      "summary": "Image MIN_LOD empêche désormais de lire les niveaux de texture que le jeu n’a pas encore chargés. Le bruit coloré des panneaux et la lueur arc-en-ciel excessive disparaissent dans les plans d’ouverture répétés ; le responsable confirme la correction visuelle. Les 266 tests Vulkan et huit cas GPU natifs passent. De nouvelles captures avant/après documentent cette version en développement.",
       "strengths": [
         "Les effacements RG16F DCC et la protection des textures préparées corrigent des chemins de rendu communs. Les shaders et effets restent actifs.",
         "Les tests natifs de conversion, de remplacement par le CPU et les 64 configurations de réécriture complète d’image réussissent."
       ],
       "limits": [
-        "Une capture ultérieure de la cinématique montre encore des surfaces tachetées et des artefacts de couleur ; les graphismes ne sont pas entièrement corrigés. Il reste à recapturer et mesurer la même scène jouable du site du crash. L’exactitude graphique complète, les niveaux suivants et la fin du jeu ne sont pas vérifiés."
+        "Les scènes suivantes, une nouvelle mesure en jeu et le tutoriel de mouvements restent à vérifier. Certaines lignes de profil signalent encore 12 liaisons de stockage non résolues ; aucune erreur différée de shader jusqu’à l’image 4261. La justesse graphique complète et la fin du jeu ne sont pas confirmées."
       ],
-      "performance": "Nouvelle introduction : 266 images / 30,0002 s = 8,87 FPS. Ancien gameplay avant correction du cache : 6,97 FPS. Scènes différentes, sans comparaison directe de gain. RTX 3070 Ti, Vulkan, sortie 1080p demandée, tampon de sortie 4K contrôlé par le jeu. Compilation de développement.",
-      "imageAlt": "Introduction d’ASTRO BOT après les corrections : moteurs du vaisseau, astéroïdes et planète"
+      "performance": "Cinématique d’ouverture : 327 images / 30,0001754 s = 10,90 FPS. Ancienne mesure en jeu : 6,97 FPS dans une autre scène/version ; aucune accélération directement comparable. RTX 3070 Ti, Vulkan, sortie 1080p, scanout 4K piloté par le jeu. Version en développement.",
+      "imageAlt": "Intérieur du vaisseau ASTRO BOT après la correction des textures, avec panneaux et surfaces des robots propres"
     },
     "goat-simulator-3": {
       "status": "En jeu · image inversée · FPS faibles",
@@ -571,6 +571,11 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-texture-min-lod-20261024": {
+      "title": "Les textures diffusées corrigent la cinématique d’ouverture",
+      "summary": "Image MIN_LOD empêche désormais de lire les niveaux de texture que le jeu n’a pas encore chargés. Le bruit coloré des panneaux et la lueur arc-en-ciel excessive disparaissent dans les plans d’ouverture répétés ; le responsable confirme la correction visuelle. Les 266 tests Vulkan et huit cas GPU natifs passent. De nouvelles captures avant/après documentent cette version en développement. Cinématique d’ouverture : 327 images / 30,0001754 s = 10,90 FPS. Ancienne mesure en jeu : 6,97 FPS dans une autre scène/version ; aucune accélération directement comparable. RTX 3070 Ti, Vulkan, sortie 1080p, scanout 4K piloté par le jeu. Version en développement.",
+      "imageAlt": "Intérieur du vaisseau ASTRO BOT après la correction des textures, avec panneaux et surfaces des robots propres"
+    },
     "astro-bot-compute-loops-20261024": {
       "title": "Troncature de la boucle de particules reproduite séparément",
       "summary": "Une charge Vulkan reconstruite s’arrête à 2 340 itérations sur 4 000 avec la limite de 65 536 blocs. Des limites finies plus élevées donnent des résultats complets identiques octet par octet. La limite compute générale passe à 1 048 576 passages de blocs, avec signalement explicite en cas de dépassement ; les tests GPU couvrent aussi une boucle complexe de 5 550 itérations. La cinématique intermédiaire présente encore des défauts de couleurs et de matériaux. Le gameplay de la version finale reste à vérifier ; aucun nouveau FPS ni correctif graphique complet n’est annoncé.",

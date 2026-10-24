@@ -19,17 +19,17 @@ const de: Content = {
     },
     "astro-bot": {
       "status": "Im Spiel · Grafik verbessert · niedrige FPS",
-      "headline": "Figurensteuerung bestätigt, Grafik nach Neustart verbessert",
-      "summary": "24. Oktober, PPSA21564 v1.018: Der Betreuer bestätigte vor dem letzten Neustart die Figurensteuerung und meldet mit dem neuen Build korrigierte Grafik. Neue Aufnahmen des Intros zeigen Planet, Asteroiden und Schiff.",
+      "headline": "Textur-Streaming-Korrektur behebt Fehler im Eröffnungsfilm",
+      "summary": "Image MIN_LOD verhindert nun das Abtasten noch nicht geladener Texturstufen. Farbrauschen auf Paneelen und übermäßiges Regenbogenleuchten verschwinden in wiederholten Eröffnungsszenen; der Projektbetreuer bestätigt die korrigierte Anfangsgrafik. Alle 266 Vulkan-Tests und acht native GPU-Fälle bestehen. Neue Vorher-/Nachher-Bilder dokumentieren den Entwicklungsbuild.",
       "strengths": [
         "RG16F-DCC-Löschwerte und der Schutz vorbereiteter Texturen korrigieren gemeinsame Renderpfade. Shader und Effekte bleiben aktiv.",
         "Native Konvertierungsprüfungen, CPU-Ersetzungen und 64 Konfigurationen für vollständige Bildüberschreibungen bestehen."
       ],
       "limits": [
-        "Eine spätere Aufnahme der Zwischensequenz zeigt weiterhin fleckige Oberflächen und Farbartefakte; die Grafik ist noch nicht vollständig korrigiert. Für dieselbe steuerbare Absturzszene fehlen noch eine neue Aufnahme und Messung. Vollständige Grafikkorrektheit, spätere Level und ein Durchspielen sind unbestätigt."
+        "Spätere Szenen, eine neue Gameplay-Messung und das Bewegungssteuerungs-Tutorial sind ungeprüft. Einige Profilzeilen melden weiter 12 nicht aufgelöste Storage-Bindungen; bis Frame 4261 trat kein verzögerter Shaderfehler auf. Vollständige Grafiktreue und Abschluss sind nicht bestätigt."
       ],
-      "performance": "Neues Intro: 266 Frames / 30,0002 s = 8,87 FPS. Früheres Gameplay vor dem Cache-Fix: 6,97 FPS. Unterschiedliche Szenen, kein direkter Leistungsnachweis. RTX 3070 Ti, Vulkan, angeforderte 1080p-Ausgabe, spielgesteuerter 4K-Ausgabepuffer. Entwicklungsbuild.",
-      "imageAlt": "ASTRO BOT-Intro nach den Grafikfixes: Schiffstriebwerke, Asteroiden und Planet"
+      "performance": "Eröffnungsfilm: 327 Frames / 30,0001754 s = 10,90 FPS. Früheres Gameplay: 6,97 FPS in einer anderen Szene/Version; kein direkter Beschleunigungsvergleich. RTX 3070 Ti, Vulkan, 1080p-Ausgabe, spielgesteuerter 4K-Scanout. Entwicklungsbuild.",
+      "imageAlt": "ASTRO BOT: Schiffsinneres nach der Texturkorrektur mit sauberen Paneelen und Roboteroberflächen"
     },
     "goat-simulator-3": {
       "status": "Im Spiel · Bild kopfüber · niedrige FPS",
@@ -571,6 +571,11 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-texture-min-lod-20261024": {
+      "title": "Textur-Streaming-Korrektur behebt Fehler im Eröffnungsfilm",
+      "summary": "Image MIN_LOD verhindert nun das Abtasten noch nicht geladener Texturstufen. Farbrauschen auf Paneelen und übermäßiges Regenbogenleuchten verschwinden in wiederholten Eröffnungsszenen; der Projektbetreuer bestätigt die korrigierte Anfangsgrafik. Alle 266 Vulkan-Tests und acht native GPU-Fälle bestehen. Neue Vorher-/Nachher-Bilder dokumentieren den Entwicklungsbuild. Eröffnungsfilm: 327 Frames / 30,0001754 s = 10,90 FPS. Früheres Gameplay: 6,97 FPS in einer anderen Szene/Version; kein direkter Beschleunigungsvergleich. RTX 3070 Ti, Vulkan, 1080p-Ausgabe, spielgesteuerter 4K-Scanout. Entwicklungsbuild.",
+      "imageAlt": "ASTRO BOT: Schiffsinneres nach der Texturkorrektur mit sauberen Paneelen und Roboteroberflächen"
+    },
     "astro-bot-compute-loops-20261024": {
       "title": "Abbruch der Partikelschleife im isolierten Test reproduziert",
       "summary": "Eine rekonstruierte Vulkan-Arbeitslast bricht mit dem Limit von 65.536 Blöcken nach 2.340 von 4.000 Partikel-Iterationen ab. Höhere endliche Limits liefern vollständige, bytegleiche Ergebnisse. Das normale Compute-Limit beträgt nun 1.048.576 Blockbesuche mit ausdrücklicher Fehlermeldung bei Überschreitung; GPU-Tests prüfen auch eine umfangreiche Schleife mit 5.550 Iterationen. Die Zwischenversion zeigt weiterhin Farb- und Materialfehler. Der Gameplay-Test der endgültigen Version steht aus; neue Gameplay-FPS oder eine vollständige Grafikkorrektur werden nicht behauptet.",

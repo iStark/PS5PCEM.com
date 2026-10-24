@@ -46,17 +46,17 @@ const content: Content = {
     },
     "astro-bot": {
       "status": "In-game · graphics improved · low FPS",
-      "headline": "Character control reached; graphics improved after restart",
-      "summary": "October 24, PPSA21564 v1.018: the maintainer confirmed character control before the latest restart and reports corrected graphics with the new build. Fresh opening-cinematic captures show the planet, asteroids and ship.",
+      "headline": "Streamed texture fix corrects the opening cinematic",
+      "summary": "Image MIN_LOD now prevents sampling texture levels that the game has not loaded. Colored panel noise and excessive rainbow glow disappear in repeated opening shots; the maintainer confirms corrected opening graphics. All 266 Vulkan tests and eight native clamp cases pass. New before/after captures accompany this development-build result.",
       "strengths": [
         "RG16F DCC clears and protection for prepared texture bindings correct two shared rendering paths. Guest shaders and effects remain enabled.",
         "Native conversion, CPU-replacement and 64 full-image overwrite configurations pass."
       ],
       "limits": [
-        "A later cinematic capture still shows patchy surfaces and color artifacts; the graphics are not fully corrected. The same controllable crash-site scene still needs a fresh capture and measurement. Full graphics correctness, later levels and completion are unverified."
+        "Later scenes, a fresh gameplay measurement and the motion-control tutorial remain unverified. Some profile rows still report 12 unresolved storage bindings; no deferred shader fault was observed through flip 4261. Full graphics correctness and completion are not established."
       ],
-      "performance": "New opening cinematic: 266 frames / 30.0002 s = 8.87 FPS. Earlier gameplay before the cache fix: 6.97 FPS. Different scenes; no paired speedup claim. RTX 3070 Ti, Vulkan, 1080p output request, game-controlled 4K scanout. Development build.",
-      "imageAlt": "ASTRO BOT opening cinematic after the graphics fixes: ship engines, asteroids and a planet"
+      "performance": "Opening cinematic: 327 frames / 30.0001754 s = 10.90 FPS. Earlier gameplay: 6.97 FPS in another scene/build; no paired speedup claim. RTX 3070 Ti, Vulkan, 1080p output, game-controlled 4K scanout. Development build.",
+      "imageAlt": "ASTRO BOT ship interior after the streamed texture fix, with clean panels and robot surfaces"
     },
     "goat-simulator-3": {
       "status": "In-game · inverted image · low FPS",
@@ -597,6 +597,11 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-texture-min-lod-20261024": {
+      "title": "Streamed texture fix corrects the opening cinematic",
+      "summary": "Image MIN_LOD now prevents sampling texture levels that the game has not loaded. Colored panel noise and excessive rainbow glow disappear in repeated opening shots; the maintainer confirms corrected opening graphics. All 266 Vulkan tests and eight native clamp cases pass. New before/after captures accompany this development-build result. Opening cinematic: 327 frames / 30.0001754 s = 10.90 FPS. Earlier gameplay: 6.97 FPS in another scene/build; no paired speedup claim. RTX 3070 Ti, Vulkan, 1080p output, game-controlled 4K scanout. Development build.",
+      "imageAlt": "ASTRO BOT ship interior after the streamed texture fix, with clean panels and robot surfaces"
+    },
     "astro-bot-compute-loops-20261024": {
       "title": "Particle-loop truncation reproduced in an isolated replay",
       "summary": "A reconstructed Vulkan workload stops at 2,340 of 4,000 particle iterations under the 65,536-block guard. Larger finite guards finish with byte-identical output. The ordinary compute guard is now 1,048,576 block visits, with explicit exhaustion reporting; native tests also cover a wide 5,550-iteration loop. The intermediate cinematic still has color and material defects. A fresh gameplay check of the final build is pending; no new gameplay FPS or complete graphics fix is claimed.",

@@ -39,7 +39,7 @@ export const compatibility: CompatibilityEntry[] = [
     title: "ASTRO BOT",
     tier: "ingame",
     confirmedOn: "2026-10-24",
-    image: "/images/astro-bot-ship-2026-10-24.png",
+    image: "/images/astro-bot-texture-lod-after-2026-10-24.png",
   },
   {
     "slug": "goat-simulator-3",

@@ -19,17 +19,17 @@ const pt: Content = {
     },
     "astro-bot": {
       "status": "Em jogo · gráficos melhorados · FPS baixo",
-      "headline": "Controle do personagem confirmado; gráficos melhoraram após reiniciar",
-      "summary": "24 de outubro, PPSA21564 v1.018: o mantenedor confirmou o controle do personagem antes do último reinício e relata gráficos corrigidos na nova compilação. As novas capturas da introdução mostram o planeta, asteroides e a nave.",
+      "headline": "Correção de texturas remove defeitos da cinemática inicial",
+      "summary": "Image MIN_LOD agora impede a leitura de níveis de textura que o jogo ainda não carregou. O ruído colorido nos painéis e o brilho excessivo de arco-íris desaparecem nas cenas iniciais repetidas; o responsável confirma a correção visual. Passam os 266 testes Vulkan e oito casos GPU nativos. Novas capturas de antes e depois documentam esta compilação em desenvolvimento.",
       "strengths": [
         "As limpezas RG16F DCC e a proteção de texturas preparadas corrigem caminhos comuns de renderização. Shaders e efeitos continuam ativos.",
         "Passaram os testes nativos de conversão, substituição pela CPU e 64 configurações de sobrescrita completa de imagens."
       ],
       "limits": [
-        "Uma captura posterior da cena ainda mostra superfícies manchadas e artefatos de cor; os gráficos não foram totalmente corrigidos. Ainda faltam nova captura e medição da mesma cena controlável no local da queda. A correção gráfica completa, as fases seguintes e a conclusão não foram verificadas."
+        "Cenas posteriores, uma nova medição de gameplay e o tutorial de movimento ainda não foram verificados. Algumas linhas do perfil continuam indicando 12 vínculos de armazenamento não resolvidos; não houve falha diferida de shader até o quadro 4261. Correção gráfica completa e conclusão não estão confirmadas."
       ],
-      "performance": "Nova introdução: 266 quadros / 30,0002 s = 8,87 FPS. Gameplay anterior à correção do cache: 6,97 FPS. Cenas diferentes, sem comprovação de ganho direto. RTX 3070 Ti, Vulkan, saída 1080p solicitada e buffer de saída 4K controlado pelo jogo. Compilação de desenvolvimento.",
-      "imageAlt": "Introdução de ASTRO BOT após as correções: motores da nave, asteroides e planeta"
+      "performance": "Cinemática inicial: 327 quadros / 30,0001754 s = 10,90 FPS. Gameplay anterior: 6,97 FPS em outra cena/compilação; sem comparação direta de aceleração. RTX 3070 Ti, Vulkan, saída 1080p, scanout 4K controlado pelo jogo. Compilação em desenvolvimento.",
+      "imageAlt": "Interior da nave de ASTRO BOT após corrigir as texturas, com painéis e superfícies dos robôs limpos"
     },
     "goat-simulator-3": {
       "status": "Em jogo · imagem invertida · FPS baixos",
@@ -571,6 +571,11 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-texture-min-lod-20261024": {
+      "title": "Correção de texturas remove defeitos da cinemática inicial",
+      "summary": "Image MIN_LOD agora impede a leitura de níveis de textura que o jogo ainda não carregou. O ruído colorido nos painéis e o brilho excessivo de arco-íris desaparecem nas cenas iniciais repetidas; o responsável confirma a correção visual. Passam os 266 testes Vulkan e oito casos GPU nativos. Novas capturas de antes e depois documentam esta compilação em desenvolvimento. Cinemática inicial: 327 quadros / 30,0001754 s = 10,90 FPS. Gameplay anterior: 6,97 FPS em outra cena/compilação; sem comparação direta de aceleração. RTX 3070 Ti, Vulkan, saída 1080p, scanout 4K controlado pelo jogo. Compilação em desenvolvimento.",
+      "imageAlt": "Interior da nave de ASTRO BOT após corrigir as texturas, com painéis e superfícies dos robôs limpos"
+    },
     "astro-bot-compute-loops-20261024": {
       "title": "Interrupção do ciclo de partículas reproduzida isoladamente",
       "summary": "Uma carga Vulkan reconstruída para na iteração 2340 de 4000 com o limite de 65 536 blocos. Limites finitos maiores produzem resultados completos e idênticos byte a byte. O limite compute geral passa para 1 048 576 visitas de bloco, com erro explícito ao esgotá-lo; os testes GPU incluem um ciclo complexo de 5550 iterações. A cinemática intermediária ainda apresenta defeitos de cor e materiais. Falta verificar a jogabilidade da compilação final; não se anunciam novos FPS nem uma correção gráfica completa.",

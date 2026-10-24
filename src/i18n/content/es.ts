@@ -19,17 +19,17 @@ const es: Content = {
     },
     "astro-bot": {
       "status": "En juego · gráficos mejorados · FPS bajos",
-      "headline": "Control del personaje confirmado y gráficos mejorados tras reiniciar",
-      "summary": "24 de octubre, PPSA21564 v1.018: el responsable confirmó el control del personaje antes del último reinicio e informa de gráficos corregidos en la nueva compilación. Las nuevas capturas de la introducción muestran el planeta, los asteroides y la nave.",
+      "headline": "La corrección de texturas elimina defectos de la cinemática inicial",
+      "summary": "Image MIN_LOD impide ahora muestrear niveles de textura que el juego aún no ha cargado. Desaparecen el ruido de color en los paneles y el resplandor arcoíris excesivo en las tomas iniciales repetidas; el responsable confirma la corrección visual. Pasan las 266 pruebas Vulkan y ocho casos GPU nativos. Se añaden capturas de antes y después de esta compilación en desarrollo.",
       "strengths": [
         "Los borrados RG16F DCC y la protección de texturas preparadas corrigen rutas de renderizado compartidas. Los shaders y efectos siguen activos.",
         "Superadas las pruebas nativas de conversión, sustitución por CPU y 64 configuraciones de sobrescritura completa de imágenes."
       ],
       "limits": [
-        "Una captura posterior de la cinemática aún muestra superficies con manchas y artefactos de color; los gráficos no están totalmente corregidos. Faltan una nueva captura y medición de la misma escena controlable del lugar del accidente. No se han verificado todos los gráficos, los niveles posteriores ni el juego completo."
+        "Siguen sin verificarse las escenas posteriores, una nueva medición jugable y el tutorial de movimiento. Algunas filas del perfil aún indican 12 enlaces de almacenamiento sin resolver; no hubo fallos diferidos de shader hasta el fotograma 4261. No se confirma la corrección gráfica completa ni la finalización."
       ],
-      "performance": "Nueva introducción: 266 fotogramas / 30,0002 s = 8,87 FPS. Gameplay anterior al arreglo del caché: 6,97 FPS. Son escenas distintas; no demuestra una mejora directa. RTX 3070 Ti, Vulkan, salida solicitada de 1080p y búfer de salida 4K controlado por el juego. Compilación de desarrollo.",
-      "imageAlt": "Introducción de ASTRO BOT tras los arreglos gráficos: motores de la nave, asteroides y planeta"
+      "performance": "Cinemática inicial: 327 fotogramas / 30,0001754 s = 10,90 FPS. Jugabilidad anterior: 6,97 FPS en otra escena/compilación; no es una comparación directa de rendimiento. RTX 3070 Ti, Vulkan, salida 1080p y scanout 4K controlado por el juego. Compilación en desarrollo.",
+      "imageAlt": "Interior de la nave de ASTRO BOT tras corregir las texturas, con paneles y superficies de robots limpios"
     },
     "goat-simulator-3": {
       "status": "En juego · imagen invertida · FPS bajos",
@@ -571,6 +571,11 @@ const es: Content = {
   },
 
   history: {
+    "astro-bot-texture-min-lod-20261024": {
+      "title": "La corrección de texturas elimina defectos de la cinemática inicial",
+      "summary": "Image MIN_LOD impide ahora muestrear niveles de textura que el juego aún no ha cargado. Desaparecen el ruido de color en los paneles y el resplandor arcoíris excesivo en las tomas iniciales repetidas; el responsable confirma la corrección visual. Pasan las 266 pruebas Vulkan y ocho casos GPU nativos. Se añaden capturas de antes y después de esta compilación en desarrollo. Cinemática inicial: 327 fotogramas / 30,0001754 s = 10,90 FPS. Jugabilidad anterior: 6,97 FPS en otra escena/compilación; no es una comparación directa de rendimiento. RTX 3070 Ti, Vulkan, salida 1080p y scanout 4K controlado por el juego. Compilación en desarrollo.",
+      "imageAlt": "Interior de la nave de ASTRO BOT tras corregir las texturas, con paneles y superficies de robots limpios"
+    },
     "astro-bot-compute-loops-20261024": {
       "title": "Truncamiento del bucle de partículas reproducido de forma aislada",
       "summary": "Una carga Vulkan reconstruida se detiene en 2340 de 4000 iteraciones con el límite de 65 536 bloques. Límites finitos mayores producen resultados completos e idénticos byte a byte. El límite compute general pasa a 1 048 576 visitas de bloque, con error explícito si se agota; las pruebas GPU incluyen un bucle amplio de 5550 iteraciones. La cinemática intermedia conserva defectos de color y materiales. Falta repetir la prueba jugable de la compilación final; no se afirman nuevos FPS ni una corrección gráfica completa.",

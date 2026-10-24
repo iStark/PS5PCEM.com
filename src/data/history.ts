@@ -38,6 +38,15 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "astro-bot-texture-min-lod-20261024",
+    slug: "astro-bot",
+    date: "2026-10-24",
+    recordedAt: "2026-10-24T13:30:36+03:00",
+    release: null,
+    image: "/images/astro-bot-texture-lod-after-2026-10-24.png",
+    source: devReport("astro-bot-texture-min-lod-2026-10-24.md"),
+  },
+  {
     id: "astro-bot-compute-loops-20261024",
     slug: "astro-bot",
     date: "2026-10-24",

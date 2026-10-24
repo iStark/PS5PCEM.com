@@ -19,17 +19,17 @@ const tr: Content = {
     },
     "astro-bot": {
       "status": "Oyun içinde · grafikler iyileşti · düşük FPS",
-      "headline": "Karakter kontrolü doğrulandı; yeniden başlatınca grafikler iyileşti",
-      "summary": "24 Ekim, PPSA21564 v1.018: geliştirici son yeniden başlatmadan önce karakter kontrolünü doğruladı ve yeni derlemede grafiklerin düzeldiğini bildirdi. Yeni giriş görüntülerinde gezegen, asteroitler ve gemi görülüyor.",
+      "headline": "Doku akışı düzeltmesi açılış sinematiğindeki bozulmayı gideriyor",
+      "summary": "Image MIN_LOD artık oyunun henüz yüklemediği doku seviyelerinin örneklenmesini engelliyor. Tekrarlanan açılış çekimlerinde panellerdeki renkli gürültü ve aşırı gökkuşağı parlaması kayboldu; proje sahibi açılış grafiklerinin düzeldiğini doğruladı. 266 Vulkan testi ve sekiz yerel GPU durumu geçti. Geliştirme derlemesi için önce/sonra görüntüleri eklendi.",
       "strengths": [
         "RG16F DCC temizlemeleri ve hazırlanmış dokuların korunması ortak çizim yollarını düzeltiyor. Shader ve efektler etkin kalıyor.",
         "Yerel dönüşüm, CPU tarafından veri değiştirme ve 64 tam görüntü üzerine yazma yapılandırması testleri geçti."
       ],
       "limits": [
-        "Ara sahnenin daha sonraki bir karesinde lekeli yüzeyler ve renk bozulmaları hâlâ görülüyor; grafikler tamamen düzeltilmiş değil. Aynı kontrol edilebilir kaza sahnesinde yeni görüntü ve ölçüm gerekiyor. Tüm grafiklerin doğruluğu, sonraki bölümler ve oyunun tamamlanması doğrulanmadı."
+        "Sonraki sahneler, yeni oynanış ölçümü ve hareket kontrolü öğreticisi henüz doğrulanmadı. Bazı profil satırlarında 12 çözümlenmemiş depolama bağlantısı sürüyor; 4261. kareye kadar ertelenmiş shader hatası görülmedi. Tüm grafiklerin doğruluğu ve oyunun bitirilmesi doğrulanmış değil."
       ],
-      "performance": "Yeni giriş: 266 kare / 30,0002 sn = 8,87 FPS. Önbellek düzeltmesinden önceki oynanış: 6,97 FPS. Farklı sahneler; doğrudan hızlanma sonucu çıkarılamaz. RTX 3070 Ti, Vulkan, istenen 1080p çıkış ve oyunun yönettiği 4K çıkış tamponu. Geliştirme derlemesi.",
-      "imageAlt": "Grafik düzeltmelerinden sonra ASTRO BOT girişi: gemi motorları, asteroitler ve gezegen"
+      "performance": "Açılış sinematiği: 327 kare / 30,0001754 sn = 10,90 FPS. Önceki oynanış: farklı sahne/derlemede 6,97 FPS; doğrudan hızlanma karşılaştırması değil. RTX 3070 Ti, Vulkan, 1080p çıkış, oyunun yönettiği 4K scanout. Geliştirme derlemesi.",
+      "imageAlt": "Doku düzeltmesinden sonra temiz panel ve robot yüzeyleriyle ASTRO BOT gemisinin içi"
     },
     "goat-simulator-3": {
       "status": "Oyun içi · ters görüntü · düşük FPS",
@@ -510,6 +510,11 @@ const tr: Content = {
     },
   },
   history: {
+    "astro-bot-texture-min-lod-20261024": {
+      "title": "Doku akışı düzeltmesi açılış sinematiğindeki bozulmayı gideriyor",
+      "summary": "Image MIN_LOD artık oyunun henüz yüklemediği doku seviyelerinin örneklenmesini engelliyor. Tekrarlanan açılış çekimlerinde panellerdeki renkli gürültü ve aşırı gökkuşağı parlaması kayboldu; proje sahibi açılış grafiklerinin düzeldiğini doğruladı. 266 Vulkan testi ve sekiz yerel GPU durumu geçti. Geliştirme derlemesi için önce/sonra görüntüleri eklendi. Açılış sinematiği: 327 kare / 30,0001754 sn = 10,90 FPS. Önceki oynanış: farklı sahne/derlemede 6,97 FPS; doğrudan hızlanma karşılaştırması değil. RTX 3070 Ti, Vulkan, 1080p çıkış, oyunun yönettiği 4K scanout. Geliştirme derlemesi.",
+      "imageAlt": "Doku düzeltmesinden sonra temiz panel ve robot yüzeyleriyle ASTRO BOT gemisinin içi"
+    },
     "astro-bot-compute-loops-20261024": {
       "title": "Parçacık döngüsünün yarıda kesilmesi ayrı testte yeniden üretildi",
       "summary": "Yeniden oluşturulan Vulkan iş yükü, 65.536 blok sınırında 4.000 parçacık yinelemesinin 2.340’ında duruyor. Daha yüksek sonlu sınırlar işlemi tamamlıyor ve çıktılar bayt düzeyinde eşleşiyor. Normal compute sınırı, aşımın açıkça bildirilmesiyle 1.048.576 blok ziyaretine çıkarıldı; GPU testleri geniş gövdeli 5.550 yinelemelik döngüyü de kapsıyor. Ara sürümün sahnesinde renk ve malzeme hataları sürüyor. Son derlemenin oynanış kontrolü bekliyor; yeni FPS veya tüm grafik hatalarının düzeltildiği iddia edilmiyor.",
