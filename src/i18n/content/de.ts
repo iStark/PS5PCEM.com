@@ -571,6 +571,11 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-compute-loops-20261024": {
+      "title": "Abbruch der Partikelschleife im isolierten Test reproduziert",
+      "summary": "Eine rekonstruierte Vulkan-Arbeitslast bricht mit dem Limit von 65.536 Blöcken nach 2.340 von 4.000 Partikel-Iterationen ab. Höhere endliche Limits liefern vollständige, bytegleiche Ergebnisse. Das normale Compute-Limit beträgt nun 1.048.576 Blockbesuche mit ausdrücklicher Fehlermeldung bei Überschreitung; GPU-Tests prüfen auch eine umfangreiche Schleife mit 5.550 Iterationen. Die Zwischenversion zeigt weiterhin Farb- und Materialfehler. Der Gameplay-Test der endgültigen Version steht aus; neue Gameplay-FPS oder eine vollständige Grafikkorrektur werden nicht behauptet.",
+      "imageAlt": "ASTRO BOT in einer Zwischenversion: Roboter, verrauschte Flächen und übermäßiges farbiges Leuchten"
+    },
     "astro-bot-graphics-20261024": {
       "title": "Steuerung bestätigt: Grafikfixes und zwei neue Aufnahmen",
       "summary": "RG16F-DCC-Löschwerte und korrigierte Cache-Zuständigkeit erhalten vorbereitete Texturen. Der Betreuer meldet korrigierte Grafik nach dem Neustart. Das neue Intro erreicht 8,87 FPS über 266 Frames in 30 Sekunden; die früheren 6,97 FPS stammen aus einer anderen Spielszene. Native GPU-Prüfungen und 64 Überschreibkonfigurationen bestehen. Die geprüften Intro-Frames melden keine Fehler oder unaufgelösten Ressourcen; die erneute Prüfung der Absturzstelle steht aus. Eine spätere Aufnahme der Zwischensequenz zeigt weiterhin fleckige Oberflächen und Farbartefakte; die Grafik ist noch nicht vollständig korrigiert.",

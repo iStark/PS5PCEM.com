@@ -597,6 +597,11 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-compute-loops-20261024": {
+      "title": "Particle-loop truncation reproduced in an isolated replay",
+      "summary": "A reconstructed Vulkan workload stops at 2,340 of 4,000 particle iterations under the 65,536-block guard. Larger finite guards finish with byte-identical output. The ordinary compute guard is now 1,048,576 block visits, with explicit exhaustion reporting; native tests also cover a wide 5,550-iteration loop. The intermediate cinematic still has color and material defects. A fresh gameplay check of the final build is pending; no new gameplay FPS or complete graphics fix is claimed.",
+      "imageAlt": "Intermediate ASTRO BOT cinematic with robots, noisy panels and excessive colored glow"
+    },
     "astro-bot-graphics-20261024": {
       "title": "Character control confirmed; graphics fixes and two new captures",
       "summary": "RG16F DCC clears and a texture-cache ownership fix preserve prepared images. The maintainer reports corrected graphics after restart. The new cinematic averages 8.87 FPS over 266 frames in 30 seconds; the earlier 6.97 FPS gameplay sample is a different scene. Native GPU checks and 64 overwrite configurations pass. Sampled cinematic error and unresolved-resource counters are zero; the matching crash-site recheck remains pending. A later cinematic capture still shows patchy surfaces and color artifacts; the graphics are not fully corrected.",

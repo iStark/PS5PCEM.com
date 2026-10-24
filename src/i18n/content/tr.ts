@@ -510,6 +510,11 @@ const tr: Content = {
     },
   },
   history: {
+    "astro-bot-compute-loops-20261024": {
+      "title": "Parçacık döngüsünün yarıda kesilmesi ayrı testte yeniden üretildi",
+      "summary": "Yeniden oluşturulan Vulkan iş yükü, 65.536 blok sınırında 4.000 parçacık yinelemesinin 2.340’ında duruyor. Daha yüksek sonlu sınırlar işlemi tamamlıyor ve çıktılar bayt düzeyinde eşleşiyor. Normal compute sınırı, aşımın açıkça bildirilmesiyle 1.048.576 blok ziyaretine çıkarıldı; GPU testleri geniş gövdeli 5.550 yinelemelik döngüyü de kapsıyor. Ara sürümün sahnesinde renk ve malzeme hataları sürüyor. Son derlemenin oynanış kontrolü bekliyor; yeni FPS veya tüm grafik hatalarının düzeltildiği iddia edilmiyor.",
+      "imageAlt": "ASTRO BOT ara sürüm sahnesinde robotlar, parazitli paneller ve aşırı renkli parlama"
+    },
     "astro-bot-graphics-20261024": {
       "title": "Kontrol doğrulandı, grafikler düzeltildi ve iki yeni görüntü eklendi",
       "summary": "RG16F DCC temizlemeleri ve önbellek sahipliği düzeltmesi hazırlanmış dokuları koruyor. Geliştirici yeniden başlatınca grafiklerin düzeldiğini bildirdi. Yeni giriş 30 saniyede 266 kareyle 8,87 FPS; önceki 6,97 FPS başka bir oyun sahnesinden. Yerel GPU testleri ve 64 üzerine yazma yapılandırması geçti. İncelenen giriş karelerinde hata ve çözülemeyen kaynak sayaçları sıfır; kaza sahnesinin yeniden kontrolü bekleniyor. Ara sahnenin daha sonraki bir karesinde lekeli yüzeyler ve renk bozulmaları hâlâ görülüyor; grafikler tamamen düzeltilmiş değil.",

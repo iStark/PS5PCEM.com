@@ -571,6 +571,11 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-compute-loops-20261024": {
+      "title": "Troncature de la boucle de particules reproduite séparément",
+      "summary": "Une charge Vulkan reconstruite s’arrête à 2 340 itérations sur 4 000 avec la limite de 65 536 blocs. Des limites finies plus élevées donnent des résultats complets identiques octet par octet. La limite compute générale passe à 1 048 576 passages de blocs, avec signalement explicite en cas de dépassement ; les tests GPU couvrent aussi une boucle complexe de 5 550 itérations. La cinématique intermédiaire présente encore des défauts de couleurs et de matériaux. Le gameplay de la version finale reste à vérifier ; aucun nouveau FPS ni correctif graphique complet n’est annoncé.",
+      "imageAlt": "Cinématique intermédiaire d’ASTRO BOT avec robots, panneaux bruités et lueur colorée excessive"
+    },
     "astro-bot-graphics-20261024": {
       "title": "Contrôle confirmé, corrections graphiques et deux nouvelles captures",
       "summary": "Les effacements RG16F DCC et la correction de propriété du cache préservent les textures préparées. Le mainteneur signale des graphismes corrigés après redémarrage. L’introduction atteint 8,87 FPS sur 266 images en 30 secondes ; les anciens 6,97 FPS proviennent d’une autre scène jouable. Les tests GPU natifs et 64 configurations de réécriture réussissent. Aucun compteur d’erreur ou de ressource non résolue sur les images d’introduction examinées ; la nouvelle vérification du site du crash reste à faire. Une capture ultérieure de la cinématique montre encore des surfaces tachetées et des artefacts de couleur ; les graphismes ne sont pas entièrement corrigés.",

@@ -571,6 +571,11 @@ const es: Content = {
   },
 
   history: {
+    "astro-bot-compute-loops-20261024": {
+      "title": "Truncamiento del bucle de partículas reproducido de forma aislada",
+      "summary": "Una carga Vulkan reconstruida se detiene en 2340 de 4000 iteraciones con el límite de 65 536 bloques. Límites finitos mayores producen resultados completos e idénticos byte a byte. El límite compute general pasa a 1 048 576 visitas de bloque, con error explícito si se agota; las pruebas GPU incluyen un bucle amplio de 5550 iteraciones. La cinemática intermedia conserva defectos de color y materiales. Falta repetir la prueba jugable de la compilación final; no se afirman nuevos FPS ni una corrección gráfica completa.",
+      "imageAlt": "Cinemática intermedia de ASTRO BOT con robots, paneles con ruido y brillo de color excesivo"
+    },
     "astro-bot-graphics-20261024": {
       "title": "Control confirmado, arreglos gráficos y dos capturas nuevas",
       "summary": "Los borrados RG16F DCC y el arreglo de propiedad del caché conservan las texturas preparadas. El responsable informa de gráficos corregidos tras reiniciar. La introducción alcanza 8,87 FPS en 266 fotogramas durante 30 segundos; los anteriores 6,97 FPS corresponden a otra escena. Pasan las pruebas GPU nativas y 64 configuraciones de sobrescritura. Los contadores de errores y recursos sin resolver están a cero en los fotogramas examinados; sigue pendiente revisar de nuevo el lugar del accidente. Una captura posterior de la cinemática aún muestra superficies con manchas y artefactos de color; los gráficos no están totalmente corregidos.",
