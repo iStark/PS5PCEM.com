@@ -184,7 +184,7 @@ const content: Content = {
     "super-woden-gp": {
       "status": "Main menu · rendering improved · gameplay unverified",
       "headline": "Map and dealership interface orientation corrected",
-      "summary": "October 29 development build, PPSA07211 v01.000.003: two shared Vulkan fixes restore upright map labels, manufacturer icons, dealership controls, credits and the bottom INFO line in renderer captures.",
+      "summary": "October 29 development build, PPSA07211 v01.000.003: two shared Vulkan fixes restore upright map labels, manufacturer icons, dealership controls, credits and the bottom INFO line in renderer captures. October 30 DirectX 12 follow-up: startup now reaches the map, but several text labels appear as solid rectangles. The separate report and capture below document this development build; races remain unverified.",
       "strengths": [
         "GPU copies now apply vertical flips before later UI draws. Buffered fullscreen draws retain the guest shader’s projection and UV transforms.",
         "All 267 Vulkan tests and focused native rendering probes pass. The final scripted run records zero GPU-gap counters and no guest fault."
@@ -597,6 +597,11 @@ const content: Content = {
   },
 
   history: {
+    "super-woden-gp-d3d12-startup-20261030": {
+      "title": "DirectX 12 reaches the map after the logos",
+      "summary": "The October 30 development build adds RGBA16F targets/textures, hardware default fragment inputs, 3D textures and R16_UNORM sampling. On RTX 3070 Ti at 1920×1080, a 120.6-second scripted run reaches the map without the previous stops; the watchdog ends the test. Sampled private memory peaks at 4,227 MiB. All 46 D3D12 tests and native GPU probes pass, including 1,360 volume comparisons. Several labels still render as solid rectangles. The 30 FPS diagnostic cap is not a measured result; races, audio quality and long-session stability remain unverified.",
+      "imageAlt": "Super Woden GP map captured from the DirectX 12 renderer; icons render but several labels are solid rectangles"
+    },
     "super-woden-gp-ui-orientation-20261029": {
       "title": "Two Vulkan fixes restore UI orientation",
       "summary": "Resident copies apply their Y flip immediately; buffered fullscreen draws execute the guest vertex shader. The map capture shows corrected orientation. All 267 Vulkan tests and focused rendering probes pass; memory growth remains unresolved. Development build, not a released version.",

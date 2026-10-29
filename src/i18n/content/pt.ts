@@ -157,7 +157,7 @@ const pt: Content = {
     "super-woden-gp": {
       "status": "Menu principal · renderização melhorada · jogabilidade não verificada",
       "headline": "Orientação corrigida na interface do mapa e da concessionária",
-      "summary": "Compilação de desenvolvimento de 29 de outubro, PPSA07211 v01.000.003: duas correções gerais de Vulkan restauram a orientação dos rótulos, logotipos, controles da concessionária, créditos e linha INFO nas capturas do renderizador.",
+      "summary": "Compilação de desenvolvimento de 29 de outubro, PPSA07211 v01.000.003: duas correções gerais de Vulkan restauram a orientação dos rótulos, logotipos, controles da concessionária, créditos e linha INFO nas capturas do renderizador. Verificação DirectX 12 de 30 de outubro: o arranque já chega ao mapa, mas vários rótulos aparecem como retângulos sólidos. Abaixo estão um relatório e uma captura separados desta compilação em desenvolvimento; as corridas continuam por verificar.",
       "strengths": [
         "As cópias na GPU aplicam a inversão vertical antes de desenhar a interface seguinte. Desenhos de tela inteira com buffers de vértices preservam a projeção e as UV do shader convidado.",
         "Os 267 testes Vulkan e as verificações nativas de renderização passam. A última execução automatizada registra contadores GPU-gap zerados e nenhuma falha do convidado."
@@ -571,6 +571,11 @@ const pt: Content = {
   },
 
   history: {
+    "super-woden-gp-d3d12-startup-20261030": {
+      "title": "DirectX 12 chega ao mapa após os logótipos",
+      "summary": "A compilação em desenvolvimento de 30 de outubro adiciona alvos e texturas RGBA16F, valores predefinidos de hardware nas entradas de fragmento, texturas 3D e amostragem R16_UNORM. Numa RTX 3070 Ti a 1920×1080, um teste de 120,6 segundos com entrada programada chega ao mapa sem as interrupções anteriores; o supervisor termina o teste. O pico amostrado de memória privada é de 4.227 MiB. Passam os 46 testes D3D12 e as verificações GPU, incluindo 1.360 comparações de texturas volumétricas. Vários rótulos continuam a aparecer como retângulos sólidos. O limite de diagnóstico de 30 FPS não é uma medição; corridas, qualidade do áudio e estabilidade prolongada continuam por verificar.",
+      "imageAlt": "Mapa de Super Woden GP capturado pelo renderizador DirectX 12: os ícones aparecem, mas vários rótulos são retângulos sólidos"
+    },
     "super-woden-gp-ui-orientation-20261029": {
       "title": "Duas correções Vulkan restauram a orientação da interface",
       "summary": "Cópias na GPU aplicam a inversão Y imediatamente; desenhos de tela inteira com buffers de vértices executam o shader convidado. A captura do mapa mostra a orientação corrigida. Passam 267 testes Vulkan e as verificações de renderização; o crescimento de memória continua sem solução. Compilação de desenvolvimento.",

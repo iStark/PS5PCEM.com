@@ -114,7 +114,7 @@ describe("compatibility dataset", () => {
   it("attributes every measurement to the documented test host", () => {
     expect(compatibilityMeta.host).toBe("NVIDIA GeForce RTX 3070 Ti");
     expect(compatibilityMeta.testedOnRelease).toBe("0.3.2");
-    expect(compatibilityMeta.confirmedOn).toBe("2026-10-29");
+    expect(compatibilityMeta.confirmedOn).toBe("2026-10-30");
   });
 
   it("gives every entry a unique slug and a known tier", () => {
@@ -219,6 +219,7 @@ describe("test history", () => {
       ["super-woden-gp-pthread-cleanup", null],
       ["super-woden-gp-ui-orientation-20261029", null],
       ["super-woden-gp-dealer-check-20261029", null],
+      ["super-woden-gp-d3d12-startup-20261030", null],
       ["keywe-pthread-audio3d", null],
       ["goat-simulator-3-gameplay-20261013", null],
       ["yotei-renderer-followup-20261013", null],
@@ -257,7 +258,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(59);
+    expect(history.filter((run) => run.release === null)).toHaveLength(60);
   });
 
   it("references captures that exist in public/", () => {

@@ -157,7 +157,7 @@ const tr: Content = {
     "super-woden-gp": {
       "status": "Ana menü · görüntüleme iyileştirildi · oynanış doğrulanmadı",
       "headline": "Harita ve bayi arayüzünün yönü düzeltildi",
-      "summary": "29 Ekim geliştirme derlemesi, PPSA07211 v01.000.003: iki genel Vulkan düzeltmesi, işleyici görüntülerindeki harita yazılarını, üretici simgelerini, bayi kontrollerini, kredileri ve alt INFO satırını doğru yöne getiriyor.",
+      "summary": "29 Ekim geliştirme derlemesi, PPSA07211 v01.000.003: iki genel Vulkan düzeltmesi, işleyici görüntülerindeki harita yazılarını, üretici simgelerini, bayi kontrollerini, kredileri ve alt INFO satırını doğru yöne getiriyor. 30 Ekim DirectX 12 kontrolü: oyun artık haritaya ulaşıyor, ancak bazı yazılar dolu dikdörtgenler şeklinde. Bu geliştirme derlemesinin ayrı raporu ve görüntüsü aşağıda; yarışlar henüz doğrulanmadı.",
       "strengths": [
         "GPU kopyaları dikey çevirmeyi sonraki arayüz çizimlerinden önce uygular. Köşe arabellekli tam ekran çizimleri konuk gölgelendiricinin projeksiyon ve UV dönüşümlerini korur.",
         "267 Vulkan testinin tamamı ve hedefli yerel çizim kontrolleri geçti. Son otomatik çalıştırmada GPU-gap sayaçları sıfırdı ve konuk hatası yoktu."
@@ -510,6 +510,11 @@ const tr: Content = {
     },
   },
   history: {
+    "super-woden-gp-d3d12-startup-20261030": {
+      "title": "DirectX 12, logolardan sonra haritaya ulaşıyor",
+      "summary": "30 Ekim geliştirme derlemesi RGBA16F hedef ve dokularını, parça gölgelendirici girdilerinin donanım varsayılanlarını, 3D dokuları ve R16_UNORM örneklemesini ekliyor. RTX 3070 Ti üzerinde 1920×1080 çözünürlükte, betikli girdili 120,6 saniyelik test önceki durmalar olmadan haritaya ulaştı; testi gözetim mekanizması sonlandırdı. Örneklenen özel işlem belleği en fazla 4.227 MiB oldu. 46 D3D12 testi ve 1.360 hacim dokusu karşılaştırması dahil GPU kontrolleri geçti. Bazı yazılar hâlâ dolu dikdörtgenler olarak görünüyor. Tanılama amaçlı 30 FPS sınırı bir ölçüm sonucu değildir; yarışlar, ses kalitesi ve uzun süreli kararlılık doğrulanmadı.",
+      "imageAlt": "DirectX 12 oluşturucusundan alınan Super Woden GP haritası: simgeler görünüyor, bazı yazılar dolu dikdörtgenler şeklinde"
+    },
     "super-woden-gp-ui-orientation-20261029": {
       "title": "İki Vulkan düzeltmesi arayüz yönünü düzeltti",
       "summary": "GPU kopyaları Y çevirmesini hemen uygular; köşe arabellekli tam ekran çizimleri konuk köşe gölgelendiricisini çalıştırır. Harita görüntüsünün yönü düzeltildi. 267 Vulkan testi ve hedefli çizim kontrolleri geçti; bellek artışı çözülmedi. Geliştirme derlemesi.",

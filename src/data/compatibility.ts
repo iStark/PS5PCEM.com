@@ -109,7 +109,7 @@ export const compatibility: CompatibilityEntry[] = [
     title: "Super Woden GP",
     tier: "intro",
     image: "/images/super-woden-gp-map-orientation-2026-10-29.jpg",
-    confirmedOn: "2026-10-29",
+    confirmedOn: "2026-10-30",
   },
   {
     slug: "arcade-spirits-the-new-challengers",
@@ -263,7 +263,7 @@ export const compatibility: CompatibilityEntry[] = [
 
 export const compatibilityMeta = {
   /** Newest maintainer confirmation across the dataset. */
-  confirmedOn: "2026-10-29",
+  confirmedOn: "2026-10-30",
   testedOnRelease: "0.3.2",
   host: "NVIDIA GeForce RTX 3070 Ti",
 } as const;

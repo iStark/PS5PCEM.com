@@ -157,7 +157,7 @@ const de: Content = {
     "super-woden-gp": {
       "status": "Hauptmenü · Darstellung verbessert · Gameplay ungeprüft",
       "headline": "Ausrichtung der Karten- und Händleroberfläche korrigiert",
-      "summary": "Entwicklungsbuild vom 29. Oktober, PPSA07211 v01.000.003: Zwei allgemeine Vulkan-Korrekturen richten Kartenbeschriftungen, Herstellerlogos, Händlerelemente, Guthaben und die untere INFO-Zeile in den Renderer-Aufnahmen korrekt aus.",
+      "summary": "Entwicklungsbuild vom 29. Oktober, PPSA07211 v01.000.003: Zwei allgemeine Vulkan-Korrekturen richten Kartenbeschriftungen, Herstellerlogos, Händlerelemente, Guthaben und die untere INFO-Zeile in den Renderer-Aufnahmen korrekt aus. DirectX-12-Nachtest vom 30. Oktober: Der Start erreicht jetzt die Karte, einige Beschriftungen erscheinen jedoch als ausgefüllte Rechtecke. Ein eigener Bericht und ein Bild dieses Entwicklungsbuilds folgen unten; Rennen sind noch ungeprüft.",
       "strengths": [
         "GPU-Kopien wenden die vertikale Spiegelung vor nachfolgenden UI-Zeichenbefehlen an. Vollbildzeichnungen mit Vertex-Puffern behalten die Projektions- und UV-Transformationen des Gast-Shaders bei.",
         "Alle 267 Vulkan-Tests und gezielte native Rendering-Prüfungen bestehen. Der letzte skriptgesteuerte Lauf zeigt keine GPU-Gap-Zähler oder Gastfehler."
@@ -571,6 +571,11 @@ const de: Content = {
   },
 
   history: {
+    "super-woden-gp-d3d12-startup-20261030": {
+      "title": "DirectX 12 erreicht nach den Logos die Karte",
+      "summary": "Der Entwicklungsbuild vom 30. Oktober ergänzt RGBA16F-Ziele und -Texturen, Hardware-Standardwerte für Fragment-Eingaben, 3D-Texturen und R16_UNORM-Sampling. Auf der RTX 3070 Ti bei 1920×1080 erreicht ein 120,6 Sekunden langer Lauf mit geskripteter Eingabe die Karte ohne die bisherigen Abbrüche; der Watchdog beendet den Test. Der höchste gemessene private Prozessspeicher beträgt 4.227 MiB. Alle 46 D3D12-Tests und GPU-Prüfungen bestehen, darunter 1.360 Volumentexturvergleiche. Einige Beschriftungen erscheinen weiterhin als ausgefüllte Rechtecke. Das diagnostische Limit von 30 FPS ist kein Messergebnis; Rennen, Tonqualität und Langzeitstabilität bleiben ungeprüft.",
+      "imageAlt": "Karte von Super Woden GP aus dem DirectX-12-Renderer: Symbole sichtbar, einige Beschriftungen als ausgefüllte Rechtecke"
+    },
     "super-woden-gp-ui-orientation-20261029": {
       "title": "Zwei Vulkan-Korrekturen beheben die UI-Ausrichtung",
       "summary": "GPU-Kopien spiegeln sofort entlang Y; Vollbildzeichnungen mit Vertex-Puffern führen den Gast-Vertex-Shader aus. Die Kartenaufnahme zeigt die korrigierte Ausrichtung. 267 Vulkan-Tests und gezielte Rendering-Prüfungen bestehen; das Speicherwachstum bleibt ungelöst. Entwicklungsbuild.",
