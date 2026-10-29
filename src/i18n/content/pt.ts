@@ -156,18 +156,18 @@ const pt: Content = {
     },
     "super-woden-gp": {
       "status": "Menu principal · renderização melhorada · jogabilidade não verificada",
-      "headline": "Orientação corrigida na interface do mapa e da concessionária",
-      "summary": "Compilação de desenvolvimento de 29 de outubro, PPSA07211 v01.000.003: duas correções gerais de Vulkan restauram a orientação dos rótulos, logotipos, controles da concessionária, créditos e linha INFO nas capturas do renderizador. Verificação DirectX 12 de 30 de outubro: o arranque já chega ao mapa, mas vários rótulos aparecem como retângulos sólidos. Abaixo estão um relatório e uma captura separados desta compilação em desenvolvimento; as corridas continuam por verificar.",
+      "headline": "Texto do mapa restaurado no DirectX 12",
+      "summary": "Compilação de desenvolvimento de 30 de outubro: transferências DMA_DATA ausentes deixavam os atlas de fontes preenchidos com 0xCD. A implementação restaura os rótulos do mapa, créditos e texto INFO, incluindo acentos franceses. Passam os 48 testes D3D12 e os testes nativos de GPU. A repetição de 72,4 segundos chega ao mapa sem falhas ou rejeições no registro; as corridas continuam sem verificação.",
       "strengths": [
         "As cópias na GPU aplicam a inversão vertical antes de desenhar a interface seguinte. Desenhos de tela inteira com buffers de vértices preservam a projeção e as UV do shader convidado.",
         "Os 267 testes Vulkan e as verificações nativas de renderização passam. A última execução automatizada registra contadores GPU-gap zerados e nenhuma falha do convidado."
       ],
       "limits": [
-        "O consumo de memória continua crescendo: uma execução anterior chegou a cerca de 15 GB; a final foi limitada a 90 segundos e 8 GiB. A causa do travamento do computador não foi comprovada.",
+        "Vulkan: O consumo de memória continua crescendo: uma execução anterior chegou a cerca de 15 GB; a final foi limitada a 90 segundos e 8 GiB. A causa do travamento do computador não foi comprovada.",
         "Corridas, controles manuais, qualidade do áudio, salvamento e conclusão não foram verificados. A correção das cores das bandeiras não está confirmada."
       ],
-      "performance": "RTX 3070 Ti, Vulkan, saída 1920×1080. Limite inicial de 60 FPS e final de 30 FPS. São ajustes de diagnóstico, não uma nova medição de desempenho nem um benchmark em corrida.",
-      "imageAlt": "Mapa de Super Woden GP com rótulos, ícones, créditos e linha INFO orientados corretamente"
+      "performance": "DirectX 12, RTX 3070 Ti, 1920×1080. O limite de diagnóstico de 30 FPS não é um resultado medido nem um teste de corrida. As execuções anteriores de Vulkan aparecem separadamente abaixo.",
+      "imageAlt": "Mapa de Super Woden GP no DirectX 12 com rótulos franceses, créditos e texto INFO legíveis"
     },
     "arcade-spirits-the-new-challengers": {
       "status": "Menu principal · vídeo de introdução · jogabilidade não verificada",
@@ -571,6 +571,11 @@ const pt: Content = {
   },
 
   history: {
+    "super-woden-gp-d3d12-fonts-20261030": {
+      "title": "Texto do mapa restaurado no DirectX 12",
+      "summary": "Compilação de desenvolvimento de 30 de outubro: transferências DMA_DATA ausentes deixavam os atlas de fontes preenchidos com 0xCD. A implementação restaura os rótulos do mapa, créditos e texto INFO, incluindo acentos franceses. Passam os 48 testes D3D12 e os testes nativos de GPU. A repetição de 72,4 segundos chega ao mapa sem falhas ou rejeições no registro; as corridas continuam sem verificação.",
+      "imageAlt": "Mapa de Super Woden GP no DirectX 12 com rótulos franceses, créditos e texto INFO legíveis"
+    },
     "super-woden-gp-d3d12-startup-20261030": {
       "title": "DirectX 12 chega ao mapa após os logótipos",
       "summary": "A compilação em desenvolvimento de 30 de outubro adiciona alvos e texturas RGBA16F, valores predefinidos de hardware nas entradas de fragmento, texturas 3D e amostragem R16_UNORM. Numa RTX 3070 Ti a 1920×1080, um teste de 120,6 segundos com entrada programada chega ao mapa sem as interrupções anteriores; o supervisor termina o teste. O pico amostrado de memória privada é de 4.227 MiB. Passam os 46 testes D3D12 e as verificações GPU, incluindo 1.360 comparações de texturas volumétricas. Vários rótulos continuam a aparecer como retângulos sólidos. O limite de diagnóstico de 30 FPS não é uma medição; corridas, qualidade do áudio e estabilidade prolongada continuam por verificar.",

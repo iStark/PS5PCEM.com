@@ -183,18 +183,18 @@ const content: Content = {
     },
     "super-woden-gp": {
       "status": "Main menu · rendering improved · gameplay unverified",
-      "headline": "Map and dealership interface orientation corrected",
-      "summary": "October 29 development build, PPSA07211 v01.000.003: two shared Vulkan fixes restore upright map labels, manufacturer icons, dealership controls, credits and the bottom INFO line in renderer captures. October 30 DirectX 12 follow-up: startup now reaches the map, but several text labels appear as solid rectangles. The separate report and capture below document this development build; races remain unverified.",
+      "headline": "DirectX 12 map text restored",
+      "summary": "October 30 development build: missing DMA_DATA transfers left the font atlases filled with 0xCD. Implementing the transfers restores map labels, credits and INFO text, including French accents. All 48 D3D12 tests and the native GPU suite pass. A 72.4-second repeat reaches the map without logged faults or rejections; race gameplay remains unverified.",
       "strengths": [
         "GPU copies now apply vertical flips before later UI draws. Buffered fullscreen draws retain the guest shader’s projection and UV transforms.",
         "All 267 Vulkan tests and focused native rendering probes pass. The final scripted run records zero GPU-gap counters and no guest fault."
       ],
       "limits": [
-        "Process memory still grows: an earlier run reached about 15 GB; the final check was bounded to 90 seconds and 8 GiB. The cause of the computer freeze is unproven.",
+        "Vulkan: Process memory still grows: an earlier run reached about 15 GB; the final check was bounded to 90 seconds and 8 GiB. The cause of the computer freeze is unproven.",
         "Races, manual controls, audio quality, saves and completion remain unverified. The earlier incorrect language-flag colors are not confirmed fixed."
       ],
-      "performance": "RTX 3070 Ti, Vulkan, 1920×1080 output. Initial checks used a 60 FPS cap and the final check a 30 FPS cap. These are diagnostic settings, not a new performance measurement or race benchmark.",
-      "imageAlt": "Super Woden GP map with upright labels, icons, credits and bottom INFO text"
+      "performance": "DirectX 12, RTX 3070 Ti, 1920×1080. The 30 FPS diagnostic cap is not a measured result or race benchmark. Earlier Vulkan runs are listed separately below.",
+      "imageAlt": "Super Woden GP DirectX 12 map with readable French labels, credits and bottom INFO text"
     },
     "arcade-spirits-the-new-challengers": {
       "status": "Main menu · opening video · gameplay unverified",
@@ -597,6 +597,11 @@ const content: Content = {
   },
 
   history: {
+    "super-woden-gp-d3d12-fonts-20261030": {
+      "title": "DirectX 12 map text restored",
+      "summary": "October 30 development build: missing DMA_DATA transfers left the font atlases filled with 0xCD. Implementing the transfers restores map labels, credits and INFO text, including French accents. All 48 D3D12 tests and the native GPU suite pass. A 72.4-second repeat reaches the map without logged faults or rejections; race gameplay remains unverified.",
+      "imageAlt": "Super Woden GP DirectX 12 map with readable French labels, credits and bottom INFO text"
+    },
     "super-woden-gp-d3d12-startup-20261030": {
       "title": "DirectX 12 reaches the map after the logos",
       "summary": "The October 30 development build adds RGBA16F targets/textures, hardware default fragment inputs, 3D textures and R16_UNORM sampling. On RTX 3070 Ti at 1920×1080, a 120.6-second scripted run reaches the map without the previous stops; the watchdog ends the test. Sampled private memory peaks at 4,227 MiB. All 46 D3D12 tests and native GPU probes pass, including 1,360 volume comparisons. Several labels still render as solid rectangles. The 30 FPS diagnostic cap is not a measured result; races, audio quality and long-session stability remain unverified.",

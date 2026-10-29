@@ -156,18 +156,18 @@ const fr: Content = {
     },
     "super-woden-gp": {
       "status": "Menu principal · rendu amélioré · gameplay non vérifié",
-      "headline": "Orientation corrigée sur la carte et chez le concessionnaire",
-      "summary": "Build de développement du 29 octobre, PPSA07211 v01.000.003 : deux corrections Vulkan générales rétablissent l’orientation des libellés, logos, commandes du concessionnaire, crédits et texte INFO dans les captures du moteur de rendu. Suivi DirectX 12 du 30 octobre : le lancement atteint désormais la carte, mais plusieurs libellés restent des rectangles pleins. Un rapport et une capture distincts de cette version de développement figurent ci-dessous ; les courses ne sont pas encore vérifiées.",
+      "headline": "Texte de la carte rétabli sous DirectX 12",
+      "summary": "Version de développement du 30 octobre : les transferts DMA_DATA manquants laissaient les atlas de polices remplis de 0xCD. Leur implémentation rétablit les libellés, les crédits et la ligne INFO, y compris les accents français. Les 48 tests D3D12 et les tests GPU natifs réussissent. Un second essai de 72,4 secondes atteint la carte sans erreur ni rejet dans le journal ; les courses restent non vérifiées.",
       "strengths": [
         "Les copies GPU appliquent le retournement vertical avant les éléments d’interface suivants. Les tracés plein écran avec buffers de sommets conservent les transformations de projection et d’UV du shader invité.",
         "Les 267 tests Vulkan et les vérifications natives ciblées du rendu réussissent. Le dernier essai automatisé ne relève aucun compteur GPU-gap non nul ni erreur invitée."
       ],
       "limits": [
-        "La mémoire continue de croître : un essai antérieur atteignait environ 15 Go ; le dernier était limité à 90 secondes et 8 Gio. La cause du blocage du PC n’est pas établie.",
+        "Vulkan: La mémoire continue de croître : un essai antérieur atteignait environ 15 Go ; le dernier était limité à 90 secondes et 8 Gio. La cause du blocage du PC n’est pas établie.",
         "Courses, commandes manuelles, qualité audio, sauvegardes et fin du jeu restent non vérifiées. La correction des couleurs des drapeaux n’est pas confirmée."
       ],
-      "performance": "RTX 3070 Ti, Vulkan, sortie 1920×1080. Limite initiale de 60 FPS, puis de 30 FPS pour le dernier essai. Ce sont des réglages de diagnostic, pas une nouvelle mesure de performances ni un benchmark en course.",
-      "imageAlt": "Carte de Super Woden GP avec libellés, icônes, crédits et ligne INFO correctement orientés"
+      "performance": "DirectX 12, RTX 3070 Ti, 1920×1080. La limite de diagnostic de 30 FPS ne constitue pas une mesure ni un test de course. Les essais Vulkan précédents figurent séparément ci-dessous.",
+      "imageAlt": "Carte de Super Woden GP sous DirectX 12 avec libellés français, crédits et ligne INFO lisibles"
     },
     "arcade-spirits-the-new-challengers": {
       "status": "Menu principal · vidéo d’introduction · gameplay non vérifié",
@@ -571,6 +571,11 @@ const fr: Content = {
   },
 
   history: {
+    "super-woden-gp-d3d12-fonts-20261030": {
+      "title": "Texte de la carte rétabli sous DirectX 12",
+      "summary": "Version de développement du 30 octobre : les transferts DMA_DATA manquants laissaient les atlas de polices remplis de 0xCD. Leur implémentation rétablit les libellés, les crédits et la ligne INFO, y compris les accents français. Les 48 tests D3D12 et les tests GPU natifs réussissent. Un second essai de 72,4 secondes atteint la carte sans erreur ni rejet dans le journal ; les courses restent non vérifiées.",
+      "imageAlt": "Carte de Super Woden GP sous DirectX 12 avec libellés français, crédits et ligne INFO lisibles"
+    },
     "super-woden-gp-d3d12-startup-20261030": {
       "title": "DirectX 12 atteint la carte après les logos",
       "summary": "La version de développement du 30 octobre ajoute les cibles et textures RGBA16F, les valeurs matérielles par défaut des entrées de fragment, les textures 3D et l’échantillonnage R16_UNORM. Sur RTX 3070 Ti en 1920×1080, un essai de 120,6 secondes avec entrées scriptées atteint la carte sans les arrêts précédents ; le dispositif de surveillance termine le test. Le pic de mémoire privée mesuré est de 4 227 Mio. Les 46 tests D3D12 et les vérifications GPU réussissent, dont 1 360 comparaisons de textures volumiques. Plusieurs libellés restent des rectangles pleins. La limite de diagnostic de 30 FPS n’est pas une mesure ; les courses, la qualité audio et la stabilité prolongée restent non vérifiées.",

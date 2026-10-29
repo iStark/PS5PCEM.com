@@ -108,7 +108,7 @@ export const compatibility: CompatibilityEntry[] = [
     slug: "super-woden-gp",
     title: "Super Woden GP",
     tier: "intro",
-    image: "/images/super-woden-gp-map-orientation-2026-10-29.jpg",
+    image: "/images/super-woden-gp-d3d12-text-2026-10-30.jpg",
     confirmedOn: "2026-10-30",
   },
   {

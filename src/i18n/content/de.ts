@@ -156,18 +156,18 @@ const de: Content = {
     },
     "super-woden-gp": {
       "status": "Hauptmenü · Darstellung verbessert · Gameplay ungeprüft",
-      "headline": "Ausrichtung der Karten- und Händleroberfläche korrigiert",
-      "summary": "Entwicklungsbuild vom 29. Oktober, PPSA07211 v01.000.003: Zwei allgemeine Vulkan-Korrekturen richten Kartenbeschriftungen, Herstellerlogos, Händlerelemente, Guthaben und die untere INFO-Zeile in den Renderer-Aufnahmen korrekt aus. DirectX-12-Nachtest vom 30. Oktober: Der Start erreicht jetzt die Karte, einige Beschriftungen erscheinen jedoch als ausgefüllte Rechtecke. Ein eigener Bericht und ein Bild dieses Entwicklungsbuilds folgen unten; Rennen sind noch ungeprüft.",
+      "headline": "Kartentext unter DirectX 12 wiederhergestellt",
+      "summary": "Entwicklungsbuild vom 30. Oktober: Fehlende DMA_DATA-Transfers ließen die Schriftatlanten mit 0xCD gefüllt. Die implementierten Transfers stellen Kartenbeschriftungen, Guthaben und INFO-Text einschließlich französischer Akzente wieder her. Alle 48 D3D12-Tests und die nativen GPU-Prüfungen bestehen. Der 72,4-sekündige Wiederholungslauf erreicht die Karte ohne protokollierte Fehler oder Ablehnungen; Rennen bleiben ungeprüft.",
       "strengths": [
         "GPU-Kopien wenden die vertikale Spiegelung vor nachfolgenden UI-Zeichenbefehlen an. Vollbildzeichnungen mit Vertex-Puffern behalten die Projektions- und UV-Transformationen des Gast-Shaders bei.",
         "Alle 267 Vulkan-Tests und gezielte native Rendering-Prüfungen bestehen. Der letzte skriptgesteuerte Lauf zeigt keine GPU-Gap-Zähler oder Gastfehler."
       ],
       "limits": [
-        "Der Speicherverbrauch wächst weiter: Ein früherer Lauf erreichte etwa 15 GB; die letzte Prüfung war auf 90 Sekunden und 8 GiB begrenzt. Die Ursache des Rechnerstillstands ist nicht belegt.",
+        "Vulkan: Der Speicherverbrauch wächst weiter: Ein früherer Lauf erreichte etwa 15 GB; die letzte Prüfung war auf 90 Sekunden und 8 GiB begrenzt. Die Ursache des Rechnerstillstands ist nicht belegt.",
         "Rennen, manuelle Steuerung, Tonqualität, Speichern und vollständiges Durchspielen sind ungeprüft. Die zuvor falschen Flaggenfarben sind nicht nachweislich behoben."
       ],
-      "performance": "RTX 3070 Ti, Vulkan, Ausgabe 1920×1080. Anfangs galt ein Limit von 60 FPS, zuletzt 30 FPS. Das sind Diagnoseeinstellungen, keine neue Leistungsmessung oder Renn-Benchmarks.",
-      "imageAlt": "Super-Woden-GP-Karte mit korrekt ausgerichteten Beschriftungen, Symbolen, Guthaben und unterer INFO-Zeile"
+      "performance": "DirectX 12, RTX 3070 Ti, 1920×1080. Die diagnostische Begrenzung auf 30 FPS ist kein Messergebnis oder Rennbenchmark. Frühere Vulkan-Läufe stehen separat weiter unten.",
+      "imageAlt": "Super-Woden-GP-Karte unter DirectX 12 mit lesbaren französischen Beschriftungen, Guthaben und INFO-Zeile"
     },
     "arcade-spirits-the-new-challengers": {
       "status": "Hauptmenü · Einführungsvideo · Gameplay ungeprüft",
@@ -571,6 +571,11 @@ const de: Content = {
   },
 
   history: {
+    "super-woden-gp-d3d12-fonts-20261030": {
+      "title": "Kartentext unter DirectX 12 wiederhergestellt",
+      "summary": "Entwicklungsbuild vom 30. Oktober: Fehlende DMA_DATA-Transfers ließen die Schriftatlanten mit 0xCD gefüllt. Die implementierten Transfers stellen Kartenbeschriftungen, Guthaben und INFO-Text einschließlich französischer Akzente wieder her. Alle 48 D3D12-Tests und die nativen GPU-Prüfungen bestehen. Der 72,4-sekündige Wiederholungslauf erreicht die Karte ohne protokollierte Fehler oder Ablehnungen; Rennen bleiben ungeprüft.",
+      "imageAlt": "Super-Woden-GP-Karte unter DirectX 12 mit lesbaren französischen Beschriftungen, Guthaben und INFO-Zeile"
+    },
     "super-woden-gp-d3d12-startup-20261030": {
       "title": "DirectX 12 erreicht nach den Logos die Karte",
       "summary": "Der Entwicklungsbuild vom 30. Oktober ergänzt RGBA16F-Ziele und -Texturen, Hardware-Standardwerte für Fragment-Eingaben, 3D-Texturen und R16_UNORM-Sampling. Auf der RTX 3070 Ti bei 1920×1080 erreicht ein 120,6 Sekunden langer Lauf mit geskripteter Eingabe die Karte ohne die bisherigen Abbrüche; der Watchdog beendet den Test. Der höchste gemessene private Prozessspeicher beträgt 4.227 MiB. Alle 46 D3D12-Tests und GPU-Prüfungen bestehen, darunter 1.360 Volumentexturvergleiche. Einige Beschriftungen erscheinen weiterhin als ausgefüllte Rechtecke. Das diagnostische Limit von 30 FPS ist kein Messergebnis; Rennen, Tonqualität und Langzeitstabilität bleiben ungeprüft.",

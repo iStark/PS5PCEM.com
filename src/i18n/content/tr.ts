@@ -156,18 +156,18 @@ const tr: Content = {
     },
     "super-woden-gp": {
       "status": "Ana menü · görüntüleme iyileştirildi · oynanış doğrulanmadı",
-      "headline": "Harita ve bayi arayüzünün yönü düzeltildi",
-      "summary": "29 Ekim geliştirme derlemesi, PPSA07211 v01.000.003: iki genel Vulkan düzeltmesi, işleyici görüntülerindeki harita yazılarını, üretici simgelerini, bayi kontrollerini, kredileri ve alt INFO satırını doğru yöne getiriyor. 30 Ekim DirectX 12 kontrolü: oyun artık haritaya ulaşıyor, ancak bazı yazılar dolu dikdörtgenler şeklinde. Bu geliştirme derlemesinin ayrı raporu ve görüntüsü aşağıda; yarışlar henüz doğrulanmadı.",
+      "headline": "DirectX 12 harita metinleri düzeltildi",
+      "summary": "30 Ekim geliştirme derlemesi: eksik DMA_DATA aktarımları yazı tipi atlaslarını 0xCD ile dolu bırakıyordu. Aktarımların uygulanması harita etiketlerini, kredileri ve INFO satırını, Fransızca aksanlar dahil, geri getirdi. 48 D3D12 testi ve yerel GPU testlerinin tamamı geçti. 72,4 saniyelik tekrar, günlükte hata veya ret olmadan haritaya ulaştı; yarışlar henüz doğrulanmadı.",
       "strengths": [
         "GPU kopyaları dikey çevirmeyi sonraki arayüz çizimlerinden önce uygular. Köşe arabellekli tam ekran çizimleri konuk gölgelendiricinin projeksiyon ve UV dönüşümlerini korur.",
         "267 Vulkan testinin tamamı ve hedefli yerel çizim kontrolleri geçti. Son otomatik çalıştırmada GPU-gap sayaçları sıfırdı ve konuk hatası yoktu."
       ],
       "limits": [
-        "Bellek kullanımı hâlâ artıyor: önceki çalıştırma yaklaşık 15 GB’a ulaştı; son kontrol 90 saniye ve 8 GiB ile sınırlandı. Bilgisayarın donma nedeni kanıtlanmadı.",
+        "Vulkan: Bellek kullanımı hâlâ artıyor: önceki çalıştırma yaklaşık 15 GB’a ulaştı; son kontrol 90 saniye ve 8 GiB ile sınırlandı. Bilgisayarın donma nedeni kanıtlanmadı.",
         "Yarışlar, elle kontrol, ses kalitesi, kayıt ve oyunu bitirme doğrulanmadı. Dil bayraklarının renk sorununun düzeldiği doğrulanmadı."
       ],
-      "performance": "RTX 3070 Ti, Vulkan, 1920×1080 çıkış. İlk kontrollerde 60 FPS, son kontrolde 30 FPS sınırı kullanıldı. Bunlar tanılama ayarlarıdır; yeni performans ölçümü veya yarış testi değildir.",
-      "imageAlt": "Doğru yöndeki yazılar, simgeler, krediler ve alt INFO satırıyla Super Woden GP haritası"
+      "performance": "DirectX 12, RTX 3070 Ti, 1920×1080. 30 FPS tanılama sınırı bir ölçüm sonucu veya yarış performans testi değildir. Önceki Vulkan denemeleri aşağıda ayrı gösterilir.",
+      "imageAlt": "DirectX 12 üzerinde okunaklı Fransızca etiketler, krediler ve INFO satırı içeren Super Woden GP haritası"
     },
     "arcade-spirits-the-new-challengers": {
       "status": "Ana menü · açılış videosu · oynanış doğrulanmadı",
@@ -510,6 +510,11 @@ const tr: Content = {
     },
   },
   history: {
+    "super-woden-gp-d3d12-fonts-20261030": {
+      "title": "DirectX 12 harita metinleri düzeltildi",
+      "summary": "30 Ekim geliştirme derlemesi: eksik DMA_DATA aktarımları yazı tipi atlaslarını 0xCD ile dolu bırakıyordu. Aktarımların uygulanması harita etiketlerini, kredileri ve INFO satırını, Fransızca aksanlar dahil, geri getirdi. 48 D3D12 testi ve yerel GPU testlerinin tamamı geçti. 72,4 saniyelik tekrar, günlükte hata veya ret olmadan haritaya ulaştı; yarışlar henüz doğrulanmadı.",
+      "imageAlt": "DirectX 12 üzerinde okunaklı Fransızca etiketler, krediler ve INFO satırı içeren Super Woden GP haritası"
+    },
     "super-woden-gp-d3d12-startup-20261030": {
       "title": "DirectX 12, logolardan sonra haritaya ulaşıyor",
       "summary": "30 Ekim geliştirme derlemesi RGBA16F hedef ve dokularını, parça gölgelendirici girdilerinin donanım varsayılanlarını, 3D dokuları ve R16_UNORM örneklemesini ekliyor. RTX 3070 Ti üzerinde 1920×1080 çözünürlükte, betikli girdili 120,6 saniyelik test önceki durmalar olmadan haritaya ulaştı; testi gözetim mekanizması sonlandırdı. Örneklenen özel işlem belleği en fazla 4.227 MiB oldu. 46 D3D12 testi ve 1.360 hacim dokusu karşılaştırması dahil GPU kontrolleri geçti. Bazı yazılar hâlâ dolu dikdörtgenler olarak görünüyor. Tanılama amaçlı 30 FPS sınırı bir ölçüm sonucu değildir; yarışlar, ses kalitesi ve uzun süreli kararlılık doğrulanmadı.",

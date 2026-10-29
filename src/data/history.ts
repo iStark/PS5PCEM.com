@@ -40,6 +40,16 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "super-woden-gp-d3d12-fonts-20261030",
+    graphicsApi: "d3d12",
+    slug: "super-woden-gp",
+    date: "2026-10-30",
+    recordedAt: "2026-10-30T02:06:00+03:00",
+    release: null,
+    image: "/images/super-woden-gp-d3d12-text-2026-10-30.jpg",
+    source: devReport("super-woden-gp-d3d12-fonts-2026-10-30.md"),
+  },
+  {
     id: "super-woden-gp-d3d12-startup-20261030",
     graphicsApi: "d3d12",
     slug: "super-woden-gp",
