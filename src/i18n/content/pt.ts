@@ -84,18 +84,18 @@ const pt: Content = {
       "imageAlt": "Primeiro nível de Monster Boy com interface, personagem, cabana e polígonos pretos"
     },
     "oxide-room-104": {
-      "status": "Aviso inicial · depois tela preta",
-      "headline": "O aviso de salvamento aparece; depois há falhas de shaders e da fila.",
-      "summary": "PPSA07653 v01.000.000: Dois testes passam pela vinculação. Cruz automático leva à tela preta com erros FLAT, IMAGE_BVH_INTERSECT_RAY, InvalidScalarCall e DMA_DATA. A repetição apenas com teclado mostra o aviso de salvamento. Gameplay não verificado.",
+      "status": "Introdução · aviso GET UP · controles não verificados",
+      "headline": "Tela preta após Cruz superada com renderização sem ray tracing",
+      "summary": "PPSA07653 v01.000.000, compilação em desenvolvimento de 29 de outubro: o executável seleciona -noraytracing do Unreal por um arquivo de comandos virtual. Os arquivos instalados não mudam; a inicialização normal supera a parada gráfica reproduzida.",
       "strengths": [
-        "Texto, ícone animado e Cruz/OK aparecem; nenhum erro de CPU convidada nos dois testes."
+        "A comparação alcança a introdução animada, legendas e o aviso GET UP: mais de 2.600 quadros sem parada da fila ou falha do convidado.",
+        "Capturas de memória delimitadas para ponteiros FLAT corrigem as primeiras falhas de computação. Passam os 326 testes GPU e os testes do arquivo de comandos em diretórios e arquivos compactados."
       ],
       "limits": [
-        "Ambos têm vínculos storage não resolvidos. A repetição permanece no aviso; a tecla breve não aparece nos diagnósticos Pad. Menu principal e controles não verificados.",
-        "Os controles manuais, a qualidade do áudio, os salvamentos, a conclusão e a estabilidade prolongada não foram verificados."
+        "O ray tracing completo ainda falha em chamadas dinâmicas de shaders e na preparação BVH. Controle do personagem, progresso posterior, correção gráfica e qualidade do som audível não foram verificados."
       ],
-      "performance": "Aviso: mediana 18,45 FPS (17,5–19,1), 30 leituras em 29,829 s. Não é teste de gameplay. Os 18,8 FPS na tela preta são um valor antigo. Versão em desenvolvimento de 11 de outubro; RTX 3070 Ti, saída 1920×1080, perfil Speed. Caches preservados. Primeiro teste com Cruz automático; repetição medida apenas com teclado.",
-      "imageAlt": "Aviso de salvamento de Oxide Room 104 com ícone branco e Cruz OK sobre fundo vermelho escuro"
+      "performance": "Amostras diagnósticas da cena pesada: cerca de 0,6–0,7 s por quadro, não um benchmark controlado de gameplay. RTX 3070 Ti, Vulkan, saída 1920×1080; alvos internos até 3840×2160. Capturas e compilação afetaram partes do teste.",
+      "imageAlt": "Logotipo de OXIDE Room 104 com GET UP e Options; quadro final exportado, não comprovação do controle do personagem"
     },
     "medieval-dynasty": {
       "status": "Menu principal · imagem invertida verticalmente",
@@ -571,6 +571,11 @@ const pt: Content = {
   },
 
   history: {
+    "oxide-room-104-raster-startup-20261029": {
+      "title": "Tela preta após Cruz superada com renderização sem ray tracing",
+      "summary": "PPSA07653 v01.000.000, compilação em desenvolvimento de 29 de outubro: o executável seleciona -noraytracing do Unreal por um arquivo de comandos virtual. Os arquivos instalados não mudam; a inicialização normal supera a parada gráfica reproduzida. A comparação alcança a introdução animada, legendas e o aviso GET UP: mais de 2.600 quadros sem parada da fila ou falha do convidado. O ray tracing completo ainda falha em chamadas dinâmicas de shaders e na preparação BVH. Controle do personagem, progresso posterior, correção gráfica e qualidade do som audível não foram verificados.",
+      "imageAlt": "Logotipo de OXIDE Room 104 com GET UP e Options; quadro final exportado, não comprovação do controle do personagem"
+    },
     "quake2-d3d12-cubemaps-20261029": {
       title: "DirectX 12: arrays de texturas, níveis mip e filtragem anisotrópica",
       summary: "A compilação em desenvolvimento corrige a recuperação de descritores de vértices via SCC e adiciona arrays cúbicos/2D, cadeias mip, atributos planos e filtragem anisotrópica no shader. Passam os 324 testes de GPU, 44 de D3D12 e as verificações nativas de GPU, incluindo 280 comparações de quadros completos para cadeias mip e 128 para anisotropia. A captura mostra o aviso inicial; a demonstração automática e os FPS durante o jogo em D3D12 ainda não foram verificados.",

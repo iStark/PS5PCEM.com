@@ -73,8 +73,8 @@ export const compatibility: CompatibilityEntry[] = [
     "slug": "oxide-room-104",
     "title": "Oxide Room 104",
     "tier": "intro",
-    "confirmedOn": "2026-10-11",
-    "image": "/images/oxide-room-104-autosave-2026-10-11.jpg"
+    "confirmedOn": "2026-10-29",
+    "image": "/images/oxide-room-104-get-up-2026-10-29.jpg"
   },
   {
     "slug": "medieval-dynasty",
@@ -263,7 +263,7 @@ export const compatibility: CompatibilityEntry[] = [
 
 export const compatibilityMeta = {
   /** Newest maintainer confirmation across the dataset. */
-  confirmedOn: "2026-10-24",
+  confirmedOn: "2026-10-29",
   testedOnRelease: "0.3.2",
   host: "NVIDIA GeForce RTX 3070 Ti",
 } as const;

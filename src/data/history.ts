@@ -40,6 +40,15 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "oxide-room-104-raster-startup-20261029",
+    graphicsApi: "vulkan",
+    slug: "oxide-room-104",
+    date: "2026-10-29",
+    release: null,
+    image: "/images/oxide-room-104-get-up-2026-10-29.jpg",
+    source: devReport("oxide-room-104-raster-startup-2026-10-29.md"),
+  },
+  {
     id: "quake2-d3d12-cubemaps-20261029",
     graphicsApi: "d3d12",
     slug: "quake-ii-2023",

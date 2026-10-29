@@ -84,18 +84,18 @@ const de: Content = {
       "imageAlt": "Erster Monster-Boy-Level mit HUD, Figur, Hütte und schwarzen Polygonfehlern"
     },
     "oxide-room-104": {
-      "status": "Starthinweis · später schwarzes Bild",
-      "headline": "Der Speicherhinweis erscheint; spätere Grafikarbeit scheitert an Shadern und Queue.",
-      "summary": "PPSA07653 v01.000.000: Zwei Starts passieren das Linken. Cross-Automatik führt zu schwarzem Bild mit FLAT-, IMAGE_BVH_INTERSECT_RAY-, InvalidScalarCall- und DMA_DATA-Fehlern. Die Tastatur-Wiederholung zeigt den Speicherhinweis. Gameplay ungeprüft.",
+      "status": "Intro · GET-UP-Hinweis · Steuerung ungeprüft",
+      "headline": "Schwarzer Bildschirm nach Cross mit Rasterdarstellung überwunden",
+      "summary": "PPSA07653 v01.000.000, Entwicklungsbuild vom 29. Oktober: Der Runner wählt Unreals -noraytracing-Pfad über eine virtuelle Befehlszeilendatei. Die installierten Spieldateien bleiben unverändert; der normale Start überwindet den reproduzierten Grafikstopp.",
       "strengths": [
-        "Text, animiertes Symbol und Cross/OK erscheinen; kein Guest-CPU-Fault in beiden Läufen."
+        "Der Vergleich erreicht das animierte Intro, Untertitel und den GET-UP-Hinweis: über 2.600 Frames ohne Warteschlangenstopp oder Gastabsturz.",
+        "Begrenzte Speicherschnappschüsse für FLAT-Zeiger beheben die ersten Compute-Fehler. Alle 326 GPU-Tests und die Befehlszeilentests für Verzeichnisse und Archive bestehen."
       ],
       "limits": [
-        "Beide Läufe haben unaufgelöste Storage-Bindungen. Die Wiederholung bleibt am Hinweis; der kurze Tastendruck wurde nicht in der Pad-Diagnose erfasst. Hauptmenü und Steuerung ungeprüft.",
-        "Manuelle Steuerung, Audioqualität, Speichern, vollständiges Durchspielen und Langzeitstabilität wurden nicht geprüft."
+        "Vollständiges Raytracing scheitert weiterhin an dynamischen Shader-Aufrufen und der BVH-Vorbereitung. Figurensteuerung, weiterer Fortschritt, korrekte Darstellung und hörbare Tonqualität sind ungeprüft."
       ],
-      "performance": "Speicherhinweis: Median 18,45 FPS (17,5–19,1), 30 Werte über 29,829 s. Kein Gameplay-Benchmark. Die 18,8 FPS am schwarzen Bild sind ein veralteter Zählerstand. Entwicklungsbuild vom 11. Oktober; RTX 3070 Ti, Ausgabe 1920×1080, Speed-Profil. Caches beibehalten. Erster Lauf mit Cross-Automatik; gemessene Wiederholung nur mit Tastatureingabe.",
-      "imageAlt": "Oxide Room 104 mit Speicherhinweis, weißem Symbol und Cross-OK-Aufforderung vor dunkelrotem Hintergrund"
+      "performance": "Diagnosewerte der aufwendigen Szene: etwa 0,6–0,7 s pro Frame, kein kontrollierter Gameplay-Benchmark. RTX 3070 Ti, Vulkan, Ausgabe 1920×1080; interne Ziele bis 3840×2160. Aufnahmen und Kompilierung beeinflussten Teile des Laufs.",
+      "imageAlt": "OXIDE-Room-104-Logo mit GET UP und Options; exportiertes finales Bild, kein Nachweis der Figurensteuerung"
     },
     "medieval-dynasty": {
       "status": "Hauptmenü · vertikal gespiegeltes Bild",
@@ -571,6 +571,11 @@ const de: Content = {
   },
 
   history: {
+    "oxide-room-104-raster-startup-20261029": {
+      "title": "Schwarzer Bildschirm nach Cross mit Rasterdarstellung überwunden",
+      "summary": "PPSA07653 v01.000.000, Entwicklungsbuild vom 29. Oktober: Der Runner wählt Unreals -noraytracing-Pfad über eine virtuelle Befehlszeilendatei. Die installierten Spieldateien bleiben unverändert; der normale Start überwindet den reproduzierten Grafikstopp. Der Vergleich erreicht das animierte Intro, Untertitel und den GET-UP-Hinweis: über 2.600 Frames ohne Warteschlangenstopp oder Gastabsturz. Vollständiges Raytracing scheitert weiterhin an dynamischen Shader-Aufrufen und der BVH-Vorbereitung. Figurensteuerung, weiterer Fortschritt, korrekte Darstellung und hörbare Tonqualität sind ungeprüft.",
+      "imageAlt": "OXIDE-Room-104-Logo mit GET UP und Options; exportiertes finales Bild, kein Nachweis der Figurensteuerung"
+    },
     "quake2-d3d12-cubemaps-20261029": {
       title: "DirectX 12: Texturarrays, Mip-Stufen und anisotrope Filterung",
       summary: "Der Entwicklungsbuild korrigiert die SCC-basierte Wiederherstellung von Vertex-Deskriptoren und ergänzt Cube-/2D-Arrays, Mip-Ketten, flache Attribute und anisotrope Filterung im Shader. Alle 324 GPU-Tests, 44 D3D12-Tests und die nativen GPU-Prüfungen bestehen, darunter 280 vollständige Bildvergleiche für Mip-Ketten und 128 für Anisotropie. Die Aufnahme zeigt die Startwarnung; die automatische Gameplay-Demo und die Gameplay-FPS unter D3D12 sind noch nicht bestätigt.",

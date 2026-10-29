@@ -84,18 +84,18 @@ const fr: Content = {
       "imageAlt": "Premier niveau de Monster Boy avec interface, personnage, cabane et polygones noirs"
     },
     "oxide-room-104": {
-      "status": "Avis de démarrage · écran noir ensuite",
-      "headline": "L’avis de sauvegarde s’affiche ; des erreurs de shaders et de file suivent.",
-      "summary": "PPSA07653 v01.000.000: Deux lancements passent l’édition de liens. Croix automatique mène à un écran noir avec erreurs FLAT, IMAGE_BVH_INTERSECT_RAY, InvalidScalarCall et DMA_DATA. Le lancement clavier seul affiche l’avis de sauvegarde. Gameplay non vérifié.",
+      "status": "Introduction · invite GET UP · commandes non vérifiées",
+      "headline": "Écran noir après Croix franchi grâce au rendu sans ray tracing",
+      "summary": "PPSA07653 v01.000.000, version en développement du 29 octobre : le lanceur sélectionne le mode -noraytracing d’Unreal via un fichier de commande virtuel. Les fichiers installés restent intacts ; le lancement normal dépasse le blocage graphique reproduit.",
       "strengths": [
-        "Texte, icône animée et Croix/OK s’affichent ; aucun défaut CPU invité dans les deux essais."
+        "Le test comparatif atteint l’introduction animée, les sous-titres et l’invite GET UP, avec plus de 2 600 images sans arrêt de file ni plantage invité.",
+        "La capture de plages mémoire bornées pour les pointeurs FLAT corrige les premières erreurs compute. Les 326 tests GPU et les tests du fichier de commande sur dossier et archive réussissent."
       ],
       "limits": [
-        "Les deux essais ont des liaisons storage non résolues. Le second reste sur l’avis ; la brève touche automatisée n’apparaît pas dans les diagnostics Pad. Menu principal et commandes non vérifiés.",
-        "Les commandes manuelles, la qualité audio, les sauvegardes, la fin du jeu et la stabilité prolongée ne sont pas vérifiées."
+        "Le ray tracing complet échoue encore sur les appels dynamiques de shaders et la préparation BVH. Contrôle du personnage, suite du jeu, exactitude graphique et qualité du son audible restent non vérifiés."
       ],
-      "performance": "Avis : médiane 18,45 FPS (17,5–19,1), 30 relevés en 29,829 s. Pas un test de gameplay. Les 18,8 FPS de l’écran noir sont une ancienne valeur. Version de développement du 11 octobre ; RTX 3070 Ti, sortie 1920×1080, profil Speed. Caches conservés. Premier lancement avec Croix automatique ; mesure répétée en mode clavier seul.",
-      "imageAlt": "Avis de sauvegarde d’Oxide Room 104 avec icône blanche et invite Croix OK sur fond rouge sombre"
+      "performance": "Mesures diagnostiques de la scène lourde : environ 0,6–0,7 s par image, pas un benchmark contrôlé du gameplay. RTX 3070 Ti, Vulkan, sortie 1920×1080 ; cibles internes jusqu’à 3840×2160. Captures et compilation ont influencé certaines parties du test.",
+      "imageAlt": "Logo OXIDE Room 104 avec les invites GET UP et Options ; image finale exportée, sans preuve de contrôle du personnage"
     },
     "medieval-dynasty": {
       "status": "Menu principal · image inversée verticalement",
@@ -571,6 +571,11 @@ const fr: Content = {
   },
 
   history: {
+    "oxide-room-104-raster-startup-20261029": {
+      "title": "Écran noir après Croix franchi grâce au rendu sans ray tracing",
+      "summary": "PPSA07653 v01.000.000, version en développement du 29 octobre : le lanceur sélectionne le mode -noraytracing d’Unreal via un fichier de commande virtuel. Les fichiers installés restent intacts ; le lancement normal dépasse le blocage graphique reproduit. Le test comparatif atteint l’introduction animée, les sous-titres et l’invite GET UP, avec plus de 2 600 images sans arrêt de file ni plantage invité. Le ray tracing complet échoue encore sur les appels dynamiques de shaders et la préparation BVH. Contrôle du personnage, suite du jeu, exactitude graphique et qualité du son audible restent non vérifiés.",
+      "imageAlt": "Logo OXIDE Room 104 avec les invites GET UP et Options ; image finale exportée, sans preuve de contrôle du personnage"
+    },
     "quake2-d3d12-cubemaps-20261029": {
       title: "DirectX 12 : tableaux de textures, niveaux mip et filtrage anisotrope",
       summary: "La version en développement corrige la récupération des descripteurs de sommets via SCC et ajoute les tableaux cubiques/2D, les chaînes mip, les attributs plats et le filtrage anisotrope dans le shader. Les 324 tests GPU, 44 tests D3D12 et les vérifications GPU natives réussissent, dont 280 comparaisons complètes d’images pour les chaînes mip et 128 pour l’anisotropie. La capture montre l’avertissement initial ; la démonstration automatique et les FPS en jeu sous D3D12 restent à vérifier.",

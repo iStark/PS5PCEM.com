@@ -111,18 +111,18 @@ const content: Content = {
       "imageAlt": "Monster Boy first level with HUD, character, hut and black polygon defects"
     },
     "oxide-room-104": {
-      "status": "Startup notice · later black screen",
-      "headline": "The autosave notice renders; later rendering hits shader and queue errors.",
-      "summary": "PPSA07653 v01.000.000: Two launches pass linking. Automatic Cross reaches black output with FLAT addressing, IMAGE_BVH_INTERSECT_RAY, InvalidScalarCall and DMA_DATA rejection errors. A keyboard-only repeat displays the autosave notice. Gameplay is unverified.",
+      "status": "Intro · GET UP prompt · controls unverified",
+      "headline": "Past the post-Cross black screen with raster rendering",
+      "summary": "PPSA07653 v01.000.000, October 29 development build: the runner now selects Unreal's -noraytracing path through a virtual command-line file. Installed game files stay unchanged; the normal launch passes the reproduced graphics stop.",
       "strengths": [
-        "The autosave text, animated icon and Cross/OK prompt render in the repeat; neither run logs a guest CPU fault."
+        "The comparison reaches the animated introduction, subtitles and GET UP prompt, with over 2,600 frames and no queue stop or guest fault.",
+        "Bounded FLAT pointer staging fixes the first compute failures. All 326 GPU tests and the directory/archive launch-document regressions pass."
       ],
       "limits": [
-        "Both runs have unresolved storage bindings. The repeat stays on the notice; a short automated key press was not observed by Pad diagnostics. Main menu and controls remain unverified.",
-        "Manual controls, audio quality, saves, completion and long-session stability were not verified."
+        "Full ray tracing still fails on dynamic shader calls and BVH preparation. Character control, further progression, rendering correctness and audible sound quality remain unverified."
       ],
-      "performance": "Autosave notice: 18.45 FPS median (17.5–19.1), 30 readings over 29.829 s. Not a gameplay benchmark. The 18.8 FPS retained on the black screen is stale. October 11 development build; RTX 3070 Ti, 1920×1080 output, Speed preset. Existing caches retained. First run: automatic Cross; measured repeat: keyboard only.",
-      "imageAlt": "Oxide Room 104 autosave notice with a white icon and Cross OK prompt on a dark red background"
+      "performance": "Heavy-scene diagnostic samples: about 0.6–0.7 s per frame, not a controlled gameplay benchmark. RTX 3070 Ti, Vulkan, 1920×1080 output; internal targets reach 3840×2160. Captures and compilation affected parts of the run.",
+      "imageAlt": "OXIDE Room 104 logo with GET UP and Options prompts; exported final scanout, not proof of character control"
     },
     "medieval-dynasty": {
       "status": "Main menu · vertically inverted image",
@@ -597,6 +597,11 @@ const content: Content = {
   },
 
   history: {
+    "oxide-room-104-raster-startup-20261029": {
+      "title": "Past the post-Cross black screen with raster rendering",
+      "summary": "PPSA07653 v01.000.000, October 29 development build: the runner now selects Unreal's -noraytracing path through a virtual command-line file. Installed game files stay unchanged; the normal launch passes the reproduced graphics stop. The comparison reaches the animated introduction, subtitles and GET UP prompt, with over 2,600 frames and no queue stop or guest fault. Full ray tracing still fails on dynamic shader calls and BVH preparation. Character control, further progression, rendering correctness and audible sound quality remain unverified.",
+      "imageAlt": "OXIDE Room 104 logo with GET UP and Options prompts; exported final scanout, not proof of character control"
+    },
     "quake2-d3d12-cubemaps-20261029": {
       title: "DirectX 12: texture arrays, mip levels and anisotropic filtering",
       summary: "The development build fixes SCC-based vertex descriptor recovery and adds cube/2D arrays, mip chains, flat attributes and shader-based anisotropic filtering. All 324 GPU tests, 44 D3D12 tests and the native GPU suite pass, including 280 mip-chain and 128 anisotropic full-frame checks. The capture shows the startup warning; the automatic gameplay demo and D3D12 gameplay FPS remain unverified.",

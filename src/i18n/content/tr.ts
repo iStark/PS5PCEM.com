@@ -84,18 +84,18 @@ const tr: Content = {
       "imageAlt": "HUD, karakter, kulübe ve siyah çokgen kusurlarıyla Monster Boy ilk bölümü",
     },
     "oxide-room-104": {
-      "status": "Açılış bildirimi · sonra siyah ekran",
-      "headline": "Otomatik kayıt bildirimi çiziliyor; sonraki işleme shader ve kuyruk hatalarına takılıyor.",
-      "summary": "PPSA07653 v01.000.000: İki başlatma bağlamayı geçiyor. Otomatik Cross, FLAT adresleme, IMAGE_BVH_INTERSECT_RAY, InvalidScalarCall ve DMA_DATA reddi hatalarıyla siyah çıktıya ulaşıyor. Yalnızca klavyeyle yapılan tekrar otomatik kayıt bildirimini gösteriyor. Oynanış doğrulanmadı.",
+      "status": "Giriş · GET UP istemi · kontroller doğrulanmadı",
+      "headline": "Cross sonrası siyah ekran raster işleme ile aşıldı",
+      "summary": "PPSA07653 v01.000.000, 29 Ekim geliştirme derlemesi: çalıştırıcı sanal komut satırı dosyası üzerinden Unreal’ın -noraytracing yolunu seçiyor. Kurulu oyun dosyaları değişmiyor; normal başlatma yeniden üretilen grafik durmasını aşıyor.",
       "strengths": [
-        "Tekrarda otomatik kayıt metni, hareketli simge ve Cross/OK istemi çiziliyor; iki çalıştırmada da misafir CPU hatası günlüğe düşmüyor.",
+        "Karşılaştırma, hareketli girişe, altyazılara ve GET UP istemine ulaşıyor: kuyruk durması veya konuk hatası olmadan 2.600’den fazla kare.",
+        "FLAT işaretçileri için sınırlı bellek görüntüleri ilk hesaplama hatalarını gideriyor. 326 GPU testi ile klasör ve arşiv komut dosyası testleri geçiyor."
       ],
       "limits": [
-        "İki çalıştırmada da çözülmemiş depolama bağlamaları var. Tekrar bildirimde kalıyor; kısa otomatik tuş basışı Pad tanılamasında görülmedi. Ana menü ve kontroller doğrulanmadı.",
-        "Elle kontrol, ses kalitesi, kayıtlar, oyunun bitirilmesi ve uzun oturum kararlılığı doğrulanmadı.",
+        "Tam ışın izleme, dinamik gölgelendirici çağrılarında ve BVH hazırlığında hâlâ başarısız. Karakter kontrolü, sonraki ilerleme, grafik doğruluğu ve duyulan ses kalitesi doğrulanmadı."
       ],
-      "performance": "Otomatik kayıt bildirimi: medyan 18,45 FPS (17,5–19,1), 29,829 sn'de 30 okuma. Oynanış ölçümü değildir. Siyah ekranda kalan 18,8 FPS eski bir değerdir. 11 Ekim geliştirme sürümü; RTX 3070 Ti, 1920×1080 çıkış, Hız ön ayarı. Mevcut önbellekler korundu. İlk çalıştırma: otomatik Cross; ölçülen tekrar: yalnızca klavye.",
-      "imageAlt": "Koyu kırmızı arka planda beyaz simge ve Cross OK istemiyle Oxide Room 104 otomatik kayıt bildirimi",
+      "performance": "Ağır sahnenin tanılama örnekleri: kare başına yaklaşık 0,6–0,7 saniye; kontrollü oynanış ölçümü değil. RTX 3070 Ti, Vulkan, 1920×1080 çıkış; iç hedefler 3840×2160’a ulaşıyor. Yakalama ve derleme testin bazı bölümlerini etkiledi.",
+      "imageAlt": "GET UP ve Options istemleriyle OXIDE Room 104 logosu; dışa aktarılan son kare, karakter kontrolünün kanıtı değil"
     },
     "medieval-dynasty": {
       "status": "Ana menü · dikey olarak ters görüntü",
@@ -510,6 +510,11 @@ const tr: Content = {
     },
   },
   history: {
+    "oxide-room-104-raster-startup-20261029": {
+      "title": "Cross sonrası siyah ekran raster işleme ile aşıldı",
+      "summary": "PPSA07653 v01.000.000, 29 Ekim geliştirme derlemesi: çalıştırıcı sanal komut satırı dosyası üzerinden Unreal’ın -noraytracing yolunu seçiyor. Kurulu oyun dosyaları değişmiyor; normal başlatma yeniden üretilen grafik durmasını aşıyor. Karşılaştırma, hareketli girişe, altyazılara ve GET UP istemine ulaşıyor: kuyruk durması veya konuk hatası olmadan 2.600’den fazla kare. Tam ışın izleme, dinamik gölgelendirici çağrılarında ve BVH hazırlığında hâlâ başarısız. Karakter kontrolü, sonraki ilerleme, grafik doğruluğu ve duyulan ses kalitesi doğrulanmadı.",
+      "imageAlt": "GET UP ve Options istemleriyle OXIDE Room 104 logosu; dışa aktarılan son kare, karakter kontrolünün kanıtı değil"
+    },
     "quake2-d3d12-cubemaps-20261029": {
       title: "DirectX 12: doku dizileri, mip seviyeleri ve anizotropik filtreleme",
       summary: "Geliştirme derlemesi SCC üzerinden tepe noktası tanımlayıcılarının çözümlenmesini düzeltir; küp/2D dizileri, mip zincirleri, düz öznitelikler ve shader üzerinden anizotropik filtreleme ekler. 324 GPU testi, 44 D3D12 testi ve yerel GPU kontrolleri başarılı; bunlara mip zincirleri için 280 ve anizotropi için 128 tam kare karşılaştırması dahildir. Görüntü başlangıç uyarısını gösterir; otomatik oynanış demosu ve D3D12 oynanış FPS değeri henüz doğrulanmadı.",

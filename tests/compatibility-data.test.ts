@@ -114,7 +114,7 @@ describe("compatibility dataset", () => {
   it("attributes every measurement to the documented test host", () => {
     expect(compatibilityMeta.host).toBe("NVIDIA GeForce RTX 3070 Ti");
     expect(compatibilityMeta.testedOnRelease).toBe("0.3.2");
-    expect(compatibilityMeta.confirmedOn).toBe("2026-10-24");
+    expect(compatibilityMeta.confirmedOn).toBe("2026-10-29");
   });
 
   it("gives every entry a unique slug and a known tier", () => {
@@ -248,13 +248,14 @@ describe("test history", () => {
       ["police-simulator-career-20261012", null],
       ["monster-boy-gameplay-20261012", null],
       ["oxide-room-104-startup-20261011", null],
+      ["oxide-room-104-raster-startup-20261029", null],
       ["medieval-dynasty-startup-20261011", null],
       ["charons-staircase-startup-20261011", null],
       ["pac-man-world-re-pac-startup-20261011", null],
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(56);
+    expect(history.filter((run) => run.release === null)).toHaveLength(57);
   });
 
   it("references captures that exist in public/", () => {
