@@ -40,6 +40,15 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "quake2-d3d12-cubemaps-20261029",
+    graphicsApi: "d3d12",
+    slug: "quake-ii-2023",
+    date: "2026-10-29",
+    release: null,
+    image: "/images/quake-ii-d3d12-startup-2026-10-29.png",
+    source: `${DOC_BASE}/architecture/d3d12.md#quake-ii-resource-capture-and-cubemaps-october-29-2026`,
+  },
+  {
     id: "quake2-d3d12-mrt-20261029",
     graphicsApi: "d3d12",
     slug: "quake-ii-2023",

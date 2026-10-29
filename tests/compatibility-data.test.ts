@@ -204,6 +204,7 @@ describe("test history", () => {
       ["quake-playable", "v0.3.2"],
       ["quake2-d3d12-indirect-bias-20261029", null],
       ["quake2-d3d12-mrt-20261029", null],
+      ["quake2-d3d12-cubemaps-20261029", null],
       ["gta3-startup-reflections", null],
       ["bhh-menu-performance-20261010", null],
       ["dead-cells-ngs2-link", null],
@@ -253,7 +254,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(55);
+    expect(history.filter((run) => run.release === null)).toHaveLength(56);
   });
 
   it("references captures that exist in public/", () => {

@@ -510,6 +510,11 @@ const tr: Content = {
     },
   },
   history: {
+    "quake2-d3d12-cubemaps-20261029": {
+      title: "DirectX 12: doku dizileri, mip seviyeleri ve anizotropik filtreleme",
+      summary: "Geliştirme derlemesi SCC üzerinden tepe noktası tanımlayıcılarının çözümlenmesini düzeltir; küp/2D dizileri, mip zincirleri, düz öznitelikler ve shader üzerinden anizotropik filtreleme ekler. 324 GPU testi, 44 D3D12 testi ve yerel GPU kontrolleri başarılı; bunlara mip zincirleri için 280 ve anizotropi için 128 tam kare karşılaştırması dahildir. Görüntü başlangıç uyarısını gösterir; otomatik oynanış demosu ve D3D12 oynanış FPS değeri henüz doğrulanmadı.",
+      imageAlt: "Yerel DirectX 12 ile çizilen Quake II ışığa duyarlılık uyarısı; başlangıç görüntüsü, oynanış değil",
+    },
     "quake2-d3d12-mrt-20261029": {
       title: "DirectX 12: derinlik açma ve karma işleme hedefleri",
       summary: "Geliştirme derlemesi, boş dışa aktarımlı derinlik açma geçişini işler ve RGBA8 UNORM/SNORM ile RG16 float biçimlerinde sekize kadar eşzamanlı renk hedefini destekler. Bağımsız harmanlama ve derinlik/stencil değerlerinin yalnızca bir kez güncellenmesi dahil 41 D3D12 testi ve GPU testleri geçti. Quake II otomatik demosunun uçtan uca doğrulanması gerekiyor; D3D12 oynanış FPS değeri henüz belirlenmedi. Önceki oynanabilirlik sonuçları ve ekran görüntüleri Vulkan içindir.",

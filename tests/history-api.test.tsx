@@ -64,7 +64,7 @@ describe("graphics API history", () => {
 
   it("records APIs explicitly and preserves the known historical boundary", () => {
     expect(history.filter((run) => run.graphicsApi === "d3d12").map((run) => run.id)).toEqual([
-      "quake2-d3d12-mrt-20261029", "quake2-d3d12-indirect-bias-20261029",
+      "quake2-d3d12-cubemaps-20261029", "quake2-d3d12-mrt-20261029", "quake2-d3d12-indirect-bias-20261029",
     ]);
     expect(history.filter((run) => run.graphicsApi === null).map((run) => run.id)).toEqual([
       "propagation-bootstrap", "pistol-whip-modules",

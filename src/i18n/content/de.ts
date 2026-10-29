@@ -571,6 +571,11 @@ const de: Content = {
   },
 
   history: {
+    "quake2-d3d12-cubemaps-20261029": {
+      title: "DirectX 12: Texturarrays, Mip-Stufen und anisotrope Filterung",
+      summary: "Der Entwicklungsbuild korrigiert die SCC-basierte Wiederherstellung von Vertex-Deskriptoren und ergänzt Cube-/2D-Arrays, Mip-Ketten, flache Attribute und anisotrope Filterung im Shader. Alle 324 GPU-Tests, 44 D3D12-Tests und die nativen GPU-Prüfungen bestehen, darunter 280 vollständige Bildvergleiche für Mip-Ketten und 128 für Anisotropie. Die Aufnahme zeigt die Startwarnung; die automatische Gameplay-Demo und die Gameplay-FPS unter D3D12 sind noch nicht bestätigt.",
+      imageAlt: "Quake II: Lichtempfindlichkeitswarnung unter nativem DirectX 12; Startbild, kein Gameplay",
+    },
     "quake2-d3d12-mrt-20261029": {
       title: "DirectX 12: Tiefendekompression und gemischte Renderziele",
       summary: "Der Entwicklungsbuild verarbeitet den beobachteten Tiefendekompressionspass mit leerem Pixelausgang und unterstützt bis zu acht gleichzeitige Farbziele mit RGBA8 UNORM/SNORM und RG16 float. Alle 41 D3D12-Tests und GPU-Prüfungen bestehen, einschließlich unabhängigem Blending und einmaliger Tiefen-/Stencil-Aktualisierung. Die automatische Quake-II-Demo muss noch vollständig geprüft werden; Gameplay-FPS unter D3D12 sind nicht belegt. Bisherige Spielbarkeitsangaben und Screenshots beziehen sich auf Vulkan.",
