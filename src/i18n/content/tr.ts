@@ -510,6 +510,10 @@ const tr: Content = {
     },
   },
   history: {
+    "quake2-d3d12-mrt-20261029": {
+      title: "DirectX 12: derinlik açma ve karma işleme hedefleri",
+      summary: "Geliştirme derlemesi, boş dışa aktarımlı derinlik açma geçişini işler ve RGBA8 UNORM/SNORM ile RG16 float biçimlerinde sekize kadar eşzamanlı renk hedefini destekler. Bağımsız harmanlama ve derinlik/stencil değerlerinin yalnızca bir kez güncellenmesi dahil 41 D3D12 testi ve GPU testleri geçti. Quake II otomatik demosunun uçtan uca doğrulanması gerekiyor; D3D12 oynanış FPS değeri henüz belirlenmedi. Önceki oynanabilirlik sonuçları ve ekran görüntüleri Vulkan içindir.",
+    },
     "quake2-d3d12-indirect-bias-20261029": {
       title: "DirectX 12: dolaylı çizimler ve gölge derinlik ofseti",
       summary: "29 Ekim geliştirme derlemesi, Quake II için sayaçlı dolaylı çizimleri ve kesirli gölge derinlik ofsetini uygular. 39 D3D12 birim testinin ve tüm GPU testlerinin tamamı geçiyor. Oyun artık derinlik açma aşamasında MissingAttachment hatasına ulaşıyor. DirectX 12 üzerinde menü, otomatik oynanış demosu ve FPS henüz doğrulanmadı. Önceki oynanabilirlik sonuçları ve ekran görüntüleri Vulkan'a aittir.",

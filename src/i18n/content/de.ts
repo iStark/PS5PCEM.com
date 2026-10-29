@@ -571,6 +571,10 @@ const de: Content = {
   },
 
   history: {
+    "quake2-d3d12-mrt-20261029": {
+      title: "DirectX 12: Tiefendekompression und gemischte Renderziele",
+      summary: "Der Entwicklungsbuild verarbeitet den beobachteten Tiefendekompressionspass mit leerem Pixelausgang und unterstützt bis zu acht gleichzeitige Farbziele mit RGBA8 UNORM/SNORM und RG16 float. Alle 41 D3D12-Tests und GPU-Prüfungen bestehen, einschließlich unabhängigem Blending und einmaliger Tiefen-/Stencil-Aktualisierung. Die automatische Quake-II-Demo muss noch vollständig geprüft werden; Gameplay-FPS unter D3D12 sind nicht belegt. Bisherige Spielbarkeitsangaben und Screenshots beziehen sich auf Vulkan.",
+    },
     "quake2-d3d12-indirect-bias-20261029": {
       title: "DirectX 12: indirekte Zeichenbefehle und Schatten-Depth-Bias",
       summary: "Der Entwicklungsbuild vom 29. Oktober unterstützt gezählte indirekte Zeichenbefehle und gebrochenen Depth Bias für Quake II. Alle 39 D3D12-Unit-Tests und die vollständigen GPU-Prüfungen bestehen. Der Spieltest erreicht nun MissingAttachment bei der Tiefendekomprimierung. Menü, automatische Spielsequenz und FPS sind unter DirectX 12 noch nicht bestätigt. Bisherige Spielbarkeitsangaben und Screenshots gelten für Vulkan.",

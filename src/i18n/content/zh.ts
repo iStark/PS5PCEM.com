@@ -552,6 +552,10 @@ const zh: Content = {
   },
 
   history: {
+    "quake2-d3d12-mrt-20261029": {
+      title: "DirectX 12：深度解压与混合渲染目标",
+      summary: "开发版本可处理已观察到的空导出深度解压通道，并支持最多八个同时写入的颜色目标，可混用 RGBA8 UNORM/SNORM 和 RG16 float 格式。全部 41 项 D3D12 单元测试及 GPU 检查通过，包括独立混合以及深度/模板仅更新一次。Quake II 的自动演示仍需端到端验证，尚未确认 D3D12 实际游戏帧率。现有可玩性结论和截图均对应 Vulkan。",
+    },
     "quake2-d3d12-indirect-bias-20261029": {
       title: "DirectX 12：实现间接绘制与阴影深度偏移",
       summary: "10 月 29 日的开发版本为 Quake II 实现了带计数缓冲区的间接绘制和非整数阴影深度偏移。39 项 D3D12 单元测试及全部 GPU 测试均通过。实机运行现在推进至深度解压阶段的 MissingAttachment 错误。DirectX 12 下的菜单、自动游戏演示和 FPS 尚未验证。现有可玩性结论及截图均基于 Vulkan。",

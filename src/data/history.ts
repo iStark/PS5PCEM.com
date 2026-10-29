@@ -30,6 +30,8 @@ export type HistoryEntry = {
   recordedAt?: string;
   /** Release associated with the run date, or null for a development build. */
   release: string | null;
+  /** API used by this run; null means rendering was not established. */
+  graphicsApi: "vulkan" | "d3d12" | null;
   /** Capture under /public/images, when the report published one. */
   image?: string;
   /** The report or release notes backing the entry. */
@@ -38,7 +40,16 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "quake2-d3d12-mrt-20261029",
+    graphicsApi: "d3d12",
+    slug: "quake-ii-2023",
+    date: "2026-10-29",
+    release: null,
+    source: `${DOC_BASE}/architecture/d3d12.md#quake-ii-depth-decompression-and-mrt-october-29-2026`,
+  },
+  {
     id: "quake2-d3d12-indirect-bias-20261029",
+    graphicsApi: "d3d12",
     slug: "quake-ii-2023",
     date: "2026-10-29",
     release: null,
@@ -46,6 +57,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-rgb-mask-performance-20261024",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-24",
     recordedAt: "2026-10-24T14:31:00+03:00",
@@ -54,6 +66,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-texture-min-lod-20261024",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-24",
     recordedAt: "2026-10-24T13:30:36+03:00",
@@ -63,6 +76,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-compute-loops-20261024",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-24",
     recordedAt: "2026-10-24T12:50:00+03:00",
@@ -72,6 +86,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-graphics-20261024",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-24",
     recordedAt: "2026-10-24T02:33:50+03:00",
@@ -81,6 +96,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "severed-steel-exposure-20261021",
+    graphicsApi: "vulkan",
     slug: "severed-steel",
     date: "2026-10-21",
     release: null,
@@ -89,6 +105,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "severed-steel-gameplay-20261021",
+    graphicsApi: "vulkan",
     slug: "severed-steel",
     date: "2026-10-21",
     release: null,
@@ -97,6 +114,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "severed-steel-menu-20261020",
+    graphicsApi: "vulkan",
     slug: "severed-steel",
     date: "2026-10-20",
     release: null,
@@ -105,6 +123,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "raiden-iv-audio-rendering-20261017",
+    graphicsApi: "vulkan",
     slug: "raiden-iv-mikado-remix",
     date: "2026-10-17",
     release: null,
@@ -114,6 +133,7 @@ export const history: HistoryEntry[] = [
   {
     id: "astro-bot-storage-readbacks-20261016",
     recordedAt: "2026-10-16T18:30:29+00:00",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-16",
     release: null,
@@ -123,6 +143,7 @@ export const history: HistoryEntry[] = [
   {
     id: "astro-bot-resource-walks-20261016",
     recordedAt: "2026-10-16T02:13:49+00:00",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-16",
     release: null,
@@ -132,6 +153,7 @@ export const history: HistoryEntry[] = [
   {
     id: "astro-bot-resource-costs-20261015",
     recordedAt: "2026-10-15T14:25:36+00:00",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-15",
     release: null,
@@ -141,6 +163,7 @@ export const history: HistoryEntry[] = [
   {
     id: "astro-bot-uniform-scan-20261015",
     recordedAt: "2026-10-14T21:37:36+00:00",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-15",
     release: null,
@@ -150,6 +173,7 @@ export const history: HistoryEntry[] = [
   {
     id: "astro-bot-entry-scalars-20261015",
     recordedAt: "2026-10-14T21:14:39+00:00",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-15",
     release: null,
@@ -158,6 +182,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-descriptor-semantics-20261014",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-14",
     release: null,
@@ -166,6 +191,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-draw-capture-20261014",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-14",
     release: null,
@@ -174,6 +200,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-storage-layouts-20261014",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-14",
     release: null,
@@ -182,6 +209,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-static-analysis-20261014",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-14",
     release: null,
@@ -190,6 +218,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-scalar-merges-20261014",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-14",
     release: null,
@@ -198,6 +227,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-bounded-recording-20261014",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-14",
     release: null,
@@ -206,6 +236,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-scalar-checkpoints-20261014",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-14",
     release: null,
@@ -213,6 +244,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-cpu-baselines-20261014",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-14",
     release: null,
@@ -220,6 +252,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-relative-moves-20261014",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-14",
     release: null,
@@ -227,6 +260,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-full-stores-20261014",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-14",
     release: null,
@@ -234,6 +268,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-native-layouts-20261014",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-14",
     release: null,
@@ -241,6 +276,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-gds-publication-20261014",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-14",
     release: null,
@@ -248,6 +284,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-performance-20261014",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-14",
     release: null,
@@ -255,6 +292,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-lighting-20261013",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-13",
     release: null,
@@ -263,6 +301,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "astro-bot-startup-20261013",
+    graphicsApi: "vulkan",
     slug: "astro-bot",
     date: "2026-10-13",
     release: null,
@@ -271,6 +310,7 @@ export const history: HistoryEntry[] = [
   },
   {
     "id": "yotei-renderer-followup-20261013",
+    graphicsApi: "vulkan",
     "slug": "ghost-of-yotei",
     "date": "2026-10-13",
     "release": null,
@@ -278,6 +318,7 @@ export const history: HistoryEntry[] = [
   },
   {
     "id": "goat-simulator-3-gameplay-20261013",
+    graphicsApi: "vulkan",
     "slug": "goat-simulator-3",
     "date": "2026-10-13",
     "recordedAt": "2026-10-13T01:32:26+03:00",
@@ -287,6 +328,7 @@ export const history: HistoryEntry[] = [
   },
   {
     "id": "minecraft-legends-gameplay-20261013",
+    graphicsApi: "vulkan",
     "slug": "minecraft-legends",
     "date": "2026-10-13",
     "recordedAt": "2026-10-13T00:17:25+03:00",
@@ -296,6 +338,7 @@ export const history: HistoryEntry[] = [
   },
   {
     "id": "police-simulator-career-20261012",
+    graphicsApi: "vulkan",
     "slug": "police-simulator-patrol-officers",
     "date": "2026-10-12",
     "recordedAt": "2026-10-12T00:55:22+03:00",
@@ -305,6 +348,7 @@ export const history: HistoryEntry[] = [
   },
   {
     "id": "monster-boy-gameplay-20261012",
+    graphicsApi: "vulkan",
     "slug": "monster-boy-and-the-cursed-kingdom",
     "date": "2026-10-12",
     "recordedAt": "2026-10-12T00:43:57+03:00",
@@ -314,6 +358,7 @@ export const history: HistoryEntry[] = [
   },
   {
     "id": "oxide-room-104-startup-20261011",
+    graphicsApi: "vulkan",
     "slug": "oxide-room-104",
     "date": "2026-10-11",
     "release": null,
@@ -322,6 +367,7 @@ export const history: HistoryEntry[] = [
   },
   {
     "id": "medieval-dynasty-startup-20261011",
+    graphicsApi: "vulkan",
     "slug": "medieval-dynasty",
     "date": "2026-10-11",
     "release": null,
@@ -330,6 +376,7 @@ export const history: HistoryEntry[] = [
   },
   {
     "id": "charons-staircase-startup-20261011",
+    graphicsApi: "vulkan",
     "slug": "charons-staircase",
     "date": "2026-10-11",
     "release": null,
@@ -338,6 +385,7 @@ export const history: HistoryEntry[] = [
   },
   {
     "id": "pac-man-world-re-pac-startup-20261011",
+    graphicsApi: "vulkan",
     "slug": "pac-man-world-re-pac",
     "date": "2026-10-11",
     "release": null,
@@ -346,6 +394,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "keywe-pthread-audio3d",
+    graphicsApi: "vulkan",
     slug: "keywe",
     date: "2026-10-11",
     release: null,
@@ -354,6 +403,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "super-woden-gp-pthread-cleanup",
+    graphicsApi: "vulkan",
     slug: "super-woden-gp",
     date: "2026-10-11",
     release: null,
@@ -362,6 +412,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "arcade-spirits-pthread-semaphores",
+    graphicsApi: "vulkan",
     slug: "arcade-spirits-the-new-challengers",
     date: "2026-10-11",
     release: null,
@@ -370,6 +421,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "arkanoid-fiber-startup",
+    graphicsApi: "vulkan",
     slug: "arkanoid-eternal-battle",
     date: "2026-10-11",
     release: null,
@@ -378,6 +430,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "raiden-iv-startup-depth",
+    graphicsApi: "vulkan",
     slug: "raiden-iv-mikado-remix",
     date: "2026-10-11",
     release: null,
@@ -386,6 +439,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "dead-cells-level-menu-audio",
+    graphicsApi: "vulkan",
     slug: "dead-cells",
     date: "2026-10-11",
     release: null,
@@ -394,6 +448,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "dead-cells-ngs2-link",
+    graphicsApi: "vulkan",
     slug: "dead-cells",
     date: "2026-10-11",
     release: null,
@@ -402,6 +457,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "gta3-startup-reflections",
+    graphicsApi: "vulkan",
     slug: "gta-iii-definitive-edition",
     date: "2026-10-10",
     release: null,
@@ -410,6 +466,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "sarah-bounded-vertex-uploads",
+    graphicsApi: "vulkan",
     slug: "dreaming-sarah",
     date: "2026-10-10",
     recordedAt: "2026-10-10T10:35:50Z",
@@ -419,6 +476,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-acm-convolution",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-10-10",
     recordedAt: "2026-10-09T22:38:00Z",
@@ -428,6 +486,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "asterix-msaa-depth-passes",
+    graphicsApi: "vulkan",
     slug: "asterix-obelix-slap-them-all",
     date: "2026-10-09",
     release: null,
@@ -436,6 +495,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "quake2-raw-pcm-audio",
+    graphicsApi: "vulkan",
     slug: "quake-ii-2023",
     date: "2026-10-09",
     release: null,
@@ -444,6 +504,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-audio-clock",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-10-09",
     release: null,
@@ -452,6 +513,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "asterix-watched-video-buffers",
+    graphicsApi: "vulkan",
     slug: "asterix-obelix-slap-them-all",
     date: "2026-10-09",
     release: null,
@@ -460,6 +522,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "jets-independent-audio-streams",
+    graphicsApi: "vulkan",
     slug: "jets-n-guns-2",
     date: "2026-10-09",
     release: null,
@@ -468,6 +531,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "jurassic-font-atlas-startup",
+    graphicsApi: "vulkan",
     slug: "jurassic-park-classic-games-collection",
     date: "2026-10-08",
     release: "v0.3.4",
@@ -477,6 +541,7 @@ export const history: HistoryEntry[] = [
   {
     id: "yotei-cache-memory",
     date: "2026-10-05",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     release: "v0.3.3",
     image: "/images/yotei-color-routing-post-tree-2026-10-05.png",
@@ -485,6 +550,7 @@ export const history: HistoryEntry[] = [
   {
     id: "yotei-color-export-routing",
     date: "2026-10-05",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     release: "v0.3.3",
     source: devReport("yotei-color-export-routing-2026-10-05.md"),
@@ -493,6 +559,7 @@ export const history: HistoryEntry[] = [
     id: "yotei-runtime-image-tables",
     image: "/images/yotei-runtime-texture-tree-2026-10-05.png",
     date: "2026-10-05",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     release: "v0.3.3",
     source: devReport("yotei-runtime-image-tables-2026-10-05.md"),
@@ -500,6 +567,7 @@ export const history: HistoryEntry[] = [
   {
     id: "yotei-selected-flat-reads",
     date: "2026-10-04",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     release: "v0.3.3",
     image: "/images/yotei-selected-flat-tree-2026-10-04.png",
@@ -508,6 +576,7 @@ export const history: HistoryEntry[] = [
   {
     id: "yotei-compiler-memory-audit",
     date: "2026-10-04",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     release: "v0.3.3",
     source: devReport("yotei-array-layers-2026-10-04.md"),
@@ -515,6 +584,7 @@ export const history: HistoryEntry[] = [
   {
     id: "yotei-compact-shader-analysis",
     date: "2026-10-04",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     release: "v0.3.3",
     source: devReport("yotei-array-layers-2026-10-04.md"),
@@ -522,6 +592,7 @@ export const history: HistoryEntry[] = [
   {
     id: "yotei-sparse-regions-repeat",
     date: "2026-10-04",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     release: "v0.3.3",
     image: "/images/yotei-sparse-post-tree-2026-10-04.png",
@@ -530,6 +601,7 @@ export const history: HistoryEntry[] = [
   {
     id: "yotei-sparse-material-regions",
     date: "2026-10-04",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     release: "v0.3.3",
     source: devReport("yotei-array-layers-2026-10-04.md"),
@@ -537,6 +609,7 @@ export const history: HistoryEntry[] = [
   {
     id: "yotei-integer-material-flat-reads",
     date: "2026-10-04",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     release: "v0.3.3",
     source: devReport("yotei-array-layers-2026-10-04.md"),
@@ -544,6 +617,7 @@ export const history: HistoryEntry[] = [
   {
     id: "yotei-checked-material-samplers",
     date: "2026-10-04",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     release: "v0.3.3",
     image: "/images/yotei-material-pointer-post-tree-2026-10-04.png",
@@ -551,6 +625,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "yotei-material-pointer-checks",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     date: "2026-10-04",
     release: "v0.3.3",
@@ -559,6 +634,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "yotei-color-content-generations",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     date: "2026-10-04",
     release: "v0.3.3",
@@ -567,6 +643,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "yotei-color-transfer-memory",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     date: "2026-10-04",
     release: "v0.3.3",
@@ -575,6 +652,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "yotei-illustrated-movie-compilation",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     date: "2026-10-04",
     release: "v0.3.3",
@@ -583,6 +661,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "yotei-post-tree-texture-reuse",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     date: "2026-10-04",
     release: "v0.3.3",
@@ -591,6 +670,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "yotei-array-layer-coherence",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     date: "2026-10-04",
     release: "v0.3.3",
@@ -599,6 +679,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "yotei-candidate-visual-check",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     date: "2026-10-03",
     release: "v0.3.3",
@@ -607,6 +688,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "yotei-post-tree-dynamic-state",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     date: "2026-10-03",
     release: "v0.3.3",
@@ -615,6 +697,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "little-nightmares-saves-performance",
+    graphicsApi: "vulkan",
     slug: "little-nightmares-enhanced-edition",
     date: "2026-10-03",
     release: "v0.3.3",
@@ -623,6 +706,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "little-nightmares-gameplay",
+    graphicsApi: "vulkan",
     slug: "little-nightmares-enhanced-edition",
     date: "2026-10-03",
     release: "v0.3.3",
@@ -631,6 +715,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "little-nightmares-startup",
+    graphicsApi: "vulkan",
     slug: "little-nightmares-enhanced-edition",
     date: "2026-10-03",
     release: "v0.3.3",
@@ -639,6 +724,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-performance-repeat-2",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-10-03",
     release: "v0.3.3",
@@ -647,6 +733,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-performance-repeat",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-10-03",
     release: "v0.3.3",
@@ -655,6 +742,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "gta3-renderer-performance",
+    graphicsApi: "vulkan",
     slug: "gta-iii-definitive-edition",
     date: "2026-10-03",
     release: "v0.3.3",
@@ -663,6 +751,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "gta3-ngg-gameplay",
+    graphicsApi: "vulkan",
     slug: "gta-iii-definitive-edition",
     date: "2026-10-02",
     release: "v0.3.3",
@@ -671,6 +760,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "gta3-ampr-startup",
+    graphicsApi: "vulkan",
     slug: "gta-iii-definitive-edition",
     date: "2026-10-02",
     release: "v0.3.3",
@@ -679,6 +769,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "gta3-pkg-extraction",
+    graphicsApi: "vulkan",
     slug: "gta-iii-definitive-edition",
     date: "2026-10-02",
     release: "v0.3.3",
@@ -687,6 +778,7 @@ export const history: HistoryEntry[] = [
   // Subnautica: Below Zero — PPSA02457 v1.022.125
   {
     id: "subnautica-windows-stack",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-10-02",
     release: "v0.3.3",
@@ -695,6 +787,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-resource-scratch",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-10-02",
     release: "v0.3.3",
@@ -703,6 +796,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-descriptor-unmap",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-10-02",
     release: "v0.3.3",
@@ -711,6 +805,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-read-lease",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-10-02",
     release: "v0.3.3",
@@ -719,6 +814,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-overlap-world",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-10-02",
     release: "v0.3.3",
@@ -727,6 +823,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-save-recovery",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-10-02",
     release: "v0.3.3",
@@ -735,6 +832,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-save-metadata",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-10-02",
     release: "v0.3.3",
@@ -742,6 +840,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-vector-walk",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-10-02",
     release: "v0.3.3",
@@ -750,6 +849,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-srgb-spans",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-10-01",
     release: "v0.3.3",
@@ -758,6 +858,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-mip-coherence",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-10-01",
     release: "v0.3.3",
@@ -766,6 +867,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-colour-mips",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-10-01",
     release: "v0.3.3",
@@ -773,6 +875,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-lighting-baseline",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-10-01",
     release: "v0.3.3",
@@ -780,6 +883,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-startup",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-09-26",
     release: "v0.3.3",
@@ -787,6 +891,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-menu-missing",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-09-26",
     release: "v0.3.3",
@@ -795,6 +900,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-native-1080p",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-09-27",
     release: "v0.3.3",
@@ -803,6 +909,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-menu-performance",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-09-28",
     release: "v0.3.3",
@@ -811,6 +918,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "subnautica-new-game",
+    graphicsApi: "vulkan",
     slug: "subnautica-below-zero",
     date: "2026-10-01",
     release: "v0.3.3",
@@ -821,6 +929,7 @@ export const history: HistoryEntry[] = [
   // Ghost of Yōtei
   {
     id: "yotei-intro-video",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     date: "2026-09-04",
     release: "v0.3.0-alpha.3",
@@ -829,6 +938,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "yotei-bonus-notices",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     date: "2026-09-08",
     release: "v0.3.0-alpha.4",
@@ -837,6 +947,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "yotei-difficulty",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     date: "2026-09-15",
     release: "v0.3.1-beta.1",
@@ -845,6 +956,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "yotei-tree-scene",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     date: "2026-09-24",
     release: "v0.3.2",
@@ -853,6 +965,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "yotei-command-writes",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     date: "2026-09-30",
     release: "v0.3.3",
@@ -861,6 +974,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "yotei-null-images",
+    graphicsApi: "vulkan",
     slug: "ghost-of-yotei",
     date: "2026-10-01",
     release: "v0.3.3",
@@ -871,6 +985,7 @@ export const history: HistoryEntry[] = [
   // Big Helmet Heroes
   {
     id: "bhh-menu-performance-20261010",
+    graphicsApi: "vulkan",
     slug: "big-helmet-heroes",
     date: "2026-10-10",
     release: null,
@@ -879,6 +994,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "bhh-startup",
+    graphicsApi: "vulkan",
     slug: "big-helmet-heroes",
     date: "2026-09-28",
     release: "v0.3.3",
@@ -887,6 +1003,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "bhh-menu",
+    graphicsApi: "vulkan",
     slug: "big-helmet-heroes",
     date: "2026-09-28",
     release: "v0.3.3",
@@ -895,6 +1012,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "bhh-copies",
+    graphicsApi: "vulkan",
     slug: "big-helmet-heroes",
     date: "2026-09-29",
     release: "v0.3.3",
@@ -903,6 +1021,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "bhh-scalar-history",
+    graphicsApi: "vulkan",
     slug: "big-helmet-heroes",
     date: "2026-09-29",
     release: "v0.3.3",
@@ -913,6 +1032,7 @@ export const history: HistoryEntry[] = [
   // Quake II (2023)
   {
     id: "quake-playable",
+    graphicsApi: "vulkan",
     slug: "quake-ii-2023",
     date: "2026-09-16",
     release: "v0.3.2",
@@ -921,6 +1041,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "quake-rendering",
+    graphicsApi: "vulkan",
     slug: "quake-ii-2023",
     date: "2026-09-25",
     release: "v0.3.3",
@@ -931,6 +1052,7 @@ export const history: HistoryEntry[] = [
   // Tetris Effect: Connected
   {
     id: "tetris-first-render",
+    graphicsApi: "vulkan",
     slug: "tetris-effect-connected",
     date: "2026-09-15",
     release: "v0.3.1-beta.1",
@@ -939,6 +1061,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "tetris-license-journey",
+    graphicsApi: "vulkan",
     slug: "tetris-effect-connected",
     date: "2026-09-24",
     release: "v0.3.2",
@@ -948,6 +1071,7 @@ export const history: HistoryEntry[] = [
   // Mighty Morphin Power Rangers: Rita's Rewind
   {
     id: "rita-intro-menu",
+    graphicsApi: "vulkan",
     slug: "ritas-rewind",
     date: "2026-09-15",
     release: "v0.3.1-beta.1",
@@ -956,6 +1080,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "rita-playable",
+    graphicsApi: "vulkan",
     slug: "ritas-rewind",
     date: "2026-09-24",
     release: "v0.3.2",
@@ -966,6 +1091,7 @@ export const history: HistoryEntry[] = [
   // Jets 'n' Guns 2
   {
     id: "jets-tutorial",
+    graphicsApi: "vulkan",
     slug: "jets-n-guns-2",
     date: "2026-09-15",
     release: "v0.3.1-beta.1",
@@ -974,6 +1100,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "jets-playable",
+    graphicsApi: "vulkan",
     slug: "jets-n-guns-2",
     date: "2026-09-15",
     release: "v0.3.1-beta.1",
@@ -981,6 +1108,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "jets-audio",
+    graphicsApi: "vulkan",
     slug: "jets-n-guns-2",
     date: "2026-09-24",
     release: "v0.3.2",
@@ -990,6 +1118,7 @@ export const history: HistoryEntry[] = [
   // Cat Quest III
   {
     id: "cat-quest-render-fixes",
+    graphicsApi: "vulkan",
     slug: "cat-quest-iii",
     date: "2026-09-08",
     release: "v0.3.0-alpha.4",
@@ -998,6 +1127,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "cat-quest-playable",
+    graphicsApi: "vulkan",
     slug: "cat-quest-iii",
     date: "2026-09-08",
     release: "v0.3.0-alpha.4",
@@ -1008,6 +1138,7 @@ export const history: HistoryEntry[] = [
   // Single-run histories
   {
     id: "precinct-title-menu",
+    graphicsApi: "vulkan",
     slug: "the-precinct",
     date: "2026-09-15",
     release: "v0.3.1-beta.1",
@@ -1015,6 +1146,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "sarah-playable",
+    graphicsApi: "vulkan",
     slug: "dreaming-sarah",
     date: "2026-09-15",
     release: "v0.3.1-beta.1",
@@ -1023,6 +1155,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "terminator-playable",
+    graphicsApi: "vulkan",
     slug: "terminator-2d-no-fate",
     date: "2026-09-08",
     release: "v0.3.0-alpha.4",
@@ -1031,6 +1164,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "asterix-playable",
+    graphicsApi: "vulkan",
     slug: "asterix-obelix-slap-them-all",
     date: "2026-09-08",
     release: "v0.3.0-alpha.4",
@@ -1039,6 +1173,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "jurassic-playable",
+    graphicsApi: "vulkan",
     slug: "jurassic-park-classic-games-collection",
     date: "2026-09-08",
     release: "v0.3.0-alpha.4",
@@ -1047,6 +1182,7 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "reanimal-title-menu",
+    graphicsApi: "vulkan",
     slug: "reanimal",
     date: "2026-09-15",
     release: "v0.3.1-beta.1",
@@ -1054,12 +1190,14 @@ export const history: HistoryEntry[] = [
   },
   {
     id: "propagation-bootstrap",
+    graphicsApi: null,
     slug: "propagation-paradise-hotel",
     date: "2026-09-15",
     release: "v0.3.1-beta.1",
   },
   {
     id: "pistol-whip-modules",
+    graphicsApi: null,
     slug: "pistol-whip",
     date: "2026-09-15",
     release: "v0.3.1-beta.1",

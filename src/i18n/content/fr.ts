@@ -571,6 +571,10 @@ const fr: Content = {
   },
 
   history: {
+    "quake2-d3d12-mrt-20261029": {
+      title: "DirectX 12 : décompression de profondeur et cibles mixtes",
+      summary: "La version de développement traite la passe observée de décompression de profondeur avec export nul et prend en charge jusqu’à huit cibles de couleur simultanées en RGBA8 UNORM/SNORM et RG16 float. Les 41 tests D3D12 et les vérifications GPU réussissent, notamment le mélange indépendant et la mise à jour unique de profondeur/stencil. La démo automatique de Quake II reste à vérifier de bout en bout ; aucun FPS en jeu sous D3D12 n’est établi. Les anciens résultats de jouabilité et captures concernent Vulkan.",
+    },
     "quake2-d3d12-indirect-bias-20261029": {
       title: "DirectX 12 : rendu indirect et biais de profondeur des ombres",
       summary: "La version en développement du 29 octobre prend en charge les commandes de rendu indirect avec compteur et le biais fractionnaire de profondeur des ombres de Quake II. Les 39 tests unitaires D3D12 et tous les tests GPU réussissent. Le jeu atteint désormais MissingAttachment lors de la décompression de profondeur. Le menu, la démonstration automatique et les FPS restent non vérifiés sous DirectX 12. Les résultats jouables et captures précédents concernent Vulkan.",

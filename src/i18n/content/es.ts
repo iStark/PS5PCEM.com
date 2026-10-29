@@ -571,6 +571,10 @@ const es: Content = {
   },
 
   history: {
+    "quake2-d3d12-mrt-20261029": {
+      title: "DirectX 12: descompresión de profundidad y destinos mixtos",
+      summary: "La compilación en desarrollo procesa el pase observado de descompresión de profundidad con exportación nula y admite hasta ocho destinos de color simultáneos con RGBA8 UNORM/SNORM y RG16 float. Pasan las 41 pruebas de D3D12 y las pruebas de GPU, incluidas la mezcla independiente y una sola actualización de profundidad/stencil. La demo automática de Quake II aún requiere verificación completa; no hay FPS de juego confirmados en D3D12. Los resultados de jugabilidad y las capturas anteriores corresponden a Vulkan.",
+    },
     "quake2-d3d12-indirect-bias-20261029": {
       title: "DirectX 12: dibujo indirecto y sesgo de profundidad de sombras",
       summary: "La compilación en desarrollo del 29 de octubre incorpora dibujo indirecto con contador y sesgo fraccionario de profundidad de sombras para Quake II. Pasan las 39 pruebas unitarias de D3D12 y todas las pruebas de GPU. La ejecución llega ahora a MissingAttachment al descomprimir la profundidad. El menú, la demostración automática y los FPS en DirectX 12 siguen sin verificarse. Los resultados jugables y las capturas anteriores corresponden a Vulkan.",

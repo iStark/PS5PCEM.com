@@ -13,6 +13,8 @@ import {
 import { getDictionary, getHistoryContent } from "@/i18n";
 import { formatDate } from "@/lib/format";
 import { formatHistoryBuild } from "@/lib/history-build";
+import { GraphicsApiBadge } from "@/components/GraphicsApiBadge";
+import { historyApiCopy } from "@/i18n/history-api";
 import { buildRows } from "@/lib/rows";
 import { ButtonLink, SectionHeading, TierBadge } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
@@ -106,6 +108,7 @@ export default async function MediaPage({ params }: PageProps) {
             className="w-full border-b border-ink-700 object-cover"
           />
           <figcaption className="p-6">
+            <GraphicsApiBadge api={hero.graphicsApi} unknownLabel={historyApiCopy[locale].unknown} />
             <p className="text-xs text-ink-400">
               {formatDate(hero.date, locale)}
               {` · ${formatHistoryBuild(hero, locale)}`}
@@ -150,6 +153,7 @@ export default async function MediaPage({ params }: PageProps) {
                   className="aspect-video w-full border-b border-ink-700 object-cover"
                 />
                 <figcaption className="p-5">
+                  <GraphicsApiBadge api={run.graphicsApi} unknownLabel={historyApiCopy[locale].unknown} />
                   <p className="text-xs text-ink-400">
                     {formatDate(run.date, locale)}
                     {` · ${formatHistoryBuild(run, locale)}`}

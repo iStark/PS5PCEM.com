@@ -28,6 +28,9 @@ import {
   TierBadge,
 } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
+import { RunHistoryFilter } from "@/components/RunHistoryFilter";
+import { GraphicsApiBadge } from "@/components/GraphicsApiBadge";
+import { historyApiCopy } from "@/i18n/history-api";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, gameReportSchema } from "@/lib/schema";
 
@@ -94,6 +97,10 @@ export default async function GamePage({ params }: PageProps) {
   const content = getGameContent(locale, slug);
   const runs = historyFor(slug);
   const captures = runs.filter((run) => run.image);
+  // The lead capture/status must not inherit a newer experimental API run's
+  // build label. Keep that result tied to its own report.
+  const overviewRun = runs.find((run) => entry.image && run.image === entry.image)
+    ?? runs.find((run) => run.graphicsApi === "vulkan") ?? runs[0];
   const others = sortedCompatibility()
     .filter((candidate) => candidate.slug !== slug)
     .slice(0, 4);
@@ -147,6 +154,7 @@ export default async function GamePage({ params }: PageProps) {
         <div>
           <div className="flex flex-wrap items-center gap-3">
             <TierBadge tier={entry.tier} locale={locale} />
+            {overviewRun ? <GraphicsApiBadge api={overviewRun.graphicsApi} unknownLabel={historyApiCopy[locale].unknown} /> : null}
             <span className="text-xs uppercase tracking-widest text-ink-400">
               {t.tiers[entry.tier].label}
             </span>
@@ -168,8 +176,8 @@ export default async function GamePage({ params }: PageProps) {
             <MetaItem
               label={t.game.buildLabel}
               value={
-                runs.length > 0
-                  ? formatHistoryBuild(runs[0], locale)
+                overviewRun
+                  ? formatHistoryBuild(overviewRun, locale)
                   : compatibilityMeta.testedOnRelease
               }
             />
@@ -253,10 +261,9 @@ export default async function GamePage({ params }: PageProps) {
             {t.game.historyEmpty}
           </p>
         ) : (
-          <ol className="mt-10 space-y-6">
-            {runs.map((run) => {
+          <RunHistoryFilter labels={historyApiCopy[locale]} runs={runs.map((run) => {
               const text = getHistoryContent(locale, run.id);
-              return (
+              return { id: run.id, api: run.graphicsApi, content: (
                 <li key={run.id} className="relative ps-6">
                   <span
                     aria-hidden
@@ -297,6 +304,7 @@ export default async function GamePage({ params }: PageProps) {
                           >
                             {formatHistoryBuild(run, locale)}
                           </span>
+                          <GraphicsApiBadge api={run.graphicsApi} unknownLabel={historyApiCopy[locale].unknown} />
                         </div>
 
                         <h3 className="mt-2.5 text-base font-semibold text-ink-100">
@@ -320,9 +328,8 @@ export default async function GamePage({ params }: PageProps) {
                     </div>
                   </article>
                 </li>
-              );
-            })}
-          </ol>
+              ) };
+            })} />
         )}
       </section>
 
@@ -347,6 +354,7 @@ export default async function GamePage({ params }: PageProps) {
                     className="aspect-video w-full border-b border-ink-700 object-cover"
                   />
                   <figcaption className="p-5">
+                    <GraphicsApiBadge api={run.graphicsApi} unknownLabel={historyApiCopy[locale].unknown} />
                     <p className="text-sm font-semibold text-ink-100">
                       {text?.title}
                     </p>

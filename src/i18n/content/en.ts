@@ -597,6 +597,10 @@ const content: Content = {
   },
 
   history: {
+    "quake2-d3d12-mrt-20261029": {
+      title: "DirectX 12: depth decompression and mixed render targets",
+      summary: "The development build accepts the observed null-export depth-decompression pass and adds up to eight simultaneous color targets, with mixed RGBA8 UNORM/SNORM and RG16 float formats. All 41 D3D12 unit tests and the GPU probe suite pass, including independent blending and exactly-once depth/stencil updates. The automatic Quake II demo still requires end-to-end verification; no D3D12 gameplay FPS is established. Existing playable results and screenshots refer to Vulkan.",
+    },
     "quake2-d3d12-indirect-bias-20261029": {
       title: "DirectX 12: indirect draws and shadow bias implemented",
       summary: "The October 29 development build implements counted indirect draws and fractional shadow-depth bias for Quake II. All 39 D3D12 unit tests and the full GPU probe suite pass. The live run advances to MissingAttachment during depth decompression. Menu rendering, the automatic gameplay demo and FPS remain unverified on DirectX 12. Existing playable results and screenshots refer to Vulkan.",
