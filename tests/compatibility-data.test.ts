@@ -63,7 +63,7 @@ describe("compatibility dataset", () => {
     );
   });
 
-  it("reflects the ten titles graded playable by the maintainer", () => {
+  it("reflects the eleven titles graded playable by the maintainer", () => {
     expect(
       compatibility
         .filter((entry) => entry.tier === "playable")
@@ -76,6 +76,7 @@ describe("compatibility dataset", () => {
         "Dreaming Sarah",
         "Jets 'n' Guns 2",
         "Jurassic Park Classic Games Collection",
+        "KeyWe",
         "Mighty Morphin Power Rangers: Rita's Rewind",
         "Raiden IV x Mikado Remix",
         "Quake II (2023)",
@@ -83,7 +84,7 @@ describe("compatibility dataset", () => {
         "Subnautica: Below Zero",
       ].sort(),
     );
-    expect(countByTier().playable).toBe(10);
+    expect(countByTier().playable).toBe(11);
   });
 
   it("keeps in-game titles with severe defects short of playable", () => {
@@ -103,7 +104,6 @@ describe("compatibility dataset", () => {
       "arcade-spirits-the-new-challengers",
       "arkanoid-eternal-battle",
       "big-helmet-heroes",
-      "keywe",
       "super-woden-gp",
       "tetris-effect-connected",
     ]) {
@@ -221,6 +221,7 @@ describe("test history", () => {
       ["super-woden-gp-dealer-check-20261029", null],
       ["super-woden-gp-d3d12-startup-20261030", null],
       ["keywe-pthread-audio3d", null],
+      ["keywe-save-slots-20261030", null],
       ["goat-simulator-3-gameplay-20261013", null],
       ["yotei-renderer-followup-20261013", null],
       ["astro-bot-startup-20261013", null],
@@ -258,7 +259,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(61);
+    expect(history.filter((run) => run.release === null)).toHaveLength(62);
   });
 
   it("references captures that exist in public/", () => {

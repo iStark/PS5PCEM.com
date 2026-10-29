@@ -40,6 +40,16 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "keywe-save-slots-20261030",
+    graphicsApi: "vulkan",
+    slug: "keywe",
+    date: "2026-10-30",
+    recordedAt: "2026-10-30T02:46:00+03:00",
+    release: null,
+    image: "/images/keywe-tutorial-2026-10-30.jpg",
+    source: devReport("keywe-save-slots-2026-10-30.md"),
+  },
+  {
     id: "super-woden-gp-d3d12-fonts-20261030",
     graphicsApi: "d3d12",
     slug: "super-woden-gp",

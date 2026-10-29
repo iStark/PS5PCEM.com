@@ -140,19 +140,18 @@ const de: Content = {
       "imageAlt": "PAC-MAN WORLD Re-PAC mit Titellogo und Cross-Aufforderung vor dunklem Inselhintergrund"
     },
     "keywe": {
-      "status": "Start · Speicherslot-Auswahl · Grafik unvollständig",
-      "headline": "Fehlende Importe implementiert; die Speicherslot-Auswahl ist erreichbar.",
-      "summary": "Entwicklungsbuild vom 11. Oktober, PPSA02210 v01.000.000: pthread_setcancelstate speichert den Zustand nun pro Gast-Thread. Sieben weitere Audio3d-Importe wurden ebenfalls implementiert, einschließlich eigener PCM-Warteschlangen und Stereo-Mischung. KeyWe durchläuft das Linken und die Unity-Initialisierung.",
+      "status": "Playable · Completable",
+      "headline": "Speicherplätze lassen sich erstellen; das erste Tutorial ist erreichbar.",
+      "summary": "Entwicklungsbuild vom 30. Oktober, Vulkan: Die Bereitschaftsabfrage des Speichers wurde korrigiert und das mitgelieferte Dialogs.prx in das verzögerte Laden von Unity-Plug-ins aufgenommen. Das leere, nicht reagierende Speichermenü wird ohne Patches am Spiel behoben.",
       "strengths": [
-        "Entwickler- und Publisher-Bildschirme werden dargestellt. Automatische Cross-Eingaben erreichen SAVE SLOT mit Select- und Delete-Hinweisen.",
-        "Alle 635 HLE-Tests bestehen. Der erste Lauf enthält 26 GPU-Lückenberichte mit Nullzählern und keinen Gastfehler."
+        "Playable · Completable, vom Projektbetreuer am 30. Oktober 2026 bestätigt.",
+        "Ein neuer Spielstand wird auf die Festplatte geschrieben und ist nach einem Neustart verfügbar. Der Test erreicht das Postamt-Tutorial mit beiden Kiwis und Bewegungs- und Sprunghinweisen."
       ],
       "limits": [
-        "Die aufgenommenen Slot-Felder sind vor schwarzem Hintergrund leer; nach automatischer Bestätigung bleibt das Bild schwarz, während Frames weiter eingereicht werden. Gameplay ist ungeprüft. Auch ein Wiederholungslauf ohne automatische Eingaben zeigt nach den Logos ein schwarzes Bild.",
-        "Audio3d bietet angenäherte Stereo-Positionierung ohne HRTF oder Raumakustik. Dieser Lauf öffnet normales AudioOut; Audio3d-Wiedergabe, Audioqualität, manuelle Steuerung, Speichern und vollständiges Durchspielen sind ungeprüft."
+        "Dieser Entwicklungstest prüft das Anlegen und erneute Laden von Spielständen sowie das erste Tutorial. Er wiederholt keinen vollständigen Durchlauf und bewertet weder zwei Controller noch die Audioqualität."
       ],
-      "performance": "Die Aufnahme der Slot-Auswahl zeigt 8,1 FPS auf einer RTX 3070 Ti bei 1920×1080 Ausgabe und gleich großem gemeldeten internem Renderziel. Ein einzelner Fensterzählerwert, kein längerer oder Gameplay-Benchmark.",
-      "imageAlt": "KeyWe SAVE SLOT mit drei leeren Feldern und Select/Delete-Hinweisen vor schwarzem Hintergrund"
+      "performance": "RTX 3070 Ti, 1920×1080, Vulkan. Das diagnostische 30-FPS-Limit ist kein gemessener Wert oder dauerhafter Gameplay-Benchmark.",
+      "imageAlt": "KeyWe-Tutorial im Postamt mit zwei Kiwis und Hinweisen zu Bewegung, Sprung und Sprint"
     },
     "super-woden-gp": {
       "status": "Hauptmenü · Darstellung verbessert · Gameplay ungeprüft",
@@ -571,6 +570,11 @@ const de: Content = {
   },
 
   history: {
+    "keywe-save-slots-20261030": {
+      "title": "Speicherplätze lassen sich erstellen; das erste Tutorial ist erreichbar.",
+      "summary": "Entwicklungsbuild vom 30. Oktober, Vulkan: Die Bereitschaftsabfrage des Speichers wurde korrigiert und das mitgelieferte Dialogs.prx in das verzögerte Laden von Unity-Plug-ins aufgenommen. Das leere, nicht reagierende Speichermenü wird ohne Patches am Spiel behoben. Ein neuer Spielstand wird auf die Festplatte geschrieben und ist nach einem Neustart verfügbar. Der Test erreicht das Postamt-Tutorial mit beiden Kiwis und Bewegungs- und Sprunghinweisen. Playable · Completable, vom Projektbetreuer am 30. Oktober 2026 bestätigt.",
+      "imageAlt": "KeyWe-Tutorial im Postamt mit zwei Kiwis und Hinweisen zu Bewegung, Sprung und Sprint"
+    },
     "super-woden-gp-d3d12-fonts-20261030": {
       "title": "Kartentext unter DirectX 12 wiederhergestellt",
       "summary": "Entwicklungsbuild vom 30. Oktober: Fehlende DMA_DATA-Transfers ließen die Schriftatlanten mit 0xCD gefüllt. Die implementierten Transfers stellen Kartenbeschriftungen, Guthaben und INFO-Text einschließlich französischer Akzente wieder her. Alle 48 D3D12-Tests und die nativen GPU-Prüfungen bestehen. Der 72,4-sekündige Wiederholungslauf erreicht die Karte ohne protokollierte Fehler oder Ablehnungen; Rennen bleiben ungeprüft.",

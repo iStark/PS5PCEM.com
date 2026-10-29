@@ -100,9 +100,9 @@ export const compatibility: CompatibilityEntry[] = [
   {
     slug: "keywe",
     title: "KeyWe",
-    tier: "intro",
-    image: "/images/keywe-save-slots-2026-10-11.jpg",
-    confirmedOn: "2026-10-11",
+    tier: "playable",
+    image: "/images/keywe-tutorial-2026-10-30.jpg",
+    confirmedOn: "2026-10-30",
   },
   {
     slug: "super-woden-gp",

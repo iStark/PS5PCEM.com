@@ -140,19 +140,18 @@ const fr: Content = {
       "imageAlt": "Logo PAC-MAN WORLD Re-PAC et invite Croix sur une île sombre"
     },
     "keywe": {
-      "status": "Démarrage · choix de sauvegarde · rendu incomplet",
-      "headline": "Imports manquants implémentés ; le choix de sauvegarde est accessible.",
-      "summary": "Version en développement du 11 octobre, PPSA02210 v01.000.000 : pthread_setcancelstate conserve désormais un état par thread invité. Sept imports Audio3d supplémentaires sont implémentés, avec files PCM détenues par l’émulateur et mixage stéréo. KeyWe passe l’édition de liens et l’initialisation Unity.",
+      "status": "Playable · Completable",
+      "headline": "Création des sauvegardes corrigée ; le tutoriel initial est accessible.",
+      "summary": "Version de développement du 30 octobre, Vulkan : correction de la réponse de disponibilité de la mémoire de sauvegarde et chargement différé du module Dialogs.prx fourni avec le jeu. Le panneau vide et inactif est corrigé sans modifier le jeu.",
       "strengths": [
-        "Les écrans du développeur et de l’éditeur s’affichent. Les pressions automatiques sur Cross atteignent SAVE SLOT avec les indications Select et Delete.",
-        "Les 635 tests HLE réussissent. Le premier essai contient 26 rapports GPU aux compteurs nuls et aucune faute invitée."
+        "Playable · Completable, confirmé par le responsable du projet le 30 octobre 2026.",
+        "Une nouvelle sauvegarde est écrite sur disque et reste disponible après redémarrage. Le test atteint le tutoriel du bureau de poste avec les deux kiwis et les indications de déplacement et de saut."
       ],
       "limits": [
-        "Les cases de sauvegarde capturées sont vides sur fond noir ; après confirmation automatique, l’écran devient noir malgré la poursuite des soumissions d’images. Le gameplay n’est pas vérifié. Un second essai sans entrées automatiques devient également noir après les logos.",
-        "Audio3d utilise un positionnement stéréo approximatif, sans HRTF ni acoustique de salle. Cet essai ouvre AudioOut classique ; lecture Audio3d, qualité sonore, commandes manuelles, sauvegardes et progression complète restent non vérifiées."
+        "Ce test de développement couvre la création et le rechargement des sauvegardes ainsi que le premier tutoriel. Il ne répète pas une partie complète et n’évalue ni deux manettes ni la qualité audio."
       ],
-      "performance": "La capture du choix de sauvegarde affiche 8,1 FPS sur RTX 3070 Ti, avec sortie 1920×1080 et cible interne maximale signalée de même taille. Il s’agit d’une seule lecture du compteur de fenêtre, pas d’une mesure prolongée ni en jeu.",
-      "imageAlt": "Panneau SAVE SLOT de KeyWe avec trois cases vides et indications Select/Delete sur fond noir"
+      "performance": "RTX 3070 Ti, 1920×1080, Vulkan. La limite de diagnostic de 30 FPS ne représente ni une mesure ni un test prolongé en jeu.",
+      "imageAlt": "Tutoriel de KeyWe dans le bureau de poste avec deux kiwis et les commandes de déplacement, saut et accélération"
     },
     "super-woden-gp": {
       "status": "Menu principal · rendu amélioré · gameplay non vérifié",
@@ -571,6 +570,11 @@ const fr: Content = {
   },
 
   history: {
+    "keywe-save-slots-20261030": {
+      "title": "Création des sauvegardes corrigée ; le tutoriel initial est accessible.",
+      "summary": "Version de développement du 30 octobre, Vulkan : correction de la réponse de disponibilité de la mémoire de sauvegarde et chargement différé du module Dialogs.prx fourni avec le jeu. Le panneau vide et inactif est corrigé sans modifier le jeu. Une nouvelle sauvegarde est écrite sur disque et reste disponible après redémarrage. Le test atteint le tutoriel du bureau de poste avec les deux kiwis et les indications de déplacement et de saut. Playable · Completable, confirmé par le responsable du projet le 30 octobre 2026.",
+      "imageAlt": "Tutoriel de KeyWe dans le bureau de poste avec deux kiwis et les commandes de déplacement, saut et accélération"
+    },
     "super-woden-gp-d3d12-fonts-20261030": {
       "title": "Texte de la carte rétabli sous DirectX 12",
       "summary": "Version de développement du 30 octobre : les transferts DMA_DATA manquants laissaient les atlas de polices remplis de 0xCD. Leur implémentation rétablit les libellés, les crédits et la ligne INFO, y compris les accents français. Les 48 tests D3D12 et les tests GPU natifs réussissent. Un second essai de 72,4 secondes atteint la carte sans erreur ni rejet dans le journal ; les courses restent non vérifiées.",

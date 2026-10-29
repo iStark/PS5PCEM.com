@@ -167,19 +167,18 @@ const content: Content = {
       "imageAlt": "PAC-MAN WORLD Re-PAC title logo and Cross prompt over a dark island background"
     },
     "keywe": {
-      "status": "Startup · save-slot menu · rendering incomplete",
-      "headline": "Missing imports resolved; the save-slot screen is reachable.",
-      "summary": "October 11 development build, PPSA02210 v01.000.000: pthread_setcancelstate now preserves state per guest thread. Seven subsequent Audio3d imports also have implementations, including owned PCM queues and stereo mixing. KeyWe passes linking and Unity initialization.",
+      "status": "Playable · Completable",
+      "headline": "Save-slot creation fixed; the opening tutorial is reachable.",
+      "summary": "October 30 development build, Vulkan: corrected the save-memory readiness response and added the shipped Dialogs.prx to deferred Unity plug-in loading. This removes the empty, unresponsive save-slot panel without game-specific patches.",
       "strengths": [
-        "The developer and publisher screens render. Automatic Cross input reaches the SAVE SLOT panel with Select and Delete prompts.",
-        "All 635 HLE tests pass. The first runtime check records 26 GPU-gap reports with zero counters and no guest fault."
+        "Playable · Completable, confirmed by the project maintainer on October 30, 2026.",
+        "A new slot is written to disk and remains available after restarting the game. The run reaches the post-office tutorial with both kiwis and movement/jump prompts."
       ],
       "limits": [
-        "The captured slot panels are empty against a black background; after automatic confirmation, the screen turns black while frame submissions continue. Gameplay is unverified. A keyboard-only repeat also turns black after the logos.",
-        "Audio3d uses approximate stereo positioning, without HRTF or room acoustics. This run opens ordinary AudioOut; Audio3d playback, audio quality, manual controls, saves and completion are unverified."
+        "This development check covers save creation/reloading and the opening tutorial. It does not repeat the full playthrough or assess two-controller play and audio quality."
       ],
-      "performance": "The save-slot capture shows 8.1 FPS on RTX 3070 Ti at 1920×1080 output and reported largest internal target. This is one window-counter reading, not a sustained or gameplay benchmark.",
-      "imageAlt": "KeyWe SAVE SLOT panel with three empty slots and Select/Delete prompts on a black background"
+      "performance": "RTX 3070 Ti, 1920×1080, Vulkan. The diagnostic 30 FPS cap is not a measured frame rate or a sustained gameplay benchmark.",
+      "imageAlt": "KeyWe post-office tutorial with two kiwis and movement, jump and dash prompts"
     },
     "super-woden-gp": {
       "status": "Main menu · rendering improved · gameplay unverified",
@@ -597,6 +596,11 @@ const content: Content = {
   },
 
   history: {
+    "keywe-save-slots-20261030": {
+      "title": "Save-slot creation fixed; the opening tutorial is reachable.",
+      "summary": "October 30 development build, Vulkan: corrected the save-memory readiness response and added the shipped Dialogs.prx to deferred Unity plug-in loading. This removes the empty, unresponsive save-slot panel without game-specific patches. A new slot is written to disk and remains available after restarting the game. The run reaches the post-office tutorial with both kiwis and movement/jump prompts. Playable · Completable, confirmed by the project maintainer on October 30, 2026.",
+      "imageAlt": "KeyWe post-office tutorial with two kiwis and movement, jump and dash prompts"
+    },
     "super-woden-gp-d3d12-fonts-20261030": {
       "title": "DirectX 12 map text restored",
       "summary": "October 30 development build: missing DMA_DATA transfers left the font atlases filled with 0xCD. Implementing the transfers restores map labels, credits and INFO text, including French accents. All 48 D3D12 tests and the native GPU suite pass. A 72.4-second repeat reaches the map without logged faults or rejections; race gameplay remains unverified.",

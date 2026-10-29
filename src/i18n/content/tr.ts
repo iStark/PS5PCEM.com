@@ -140,19 +140,18 @@ const tr: Content = {
       "imageAlt": "Koyu ada arka planı üzerinde PAC-MAN WORLD Re-PAC başlık logosu ve Cross istemi",
     },
     keywe: {
-      "status": "Açılış · kayıt yuvası menüsü · işleme eksik",
-      "headline": "Eksik içe aktarmalar çözüldü; kayıt yuvası ekranına ulaşılabiliyor.",
-      "summary": "11 Ekim geliştirme sürümü, PPSA02210 v01.000.000: pthread_setcancelstate artık durumu her misafir iş parçacığı için ayrı tutuyor. Ardından gelen yedi Audio3d içe aktarmasının da sahiplenilmiş PCM kuyrukları ve stereo karıştırma dahil uygulamaları var. KeyWe bağlamayı ve Unity başlatmasını geçiyor.",
+      "status": "Playable · Completable",
+      "headline": "Kayıt oluşturma düzeltildi; başlangıç eğitimi açılıyor.",
+      "summary": "30 Ekim geliştirme derlemesi, Vulkan: kayıt belleğinin hazır olma yanıtı düzeltildi ve oyunun Dialogs.prx modülü Unity eklentilerinin ertelenmiş yüklemesine eklendi. Boş ve tepkisiz kayıt paneli oyuna özel yama olmadan düzeltildi.",
       "strengths": [
-        "Geliştirici ve yayıncı ekranları çiziliyor. Otomatik Cross girişi, Select ve Delete istemleriyle SAVE SLOT paneline ulaşıyor.",
-        "635 HLE testinin tamamı geçiyor. İlk çalışma zamanı denetimi sayaçları sıfır olan 26 GPU boşluk raporu kaydediyor; misafir hatası yok.",
+        "Playable · Completable, proje yöneticisi tarafından 30 Ekim 2026 tarihinde doğrulandı.",
+        "Yeni kayıt diske yazılıyor ve oyun yeniden başlatıldığında kullanılabiliyor. Test, iki kivi ile hareket ve zıplama ipuçlarının bulunduğu postane eğitimine ulaşıyor."
       ],
       "limits": [
-        "Yakalanan yuva panelleri siyah arka planda boş; otomatik onaydan sonra kare gönderimleri sürerken ekran kararıyor. Oynanış doğrulanmadı. Yalnızca klavyeyle yapılan tekrar da logolardan sonra kararıyor.",
-        "Audio3d, HRTF veya oda akustiği olmadan yaklaşık stereo konumlandırma kullanıyor. Bu çalıştırma sıradan AudioOut'u açıyor; Audio3d oynatımı, ses kalitesi, elle kontrol, kayıtlar ve oyunun bitirilmesi doğrulanmadı.",
+        "Bu geliştirme testi kayıt oluşturmayı, yeniden yüklemeyi ve ilk eğitimi kontrol eder. Tam oynanışı tekrarlamaz; iki kontrolcü veya ses kalitesini değerlendirmez."
       ],
-      "performance": "Kayıt yuvası görüntüsü, RTX 3070 Ti'de 1920×1080 çıkış ve bildirilen en büyük iç hedefle 8,1 FPS gösteriyor. Bu tek bir pencere sayacı okumasıdır; sürekli veya oynanış ölçümü değildir.",
-      "imageAlt": "Siyah arka planda üç boş yuva ve Select/Delete istemleriyle KeyWe SAVE SLOT paneli",
+      "performance": "RTX 3070 Ti, 1920×1080, Vulkan. Tanılama için 30 FPS sınırı, ölçülen kare hızı veya uzun süreli oynanış testi değildir.",
+      "imageAlt": "Postanede iki kivi ile hareket, zıplama ve atılma ipuçlarını gösteren KeyWe eğitimi"
     },
     "super-woden-gp": {
       "status": "Ana menü · görüntüleme iyileştirildi · oynanış doğrulanmadı",
@@ -510,6 +509,11 @@ const tr: Content = {
     },
   },
   history: {
+    "keywe-save-slots-20261030": {
+      "title": "Kayıt oluşturma düzeltildi; başlangıç eğitimi açılıyor.",
+      "summary": "30 Ekim geliştirme derlemesi, Vulkan: kayıt belleğinin hazır olma yanıtı düzeltildi ve oyunun Dialogs.prx modülü Unity eklentilerinin ertelenmiş yüklemesine eklendi. Boş ve tepkisiz kayıt paneli oyuna özel yama olmadan düzeltildi. Yeni kayıt diske yazılıyor ve oyun yeniden başlatıldığında kullanılabiliyor. Test, iki kivi ile hareket ve zıplama ipuçlarının bulunduğu postane eğitimine ulaşıyor. Playable · Completable, proje yöneticisi tarafından 30 Ekim 2026 tarihinde doğrulandı.",
+      "imageAlt": "Postanede iki kivi ile hareket, zıplama ve atılma ipuçlarını gösteren KeyWe eğitimi"
+    },
     "super-woden-gp-d3d12-fonts-20261030": {
       "title": "DirectX 12 harita metinleri düzeltildi",
       "summary": "30 Ekim geliştirme derlemesi: eksik DMA_DATA aktarımları yazı tipi atlaslarını 0xCD ile dolu bırakıyordu. Aktarımların uygulanması harita etiketlerini, kredileri ve INFO satırını, Fransızca aksanlar dahil, geri getirdi. 48 D3D12 testi ve yerel GPU testlerinin tamamı geçti. 72,4 saniyelik tekrar, günlükte hata veya ret olmadan haritaya ulaştı; yarışlar henüz doğrulanmadı.",

@@ -140,19 +140,18 @@ const es: Content = {
       "imageAlt": "Logotipo PAC-MAN WORLD Re-PAC y aviso de Cruz sobre una isla oscura"
     },
     "keywe": {
-      "status": "Inicio · selección de partida · gráficos incompletos",
-      "headline": "Imports ausentes implementados; se alcanza la selección de partida.",
-      "summary": "Compilación en desarrollo del 11 de octubre, PPSA02210 v01.000.000: pthread_setcancelstate conserva el estado de cada hilo invitado. También se implementaron siete imports adicionales de Audio3d, con colas PCM propias y mezcla estéreo. KeyWe supera el enlazado y la inicialización de Unity.",
+      "status": "Playable · Completable",
+      "headline": "Corregida la creación de partidas; se alcanza el tutorial inicial.",
+      "summary": "Compilación en desarrollo del 30 de octubre, Vulkan: se corrigió la consulta de disponibilidad de la memoria de guardado y se añadió el módulo Dialogs.prx del juego a la carga diferida de complementos Unity. El panel vacío e inactivo se corrige sin parches específicos del juego.",
       "strengths": [
-        "Se muestran las pantallas del desarrollador y del editor. Las pulsaciones automáticas de Cross llegan a SAVE SLOT con las indicaciones Select y Delete.",
-        "Pasan las 635 pruebas HLE. La primera ejecución registra 26 informes de omisiones GPU con contadores a cero y ningún fallo del invitado."
+        "Playable · Completable, confirmado por el responsable del proyecto el 30 de octubre de 2026.",
+        "La partida nueva se escribe en disco y sigue disponible tras reiniciar. La prueba llega al tutorial de la oficina postal con ambos kiwis e indicaciones de movimiento y salto."
       ],
       "limits": [
-        "Los espacios capturados están vacíos sobre fondo negro; tras la confirmación automática, la pantalla queda negra aunque se siguen enviando fotogramas. El juego en sí no está verificado. Una repetición sin entradas automáticas también queda negra tras los logotipos.",
-        "Audio3d ofrece posicionamiento estéreo aproximado, sin HRTF ni acústica de salas. Esta ejecución abre AudioOut normal; reproducción Audio3d, calidad de sonido, controles manuales, guardado y finalización no verificados."
+        "Esta prueba de desarrollo verifica la creación y recarga de partidas y el tutorial inicial. No repite una partida completa ni evalúa dos mandos o la calidad del audio."
       ],
-      "performance": "La captura de selección muestra 8,1 FPS en RTX 3070 Ti, con salida 1920×1080 y el mismo tamaño máximo de renderizado interno indicado en el registro. Es una sola lectura del contador de ventana, no una medición sostenida ni de gameplay.",
-      "imageAlt": "Panel SAVE SLOT de KeyWe con tres espacios vacíos e indicaciones Select/Delete sobre fondo negro"
+      "performance": "RTX 3070 Ti, 1920×1080, Vulkan. El límite de diagnóstico de 30 FPS no es una medición ni una prueba prolongada de rendimiento.",
+      "imageAlt": "Tutorial de KeyWe en la oficina postal con dos kiwis y comandos de movimiento, salto e impulso"
     },
     "super-woden-gp": {
       "status": "Menú principal · renderizado mejorado · jugabilidad sin verificar",
@@ -571,6 +570,11 @@ const es: Content = {
   },
 
   history: {
+    "keywe-save-slots-20261030": {
+      "title": "Corregida la creación de partidas; se alcanza el tutorial inicial.",
+      "summary": "Compilación en desarrollo del 30 de octubre, Vulkan: se corrigió la consulta de disponibilidad de la memoria de guardado y se añadió el módulo Dialogs.prx del juego a la carga diferida de complementos Unity. El panel vacío e inactivo se corrige sin parches específicos del juego. La partida nueva se escribe en disco y sigue disponible tras reiniciar. La prueba llega al tutorial de la oficina postal con ambos kiwis e indicaciones de movimiento y salto. Playable · Completable, confirmado por el responsable del proyecto el 30 de octubre de 2026.",
+      "imageAlt": "Tutorial de KeyWe en la oficina postal con dos kiwis y comandos de movimiento, salto e impulso"
+    },
     "super-woden-gp-d3d12-fonts-20261030": {
       "title": "Texto del mapa restaurado en DirectX 12",
       "summary": "Compilación de desarrollo del 30 de octubre: las transferencias DMA_DATA ausentes dejaban los atlas de fuentes llenos de 0xCD. Su implementación restaura las etiquetas del mapa, los créditos y el texto INFO, incluidos los acentos franceses. Pasan las 48 pruebas D3D12 y las pruebas nativas de GPU. La repetición de 72,4 segundos llega al mapa sin fallos ni rechazos registrados; las carreras siguen sin verificarse.",
