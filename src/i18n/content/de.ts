@@ -155,19 +155,19 @@ const de: Content = {
       "imageAlt": "KeyWe SAVE SLOT mit drei leeren Feldern und Select/Delete-Hinweisen vor schwarzem Hintergrund"
     },
     "super-woden-gp": {
-      "status": "Hauptmenü · Grafikfehler · Gameplay ungeprüft",
-      "headline": "Start behoben; das Weltkartenmenü ist erreichbar.",
-      "summary": "Entwicklungsversion vom 11. Oktober, PPSA07211 v01.000.003: Zwei fehlende libkernel-Importe in Unitys Il2CppUserAssemblies.prx verfügen jetzt über echte Aufräumhandler pro Thread. Das Spiel durchläuft das Linken und die Unity-Initialisierung und erreicht die Sprachauswahl sowie das Weltkartenmenü.",
+      "status": "Hauptmenü · Darstellung verbessert · Gameplay ungeprüft",
+      "headline": "Ausrichtung der Karten- und Händleroberfläche korrigiert",
+      "summary": "Entwicklungsbuild vom 29. Oktober, PPSA07211 v01.000.003: Zwei allgemeine Vulkan-Korrekturen richten Kartenbeschriftungen, Herstellerlogos, Händlerelemente, Guthaben und die untere INFO-Zeile in den Renderer-Aufnahmen korrekt aus.",
       "strengths": [
-        "Drei Starts passieren die Startsequenz. Automatische Cross- und Down-Eingaben führen durch die Sprachauswahl zum Hauptmenü auf der Weltkarte.",
-        "Alle 164 regelmäßigen GPU-Auslassungsberichte des Menülaufs zeigen null; keine Gastabstürze oder Fehler beim Aufruf der Aufräumhandler wurden protokolliert."
+        "GPU-Kopien wenden die vertikale Spiegelung vor nachfolgenden UI-Zeichenbefehlen an. Vollbildzeichnungen mit Vertex-Puffern behalten die Projektions- und UV-Transformationen des Gast-Shaders bei.",
+        "Alle 267 Vulkan-Tests und gezielte native Rendering-Prüfungen bestehen. Der letzte skriptgesteuerte Lauf zeigt keine GPU-Gap-Zähler oder Gastfehler."
       ],
       "limits": [
-        "Mehrere Kartenbeschriftungen und Symbole sind vertikal gespiegelt; die Flaggen in der Sprachauswahl haben falsche Farben. Null gemeldete Auslassungen belegen keine korrekte Grafik.",
-        "Manuelle Navigation, Rennen, Audioqualität, Spielstände, vollständiges Durchspielen und Langzeitstabilität bleiben ungeprüft."
+        "Der Speicherverbrauch wächst weiter: Ein früherer Lauf erreichte etwa 15 GB; die letzte Prüfung war auf 90 Sekunden und 8 GiB begrenzt. Die Ursache des Rechnerstillstands ist nicht belegt.",
+        "Rennen, manuelle Steuerung, Tonqualität, Speichern und vollständiges Durchspielen sind ungeprüft. Die zuvor falschen Flaggenfarben sind nicht nachweislich behoben."
       ],
-      "performance": "Die gespeicherte Menüaufnahme zeigt 71,8 FPS auf RTX 3070 Ti bei 1920×1080 Ausgabe; das größte gemeldete interne Renderziel hat dieselbe Größe. Dies ist ein einzelner Fensterzählerwert mit automatischen Eingaben, kein Dauertest, Rennergebnis oder Vorher-nachher-Vergleich.",
-      "imageAlt": "Super-Woden-GP-Weltkartenmenü mit vertikal gespiegelten Beschriftungen und Symbolen; Fensterzähler 71,8 FPS"
+      "performance": "RTX 3070 Ti, Vulkan, Ausgabe 1920×1080. Anfangs galt ein Limit von 60 FPS, zuletzt 30 FPS. Das sind Diagnoseeinstellungen, keine neue Leistungsmessung oder Renn-Benchmarks.",
+      "imageAlt": "Super-Woden-GP-Karte mit korrekt ausgerichteten Beschriftungen, Symbolen, Guthaben und unterer INFO-Zeile"
     },
     "arcade-spirits-the-new-challengers": {
       "status": "Hauptmenü · Einführungsvideo · Gameplay ungeprüft",
@@ -571,6 +571,16 @@ const de: Content = {
   },
 
   history: {
+    "super-woden-gp-ui-orientation-20261029": {
+      "title": "Zwei Vulkan-Korrekturen beheben die UI-Ausrichtung",
+      "summary": "GPU-Kopien spiegeln sofort entlang Y; Vollbildzeichnungen mit Vertex-Puffern führen den Gast-Vertex-Shader aus. Die Kartenaufnahme zeigt die korrigierte Ausrichtung. 267 Vulkan-Tests und gezielte Rendering-Prüfungen bestehen; das Speicherwachstum bleibt ungelöst. Entwicklungsbuild.",
+      "imageAlt": "Super-Woden-GP-Karte mit korrekt ausgerichteten Beschriftungen, Symbolen, Guthaben und unterer INFO-Zeile"
+    },
+    "super-woden-gp-dealer-check-20261029": {
+      "title": "Händleraufnahme aus demselben skriptgesteuerten Lauf",
+      "summary": "Derselbe begrenzte Lauf erreicht den Händler mit korrekt ausgerichtetem BUY/EXIT-Text und Fahrzeugwerten. Renderer-Aufnahme, kein Renntest. Das Diagnose-Limit von 30 FPS ist kein Benchmark; manuelle Steuerung, Ton und Speichern bleiben ungeprüft.",
+      "imageAlt": "Super-Woden-GP-Händler mit blauem Auto und korrekt ausgerichteten BUY-, EXIT- und Fahrzeugangaben"
+    },
     "oxide-room-104-raster-startup-20261029": {
       "title": "Schwarzer Bildschirm nach Cross mit Rasterdarstellung überwunden",
       "summary": "PPSA07653 v01.000.000, Entwicklungsbuild vom 29. Oktober: Der Runner wählt Unreals -noraytracing-Pfad über eine virtuelle Befehlszeilendatei. Die installierten Spieldateien bleiben unverändert; der normale Start überwindet den reproduzierten Grafikstopp. Der Vergleich erreicht das animierte Intro, Untertitel und den GET-UP-Hinweis: über 2.600 Frames ohne Warteschlangenstopp oder Gastabsturz. Vollständiges Raytracing scheitert weiterhin an dynamischen Shader-Aufrufen und der BVH-Vorbereitung. Figurensteuerung, weiterer Fortschritt, korrekte Darstellung und hörbare Tonqualität sind ungeprüft.",

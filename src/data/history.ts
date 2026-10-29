@@ -40,6 +40,24 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "super-woden-gp-ui-orientation-20261029",
+    graphicsApi: "vulkan",
+    slug: "super-woden-gp",
+    date: "2026-10-29",
+    release: null,
+    image: "/images/super-woden-gp-map-orientation-2026-10-29.jpg",
+    source: devReport("super-woden-gp-ui-orientation-2026-10-29.md"),
+  },
+  {
+    id: "super-woden-gp-dealer-check-20261029",
+    graphicsApi: "vulkan",
+    slug: "super-woden-gp",
+    date: "2026-10-29",
+    release: null,
+    image: "/images/super-woden-gp-dealer-orientation-2026-10-29.jpg",
+    source: devReport("super-woden-gp-ui-orientation-2026-10-29.md"),
+  },
+  {
     id: "oxide-room-104-raster-startup-20261029",
     graphicsApi: "vulkan",
     slug: "oxide-room-104",

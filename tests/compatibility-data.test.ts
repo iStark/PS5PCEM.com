@@ -217,6 +217,8 @@ describe("test history", () => {
       ["arkanoid-fiber-startup", null],
       ["arcade-spirits-pthread-semaphores", null],
       ["super-woden-gp-pthread-cleanup", null],
+      ["super-woden-gp-ui-orientation-20261029", null],
+      ["super-woden-gp-dealer-check-20261029", null],
       ["keywe-pthread-audio3d", null],
       ["goat-simulator-3-gameplay-20261013", null],
       ["yotei-renderer-followup-20261013", null],
@@ -255,7 +257,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(57);
+    expect(history.filter((run) => run.release === null)).toHaveLength(59);
   });
 
   it("references captures that exist in public/", () => {

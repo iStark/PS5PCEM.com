@@ -155,19 +155,19 @@ const tr: Content = {
       "imageAlt": "Siyah arka planda üç boş yuva ve Select/Delete istemleriyle KeyWe SAVE SLOT paneli",
     },
     "super-woden-gp": {
-      "status": "Ana menü · grafik sorunları · oynanış doğrulanmadı",
-      "headline": "Açılış düzeltildi; dünya haritası menüsüne artık ulaşılabiliyor.",
-      "summary": "11 Ekim geliştirme sürümü, PPSA07211 v01.000.003: Unity'nin Il2CppUserAssemblies.prx dosyasındaki iki eksik libkernel içe aktarmasının artık gerçek, iş parçacığı başına temizleme işleyicileri var. Oyun bağlamayı ve Unity başlatmasını geçiyor, ardından dil seçimine ve dünya haritası menüsüne ulaşıyor.",
+      "status": "Ana menü · görüntüleme iyileştirildi · oynanış doğrulanmadı",
+      "headline": "Harita ve bayi arayüzünün yönü düzeltildi",
+      "summary": "29 Ekim geliştirme derlemesi, PPSA07211 v01.000.003: iki genel Vulkan düzeltmesi, işleyici görüntülerindeki harita yazılarını, üretici simgelerini, bayi kontrollerini, kredileri ve alt INFO satırını doğru yöne getiriyor.",
       "strengths": [
-        "Üç başlatma açılışı geçiyor. Betikli Cross ve Aşağı girişi dil seçiminden ana harita menüsüne ilerliyor.",
-        "Menü çalıştırmasındaki periyodik 164 GPU boşluk raporunun tamamında sayaçlar sıfır; misafir hatası veya temizleme geri çağırması hatası kaydedilmedi.",
+        "GPU kopyaları dikey çevirmeyi sonraki arayüz çizimlerinden önce uygular. Köşe arabellekli tam ekran çizimleri konuk gölgelendiricinin projeksiyon ve UV dönüşümlerini korur.",
+        "267 Vulkan testinin tamamı ve hedefli yerel çizim kontrolleri geçti. Son otomatik çalıştırmada GPU-gap sayaçları sıfırdı ve konuk hatası yoktu."
       ],
       "limits": [
-        "Bazı harita etiketleri ve simgeleri dikey olarak ters, dil ekranındaki bayrakların renkleri yanlış. Sıfır boşluk sayaçları grafiğin doğru olduğunu kanıtlamaz.",
-        "Elle gezinme, yarış, ses kalitesi, kayıtlar, oyunun bitirilmesi ve uzun oturum kararlılığı doğrulanmadı.",
+        "Bellek kullanımı hâlâ artıyor: önceki çalıştırma yaklaşık 15 GB’a ulaştı; son kontrol 90 saniye ve 8 GiB ile sınırlandı. Bilgisayarın donma nedeni kanıtlanmadı.",
+        "Yarışlar, elle kontrol, ses kalitesi, kayıt ve oyunu bitirme doğrulanmadı. Dil bayraklarının renk sorununun düzeldiği doğrulanmadı."
       ],
-      "performance": "Kaydedilen menü karesi, RTX 3070 Ti'de 1920×1080 çıkış ve aynı bildirilen en büyük iç hedefle 71,8 FPS gösteriyor. Bu, betikli girişle tek bir pencere sayacı gözlemidir; sürekli ölçüm, yarış performansı sonucu veya önce/sonra karşılaştırması değildir.",
-      "imageAlt": "Ters etiketler ve simgelerle Super Woden GP dünya haritası menüsü; pencere sayacı 71,8 FPS",
+      "performance": "RTX 3070 Ti, Vulkan, 1920×1080 çıkış. İlk kontrollerde 60 FPS, son kontrolde 30 FPS sınırı kullanıldı. Bunlar tanılama ayarlarıdır; yeni performans ölçümü veya yarış testi değildir.",
+      "imageAlt": "Doğru yöndeki yazılar, simgeler, krediler ve alt INFO satırıyla Super Woden GP haritası"
     },
     "arcade-spirits-the-new-challengers": {
       "status": "Ana menü · açılış videosu · oynanış doğrulanmadı",
@@ -510,6 +510,16 @@ const tr: Content = {
     },
   },
   history: {
+    "super-woden-gp-ui-orientation-20261029": {
+      "title": "İki Vulkan düzeltmesi arayüz yönünü düzeltti",
+      "summary": "GPU kopyaları Y çevirmesini hemen uygular; köşe arabellekli tam ekran çizimleri konuk köşe gölgelendiricisini çalıştırır. Harita görüntüsünün yönü düzeltildi. 267 Vulkan testi ve hedefli çizim kontrolleri geçti; bellek artışı çözülmedi. Geliştirme derlemesi.",
+      "imageAlt": "Doğru yöndeki yazılar, simgeler, krediler ve alt INFO satırıyla Super Woden GP haritası"
+    },
+    "super-woden-gp-dealer-check-20261029": {
+      "title": "Aynı otomatik kontrolde bayi görüntüsü alındı",
+      "summary": "Aynı sınırlı çalıştırma, BUY/EXIT yazıları ve araç istatistikleri doğru yönde olan bayiye ulaştı. Bu bir işleyici görüntüsüdür; yarış testi değildir. 30 FPS tanılama sınırı performans ölçümü değildir; elle kontrol, ses ve kayıt doğrulanmadı.",
+      "imageAlt": "Mavi araç ve doğru yöndeki BUY, EXIT ile araç istatistiklerini gösteren Super Woden GP bayisi"
+    },
     "oxide-room-104-raster-startup-20261029": {
       "title": "Cross sonrası siyah ekran raster işleme ile aşıldı",
       "summary": "PPSA07653 v01.000.000, 29 Ekim geliştirme derlemesi: çalıştırıcı sanal komut satırı dosyası üzerinden Unreal’ın -noraytracing yolunu seçiyor. Kurulu oyun dosyaları değişmiyor; normal başlatma yeniden üretilen grafik durmasını aşıyor. Karşılaştırma, hareketli girişe, altyazılara ve GET UP istemine ulaşıyor: kuyruk durması veya konuk hatası olmadan 2.600’den fazla kare. Tam ışın izleme, dinamik gölgelendirici çağrılarında ve BVH hazırlığında hâlâ başarısız. Karakter kontrolü, sonraki ilerleme, grafik doğruluğu ve duyulan ses kalitesi doğrulanmadı.",

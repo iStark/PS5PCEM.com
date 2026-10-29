@@ -108,8 +108,8 @@ export const compatibility: CompatibilityEntry[] = [
     slug: "super-woden-gp",
     title: "Super Woden GP",
     tier: "intro",
-    image: "/images/super-woden-gp-menu-2026-10-11.jpg",
-    confirmedOn: "2026-10-11",
+    image: "/images/super-woden-gp-map-orientation-2026-10-29.jpg",
+    confirmedOn: "2026-10-29",
   },
   {
     slug: "arcade-spirits-the-new-challengers",

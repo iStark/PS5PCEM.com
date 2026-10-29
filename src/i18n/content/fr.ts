@@ -155,19 +155,19 @@ const fr: Content = {
       "imageAlt": "Panneau SAVE SLOT de KeyWe avec trois cases vides et indications Select/Delete sur fond noir"
     },
     "super-woden-gp": {
-      "status": "Menu principal · défauts graphiques · jeu non vérifié",
-      "headline": "Démarrage corrigé ; le menu sur la carte du monde est accessible.",
-      "summary": "Version de développement du 11 octobre, PPSA07211 v01.000.003 : deux imports libkernel manquants dans Il2CppUserAssemblies.prx de Unity disposent désormais de véritables gestionnaires de nettoyage par thread. Le jeu passe l’édition des liens et l’initialisation de Unity, puis atteint le choix de la langue et le menu sur la carte du monde.",
+      "status": "Menu principal · rendu amélioré · gameplay non vérifié",
+      "headline": "Orientation corrigée sur la carte et chez le concessionnaire",
+      "summary": "Build de développement du 29 octobre, PPSA07211 v01.000.003 : deux corrections Vulkan générales rétablissent l’orientation des libellés, logos, commandes du concessionnaire, crédits et texte INFO dans les captures du moteur de rendu.",
       "strengths": [
-        "Trois lancements passent la séquence de démarrage. Des pressions automatiques sur Cross et Down permettent de quitter le choix de la langue et d’ouvrir le menu principal sur la carte.",
-        "Les 164 rapports périodiques d’opérations GPU omises du test du menu affichent des compteurs nuls ; aucun plantage invité ni échec de rappel de nettoyage n’a été enregistré."
+        "Les copies GPU appliquent le retournement vertical avant les éléments d’interface suivants. Les tracés plein écran avec buffers de sommets conservent les transformations de projection et d’UV du shader invité.",
+        "Les 267 tests Vulkan et les vérifications natives ciblées du rendu réussissent. Le dernier essai automatisé ne relève aucun compteur GPU-gap non nul ni erreur invitée."
       ],
       "limits": [
-        "Plusieurs libellés et icônes de la carte sont inversés verticalement, et les drapeaux du choix de la langue ont des couleurs incorrectes. Des compteurs nuls ne prouvent pas la justesse du rendu.",
-        "La navigation manuelle, les courses, la qualité audio, les sauvegardes, la fin du jeu et la stabilité des longues sessions restent non vérifiées."
+        "La mémoire continue de croître : un essai antérieur atteignait environ 15 Go ; le dernier était limité à 90 secondes et 8 Gio. La cause du blocage du PC n’est pas établie.",
+        "Courses, commandes manuelles, qualité audio, sauvegardes et fin du jeu restent non vérifiées. La correction des couleurs des drapeaux n’est pas confirmée."
       ],
-      "performance": "La capture du menu affiche 71,8 FPS sur RTX 3070 Ti, avec une sortie 1920×1080 et une cible interne maximale signalée de même taille. Il s’agit d’une seule lecture du compteur de fenêtre avec des entrées automatiques, pas d’un test prolongé, d’une mesure en course ni d’une comparaison avant/après.",
-      "imageAlt": "Menu sur la carte du monde de Super Woden GP avec libellés et icônes inversés ; compteur de fenêtre à 71,8 FPS"
+      "performance": "RTX 3070 Ti, Vulkan, sortie 1920×1080. Limite initiale de 60 FPS, puis de 30 FPS pour le dernier essai. Ce sont des réglages de diagnostic, pas une nouvelle mesure de performances ni un benchmark en course.",
+      "imageAlt": "Carte de Super Woden GP avec libellés, icônes, crédits et ligne INFO correctement orientés"
     },
     "arcade-spirits-the-new-challengers": {
       "status": "Menu principal · vidéo d’introduction · gameplay non vérifié",
@@ -571,6 +571,16 @@ const fr: Content = {
   },
 
   history: {
+    "super-woden-gp-ui-orientation-20261029": {
+      "title": "Deux corrections Vulkan rétablissent l’orientation de l’interface",
+      "summary": "Les copies GPU appliquent immédiatement le retournement Y ; les tracés plein écran avec buffers de sommets exécutent le shader invité. La carte capturée est correctement orientée. Les 267 tests Vulkan et les vérifications ciblées réussissent ; la croissance mémoire reste à résoudre. Build de développement.",
+      "imageAlt": "Carte de Super Woden GP avec libellés, icônes, crédits et ligne INFO correctement orientés"
+    },
+    "super-woden-gp-dealer-check-20261029": {
+      "title": "Concessionnaire capturé dans le même essai automatisé",
+      "summary": "Le même essai limité atteint le concessionnaire avec BUY/EXIT et les statistiques du véhicule correctement orientés. Capture du moteur de rendu, sans essai de course. La limite de diagnostic de 30 FPS n’est pas un benchmark ; commandes manuelles, son et sauvegardes non vérifiés.",
+      "imageAlt": "Concessionnaire de Super Woden GP avec voiture bleue, BUY, EXIT et statistiques correctement orientés"
+    },
     "oxide-room-104-raster-startup-20261029": {
       "title": "Écran noir après Croix franchi grâce au rendu sans ray tracing",
       "summary": "PPSA07653 v01.000.000, version en développement du 29 octobre : le lanceur sélectionne le mode -noraytracing d’Unreal via un fichier de commande virtuel. Les fichiers installés restent intacts ; le lancement normal dépasse le blocage graphique reproduit. Le test comparatif atteint l’introduction animée, les sous-titres et l’invite GET UP, avec plus de 2 600 images sans arrêt de file ni plantage invité. Le ray tracing complet échoue encore sur les appels dynamiques de shaders et la préparation BVH. Contrôle du personnage, suite du jeu, exactitude graphique et qualité du son audible restent non vérifiés.",

@@ -182,19 +182,19 @@ const content: Content = {
       "imageAlt": "KeyWe SAVE SLOT panel with three empty slots and Select/Delete prompts on a black background"
     },
     "super-woden-gp": {
-      "status": "Main menu · graphical issues · gameplay unverified",
-      "headline": "Startup fixed; the world-map menu is now reachable.",
-      "summary": "October 11 development build, PPSA07211 v01.000.003: two missing libkernel imports in Unity’s Il2CppUserAssemblies.prx now have real per-thread cleanup handlers. The game passes linking and Unity initialization, then reaches language selection and the world-map menu.",
+      "status": "Main menu · rendering improved · gameplay unverified",
+      "headline": "Map and dealership interface orientation corrected",
+      "summary": "October 29 development build, PPSA07211 v01.000.003: two shared Vulkan fixes restore upright map labels, manufacturer icons, dealership controls, credits and the bottom INFO line in renderer captures.",
       "strengths": [
-        "Three launches pass startup. Scripted Cross and Down input advances through language selection into the main map menu.",
-        "All 164 periodic GPU-gap reports in the menu run have zero counters; no guest fault or cleanup callback failure was recorded."
+        "GPU copies now apply vertical flips before later UI draws. Buffered fullscreen draws retain the guest shader’s projection and UV transforms.",
+        "All 267 Vulkan tests and focused native rendering probes pass. The final scripted run records zero GPU-gap counters and no guest fault."
       ],
       "limits": [
-        "Several map labels and icons are vertically inverted, and flags on the language screen have incorrect colors. Zero gap counters do not establish correct graphics.",
-        "Manual navigation, racing, audio quality, saves, completion and long-session stability remain unverified."
+        "Process memory still grows: an earlier run reached about 15 GB; the final check was bounded to 90 seconds and 8 GiB. The cause of the computer freeze is unproven.",
+        "Races, manual controls, audio quality, saves and completion remain unverified. The earlier incorrect language-flag colors are not confirmed fixed."
       ],
-      "performance": "The saved menu frame shows 71.8 FPS on RTX 3070 Ti, with 1920×1080 output and the same reported largest internal target. This is a single window-counter observation with scripted input, not a sustained benchmark, race performance result or before/after comparison.",
-      "imageAlt": "Super Woden GP world-map menu with inverted labels and icons; window counter 71.8 FPS"
+      "performance": "RTX 3070 Ti, Vulkan, 1920×1080 output. Initial checks used a 60 FPS cap and the final check a 30 FPS cap. These are diagnostic settings, not a new performance measurement or race benchmark.",
+      "imageAlt": "Super Woden GP map with upright labels, icons, credits and bottom INFO text"
     },
     "arcade-spirits-the-new-challengers": {
       "status": "Main menu · opening video · gameplay unverified",
@@ -597,6 +597,16 @@ const content: Content = {
   },
 
   history: {
+    "super-woden-gp-ui-orientation-20261029": {
+      "title": "Two Vulkan fixes restore UI orientation",
+      "summary": "Resident copies apply their Y flip immediately; buffered fullscreen draws execute the guest vertex shader. The map capture shows corrected orientation. All 267 Vulkan tests and focused rendering probes pass; memory growth remains unresolved. Development build, not a released version.",
+      "imageAlt": "Super Woden GP map with upright labels, icons, credits and bottom INFO text"
+    },
+    "super-woden-gp-dealer-check-20261029": {
+      "title": "Dealership captured in the same scripted check",
+      "summary": "The same bounded run reaches the car dealership with upright BUY/EXIT text and vehicle statistics. This is a renderer capture, not a race test. The 30 FPS diagnostic cap is not a benchmark; manual control, audio and saving remain unverified.",
+      "imageAlt": "Super Woden GP dealership with a blue car and correctly oriented BUY, EXIT and vehicle statistics"
+    },
     "oxide-room-104-raster-startup-20261029": {
       "title": "Past the post-Cross black screen with raster rendering",
       "summary": "PPSA07653 v01.000.000, October 29 development build: the runner now selects Unreal's -noraytracing path through a virtual command-line file. Installed game files stay unchanged; the normal launch passes the reproduced graphics stop. The comparison reaches the animated introduction, subtitles and GET UP prompt, with over 2,600 frames and no queue stop or guest fault. Full ray tracing still fails on dynamic shader calls and BVH preparation. Character control, further progression, rendering correctness and audible sound quality remain unverified.",

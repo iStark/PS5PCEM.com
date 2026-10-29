@@ -155,19 +155,19 @@ const es: Content = {
       "imageAlt": "Panel SAVE SLOT de KeyWe con tres espacios vacíos e indicaciones Select/Delete sobre fondo negro"
     },
     "super-woden-gp": {
-      "status": "Menú principal · fallos gráficos · jugabilidad sin verificar",
-      "headline": "Inicio corregido; ya se puede acceder al menú del mapa mundial.",
-      "summary": "Compilación de desarrollo del 11 de octubre, PPSA07211 v01.000.003: dos importaciones de libkernel que faltaban en Il2CppUserAssemblies.prx de Unity ya tienen manejadores de limpieza reales por hilo. El juego completa el enlazado y la inicialización de Unity y llega a la selección de idioma y al menú del mapa mundial.",
+      "status": "Menú principal · renderizado mejorado · jugabilidad sin verificar",
+      "headline": "Corregida la orientación de la interfaz del mapa y del concesionario",
+      "summary": "Compilación de desarrollo del 29 de octubre, PPSA07211 v01.000.003: dos correcciones generales de Vulkan restauran la orientación de los rótulos, logotipos, controles del concesionario, créditos y línea INFO en las capturas del renderizador.",
       "strengths": [
-        "Tres ejecuciones superan el inicio. Las pulsaciones automáticas de Cross y Down permiten pasar la selección de idioma y abrir el menú principal del mapa.",
-        "Los 164 informes periódicos de operaciones GPU omitidas de la prueba del menú tienen contadores a cero; no se registraron fallos del invitado ni errores al invocar los manejadores de limpieza."
+        "Las copias GPU aplican el volteo vertical antes de dibujar la interfaz posterior. Los dibujos a pantalla completa con búferes de vértices conservan la proyección y las UV del shader invitado.",
+        "Pasan las 267 pruebas Vulkan y las comprobaciones nativas de renderizado. El último recorrido automatizado tiene contadores GPU-gap a cero y ningún fallo del invitado."
       ],
       "limits": [
-        "Varios textos e iconos del mapa están invertidos verticalmente, y las banderas de la selección de idioma tienen colores incorrectos. Los contadores a cero no demuestran que los gráficos sean correctos.",
-        "La navegación manual, las carreras, la calidad del audio, las partidas guardadas, la finalización y la estabilidad en sesiones largas siguen sin verificar."
+        "La memoria sigue creciendo: una prueba anterior llegó a unos 15 GB; la final se limitó a 90 segundos y 8 GiB. No se ha demostrado la causa del bloqueo del PC.",
+        "Carreras, controles manuales, calidad de audio, guardado y finalización sin verificar. No se confirma la corrección de los colores de las banderas."
       ],
-      "performance": "La captura del menú muestra 71,8 FPS en una RTX 3070 Ti, con salida de 1920×1080 y el mismo tamaño para el mayor destino de renderizado interno registrado. Es una única lectura del contador de ventana con entradas automáticas, no una prueba sostenida, un resultado en carrera ni una comparación antes/después.",
-      "imageAlt": "Menú del mapa mundial de Super Woden GP con textos e iconos invertidos; contador de ventana a 71,8 FPS"
+      "performance": "RTX 3070 Ti, Vulkan, salida 1920×1080. Límite inicial de 60 FPS y final de 30 FPS. Son ajustes de diagnóstico, no una nueva medición de rendimiento ni un benchmark en carrera.",
+      "imageAlt": "Mapa de Super Woden GP con rótulos, iconos, créditos y línea INFO correctamente orientados"
     },
     "arcade-spirits-the-new-challengers": {
       "status": "Menú principal · vídeo inicial · juego sin verificar",
@@ -571,6 +571,16 @@ const es: Content = {
   },
 
   history: {
+    "super-woden-gp-ui-orientation-20261029": {
+      "title": "Dos correcciones Vulkan restauran la orientación de la interfaz",
+      "summary": "Las copias GPU aplican el volteo Y de inmediato; los dibujos a pantalla completa con búferes de vértices ejecutan el shader invitado. El mapa capturado muestra la orientación corregida. Pasan 267 pruebas Vulkan y las comprobaciones de renderizado; sigue pendiente el crecimiento de memoria. Compilación de desarrollo.",
+      "imageAlt": "Mapa de Super Woden GP con rótulos, iconos, créditos y línea INFO correctamente orientados"
+    },
+    "super-woden-gp-dealer-check-20261029": {
+      "title": "Concesionario capturado en la misma prueba automatizada",
+      "summary": "La misma prueba limitada llega al concesionario con BUY/EXIT y las estadísticas correctamente orientados. Es una captura del renderizador, no una prueba de carreras. El límite de diagnóstico de 30 FPS no es un benchmark; controles manuales, audio y guardado sin verificar.",
+      "imageAlt": "Concesionario de Super Woden GP con un coche azul y BUY, EXIT y estadísticas correctamente orientados"
+    },
     "oxide-room-104-raster-startup-20261029": {
       "title": "Superada la pantalla negra tras Cruz con renderizado sin ray tracing",
       "summary": "PPSA07653 v01.000.000, compilación en desarrollo del 29 de octubre: el ejecutor selecciona -noraytracing de Unreal mediante un archivo de comandos virtual. Los archivos instalados no cambian; el inicio normal supera el bloqueo gráfico reproducido. La comparación llega a la introducción animada, los subtítulos y el aviso GET UP: más de 2.600 fotogramas sin detención de la cola ni fallo del invitado. El trazado de rayos completo aún falla en llamadas dinámicas de shaders y en la preparación BVH. No se han verificado el control del personaje, la progresión posterior, la corrección gráfica ni la calidad del sonido audible.",
