@@ -11,13 +11,13 @@ export const commitUrl = (sha: string) =>
   `https://github.com/iStark/PS5PCEM/commit/${sha}`;
 
 /**
- * The newest development commit these pages describe: the FPS limit. The
+ * The newest development commit these pages describe: PKG/ZAR extraction. The
  * Graphics API card came in fafd205 and the four newest languages in 83948d3.
  */
 export const launcherDevelopmentCommit = {
-  sha: "6654cf5",
-  date: "2026-10-21",
-  url: commitUrl("6654cf5"),
+  sha: "7f34d04",
+  date: "2026-10-29",
+  url: commitUrl("7f34d04"),
 } as const;
 
 export type LauncherLanguage = {
@@ -104,7 +104,7 @@ export const launcherFacts = {
 export const launcherImages = {
   settings: { src: "/images/launcher-settings-en.png", width: 1180, height: 760 },
   controls: { src: "/images/launcher-controls-en.png", width: 1180, height: 760 },
-  library: { src: "/images/launcher-library.png", width: 1182, height: 792 },
+  library: { src: "/images/launcher-library.png", width: 1180, height: 760 },
   languages: { src: "/images/launcher-settings-ja.png", width: 1180, height: 760 },
   /** The Graphics API card cropped from Settings, with DirectX 12 selected. */
   graphicsApi: { src: "/images/launcher-graphics-api-en.png", width: 838, height: 104 },

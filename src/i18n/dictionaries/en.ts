@@ -380,8 +380,8 @@ const en = {
       title: "Settings",
       body: "Interface language, output resolution ({resolutions}, 1080p by default), the Speed or Graphics rendering preset, sound output, an FPS counter in the game window title, the game's performance mode when it offers one, and the graphics API: Vulkan or the experimental DirectX 12. Resolution, preset and API apply on the next launch.",
     },
-    libraryCaption: "The library in the development build after {version}: the game folder, the Vulkan / DirectX 12 choice and the FPS limit, here set to 60.",
-    libraryAlt: "Launcher library page with eight game covers, the game folder, the Vulkan / DirectX 12 choice and the FPS limit buttons with 60 selected",
+    libraryCaption: "The English library in a development build after {version}: Vulkan / DirectX 12, FPS limits and separate Extract PKG / Extract ZAR buttons.",
+    libraryAlt: "English launcher library with eight game covers, Vulkan / DirectX 12, FPS limits and separate PKG and ZAR extraction buttons",
     controlsCaption:
       "Controls in Hybrid mode with a DualSense connected and the default key bindings.",
     controlsAlt:

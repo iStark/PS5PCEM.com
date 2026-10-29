@@ -21,10 +21,10 @@ export const captures: Capture[] = [
   },
   {
     src: "/images/launcher-library.png",
-    alt: "PS5PCEM launcher showing its recent-game library with cover art",
+    alt: "English PS5PCEM launcher with game covers, Vulkan / DirectX 12, FPS limits and separate Extract PKG / Extract ZAR buttons",
     title: "The launcher",
     caption:
-      "A native Windows library with local cover art, per-title saves, input profiles and direct game launching. Release 0.3.2 remembers up to 32 titles across pages of eight, displays the release version, checks Vulkan support, and includes the debug package extractor.",
+      "October 29, 2026 development build. The English Windows library with local cover art, Vulkan / DirectX 12 selection, FPS limits and separate PKG / ZAR extraction buttons. The image is exported by the launcher's own renderer using the local library. The launcher remembers up to 48 titles across pages of eight.",
   },
   {
     src: "/images/ritas-rewind-gameplay.png",
