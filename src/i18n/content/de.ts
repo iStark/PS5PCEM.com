@@ -571,6 +571,10 @@ const de: Content = {
   },
 
   history: {
+    "quake2-d3d12-indirect-bias-20261029": {
+      title: "DirectX 12: indirekte Zeichenbefehle und Schatten-Depth-Bias",
+      summary: "Der Entwicklungsbuild vom 29. Oktober unterstützt gezählte indirekte Zeichenbefehle und gebrochenen Depth Bias für Quake II. Alle 39 D3D12-Unit-Tests und die vollständigen GPU-Prüfungen bestehen. Der Spieltest erreicht nun MissingAttachment bei der Tiefendekomprimierung. Menü, automatische Spielsequenz und FPS sind unter DirectX 12 noch nicht bestätigt. Bisherige Spielbarkeitsangaben und Screenshots gelten für Vulkan.",
+    },
     "astro-bot-rgb-mask-performance-20261024": {
       "title": "Exakte Alpha-Erhaltung beschleunigt einen HDR-Durchlauf",
       "summary": "Ein RGBA16F-Durchlauf mit reinen RGB-Schreibzugriffen auf NVIDIA sinkt im isolierten Replay von 161,45 auf 3,59 ms. Ganzzahlige GPU-Sicherung und Wiederherstellung erhalten alle Alpha-Bits; Effekte und Auflösung bleiben erhalten. Alle 267 Vulkan-Tests und sämtliche 16-Bit-Alpha-Werte bestehen die Prüfung. Vergleich des Titelbildschirms im selben Prozess: 11,55 FPS zuvor, 12,20–12,35 FPS mit Optimierung. Im neu gebauten Runner standardmäßig aktiv. Ein vergleichbarer Gameplay-Test steht noch aus; dies sind keine Gameplay-FPS."

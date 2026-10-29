@@ -38,6 +38,13 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "quake2-d3d12-indirect-bias-20261029",
+    slug: "quake-ii-2023",
+    date: "2026-10-29",
+    release: null,
+    source: `${DOC_BASE}/architecture/d3d12.md#quake-ii-indirect-draws-and-shadow-bias-october-29-2026`,
+  },
+  {
     id: "astro-bot-rgb-mask-performance-20261024",
     slug: "astro-bot",
     date: "2026-10-24",

@@ -571,6 +571,10 @@ const fr: Content = {
   },
 
   history: {
+    "quake2-d3d12-indirect-bias-20261029": {
+      title: "DirectX 12 : rendu indirect et biais de profondeur des ombres",
+      summary: "La version en développement du 29 octobre prend en charge les commandes de rendu indirect avec compteur et le biais fractionnaire de profondeur des ombres de Quake II. Les 39 tests unitaires D3D12 et tous les tests GPU réussissent. Le jeu atteint désormais MissingAttachment lors de la décompression de profondeur. Le menu, la démonstration automatique et les FPS restent non vérifiés sous DirectX 12. Les résultats jouables et captures précédents concernent Vulkan.",
+    },
     "astro-bot-rgb-mask-performance-20261024": {
       "title": "La préservation exacte de l’alpha accélère une passe HDR",
       "summary": "Une passe RGBA16F limitée à l’écriture RGB sur NVIDIA passe de 161,45 à 3,59 ms en rejeu isolé. La sauvegarde et la restauration entières sur GPU préservent tous les bits alpha, les effets et la résolution. Les 267 tests Vulkan et la vérification exhaustive des valeurs alpha sur 16 bits réussissent. Comparaison de l’écran titre dans le même processus : 11,55 FPS avant, 12,20–12,35 FPS avec l’optimisation, activée par défaut dans le nouvel exécutable. Une mesure comparable en jeu reste à faire ; ces chiffres ne sont pas des FPS de gameplay."

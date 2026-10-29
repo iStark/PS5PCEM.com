@@ -571,6 +571,10 @@ const es: Content = {
   },
 
   history: {
+    "quake2-d3d12-indirect-bias-20261029": {
+      title: "DirectX 12: dibujo indirecto y sesgo de profundidad de sombras",
+      summary: "La compilación en desarrollo del 29 de octubre incorpora dibujo indirecto con contador y sesgo fraccionario de profundidad de sombras para Quake II. Pasan las 39 pruebas unitarias de D3D12 y todas las pruebas de GPU. La ejecución llega ahora a MissingAttachment al descomprimir la profundidad. El menú, la demostración automática y los FPS en DirectX 12 siguen sin verificarse. Los resultados jugables y las capturas anteriores corresponden a Vulkan.",
+    },
     "astro-bot-rgb-mask-performance-20261024": {
       "title": "La conservación exacta de alfa acelera una pasada HDR",
       "summary": "Una pasada RGBA16F que escribe solo RGB en NVIDIA baja de 161,45 a 3,59 ms en una reproducción aislada. La copia y restauración mediante enteros en la GPU preservan todos los bits de alfa, los efectos y la resolución. Pasan las 267 pruebas de Vulkan y la comprobación de todos los valores alfa de 16 bits. Comparación de la pantalla inicial en el mismo proceso: 11,55 FPS antes y 12,20–12,35 FPS con la optimización, activada por defecto en el nuevo ejecutable. Falta una medición comparable durante el juego; estas cifras no son FPS de gameplay."

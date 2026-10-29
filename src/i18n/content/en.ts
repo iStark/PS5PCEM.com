@@ -597,6 +597,10 @@ const content: Content = {
   },
 
   history: {
+    "quake2-d3d12-indirect-bias-20261029": {
+      title: "DirectX 12: indirect draws and shadow bias implemented",
+      summary: "The October 29 development build implements counted indirect draws and fractional shadow-depth bias for Quake II. All 39 D3D12 unit tests and the full GPU probe suite pass. The live run advances to MissingAttachment during depth decompression. Menu rendering, the automatic gameplay demo and FPS remain unverified on DirectX 12. Existing playable results and screenshots refer to Vulkan.",
+    },
     "astro-bot-rgb-mask-performance-20261024": {
       "title": "Exact alpha preservation accelerates an HDR pass",
       "summary": "An NVIDIA RGB-only RGBA16F pass drops from 161.45 to 3.59 ms in isolated replay. GPU integer backup and restore keep alpha bits exact; effects and resolution are retained. All 267 Vulkan tests and exhaustive half-float alpha checks pass. Same-process title comparison: 11.55 FPS with the old path, 12.20–12.35 FPS with the optimization. The rebuilt runner enables it by default. A matched gameplay measurement is still pending; these title and isolated-pass figures are not gameplay FPS."

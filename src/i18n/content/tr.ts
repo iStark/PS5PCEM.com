@@ -510,6 +510,10 @@ const tr: Content = {
     },
   },
   history: {
+    "quake2-d3d12-indirect-bias-20261029": {
+      title: "DirectX 12: dolaylı çizimler ve gölge derinlik ofseti",
+      summary: "29 Ekim geliştirme derlemesi, Quake II için sayaçlı dolaylı çizimleri ve kesirli gölge derinlik ofsetini uygular. 39 D3D12 birim testinin ve tüm GPU testlerinin tamamı geçiyor. Oyun artık derinlik açma aşamasında MissingAttachment hatasına ulaşıyor. DirectX 12 üzerinde menü, otomatik oynanış demosu ve FPS henüz doğrulanmadı. Önceki oynanabilirlik sonuçları ve ekran görüntüleri Vulkan'a aittir.",
+    },
     "astro-bot-rgb-mask-performance-20261024": {
       "title": "Alfanın tam korunması bir HDR geçişini hızlandırıyor",
       "summary": "NVIDIA üzerinde yalnızca RGB yazan bir RGBA16F geçişi, yalıtılmış tekrar testinde 161,45 ms’den 3,59 ms’ye düştü. GPU üzerindeki tamsayı yedekleme ve geri yükleme tüm alfa bitlerini korur; efektler ve çözünürlük değişmez. 267 Vulkan testi ve tüm 16 bit alfa değerlerinin kontrolü geçti. Aynı işlemde başlık ekranı karşılaştırması: eski yolda 11,55 FPS, optimizasyonla 12,20–12,35 FPS. Yeni çalıştırıcıda varsayılan olarak etkin. Aynı oyun sahnesindeki karşılaştırmalı ölçüm bekleniyor; bu değerler oynanış FPS’i değildir."

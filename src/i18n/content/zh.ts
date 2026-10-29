@@ -552,6 +552,10 @@ const zh: Content = {
   },
 
   history: {
+    "quake2-d3d12-indirect-bias-20261029": {
+      title: "DirectX 12：实现间接绘制与阴影深度偏移",
+      summary: "10 月 29 日的开发版本为 Quake II 实现了带计数缓冲区的间接绘制和非整数阴影深度偏移。39 项 D3D12 单元测试及全部 GPU 测试均通过。实机运行现在推进至深度解压阶段的 MissingAttachment 错误。DirectX 12 下的菜单、自动游戏演示和 FPS 尚未验证。现有可玩性结论及截图均基于 Vulkan。",
+    },
     "astro-bot-rgb-mask-performance-20261024": {
       "title": "精确保留 Alpha 值，加速 HDR 渲染通道",
       "summary": "NVIDIA 上仅写入 RGB 的 RGBA16F 通道，在独立重放测试中从 161.45 ms 降至 3.59 ms。GPU 整数备份与恢复保留 Alpha 的全部位，特效和分辨率保持不变。267 项 Vulkan 测试及全部 16 位 Alpha 值验证均通过。同一进程内标题画面对比：旧路径为 11.55 FPS，优化后为 12.20–12.35 FPS。新构建的运行程序默认启用此优化。同一游戏场景的对比测量仍待完成；这些数字不是实际游玩帧率。"
