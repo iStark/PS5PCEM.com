@@ -1209,42 +1209,29 @@ const tech: TechCopy = {
   },
 
   d3d12: {
-    title: "Direct3D 12 后端",
-    summary: "0.3.5 之后加入的实验性原生 Windows 渲染器。它与 Vulkan 共用 PM4 解码器和 RDNA2 着色器翻译，然后通过 D3D12 和 DXGI 执行并呈现。Vulkan 仍是默认选项，游戏目前还不能通过这条路径运行。",
-    sections: [
+    "title": "Direct3D 12 后端",
+    "summary": "0.3.6 版本提供 Windows 实验性原生 DirectX 12。Terminator 2D 到达实机游戏，Raiden IV 到达首个关卡，Super Woden GP 到达地图。Vulkan 仍为默认，Linux 使用 Vulkan。",
+    "sections": [
       {
-        heading: "选择渲染器",
-        paragraphs: [
+        "heading": "选择渲染器",
+        "paragraphs": [
           "Windows 启动器的设置中有一张“图形 API”卡片，可选 Vulkan 和 DirectX 12。启动器把 graphics_api=vulkan 或 graphics_api=d3d12 写入便携式 ps5pcem.ini，并把 PS5_GRAPHICS_API 传给 game-run，因此所选项在下次启动时生效。默认是 Vulkan。启动器在全部十二种语言中把 DirectX 12 标为实验性，侧栏会用它替代 Vulkan 设备状态显示。",
-          "同一个变量也可以在命令行中使用，d3d12 和 dx12 都被接受。Linux 版本选择 Vulkan，运行器会在那里拒绝 d3d12。未知的值会在加载游戏之前被拒绝。如果 D3D12 初始化或执行失败，运行器不会改用 Vulkan：不受支持的 GPU 工作会打印原因并结束这次实验性运行，而不是把它报告为已完成。该后端不提供无窗口执行。",
-        ],
+          "同一个变量也可以在命令行中使用，d3d12 和 dx12 都被接受。Linux 版本选择 Vulkan，运行器会在那里拒绝 d3d12。未知的值会在加载游戏之前被拒绝。如果 D3D12 初始化或执行失败，运行器不会改用 Vulkan：不受支持的 GPU 工作会打印原因并结束这次实验性运行，而不是把它报告为已完成。该后端不提供无窗口执行。"
+        ]
       },
       {
-        heading: "后端执行什么",
-        paragraphs: [
-          "设备、直接队列、命令分配器与命令列表、屏障、栅栏以及资源生命周期都位于一层基于 COM 的小型 C 接口之后。上传、默认和回读缓冲区、原始 UAV 描述符数组以及 GPU 复制均已实现。着色器经过与 Vulkan 路径相同的 RDNA2 解码器、IR 和 SPIR-V 生成；SPIRV-Cross 把这份 SPIR-V 转为 HLSL，Windows 的 D3DCompiler 再生成 Shader Model 5.1 字节码。这里的 SPIR-V 只是中间形式，没有任何东西经由 Vulkan 执行。SPIRV-Cross 按源码哈希固定版本，其 Apache-2.0 许可证随项目一同提供。",
-          "在 PM4 方面，DISPATCH_DIRECT 使用有界且静态解析的 MUBUF 和 MTBUF 存储描述符、USER_DATA 特化，并精确写回客户机内存。DRAW_INDEX_AUTO 只支持受限情形：不带资源的顶点和像素着色器、三角形列表或三角形带、一个线性 RGBA8 UNORM 目标、视口、裁剪矩形、背面剔除、通道掩码和实例化，并保留目标中已有的字节。三缓冲 DXGI 翻转交换链呈现线性 RGBA8 和 BGRA8 扫描输出，并在窗口标题中显示渲染器和帧率。GPU 工作在其结果进入客户机内存之前同步完成，并行 AGC 执行处于关闭状态，着色器、管线状态和暂存资源目前不会在调用之间缓存。",
-        ],
-      },
-      {
-        heading: "已验证的内容",
-        paragraphs: [
-          "2026 年 10 月 17 日，在 NVIDIA GeForce RTX 3070 Ti 上通过了硬件探测：六种大小的缓冲区上传与回读、六种调度规模的原生计算、带精确输出检查的 RDNA2 计算与光栅化翻译、经命令执行器进入 D3D12 并写回客户机内存的 PM4 计算与绘制，以及三种交换链尺寸下的窗口呈现。当时没有安装 D3D12 调试层，因此这些运行不能证明在调试层下没有问题。",
-          "以 PS5_GRAPHICS_API=d3d12 启动 Raiden IV 时，程序选中了 RTX 3070 Ti，启动了游戏，并在第一次索引绘制处以退出码 1 停止（IndexedAndIndirectDrawNotImplemented）。这是一项已验证的限制，而不是在 D3D12 上成功启动游戏。本站所有游戏结果和帧率数据都是用 Vulkan 测得的。",
-        ],
-      },
+        "heading": "PS5PCEM 0.3.6",
+        "paragraphs": [
+          "已实现索引和间接绘制、纹理、深度/模板、MRT、DXC Wave 着色器、资源缓存和命令分组。0.3.6 的48项 D3D12 测试与原生 GPU 验证全部通过。"
+        ]
+      }
     ],
-    works: [
-      "启动器中的选择保存在 ps5pcem.ini 中，并作为 PS5_GRAPHICS_API 传递，默认使用 Vulkan。",
-      "原生设备、队列、栅栏、缓冲区、UAV 描述符和 GPU 复制，位于基于 COM 的 C 接口之后。",
-      "RDNA2 着色器经共用的 SPIR-V 路径、SPIRV-Cross 生成的 HLSL 和 Shader Model 5.1 字节码。",
-      "有界的计算调度、受限的自动索引绘制，以及三缓冲 DXGI 翻转交换链。",
+    "works": [
+      "已实现索引和间接绘制、纹理、深度/模板、MRT、DXC Wave 着色器、资源缓存和命令分组。0.3.6 的48项 D3D12 测试与原生 GPU 验证全部通过。"
     ],
-    gaps: [
-      "纹理与采样器、图像格式与纹理解块、索引和间接绘制、NGG 与曲面细分尚未实现。",
-      "客户机深度与模板、混合、多渲染目标、MSAA、元数据和视频呈现仍然缺失。",
-      "没有着色器和管线缓存，也没有异步完成，因此无法测量游戏帧率；Linux 版本没有 D3D12。",
-    ],
+    "gaps": [
+      "MSAA、通用计算图像及其他图形路径仍未完成。Vulkan 的兼容性和 FPS 不能作为 DirectX 或 Linux 的性能结论。"
+    ]
   },
 };
 

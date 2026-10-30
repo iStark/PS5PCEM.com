@@ -93,12 +93,12 @@ export const subsystems: Subsystem[] = [
     name: "Direct3D 12 rendering (experimental)",
     state: "partial",
     summary:
-      "A native Windows backend in development builds after 0.3.5, selected in launcher Settings or with PS5_GRAPHICS_API=d3d12. Games do not run through it yet.",
+      "Experimental native Windows rendering in 0.3.6: Terminator 2D gameplay, Raiden IV stage rendering and the Super Woden GP map. Vulkan remains the default.",
     details: [
       "Native device, direct queue, fences, upload/default/readback buffers, raw UAV descriptors and GPU copies behind a small C interface over COM.",
-      "RDNA2 shaders reuse the shared decoder, IR and SPIR-V generation, then go through SPIRV-Cross to HLSL and D3DCompiler Shader Model 5.1 bytecode.",
-      "Bounded DISPATCH_DIRECT, a restricted DRAW_INDEX_AUTO into one linear RGBA8 target, and a three-buffer DXGI flip swapchain with the renderer and FPS in the window title.",
-      "Hardware probes passed on an RTX 3070 Ti on 17 October 2026. Raiden IV stops at its first indexed draw, so no D3D12 game boot or FPS is claimed; Linux keeps Vulkan.",
+      "RDNA2 shaders reuse the shared decoder, IR and SPIR-V generation, then go through SPIRV-Cross to HLSL, D3DCompiler Shader Model 5.1 or DXC wave shaders.",
+      "Bounded compute, indexed/indirect draws, textures, depth/stencil, MRT, DMA uploads, caches and command groups feed native DXGI presentation.",
+      "All 48 D3D12 tests and native hardware probes pass at the release checkpoint. MSAA and general compute-image handling remain incomplete; Linux keeps Vulkan.",
     ],
   },
   {
@@ -154,7 +154,7 @@ export const subsystems: Subsystem[] = [
       "Reads artwork from each title's local sce_sys/icon0.png.",
       "Detects DualSense and DualShock controllers and persists sound and input profiles.",
       "Version 0.3.5 ships a GTK 3 Linux launcher and four Linux package formats. Installed packages and AppImages use writable XDG settings and data directories.",
-      "The development build after 0.3.5 adds Turkish, Japanese, Hindi and Korean, for twelve interface languages in both launchers.",
+      "Version 0.3.6 adds Turkish, Japanese, Hindi and Korean, for twelve interface languages in both launchers, plus PKG/ZAR extraction and FPS limits.",
       "The Library page offers an FPS limit of 30, 60 or 120, or Unlimited, passed as PS5_FPS_LIMIT. It paces every completed flip with either renderer; Asterix held 29.9–30.0, 59.9–60.0 and 119.8–120.0 FPS on an RTX 3070 Ti.",
     ],
   },

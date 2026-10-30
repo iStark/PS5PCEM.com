@@ -19,8 +19,7 @@ same order (`Language` / `language_labels` in `src/launcher_common.zig`):
 | `tr` Türkçe | `ja` 日本語 | `hi` हिन्दी | `ko` 한국어 |
 
 The first eight shipped in the launcher with 0.3.0-alpha.1 and 0.3.0-alpha.4;
-Turkish, Japanese, Hindi and Korean arrived in the development build after
-0.3.5. [/languages](src/app/[locale]/languages/page.tsx) lists them with their
+Turkish, Japanese, Hindi and Korean ship in 0.3.6. [/languages](src/app/[locale]/languages/page.tsx) lists them with their
 launcher IDs.
 
 Every page lives under a locale prefix — `/ru/compatibility`,
@@ -103,7 +102,7 @@ repository's own documentation, and the test suite pins them to it:
 | `src/data/compatibility.ts` | `docs/project-status.md` — slugs, tiers, captures, confirmation dates |
 | `src/data/history.ts` | `docs/development/*.md` and `docs/release-notes/*.md` — one entry per dated run |
 | `src/data/subsystems.ts` | `docs/implementation-status.md` |
-| `src/data/release.ts` | GitHub release `v0.3.5`, its release notes, and `SHA256SUMS.txt` |
+| `src/data/release.ts` | GitHub release `v0.3.6`, its release notes, and `SHA256SUMS.txt` |
 | `src/data/extractor.ts` | `zig-out/bin/pkgextractor.exe` behaviour |
 | `src/data/launcher.ts` | `src/launcher_common.zig`, `src/launcher.zig`, `src/launcher_linux.zig` and `docs/release-notes/*.md` — languages and their IDs, settings, environment variables, timeline |
 | `src/data/graphics.ts` | `src/graphics_api.zig`, `src/game_run.zig` and `docs/architecture/d3d12.md` — the two renderers, their `PS5_GRAPHICS_API` values and platforms |

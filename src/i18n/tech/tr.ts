@@ -1179,42 +1179,29 @@ const tech: TechCopy = {
   },
 
   d3d12: {
-    title: "Direct3D 12 arka ucu",
-    summary: "0.3.5 sonrasında eklenen deneysel, yerel bir Windows işleyicisi. PM4 kod çözücüsünü ve RDNA2 shader çevirisini Vulkan ile paylaşır, ardından D3D12 ve DXGI üzerinden yürütür ve görüntüler. Varsayılan Vulkan olmaya devam ediyor ve oyunlar henüz bu yoldan çalışmıyor.",
-    sections: [
+    "title": "Direct3D 12 arka ucu",
+    "summary": "0.3.6 sürümünde Windows için deneysel yerel DirectX 12 bulunur. Terminator 2D oynanışa, Raiden IV ilk aşamaya ve Super Woden GP haritaya ulaşır. Vulkan varsayılandır; Linux Vulkan kullanır.",
+    "sections": [
       {
-        heading: "İşleyici seçmek",
-        paragraphs: [
+        "heading": "İşleyici seçmek",
+        "paragraphs": [
           "Windows başlatıcısının ayarlarında Vulkan ve DirectX 12 seçeneklerini içeren bir Grafik API'si kartı var. Başlatıcı, taşınabilir ps5pcem.ini dosyasına graphics_api=vulkan ya da graphics_api=d3d12 yazar ve PS5_GRAPHICS_API değişkenini game-run'a iletir; böylece seçim bir sonraki başlatmada geçerli olur. Varsayılan Vulkan'dır. Başlatıcı on iki dilin hepsinde DirectX 12'yi deneysel olarak etiketler ve kenar çubuğu onu Vulkan aygıt durumunun yerine gösterir.",
-          "Aynı değişken komut satırında da çalışır; orada hem d3d12 hem dx12 kabul edilir. Linux sürümleri Vulkan'ı seçer ve çalıştırıcı orada d3d12'yi reddeder. Bilinmeyen bir değer, oyun yüklenmeden önce geri çevrilir. D3D12'nin başlatılması ya da yürütülmesi başarısız olursa çalıştırıcı yerine Vulkan koymaz: desteklenmeyen GPU işi nedenini yazar ve işi tamamlanmış gibi bildirmek yerine deneysel çalıştırmayı sonlandırır. Bu arka uçta penceresiz yürütme yoktur.",
-        ],
+          "Aynı değişken komut satırında da çalışır; orada hem d3d12 hem dx12 kabul edilir. Linux sürümleri Vulkan'ı seçer ve çalıştırıcı orada d3d12'yi reddeder. Bilinmeyen bir değer, oyun yüklenmeden önce geri çevrilir. D3D12'nin başlatılması ya da yürütülmesi başarısız olursa çalıştırıcı yerine Vulkan koymaz: desteklenmeyen GPU işi nedenini yazar ve işi tamamlanmış gibi bildirmek yerine deneysel çalıştırmayı sonlandırır. Bu arka uçta penceresiz yürütme yoktur."
+        ]
       },
       {
-        heading: "Arka ucun yürüttükleri",
-        paragraphs: [
-          "Aygıt, doğrudan kuyruk, komut ayırıcıları ve listeleri, bariyerler, çitler ve kaynak ömürleri COM üzerinde küçük bir C arayüzünün arkasında durur. Yükleme, varsayılan ve geri okuma arabellekleri, ham UAV tanımlayıcı dizileri ve GPU kopyaları uygulanmıştır. Shader'lar, Vulkan yolundakiyle aynı RDNA2 kod çözücüsünden, IR'den ve SPIR-V üretiminden geçer; SPIRV-Cross bu SPIR-V'yi HLSL'ye çevirir, Windows D3DCompiler de Shader Model 5.1 bayt kodu üretir. SPIR-V burada yalnızca bir ara biçimdir ve hiçbir şey Vulkan üzerinden yürütülmez. SPIRV-Cross kaynak karmasıyla sabitlenmiştir ve Apache-2.0 lisansı projeyle birlikte gelir.",
-          "PM4 tarafında DISPATCH_DIRECT; sınırlı, statik olarak çözümlenen MUBUF ve MTBUF depolama tanımlayıcıları, USER_DATA özelleştirmesi ve misafir belleğe birebir geri yazma ile çalışır. DRAW_INDEX_AUTO kısıtlı bir durumu kapsar: kaynak kullanmayan köşe ve piksel shader'ları, üçgen listeleri ya da şeritleri, tek bir doğrusal RGBA8 UNORM hedefi, görüntü alanı, kesme dikdörtgeni, yüz ayıklama, kanal maskeleri ve örnekleme; hedefte zaten bulunan baytlar korunur. Üç arabellekli bir DXGI flip takas zinciri doğrusal RGBA8 ve BGRA8 tarama çıkışlarını görüntüler, pencere başlığında işleyiciyi ve FPS'yi gösterir. GPU işi, etkileri misafir belleğe ulaşmadan önce eşzamanlı olarak tamamlanır, paralel AGC yürütmesi kapalıdır; shader'lar, ardışık düzen durumu ve hazırlanmış kaynaklar çağrılar arasında henüz önbelleğe alınmaz.",
-        ],
-      },
-      {
-        heading: "Neler doğrulandı",
-        paragraphs: [
-          "17 Ekim 2026'da bir NVIDIA GeForce RTX 3070 Ti üzerinde donanım sınamaları geçti: altı boyutta arabellek yükleme ve geri okuma, altı dispatch boyutunda yerel hesaplama, birebir çıktı denetimiyle RDNA2 hesaplama ve raster çevirisi, komut yürütücüsü üzerinden D3D12'ye giden ve misafir belleğe geri yazan PM4 hesaplama ve çizimleri ve üç takas zinciri boyutunda pencereye görüntüleme. D3D12 hata ayıklama katmanı kurulu değildi; bu nedenle bu çalıştırmalar o katman altında temiz olduğunu kanıtlamaz.",
-          "PS5_GRAPHICS_API=d3d12 ile başlatılan Raiden IV, RTX 3070 Ti'yi seçti, oyunu başlattı ve ilk dizinli çizimde 1 çıkış koduyla durdu (IndexedAndIndirectDrawNotImplemented). Bu, D3D12'de bir oyun açılışı değil, doğrulanmış bir sınırdır. Bu sitedeki tüm oyun sonuçları ve FPS değerleri Vulkan ile ölçüldü.",
-        ],
-      },
+        "heading": "PS5PCEM 0.3.6",
+        "paragraphs": [
+          "İndeksli ve dolaylı çizimler, dokular, derinlik/stencil, MRT, DXC wave shader’ları, kaynak önbellekleri ve komut grupları uygulanmıştır. 0.3.6 için 48 D3D12 testi ve yerel GPU kontrolleri geçer."
+        ]
+      }
     ],
-    works: [
-      "Başlatıcı seçimi ps5pcem.ini'ye kaydedilir ve PS5_GRAPHICS_API olarak iletilir; varsayılan Vulkan'dır.",
-      "COM üzerinde bir C arayüzünün arkasında yerel aygıt, kuyruk, çitler, arabellekler, UAV tanımlayıcıları ve GPU kopyaları.",
-      "Ortak SPIR-V yolu, SPIRV-Cross'un ürettiği HLSL ve Shader Model 5.1 bayt koduyla RDNA2 shader'ları.",
-      "Sınırlı hesaplama dispatch'leri, kısıtlı bir otomatik dizinli çizim ve üç arabellekli DXGI flip takas zinciri.",
+    "works": [
+      "İndeksli ve dolaylı çizimler, dokular, derinlik/stencil, MRT, DXC wave shader’ları, kaynak önbellekleri ve komut grupları uygulanmıştır. 0.3.6 için 48 D3D12 testi ve yerel GPU kontrolleri geçer."
     ],
-    gaps: [
-      "Dokular ve örnekleyiciler, görüntü biçimleri ve detile işlemi, dizinli ve dolaylı çizimler, NGG ve mozaikleme henüz uygulanmadı.",
-      "Misafir derinlik ve şablon, karıştırma, birden çok işleme hedefi, MSAA, meta veriler ve video görüntüleme hâlâ eksik.",
-      "Shader ve ardışık düzen önbelleği ile eşzamansız tamamlama olmadan oyun FPS'si ölçülemez; Linux sürümlerinde D3D12 yok.",
-    ],
+    "gaps": [
+      "MSAA, genel compute görüntüleri ve diğer grafik yolları henüz eksiktir. Vulkan uyumluluğu ve FPS sonuçları DirectX veya Linux ölçümleri değildir."
+    ]
   },
 };
 

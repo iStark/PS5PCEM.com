@@ -21,83 +21,83 @@ export type Release = {
   assets: ReleaseAsset[];
 };
 
-const TAG = "v0.3.5";
+const TAG = "v0.3.6";
 
 export const latestRelease: Release = {
-  "version": "0.3.5",
-  "tag": "v0.3.5",
-  "publishedAt": "2026-10-16T03:41:24Z",
+  "version": "0.3.6",
+  "tag": "v0.3.6",
+  "publishedAt": "2026-10-30T10:32:33Z",
   "prerelease": false,
-  "notesUrl": "https://github.com/iStark/PS5PCEM/blob/v0.3.5/docs/release-notes/v0.3.5.md",
-  "releaseUrl": "https://github.com/iStark/PS5PCEM/releases/tag/v0.3.5",
+  "notesUrl": "https://github.com/iStark/PS5PCEM/blob/v0.3.6/docs/release-notes/v0.3.6.md",
+  "releaseUrl": "https://github.com/iStark/PS5PCEM/releases/tag/v0.3.6",
   "assets": [
     {
       "label": "Windows portable ZIP",
-      "fileName": "PS5PCEM-0.3.5-windows-x64-portable.zip",
-      "size": 228660896,
-      "sha256": "431730b7e3c8ad245f0819896e164fcce6015a7487e9bc6264151ccbeacbfbd2",
-      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.5/PS5PCEM-0.3.5-windows-x64-portable.zip",
+      "fileName": "PS5PCEM-0.3.6-windows-x64-portable.zip",
+      "size": 306065798,
+      "sha256": "194989ac77a3b76c60477b4c102784e9b840a31567b1591c96d3b4ccf0603ac6",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.6/PS5PCEM-0.3.6-windows-x64-portable.zip",
       "description": "Extract and run ps5pcem.exe. Settings and saves stay beside the application.",
       "primary": true
     },
     {
       "label": "Windows per-user installer",
-      "fileName": "PS5PCEM-0.3.5-windows-x64-setup.exe",
-      "size": 224151816,
-      "sha256": "3ca145200479fdb34a7da6a2e14bbb41ea4f7ba3b01835e8f5d4a036991df8d0",
-      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.5/PS5PCEM-0.3.5-windows-x64-setup.exe",
+      "fileName": "PS5PCEM-0.3.6-windows-x64-setup.exe",
+      "size": 296414768,
+      "sha256": "b0bac9a84fbdc88d3aea495a41857664a26c2cc568bfcfc76238b3dfe98ad58e",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.6/PS5PCEM-0.3.6-windows-x64-setup.exe",
       "description": "Installs for the current Windows user. No administrator rights required."
     },
     {
       "label": "Linux DEB",
-      "fileName": "PS5PCEM-0.3.5-linux-x64.deb",
-      "size": 12862232,
-      "sha256": "85b6534e36982cd02db3c0eaadac29b4e71c0926a7a9dd74675603146c4c3d50",
-      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.5/PS5PCEM-0.3.5-linux-x64.deb",
+      "fileName": "PS5PCEM-0.3.6-linux-x64.deb",
+      "size": 13050792,
+      "sha256": "53b368aa72ba7019bcf0c793cd60dd09f377996f289e25b526638ff97a8681b9",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.6/PS5PCEM-0.3.6-linux-x64.deb",
       "description": "Native GTK 3 launcher, runner and extractor for Debian / Ubuntu."
     },
     {
       "label": "Linux RPM",
-      "fileName": "PS5PCEM-0.3.5-linux-x64.rpm",
-      "size": 11777941,
-      "sha256": "7100cc97ac27f093f58331097585e8a328d5f8060acdec7884849c92d677a06a",
-      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.5/PS5PCEM-0.3.5-linux-x64.rpm",
+      "fileName": "PS5PCEM-0.3.6-linux-x64.rpm",
+      "size": 11932245,
+      "sha256": "ae718718c381bde2fbae8e8e4a0390626ba40fe7c699043efd5c7b55e6e20567",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.6/PS5PCEM-0.3.6-linux-x64.rpm",
       "description": "Native GTK 3 launcher, runner and extractor for Fedora and compatible distributions."
     },
     {
       "label": "Linux Pacman",
-      "fileName": "PS5PCEM-0.3.5-linux-x64.pacman",
-      "size": 15025056,
-      "sha256": "03c14f20c6d2b79e8ad0c67fea29573adebca8fa8039c6b76ecbf29e5e811463",
-      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.5/PS5PCEM-0.3.5-linux-x64.pacman",
+      "fileName": "PS5PCEM-0.3.6-linux-x64.pacman",
+      "size": 15250705,
+      "sha256": "59a1eb176d9c656b019a23b8e6965d4801f7a4c25b5bfd2b80dc5fb05b17dad0",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.6/PS5PCEM-0.3.6-linux-x64.pacman",
       "description": "Native GTK 3 launcher, runner and extractor for Arch Linux. Install with pacman -U."
     },
     {
       "label": "Linux AppImage",
-      "fileName": "PS5PCEM-0.3.5-linux-x64.AppImage",
-      "size": 15903224,
-      "sha256": "0ff67ff06d1faff7e54513e58e983fe0b351bbfd850436ef7ad3df9ad121d26e",
-      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.5/PS5PCEM-0.3.5-linux-x64.AppImage",
+      "fileName": "PS5PCEM-0.3.6-linux-x64.AppImage",
+      "size": 16157176,
+      "sha256": "85351157f488e988ae2ef364dc70ba327910f8937cf339deef9d7168b7ded9cc",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.6/PS5PCEM-0.3.6-linux-x64.AppImage",
       "description": "Executable Linux image. Requires system GTK 3, X11, PulseAudio and Vulkan libraries."
     },
     {
       "label": "SHA-256 checksums",
       "fileName": "SHA256SUMS.txt",
       "size": 597,
-      "sha256": "12baac5358109a4691fcff184739ee79b4d611c44250d9f4675869fc90304dcd",
-      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.5/SHA256SUMS.txt",
+      "sha256": "587fcf87c4f28a6b09a8cf8de14655a900e71979508eecab3dcd97d6a59891b1",
+      "url": "https://github.com/iStark/PS5PCEM/releases/download/v0.3.6/SHA256SUMS.txt",
       "description": "SHA-256 hashes for all six Windows and Linux packages."
     }
   ]
 };
 
 export const releaseHighlights = [
-  "First native Linux packages: DEB, RPM, Pacman and AppImage with the GTK 3 launcher, runner and extractor.",
-  "Both launchers support 48 games, search, table view and GitHub update checks.",
-  "Windows controller vibration and game-controlled LightBar; DualSense USB feedback physically confirmed.",
-  "Audio corrections for Subnautica, Quake II and Jets, plus shared renderer and loader fixes.",
-  "Fifteen newly documented titles, with screenshots and explicit limits for gameplay, graphics and performance.",
-  "Windows applications and installer use the existing timestamped certificate. Linux remains experimental; dated Windows FPS results are not Linux benchmarks."
+  "Experimental native DirectX 12 on Windows, selectable alongside the default Vulkan backend; indexed draws, textures, depth/stencil, MRT and rendering caches.",
+  "Vulkan graphics corrections for ASTRO BOT, Severed Steel and Super Woden GP, plus shared performance work and the Raiden IV fast path.",
+  "KeyWe save-slot creation, Jets first-run saves, Oxide Room 104 loading and additional kernel, audio and runtime imports.",
+  "PKG and ZAR extraction, twelve launcher languages, FPS limits and Windows motion input.",
+  "Dated screenshots and per-backend test reports distinguish verified gameplay from unresolved title-specific issues.",
+  "Signed, timestamped Windows ZIP and installer, plus Linux DEB, RPM, Pacman and AppImage packages. Linux uses Vulkan; Windows FPS results are not Linux benchmarks."
 ] as const;
 
 export const releaseHistory: {
@@ -107,10 +107,16 @@ export const releaseHistory: {
   url: string;
 }[] = [
   {
-    version: "0.3.5",
+    version: "0.3.6",
     tag: TAG,
     publishedAt: latestRelease.publishedAt,
     url: latestRelease.releaseUrl,
+  },
+  {
+    version: "0.3.5",
+    tag: "v0.3.5",
+    publishedAt: "2026-10-16T03:41:24Z",
+    url: "https://github.com/iStark/PS5PCEM/releases/tag/v0.3.5",
   },
   {
     version: "0.3.4",
@@ -169,7 +175,7 @@ export const systemRequirements = [
   },
   {
     label: "Graphics",
-    value: "A current Vulkan 1.2-capable driver",
+    value: "A current Vulkan 1.2-capable driver; experimental DirectX 12 is available on Windows",
   },
   {
     label: "Processor",

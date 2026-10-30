@@ -42,10 +42,10 @@ export const launcherLanguages: readonly LauncherLanguage[] = [
   { locale: "es", launcherId: 5, since: "0.3.0-alpha.4" },
   { locale: "ar", launcherId: 6, since: "0.3.0-alpha.4" },
   { locale: "pt", launcherId: 7, since: "0.3.0-alpha.4" },
-  { locale: "tr", launcherId: 8, since: null },
-  { locale: "ja", launcherId: 9, since: null },
-  { locale: "hi", launcherId: 10, since: null },
-  { locale: "ko", launcherId: 11, since: null },
+  { locale: "tr", launcherId: 8, since: "0.3.6" },
+  { locale: "ja", launcherId: 9, since: "0.3.6" },
+  { locale: "hi", launcherId: 10, since: "0.3.6" },
+  { locale: "ko", launcherId: 11, since: "0.3.6" },
 ];
 
 /** Releases the languages first shipped in, for the counts on the page. */
@@ -59,7 +59,15 @@ export const releasedLauncherLanguages = launcherLanguages.filter(
  * its commit instead. Keys name the matching dictionary strings
  * (launcher.timeline.<key>).
  */
-export const launcherTimeline = [
+type LauncherTimelineEntry = {
+  key: "alpha1" | "alpha4" | "beta1" | "v032" | "v033" | "v034" | "v035"
+    | "development" | "graphicsApi" | "fpsLimit";
+} & (
+  | { version: string; commit: null }
+  | { version: null; commit: string }
+);
+
+export const launcherTimeline: readonly LauncherTimelineEntry[] = [
   { key: "alpha1", version: "0.3.0-alpha.1", commit: null },
   { key: "alpha4", version: "0.3.0-alpha.4", commit: null },
   { key: "beta1", version: "0.3.1-beta.1", commit: null },
@@ -67,9 +75,9 @@ export const launcherTimeline = [
   { key: "v033", version: "0.3.3", commit: null },
   { key: "v034", version: "0.3.4", commit: null },
   { key: "v035", version: "0.3.5", commit: null },
-  { key: "development", version: null, commit: "83948d3" },
-  { key: "graphicsApi", version: null, commit: "fafd205" },
-  { key: "fpsLimit", version: null, commit: "6654cf5" },
+  { key: "development", version: "0.3.6", commit: null },
+  { key: "graphicsApi", version: "0.3.6", commit: null },
+  { key: "fpsLimit", version: "0.3.6", commit: null },
 ] as const;
 
 /** The environment variables the launcher sets before starting game-run. */

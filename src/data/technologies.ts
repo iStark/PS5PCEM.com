@@ -139,7 +139,7 @@ export const technologies = [
     category: "graphics",
     state: "partial",
     related: ["vulkan", "rdna2", "agc", "videoout"],
-    updated: "2026-10-17",
+    updated: "2026-10-30",
   },
   {
     slug: "msaa",

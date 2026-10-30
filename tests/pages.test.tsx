@@ -473,9 +473,9 @@ describe("launcher page", () => {
 
     for (const entry of launcherTimeline) {
       if (entry.version !== null) {
-        const link = screen.getByRole("link", {
+        const link = screen.getAllByRole("link", {
           name: format(t.common.release, { version: entry.version }),
-        });
+        })[0];
         expect(link.getAttribute("href")).toContain(
           `docs/release-notes/v${entry.version}.md`,
         );
