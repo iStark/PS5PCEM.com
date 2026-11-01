@@ -19,17 +19,17 @@ const fr: Content = {
     },
     "astro-bot": {
       "status": "En jeu · graphismes améliorés · FPS faibles",
-      "headline": "Les textures diffusées corrigent la cinématique d’ouverture",
-      "summary": "Image MIN_LOD empêche désormais de lire les niveaux de texture que le jeu n’a pas encore chargés. Le bruit coloré des panneaux et la lueur arc-en-ciel excessive disparaissent dans les plans d’ouverture répétés ; le responsable confirme la correction visuelle. Les 266 tests Vulkan et huit cas GPU natifs passent. De nouvelles captures avant/après documentent cette version en développement.",
+      "headline": "Flou du lieu du crash corrigé dans une comparaison au sein du même processus",
+      "summary": "Les anciennes métadonnées d’effacement DCC supprimaient le résultat net du calcul avant le bloom. En activant, désactivant puis réactivant sa conservation dans une même session Vulkan, le monde devient net, flou, puis net à nouveau. Les effets et constantes de mélange restent actifs. Les 606 tests GPU/Vulkan et 18 cas sur GPU natif passent.",
       "strengths": [
         "Les effacements RG16F DCC et la protection des textures préparées corrigent des chemins de rendu communs. Les shaders et effets restent actifs.",
         "Les tests natifs de conversion, de remplacement par le CPU et les 64 configurations de réécriture complète d’image réussissent."
       ],
       "limits": [
-        "Les scènes suivantes, une nouvelle mesure en jeu et le tutoriel de mouvements restent à vérifier. Certaines lignes de profil signalent encore 12 liaisons de stockage non résolues ; aucune erreur différée de shader jusqu’à l’image 4261. La justesse graphique complète et la fin du jeu ne sont pas confirmées."
+        "Il reste 12 liaisons de stockage non résolues et environ 255,9 Mio relus depuis le GPU par image. Les lignes du profil ne montrent aucun draw/dispatch rejeté ni calcul non pris en charge. Les niveaux suivants, la justesse graphique complète et la fin du jeu ne sont pas vérifiés."
       ],
-      "performance": "Cinématique d’ouverture : 327 images / 30,0001754 s = 10,90 FPS. Ancienne mesure en jeu : 6,97 FPS dans une autre scène/version ; aucune accélération directement comparable. RTX 3070 Ti, Vulkan, sortie 1080p, scanout 4K piloté par le jeu. Version en développement.",
-      "imageAlt": "Intérieur du vaisseau ASTRO BOT après la correction des textures, avec panneaux et surfaces des robots propres"
+      "performance": "Invite de réveil DualSense : 4,77 / 4,80 / 4,67 FPS, correction activée/désactivée/activée, 30 secondes par intervalle. C’est une correction visuelle, pas un gain de vitesse ni une mesure de déplacement libre. RTX 3070 Ti, Speed, profil 1080p pour la version exacte ; HDR 2432×1368 et cibles finales 4K conservés.",
+      "imageAlt": "Lieu du crash ASTRO BOT net avec l’invite DualSense après réactivation de la conservation DCC"
     },
     "goat-simulator-3": {
       "status": "En jeu · image inversée · FPS faibles",
@@ -571,8 +571,9 @@ const fr: Content = {
 
   history: {
     "astro-bot-compute-dcc-20261101": {
-      "title": "Vulkan : conserver la scène calculée avant le bloom",
-      "summary": "Le test en jeu avec la seule correction du mélange restait flou : des métadonnées DCC anciennes effaçaient le résultat net du calcul avant le bloom. Il est désormais conservé uniquement si la disposition, le contenu et la génération suivie des métadonnées concordent. Un nouvel effacement ou remplacement par le CPU invalide cette preuve. Les 606 tests GPU/Vulkan et 18 cas sur GPU natif passent. La comparaison sur le lieu du crash reste à faire ; aucune image corrigée en jeu ni hausse de FPS n’est encore confirmée."
+      "title": "Flou du lieu du crash corrigé dans une comparaison au sein du même processus",
+      "summary": "Les anciennes métadonnées d’effacement DCC supprimaient le résultat net du calcul avant le bloom. En activant, désactivant puis réactivant sa conservation dans une même session Vulkan, le monde devient net, flou, puis net à nouveau. Les effets et constantes de mélange restent actifs. Les 606 tests GPU/Vulkan et 18 cas sur GPU natif passent. Invite de réveil DualSense : 4,77 / 4,80 / 4,67 FPS, correction activée/désactivée/activée, 30 secondes par intervalle. C’est une correction visuelle, pas un gain de vitesse ni une mesure de déplacement libre. RTX 3070 Ti, Speed, profil 1080p pour la version exacte ; HDR 2432×1368 et cibles finales 4K conservés. Il reste 12 liaisons de stockage non résolues et environ 255,9 Mio relus depuis le GPU par image. Les lignes du profil ne montrent aucun draw/dispatch rejeté ni calcul non pris en charge. Les niveaux suivants, la justesse graphique complète et la fin du jeu ne sont pas vérifiés.",
+      "imageAlt": "Lieu du crash ASTRO BOT net avec l’invite DualSense après réactivation de la conservation DCC"
     },
     "astro-bot-blend-constants-20261101": {
       "title": "Vulkan : conserver la scène lors du bloom",

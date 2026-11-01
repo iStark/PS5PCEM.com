@@ -46,17 +46,17 @@ const content: Content = {
     },
     "astro-bot": {
       "status": "In-game · graphics improved · low FPS",
-      "headline": "Streamed texture fix corrects the opening cinematic",
-      "summary": "Image MIN_LOD now prevents sampling texture levels that the game has not loaded. Colored panel noise and excessive rainbow glow disappear in repeated opening shots; the maintainer confirms corrected opening graphics. All 266 Vulkan tests and eight native clamp cases pass. New before/after captures accompany this development-build result.",
+      "headline": "Crash-site blur fixed in a same-process comparison",
+      "summary": "Old DCC clear metadata erased the sharp compute result before bloom. With preservation on, off and on again in one Vulkan run, the crash-site world becomes sharp, blurred and sharp again. Effects and blend constants remain enabled. All 606 GPU/Vulkan tests and 18 native GPU cases pass.",
       "strengths": [
         "RG16F DCC clears and protection for prepared texture bindings correct two shared rendering paths. Guest shaders and effects remain enabled.",
         "Native conversion, CPU-replacement and 64 full-image overwrite configurations pass."
       ],
       "limits": [
-        "Later scenes, a fresh gameplay measurement and the motion-control tutorial remain unverified. Some profile rows still report 12 unresolved storage bindings; no deferred shader fault was observed through flip 4261. Full graphics correctness and completion are not established."
+        "Twelve unresolved storage bindings and about 255.9 MiB of readbacks per frame remain. Sampled rows have no rejected draws/dispatches or unsupported compute. Later levels, full graphics correctness and completion are unverified."
       ],
-      "performance": "Opening cinematic: 327 frames / 30.0001754 s = 10.90 FPS. Earlier gameplay: 6.97 FPS in another scene/build; no paired speedup claim. RTX 3070 Ti, Vulkan, 1080p output, game-controlled 4K scanout. Development build.",
-      "imageAlt": "ASTRO BOT ship interior after the streamed texture fix, with clean panels and robot surfaces"
+      "performance": "DualSense wake-up prompt: 4.77 / 4.80 / 4.67 FPS with the fix on/off/on, 30 seconds per interval. This is a graphics correction, not a speedup or a free-movement benchmark. RTX 3070 Ti, Speed, exact-build 1080p profile; 2432×1368 HDR and 4K final targets remain.",
+      "imageAlt": "Sharp ASTRO BOT crash-site scene with the DualSense wake-up prompt after restoring DCC preservation"
     },
     "goat-simulator-3": {
       "status": "In-game · inverted image · low FPS",
@@ -597,8 +597,9 @@ const content: Content = {
 
   history: {
     "astro-bot-compute-dcc-20261101": {
-      "title": "Vulkan: retain computed scene contents before bloom",
-      "summary": "The blend-only live check still showed blur: old DCC clear metadata erased the sharp compute result before bloom. The renderer now retains that result only while its layout, contents and tracked metadata generation still agree. Repeated clears and CPU replacement revoke the proof. All 606 GPU/Vulkan tests and 18 native GPU cases pass. A new crash-site comparison is pending; no corrected gameplay image or FPS gain is claimed."
+      "title": "Crash-site blur fixed in a same-process comparison",
+      "summary": "Old DCC clear metadata erased the sharp compute result before bloom. With preservation on, off and on again in one Vulkan run, the crash-site world becomes sharp, blurred and sharp again. Effects and blend constants remain enabled. All 606 GPU/Vulkan tests and 18 native GPU cases pass. DualSense wake-up prompt: 4.77 / 4.80 / 4.67 FPS with the fix on/off/on, 30 seconds per interval. This is a graphics correction, not a speedup or a free-movement benchmark. RTX 3070 Ti, Speed, exact-build 1080p profile; 2432×1368 HDR and 4K final targets remain. Twelve unresolved storage bindings and about 255.9 MiB of readbacks per frame remain. Sampled rows have no rejected draws/dispatches or unsupported compute. Later levels, full graphics correctness and completion are unverified.",
+      "imageAlt": "Sharp ASTRO BOT crash-site scene with the DualSense wake-up prompt after restoring DCC preservation"
     },
     "astro-bot-blend-constants-20261101": {
       "title": "Vulkan: restore the scene behind bloom",

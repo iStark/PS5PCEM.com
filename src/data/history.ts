@@ -45,6 +45,7 @@ export const history: HistoryEntry[] = [
     slug: "astro-bot",
     date: "2026-11-01",
     release: null,
+    image: "/images/astro-bot-dcc-after-2026-11-01.png",
     source: devReport("astro-bot-compute-dcc-2026-11-01.md"),
   },
   {

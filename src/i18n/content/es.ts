@@ -19,17 +19,17 @@ const es: Content = {
     },
     "astro-bot": {
       "status": "En juego · gráficos mejorados · FPS bajos",
-      "headline": "La corrección de texturas elimina defectos de la cinemática inicial",
-      "summary": "Image MIN_LOD impide ahora muestrear niveles de textura que el juego aún no ha cargado. Desaparecen el ruido de color en los paneles y el resplandor arcoíris excesivo en las tomas iniciales repetidas; el responsable confirma la corrección visual. Pasan las 266 pruebas Vulkan y ocho casos GPU nativos. Se añaden capturas de antes y después de esta compilación en desarrollo.",
+      "headline": "Desenfoque del lugar del accidente corregido en el mismo proceso",
+      "summary": "Los metadatos antiguos de borrado DCC eliminaban el resultado nítido de cómputo antes del bloom. Al activar, desactivar y reactivar su conservación en una misma ejecución Vulkan, el mundo se ve nítido, borroso y nítido de nuevo. Los efectos y las constantes de mezcla siguen activos. Pasan 606 pruebas GPU/Vulkan y 18 casos de GPU nativa.",
       "strengths": [
         "Los borrados RG16F DCC y la protección de texturas preparadas corrigen rutas de renderizado compartidas. Los shaders y efectos siguen activos.",
         "Superadas las pruebas nativas de conversión, sustitución por CPU y 64 configuraciones de sobrescritura completa de imágenes."
       ],
       "limits": [
-        "Siguen sin verificarse las escenas posteriores, una nueva medición jugable y el tutorial de movimiento. Algunas filas del perfil aún indican 12 enlaces de almacenamiento sin resolver; no hubo fallos diferidos de shader hasta el fotograma 4261. No se confirma la corrección gráfica completa ni la finalización."
+        "Persisten 12 enlaces de almacenamiento sin resolver y unos 255,9 MiB de lecturas desde la GPU por fotograma. Las filas del perfil no muestran draws/dispatches rechazados ni cómputo no compatible. No se verifican niveles posteriores, corrección gráfica completa ni finalización."
       ],
-      "performance": "Cinemática inicial: 327 fotogramas / 30,0001754 s = 10,90 FPS. Jugabilidad anterior: 6,97 FPS en otra escena/compilación; no es una comparación directa de rendimiento. RTX 3070 Ti, Vulkan, salida 1080p y scanout 4K controlado por el juego. Compilación en desarrollo.",
-      "imageAlt": "Interior de la nave de ASTRO BOT tras corregir las texturas, con paneles y superficies de robots limpios"
+      "performance": "Aviso de despertar con DualSense: 4,77 / 4,80 / 4,67 FPS con el arreglo activado/desactivado/activado, 30 segundos por intervalo. Es una corrección visual, no una aceleración ni una medición de movimiento libre. RTX 3070 Ti, Speed, perfil 1080p para la versión exacta; se mantienen HDR 2432×1368 y destinos finales 4K.",
+      "imageAlt": "Lugar del accidente de ASTRO BOT nítido con el aviso de DualSense tras restaurar la conservación DCC"
     },
     "goat-simulator-3": {
       "status": "En juego · imagen invertida · FPS bajos",
@@ -571,8 +571,9 @@ const es: Content = {
 
   history: {
     "astro-bot-compute-dcc-20261101": {
-      "title": "Vulkan: conservar la escena calculada antes del bloom",
-      "summary": "La prueba en el juego con solo la corrección de mezcla seguía borrosa: metadatos antiguos de borrado DCC eliminaban el resultado nítido de cómputo antes del bloom. Ahora se conserva únicamente si coinciden la disposición, el contenido y la generación registrada de los metadatos. Un nuevo borrado o una sustitución por la CPU invalida esa comprobación. Pasan las 606 pruebas GPU/Vulkan y 18 casos en GPU nativa. La comparación en el lugar del accidente está pendiente; aún no se confirma una imagen corregida ni una mejora de FPS."
+      "title": "Desenfoque del lugar del accidente corregido en el mismo proceso",
+      "summary": "Los metadatos antiguos de borrado DCC eliminaban el resultado nítido de cómputo antes del bloom. Al activar, desactivar y reactivar su conservación en una misma ejecución Vulkan, el mundo se ve nítido, borroso y nítido de nuevo. Los efectos y las constantes de mezcla siguen activos. Pasan 606 pruebas GPU/Vulkan y 18 casos de GPU nativa. Aviso de despertar con DualSense: 4,77 / 4,80 / 4,67 FPS con el arreglo activado/desactivado/activado, 30 segundos por intervalo. Es una corrección visual, no una aceleración ni una medición de movimiento libre. RTX 3070 Ti, Speed, perfil 1080p para la versión exacta; se mantienen HDR 2432×1368 y destinos finales 4K. Persisten 12 enlaces de almacenamiento sin resolver y unos 255,9 MiB de lecturas desde la GPU por fotograma. Las filas del perfil no muestran draws/dispatches rechazados ni cómputo no compatible. No se verifican niveles posteriores, corrección gráfica completa ni finalización.",
+      "imageAlt": "Lugar del accidente de ASTRO BOT nítido con el aviso de DualSense tras restaurar la conservación DCC"
     },
     "astro-bot-blend-constants-20261101": {
       "title": "Vulkan: conservar la escena al aplicar bloom",

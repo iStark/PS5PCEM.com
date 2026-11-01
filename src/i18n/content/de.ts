@@ -19,17 +19,17 @@ const de: Content = {
     },
     "astro-bot": {
       "status": "Im Spiel · Grafik verbessert · niedrige FPS",
-      "headline": "Textur-Streaming-Korrektur behebt Fehler im Eröffnungsfilm",
-      "summary": "Image MIN_LOD verhindert nun das Abtasten noch nicht geladener Texturstufen. Farbrauschen auf Paneelen und übermäßiges Regenbogenleuchten verschwinden in wiederholten Eröffnungsszenen; der Projektbetreuer bestätigt die korrigierte Anfangsgrafik. Alle 266 Vulkan-Tests und acht native GPU-Fälle bestehen. Neue Vorher-/Nachher-Bilder dokumentieren den Entwicklungsbuild.",
+      "headline": "Unschärfe an der Absturzstelle im selben Prozess behoben",
+      "summary": "Alte DCC-Löschmetadaten entfernten das scharfe Compute-Ergebnis vor Bloom. Beim Ein-, Aus- und erneuten Einschalten der Erhaltung im selben Vulkan-Lauf wird die Welt scharf, unscharf und wieder scharf. Effekte und Blend-Konstanten bleiben aktiv. Alle 606 GPU/Vulkan-Tests und 18 native GPU-Fälle bestehen.",
       "strengths": [
         "RG16F-DCC-Löschwerte und der Schutz vorbereiteter Texturen korrigieren gemeinsame Renderpfade. Shader und Effekte bleiben aktiv.",
         "Native Konvertierungsprüfungen, CPU-Ersetzungen und 64 Konfigurationen für vollständige Bildüberschreibungen bestehen."
       ],
       "limits": [
-        "Spätere Szenen, eine neue Gameplay-Messung und das Bewegungssteuerungs-Tutorial sind ungeprüft. Einige Profilzeilen melden weiter 12 nicht aufgelöste Storage-Bindungen; bis Frame 4261 trat kein verzögerter Shaderfehler auf. Vollständige Grafiktreue und Abschluss sind nicht bestätigt."
+        "Zwölf unaufgelöste Storage-Bindungen und etwa 255,9 MiB Rücklesedaten pro Bild bleiben. Die Profilzeilen zeigen keine abgelehnten Draws/Dispatches oder nicht unterstützten Compute-Operationen. Spätere Level, vollständige Grafiktreue und Durchspielbarkeit sind ungeprüft."
       ],
-      "performance": "Eröffnungsfilm: 327 Frames / 30,0001754 s = 10,90 FPS. Früheres Gameplay: 6,97 FPS in einer anderen Szene/Version; kein direkter Beschleunigungsvergleich. RTX 3070 Ti, Vulkan, 1080p-Ausgabe, spielgesteuerter 4K-Scanout. Entwicklungsbuild.",
-      "imageAlt": "ASTRO BOT: Schiffsinneres nach der Texturkorrektur mit sauberen Paneelen und Roboteroberflächen"
+      "performance": "DualSense-Aufweckhinweis: 4,77 / 4,80 / 4,67 FPS mit Korrektur an/aus/an, jeweils 30 Sekunden. Eine Bildkorrektur, kein Geschwindigkeitsgewinn und keine Messung freier Bewegung. RTX 3070 Ti, Speed, versionsgebundenes 1080p-Profil; HDR mit 2432×1368 und finale 4K-Ziele bleiben.",
+      "imageAlt": "Scharfe ASTRO-BOT-Absturzstelle mit DualSense-Aufweckhinweis nach erneuter Aktivierung der DCC-Erhaltung"
     },
     "goat-simulator-3": {
       "status": "Im Spiel · Bild kopfüber · niedrige FPS",
@@ -571,8 +571,9 @@ const de: Content = {
 
   history: {
     "astro-bot-compute-dcc-20261101": {
-      "title": "Vulkan: berechnetes Szenenbild vor Bloom erhalten",
-      "summary": "Der Live-Test nur mit der Blend-Korrektur blieb unscharf: alte DCC-Löschmetadaten entfernten das scharfe Compute-Ergebnis vor Bloom. Der Renderer behält es nun nur bei übereinstimmendem Layout, Inhalt und verfolgter Metadatengeneration. Erneutes Löschen und CPU-Ersetzungen heben diesen Nachweis auf. Alle 606 GPU/Vulkan-Tests und 18 native GPU-Fälle bestehen. Der neue Vergleich an der Absturzstelle steht aus; ein korrigiertes Gameplay-Bild oder FPS-Gewinn ist noch nicht belegt."
+      "title": "Unschärfe an der Absturzstelle im selben Prozess behoben",
+      "summary": "Alte DCC-Löschmetadaten entfernten das scharfe Compute-Ergebnis vor Bloom. Beim Ein-, Aus- und erneuten Einschalten der Erhaltung im selben Vulkan-Lauf wird die Welt scharf, unscharf und wieder scharf. Effekte und Blend-Konstanten bleiben aktiv. Alle 606 GPU/Vulkan-Tests und 18 native GPU-Fälle bestehen. DualSense-Aufweckhinweis: 4,77 / 4,80 / 4,67 FPS mit Korrektur an/aus/an, jeweils 30 Sekunden. Eine Bildkorrektur, kein Geschwindigkeitsgewinn und keine Messung freier Bewegung. RTX 3070 Ti, Speed, versionsgebundenes 1080p-Profil; HDR mit 2432×1368 und finale 4K-Ziele bleiben. Zwölf unaufgelöste Storage-Bindungen und etwa 255,9 MiB Rücklesedaten pro Bild bleiben. Die Profilzeilen zeigen keine abgelehnten Draws/Dispatches oder nicht unterstützten Compute-Operationen. Spätere Level, vollständige Grafiktreue und Durchspielbarkeit sind ungeprüft.",
+      "imageAlt": "Scharfe ASTRO-BOT-Absturzstelle mit DualSense-Aufweckhinweis nach erneuter Aktivierung der DCC-Erhaltung"
     },
     "astro-bot-blend-constants-20261101": {
       "title": "Vulkan: Szene beim Bloom-Mischen erhalten",

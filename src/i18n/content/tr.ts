@@ -19,17 +19,17 @@ const tr: Content = {
     },
     "astro-bot": {
       "status": "Oyun içinde · grafikler iyileşti · düşük FPS",
-      "headline": "Doku akışı düzeltmesi açılış sinematiğindeki bozulmayı gideriyor",
-      "summary": "Image MIN_LOD artık oyunun henüz yüklemediği doku seviyelerinin örneklenmesini engelliyor. Tekrarlanan açılış çekimlerinde panellerdeki renkli gürültü ve aşırı gökkuşağı parlaması kayboldu; proje sahibi açılış grafiklerinin düzeldiğini doğruladı. 266 Vulkan testi ve sekiz yerel GPU durumu geçti. Geliştirme derlemesi için önce/sonra görüntüleri eklendi.",
+      "headline": "Çöküş alanındaki bulanıklık aynı süreçte karşılaştırılarak düzeltildi",
+      "summary": "Eski DCC temizleme meta verileri bloom öncesindeki net hesaplama sonucunu siliyordu. Aynı Vulkan çalıştırmasında koruma açık, kapalı ve yeniden açıkken dünya görüntüsü net, bulanık ve tekrar net oluyor. Efektler ve karıştırma sabitleri etkin kalıyor. 606 GPU/Vulkan testi ve 18 yerel GPU senaryosu geçti.",
       "strengths": [
         "RG16F DCC temizlemeleri ve hazırlanmış dokuların korunması ortak çizim yollarını düzeltiyor. Shader ve efektler etkin kalıyor.",
         "Yerel dönüşüm, CPU tarafından veri değiştirme ve 64 tam görüntü üzerine yazma yapılandırması testleri geçti."
       ],
       "limits": [
-        "Sonraki sahneler, yeni oynanış ölçümü ve hareket kontrolü öğreticisi henüz doğrulanmadı. Bazı profil satırlarında 12 çözümlenmemiş depolama bağlantısı sürüyor; 4261. kareye kadar ertelenmiş shader hatası görülmedi. Tüm grafiklerin doğruluğu ve oyunun bitirilmesi doğrulanmış değil."
+        "12 çözülememiş storage bağı ve kare başına yaklaşık 255,9 MiB GPU geri okuması sürüyor. Örnek profil satırlarında reddedilen draw/dispatch veya desteklenmeyen compute yok. Sonraki bölümler, tam grafik doğruluğu ve oyunun bitirilmesi doğrulanmadı."
       ],
-      "performance": "Açılış sinematiği: 327 kare / 30,0001754 sn = 10,90 FPS. Önceki oynanış: farklı sahne/derlemede 6,97 FPS; doğrudan hızlanma karşılaştırması değil. RTX 3070 Ti, Vulkan, 1080p çıkış, oyunun yönettiği 4K scanout. Geliştirme derlemesi.",
-      "imageAlt": "Doku düzeltmesinden sonra temiz panel ve robot yüzeyleriyle ASTRO BOT gemisinin içi"
+      "performance": "DualSense uyandırma istemi: düzeltme açık/kapalı/açıkken 4,77 / 4,80 / 4,67 FPS, her aralık 30 saniye. Bu bir görüntü düzeltmesi; hızlanma veya serbest hareket ölçümü değil. RTX 3070 Ti, Speed, tam sürüme özel 1080p profili; 2432×1368 HDR ve son 4K hedefler sürüyor.",
+      "imageAlt": "DCC koruması yeniden açıldıktan sonra DualSense istemiyle görülen net ASTRO BOT çöküş alanı"
     },
     "goat-simulator-3": {
       "status": "Oyun içi · ters görüntü · düşük FPS",
@@ -510,8 +510,9 @@ const tr: Content = {
   },
   history: {
     "astro-bot-compute-dcc-20261101": {
-      "title": "Vulkan: bloom öncesindeki hesaplanmış sahneyi koruma",
-      "summary": "Yalnızca karıştırma düzeltmesiyle yapılan oyun testinde bulanıklık sürdü: eski DCC temizleme meta verileri bloom öncesindeki net hesaplama sonucunu siliyordu. Sonuç artık yalnızca yerleşim, içerik ve izlenen meta veri nesli eşleşirken korunuyor. Tekrar temizleme ve CPU tarafından veri değiştirilmesi bu kanıtı geçersiz kılıyor. 606 GPU/Vulkan testi ve 18 yerel GPU senaryosu geçti. Kaza yerindeki yeni karşılaştırma bekleniyor; düzeltilmiş oyun görüntüsü veya FPS artışı henüz doğrulanmadı."
+      "title": "Çöküş alanındaki bulanıklık aynı süreçte karşılaştırılarak düzeltildi",
+      "summary": "Eski DCC temizleme meta verileri bloom öncesindeki net hesaplama sonucunu siliyordu. Aynı Vulkan çalıştırmasında koruma açık, kapalı ve yeniden açıkken dünya görüntüsü net, bulanık ve tekrar net oluyor. Efektler ve karıştırma sabitleri etkin kalıyor. 606 GPU/Vulkan testi ve 18 yerel GPU senaryosu geçti. DualSense uyandırma istemi: düzeltme açık/kapalı/açıkken 4,77 / 4,80 / 4,67 FPS, her aralık 30 saniye. Bu bir görüntü düzeltmesi; hızlanma veya serbest hareket ölçümü değil. RTX 3070 Ti, Speed, tam sürüme özel 1080p profili; 2432×1368 HDR ve son 4K hedefler sürüyor. 12 çözülememiş storage bağı ve kare başına yaklaşık 255,9 MiB GPU geri okuması sürüyor. Örnek profil satırlarında reddedilen draw/dispatch veya desteklenmeyen compute yok. Sonraki bölümler, tam grafik doğruluğu ve oyunun bitirilmesi doğrulanmadı.",
+      "imageAlt": "DCC koruması yeniden açıldıktan sonra DualSense istemiyle görülen net ASTRO BOT çöküş alanı"
     },
     "astro-bot-blend-constants-20261101": {
       "title": "Vulkan: bloom birleştirmesinde sahneyi koruma",
