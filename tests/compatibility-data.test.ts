@@ -259,7 +259,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(67);
+    expect(history.filter((run) => run.release === null)).toHaveLength(68);
   });
 
   it("references captures that exist in public/", () => {

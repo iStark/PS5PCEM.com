@@ -570,6 +570,10 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-blend-constants-20261101": {
+      "title": "Vulkan: preservar a cena ao aplicar bloom",
+      "summary": "A passagem de bloom solicitava uma constante de mistura de destino de 0,9, mas o Vulkan usava zero e descartava a cena nítida. Agora o renderizador transmite as quatro constantes do jogo e reutiliza os pipelines quando elas mudam. Os efeitos continuam ativos. Os 605 testes GPU/Vulkan e as verificações nativas da GPU passam. A comparação visual no local da queda está pendente; não há alegação de ganho de FPS."
+    },
     "astro-bot-uniform-samplers-20261101": {
       "title": "Vulkan: recuperação de samplers condicionais",
       "summary": "Um sampler não resolvido fazia rejeitar um draw no local da queda. Agora a escolha de ramificações uniformes é comprovada pelos dados atuais do shader, sem adivinhar samplers nem ignorar draws. Os 603 testes GPU/Vulkan e a compilação passam; a reprodução privada do shader recupera o sampler. O novo executável chega ao título. A imagem e o desempenho no local da queda ainda não foram verificados; não se afirma que o desfoque esteja corrigido."

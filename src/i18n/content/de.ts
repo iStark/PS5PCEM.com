@@ -570,6 +570,10 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-blend-constants-20261101": {
+      "title": "Vulkan: Szene beim Bloom-Mischen erhalten",
+      "summary": "Der Bloom-Pass verlangte eine Ziel-Mischkonstante von 0,9, Vulkan verwendete jedoch null und verwarf die scharfe Szene. Der Renderer überträgt jetzt alle vier Gastkonstanten und verwendet Pipelines bei Änderungen erneut. Die Effekte bleiben aktiv. Alle 605 GPU/Vulkan-Tests und die nativen GPU-Prüfungen bestehen. Der Bildvergleich an der Absturzstelle steht noch aus; ein FPS-Gewinn wird nicht behauptet."
+    },
     "astro-bot-uniform-samplers-20261101": {
       "title": "Vulkan: Sampler aus bedingten Zweigen wiederherstellen",
       "summary": "Ein fehlender Sampler verhinderte einen Draw an der Absturzstelle. Die Auflösung belegt nun uniforme Verzweigungen anhand aktueller Shader-Eingaben, ohne Sampler zu erraten oder Draws zu überspringen. Alle 603 GPU/Vulkan-Tests und der Build bestehen; die private Shader-Wiedergabe löst den Sampler auf. Der neue Runner erreicht den Titelbildschirm. Bild und Leistung an der Absturzstelle sind noch ungeprüft; die Unschärfe gilt nicht als behoben."

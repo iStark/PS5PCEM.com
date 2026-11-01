@@ -596,6 +596,10 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-blend-constants-20261101": {
+      "title": "Vulkan: restore the scene behind bloom",
+      "summary": "The bloom pass requested a 0.9 destination blend constant, but Vulkan used zero and discarded the sharp scene. The renderer now forwards all four guest constants and reuses pipelines when they change. Effects remain enabled. All 605 GPU/Vulkan tests and native GPU probes pass. A fresh crash-site visual comparison is pending; no FPS gain is claimed."
+    },
     "astro-bot-uniform-samplers-20261101": {
       "title": "Vulkan: conditional sampler recovery",
       "summary": "A missing sampler rejected a crash-site draw. The resolver now proves uniform branch choices from current shader inputs, without guessing a sampler or skipping draws. All 603 GPU/Vulkan tests and the runner build pass; private shader replay now resolves the sampler. The new runner reaches the title screen. The live crash-site image and performance remain unverified; this is not a claim that the blur is fixed."

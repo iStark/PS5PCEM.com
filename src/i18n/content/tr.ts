@@ -509,6 +509,10 @@ const tr: Content = {
     },
   },
   history: {
+    "astro-bot-blend-constants-20261101": {
+      "title": "Vulkan: bloom birleştirmesinde sahneyi koruma",
+      "summary": "Bloom geçişi hedef için 0,9 karıştırma sabiti istiyordu; Vulkan ise sıfır kullanarak net sahneyi siliyordu. İşleyici artık oyunun dört sabitini iletiyor ve değerler değiştiğinde işlem hatlarını yeniden kullanıyor. Efektler açık kalıyor. 605 GPU/Vulkan testi ve yerel GPU kontrolleri geçti. Kaza alanındaki görüntü karşılaştırması henüz yapılmadı; FPS artışı iddia edilmiyor."
+    },
     "astro-bot-uniform-samplers-20261101": {
       "title": "Vulkan: koşullu sampler çözümleme",
       "summary": "Çözümlenemeyen bir sampler, kaza alanındaki bir draw işlemini engelliyordu. Çözümleyici artık güncel shader girdileriyle tekdüze dal seçimini kanıtlıyor; sampler tahmin etmiyor veya draw atlamıyor. 603 GPU/Vulkan testi ve derleme geçti; özel shader tekrarında sampler çözümlendi. Yeni çalıştırıcı başlık ekranına ulaşıyor. Kaza alanındaki görüntü ve performans henüz doğrulanmadı; bulanıklığın düzeldiği iddia edilmiyor."

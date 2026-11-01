@@ -570,6 +570,10 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-blend-constants-20261101": {
+      "title": "Vulkan : conserver la scène lors du bloom",
+      "summary": "La passe de bloom demandait une constante de mélange de destination de 0,9, mais Vulkan utilisait zéro et effaçait la scène nette. Le moteur transmet désormais les quatre constantes du jeu et réutilise les pipelines quand elles changent. Les effets restent actifs. Les 605 tests GPU/Vulkan et les vérifications GPU natives réussissent. La comparaison visuelle sur le site du crash reste à faire ; aucun gain de FPS n’est annoncé."
+    },
     "astro-bot-uniform-samplers-20261101": {
       "title": "Vulkan : résolution des samplers conditionnels",
       "summary": "Un sampler introuvable faisait rejeter un draw sur le lieu du crash. Sa résolution vérifie maintenant les branches uniformes à partir des entrées actuelles du shader, sans choisir un sampler au hasard ni ignorer les draws. Les 603 tests GPU/Vulkan et la compilation passent ; la reproduction privée du shader retrouve le sampler. Le nouvel exécutable atteint le titre. L’image et les performances sur le lieu du crash restent à vérifier ; le flou n’est pas annoncé comme corrigé."
