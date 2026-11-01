@@ -40,6 +40,15 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "astro-bot-linear-readbacks-20261101",
+    graphicsApi: "vulkan",
+    slug: "astro-bot",
+    date: "2026-11-01",
+    release: null,
+    image: "/images/astro-bot-linear-readbacks-title-2026-11-01.png",
+    source: devReport("astro-bot-linear-readbacks-2026-11-01.md"),
+  },
+  {
     id: "astro-bot-1080p-wakeup-20261101",
     graphicsApi: "vulkan",
     slug: "astro-bot",

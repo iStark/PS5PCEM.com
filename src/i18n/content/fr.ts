@@ -570,6 +570,11 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-linear-readbacks-20261101": {
+      "title": "Vulkan : lectures groupées des images, +0,95 % à l’écran titre",
+      "summary": "Les résultats indépendants partagent désormais un transfert GPU avant notification de fin. Les tests natifs sur trois images réduisent les soumissions de 4 à 2 en préservant les données CPU ; les zones qui se chevauchent gardent le chemin précédent. Les 271 tests Vulkan passent. Quatre mesures de 45 secondes reproduisent 11,71 FPS sans regroupement et 11,82 avec. Le volume lu et 12 liaisons de stockage non résolues restent inchangés. Aucun gain en jeu n’est encore mesuré.",
+      "imageAlt": "Écran titre d’ASTRO BOT après regroupement des lectures d’images linéaires"
+    },
     "astro-bot-1080p-title-20261101": {
       "title": "Profil 1080p vérifié : comparaison sur l’écran-titre",
       "summary": "Pour l’exécutable exact PPSA21564 v01.018.000, SHA-256 et 13 contrôles d’octets protègent le patch 1080p en mémoire ; les fichiers du jeu restent intacts. RTX 3070 Ti, Vulkan : 11,10 → 11,63 FPS sur 90 secondes, puis 11,05 → 11,43 FPS sur 60 secondes (+3,5–4,8 %). Certaines cibles 2432×1368 et 4K subsistent. 18 tests réussis.",

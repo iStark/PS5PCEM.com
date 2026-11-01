@@ -570,6 +570,11 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-linear-readbacks-20261101": {
+      "title": "Vulkan: gebündelte Bildrücklesevorgänge, +0,95 % im Titelbild",
+      "summary": "Unabhängige Ergebnisse teilen sich vor der Abschlussmeldung einen GPU-Transfer. Native Tests mit drei Bildern reduzieren Einreichungen von 4 auf 2 bei identischen CPU-Daten; überlappende Bereiche behalten den bisherigen Pfad. Alle 271 Vulkan-Tests bestehen. Vier Titelbildmessungen von je 45 Sekunden ergeben wiederholt 11,71 FPS ohne und 11,82 mit Bündelung. Datenmenge und 12 ungelöste Storage-Bindungen bleiben. Ein Spielleistungsgewinn wurde noch nicht gemessen.",
+      "imageAlt": "ASTRO BOT-Titelbild nach gebündelten Rücklesevorgängen linearer Bilder"
+    },
     "astro-bot-1080p-title-20261101": {
       "title": "Geprüftes 1080p-Profil: Vergleich am Titelbildschirm",
       "summary": "Für die exakte PPSA21564-v01.018.000-Datei sichern SHA-256 und 13 Byte-Prüfungen den 1080p-Patch im Speicher; Spieldateien bleiben unverändert. RTX 3070 Ti, Vulkan: 90 Sekunden ergeben 11,10 → 11,63 FPS, weitere 60 Sekunden 11,05 → 11,43 FPS (+3,5–4,8%). Einige Ziele mit 2432×1368 und 4K bleiben bestehen. 18 Tests bestanden.",

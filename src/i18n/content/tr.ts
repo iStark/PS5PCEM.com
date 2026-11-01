@@ -509,6 +509,11 @@ const tr: Content = {
     },
   },
   history: {
+    "astro-bot-linear-readbacks-20261101": {
+      "title": "Vulkan: toplu görüntü geri okuma, başlık ekranında %0,95 artış",
+      "summary": "Bağımsız çıktılar tamamlanma bildiriminden önce GPU aktarımını paylaşır. Üç görüntülü yerel testte CPU verileri korunurken gönderimler 4’ten 2’ye indi; örtüşen bölgeler eski yolu kullanır. 271 Vulkan testinin tamamı geçti. Dört adet 45 saniyelik başlık ölçümü, toplama kapalıyken 11,71 FPS ve açıkken 11,82 FPS sonucunu tekrarladı. Geri okuma hacmi ve çözümlenmemiş 12 depolama bağı değişmedi. Oynanıştaki artış henüz ölçülmedi.",
+      "imageAlt": "Doğrusal görüntü geri okumaları toplandıktan sonra ASTRO BOT başlık ekranı"
+    },
     "astro-bot-1080p-title-20261101": {
       "title": "Doğrulanmış 1080p profili: başlık ekranı karşılaştırması",
       "summary": "PPSA21564 v01.018.000 çalıştırılabilir dosyası için SHA-256 ve 13 bayt kontrolü, bellekte uygulanan 1080p yamasını korur; oyun dosyaları değişmez. RTX 3070 Ti, Vulkan: 90 saniyede 11,10 → 11,63 FPS, ek 60 saniyede 11,05 → 11,43 FPS (%3,5–4,8 artış). Bazı 2432×1368 ve 4K hedefler korunur. 18 test geçti.",

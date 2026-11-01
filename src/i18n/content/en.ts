@@ -596,6 +596,11 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-linear-readbacks-20261101": {
+      "title": "Vulkan: batched image readbacks, +0.95% on the title screen",
+      "summary": "Independent completion outputs now share GPU transfers. Native three-image tests reduce submissions from 4 to 2 while preserving CPU-visible bytes; overlapping allocations keep the original path. All 271 Vulkan tests pass. Four 45-second ASTRO BOT title intervals repeat 11.71 FPS with batching off and 11.82 with it on. Readback volume and 12 unresolved storage bindings remain. This is not a measured gameplay gain.",
+      "imageAlt": "ASTRO BOT title screen after batched linear image readbacks"
+    },
     "astro-bot-1080p-title-20261101": {
       "title": "Verified 1080p profile: paired title-screen measurements",
       "summary": "For the exact PPSA21564 v01.018.000 executable, SHA-256 and 13 byte guards protect an in-memory 1080p patch; game files remain unchanged. On RTX 3070 Ti with Vulkan, 90-second title intervals improve from 11.10 to 11.63 FPS; another 60 seconds gives 11.05 to 11.43 FPS (+3.5–4.8%). Some 2432×1368 and 4K targets remain. 18 tests pass.",
