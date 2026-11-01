@@ -570,9 +570,13 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-uniform-samplers-20261101": {
+      "title": "Vulkan: Sampler aus bedingten Zweigen wiederherstellen",
+      "summary": "Ein fehlender Sampler verhinderte einen Draw an der Absturzstelle. Die Auflösung belegt nun uniforme Verzweigungen anhand aktueller Shader-Eingaben, ohne Sampler zu erraten oder Draws zu überspringen. Alle 603 GPU/Vulkan-Tests und der Build bestehen; die private Shader-Wiedergabe löst den Sampler auf. Der neue Runner erreicht den Titelbildschirm. Bild und Leistung an der Absturzstelle sind noch ungeprüft; die Unschärfe gilt nicht als behoben."
+    },
     "astro-bot-crash-site-copies-20261101": {
       "title": "Vulkan: Steuerung an der Absturzstelle und verbleibende Transferkosten",
-      "summary": "Die Steuerung wurde nach Schütteln des DualSense und Bewegung mit dem linken Stick bestätigt. Vier stationäre Spielintervalle ergaben 4,67–5,16 FPS; gebündelte Abschlussübertragungen zeigen keinen belegten Spielgewinn. Starke Unschärfe, ein fehlgeschlagener Draw pro Profilbild und 12 ungelöste Storage-Bindungen bleiben. Große dicht gepackte CPU-Kopien nutzen den vorhandenen Thread-Pool; Einzelthread- und Zeilen-Padding-Pfade bleiben erhalten. Alle 601 GPU/Vulkan-Tests bestehen. Schnellere Einzelkopien sind kein gemessener FPS-Gewinn. Der warme Titelvergleich ergab 12,67 gegenüber 12,69–12,71 FPS; ein bedeutsamer Gesamtgewinn ist nicht belegt.",
+      "summary": "Die Steuerung wurde nach Schütteln des DualSense und Bewegung mit dem linken Stick bestätigt. Vier stationäre Spielintervalle ergaben 4,67–5,16 FPS; gebündelte Abschlussübertragungen zeigen keinen belegten Spielgewinn. Starke Unschärfe, ein fehlgeschlagener Draw pro Profilbild und 12 ungelöste Storage-Bindungen bleiben. Große dicht gepackte CPU-Kopien nutzen den vorhandenen Thread-Pool; Einzelthread- und Zeilen-Padding-Pfade bleiben erhalten. Alle 601 GPU/Vulkan-Tests bestehen. Schnellere Einzelkopien sind kein gemessener FPS-Gewinn. Der warme Titelvergleich ergab 12,67 gegenüber 12,69–12,71 FPS; ein bedeutsamer Gesamtgewinn ist nicht belegt. Ein späterer Vergleich im selben Prozess mit sichtbarer Bewegungsanleitung ergab 5,51 / 5,56 / 5,56 / 5,44 FPS (aus/an/an/aus), etwa +1,4 % in dieser Messreihe. Die GPU-Rücklesemenge blieb bei 234,6 MiB pro Bild.",
       "imageAlt": "Steuerbarer ASTRO an der Absturzstelle; das Weltbild bleibt unscharf"
     },
     "astro-bot-linear-readbacks-20261101": {

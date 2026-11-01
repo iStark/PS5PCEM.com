@@ -570,9 +570,13 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-uniform-samplers-20261101": {
+      "title": "Vulkan: recuperação de samplers condicionais",
+      "summary": "Um sampler não resolvido fazia rejeitar um draw no local da queda. Agora a escolha de ramificações uniformes é comprovada pelos dados atuais do shader, sem adivinhar samplers nem ignorar draws. Os 603 testes GPU/Vulkan e a compilação passam; a reprodução privada do shader recupera o sampler. O novo executável chega ao título. A imagem e o desempenho no local da queda ainda não foram verificados; não se afirma que o desfoque esteja corrigido."
+    },
     "astro-bot-crash-site-copies-20261101": {
       "title": "Vulkan: controlo no local da queda e custo das transferências",
-      "summary": "O controlo foi confirmado após agitar o DualSense e mover o analógico esquerdo. Quatro intervalos de jogo sem movimento deram 4,67–5,16 FPS; agrupar transferências de conclusão não demonstrou melhoria no jogo. Persistem desfoque forte, um draw falhado por quadro analisado e 12 ligações de armazenamento por resolver. Cópias CPU grandes e contíguas usam o conjunto de trabalhadores existente; mantêm-se os caminhos com um participante e com espaçamento entre linhas. Passam os 601 testes GPU/Vulkan. Ganhos em cópias isoladas não equivalem a ganhos de FPS. A comparação do título após aquecimento deu 12,67 contra 12,69–12,71 FPS, sem ganho global significativo comprovado.",
+      "summary": "O controlo foi confirmado após agitar o DualSense e mover o analógico esquerdo. Quatro intervalos de jogo sem movimento deram 4,67–5,16 FPS; agrupar transferências de conclusão não demonstrou melhoria no jogo. Persistem desfoque forte, um draw falhado por quadro analisado e 12 ligações de armazenamento por resolver. Cópias CPU grandes e contíguas usam o conjunto de trabalhadores existente; mantêm-se os caminhos com um participante e com espaçamento entre linhas. Passam os 601 testes GPU/Vulkan. Ganhos em cópias isoladas não equivalem a ganhos de FPS. A comparação do título após aquecimento deu 12,67 contra 12,69–12,71 FPS, sem ganho global significativo comprovado. Uma comparação posterior no mesmo processo, com o tutorial de movimento visível, mediu 5,51 / 5,56 / 5,56 / 5,44 FPS (desligado/ligado/ligado/desligado), cerca de +1,4% nessa série. As leituras da GPU permaneceram em 234,6 MiB por quadro.",
       "imageAlt": "ASTRO controlável no local da queda; o desfoque da cena permanece"
     },
     "astro-bot-linear-readbacks-20261101": {

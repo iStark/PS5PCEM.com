@@ -596,9 +596,13 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-uniform-samplers-20261101": {
+      "title": "Vulkan: conditional sampler recovery",
+      "summary": "A missing sampler rejected a crash-site draw. The resolver now proves uniform branch choices from current shader inputs, without guessing a sampler or skipping draws. All 603 GPU/Vulkan tests and the runner build pass; private shader replay now resolves the sampler. The new runner reaches the title screen. The live crash-site image and performance remain unverified; this is not a claim that the blur is fixed."
+    },
     "astro-bot-crash-site-copies-20261101": {
       "title": "Vulkan: crash-site control and remaining transfer costs",
-      "summary": "Character control is confirmed after shaking the DualSense and moving with the left stick. Four stationary gameplay intervals measured 4.67–5.16 FPS; completion batching did not establish a gameplay gain. The capture still shows pronounced blur, one failed draw per profiled frame and 12 unresolved storage bindings. Large packed CPU copies now use the existing worker pool; single-worker and padded-row paths are retained. All 601 GPU/Vulkan tests pass. Isolated copy gains are not gameplay FPS gains. The warmed title comparison was 12.67 versus 12.69–12.71 FPS, with no meaningful whole-frame gain established.",
+      "summary": "Character control is confirmed after shaking the DualSense and moving with the left stick. Four stationary gameplay intervals measured 4.67–5.16 FPS; completion batching did not establish a gameplay gain. The capture still shows pronounced blur, one failed draw per profiled frame and 12 unresolved storage bindings. Large packed CPU copies now use the existing worker pool; single-worker and padded-row paths are retained. All 601 GPU/Vulkan tests pass. Isolated copy gains are not gameplay FPS gains. The warmed title comparison was 12.67 versus 12.69–12.71 FPS, with no meaningful whole-frame gain established. A later same-process comparison with the movement tutorial visible measured 5.51 / 5.56 / 5.56 / 5.44 FPS (off/on/on/off), approximately +1.4% in that sequence. Readbacks remained 234.6 MiB per frame.",
       "imageAlt": "Controllable ASTRO at the crash site; world-image blur remains"
     },
     "astro-bot-linear-readbacks-20261101": {

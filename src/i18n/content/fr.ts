@@ -570,9 +570,13 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-uniform-samplers-20261101": {
+      "title": "Vulkan : résolution des samplers conditionnels",
+      "summary": "Un sampler introuvable faisait rejeter un draw sur le lieu du crash. Sa résolution vérifie maintenant les branches uniformes à partir des entrées actuelles du shader, sans choisir un sampler au hasard ni ignorer les draws. Les 603 tests GPU/Vulkan et la compilation passent ; la reproduction privée du shader retrouve le sampler. Le nouvel exécutable atteint le titre. L’image et les performances sur le lieu du crash restent à vérifier ; le flou n’est pas annoncé comme corrigé."
+    },
     "astro-bot-crash-site-copies-20261101": {
       "title": "Vulkan : contrôle sur le site du crash et coût des transferts",
-      "summary": "Le contrôle est confirmé après avoir secoué la DualSense et utilisé le stick gauche. Quatre intervalles de jeu immobiles donnent 4,67–5,16 FPS ; le regroupement des transferts de fin de travail ne démontre aucun gain en jeu. Un flou prononcé, un draw en échec par image profilée et 12 liaisons de stockage non résolues persistent. Les grandes copies CPU contiguës utilisent le pool existant ; les chemins à un seul participant et avec espacement des lignes sont conservés. Les 601 tests GPU/Vulkan passent. Un gain de copie isolé ne constitue pas un gain de FPS. Le titre après chauffe donne 12,67 contre 12,69–12,71 FPS, sans gain global significatif établi.",
+      "summary": "Le contrôle est confirmé après avoir secoué la DualSense et utilisé le stick gauche. Quatre intervalles de jeu immobiles donnent 4,67–5,16 FPS ; le regroupement des transferts de fin de travail ne démontre aucun gain en jeu. Un flou prononcé, un draw en échec par image profilée et 12 liaisons de stockage non résolues persistent. Les grandes copies CPU contiguës utilisent le pool existant ; les chemins à un seul participant et avec espacement des lignes sont conservés. Les 601 tests GPU/Vulkan passent. Un gain de copie isolé ne constitue pas un gain de FPS. Le titre après chauffe donne 12,67 contre 12,69–12,71 FPS, sans gain global significatif établi. Une comparaison ultérieure dans le même processus, avec le tutoriel de déplacement visible, donne 5,51 / 5,56 / 5,56 / 5,44 FPS (désactivé/activé/activé/désactivé), soit environ +1,4 % sur cette série. Les lectures depuis le GPU restent à 234,6 Mio par image.",
       "imageAlt": "ASTRO contrôlable sur le site du crash ; le flou de la scène persiste"
     },
     "astro-bot-linear-readbacks-20261101": {

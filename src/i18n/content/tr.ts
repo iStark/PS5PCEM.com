@@ -509,9 +509,13 @@ const tr: Content = {
     },
   },
   history: {
+    "astro-bot-uniform-samplers-20261101": {
+      "title": "Vulkan: koşullu sampler çözümleme",
+      "summary": "Çözümlenemeyen bir sampler, kaza alanındaki bir draw işlemini engelliyordu. Çözümleyici artık güncel shader girdileriyle tekdüze dal seçimini kanıtlıyor; sampler tahmin etmiyor veya draw atlamıyor. 603 GPU/Vulkan testi ve derleme geçti; özel shader tekrarında sampler çözümlendi. Yeni çalıştırıcı başlık ekranına ulaşıyor. Kaza alanındaki görüntü ve performans henüz doğrulanmadı; bulanıklığın düzeldiği iddia edilmiyor."
+    },
     "astro-bot-crash-site-copies-20261101": {
       "title": "Vulkan: kaza alanında kontrol ve kalan aktarım maliyetleri",
-      "summary": "DualSense sallanıp sol çubukla hareket edildikten sonra karakter kontrolü doğrulandı. Dört hareketsiz oynanış aralığında 4,67–5,16 FPS ölçüldü; tamamlanma aktarımlarını toplamak oynanış artışı göstermedi. Belirgin bulanıklık, profillenen kare başına bir başarısız çizim ve çözümlenmemiş 12 depolama bağı sürüyor. Büyük bitişik CPU kopyaları mevcut işçi havuzunu kullanıyor; tek katılımcı ve satır dolgulu yollar korunuyor. 601 GPU/Vulkan testinin tamamı geçti. Tekil kopya hızlanması FPS artışı değildir. Isınmış başlık ekranında 12,67 ve 12,69–12,71 FPS ölçüldü; anlamlı toplam kare artışı kanıtlanmadı.",
+      "summary": "DualSense sallanıp sol çubukla hareket edildikten sonra karakter kontrolü doğrulandı. Dört hareketsiz oynanış aralığında 4,67–5,16 FPS ölçüldü; tamamlanma aktarımlarını toplamak oynanış artışı göstermedi. Belirgin bulanıklık, profillenen kare başına bir başarısız çizim ve çözümlenmemiş 12 depolama bağı sürüyor. Büyük bitişik CPU kopyaları mevcut işçi havuzunu kullanıyor; tek katılımcı ve satır dolgulu yollar korunuyor. 601 GPU/Vulkan testinin tamamı geçti. Tekil kopya hızlanması FPS artışı değildir. Isınmış başlık ekranında 12,67 ve 12,69–12,71 FPS ölçüldü; anlamlı toplam kare artışı kanıtlanmadı. Hareket öğreticisi görünürken aynı süreçte yapılan sonraki karşılaştırma 5,51 / 5,56 / 5,56 / 5,44 FPS verdi (kapalı/açık/açık/kapalı); bu seride yaklaşık %1,4 artış ölçüldü. GPU geri okumaları kare başına 234,6 MiB düzeyinde kaldı.",
       "imageAlt": "Kaza alanında kontrol edilen ASTRO; sahne bulanıklığı sürüyor"
     },
     "astro-bot-linear-readbacks-20261101": {

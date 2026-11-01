@@ -570,9 +570,13 @@ const es: Content = {
   },
 
   history: {
+    "astro-bot-uniform-samplers-20261101": {
+      "title": "Vulkan: resolución de samplers condicionales",
+      "summary": "Un sampler sin resolver provocaba el rechazo de un draw en el lugar del accidente. Ahora se demuestra la elección de ramas uniformes con las entradas actuales del shader, sin adivinar samplers ni omitir draws. Pasan los 603 tests GPU/Vulkan y la compilación; la reproducción privada del shader resuelve el sampler. El nuevo ejecutable llega al título. La imagen y el rendimiento en el lugar del accidente aún no están verificados; no se afirma que el desenfoque esté corregido."
+    },
     "astro-bot-crash-site-copies-20261101": {
       "title": "Vulkan: control en la zona del accidente y coste de transferencias",
-      "summary": "Se confirmó el control tras agitar el DualSense y mover el stick izquierdo. Cuatro intervalos de juego sin movimiento dieron 4,67–5,16 FPS; agrupar las transferencias de finalización no demostró una mejora en el juego. Persisten un desenfoque intenso, un draw fallido por fotograma perfilado y 12 enlaces de almacenamiento sin resolver. Las copias CPU grandes y contiguas usan el grupo de trabajadores existente; se conservan las rutas de un participante y de filas con relleno. Pasan las 601 pruebas GPU/Vulkan. Acelerar copias aisladas no demuestra más FPS. La comparación del título ya calentado dio 12,67 frente a 12,69–12,71 FPS, sin mejora global significativa demostrada.",
+      "summary": "Se confirmó el control tras agitar el DualSense y mover el stick izquierdo. Cuatro intervalos de juego sin movimiento dieron 4,67–5,16 FPS; agrupar las transferencias de finalización no demostró una mejora en el juego. Persisten un desenfoque intenso, un draw fallido por fotograma perfilado y 12 enlaces de almacenamiento sin resolver. Las copias CPU grandes y contiguas usan el grupo de trabajadores existente; se conservan las rutas de un participante y de filas con relleno. Pasan las 601 pruebas GPU/Vulkan. Acelerar copias aisladas no demuestra más FPS. La comparación del título ya calentado dio 12,67 frente a 12,69–12,71 FPS, sin mejora global significativa demostrada. Una comparación posterior en el mismo proceso, con la ayuda de movimiento visible, midió 5,51 / 5,56 / 5,56 / 5,44 FPS (desactivado/activado/activado/desactivado), aproximadamente +1,4 % en esa serie. Las lecturas desde la GPU siguieron en 234,6 MiB por fotograma.",
       "imageAlt": "ASTRO controlable en la zona del accidente; persiste el desenfoque de la escena"
     },
     "astro-bot-linear-readbacks-20261101": {
