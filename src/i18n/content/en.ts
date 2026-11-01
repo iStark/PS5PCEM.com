@@ -596,6 +596,16 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-1080p-title-20261101": {
+      "title": "Verified 1080p profile: paired title-screen measurements",
+      "summary": "For the exact PPSA21564 v01.018.000 executable, SHA-256 and 13 byte guards protect an in-memory 1080p patch; game files remain unchanged. On RTX 3070 Ti with Vulkan, 90-second title intervals improve from 11.10 to 11.63 FPS; another 60 seconds gives 11.05 to 11.43 FPS (+3.5–4.8%). Some 2432×1368 and 4K targets remain. 18 tests pass.",
+      "imageAlt": "ASTRO BOT title screen with the verified 1080p profile"
+    },
+    "astro-bot-1080p-wakeup-20261101": {
+      "title": "Crash-site wake-up prompt: 4.63 FPS",
+      "summary": "The patched run reaches the DualSense wake-up prompt: 278 frames / 60.0004 s = 4.63 FPS. Opening segments measure 9.92 and 7.50 FPS. These scenes have no matched baseline; free character control is not confirmed in this run. Heavy transfers, blur and sampler warnings remain. The title-screen gain is not a gameplay speedup.",
+      "imageAlt": "ASTRO BOT at the blurred crash-site wake-up prompt"
+    },
     "keywe-save-slots-20261030": {
       "title": "Save-slot creation fixed; the opening tutorial is reachable.",
       "summary": "October 30 development build, Vulkan: corrected the save-memory readiness response and added the shipped Dialogs.prx to deferred Unity plug-in loading. This removes the empty, unresponsive save-slot panel without game-specific patches. A new slot is written to disk and remains available after restarting the game. The run reaches the post-office tutorial with both kiwis and movement/jump prompts. Playable · Completable, confirmed by the project maintainer on October 30, 2026.",

@@ -40,6 +40,24 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "astro-bot-1080p-wakeup-20261101",
+    graphicsApi: "vulkan",
+    slug: "astro-bot",
+    date: "2026-11-01",
+    release: null,
+    image: "/images/astro-bot-1080p-wakeup-prompt-2026-11-01.png",
+    source: devReport("astro-bot-1080p-2026-11-01.md#opening-sequence-and-limits"),
+  },
+  {
+    id: "astro-bot-1080p-title-20261101",
+    graphicsApi: "vulkan",
+    slug: "astro-bot",
+    date: "2026-11-01",
+    release: null,
+    image: "/images/astro-bot-1080p-title-2026-11-01.png",
+    source: devReport("astro-bot-1080p-2026-11-01.md#paired-title-screen-measurements"),
+  },
+  {
     id: "keywe-save-slots-20261030",
     graphicsApi: "vulkan",
     slug: "keywe",

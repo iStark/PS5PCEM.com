@@ -570,6 +570,16 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-1080p-title-20261101": {
+      "title": "Geprüftes 1080p-Profil: Vergleich am Titelbildschirm",
+      "summary": "Für die exakte PPSA21564-v01.018.000-Datei sichern SHA-256 und 13 Byte-Prüfungen den 1080p-Patch im Speicher; Spieldateien bleiben unverändert. RTX 3070 Ti, Vulkan: 90 Sekunden ergeben 11,10 → 11,63 FPS, weitere 60 Sekunden 11,05 → 11,43 FPS (+3,5–4,8%). Einige Ziele mit 2432×1368 und 4K bleiben bestehen. 18 Tests bestanden.",
+      "imageAlt": "ASTRO BOT-Titelbildschirm mit geprüftem 1080p-Profil"
+    },
+    "astro-bot-1080p-wakeup-20261101": {
+      "title": "Aufwachhinweis an der Absturzstelle: 4,63 FPS",
+      "summary": "Der Lauf mit Patch erreicht den DualSense-Hinweis: 278 Bilder / 60,0004 s = 4,63 FPS. Introabschnitte erreichen 9,92 und 7,50 FPS. Für diese Szenen fehlt ein Vergleich ohne Patch; freie Figurensteuerung wurde in diesem Lauf nicht bestätigt. Hohe Datentransfers, Unschärfe und Sampler-Warnungen bleiben. Der Titelbildschirmgewinn belegt keinen Gameplay-Gewinn.",
+      "imageAlt": "Unscharfe Aufwachszene von ASTRO BOT mit DualSense-Hinweis"
+    },
     "keywe-save-slots-20261030": {
       "title": "Speicherplätze lassen sich erstellen; das erste Tutorial ist erreichbar.",
       "summary": "Entwicklungsbuild vom 30. Oktober, Vulkan: Die Bereitschaftsabfrage des Speichers wurde korrigiert und das mitgelieferte Dialogs.prx in das verzögerte Laden von Unity-Plug-ins aufgenommen. Das leere, nicht reagierende Speichermenü wird ohne Patches am Spiel behoben. Ein neuer Spielstand wird auf die Festplatte geschrieben und ist nach einem Neustart verfügbar. Der Test erreicht das Postamt-Tutorial mit beiden Kiwis und Bewegungs- und Sprunghinweisen. Playable · Completable, vom Projektbetreuer am 30. Oktober 2026 bestätigt.",

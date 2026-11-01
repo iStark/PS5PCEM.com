@@ -570,6 +570,16 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-1080p-title-20261101": {
+      "title": "Perfil 1080p verificado: comparação na tela de título",
+      "summary": "Para o executável exato PPSA21564 v01.018.000, SHA-256 e 13 verificações de bytes protegem o patch 1080p na memória; os arquivos do jogo não mudam. RTX 3070 Ti, Vulkan: 11,10 → 11,63 FPS em 90 segundos e 11,05 → 11,43 FPS em mais 60 (+3,5–4,8%). Alguns alvos de 2432×1368 e 4K permanecem. 18 testes passaram.",
+      "imageAlt": "Tela de título de ASTRO BOT com o perfil 1080p verificado"
+    },
+    "astro-bot-1080p-wakeup-20261101": {
+      "title": "Instrução para despertar no local da queda: 4,63 FPS",
+      "summary": "O teste com patch chega à instrução do DualSense: 278 quadros / 60,0004 s = 4,63 FPS. Trechos da introdução medem 9,92 e 7,50 FPS. Essas cenas não têm comparação equivalente sem patch; o controle livre não foi confirmado neste teste. Persistem transferências elevadas, desfoque e avisos de sampler. O ganho na tela de título não comprova ganho na jogabilidade.",
+      "imageAlt": "Cena desfocada do despertar de ASTRO BOT com a instrução do DualSense"
+    },
     "keywe-save-slots-20261030": {
       "title": "Criação de salvamentos corrigida; o tutorial inicial está acessível.",
       "summary": "Compilação em desenvolvimento de 30 de outubro, Vulkan: corrigida a consulta de disponibilidade da memória de salvamento e incluído o módulo Dialogs.prx do jogo no carregamento adiado dos plugins Unity. O painel vazio e sem resposta foi corrigido sem alterar o jogo. Um novo salvamento é gravado no disco e continua disponível após reiniciar. O teste chega ao tutorial dos correios com os dois kiwis e instruções de movimento e salto. Playable · Completable, confirmado pelo responsável do projeto em 30 de outubro de 2026.",

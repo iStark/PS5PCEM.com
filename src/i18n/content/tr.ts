@@ -509,6 +509,16 @@ const tr: Content = {
     },
   },
   history: {
+    "astro-bot-1080p-title-20261101": {
+      "title": "Doğrulanmış 1080p profili: başlık ekranı karşılaştırması",
+      "summary": "PPSA21564 v01.018.000 çalıştırılabilir dosyası için SHA-256 ve 13 bayt kontrolü, bellekte uygulanan 1080p yamasını korur; oyun dosyaları değişmez. RTX 3070 Ti, Vulkan: 90 saniyede 11,10 → 11,63 FPS, ek 60 saniyede 11,05 → 11,43 FPS (%3,5–4,8 artış). Bazı 2432×1368 ve 4K hedefler korunur. 18 test geçti.",
+      "imageAlt": "Doğrulanmış 1080p profiliyle ASTRO BOT başlık ekranı"
+    },
+    "astro-bot-1080p-wakeup-20261101": {
+      "title": "Kaza alanındaki uyanma istemi: 4,63 FPS",
+      "summary": "Yamalı test DualSense istemine ulaşıyor: 278 kare / 60,0004 sn = 4,63 FPS. Giriş bölümleri 9,92 ve 7,50 FPS ölçülüyor. Bu sahneler için eşdeğer yamasız ölçüm yok; bu testte serbest karakter kontrolü doğrulanmadı. Yoğun veri aktarımı, bulanıklık ve sampler uyarıları sürüyor. Başlık ekranındaki kazanç, oynanış hızlanmasını kanıtlamaz.",
+      "imageAlt": "DualSense istemiyle ASTRO BOT’un bulanık uyanma sahnesi"
+    },
     "keywe-save-slots-20261030": {
       "title": "Kayıt oluşturma düzeltildi; başlangıç eğitimi açılıyor.",
       "summary": "30 Ekim geliştirme derlemesi, Vulkan: kayıt belleğinin hazır olma yanıtı düzeltildi ve oyunun Dialogs.prx modülü Unity eklentilerinin ertelenmiş yüklemesine eklendi. Boş ve tepkisiz kayıt paneli oyuna özel yama olmadan düzeltildi. Yeni kayıt diske yazılıyor ve oyun yeniden başlatıldığında kullanılabiliyor. Test, iki kivi ile hareket ve zıplama ipuçlarının bulunduğu postane eğitimine ulaşıyor. Playable · Completable, proje yöneticisi tarafından 30 Ekim 2026 tarihinde doğrulandı.",

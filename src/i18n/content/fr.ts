@@ -570,6 +570,16 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-1080p-title-20261101": {
+      "title": "Profil 1080p vérifié : comparaison sur l’écran-titre",
+      "summary": "Pour l’exécutable exact PPSA21564 v01.018.000, SHA-256 et 13 contrôles d’octets protègent le patch 1080p en mémoire ; les fichiers du jeu restent intacts. RTX 3070 Ti, Vulkan : 11,10 → 11,63 FPS sur 90 secondes, puis 11,05 → 11,43 FPS sur 60 secondes (+3,5–4,8 %). Certaines cibles 2432×1368 et 4K subsistent. 18 tests réussis.",
+      "imageAlt": "Écran-titre d’ASTRO BOT avec le profil 1080p vérifié"
+    },
+    "astro-bot-1080p-wakeup-20261101": {
+      "title": "Invite de réveil sur le site du crash : 4,63 FPS",
+      "summary": "Le test avec patch atteint l’invite DualSense : 278 images / 60,0004 s = 4,63 FPS. Des séquences d’introduction donnent 9,92 et 7,50 FPS. Ces scènes n’ont pas de mesure équivalente sans patch ; le contrôle libre n’est pas confirmé dans ce test. Transferts importants, flou et avertissements de sampler persistent. Le gain de l’écran-titre ne prouve pas un gain en jeu.",
+      "imageAlt": "Scène de réveil floue d’ASTRO BOT avec l’invite DualSense"
+    },
     "keywe-save-slots-20261030": {
       "title": "Création des sauvegardes corrigée ; le tutoriel initial est accessible.",
       "summary": "Version de développement du 30 octobre, Vulkan : correction de la réponse de disponibilité de la mémoire de sauvegarde et chargement différé du module Dialogs.prx fourni avec le jeu. Le panneau vide et inactif est corrigé sans modifier le jeu. Une nouvelle sauvegarde est écrite sur disque et reste disponible après redémarrage. Le test atteint le tutoriel du bureau de poste avec les deux kiwis et les indications de déplacement et de saut. Playable · Completable, confirmé par le responsable du projet le 30 octobre 2026.",
