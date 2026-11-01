@@ -26,10 +26,10 @@ const de: Content = {
         "Native Konvertierungsprüfungen, CPU-Ersetzungen und 64 Konfigurationen für vollständige Bildüberschreibungen bestehen."
       ],
       "limits": [
-        "Zwölf unaufgelöste Storage-Bindungen und etwa 255,9 MiB Rücklesedaten pro Bild bleiben. Die Profilzeilen zeigen keine abgelehnten Draws/Dispatches oder nicht unterstützten Compute-Operationen. Spätere Level, vollständige Grafiktreue und Durchspielbarkeit sind ungeprüft."
+        "Zwölf unaufgelöste Storage-Bindungen und etwa 234,6 MiB Rücklesedaten pro Bild bleiben. Die Profilzeilen zeigen keine abgelehnten Draws/Dispatches oder nicht unterstützten Compute-Operationen. Spätere Level, vollständige Grafiktreue und Durchspielbarkeit sind ungeprüft."
       ],
-      "performance": "DualSense-Aufweckhinweis: 4,77 / 4,80 / 4,67 FPS mit Korrektur an/aus/an, jeweils 30 Sekunden. Eine Bildkorrektur, kein Geschwindigkeitsgewinn und keine Messung freier Bewegung. RTX 3070 Ti, Speed, versionsgebundenes 1080p-Profil; HDR mit 2432×1368 und finale 4K-Ziele bleiben.",
-      "imageAlt": "Scharfe ASTRO-BOT-Absturzstelle mit DualSense-Aufweckhinweis nach erneuter Aktivierung der DCC-Erhaltung"
+      "performance": "Neueste Bewegungstutorial-Szene: 5,33 FPS über 30 Sekunden, feste Kamera mit Leerlaufanimationen. Kein belegter Geschwindigkeitsgewinn oder neuer Bewegungseingabetest. DualSense-Aufweckhinweis: 4,77 / 4,80 / 4,67 FPS mit Korrektur an/aus/an, jeweils 30 Sekunden. Eine Bildkorrektur, kein Geschwindigkeitsgewinn und keine Messung freier Bewegung. RTX 3070 Ti, Speed, versionsgebundenes 1080p-Profil; HDR mit 2432×1368 und finale 4K-Ziele bleiben.",
+      "imageAlt": "Erstes ASTRO-BOT-Bewegungstutorial mit scharfem Weltbild, ASTRO und Zielmarkierung"
     },
     "goat-simulator-3": {
       "status": "Im Spiel · Bild kopfüber · niedrige FPS",
@@ -570,6 +570,11 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-dcc-movement-20261101": {
+      "title": "Vulkan: scharfes Bewegungstutorial, 5,33 FPS",
+      "summary": "Derselbe Lauf erkennt das Schütteln des DualSense und erreicht das Bewegungstutorial aus der Third-Person-Sicht mit Zielmarkierung. Der Maintainer meldet die korrigierte Unschärfe auch im Spielfenster. Bei fester Kamera ergeben 160 Bilder in 30,000633 Sekunden 5,33 FPS. Das Bild bleibt scharf. Drei Profilproben zeigen keine abgelehnten Draws/Dispatches oder nicht unterstützten Compute-Operationen; 12 unaufgelöste Storage-Bindungen und 234,6 MiB Rücklesedaten pro Bild bleiben. Kein gepaarter Geschwindigkeitsvergleich oder neuer Bewegungseingabetest.",
+      "imageAlt": "Erstes ASTRO-BOT-Bewegungstutorial mit scharfem Weltbild, ASTRO und Zielmarkierung"
+    },
     "astro-bot-compute-dcc-20261101": {
       "title": "Unschärfe an der Absturzstelle im selben Prozess behoben",
       "summary": "Alte DCC-Löschmetadaten entfernten das scharfe Compute-Ergebnis vor Bloom. Beim Ein-, Aus- und erneuten Einschalten der Erhaltung im selben Vulkan-Lauf wird die Welt scharf, unscharf und wieder scharf. Effekte und Blend-Konstanten bleiben aktiv. Alle 606 GPU/Vulkan-Tests und 18 native GPU-Fälle bestehen. DualSense-Aufweckhinweis: 4,77 / 4,80 / 4,67 FPS mit Korrektur an/aus/an, jeweils 30 Sekunden. Eine Bildkorrektur, kein Geschwindigkeitsgewinn und keine Messung freier Bewegung. RTX 3070 Ti, Speed, versionsgebundenes 1080p-Profil; HDR mit 2432×1368 und finale 4K-Ziele bleiben. Zwölf unaufgelöste Storage-Bindungen und etwa 255,9 MiB Rücklesedaten pro Bild bleiben. Die Profilzeilen zeigen keine abgelehnten Draws/Dispatches oder nicht unterstützten Compute-Operationen. Spätere Level, vollständige Grafiktreue und Durchspielbarkeit sind ungeprüft.",

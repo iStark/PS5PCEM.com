@@ -40,6 +40,15 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "astro-bot-dcc-movement-20261101",
+    graphicsApi: "vulkan",
+    slug: "astro-bot",
+    date: "2026-11-01",
+    release: null,
+    image: "/images/astro-bot-dcc-movement-2026-11-01.png",
+    source: devReport("astro-bot-compute-dcc-2026-11-01.md#movement-tutorial-follow-up"),
+  },
+  {
     id: "astro-bot-compute-dcc-20261101",
     graphicsApi: "vulkan",
     slug: "astro-bot",

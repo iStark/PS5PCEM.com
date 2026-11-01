@@ -26,10 +26,10 @@ const fr: Content = {
         "Les tests natifs de conversion, de remplacement par le CPU et les 64 configurations de réécriture complète d’image réussissent."
       ],
       "limits": [
-        "Il reste 12 liaisons de stockage non résolues et environ 255,9 Mio relus depuis le GPU par image. Les lignes du profil ne montrent aucun draw/dispatch rejeté ni calcul non pris en charge. Les niveaux suivants, la justesse graphique complète et la fin du jeu ne sont pas vérifiés."
+        "Il reste 12 liaisons de stockage non résolues et environ 234,6 Mio relus depuis le GPU par image. Les lignes du profil ne montrent aucun draw/dispatch rejeté ni calcul non pris en charge. Les niveaux suivants, la justesse graphique complète et la fin du jeu ne sont pas vérifiés."
       ],
-      "performance": "Invite de réveil DualSense : 4,77 / 4,80 / 4,67 FPS, correction activée/désactivée/activée, 30 secondes par intervalle. C’est une correction visuelle, pas un gain de vitesse ni une mesure de déplacement libre. RTX 3070 Ti, Speed, profil 1080p pour la version exacte ; HDR 2432×1368 et cibles finales 4K conservés.",
-      "imageAlt": "Lieu du crash ASTRO BOT net avec l’invite DualSense après réactivation de la conservation DCC"
+      "performance": "Dernière scène du tutoriel de déplacement : 5,33 FPS sur 30 secondes, caméra fixe et animations au repos. Aucun gain comparatif ni nouveau test de commande de déplacement. Invite de réveil DualSense : 4,77 / 4,80 / 4,67 FPS, correction activée/désactivée/activée, 30 secondes par intervalle. C’est une correction visuelle, pas un gain de vitesse ni une mesure de déplacement libre. RTX 3070 Ti, Speed, profil 1080p pour la version exacte ; HDR 2432×1368 et cibles finales 4K conservés.",
+      "imageAlt": "Premier tutoriel de déplacement ASTRO BOT avec un monde net, ASTRO et le marqueur d’objectif"
     },
     "goat-simulator-3": {
       "status": "En jeu · image inversée · FPS faibles",
@@ -570,6 +570,11 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-dcc-movement-20261101": {
+      "title": "Vulkan : tutoriel de déplacement net, 5,33 FPS",
+      "summary": "La même session reconnaît le mouvement du DualSense et atteint le tutoriel de déplacement à la troisième personne avec le marqueur d’objectif. Le mainteneur constate également la correction du flou dans la fenêtre du jeu. À caméra fixe, 160 images en 30,000633 secondes donnent 5,33 FPS. L’image reste nette. Trois échantillons du profil ne montrent aucun draw/dispatch rejeté ni calcul non pris en charge ; il reste 12 liaisons de stockage non résolues et 234,6 Mio relus depuis le GPU par image. Ce n’est ni une comparaison de vitesse ni un nouveau test de commande de déplacement.",
+      "imageAlt": "Premier tutoriel de déplacement ASTRO BOT avec un monde net, ASTRO et le marqueur d’objectif"
+    },
     "astro-bot-compute-dcc-20261101": {
       "title": "Flou du lieu du crash corrigé dans une comparaison au sein du même processus",
       "summary": "Les anciennes métadonnées d’effacement DCC supprimaient le résultat net du calcul avant le bloom. En activant, désactivant puis réactivant sa conservation dans une même session Vulkan, le monde devient net, flou, puis net à nouveau. Les effets et constantes de mélange restent actifs. Les 606 tests GPU/Vulkan et 18 cas sur GPU natif passent. Invite de réveil DualSense : 4,77 / 4,80 / 4,67 FPS, correction activée/désactivée/activée, 30 secondes par intervalle. C’est une correction visuelle, pas un gain de vitesse ni une mesure de déplacement libre. RTX 3070 Ti, Speed, profil 1080p pour la version exacte ; HDR 2432×1368 et cibles finales 4K conservés. Il reste 12 liaisons de stockage non résolues et environ 255,9 Mio relus depuis le GPU par image. Les lignes du profil ne montrent aucun draw/dispatch rejeté ni calcul non pris en charge. Les niveaux suivants, la justesse graphique complète et la fin du jeu ne sont pas vérifiés.",

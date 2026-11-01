@@ -53,10 +53,10 @@ const content: Content = {
         "Native conversion, CPU-replacement and 64 full-image overwrite configurations pass."
       ],
       "limits": [
-        "Twelve unresolved storage bindings and about 255.9 MiB of readbacks per frame remain. Sampled rows have no rejected draws/dispatches or unsupported compute. Later levels, full graphics correctness and completion are unverified."
+        "Twelve unresolved storage bindings and about 234.6 MiB of readbacks per frame remain. Sampled rows have no rejected draws/dispatches or unsupported compute. Later levels, full graphics correctness and completion are unverified."
       ],
-      "performance": "DualSense wake-up prompt: 4.77 / 4.80 / 4.67 FPS with the fix on/off/on, 30 seconds per interval. This is a graphics correction, not a speedup or a free-movement benchmark. RTX 3070 Ti, Speed, exact-build 1080p profile; 2432×1368 HDR and 4K final targets remain.",
-      "imageAlt": "Sharp ASTRO BOT crash-site scene with the DualSense wake-up prompt after restoring DCC preservation"
+      "performance": "Latest movement-tutorial view: 5.33 FPS over 30 seconds, fixed camera with idle animations. No paired speedup or fresh movement-input test. DualSense wake-up prompt: 4.77 / 4.80 / 4.67 FPS with the fix on/off/on, 30 seconds per interval. This is a graphics correction, not a speedup or a free-movement benchmark. RTX 3070 Ti, Speed, exact-build 1080p profile; 2432×1368 HDR and 4K final targets remain.",
+      "imageAlt": "ASTRO BOT first movement tutorial with a sharp world image, ASTRO and the objective marker"
     },
     "goat-simulator-3": {
       "status": "In-game · inverted image · low FPS",
@@ -596,6 +596,11 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-dcc-movement-20261101": {
+      "title": "Vulkan: sharp movement tutorial, 5.33 FPS",
+      "summary": "The same run accepts the DualSense shake and reaches the third-person movement tutorial with the objective marker. The maintainer also reports the blur fixed in the game window. A fixed-camera interval records 160 flips/presents in 30.000633 seconds: 5.33 FPS. The capture remains sharp. Three profile samples have no rejected draws/dispatches or unsupported compute; 12 unresolved storage bindings and 234.6 MiB/frame readbacks remain. This is not a paired speedup or a new movement-input verification.",
+      "imageAlt": "ASTRO BOT first movement tutorial with a sharp world image, ASTRO and the objective marker"
+    },
     "astro-bot-compute-dcc-20261101": {
       "title": "Crash-site blur fixed in a same-process comparison",
       "summary": "Old DCC clear metadata erased the sharp compute result before bloom. With preservation on, off and on again in one Vulkan run, the crash-site world becomes sharp, blurred and sharp again. Effects and blend constants remain enabled. All 606 GPU/Vulkan tests and 18 native GPU cases pass. DualSense wake-up prompt: 4.77 / 4.80 / 4.67 FPS with the fix on/off/on, 30 seconds per interval. This is a graphics correction, not a speedup or a free-movement benchmark. RTX 3070 Ti, Speed, exact-build 1080p profile; 2432×1368 HDR and 4K final targets remain. Twelve unresolved storage bindings and about 255.9 MiB of readbacks per frame remain. Sampled rows have no rejected draws/dispatches or unsupported compute. Later levels, full graphics correctness and completion are unverified.",

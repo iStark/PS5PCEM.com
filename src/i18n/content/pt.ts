@@ -26,10 +26,10 @@ const pt: Content = {
         "Passaram os testes nativos de conversão, substituição pela CPU e 64 configurações de sobrescrita completa de imagens."
       ],
       "limits": [
-        "Restam 12 vínculos de armazenamento não resolvidos e cerca de 255,9 MiB de leituras da GPU por quadro. As linhas do perfil não mostram draws/dispatches rejeitados nem cálculo incompatível. Fases posteriores, correção gráfica completa e conclusão não foram verificadas."
+        "Restam 12 vínculos de armazenamento não resolvidos e cerca de 234,6 MiB de leituras da GPU por quadro. As linhas do perfil não mostram draws/dispatches rejeitados nem cálculo incompatível. Fases posteriores, correção gráfica completa e conclusão não foram verificadas."
       ],
-      "performance": "Aviso de despertar com DualSense: 4,77 / 4,80 / 4,67 FPS com a correção ligada/desligada/ligada, 30 segundos por intervalo. É uma correção visual, não uma aceleração nem um teste de movimentação livre. RTX 3070 Ti, Speed, perfil 1080p para a versão exata; HDR 2432×1368 e destinos finais 4K permanecem.",
-      "imageAlt": "Local da queda de ASTRO BOT nítido com o aviso DualSense após restaurar a preservação DCC"
+      "performance": "Última cena do tutorial de movimento: 5,33 FPS em 30 segundos, câmera fixa com animações de repouso. Sem ganho comparativo nem novo teste da entrada de movimento. Aviso de despertar com DualSense: 4,77 / 4,80 / 4,67 FPS com a correção ligada/desligada/ligada, 30 segundos por intervalo. É uma correção visual, não uma aceleração nem um teste de movimentação livre. RTX 3070 Ti, Speed, perfil 1080p para a versão exata; HDR 2432×1368 e destinos finais 4K permanecem.",
+      "imageAlt": "Primeiro tutorial de movimento de ASTRO BOT com mundo nítido, ASTRO e marcador de objetivo"
     },
     "goat-simulator-3": {
       "status": "Em jogo · imagem invertida · FPS baixos",
@@ -570,6 +570,11 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-dcc-movement-20261101": {
+      "title": "Vulkan: tutorial de movimento nítido, 5,33 FPS",
+      "summary": "A mesma execução reconhece o movimento do DualSense e chega ao tutorial em terceira pessoa com o marcador de objetivo. O responsável também relata o desfoque corrigido na janela do jogo. Com câmera fixa, 160 quadros em 30,000633 segundos resultam em 5,33 FPS. A imagem permanece nítida. Três amostras do perfil não mostram draws/dispatches rejeitados nem cálculo incompatível; restam 12 vínculos de armazenamento não resolvidos e 234,6 MiB de leituras GPU por quadro. Não é uma comparação de aceleração nem uma nova verificação da entrada de movimento.",
+      "imageAlt": "Primeiro tutorial de movimento de ASTRO BOT com mundo nítido, ASTRO e marcador de objetivo"
+    },
     "astro-bot-compute-dcc-20261101": {
       "title": "Desfoque no local da queda corrigido no mesmo processo",
       "summary": "Metadados antigos de limpeza DCC apagavam o resultado nítido do cálculo antes do bloom. Ao ativar, desativar e reativar a preservação na mesma execução Vulkan, o mundo fica nítido, desfocado e nítido novamente. Efeitos e constantes de mistura continuam ativos. Passam 606 testes GPU/Vulkan e 18 casos na GPU nativa. Aviso de despertar com DualSense: 4,77 / 4,80 / 4,67 FPS com a correção ligada/desligada/ligada, 30 segundos por intervalo. É uma correção visual, não uma aceleração nem um teste de movimentação livre. RTX 3070 Ti, Speed, perfil 1080p para a versão exata; HDR 2432×1368 e destinos finais 4K permanecem. Restam 12 vínculos de armazenamento não resolvidos e cerca de 255,9 MiB de leituras da GPU por quadro. As linhas do perfil não mostram draws/dispatches rejeitados nem cálculo incompatível. Fases posteriores, correção gráfica completa e conclusão não foram verificadas.",

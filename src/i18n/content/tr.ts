@@ -26,10 +26,10 @@ const tr: Content = {
         "Yerel dönüşüm, CPU tarafından veri değiştirme ve 64 tam görüntü üzerine yazma yapılandırması testleri geçti."
       ],
       "limits": [
-        "12 çözülememiş storage bağı ve kare başına yaklaşık 255,9 MiB GPU geri okuması sürüyor. Örnek profil satırlarında reddedilen draw/dispatch veya desteklenmeyen compute yok. Sonraki bölümler, tam grafik doğruluğu ve oyunun bitirilmesi doğrulanmadı."
+        "12 çözülememiş storage bağı ve kare başına yaklaşık 234,6 MiB GPU geri okuması sürüyor. Örnek profil satırlarında reddedilen draw/dispatch veya desteklenmeyen compute yok. Sonraki bölümler, tam grafik doğruluğu ve oyunun bitirilmesi doğrulanmadı."
       ],
-      "performance": "DualSense uyandırma istemi: düzeltme açık/kapalı/açıkken 4,77 / 4,80 / 4,67 FPS, her aralık 30 saniye. Bu bir görüntü düzeltmesi; hızlanma veya serbest hareket ölçümü değil. RTX 3070 Ti, Speed, tam sürüme özel 1080p profili; 2432×1368 HDR ve son 4K hedefler sürüyor.",
-      "imageAlt": "DCC koruması yeniden açıldıktan sonra DualSense istemiyle görülen net ASTRO BOT çöküş alanı"
+      "performance": "Son hareket eğitimi sahnesi: sabit kamera ve bekleme animasyonlarıyla 30 saniyede 5,33 FPS. Hızlanma veya yeni hareket girdisi doğrulaması iddiası yok. DualSense uyandırma istemi: düzeltme açık/kapalı/açıkken 4,77 / 4,80 / 4,67 FPS, her aralık 30 saniye. Bu bir görüntü düzeltmesi; hızlanma veya serbest hareket ölçümü değil. RTX 3070 Ti, Speed, tam sürüme özel 1080p profili; 2432×1368 HDR ve son 4K hedefler sürüyor.",
+      "imageAlt": "Net dünya görüntüsü, ASTRO ve hedef işaretiyle ilk hareket eğitimi"
     },
     "goat-simulator-3": {
       "status": "Oyun içi · ters görüntü · düşük FPS",
@@ -509,6 +509,11 @@ const tr: Content = {
     },
   },
   history: {
+    "astro-bot-dcc-movement-20261101": {
+      "title": "Vulkan: net hareket eğitimi, 5,33 FPS",
+      "summary": "Aynı çalıştırma DualSense sallamasını algılıyor ve hedef işaretli üçüncü şahıs hareket eğitimine ulaşıyor. Proje sahibi de oyun penceresindeki bulanıklığın düzeldiğini bildirdi. Sabit kamerada 30,000633 saniyede 160 kare, yani 5,33 FPS kaydedildi; görüntü net kalıyor. Üç profil örneğinde reddedilmiş draw/dispatch veya desteklenmeyen compute yok; 12 çözülememiş storage bağı ve kare başına 234,6 MiB GPU geri okuması sürüyor. Bu eşleştirilmiş hız karşılaştırması veya yeni hareket girdisi doğrulaması değil.",
+      "imageAlt": "Net dünya görüntüsü, ASTRO ve hedef işaretiyle ilk hareket eğitimi"
+    },
     "astro-bot-compute-dcc-20261101": {
       "title": "Çöküş alanındaki bulanıklık aynı süreçte karşılaştırılarak düzeltildi",
       "summary": "Eski DCC temizleme meta verileri bloom öncesindeki net hesaplama sonucunu siliyordu. Aynı Vulkan çalıştırmasında koruma açık, kapalı ve yeniden açıkken dünya görüntüsü net, bulanık ve tekrar net oluyor. Efektler ve karıştırma sabitleri etkin kalıyor. 606 GPU/Vulkan testi ve 18 yerel GPU senaryosu geçti. DualSense uyandırma istemi: düzeltme açık/kapalı/açıkken 4,77 / 4,80 / 4,67 FPS, her aralık 30 saniye. Bu bir görüntü düzeltmesi; hızlanma veya serbest hareket ölçümü değil. RTX 3070 Ti, Speed, tam sürüme özel 1080p profili; 2432×1368 HDR ve son 4K hedefler sürüyor. 12 çözülememiş storage bağı ve kare başına yaklaşık 255,9 MiB GPU geri okuması sürüyor. Örnek profil satırlarında reddedilen draw/dispatch veya desteklenmeyen compute yok. Sonraki bölümler, tam grafik doğruluğu ve oyunun bitirilmesi doğrulanmadı.",
