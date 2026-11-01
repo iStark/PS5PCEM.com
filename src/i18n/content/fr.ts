@@ -570,6 +570,11 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-crash-site-copies-20261101": {
+      "title": "Vulkan : contrôle sur le site du crash et coût des transferts",
+      "summary": "Le contrôle est confirmé après avoir secoué la DualSense et utilisé le stick gauche. Quatre intervalles de jeu immobiles donnent 4,67–5,16 FPS ; le regroupement des transferts de fin de travail ne démontre aucun gain en jeu. Un flou prononcé, un draw en échec par image profilée et 12 liaisons de stockage non résolues persistent. Les grandes copies CPU contiguës utilisent le pool existant ; les chemins à un seul participant et avec espacement des lignes sont conservés. Les 601 tests GPU/Vulkan passent. Un gain de copie isolé ne constitue pas un gain de FPS. Le titre après chauffe donne 12,67 contre 12,69–12,71 FPS, sans gain global significatif établi.",
+      "imageAlt": "ASTRO contrôlable sur le site du crash ; le flou de la scène persiste"
+    },
     "astro-bot-linear-readbacks-20261101": {
       "title": "Vulkan : lectures groupées des images, +0,95 % à l’écran titre",
       "summary": "Les résultats indépendants partagent désormais un transfert GPU avant notification de fin. Les tests natifs sur trois images réduisent les soumissions de 4 à 2 en préservant les données CPU ; les zones qui se chevauchent gardent le chemin précédent. Les 271 tests Vulkan passent. Quatre mesures de 45 secondes reproduisent 11,71 FPS sans regroupement et 11,82 avec. Le volume lu et 12 liaisons de stockage non résolues restent inchangés. Aucun gain en jeu n’est encore mesuré.",

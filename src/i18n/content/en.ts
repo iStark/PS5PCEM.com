@@ -596,6 +596,11 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-crash-site-copies-20261101": {
+      "title": "Vulkan: crash-site control and remaining transfer costs",
+      "summary": "Character control is confirmed after shaking the DualSense and moving with the left stick. Four stationary gameplay intervals measured 4.67–5.16 FPS; completion batching did not establish a gameplay gain. The capture still shows pronounced blur, one failed draw per profiled frame and 12 unresolved storage bindings. Large packed CPU copies now use the existing worker pool; single-worker and padded-row paths are retained. All 601 GPU/Vulkan tests pass. Isolated copy gains are not gameplay FPS gains. The warmed title comparison was 12.67 versus 12.69–12.71 FPS, with no meaningful whole-frame gain established.",
+      "imageAlt": "Controllable ASTRO at the crash site; world-image blur remains"
+    },
     "astro-bot-linear-readbacks-20261101": {
       "title": "Vulkan: batched image readbacks, +0.95% on the title screen",
       "summary": "Independent completion outputs now share GPU transfers. Native three-image tests reduce submissions from 4 to 2 while preserving CPU-visible bytes; overlapping allocations keep the original path. All 271 Vulkan tests pass. Four 45-second ASTRO BOT title intervals repeat 11.71 FPS with batching off and 11.82 with it on. Readback volume and 12 unresolved storage bindings remain. This is not a measured gameplay gain.",

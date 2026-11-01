@@ -570,6 +570,11 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-crash-site-copies-20261101": {
+      "title": "Vulkan: Steuerung an der Absturzstelle und verbleibende Transferkosten",
+      "summary": "Die Steuerung wurde nach Schütteln des DualSense und Bewegung mit dem linken Stick bestätigt. Vier stationäre Spielintervalle ergaben 4,67–5,16 FPS; gebündelte Abschlussübertragungen zeigen keinen belegten Spielgewinn. Starke Unschärfe, ein fehlgeschlagener Draw pro Profilbild und 12 ungelöste Storage-Bindungen bleiben. Große dicht gepackte CPU-Kopien nutzen den vorhandenen Thread-Pool; Einzelthread- und Zeilen-Padding-Pfade bleiben erhalten. Alle 601 GPU/Vulkan-Tests bestehen. Schnellere Einzelkopien sind kein gemessener FPS-Gewinn. Der warme Titelvergleich ergab 12,67 gegenüber 12,69–12,71 FPS; ein bedeutsamer Gesamtgewinn ist nicht belegt.",
+      "imageAlt": "Steuerbarer ASTRO an der Absturzstelle; das Weltbild bleibt unscharf"
+    },
     "astro-bot-linear-readbacks-20261101": {
       "title": "Vulkan: gebündelte Bildrücklesevorgänge, +0,95 % im Titelbild",
       "summary": "Unabhängige Ergebnisse teilen sich vor der Abschlussmeldung einen GPU-Transfer. Native Tests mit drei Bildern reduzieren Einreichungen von 4 auf 2 bei identischen CPU-Daten; überlappende Bereiche behalten den bisherigen Pfad. Alle 271 Vulkan-Tests bestehen. Vier Titelbildmessungen von je 45 Sekunden ergeben wiederholt 11,71 FPS ohne und 11,82 mit Bündelung. Datenmenge und 12 ungelöste Storage-Bindungen bleiben. Ein Spielleistungsgewinn wurde noch nicht gemessen.",

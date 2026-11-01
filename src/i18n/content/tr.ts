@@ -509,6 +509,11 @@ const tr: Content = {
     },
   },
   history: {
+    "astro-bot-crash-site-copies-20261101": {
+      "title": "Vulkan: kaza alanında kontrol ve kalan aktarım maliyetleri",
+      "summary": "DualSense sallanıp sol çubukla hareket edildikten sonra karakter kontrolü doğrulandı. Dört hareketsiz oynanış aralığında 4,67–5,16 FPS ölçüldü; tamamlanma aktarımlarını toplamak oynanış artışı göstermedi. Belirgin bulanıklık, profillenen kare başına bir başarısız çizim ve çözümlenmemiş 12 depolama bağı sürüyor. Büyük bitişik CPU kopyaları mevcut işçi havuzunu kullanıyor; tek katılımcı ve satır dolgulu yollar korunuyor. 601 GPU/Vulkan testinin tamamı geçti. Tekil kopya hızlanması FPS artışı değildir. Isınmış başlık ekranında 12,67 ve 12,69–12,71 FPS ölçüldü; anlamlı toplam kare artışı kanıtlanmadı.",
+      "imageAlt": "Kaza alanında kontrol edilen ASTRO; sahne bulanıklığı sürüyor"
+    },
     "astro-bot-linear-readbacks-20261101": {
       "title": "Vulkan: toplu görüntü geri okuma, başlık ekranında %0,95 artış",
       "summary": "Bağımsız çıktılar tamamlanma bildiriminden önce GPU aktarımını paylaşır. Üç görüntülü yerel testte CPU verileri korunurken gönderimler 4’ten 2’ye indi; örtüşen bölgeler eski yolu kullanır. 271 Vulkan testinin tamamı geçti. Dört adet 45 saniyelik başlık ölçümü, toplama kapalıyken 11,71 FPS ve açıkken 11,82 FPS sonucunu tekrarladı. Geri okuma hacmi ve çözümlenmemiş 12 depolama bağı değişmedi. Oynanıştaki artış henüz ölçülmedi.",
