@@ -596,9 +596,13 @@ const content: Content = {
   },
 
   history: {
+    "astro-bot-compute-dcc-20261101": {
+      "title": "Vulkan: retain computed scene contents before bloom",
+      "summary": "The blend-only live check still showed blur: old DCC clear metadata erased the sharp compute result before bloom. The renderer now retains that result only while its layout, contents and tracked metadata generation still agree. Repeated clears and CPU replacement revoke the proof. All 606 GPU/Vulkan tests and 18 native GPU cases pass. A new crash-site comparison is pending; no corrected gameplay image or FPS gain is claimed."
+    },
     "astro-bot-blend-constants-20261101": {
       "title": "Vulkan: restore the scene behind bloom",
-      "summary": "The bloom pass requested a 0.9 destination blend constant, but Vulkan used zero and discarded the sharp scene. The renderer now forwards all four guest constants and reuses pipelines when they change. Effects remain enabled. All 605 GPU/Vulkan tests and native GPU probes pass. A fresh crash-site visual comparison is pending; no FPS gain is claimed."
+      "summary": "The bloom pass requested a 0.9 destination blend constant, but Vulkan used zero and discarded the sharp scene. The renderer now forwards all four guest constants and reuses pipelines when they change. Effects remain enabled. All 605 GPU/Vulkan tests and native GPU probes pass. A fresh crash-site visual comparison is pending; no FPS gain is claimed. Follow-up: blend constants alone did not remove the live blur. Stale DCC clearing was also identified; the separate compute/DCC entry tracks that correction."
     },
     "astro-bot-uniform-samplers-20261101": {
       "title": "Vulkan: conditional sampler recovery",

@@ -570,9 +570,13 @@ const pt: Content = {
   },
 
   history: {
+    "astro-bot-compute-dcc-20261101": {
+      "title": "Vulkan: preservar a cena calculada antes do bloom",
+      "summary": "O teste no jogo apenas com a correção da mistura continuou desfocado: metadados antigos de limpeza DCC apagavam o resultado nítido do cálculo antes do bloom. Agora ele é preservado somente quando o layout, o conteúdo e a geração rastreada dos metadados coincidem. Uma nova limpeza ou substituição pela CPU invalida a comprovação. Passam os 606 testes GPU/Vulkan e 18 casos na GPU nativa. A comparação no local da queda ainda está pendente; não se confirma imagem corrigida no gameplay nem ganho de FPS."
+    },
     "astro-bot-blend-constants-20261101": {
       "title": "Vulkan: preservar a cena ao aplicar bloom",
-      "summary": "A passagem de bloom solicitava uma constante de mistura de destino de 0,9, mas o Vulkan usava zero e descartava a cena nítida. Agora o renderizador transmite as quatro constantes do jogo e reutiliza os pipelines quando elas mudam. Os efeitos continuam ativos. Os 605 testes GPU/Vulkan e as verificações nativas da GPU passam. A comparação visual no local da queda está pendente; não há alegação de ganho de FPS."
+      "summary": "A passagem de bloom solicitava uma constante de mistura de destino de 0,9, mas o Vulkan usava zero e descartava a cena nítida. Agora o renderizador transmite as quatro constantes do jogo e reutiliza os pipelines quando elas mudam. Os efeitos continuam ativos. Os 605 testes GPU/Vulkan e as verificações nativas da GPU passam. A comparação visual no local da queda está pendente; não há alegação de ganho de FPS. Acompanhamento: as constantes de mistura sozinhas não eliminaram o desfoque no jogo. Limpezas DCC obsoletas também foram identificadas; a entrada de cálculo/DCC acompanha essa correção."
     },
     "astro-bot-uniform-samplers-20261101": {
       "title": "Vulkan: recuperação de samplers condicionais",

@@ -570,9 +570,13 @@ const fr: Content = {
   },
 
   history: {
+    "astro-bot-compute-dcc-20261101": {
+      "title": "Vulkan : conserver la scène calculée avant le bloom",
+      "summary": "Le test en jeu avec la seule correction du mélange restait flou : des métadonnées DCC anciennes effaçaient le résultat net du calcul avant le bloom. Il est désormais conservé uniquement si la disposition, le contenu et la génération suivie des métadonnées concordent. Un nouvel effacement ou remplacement par le CPU invalide cette preuve. Les 606 tests GPU/Vulkan et 18 cas sur GPU natif passent. La comparaison sur le lieu du crash reste à faire ; aucune image corrigée en jeu ni hausse de FPS n’est encore confirmée."
+    },
     "astro-bot-blend-constants-20261101": {
       "title": "Vulkan : conserver la scène lors du bloom",
-      "summary": "La passe de bloom demandait une constante de mélange de destination de 0,9, mais Vulkan utilisait zéro et effaçait la scène nette. Le moteur transmet désormais les quatre constantes du jeu et réutilise les pipelines quand elles changent. Les effets restent actifs. Les 605 tests GPU/Vulkan et les vérifications GPU natives réussissent. La comparaison visuelle sur le site du crash reste à faire ; aucun gain de FPS n’est annoncé."
+      "summary": "La passe de bloom demandait une constante de mélange de destination de 0,9, mais Vulkan utilisait zéro et effaçait la scène nette. Le moteur transmet désormais les quatre constantes du jeu et réutilise les pipelines quand elles changent. Les effets restent actifs. Les 605 tests GPU/Vulkan et les vérifications GPU natives réussissent. La comparaison visuelle sur le site du crash reste à faire ; aucun gain de FPS n’est annoncé. Suivi : les constantes de mélange seules n’ont pas supprimé le flou en jeu. Un effacement DCC périmé a également été identifié ; l’entrée calcul/DCC suit cette correction."
     },
     "astro-bot-uniform-samplers-20261101": {
       "title": "Vulkan : résolution des samplers conditionnels",

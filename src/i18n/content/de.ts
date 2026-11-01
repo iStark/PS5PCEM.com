@@ -570,9 +570,13 @@ const de: Content = {
   },
 
   history: {
+    "astro-bot-compute-dcc-20261101": {
+      "title": "Vulkan: berechnetes Szenenbild vor Bloom erhalten",
+      "summary": "Der Live-Test nur mit der Blend-Korrektur blieb unscharf: alte DCC-Löschmetadaten entfernten das scharfe Compute-Ergebnis vor Bloom. Der Renderer behält es nun nur bei übereinstimmendem Layout, Inhalt und verfolgter Metadatengeneration. Erneutes Löschen und CPU-Ersetzungen heben diesen Nachweis auf. Alle 606 GPU/Vulkan-Tests und 18 native GPU-Fälle bestehen. Der neue Vergleich an der Absturzstelle steht aus; ein korrigiertes Gameplay-Bild oder FPS-Gewinn ist noch nicht belegt."
+    },
     "astro-bot-blend-constants-20261101": {
       "title": "Vulkan: Szene beim Bloom-Mischen erhalten",
-      "summary": "Der Bloom-Pass verlangte eine Ziel-Mischkonstante von 0,9, Vulkan verwendete jedoch null und verwarf die scharfe Szene. Der Renderer überträgt jetzt alle vier Gastkonstanten und verwendet Pipelines bei Änderungen erneut. Die Effekte bleiben aktiv. Alle 605 GPU/Vulkan-Tests und die nativen GPU-Prüfungen bestehen. Der Bildvergleich an der Absturzstelle steht noch aus; ein FPS-Gewinn wird nicht behauptet."
+      "summary": "Der Bloom-Pass verlangte eine Ziel-Mischkonstante von 0,9, Vulkan verwendete jedoch null und verwarf die scharfe Szene. Der Renderer überträgt jetzt alle vier Gastkonstanten und verwendet Pipelines bei Änderungen erneut. Die Effekte bleiben aktiv. Alle 605 GPU/Vulkan-Tests und die nativen GPU-Prüfungen bestehen. Der Bildvergleich an der Absturzstelle steht noch aus; ein FPS-Gewinn wird nicht behauptet. Nachtrag: Blend-Konstanten allein beseitigten die Unschärfe im Spiel nicht. Veraltete DCC-Löschungen wurden ebenfalls gefunden; der separate Compute/DCC-Eintrag beschreibt die Korrektur."
     },
     "astro-bot-uniform-samplers-20261101": {
       "title": "Vulkan: Sampler aus bedingten Zweigen wiederherstellen",

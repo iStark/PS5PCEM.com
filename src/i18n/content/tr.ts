@@ -509,9 +509,13 @@ const tr: Content = {
     },
   },
   history: {
+    "astro-bot-compute-dcc-20261101": {
+      "title": "Vulkan: bloom öncesindeki hesaplanmış sahneyi koruma",
+      "summary": "Yalnızca karıştırma düzeltmesiyle yapılan oyun testinde bulanıklık sürdü: eski DCC temizleme meta verileri bloom öncesindeki net hesaplama sonucunu siliyordu. Sonuç artık yalnızca yerleşim, içerik ve izlenen meta veri nesli eşleşirken korunuyor. Tekrar temizleme ve CPU tarafından veri değiştirilmesi bu kanıtı geçersiz kılıyor. 606 GPU/Vulkan testi ve 18 yerel GPU senaryosu geçti. Kaza yerindeki yeni karşılaştırma bekleniyor; düzeltilmiş oyun görüntüsü veya FPS artışı henüz doğrulanmadı."
+    },
     "astro-bot-blend-constants-20261101": {
       "title": "Vulkan: bloom birleştirmesinde sahneyi koruma",
-      "summary": "Bloom geçişi hedef için 0,9 karıştırma sabiti istiyordu; Vulkan ise sıfır kullanarak net sahneyi siliyordu. İşleyici artık oyunun dört sabitini iletiyor ve değerler değiştiğinde işlem hatlarını yeniden kullanıyor. Efektler açık kalıyor. 605 GPU/Vulkan testi ve yerel GPU kontrolleri geçti. Kaza alanındaki görüntü karşılaştırması henüz yapılmadı; FPS artışı iddia edilmiyor."
+      "summary": "Bloom geçişi hedef için 0,9 karıştırma sabiti istiyordu; Vulkan ise sıfır kullanarak net sahneyi siliyordu. İşleyici artık oyunun dört sabitini iletiyor ve değerler değiştiğinde işlem hatlarını yeniden kullanıyor. Efektler açık kalıyor. 605 GPU/Vulkan testi ve yerel GPU kontrolleri geçti. Kaza alanındaki görüntü karşılaştırması henüz yapılmadı; FPS artışı iddia edilmiyor. Takip: karıştırma sabitleri tek başına oyundaki bulanıklığı gidermedi. Eski DCC temizlemeleri de saptandı; ayrı hesaplama/DCC kaydı bu düzeltmeyi izliyor."
     },
     "astro-bot-uniform-samplers-20261101": {
       "title": "Vulkan: koşullu sampler çözümleme",
