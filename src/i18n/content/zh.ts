@@ -551,6 +551,11 @@ const zh: Content = {
   },
 
   history: {
+    "jets-d3d12-startup-20261105": {
+      "title": "修复 DirectX 12 启动",
+      "summary": "11月5日的开发构建正确处理已禁用的深度/模板格式，修复首次颜色绘制时的 MissingDepthTarget。原生 DirectX 12 现已进入带动画的主菜单；50项测试及完整GPU测试均通过。149.6秒的运行到达日志中的第108帧，但渲染仍然缓慢。尚未验证 DirectX 下的实际游玩、音质及通关情况。Playable · Completable 评级仍对应 Vulkan 的结果。",
+      "imageAlt": "启动修复后由 DirectX 12 渲染的 Jets 'n' Guns 2 主菜单"
+    },
     "astro-bot-dcc-movement-20261101": {
       "title": "Vulkan：清晰的移动教程画面，5.33 FPS",
       "summary": "同一次运行接受 DualSense 摇动操作后，进入带目标标记的第三人称移动教程。维护者也反馈游戏窗口中的模糊已修复。固定镜头下，30.000633 秒显示 160 帧，即 5.33 FPS，画面仍然清晰。三条性能采样没有被拒绝的 draw/dispatch 或不支持的 compute；仍有 12 个未解析的 storage 绑定，每帧 GPU 回读为 234.6 MiB。这不是成对的提速对比，也不是新的移动输入验证。",

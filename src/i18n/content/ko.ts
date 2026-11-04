@@ -509,6 +509,11 @@ const ko: Content = {
     },
   },
   history: {
+    "jets-d3d12-startup-20261105": {
+      "title": "DirectX 12 시작 문제 수정",
+      "summary": "11월 5일 개발 빌드는 비활성 깊이/스텐실 형식을 올바르게 처리하여 첫 색상 그리기의 MissingDepthTarget 오류를 수정합니다. 네이티브 DirectX 12에서 움직이는 메인 메뉴에 도달했으며, 테스트 50개와 전체 GPU 검사를 통과했습니다. 149.6초 실행에서 로그상 프레임 108에 도달했지만 렌더링은 여전히 느립니다. DirectX의 게임플레이, 음질, 엔딩까지의 진행은 검증하지 않았습니다. Playable · Completable 등급은 Vulkan 결과입니다.",
+      "imageAlt": "시작 수정 후 DirectX 12로 렌더링한 Jets 'n' Guns 2 메인 메뉴"
+    },
     "astro-bot-dcc-movement-20261101": {
       "title": "Vulkan: 선명한 이동 튜토리얼, 5.33 FPS",
       "summary": "같은 실행에서 DualSense 흔들기를 인식한 뒤 목표 표시가 있는 3인칭 이동 튜토리얼에 도달했습니다. 관리자는 게임 창에서도 흐림이 해결된 것으로 보인다고 확인했습니다. 고정 카메라에서 30.000633초 동안 160프레임, 5.33 FPS를 기록했으며 화면은 선명합니다. 프로파일 표본 3개에 거부된 draw/dispatch나 미지원 compute는 없습니다. 미해결 storage 바인딩 12개와 프레임당 234.6 MiB의 GPU 읽기 반환은 남아 있습니다. 속도 향상 비교나 이동 입력 재검증 결과는 아닙니다.",

@@ -570,6 +570,11 @@ const pt: Content = {
   },
 
   history: {
+    "jets-d3d12-startup-20261105": {
+      "title": "Inicialização corrigida no DirectX 12",
+      "summary": "A compilação em desenvolvimento de 5 de novembro corrige MissingDepthTarget no primeiro desenho de cor ao respeitar os formatos de profundidade/stencil desativados. O DirectX 12 nativo chega ao menu principal animado; os 50 testes e a suíte completa de GPU passam. Em 149,6 segundos, o teste chega ao quadro registrado 108; a renderização continua lenta. Jogabilidade, qualidade do áudio e conclusão não foram verificadas no DirectX. Playable · Completable continua sendo o resultado do Vulkan.",
+      "imageAlt": "Menu principal de Jets 'n' Guns 2 no DirectX 12 após a correção de inicialização"
+    },
     "astro-bot-dcc-movement-20261101": {
       "title": "Vulkan: tutorial de movimento nítido, 5,33 FPS",
       "summary": "A mesma execução reconhece o movimento do DualSense e chega ao tutorial em terceira pessoa com o marcador de objetivo. O responsável também relata o desfoque corrigido na janela do jogo. Com câmera fixa, 160 quadros em 30,000633 segundos resultam em 5,33 FPS. A imagem permanece nítida. Três amostras do perfil não mostram draws/dispatches rejeitados nem cálculo incompatível; restam 12 vínculos de armazenamento não resolvidos e 234,6 MiB de leituras GPU por quadro. Não é uma comparação de aceleração nem uma nova verificação da entrada de movimento.",

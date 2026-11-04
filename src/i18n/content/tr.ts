@@ -509,6 +509,11 @@ const tr: Content = {
     },
   },
   history: {
+    "jets-d3d12-startup-20261105": {
+      "title": "DirectX 12 başlangıcı düzeltildi",
+      "summary": "5 Kasım geliştirme derlemesi, devre dışı derinlik/stencil biçimlerini dikkate alarak ilk renk çizimindeki MissingDepthTarget hatasını düzeltir. Yerel DirectX 12 hareketli ana menüye ulaşır; 50 test ve tam GPU testi başarılıdır. 149,6 saniyelik çalışmada kaydedilen kare 108’e ulaşıldı; çizim hâlâ yavaş. DirectX üzerinde oynanış, ses kalitesi ve oyunu bitirme doğrulanmadı. Playable · Completable derecesi Vulkan sonucudur.",
+      "imageAlt": "Başlangıç düzeltmesinden sonra DirectX 12 ile çizilen Jets 'n' Guns 2 ana menüsü"
+    },
     "astro-bot-dcc-movement-20261101": {
       "title": "Vulkan: net hareket eğitimi, 5,33 FPS",
       "summary": "Aynı çalıştırma DualSense sallamasını algılıyor ve hedef işaretli üçüncü şahıs hareket eğitimine ulaşıyor. Proje sahibi de oyun penceresindeki bulanıklığın düzeldiğini bildirdi. Sabit kamerada 30,000633 saniyede 160 kare, yani 5,33 FPS kaydedildi; görüntü net kalıyor. Üç profil örneğinde reddedilmiş draw/dispatch veya desteklenmeyen compute yok; 12 çözülememiş storage bağı ve kare başına 234,6 MiB GPU geri okuması sürüyor. Bu eşleştirilmiş hız karşılaştırması veya yeni hareket girdisi doğrulaması değil.",

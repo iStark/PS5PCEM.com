@@ -596,6 +596,11 @@ const content: Content = {
   },
 
   history: {
+    "jets-d3d12-startup-20261105": {
+      "title": "DirectX 12 startup fixed",
+      "summary": "The November 5 development build fixes MissingDepthTarget on the first color draw by respecting disabled depth/stencil formats. Native DirectX 12 reaches the animated main menu; 50 boundary tests and the full GPU probe pass. The 149.6-second run reached logged flip 108, with slow rendering. Gameplay, audio quality and completion were not verified on DirectX. The Playable · Completable grade remains the Vulkan result.",
+      "imageAlt": "Jets 'n' Guns 2 main menu rendered by DirectX 12 after the startup fix"
+    },
     "astro-bot-dcc-movement-20261101": {
       "title": "Vulkan: sharp movement tutorial, 5.33 FPS",
       "summary": "The same run accepts the DualSense shake and reaches the third-person movement tutorial with the objective marker. The maintainer also reports the blur fixed in the game window. A fixed-camera interval records 160 flips/presents in 30.000633 seconds: 5.33 FPS. The capture remains sharp. Three profile samples have no rejected draws/dispatches or unsupported compute; 12 unresolved storage bindings and 234.6 MiB/frame readbacks remain. This is not a paired speedup or a new movement-input verification.",

@@ -40,6 +40,15 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "jets-d3d12-startup-20261105",
+    graphicsApi: "d3d12",
+    slug: "jets-n-guns-2",
+    date: "2026-11-05",
+    release: null,
+    image: "/images/jets-d3d12-menu-2026-11-05.jpg",
+    source: devReport("jets-d3d12-startup-2026-11-05.md"),
+  },
+  {
     id: "astro-bot-dcc-movement-20261101",
     graphicsApi: "vulkan",
     slug: "astro-bot",
