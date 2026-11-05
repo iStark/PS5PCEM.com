@@ -64,6 +64,7 @@ describe("graphics API history", () => {
 
   it("records APIs explicitly and preserves the known historical boundary", () => {
     expect(history.filter((run) => run.graphicsApi === "d3d12").map((run) => run.id)).toEqual([
+      "big-helmet-heroes-d3d12-startup-20261105",
       "jets-d3d12-startup-20261105",
       "super-woden-gp-d3d12-fonts-20261030",
       "super-woden-gp-d3d12-startup-20261030",

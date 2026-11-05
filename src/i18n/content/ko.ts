@@ -509,6 +509,10 @@ const ko: Content = {
     },
   },
   history: {
+    "big-helmet-heroes-d3d12-startup-20261105": {
+      title: "DirectX 12: 시작 단계의 두 차단 문제 수정",
+      summary: "11월 5일 개발 빌드는 컴퓨트 셰이더의 이미지 연산과 패킹된 10비트 SDR 출력을 지원합니다. Big Helmet Heroes는 첫 검은 프레임을 표시한 뒤, 아직 지원하지 않는 CMASK 빠른 지우기 메타데이터에서 멈춥니다. 메뉴와 게임플레이에는 도달하지 못했으며 FPS 향상도 확인되지 않았습니다. D3D12 테스트 50개와 전체 네이티브 GPU 검증을 통과했습니다. 이전 Vulkan 결과는 그대로 유지됩니다.",
+    },
     "jets-d3d12-startup-20261105": {
       "title": "DirectX 12 시작 문제 수정",
       "summary": "11월 5일 개발 빌드는 비활성 깊이/스텐실 형식을 올바르게 처리하여 첫 색상 그리기의 MissingDepthTarget 오류를 수정합니다. 네이티브 DirectX 12에서 움직이는 메인 메뉴에 도달했으며, 테스트 50개와 전체 GPU 검사를 통과했습니다. 149.6초 실행에서 로그상 프레임 108에 도달했지만 렌더링은 여전히 느립니다. DirectX의 게임플레이, 음질, 엔딩까지의 진행은 검증하지 않았습니다. Playable · Completable 등급은 Vulkan 결과입니다.",

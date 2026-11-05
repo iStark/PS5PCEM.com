@@ -596,6 +596,10 @@ const content: Content = {
   },
 
   history: {
+    "big-helmet-heroes-d3d12-startup-20261105": {
+      title: "DirectX 12: two startup blockers removed",
+      summary: "The November 5 development build executes compute-image operations and supports packed 10-bit SDR scanout. Big Helmet Heroes presents its first blank frame, then stops on unsupported CMASK fast-clear metadata. The menu and gameplay are not reached; no FPS improvement is claimed. All 50 D3D12 tests and the complete native GPU probe pass. The earlier Vulkan result is unchanged.",
+    },
     "jets-d3d12-startup-20261105": {
       "title": "DirectX 12 startup fixed",
       "summary": "The November 5 development build fixes MissingDepthTarget on the first color draw by respecting disabled depth/stencil formats. Native DirectX 12 reaches the animated main menu; 50 boundary tests and the full GPU probe pass. The 149.6-second run reached logged flip 108, with slow rendering. Gameplay, audio quality and completion were not verified on DirectX. The Playable · Completable grade remains the Vulkan result.",

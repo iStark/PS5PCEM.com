@@ -551,6 +551,10 @@ const zh: Content = {
   },
 
   history: {
+    "big-helmet-heroes-d3d12-startup-20261105": {
+      title: "DirectX 12：修复两处启动阻碍",
+      summary: "11月5日的开发版本支持计算着色器中的图像操作以及打包格式的10位SDR输出。Big Helmet Heroes已能呈现第一个黑色帧，但随后因尚未支持的CMASK快速清除元数据而停止。目前仍未进入菜单或游戏，也未证实FPS提升。全部50项D3D12测试及完整的原生GPU验证均通过。此前的Vulkan测试结果保持不变。",
+    },
     "jets-d3d12-startup-20261105": {
       "title": "修复 DirectX 12 启动",
       "summary": "11月5日的开发构建正确处理已禁用的深度/模板格式，修复首次颜色绘制时的 MissingDepthTarget。原生 DirectX 12 现已进入带动画的主菜单；50项测试及完整GPU测试均通过。149.6秒的运行到达日志中的第108帧，但渲染仍然缓慢。尚未验证 DirectX 下的实际游玩、音质及通关情况。Playable · Completable 评级仍对应 Vulkan 的结果。",

@@ -509,6 +509,10 @@ const tr: Content = {
     },
   },
   history: {
+    "big-helmet-heroes-d3d12-startup-20261105": {
+      title: "DirectX 12: iki başlangıç engeli giderildi",
+      summary: "5 Kasım geliştirme derlemesi, hesaplama gölgelendiricilerindeki görüntü işlemlerini ve paketlenmiş 10 bit SDR çıkışını destekliyor. Big Helmet Heroes ilk siyah kareyi sunuyor, ardından desteklenmeyen CMASK hızlı temizleme meta verilerinde duruyor. Menüye ve oynanışa henüz ulaşılamadı; FPS artışı doğrulanmadı. 50 D3D12 testinin tamamı ve tam yerel GPU doğrulaması başarılı. Önceki Vulkan sonucu değişmedi.",
+    },
     "jets-d3d12-startup-20261105": {
       "title": "DirectX 12 başlangıcı düzeltildi",
       "summary": "5 Kasım geliştirme derlemesi, devre dışı derinlik/stencil biçimlerini dikkate alarak ilk renk çizimindeki MissingDepthTarget hatasını düzeltir. Yerel DirectX 12 hareketli ana menüye ulaşır; 50 test ve tam GPU testi başarılıdır. 149,6 saniyelik çalışmada kaydedilen kare 108’e ulaşıldı; çizim hâlâ yavaş. DirectX üzerinde oynanış, ses kalitesi ve oyunu bitirme doğrulanmadı. Playable · Completable derecesi Vulkan sonucudur.",

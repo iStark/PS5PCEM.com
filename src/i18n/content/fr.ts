@@ -570,6 +570,10 @@ const fr: Content = {
   },
 
   history: {
+    "big-helmet-heroes-d3d12-startup-20261105": {
+      title: "DirectX 12 : deux blocages au démarrage corrigés",
+      summary: "La version de développement du 5 novembre exécute les opérations sur images des shaders de calcul et prend en charge la sortie SDR compactée sur 10 bits. Big Helmet Heroes présente une première image noire, puis s’arrête sur les métadonnées d’effacement rapide CMASK non prises en charge. Le menu et le jeu ne sont pas atteints ; aucun gain de FPS n’est établi. Les 50 tests D3D12 et la vérification GPU native complète réussissent. Le résultat Vulkan précédent reste inchangé.",
+    },
     "jets-d3d12-startup-20261105": {
       "title": "Démarrage corrigé sous DirectX 12",
       "summary": "La version de développement du 5 novembre corrige MissingDepthTarget au premier dessin couleur en respectant les formats profondeur/stencil désactivés. DirectX 12 natif atteint le menu principal animé ; les 50 tests et la suite GPU complète réussissent. Le test de 149,6 secondes atteint la trame 108 du journal, avec un rendu encore lent. Le gameplay, la qualité audio et la possibilité de terminer le jeu ne sont pas vérifiés sous DirectX. Le statut Playable · Completable reste celui de Vulkan.",

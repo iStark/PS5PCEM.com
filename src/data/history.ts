@@ -40,6 +40,14 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "big-helmet-heroes-d3d12-startup-20261105",
+    graphicsApi: "d3d12",
+    slug: "big-helmet-heroes",
+    date: "2026-11-05",
+    release: null,
+    source: devReport("big-helmet-heroes-d3d12-startup-2026-11-05.md"),
+  },
+  {
     id: "jets-d3d12-startup-20261105",
     graphicsApi: "d3d12",
     slug: "jets-n-guns-2",
