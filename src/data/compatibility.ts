@@ -121,9 +121,9 @@ export const compatibility: CompatibilityEntry[] = [
   {
     slug: "arkanoid-eternal-battle",
     title: "Arkanoid: Eternal Battle",
-    tier: "intro",
+    tier: "playable",
     image: "/images/arkanoid-menu-2026-10-11.png",
-    confirmedOn: "2026-10-11",
+    confirmedOn: "2026-11-07",
   },
   {
     slug: "raiden-iv-mikado-remix",

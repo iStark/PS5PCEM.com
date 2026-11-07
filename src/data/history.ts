@@ -40,6 +40,23 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "arkanoid-d3d12-startup-20261107",
+    slug: "arkanoid-eternal-battle",
+    date: "2026-11-07",
+    release: null,
+    graphicsApi: "d3d12",
+    image: "/images/arkanoid-d3d12-menu-2026-11-07.jpg",
+    source: devReport("arkanoid-d3d12-startup-2026-11-07.md"),
+  },
+  {
+    id: "arkanoid-vulkan-playthrough-20261107",
+    slug: "arkanoid-eternal-battle",
+    date: "2026-11-07",
+    release: null,
+    graphicsApi: "vulkan",
+    source: devReport("arkanoid-d3d12-startup-2026-11-07.md#vulkan-playthrough-confirmation"),
+  },
+  {
     id: "big-helmet-heroes-d3d12-startup-20261105",
     graphicsApi: "d3d12",
     slug: "big-helmet-heroes",

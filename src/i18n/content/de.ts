@@ -184,19 +184,17 @@ const de: Content = {
       "imageAlt": "Arcade-Spirits-Hauptmenü mit START, LOAD, PREFS, PRIZES und ABOUT vor der Titelgrafik"
     },
     "arkanoid-eternal-battle": {
-      "status": "Titelbildschirm · Hauptmenü · Gameplay ungeprüft",
-      "headline": "Start und Menügrafik wiederhergestellt; Median im Modusmenü: 45,6 FPS.",
-      "summary": "Entwicklungsversion vom 11. Oktober, PPSA06328 v01.002.000: Vier fehlende Fiber/POSIX-Importe sind implementiert. Eigene Firmware-Stacks und die synchronisierte Migration von Fibers zwischen Arbeitsthreads beheben die nachfolgenden Startfehler. Eine separate Upload-Grenze für große BC7-Atlanten stellt die Titelgrafik wieder her.",
+      "status": "Playable · Completable (Vulkan)",
+      "headline": "Vollständiges Durchspielen mit guter Leistung unter Vulkan bestätigt.",
+      "summary": "7. November 2026: Der Projektbetreiber bestätigt, dass Arkanoid: Eternal Battle unter Vulkan vollständig spielbar und abschließbar ist, mit guten FPS. PPSA06328 v01.002.000. Dies aktualisiert den früheren Menütest; ein neuer automatisierter vollständiger Durchlauf wurde nicht durchgeführt.",
       "strengths": [
-        "Zwei Starts erreichen den animierten Titelbildschirm. Automatische Cross-Eingaben öffnen die Modusauswahl mit Options, Retro, Eternal Battle, Versus und Neo.",
-        "Die abschließenden Protokolle enthalten keine Gastabstürze oder abgelehnten Sampled Images; die gemeldeten GPU-Auslassungszähler bleiben in den geprüften Frames bei null."
+        "Vollständiges Durchspielen mit guter Leistung unter Vulkan bestätigt."
       ],
       "limits": [
-        "Der Online-Modus Eternal Battle meldet, dass er nicht zugänglich ist; das Gastprotokoll zeigt fehlgeschlagene Serververbindungen.",
-        "Offline-Modusauswahl, Schlägersteuerung und Gameplay sind ungeprüft. Audioqualität, vollständiges Durchspielen und Langzeitstabilität wurden nicht getestet."
+        "Diese Einstufung gilt für Vulkan. DirectX-12-Ergebnisse werden separat erfasst; Online-Mehrspieler wurde nicht erneut geprüft."
       ],
-      "performance": "Menü: Median 45,6 FPS, Bereich 43,5–46,6 FPS aus 30 im Sekundentakt erfassten Fensterzählerwerten über 29,962 Sekunden. Automatische Cross-Eingaben blieben aktiv. Beobachtungen am Titelbildschirm: 138–149 FPS, keine zeitlich abgegrenzte Messung. RTX 3070 Ti, angeforderte Ausgabe 1920×1080, internes Renderziel 3840×2160. Menüwerte, keine Gameplay-Leistung oder Vorher-nachher-Messung.",
-      "imageAlt": "Arkanoid-Modusmenü mit Retro, Eternal Battle und Versus; Fensterzähler bei 45,2 FPS"
+      "performance": "Gute Gameplay-FPS vom Projektbetreiber gemeldet; kein neuer Zahlenwert. Historische Vulkan-Menümessung vom 11. Oktober: Menü: Median 45,6 FPS, Bereich 43,5–46,6 FPS aus 30 im Sekundentakt erfassten Fensterzählerwerten über 29,962 Sekunden. Automatische Cross-Eingaben blieben aktiv. Beobachtungen am Titelbildschirm: 138–149 FPS, keine zeitlich abgegrenzte Messung. RTX 3070 Ti, angeforderte Ausgabe 1920×1080, internes Renderziel 3840×2160. Menüwerte, keine Gameplay-Leistung oder Vorher-nachher-Messung.",
+      "imageAlt": "Vulkan · 2026-10-11: Arkanoid-Modusmenü mit Retro, Eternal Battle und Versus; Fensterzähler bei 45,2 FPS"
     },
     "raiden-iv-mikado-remix": {
       "status": "Playable · Completable",
@@ -570,6 +568,15 @@ const de: Content = {
   },
 
   history: {
+    "arkanoid-d3d12-startup-20261107": {
+      "title": "DirectX 12: Start und Menü wiederhergestellt",
+      "summary": "Entwicklungsbuild vom 7. November: explizites LOD, kompatible anisotrope Min-/Mag-Filter und native BC7-Texturen beseitigen die Startabbrüche. Titelbild und Modusauswahl werden unter DirectX 12 gerendert. Alle 51 D3D12-Tests und die vollständige GPU-Suite einschließlich 544 Filtervergleichen bestehen. Gameplay, Abschluss und Audioqualität unter DirectX sind unbestätigt; Playable · Completable gilt für Vulkan. Das Menü wird weiterhin sehr langsam gerendert; dies ist eine Startkorrektur, kein Leistungsergebnis.",
+      "imageAlt": "DirectX-12-Aufnahme: Arkanoid-Modusauswahl mit wiederhergestellter Grafik"
+    },
+    "arkanoid-vulkan-playthrough-20261107": {
+      "title": "Vulkan: spielbar und abschließbar",
+      "summary": "7. November 2026: Der Projektbetreiber bestätigt, dass Arkanoid: Eternal Battle unter Vulkan vollständig spielbar und abschließbar ist, mit guten FPS. PPSA06328 v01.002.000. Dies aktualisiert den früheren Menütest; ein neuer automatisierter vollständiger Durchlauf wurde nicht durchgeführt."
+    },
     "big-helmet-heroes-d3d12-startup-20261105": {
       title: "DirectX 12: zwei Starthindernisse behoben",
       summary: "Der Entwicklungsbuild vom 5. November führt Bildoperationen in Compute-Shadern aus und unterstützt gepackte 10-Bit-SDR-Ausgabe. Big Helmet Heroes zeigt den ersten schwarzen Frame und stoppt anschließend wegen nicht unterstützter CMASK-Fast-Clear-Metadaten. Menü und Gameplay werden noch nicht erreicht; ein FPS-Zuwachs ist nicht belegt. Alle 50 D3D12-Tests und die vollständige native GPU-Prüfung bestehen. Das frühere Vulkan-Ergebnis bleibt unverändert.",

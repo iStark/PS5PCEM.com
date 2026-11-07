@@ -184,19 +184,17 @@ const tr: Content = {
       "imageAlt": "Başlık görselinin üzerinde START, LOAD, PREFS, PRIZES ve ABOUT ile Arcade Spirits ana menüsü",
     },
     "arkanoid-eternal-battle": {
-      "status": "Başlık ekranı · ana menü · oynanış doğrulanmadı",
-      "headline": "Açılış ve menü görselleri geri geldi; mod seçimi menüsünde 45,6 FPS ölçüldü.",
-      "summary": "11 Ekim geliştirme sürümü, PPSA06328 v01.002.000: eksik dört Fiber/POSIX içe aktarması uygulandı. Bağımsız sistem yazılımı yığınları ve çalışanlar arasında eşzamanlı fiber taşıma, sonraki açılış hatalarını gideriyor. Büyük BC7 atlasları için ayrı bir yükleme sınırı başlık görselini geri getiriyor.",
+      "status": "Playable · Completable (Vulkan)",
+      "headline": "Vulkan üzerinde iyi performansla tamamlanabildiği doğrulandı.",
+      "summary": "7 Kasım 2026: proje sorumlusu, Arkanoid: Eternal Battle oyununun Vulkan üzerinde iyi FPS ile tamamen oynanabilir ve bitirilebilir olduğunu doğruladı. PPSA06328 v01.002.000. Bu doğrulama, önceki yalnızca menü sonucunu günceller; yeni bir tam otomatik oynanış testi yapılmadı.",
       "strengths": [
-        "İki başlatma hareketli başlık ekranına ulaşıyor. Otomatik Cross girişi Options, Retro, Eternal Battle, Versus ve Neo içeren mod seçimi karuselini açıyor.",
-        "Son izlerde misafir hatası veya örneklenmiş görüntü reddi görünmüyor; denetlenen karelerde bildirilen GPU boşluk sayaçları sıfır kalıyor.",
+        "Vulkan üzerinde iyi performansla tamamlanabildiği doğrulandı."
       ],
       "limits": [
-        "Çevrimiçi Eternal Battle modu erişilemez olduğunu bildiriyor; misafir günlüğünde başarısız sunucu bağlantıları var.",
-        "Çevrimdışı mod seçimi, raket kontrolü ve oynanış doğrulanmadı. Ses kalitesi, oyunun bitirilmesi ve uzun oturum kararlılığı test edilmedi.",
+        "Bu durum Vulkan için geçerlidir. DirectX 12 sonuçları ayrı kaydedilir; çevrimiçi çok oyunculu mod yeniden doğrulanmadı."
       ],
-      "performance": "Menü: medyan 45,6 FPS; 29,962 saniyeyi kapsayan bir saniyelik 30 pencere sayacı örneğinde 43,5–46,6 FPS aralığı. Otomatik Cross açık kaldı. Başlık ekranı gözlemleri: 138–149 FPS, zamanlanmış ölçüm değildir. RTX 3070 Ti, 1920×1080 çıkış isteği, 3840×2160 iç hedef. Bunlar menü okumalarıdır; oynanış performansı veya önce/sonra karşılaştırması değildir.",
-      "imageAlt": "Retro, Eternal Battle ve Versus kartlarıyla Arkanoid ana mod seçimi menüsü; pencere sayacı 45,2 FPS",
+      "performance": "Proje sorumlusu oyun içinde iyi FPS bildirdi; yeni sayısal ölçüm yok. 11 Ekim tarihli geçmiş Vulkan menü ölçümü: Menü: medyan 45,6 FPS; 29,962 saniyeyi kapsayan bir saniyelik 30 pencere sayacı örneğinde 43,5–46,6 FPS aralığı. Otomatik Cross açık kaldı. Başlık ekranı gözlemleri: 138–149 FPS, zamanlanmış ölçüm değildir. RTX 3070 Ti, 1920×1080 çıkış isteği, 3840×2160 iç hedef. Bunlar menü okumalarıdır; oynanış performansı veya önce/sonra karşılaştırması değildir.",
+      "imageAlt": "Vulkan · 2026-10-11: Retro, Eternal Battle ve Versus kartlarıyla Arkanoid ana mod seçimi menüsü; pencere sayacı 45,2 FPS"
     },
     "raiden-iv-mikado-remix": {
       "status": "Oynanabilir · Bitirilebilir",
@@ -509,6 +507,15 @@ const tr: Content = {
     },
   },
   history: {
+    "arkanoid-d3d12-startup-20261107": {
+      "title": "DirectX 12: başlangıç ve menü düzeltildi",
+      "summary": "7 Kasım geliştirme derlemesi: açık LOD, uyumlu anizotropik min/mag filtreleri ve yerel BC7 dokuları başlangıç durmalarını gideriyor. DirectX 12 artık başlık ve mod seçimi menüsünü çiziyor. 51 D3D12 testi ve 544 filtre karşılaştırması dahil tüm GPU testleri geçti. DirectX oynanışı, bitirme ve ses kalitesi doğrulanmadı; Playable · Completable Vulkan için geçerlidir. Menü hâlâ çok yavaş çiziliyor; bu bir başlangıç düzeltmesidir, performans sonucu değildir.",
+      "imageAlt": "DirectX 12 görüntüsü: grafikleri düzeltilmiş Arkanoid mod seçimi menüsü"
+    },
+    "arkanoid-vulkan-playthrough-20261107": {
+      "title": "Vulkan: oynanabilir ve bitirilebilir",
+      "summary": "7 Kasım 2026: proje sorumlusu, Arkanoid: Eternal Battle oyununun Vulkan üzerinde iyi FPS ile tamamen oynanabilir ve bitirilebilir olduğunu doğruladı. PPSA06328 v01.002.000. Bu doğrulama, önceki yalnızca menü sonucunu günceller; yeni bir tam otomatik oynanış testi yapılmadı."
+    },
     "big-helmet-heroes-d3d12-startup-20261105": {
       title: "DirectX 12: iki başlangıç engeli giderildi",
       summary: "5 Kasım geliştirme derlemesi, hesaplama gölgelendiricilerindeki görüntü işlemlerini ve paketlenmiş 10 bit SDR çıkışını destekliyor. Big Helmet Heroes ilk siyah kareyi sunuyor, ardından desteklenmeyen CMASK hızlı temizleme meta verilerinde duruyor. Menüye ve oynanışa henüz ulaşılamadı; FPS artışı doğrulanmadı. 50 D3D12 testinin tamamı ve tam yerel GPU doğrulaması başarılı. Önceki Vulkan sonucu değişmedi.",

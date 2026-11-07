@@ -184,19 +184,17 @@ const zh: Content = {
       "imageAlt": "Arcade Spirits 主菜单，标题背景上显示 START、LOAD、PREFS、PRIZES 和 ABOUT"
     },
     "arkanoid-eternal-battle": {
-      "status": "标题画面 · 主菜单 · 游玩未验证",
-      "headline": "启动和菜单画面已修复；模式选择菜单的帧率中位数为 45.6 FPS。",
-      "summary": "10 月 11 日开发版本，PPSA06328 v01.002.000：实现了四个缺失的 Fiber/POSIX 导入。独立的 HLE 栈与工作线程间的同步纤程迁移修复了随后的启动故障。为大型 BC7 图集设置独立上传限制后，标题画面得以恢复。",
+      "status": "Playable · Completable (Vulkan)",
+      "headline": "已确认 Vulkan 可完整通关且性能良好。",
+      "summary": "2026 年 11 月 7 日：项目维护者确认 Arkanoid: Eternal Battle 在 Vulkan 下可正常游玩并完整通关，帧率良好。PPSA06328 v01.002.000。此确认更新了此前仅测试菜单的结果，并非本次重新进行了全流程自动测试。",
       "strengths": [
-        "两次启动均进入动态标题画面。自动 Cross 输入可打开模式选择菜单，显示 Options、Retro、Eternal Battle、Versus 和 Neo。",
-        "最终日志中未出现客户程序崩溃或采样图像被拒绝；已检查帧报告的 GPU 跳过计数均为零。"
+        "已确认 Vulkan 可完整通关且性能良好。"
       ],
       "limits": [
-        "在线 Eternal Battle 模式提示无法访问；客户程序日志记录了服务器连接失败。",
-        "离线模式选择、挡板控制和实际游玩仍未验证。音质、完整通关及长时间稳定性尚未测试。"
+        "此评级适用于 Vulkan。DirectX 12 的结果单独记录；尚未重新验证在线多人模式。"
       ],
-      "performance": "菜单：以一秒间隔读取窗口计数器 30 次，跨度 29.962 秒，中位数 45.6 FPS，范围 43.5–46.6 FPS。自动 Cross 输入保持启用。标题画面观察值为 138–149 FPS，并非固定时段测试。RTX 3070 Ti，请求输出 1920×1080，内部渲染目标为 3840×2160。这些是菜单数据，不代表游戏内性能，也不是优化前后的对照。",
-      "imageAlt": "Arkanoid 模式选择菜单，显示 Retro、Eternal Battle 和 Versus 卡片；窗口计数器为 45.2 FPS"
+      "performance": "维护者报告游戏帧率良好；没有新的数值测量。10 月 11 日 Vulkan 菜单的历史测量：菜单：以一秒间隔读取窗口计数器 30 次，跨度 29.962 秒，中位数 45.6 FPS，范围 43.5–46.6 FPS。自动 Cross 输入保持启用。标题画面观察值为 138–149 FPS，并非固定时段测试。RTX 3070 Ti，请求输出 1920×1080，内部渲染目标为 3840×2160。这些是菜单数据，不代表游戏内性能，也不是优化前后的对照。",
+      "imageAlt": "Vulkan · 2026-10-11: Arkanoid 模式选择菜单，显示 Retro、Eternal Battle 和 Versus 卡片；窗口计数器为 45.2 FPS"
     },
     "raiden-iv-mikado-remix": {
       "status": "Playable · Completable",
@@ -551,6 +549,15 @@ const zh: Content = {
   },
 
   history: {
+    "arkanoid-d3d12-startup-20261107": {
+      "title": "DirectX 12：启动和菜单已恢复",
+      "summary": "11 月 7 日开发构建：修复显式 LOD 采样、兼容的各向异性 min/mag 过滤及原生 BC7 纹理处理，排除启动中断。DirectX 12 现可渲染标题画面和模式选择菜单。51 项 D3D12 测试及完整 GPU 测试全部通过，包括 544 项过滤比较。DirectX 下的游戏操作、通关和音质尚未验证；Playable · Completable 评级适用于 Vulkan。 菜单渲染仍然很慢；此次是启动修复，并非性能提升结果。",
+      "imageAlt": "DirectX 12 截图：恢复画面的 Arkanoid 模式选择菜单"
+    },
+    "arkanoid-vulkan-playthrough-20261107": {
+      "title": "Vulkan：可玩且可通关",
+      "summary": "2026 年 11 月 7 日：项目维护者确认 Arkanoid: Eternal Battle 在 Vulkan 下可正常游玩并完整通关，帧率良好。PPSA06328 v01.002.000。此确认更新了此前仅测试菜单的结果，并非本次重新进行了全流程自动测试。"
+    },
     "big-helmet-heroes-d3d12-startup-20261105": {
       title: "DirectX 12：修复两处启动阻碍",
       summary: "11月5日的开发版本支持计算着色器中的图像操作以及打包格式的10位SDR输出。Big Helmet Heroes已能呈现第一个黑色帧，但随后因尚未支持的CMASK快速清除元数据而停止。目前仍未进入菜单或游戏，也未证实FPS提升。全部50项D3D12测试及完整的原生GPU验证均通过。此前的Vulkan测试结果保持不变。",

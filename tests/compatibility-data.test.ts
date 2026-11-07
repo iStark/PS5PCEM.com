@@ -63,7 +63,7 @@ describe("compatibility dataset", () => {
     );
   });
 
-  it("reflects the eleven titles graded playable by the maintainer", () => {
+  it("reflects the twelve titles graded playable by the maintainer", () => {
     expect(
       compatibility
         .filter((entry) => entry.tier === "playable")
@@ -71,6 +71,7 @@ describe("compatibility dataset", () => {
         .sort(),
     ).toEqual(
       [
+        "Arkanoid: Eternal Battle",
         "Asterix & Obelix: Slap Them All!",
         "Cat Quest III",
         "Dreaming Sarah",
@@ -84,7 +85,7 @@ describe("compatibility dataset", () => {
         "Subnautica: Below Zero",
       ].sort(),
     );
-    expect(countByTier().playable).toBe(11);
+    expect(countByTier().playable).toBe(12);
   });
 
   it("keeps in-game titles with severe defects short of playable", () => {
@@ -102,7 +103,6 @@ describe("compatibility dataset", () => {
       "oxide-room-104",
       "police-simulator-patrol-officers",
       "arcade-spirits-the-new-challengers",
-      "arkanoid-eternal-battle",
       "big-helmet-heroes",
       "super-woden-gp",
       "tetris-effect-connected",
@@ -215,6 +215,8 @@ describe("test history", () => {
       ["severed-steel-gameplay-20261021", null],
       ["severed-steel-menu-20261020", null],
       ["arkanoid-fiber-startup", null],
+      ["arkanoid-vulkan-playthrough-20261107", null],
+      ["arkanoid-d3d12-startup-20261107", null],
       ["arcade-spirits-pthread-semaphores", null],
       ["super-woden-gp-pthread-cleanup", null],
       ["super-woden-gp-ui-orientation-20261029", null],
@@ -259,7 +261,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(72);
+    expect(history.filter((run) => run.release === null)).toHaveLength(74);
   });
 
   it("references captures that exist in public/", () => {

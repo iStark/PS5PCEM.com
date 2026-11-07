@@ -184,19 +184,17 @@ const ko: Content = {
       "imageAlt": "타이틀 아트 위에 START, LOAD, PREFS, PRIZES, ABOUT이 있는 Arcade Spirits 메인 메뉴",
     },
     "arkanoid-eternal-battle": {
-      "status": "타이틀 화면 · 메인 메뉴 · 게임플레이 미검증",
-      "headline": "시작과 메뉴 아트워크를 복구했고, 모드 선택 메뉴는 45.6 FPS입니다.",
-      "summary": "10월 11일 개발 빌드, PPSA06328 v01.002.000: 누락되었던 Fiber/POSIX 임포트 4개를 구현했습니다. 독립적인 펌웨어 스택과 워커 간 동기화된 파이버 이동으로 이후의 시작 실패가 사라졌습니다. 큰 BC7 아틀라스를 위한 별도 업로드 한도로 타이틀 아트워크가 돌아왔습니다.",
+      "status": "Playable · Completable (Vulkan)",
+      "headline": "Vulkan에서 양호한 성능과 전체 플레이 가능 여부 확인.",
+      "summary": "2026년 11월 7일: 프로젝트 관리자는 Arkanoid: Eternal Battle이 Vulkan에서 양호한 FPS로 완전히 플레이 가능하며 엔딩까지 진행할 수 있다고 확인했습니다. PPSA06328 v01.002.000. 기존 메뉴 확인 결과를 갱신한 것으로, 새로운 전체 자동 플레이 테스트는 아닙니다.",
       "strengths": [
-        "두 번의 실행 모두 애니메이션 타이틀 화면에 도달합니다. 자동 Cross 입력으로 Options, Retro, Eternal Battle, Versus, Neo가 있는 모드 선택 캐러셀이 열립니다.",
-        "최종 트레이스에 게스트 폴트나 샘플 이미지 거부가 없으며, 확인한 프레임에서 보고된 GPU 갭 카운터는 0으로 유지됩니다.",
+        "Vulkan에서 양호한 성능과 전체 플레이 가능 여부 확인."
       ],
       "limits": [
-        "온라인 Eternal Battle 모드는 접근할 수 없다고 표시되며, 게스트 로그에 서버 연결 실패가 있습니다.",
-        "오프라인 모드 선택, 패들 조작, 게임플레이는 검증되지 않았습니다. 음질, 완주, 장시간 안정성은 테스트하지 않았습니다.",
+        "이 등급은 Vulkan에 적용됩니다. DirectX 12 결과는 별도로 기록하며 온라인 멀티플레이는 재검증하지 않았습니다."
       ],
-      "performance": "메뉴: 중앙값 45.6 FPS, 29.962초에 걸친 1초 간격 창 카운터 표본 30개에서 범위 43.5–46.6 FPS. 자동 Cross 유지. 타이틀 화면 관찰값은 138–149 FPS이며 시간을 잰 벤치마크가 아닙니다. RTX 3070 Ti, 1920×1080 출력 요청, 내부 타깃 3840×2160. 메뉴 측정값이며 게임플레이 성능이나 전후 비교가 아닙니다.",
-      "imageAlt": "Retro, Eternal Battle, Versus 카드가 있는 Arkanoid 메인 모드 선택 메뉴. 창 카운터 45.2 FPS",
+      "performance": "관리자가 게임 내 양호한 FPS를 보고했습니다. 새로운 수치 측정은 없습니다. 10월 11일의 기존 Vulkan 메뉴 측정: 메뉴: 중앙값 45.6 FPS, 29.962초에 걸친 1초 간격 창 카운터 표본 30개에서 범위 43.5–46.6 FPS. 자동 Cross 유지. 타이틀 화면 관찰값은 138–149 FPS이며 시간을 잰 벤치마크가 아닙니다. RTX 3070 Ti, 1920×1080 출력 요청, 내부 타깃 3840×2160. 메뉴 측정값이며 게임플레이 성능이나 전후 비교가 아닙니다.",
+      "imageAlt": "Vulkan · 2026-10-11: Retro, Eternal Battle, Versus 카드가 있는 Arkanoid 메인 모드 선택 메뉴. 창 카운터 45.2 FPS"
     },
     "raiden-iv-mikado-remix": {
       "status": "플레이 가능 · 완주 가능",
@@ -509,6 +507,15 @@ const ko: Content = {
     },
   },
   history: {
+    "arkanoid-d3d12-startup-20261107": {
+      "title": "DirectX 12: 실행 및 메뉴 복구",
+      "summary": "11월 7일 개발 빌드: 명시적 LOD, 호환되는 비등방성 min/mag 필터와 네이티브 BC7 텍스처 처리로 실행 중단을 해결했습니다. DirectX 12에서 타이틀과 모드 선택 메뉴가 표시됩니다. D3D12 테스트 51개와 필터 비교 544개를 포함한 전체 GPU 검사를 통과했습니다. DirectX 게임플레이, 완료 여부와 음질은 미확인입니다. Playable · Completable은 Vulkan 등급입니다. 메뉴 렌더링은 여전히 매우 느립니다. 실행 오류 수정이며 성능 개선 결과는 아닙니다.",
+      "imageAlt": "DirectX 12 캡처: 그래픽이 복구된 Arkanoid 모드 선택 메뉴"
+    },
+    "arkanoid-vulkan-playthrough-20261107": {
+      "title": "Vulkan: 플레이 및 완료 가능",
+      "summary": "2026년 11월 7일: 프로젝트 관리자는 Arkanoid: Eternal Battle이 Vulkan에서 양호한 FPS로 완전히 플레이 가능하며 엔딩까지 진행할 수 있다고 확인했습니다. PPSA06328 v01.002.000. 기존 메뉴 확인 결과를 갱신한 것으로, 새로운 전체 자동 플레이 테스트는 아닙니다."
+    },
     "big-helmet-heroes-d3d12-startup-20261105": {
       title: "DirectX 12: 시작 단계의 두 차단 문제 수정",
       summary: "11월 5일 개발 빌드는 컴퓨트 셰이더의 이미지 연산과 패킹된 10비트 SDR 출력을 지원합니다. Big Helmet Heroes는 첫 검은 프레임을 표시한 뒤, 아직 지원하지 않는 CMASK 빠른 지우기 메타데이터에서 멈춥니다. 메뉴와 게임플레이에는 도달하지 못했으며 FPS 향상도 확인되지 않았습니다. D3D12 테스트 50개와 전체 네이티브 GPU 검증을 통과했습니다. 이전 Vulkan 결과는 그대로 유지됩니다.",
