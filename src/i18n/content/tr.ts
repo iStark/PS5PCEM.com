@@ -317,9 +317,9 @@ const tr: Content = {
       "imageAlt": "PS5PCEM tarafından çizilen, HUD, dağlar ve mavi denizle Cat Quest III ada oynanışı",
     },
     "dreaming-sarah": {
-      "status": "Oynanabilir · Bitirilebilir",
-      "headline": "Köşe noktası yükleme optimizasyonundan sonra açılış ormanı 100 FPS'yi aşıyor.",
-      "summary": "10 Ekim geliştirme sürümü, gereğinden büyük sprite arabelleği kopyalarını kanıtlanmış köşe noktası aralıklarıyla değiştiriyor. Açılış karesi başına arabellek yüklemeleri yaklaşık 78 MiB'den 4,9 MiB'ye düşüyor. Hareket, zıplama ve sonraki platform ekranı doğrulandı; daha önceki bitirilmiş oyun raporu kayıtlı duruyor.",
+      "status": "Oynanabilir · Bitirilebilir (Vulkan)",
+      "headline": "Vulkan ile oynanış; DirectX 12 artık ana menüye ulaşıyor.",
+      "summary": "7 Kasım geliştirme derlemesi: tür 17 dikdörtgenlerin reddedilmesi düzeltildi ve DirectX 12 ana menüyü çiziyor. DirectX ile oynanış, karakter kontrolü ve FPS henüz doğrulanmadı. Oynanabilir/tamamlanabilir durumu ve önceki performans ölçümleri Vulkan için geçerlidir. 10 Ekim geliştirme sürümü, gereğinden büyük sprite arabelleği kopyalarını kanıtlanmış köşe noktası aralıklarıyla değiştiriyor. Açılış karesi başına arabellek yüklemeleri yaklaşık 78 MiB'den 4,9 MiB'ye düşüyor. Hareket, zıplama ve sonraki platform ekranı doğrulandı; daha önceki bitirilmiş oyun raporu kayıtlı duruyor.",
       "strengths": [
         "Tam oynanış geliştirici tarafından doğrulandı.",
         "60 saniyelik açılış örneği: medyan 198,25 FPS, 187,8–203,2 FPS. Uyandıktan sonra: 197,25 FPS; sonraki platform ekranı: 144,35 FPS (her biri 30 saniye).",
@@ -329,7 +329,7 @@ const tr: Content = {
         "Bunlar RTX 3070 Ti'de 1080p çıkış ve ses açıkken alınan pencere sayacı örnekleridir; oyunun tamamı için bir en düşük değer belirlemezler.",
         "Yükleme için eboot.bin ve sce_module/libc.prx dosyalarının, kopyanın kendi eboot yamalayıcısının bıraktığı yedeklerden geri yüklenmesi gerekti; yamalayıcı ikisini de kesmişti.",
       ],
-      "performance": "60 saniyelik açılış örneği: medyan 198,25 FPS, 187,8–203,2 FPS. Uyandıktan sonra: 197,25 FPS; sonraki platform ekranı: 144,35 FPS (her biri 30 saniye).",
+      "performance": "Vulkan, 2026-10-10: 60 saniyelik açılış örneği: medyan 198,25 FPS, 187,8–203,2 FPS. Uyandıktan sonra: 197,25 FPS; sonraki platform ekranı: 144,35 FPS (her biri 30 saniye).",
       "imageAlt": "Sınırlandırılmış köşe noktası yüklemelerinden sonra Dreaming Sarah açılış ormanı",
     },
     "jurassic-park-classic-games-collection": {
@@ -507,6 +507,11 @@ const tr: Content = {
     },
   },
   history: {
+    "dreaming-sarah-d3d12-startup-20261107": {
+      "title": "DirectX 12: açılış düzeltildi, ana menü doğrulandı",
+      "summary": "7 Kasım geliştirme derlemesi: tür 17 dikdörtgenlerin reddedilmesi düzeltildi ve DirectX 12 ana menüyü çiziyor. DirectX ile oynanış, karakter kontrolü ve FPS henüz doğrulanmadı. Oynanabilir/tamamlanabilir durumu ve önceki performans ölçümleri Vulkan için geçerlidir. 51 D3D12 testinin ve tüm yerel GPU testlerinin tamamı geçti; konuk gölgelendiricinin dördüncü köşesi ve öznitelikleri korunuyor.",
+      "imageAlt": "Dikdörtgen düzeltmesinden sonra DirectX 12 ile çizilen Dreaming Sarah ana menüsü"
+    },
     "arkanoid-d3d12-startup-20261107": {
       "title": "DirectX 12: başlangıç ve menü düzeltildi",
       "summary": "7 Kasım geliştirme derlemesi: açık LOD, uyumlu anizotropik min/mag filtreleri ve yerel BC7 dokuları başlangıç durmalarını gideriyor. DirectX 12 artık başlık ve mod seçimi menüsünü çiziyor. 51 D3D12 testi ve 544 filtre karşılaştırması dahil tüm GPU testleri geçti. DirectX oynanışı, bitirme ve ses kalitesi doğrulanmadı; Playable · Completable Vulkan için geçerlidir. Menü hâlâ çok yavaş çiziliyor; bu bir başlangıç düzeltmesidir, performans sonucu değildir.",

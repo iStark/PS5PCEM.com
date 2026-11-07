@@ -357,10 +357,10 @@ const content: Content = {
     },
 
     "dreaming-sarah": {
-      status: "Playable · Completable",
-      headline: "Opening forest exceeds 100 FPS after vertex upload optimization.",
+      status: "Playable · Completable (Vulkan)",
+      headline: "Vulkan gameplay; DirectX 12 now reaches the main menu.",
       summary:
-        "The October 10 development build replaces oversized sprite-buffer copies with proven vertex ranges. Buffer uploads fall from about 78 MiB to 4.9 MiB per opening frame. Movement, jumping and the next platform screen are verified; the earlier completed-playthrough report remains on record.",
+        "November 7 development build: DirectX 12 now renders the main menu after fixing the type 17 rectangle rejection. DirectX gameplay, character control and FPS remain unverified. The playable/completable status and earlier performance results describe Vulkan. The October 10 development build replaces oversized sprite-buffer copies with proven vertex ranges. Buffer uploads fall from about 78 MiB to 4.9 MiB per opening frame. Movement, jumping and the next platform screen are verified; the earlier completed-playthrough report remains on record.",
       strengths: [
         "Complete playthrough confirmed by the maintainer.",
         "60-second opening sample: 198.25 FPS median, 187.8–203.2 FPS. After waking: 197.25 FPS; next platform screen: 144.35 FPS (30 seconds each).",
@@ -371,7 +371,7 @@ const content: Content = {
         "Loading needed eboot.bin and sce_module/libc.prx restored from the backups left by the copy's own eboot patcher, which had truncated both.",
       ],
       performance:
-        "60-second opening sample: 198.25 FPS median, 187.8–203.2 FPS. After waking: 197.25 FPS; next platform screen: 144.35 FPS (30 seconds each).",
+        "Vulkan, 2026-10-10: 60-second opening sample: 198.25 FPS median, 187.8–203.2 FPS. After waking: 197.25 FPS; next platform screen: 144.35 FPS (30 seconds each).",
       imageAlt:
         "Dreaming Sarah opening forest after bounded vertex uploads",
     },
@@ -594,6 +594,11 @@ const content: Content = {
   },
 
   history: {
+    "dreaming-sarah-d3d12-startup-20261107": {
+      "title": "DirectX 12: startup restored, main menu verified",
+      "summary": "November 7 development build: DirectX 12 now renders the main menu after fixing the type 17 rectangle rejection. DirectX gameplay, character control and FPS remain unverified. The playable/completable status and earlier performance results describe Vulkan. All 51 D3D12 tests and the full native GPU suite pass; the fourth guest vertex and its attributes are preserved.",
+      "imageAlt": "Dreaming Sarah main menu rendered by DirectX 12 after the rectangle fix"
+    },
     "arkanoid-d3d12-startup-20261107": {
       "title": "DirectX 12: startup and menu restored",
       "summary": "November 7 development build: scalar-LOD sampling, compatible anisotropic min/mag filters and native BC7 textures remove the startup stops. The title and mode-selection menu now render on DirectX 12. All 51 D3D12 tests and the complete GPU suite pass, including 544 sampler comparisons. DirectX gameplay, completion and audio quality remain unverified; Playable · Completable describes Vulkan. Menu rendering remains very slow; this is a startup fix, not a performance result.",

@@ -330,10 +330,10 @@ const pt: Content = {
     },
 
     "dreaming-sarah": {
-      status: "Jogável · Finalizável",
-      headline: "A floresta inicial supera 100 FPS após otimizar o envio de vértices.",
+      status: "Jogável · Finalizável (Vulkan)",
+      headline: "Gameplay com Vulkan; DirectX 12 agora chega ao menu principal.",
       summary:
-        "A compilação de desenvolvimento de 10 de outubro envia intervalos de vértices comprovados em vez de buffers de sprites excessivos. As transferências caem de cerca de 78 para 4,9 MiB por quadro inicial. Movimento, salto e a próxima tela de plataformas foram verificados; o relato anterior de conclusão permanece registrado.",
+        "Compilação de desenvolvimento de 7 de novembro: DirectX 12 renderiza o menu principal após corrigir a rejeição de retângulos do tipo 17. Gameplay, controle da personagem e FPS com DirectX ainda não foram verificados. O status jogável/completável e as medições anteriores se referem ao Vulkan. A compilação de desenvolvimento de 10 de outubro envia intervalos de vértices comprovados em vez de buffers de sprites excessivos. As transferências caem de cerca de 78 para 4,9 MiB por quadro inicial. Movimento, salto e a próxima tela de plataformas foram verificados; o relato anterior de conclusão permanece registrado.",
       strengths: [
         "Partida completa confirmada pelo mantenedor.",
         "Início, 60 segundos: mediana 198.25 FPS, faixa 187.8–203.2. Após acordar: 197.25 FPS; próxima tela: 144.35 FPS (30 segundos cada).",
@@ -344,7 +344,7 @@ const pt: Content = {
         "O carregamento exigiu restaurar eboot.bin e sce_module/libc.prx a partir das cópias deixadas pelo patcher de eboot da própria cópia, que havia truncado os dois.",
       ],
       performance:
-        "Início, 60 segundos: mediana 198.25 FPS, faixa 187.8–203.2. Após acordar: 197.25 FPS; próxima tela: 144.35 FPS (30 segundos cada).",
+        "Vulkan, 2026-10-10: Início, 60 segundos: mediana 198.25 FPS, faixa 187.8–203.2. Após acordar: 197.25 FPS; próxima tela: 144.35 FPS (30 segundos cada).",
       imageAlt:
         "Floresta inicial de Dreaming Sarah após limitar o envio de vértices",
     },
@@ -568,6 +568,11 @@ const pt: Content = {
   },
 
   history: {
+    "dreaming-sarah-d3d12-startup-20261107": {
+      "title": "DirectX 12: inicialização corrigida e menu principal verificado",
+      "summary": "Compilação de desenvolvimento de 7 de novembro: DirectX 12 renderiza o menu principal após corrigir a rejeição de retângulos do tipo 17. Gameplay, controle da personagem e FPS com DirectX ainda não foram verificados. O status jogável/completável e as medições anteriores se referem ao Vulkan. Os 51 testes de D3D12 e toda a suíte nativa de GPU passaram; o quarto vértice do shader convidado e seus atributos são preservados.",
+      "imageAlt": "Menu principal de Dreaming Sarah renderizado com DirectX 12 após a correção dos retângulos"
+    },
     "arkanoid-d3d12-startup-20261107": {
       "title": "DirectX 12: arranque e menu restaurados",
       "summary": "Compilação de desenvolvimento de 7 de novembro: LOD explícito, filtros anisotrópicos min/mag compatíveis e texturas BC7 nativas corrigem as interrupções no arranque. O ecrã de título e a seleção de modo aparecem no DirectX 12. Passaram os 51 testes D3D12 e toda a bateria GPU, incluindo 544 comparações de filtragem. Jogabilidade, conclusão e qualidade do áudio no DirectX não foram verificadas; Playable · Completable refere-se ao Vulkan. O menu continua muito lento; é uma correção do arranque, não um resultado de desempenho.",

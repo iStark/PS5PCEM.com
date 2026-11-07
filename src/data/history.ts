@@ -40,6 +40,15 @@ export type HistoryEntry = {
 
 export const history: HistoryEntry[] = [
   {
+    id: "dreaming-sarah-d3d12-startup-20261107",
+    slug: "dreaming-sarah",
+    date: "2026-11-07",
+    release: null,
+    graphicsApi: "d3d12",
+    image: "/images/dreaming-sarah-d3d12-menu-2026-11-07.png",
+    source: devReport("dreaming-sarah-d3d12-startup-2026-11-07.md"),
+  },
+  {
     id: "arkanoid-d3d12-startup-20261107",
     slug: "arkanoid-eternal-battle",
     date: "2026-11-07",

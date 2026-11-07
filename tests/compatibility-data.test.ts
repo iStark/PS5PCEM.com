@@ -217,6 +217,7 @@ describe("test history", () => {
       ["arkanoid-fiber-startup", null],
       ["arkanoid-vulkan-playthrough-20261107", null],
       ["arkanoid-d3d12-startup-20261107", null],
+      ["dreaming-sarah-d3d12-startup-20261107", null],
       ["arcade-spirits-pthread-semaphores", null],
       ["super-woden-gp-pthread-cleanup", null],
       ["super-woden-gp-ui-orientation-20261029", null],
@@ -261,7 +262,7 @@ describe("test history", () => {
     ]) {
       expect(history.find((run) => run.id === id)?.release, id ?? "").toBe(release);
     }
-    expect(history.filter((run) => run.release === null)).toHaveLength(74);
+    expect(history.filter((run) => run.release === null)).toHaveLength(75);
   });
 
   it("references captures that exist in public/", () => {
