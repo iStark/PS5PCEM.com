@@ -411,7 +411,7 @@ const content: Content = {
         "A final 30-second installed-runner menu recording retained one 30 ms silent interval; its cause is not established.",
         "Short menu and combat audio checks passed; end-to-end sound latency and long-session stability were not measured."
       ],
-      "performance": "October 9 combat UI samples read 35.7–45.8 FPS. The historical 70–92 ms frames (11–14 FPS) used an earlier build and scene; this is not a matched speedup benchmark.",
+      "performance": "October 9 combat UI samples read 35.7–45.8 FPS. The historical 70–92 ms frames (11–14 FPS) used an earlier build and scene; this is not a matched speedup benchmark. DirectX 12, November 7: menu 1.22 FPS over 32.801 s; gameplay not revalidated.",
       "imageAlt": "Pirate Base combat during the October 9 audio retest"
     },
 
@@ -594,6 +594,11 @@ const content: Content = {
   },
 
   history: {
+    "jets-d3d12-performance-20261107": {
+      "title": "DirectX 12: fewer readbacks, menu measured at 1.22 FPS",
+      "summary": "The November 7 development build preserves draw order across GPU acquire packets, uses parallel copies and increases the surface cache budget. The menu measured 1.22 FPS (40 presents / 32.801 s), versus earlier 0.7–0.8 FPS observations. The 3840×2160 scanout is unchanged. All 51 D3D12 tests and native GPU probes pass. Transfers and cache churn still limit performance; DirectX gameplay remains unverified. The playable/completable result applies to Vulkan.",
+      "imageAlt": "DirectX 12: fewer readbacks, menu measured at 1.22 FPS"
+    },
     "dreaming-sarah-d3d12-startup-20261107": {
       "title": "DirectX 12: startup restored, main menu verified",
       "summary": "November 7 development build: DirectX 12 now renders the main menu after fixing the type 17 rectangle rejection. DirectX gameplay, character control and FPS remain unverified. The playable/completable status and earlier performance results describe Vulkan. All 51 D3D12 tests and the full native GPU suite pass; the fourth guest vertex and its attributes are preserved.",

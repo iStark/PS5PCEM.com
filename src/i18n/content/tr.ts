@@ -362,7 +362,7 @@ const tr: Content = {
         "Kurulu çalıştırıcıda alınan son 30 saniyelik menü kaydında 30 ms'lik bir sessiz aralık kaldı; nedeni belirlenmedi.",
         "Kısa menü ve çatışma ses denetimleri geçti; uçtan uca ses gecikmesi ve uzun oturum kararlılığı ölçülmedi.",
       ],
-      "performance": "9 Ekim çatışma arayüzü örnekleri 35,7–45,8 FPS okuyor. Geçmişteki 70–92 ms'lik kareler (11–14 FPS) daha eski bir sürüm ve sahne kullanıyordu; bu eşleştirilmiş bir hızlanma ölçümü değildir.",
+      "performance": "9 Ekim çatışma arayüzü örnekleri 35,7–45,8 FPS okuyor. Geçmişteki 70–92 ms'lik kareler (11–14 FPS) daha eski bir sürüm ve sahne kullanıyordu; bu eşleştirilmiş bir hızlanma ölçümü değildir. DirectX 12, 7 Kasım: menüde 32.801 sn boyunca 1.22 FPS; oynanış yeniden doğrulanmadı.",
       "imageAlt": "9 Ekim ses yeniden testi sırasında Pirate Base çatışması",
     },
     "the-precinct": {
@@ -507,6 +507,11 @@ const tr: Content = {
     },
   },
   history: {
+    "jets-d3d12-performance-20261107": {
+      "title": "DirectX 12: daha az geri okuma, menüde 1.22 FPS",
+      "summary": "7 Kasım geliştirme derlemesi GPU acquire komutları arasında çizim sırasını koruyor, paralel kopyalama kullanıyor ve yüzey önbelleğini büyütüyor. Menü ölçümü 1.22 FPS (40 kare / 32.801 sn); önceki gözlemler 0.7–0.8 FPS idi. Çıkış çözünürlüğü 3840×2160 olarak kaldı. 51 D3D12 testi ve yerel GPU testleri geçti. Aktarımlar ve önbellekten çıkarmalar hâlâ pahalı; DirectX oynanışı doğrulanmadı. Oynanabilir ve bitirilebilir durumu Vulkan için geçerlidir.",
+      "imageAlt": "DirectX 12: daha az geri okuma, menüde 1.22 FPS"
+    },
     "dreaming-sarah-d3d12-startup-20261107": {
       "title": "DirectX 12: açılış düzeltildi, ana menü doğrulandı",
       "summary": "7 Kasım geliştirme derlemesi: tür 17 dikdörtgenlerin reddedilmesi düzeltildi ve DirectX 12 ana menüyü çiziyor. DirectX ile oynanış, karakter kontrolü ve FPS henüz doğrulanmadı. Oynanabilir/tamamlanabilir durumu ve önceki performans ölçümleri Vulkan için geçerlidir. 51 D3D12 testinin ve tüm yerel GPU testlerinin tamamı geçti; konuk gölgelendiricinin dördüncü köşesi ve öznitelikleri korunuyor.",

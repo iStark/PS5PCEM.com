@@ -384,7 +384,7 @@ const pt: Content = {
         "A gravação final do menu de 30 segundos ainda contém um intervalo silencioso de 30 ms; a causa não foi determinada.",
         "Os testes curtos de áudio no menu e em combate passaram; latência total e estabilidade prolongada não foram medidas."
       ],
-      "performance": "O contador em combate mostrou 35,7–45,8 FPS em 9 de outubro. Os antigos 11–14 FPS são de outra versão e cena; não é uma comparação controlada de desempenho.",
+      "performance": "O contador em combate mostrou 35,7–45,8 FPS em 9 de outubro. Os antigos 11–14 FPS são de outra versão e cena; não é uma comparação controlada de desempenho. DirectX 12, 7 de novembro: menu a 1.22 FPS durante 32.801 s; jogabilidade não revalidada.",
       "imageAlt": "Combate em Pirate Base durante o teste de áudio de 9 de outubro"
     },
 
@@ -568,6 +568,11 @@ const pt: Content = {
   },
 
   history: {
+    "jets-d3d12-performance-20261107": {
+      "title": "DirectX 12: menos cópias de retorno, menu a 1.22 FPS",
+      "summary": "A compilação em desenvolvimento de 7 de novembro preserva a ordem de desenho entre comandos acquire da GPU, usa cópias paralelas e amplia o cache de superfícies. O menu registra 1.22 FPS (40 quadros / 32.801 s), contra 0.7–0.8 FPS observados anteriormente. A saída continua em 3840×2160. Os 51 testes D3D12 e os testes nativos da GPU passaram. Transferências e remoções do cache ainda limitam o desempenho; a jogabilidade em DirectX não foi verificada. O estado jogável e concluível refere-se ao Vulkan.",
+      "imageAlt": "DirectX 12: menos cópias de retorno, menu a 1.22 FPS"
+    },
     "dreaming-sarah-d3d12-startup-20261107": {
       "title": "DirectX 12: inicialização corrigida e menu principal verificado",
       "summary": "Compilação de desenvolvimento de 7 de novembro: DirectX 12 renderiza o menu principal após corrigir a rejeição de retângulos do tipo 17. Gameplay, controle da personagem e FPS com DirectX ainda não foram verificados. O status jogável/completável e as medições anteriores se referem ao Vulkan. Os 51 testes de D3D12 e toda a suíte nativa de GPU passaram; o quarto vértice do shader convidado e seus atributos são preservados.",

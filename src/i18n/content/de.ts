@@ -384,7 +384,7 @@ const de: Content = {
         "Die abschließende 30-sekündige Menüaufnahme enthielt noch ein stilles Intervall von 30 ms; dessen Ursache ist nicht geklärt.",
         "Kurze Audioprüfungen in Menü und Kampf bestanden; Gesamtlatenz und Langzeitstabilität wurden nicht gemessen."
       ],
-      "performance": "Die FPS-Anzeige im Kampf zeigte am 9. Oktober 35,7–45,8 FPS. Die früheren 11–14 FPS stammen aus einer anderen Version und Szene; dies ist kein vergleichbarer Beschleunigungstest.",
+      "performance": "Die FPS-Anzeige im Kampf zeigte am 9. Oktober 35,7–45,8 FPS. Die früheren 11–14 FPS stammen aus einer anderen Version und Szene; dies ist kein vergleichbarer Beschleunigungstest. DirectX 12, 7. November: Menü mit 1.22 FPS über 32.801 s; Gameplay nicht erneut geprüft.",
       "imageAlt": "Kampf auf Pirate Base beim Audiotest vom 9. Oktober"
     },
 
@@ -568,6 +568,11 @@ const de: Content = {
   },
 
   history: {
+    "jets-d3d12-performance-20261107": {
+      "title": "DirectX 12: weniger Rückkopien, 1.22 FPS im Menü",
+      "summary": "Der Entwicklungsbuild vom 7. November erhält die Zeichenreihenfolge über GPU-Acquire-Befehle hinweg, nutzt parallele Kopien und einen größeren Oberflächen-Cache. Das Menü erreicht 1.22 FPS (40 Bilder / 32.801 s), gegenüber zuvor beobachteten 0.7–0.8 FPS. Die Ausgabe bleibt bei 3840×2160. Alle 51 D3D12-Tests und nativen GPU-Prüfungen bestehen. Datentransfers und Cache-Verdrängungen bleiben teuer; DirectX-Gameplay ist unbestätigt. Spielbar und abschließbar gilt weiterhin für Vulkan.",
+      "imageAlt": "DirectX 12: weniger Rückkopien, 1.22 FPS im Menü"
+    },
     "dreaming-sarah-d3d12-startup-20261107": {
       "title": "DirectX 12: Start behoben, Hauptmenü geprüft",
       "summary": "Entwicklungsbuild vom 7. November: DirectX 12 rendert das Hauptmenü nach der Korrektur für Rechtecke vom Typ 17. Gameplay, Figurensteuerung und FPS sind mit DirectX noch nicht geprüft. Der Status spielbar/durchspielbar und frühere Leistungsmessungen beziehen sich auf Vulkan. Alle 51 D3D12-Tests und die vollständige native GPU-Prüfung bestehen; der vierte Gast-Vertex und seine Attribute bleiben erhalten.",

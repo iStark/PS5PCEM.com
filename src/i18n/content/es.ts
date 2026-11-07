@@ -384,7 +384,7 @@ const es: Content = {
         "La grabación final del menú de 30 segundos conserva un intervalo silencioso de 30 ms; su causa no está determinada.",
         "Superadas las pruebas breves de audio en menú y combate; no se midieron la latencia total ni la estabilidad prolongada."
       ],
-      "performance": "El contador en combate mostró 35,7–45,8 FPS el 9 de octubre. Los antiguos 11–14 FPS corresponden a otra versión y escena; no es una comparación controlada de rendimiento.",
+      "performance": "El contador en combate mostró 35,7–45,8 FPS el 9 de octubre. Los antiguos 11–14 FPS corresponden a otra versión y escena; no es una comparación controlada de rendimiento. DirectX 12, 7 de noviembre: menú a 1.22 FPS durante 32.801 s; jugabilidad sin nueva verificación.",
       "imageAlt": "Combate en Pirate Base durante la prueba de audio del 9 de octubre"
     },
 
@@ -568,6 +568,11 @@ const es: Content = {
   },
 
   history: {
+    "jets-d3d12-performance-20261107": {
+      "title": "DirectX 12: menos lecturas de vuelta, menú a 1.22 FPS",
+      "summary": "La compilación en desarrollo del 7 de noviembre conserva el orden de dibujo entre comandos acquire de GPU, usa copias paralelas y amplía la caché de superficies. El menú registra 1.22 FPS (40 imágenes / 32.801 s), frente a los 0.7–0.8 FPS observados antes. La salida sigue siendo 3840×2160. Pasan las 51 pruebas D3D12 y las pruebas nativas de GPU. Las transferencias y expulsiones de caché siguen limitando el rendimiento; la jugabilidad en DirectX no está verificada. El estado jugable y completable corresponde a Vulkan.",
+      "imageAlt": "DirectX 12: menos lecturas de vuelta, menú a 1.22 FPS"
+    },
     "dreaming-sarah-d3d12-startup-20261107": {
       "title": "DirectX 12: inicio corregido y menú principal verificado",
       "summary": "Compilación de desarrollo del 7 de noviembre: DirectX 12 dibuja el menú principal tras corregir el rechazo de rectángulos de tipo 17. La partida, el control del personaje y los FPS con DirectX siguen sin verificar. El estado jugable/completable y las mediciones anteriores corresponden a Vulkan. Superados los 51 tests de D3D12 y toda la batería nativa de GPU; se conservan el cuarto vértice del shader invitado y sus atributos.",
